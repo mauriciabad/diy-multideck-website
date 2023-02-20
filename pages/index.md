@@ -1,4 +1,4 @@
-# The DIY Multidech
+# The DIY Multideck
 
 The diy multideck is a deck of 126 poker-sized playing cards that lets you play many games by writing in the cardas and using a bit of imagination.
 
