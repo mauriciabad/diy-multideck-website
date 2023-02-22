@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+    Tailwind colors listed here: https://tailwindcss.com/docs/customizing-colors
+    
+    Why colors are written in rgb format (255 255 255) instead of hex (#ffffff)
+    https://tailwindcss.com/docs/customizing-colors#using-css-variables 
+*/
+@layer base {
+
+    /* light theme */
+    .theme-sleek {
+        /* Tailwind orange-500 #f97316 */
+        --color-primary-main: 249 115 22;
+
+        /* Tailwind gray-700 #374151 */
+        --color-text-body: 55 65 81;
+        /* Tailwind gray-700 #374151 */
+        --color-text-heading: 55 65 81;
+        /* Tailwind gray-700 #374151 */
+        --color-text-bold: 55 65 81;
+        /* Tailwind gray-500 #6b7280 */
+        --color-text-muted: 107 114 128;
+        /* Tailwind orange-500 #f97316 */
+        --color-text-link: 249 115 22;
+        /* black */
+        --color-text-code: 0 0 0;
+        /* black */
+        --color-text-selection: 0 0 0;
+
+        /* white */
+        --color-bg-body: 255 255 255;
+        /* Tailwind orange-50 #fff7ed */
+        --color-bg-code: 255 247 237;
+        /* Tailwind amber-200 #fde68a */
+        --color-bg-selection: 253 230 138;
+
+        /* Tailwind orange-100 #ffedd5 */
+        --color-border-code: 255 237 213;
+
+    }
+
+    /* dark theme */
+    .theme-sleek.dark {
+        /* Tailwind yellow-400 #facc15 */
+        --color-primary-main: 250 204 21;
+
+        /* Tailwind stone-300 #d6d3d1 */
+        --color-text-body: 214 211 209;
+        /* white */
+        --color-text-heading: 255 255 255;
+        /* white */
+        --color-text-bold: 255 255 255;
+        /* Tailwind stone-400 #a8a29e */
+        --color-text-muted: 168 162 158;
+        /* Tailwind yellow-400 #facc15 */
+        --color-text-link: 250 204 21;
+        /* black */
+        --color-text-code: 255 255 255;
+        /* black */
+        --color-text-selection: 0 0 0;
+
+        /* #0e141b */
+        --color-bg-body: 14 20 27;
+        /* Tailwind yellow-500 #eab308 */
+        --color-bg-code: 234 179 8;
+        /* Tailwind yellow-300 #fde047 */
+        --color-bg-selection: 253 224 71;
+
+        /* Tailwind yellow-100 #fef9c3 */
+        --color-border-code: 254 243 199;
+    }
+
+    :root {
+        font-family: theme('fontFamily.body');
+        background-color: theme('colors.bg.body');
+        color: theme('colors.text.body');
+        /* base font-size 1px larger for better visibility */
+        font-size: 1.0625em;
+        line-height: 1.75;
+        scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: theme('fontFamily.heading');
+    }
+}
+
+@layer components {
+
+    /* ------ GLOBAL STYLES - START ------ */
+    strong {
+        font-weight: 600;
+        color: theme('colors.text.bold');
+    }
+
+    mark {
+        background-color: theme('colors.bg.selection');
+        color: theme('colors.text.selection');
+    }
+
+    /* 
+        if you want an anchor tag to not have this style, 
+        just add a class `unset` to it. 
+    */
+    a:not(.unset) {
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-size: 100% 1.5px;
+        background-position: 0 100%;
+        background-image:
+            linear-gradient(to right, theme('colors.text.link'), theme('colors.text.link'));
+    }
+
+    a:not(.unset):hover {
+        color: theme('colors.text.link');
+    }
+
+    code:not(pre code):not(.unset) {
+        background-color: theme('colors.bg.code');
+        color: theme('colors.text.code');
+        padding: 0.125rem 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 0.875em;
+        font-weight: 600;
+        border: 1px solid theme('colors.border.code');
+        margin-bottom: 1.25em;
+    }
+
+    html.dark code:not(pre code) {
+        background-color: rgb(var(--color-bg-code) / 0.15);
+        border-color: rgb(var(--color-border-code) / 0.15);
+    }
+
+    ul:not(.unset):not(:where([class~="prose"] *)) {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    ul:not(:where([class~="prose"] *))>li {
+        position: relative;
+        padding-left: 1.375rem;
+    }
+
+    ul:not(.unset):not(:where([class~="prose"] *))>li::before {
+        position: absolute;
+        left: 0;
+        content: "»";
+        color: rgb(var(--color-text-muted));
+    }
+
+    ol:not(.unset):not(:where([class~="prose"] *)) {
+        padding-left: 1.125rem;
+    }
+
+    ol:not(.unset):not(:where([class~="prose"] *))>li::marker {
+        color: rgb(var(--color-text-muted))
+    }
+
+    ul:not(.unset):not(:where([class~="prose"] *))>li,
+    ol:not(.unset):not(:where([class~="prose"] *))>li {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    ::selection {
+        background: theme('colors.bg.selection');
+        color: theme('colors.text.selection');
+    }
+
+    /* ------ GLOBAL STYLES - END ------ */
+
+    /* ------ REUSABLE UTILS - START ------ */
+    .animated-link {
+        position: relative;
+        box-decoration-break: clone;
+        text-decoration: none;
+    }
+
+    .animated-link:hover:after {
+        transform: translateZ(0) scale(1);
+    }
+
+    .animated-link:after {
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        content: "";
+        height: 2px;
+        position: absolute;
+        transform: translateZ(0) scaleX(0);
+        transform-origin: left center;
+        transition: all .150s ease-in-out;
+        background-image: linear-gradient(to right, theme('colors.text.link'), theme('colors.text.link'));
+    }
+
+    .animated-link.show:after {
+        transform: translateZ(0) scale(1);
+    }
+
+    /* ------ REUSABLE UTILS - END ------ */
+}
