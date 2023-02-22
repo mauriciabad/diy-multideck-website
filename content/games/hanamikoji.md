@@ -38,13 +38,13 @@ To play Hanamikoji you need 31 cards.
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-| ![action-marker-1](/public/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/public/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/public/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/public/images/games/hanamikoji/action-marker-4.jpg)|
+| ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg)|
 
 ### Infography
 
 > 1 image is worth 100 words
 
-![cards mapping](/public/images/games/hanamikoji/hanamikoji.jpg)
+![cards mapping](/images/games/hanamikoji/hanamikoji.jpg)
 
 ## Usage
 
