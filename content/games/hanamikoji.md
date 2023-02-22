@@ -1,5 +1,5 @@
 ---
-title: "How to play Hanamikoji in the DIY Multideck"
+title: "How to play Hanamikoji with the DIY Multideck"
 description: "Win the favor of the geishas through careful speculation and bold moves"
 date: 2023-02-22
 game:
