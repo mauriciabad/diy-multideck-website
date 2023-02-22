@@ -25,21 +25,134 @@ import PageLayout from '../layouts/PageLayout.astro'
       💡 But we can send you an email when we release it.
     </p>
 
-    <label for="email" class="block mt-12 max-w-[500px] mx-auto w-full">
+    <label
+      for="subscribe-input"
+      class="block mt-12 max-w-[450px] mx-auto w-full"
+      id="subscribe-div"
+    >
       <span>Email</span>
       <div class="flex">
         <input
           type="email"
           name="email"
-          id="email"
-          class="grow min-w-0 bg-white dark:bg-slate-800 border border-slate-400 dark:border-slate-500 rounded px-3 py-1 focus-visible:ring-4 outline-none ring-orange-500 mr-4"
+          id="subscribe-input"
+          required
+          class="grow min-w-0 bg-white dark:bg-slate-800 border border-slate-400 dark:border-slate-500 rounded px-3 py-1 focus-visible:ring-4 outline-none ring-orange-500 mr-3"
         />
         <input
           type="submit"
           value="Subscribe"
+          id="subscribe-button"
           class="grow-0 cursor-pointer bg-orange-500 text-white rounded-md px-4 focus-visible:ring-4 outline-none ring-offset-2 ring-stone-500"
         />
       </div>
     </label>
+    <div
+      id="subscribe-done"
+      class="hidden mt-16 text-center text-4xl text-green-600 font-light"
+    >
+      <svg
+        class="inline-block align-[-7px]"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+        <path d="M9 12l2 2l4 -4"></path>
+      </svg>
+      Subscribed!
+    </div>
+    <div
+      id="subscribe-error"
+      class="hidden mt-16 text-center text-4xl text-red-600 font-light"
+    >
+      <svg
+        class="inline-block align-[-7px]"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+        <path d="M10 10l4 4m0 -4l-4 4"></path>
+      </svg>
+      Error
+    </div>
   </Fragment>
 </PageLayout>
+
+<script>
+  const subscribeButton = document.getElementById(
+    'subscribe-button'
+  ) as HTMLButtonElement | null
+  if (!subscribeButton)
+    throw new Error('Subscribe button is does not exist in the page')
+
+  const subscribeInput = document.getElementById(
+    'subscribe-input'
+  ) as HTMLInputElement | null
+  if (!subscribeInput)
+    throw new Error('Subscribe input is does not exist in the page')
+
+  const subscribeDone = document.getElementById(
+    'subscribe-done'
+  ) as HTMLDivElement | null
+  if (!subscribeDone)
+    throw new Error('Subscribe done is does not exist in the page')
+
+  const subscribeError = document.getElementById(
+    'subscribe-error'
+  ) as HTMLDivElement | null
+  if (!subscribeError)
+    throw new Error('Subscribe error is does not exist in the page')
+
+  const subscribeDiv = document.getElementById(
+    'subscribe-div'
+  ) as HTMLLabelElement | null
+  if (!subscribeDiv)
+    throw new Error('Subscribe div is does not exist in the page')
+
+  subscribeButton.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    const email = subscribeInput.value
+
+    subscribeDiv.classList.add('hidden')
+    subscribeDone.classList.remove('hidden')
+
+    fetch('https://api.sendinblue.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'api-key':
+          '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',
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          console.error(response)
+          throw new Error(`Response is ${response.status}`)
+        }
+        return response.json()
+      })
+      .then((response) => console.log(response))
+      .catch((error) => {
+        subscribeError.classList.remove('hidden')
+        subscribeDone.classList.add('hidden')
+        console.error(error)
+      })
+  })
+</script>
