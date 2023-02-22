@@ -10,7 +10,6 @@ export const get = async () => {
   });
 
   const sortedPosts = posts
-    .filter((p) => p.frontmatter.draft !== true)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).valueOf() -
@@ -23,18 +22,6 @@ export const get = async () => {
   baseUrl = baseUrl.replace(/\/+$/g, "");
 
   const rssItems = sortedPosts.map(({ frontmatter, slug }) => {
-    if (frontmatter.external) {
-      const title = frontmatter.title;
-      const pubDate = frontmatter.date;
-      const link = frontmatter.url;
-
-      return {
-        title,
-        pubDate,
-        link,
-      };
-    }
-
     const title = frontmatter.title;
     const pubDate = frontmatter.date;
     const description = frontmatter.description;

@@ -1,15 +1,15 @@
 ---
 import { readOne, readAll } from '../../lib/markdoc/read'
-import { blog } from '../../lib/markdoc/frontmatter.schema'
+import { game } from '../../lib/markdoc/frontmatter.schema'
 import Renderer from '../../components/Renderer.astro'
-import BlogPostMeta from '../../components/BlogPostMeta.astro'
+import GamePostMeta from '../../components/GamePostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
 
 export async function getStaticPaths() {
   const posts = await readAll({
-    directory: 'blog',
-    frontmatterSchema: blog,
+    directory: 'games',
+    frontmatterSchema: game,
   })
 
   return posts.map((post) => {
@@ -23,9 +23,9 @@ if (typeof slug !== 'string') {
 }
 
 const { content, frontmatter } = await readOne({
-  directory: 'blog',
+  directory: 'games',
   slug,
-  frontmatterSchema: blog,
+  frontmatterSchema: game,
 })
 
 const ogImageAbsoluteUrl = frontmatter.ogImagePath
@@ -34,11 +34,11 @@ const ogImageAbsoluteUrl = frontmatter.ogImagePath
 ---
 
 <ContentLayout title={frontmatter.title} date={frontmatter.date}>
-  <BlogPostMeta
+  <GamePostMeta
     title={frontmatter.title}
     description={frontmatter.description}
     publishDate={frontmatter.date.toISOString()}
-    pagePath={`/blog/${slug}`}
+    pagePath={`/games/${slug}`}
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />

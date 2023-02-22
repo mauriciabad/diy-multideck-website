@@ -180,3 +180,87 @@ export function getBlogPostMeta({
     twitter,
   };
 }
+
+
+type GamePostOgMeta = {
+  title: string; // page title
+  description?: string; // page description
+  type: "article";
+  url?: string; // blog post url
+  // siteName?: string; // page title
+  publishDate: string; // ISO string
+  image?: string; // preview image
+  imageAlt?: string; // alt text for preview image
+  imageWidth?: string; // preview image width - 1200px standard
+  imageHeight?: string; // preview image height - 627px standard
+};
+
+type GamePostTwitterMeta = {
+  title: string; // same as blog post og:title
+  description?: string; // same as blog post og:description
+  card: "summary_large_image";
+  site?: string; // twitter handle (@username) of blog owner
+  image?: string; // same as blog post  og:image
+  imageAlt?: string; // same as blog post  og:image:alt
+};
+
+export function getGamePostMeta({
+  title: pageTitle,
+  description,
+  canonicalUrl,
+  pageUrl,
+  publishDate,
+  ogImageAbsoluteUrl,
+  ogImageAltText,
+  ogImageWidth,
+  ogImageHeight,
+}: {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  pageUrl?: string;
+  publishDate: string;
+  ogImageAbsoluteUrl?: string; // should always be absolute
+  ogImageAltText?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+}): { meta: PageMeta; og: GamePostOgMeta; twitter: GamePostTwitterMeta } {
+  if (!pageTitle) {
+    throw Error("title is required for page SEO");
+  }
+  if (ogImageAbsoluteUrl && !ogImageAltText) {
+    ogImageAltText = `Preview image for ${pageTitle}`;
+  }
+
+  const meta: PageMeta = {
+    title: pageTitle,
+    description: description,
+    canonicalUrl,
+  };
+
+  const og: BlogPostOgMeta = {
+    title: pageTitle,
+    description: description,
+    type: "article",
+    url: pageUrl,
+    publishDate: publishDate,
+    image: ogImageAbsoluteUrl,
+    imageAlt: ogImageAltText,
+    imageWidth: ogImageWidth ? String(ogImageWidth) : undefined,
+    imageHeight: ogImageHeight ? String(ogImageHeight) : undefined,
+  };
+
+  const twitter: BlogPostTwitterMeta = {
+    title: pageTitle,
+    description: description,
+    card: "summary_large_image",
+    image: ogImageAbsoluteUrl,
+    imageAlt: ogImageAltText,
+  };
+
+  return {
+    meta,
+    og,
+    twitter,
+  };
+}
