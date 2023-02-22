@@ -14,6 +14,7 @@ import ThemeScript from './ThemeScript.astro'
 import Favicon from './Favicon.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Comments from '../components/Comments.astro'
 
 export interface Props {
   title: string
@@ -49,6 +50,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
         <h1 class="m-0 mb-[0.25em]">{title}</h1>
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
+        <Comments />
       </section>
     </main>
     <Footer />

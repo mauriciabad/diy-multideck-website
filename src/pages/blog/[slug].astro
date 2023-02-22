@@ -3,7 +3,6 @@ import { readOne, readAll } from '../../lib/markdoc/read'
 import { blog } from '../../lib/markdoc/frontmatter.schema'
 import Renderer from '../../components/Renderer.astro'
 import BlogPostMeta from '../../components/BlogPostMeta.astro'
-import Comments from '../../components/Comments.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
 
@@ -44,5 +43,4 @@ const ogImageAbsoluteUrl = frontmatter.ogImagePath
     slot="meta"
   />
   <Renderer content={content} slot="content" />
-  <Comments />
 </ContentLayout>
