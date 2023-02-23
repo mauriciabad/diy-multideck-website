@@ -98,6 +98,16 @@ export const config: Config = {
       },
       selfClosing: true,
     },
+    callout: {
+      render: 'Callout',
+      children: ['text'],
+      selfClosing: true,
+      attributes: {
+        text: {
+          type: String
+        }
+      }
+    }
   },
   nodes: {
     heading: {
@@ -135,8 +145,7 @@ export const config: Config = {
         const children = node.transformChildren(config);
         if (children.some((child) => typeof child !== "string")) {
           throw new Error(
-            `unexpected non-string child of code block from ${
-              node.location?.file ?? "(unknown file)"
+            `unexpected non-string child of code block from ${node.location?.file ?? "(unknown file)"
             }:${node.location?.start.line ?? "(unknown line)"}`
           );
         }

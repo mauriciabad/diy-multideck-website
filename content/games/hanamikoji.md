@@ -18,23 +18,23 @@ Deck version: 0.4b
 
 To play Hanamikoji you need 31 cards.
 
-💡 Ideally use this cards: 1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, and 113.
+{% callout text="Ideally use this cards: 1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, and 113." /%}
 
 ### Instructions
 
 1. Select 7 suits.
 1. For each suit, pick the following amount of ranks: 3, 3, 3, 4, 4, 5 and 6.
-   - 💡 Use the same rank for every Geisha card.
+   {% callout text="Use the same rank for every Geisha card."/%}
 1. Draw the numbers 2, 2, 2, 3, 3, 4 and 5 respectively on every card of each suit in the drawing area C. Exept on 1 card of every suit (the Geisha cards), on those ones, draw the number rotated 90 degrees.
-   - 💡 It's possible to make some numbers match with the decimal digit of the card number.
-   - 💡 For the geisha cards, use the rank 1 (the ones with a path going up or down). If not possible, chose the same rank for all Geisha cards.
+   {% callout text="It's possible to make some numbers match with the decimal digit of the card number." /%}
+   {% callout text="For the geisha cards, use the rank 1 (the ones with a path going up or down). If not possible, chose the same rank for all Geisha cards." /%}
 1. Pick any other 8 cards and draw the icons below in the drawing area D, two times each.
 
-- 💡 Pick the same suit for every pair.
-- 💡 Pick the the black suits.
+   {% callout text="Pick the same suit for every pair." /%}
+   {% callout text="Pick the the black suits." /%}
 
 1. On the cards with rotated numbers (the Geisha cards), draw an arrow pointing up in the drawing area A.
-   - 💡 If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark.
+   {% callout text="If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark." /%}
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|

@@ -1,18 +1,19 @@
 ---
-import { MarkdocRenderer } from "astro-markdoc-renderer";
-import type { Content } from "astro-markdoc-renderer";
-import YouTubeEmbed from "./YouTubeEmbed.astro";
-import TweetEmbed from "./TweetEmbed.astro";
-import CodePenEmbed from "./CodePenEmbed.astro";
-import GitHubGistEmbed from "./GitHubGistEmbed.astro";
-import CodeBlock from "./CodeBlock.astro";
-import Heading from "./Heading.astro";
+import { MarkdocRenderer } from 'astro-markdoc-renderer'
+import type { Content } from 'astro-markdoc-renderer'
+import Callout from './Callout.astro'
+import YouTubeEmbed from './YouTubeEmbed.astro'
+import TweetEmbed from './TweetEmbed.astro'
+import CodePenEmbed from './CodePenEmbed.astro'
+import GitHubGistEmbed from './GitHubGistEmbed.astro'
+import CodeBlock from './CodeBlock.astro'
+import Heading from './Heading.astro'
 
 type Props = {
-  content: Content;
-};
+  content: Content
+}
 
-const { content } = Astro.props;
+const { content } = Astro.props
 
 const components = {
   Heading: {
@@ -39,7 +40,11 @@ const components = {
     Component: GitHubGistEmbed,
     props: {},
   },
-};
+  Callout: {
+    Component: Callout,
+    props: {},
+  },
+}
 ---
 
 <MarkdocRenderer content={content} components={components} />
