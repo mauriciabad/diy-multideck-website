@@ -9,6 +9,7 @@
 import '../styles/global.css'
 
 import GoogleFont from './GoogleFont.astro'
+import GoogleAnalytics from './GoogleAnalytics.astro'
 import TablerIcons from './TablerIcons.astro'
 import FontAwesome from './FontAwesome.astro'
 import ThemeScript from './ThemeScript.astro'
@@ -40,6 +41,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
     <Favicon />
     <slot name="meta" />
     <GoogleFont />
+    <GoogleAnalytics />
     <TablerIcons />
     <ThemeScript />
     <FontAwesome />
