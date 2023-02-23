@@ -22,7 +22,7 @@ import PageLayout from '../layouts/PageLayout.astro'
     </p>
 
     <p class="mt-4 text-center">
-      💡 But I can send you an email when I release it.
+      But I can send you an email when I release it.
     </p>
 
     <label
@@ -39,54 +39,25 @@ import PageLayout from '../layouts/PageLayout.astro'
           required
           class="grow min-w-0 bg-white dark:bg-slate-800 border border-slate-400 dark:border-slate-500 rounded px-3 py-1 focus-visible:ring-4 outline-none ring-orange-500 mr-3"
         />
-        <input
-          type="submit"
-          value="Subscribe"
+        <button
           id="subscribe-button"
           class="grow-0 cursor-pointer bg-orange-500 text-white rounded-md px-4 focus-visible:ring-4 outline-none ring-offset-2 ring-stone-500"
-        />
+          ><i class="ti ti-mail text-lg align-bottom pr-2"></i>Subscribe</button
+        >
       </div>
     </label>
     <div
       id="subscribe-done"
       class="hidden mt-16 text-center text-4xl text-green-600 font-light"
     >
-      <svg
-        class="inline-block align-[-7px]"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-        <path d="M9 12l2 2l4 -4"></path>
-      </svg>
+      <i class="ti ti-circle-check text-4xl"></i>
       Subscribed!
     </div>
     <div
       id="subscribe-error"
       class="hidden mt-16 text-center text-4xl text-red-600 font-light"
     >
-      <svg
-        class="inline-block align-[-7px]"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-        <path d="M10 10l4 4m0 -4l-4 4"></path>
-      </svg>
+      <i class="ti ti-circle-x text-4xl"></i>
       Error
     </div>
   </Fragment>
