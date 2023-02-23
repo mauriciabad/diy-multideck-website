@@ -71,7 +71,11 @@
         if (currentMode === 'dark') {
           iconElem.classList.remove('light')
           iconElem.classList.add('dark')
-          updateCommentsTheme('dark')
+
+          // update comments theme later because the script hasen't loaded
+          setTimeout(() => {
+            updateCommentsTheme('dark')
+          }, 1000)
         }
 
         // we load the toggle invisible to prevent flash
