@@ -102,6 +102,15 @@ import PageLayout from '../layouts/PageLayout.astro'
     subscribeDiv.classList.add('hidden')
     subscribeDone.classList.remove('hidden')
 
+    if ((window as any).gtag) {
+      ;(window as any).gtag('event', 'subscribe', {
+        category: 'Subscribe',
+        label: 'Subscribe form submitted',
+      })
+    } else {
+      console.error('window.gtag is undefined')
+    }
+
     fetch('https://api.sendinblue.com/v3/contacts', {
       method: 'POST',
       headers: {
