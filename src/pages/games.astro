@@ -1,19 +1,19 @@
 ---
 import { readAll } from '../lib/markdoc/read'
-import { game } from '../lib/markdoc/frontmatter.schema'
+import { gameSchema } from '../lib/markdoc/frontmatter.schema'
 import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
 
 const posts = await readAll({
   directory: 'games',
-  frontmatterSchema: game,
+  frontmatterSchema: gameSchema,
 })
 
 const sortedPosts = posts.sort(
   (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+    new Date(b.frontmatter.post.date).valueOf() -
+    new Date(a.frontmatter.post.date).valueOf()
 )
 ---
 
@@ -24,7 +24,7 @@ const sortedPosts = posts.sort(
       {
         sortedPosts.map((post) => {
           const formattedDate = new Date(
-            post.frontmatter.date
+            post.frontmatter.post.date
           ).toLocaleDateString('en-us', {
             year: 'numeric',
             month: 'short',
@@ -37,11 +37,11 @@ const sortedPosts = posts.sort(
                   href={`/games/${post.slug}`}
                   class="unset hover:text-text-link"
                 >
-                  {post.frontmatter.title}
+                  {post.frontmatter.game.name}
                 </a>
               </div>
               <div class="text-text-muted text-sm italic">
-                <time datetime={post.frontmatter.date.toISOString()}>
+                <time datetime={post.frontmatter.post.date.toISOString()}>
                   {formattedDate}
                 </time>
               </div>

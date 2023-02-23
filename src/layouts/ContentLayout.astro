@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro'
 import Comments from '../components/Comments.astro'
 
 export interface Props {
-  title: string
+  title: string | readonly [string, string, string]
   date: Date
 }
 
@@ -51,7 +51,21 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
     <Header />
     <main id="main">
       <section class="blog-post prose max-w-none prose-sleek">
-        <h1 class="m-0 mb-[0.25em]">{title}</h1>
+        <h1 class="m-0 mb-[0.25em]">
+          {
+            typeof title === 'string' ? (
+              <span>{title}</span>
+            ) : (
+              <Fragment>
+                {title[0]}
+                <span class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent">
+                  {title[1]}
+                </span>
+                {title[2]}
+              </Fragment>
+            )
+          }
+        </h1>
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
         <Comments />

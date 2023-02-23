@@ -1,6 +1,6 @@
 ---
 import { readOne, readAll } from '../../lib/markdoc/read'
-import { game } from '../../lib/markdoc/frontmatter.schema'
+import { gameSchema } from '../../lib/markdoc/frontmatter.schema'
 import Renderer from '../../components/Renderer.astro'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
@@ -9,7 +9,7 @@ import { SITE_URL } from '../../config'
 export async function getStaticPaths() {
   const posts = await readAll({
     directory: 'games',
-    frontmatterSchema: game,
+    frontmatterSchema: gameSchema,
   })
 
   return posts.map((post) => {
@@ -22,22 +22,27 @@ if (typeof slug !== 'string') {
   throw Error(`slug should be string. Received: ${slug}`)
 }
 
-const { content, frontmatter } = await readOne({
+const {
+  content,
+  frontmatter: { game, post, mapping },
+} = await readOne({
   directory: 'games',
   slug,
-  frontmatterSchema: game,
+  frontmatterSchema: gameSchema,
 })
 
-const ogImageAbsoluteUrl = frontmatter.ogImagePath
-  ? new URL(frontmatter.ogImagePath, SITE_URL).toString()
+const ogImageAbsoluteUrl = post.ogImagePath
+  ? new URL(post.ogImagePath, SITE_URL).toString()
   : undefined
+
+const title = ['How to play ', game.name, ' with the DIY Multideck'] as const
 ---
 
-<ContentLayout title={frontmatter.title} date={frontmatter.date}>
+<ContentLayout title={title} date={post.date}>
   <GamePostMeta
-    title={frontmatter.title}
-    description={frontmatter.description}
-    publishDate={frontmatter.date.toISOString()}
+    title={title.join('')}
+    description={title.join('')}
+    publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"

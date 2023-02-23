@@ -1,6 +1,6 @@
 ---
 import { readOne, readAll } from '../../lib/markdoc/read'
-import { blog } from '../../lib/markdoc/frontmatter.schema'
+import { blogSchema } from '../../lib/markdoc/frontmatter.schema'
 import Renderer from '../../components/Renderer.astro'
 import BlogPostMeta from '../../components/BlogPostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
@@ -9,7 +9,7 @@ import { SITE_URL } from '../../config'
 export async function getStaticPaths() {
   const posts = await readAll({
     directory: 'blog',
-    frontmatterSchema: blog,
+    frontmatterSchema: blogSchema,
   })
 
   return posts.map((post) => {
@@ -25,7 +25,7 @@ if (typeof slug !== 'string') {
 const { content, frontmatter } = await readOne({
   directory: 'blog',
   slug,
-  frontmatterSchema: blog,
+  frontmatterSchema: blogSchema,
 })
 
 const ogImageAbsoluteUrl = frontmatter.ogImagePath
