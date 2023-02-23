@@ -105,7 +105,13 @@ export const config: Config = {
       attributes: {
         text: {
           type: String
-        }
+        },
+        type: {
+          type: String,
+          default: 'info',
+          matches: ['info', 'idea'],
+          errorLevel: 'critical'
+        },
       }
     }
   },

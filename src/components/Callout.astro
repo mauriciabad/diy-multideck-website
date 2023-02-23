@@ -1,12 +1,22 @@
 ---
 interface Props {
   text: string
+  type: 'idea' | 'info'
 }
 
-const { text } = Astro.props
+const { text, type } = Astro.props
 ---
 
 <div class="flex bg-stone-200/50 dark:bg-slate-900 rounded-md p-2 pl-0 mt-2">
-  <i class="ti ti-bulb px-3 text-lg text-yellow-500 dark:text-yellow-300"></i>
+  {
+    type === 'idea' && (
+      <i class="ti ti-bulb px-3 text-lg text-yellow-500 dark:text-yellow-300" />
+    )
+  }
+  {
+    type === 'info' && (
+      <i class="ti ti-info-circle px-3 text-lg text-blue-500 dark:text-blue-300" />
+    )
+  }
   <div class="grow">{text}</div>
 </div>
