@@ -24,10 +24,15 @@ import DarkModeToggle from './DarkModeToggle.astro'
     class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold"
   >
     <a
-      class="unset text-xl ml-4 outline-none focus-visible:ring-2 ring-stone-700 rounded-sm ring-offset-4"
+      class="hidden sm:inline-block unset text-xl ml-4 outline-none focus-visible:ring-2 ring-stone-700 rounded-sm ring-offset-4"
       href="https://boardgamegeek.com/"
     >
-      <svg aria-hidden="true" width="64" viewBox="0 0 173 90">
+      <svg
+        aria-hidden="true"
+        aria-label="The DIY Multideck on the Board Game Geek"
+        width="64"
+        viewBox="0 0 173 90"
+      >
         <g fill="none" fill-rule="evenodd">
           <path
             fill="#FF5100"
@@ -39,7 +44,6 @@ import DarkModeToggle from './DarkModeToggle.astro'
           ></path>
         </g>
       </svg>
-      <span class="fa-sr-only">The DIY Multideck on the Board Game Geek</span>
     </a>
   </div>
   <DarkModeToggle />
