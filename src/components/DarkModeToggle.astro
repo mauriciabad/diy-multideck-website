@@ -50,7 +50,12 @@
     }
   }
   function updateCommentsTheme(mode: 'light' | 'dark') {
-    ;(window as any).REMARK42.changeTheme(mode)
+    const remark42 = (window as any).REMARK42
+    if (!remark42) {
+      console.error('window.REMARK42 is not loaded')
+      return
+    }
+    remark42.changeTheme(mode)
   }
   class ModeToggle extends HTMLElement {
     constructor() {
