@@ -1,0 +1,64 @@
+---
+import type { gameSchema } from 'src/lib/markdoc/frontmatter.schema'
+import type { z } from 'zod'
+
+type GameSchema = z.infer<typeof gameSchema>
+
+interface Props {
+  game: GameSchema['game']
+  mapping: GameSchema['mapping']
+}
+
+const { game, mapping } = Astro.props
+
+const compatibilities = {
+  0: 'Incompatible',
+  1: 'Very bad',
+  2: 'Bad',
+  3: 'Good',
+  4: 'Very good',
+  5: 'Exelent',
+} as const
+
+const getCompatibility = (
+  value: number
+): (typeof compatibilities)[keyof typeof compatibilities] | null => {
+  if (
+    value !== 0 &&
+    value !== 1 &&
+    value !== 2 &&
+    value !== 3 &&
+    value !== 4 &&
+    value !== 5
+  )
+    return null
+  return compatibilities[value]
+}
+---
+
+<div
+  class="bg-stone-200 text-black dark:bg-[#0d1115] dark:text-white flex flex-wrap justify-center p-6 gap-6 rounded-2xl"
+>
+  <img class="grow-0 m-0 max-h-64 max-w-[50vw] rounded" src={game.image} />
+  <div class="grow basis-40">
+    <a href={game.bgg} class="!bg-none text-current text-3xl"
+      ><span>{game.name}</span><i class="ti ti-external-link ml-1"></i></a
+    >
+    <p>{game.description}</p>
+
+    <ul class="list-none p-0 m-0">
+      <li class="p-0 m-0">
+        <span class="text-stone-700 dark:text-[#8da1b6]">Compatibility:</span>
+        {getCompatibility(mapping.compatibility)} ({mapping.compatibility}/5)
+      </li>
+      <li class="p-0 m-0">
+        <span class="text-stone-700 dark:text-[#8da1b6]">Required cards:</span>
+        {mapping.requiredCardsCount}
+      </li>
+      <li class="p-0 m-0">
+        <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
+        {mapping.deckVersion}
+      </li>
+    </ul>
+  </div>
+</div>

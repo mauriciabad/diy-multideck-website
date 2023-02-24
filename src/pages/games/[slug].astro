@@ -2,9 +2,10 @@
 import { readOne, readAll } from '../../lib/markdoc/read'
 import { gameSchema } from '../../lib/markdoc/frontmatter.schema'
 import Renderer from '../../components/Renderer.astro'
-import GamePostMeta from '../../components/GamePostMeta.astro'
+import GameMappingDetails from '../../components/GameMappingDetails.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
-import { SITE_URL } from '../../config'
+import { SITE_URL, SITE_TITLE } from '../../config'
+import GamePostMeta from '../../components/GamePostMeta.astro'
 
 export async function getStaticPaths() {
   const posts = await readAll({
@@ -40,12 +41,15 @@ const title = ['How to play ', game.name, ' with the DIY Multideck'] as const
 
 <ContentLayout title={title} date={post.date}>
   <GamePostMeta
-    title={title.join('')}
+    title={`${game.name} | How to play with the DIY Multideck tutorial`}
     description={title.join('')}
     publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
-  <Renderer content={content} slot="content" />
+  <Fragment slot="content">
+    <GameMappingDetails game={game} mapping={mapping} />
+    <Renderer content={content} />
+  </Fragment>
 </ContentLayout>

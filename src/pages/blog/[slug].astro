@@ -42,5 +42,7 @@ const ogImageAbsoluteUrl = frontmatter.ogImagePath
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
-  <Renderer content={content} slot="content" />
+  <Fragment slot="content">
+    <Renderer content={content} />
+  </Fragment>
 </ContentLayout>

@@ -1,18 +1,17 @@
 ---
 post: 
    date: 2023-02-22
+   ogImagePath: '/images/games/hanamikoji/hanamikoji.jpg'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/158600/hanamikoji'
   image: 'https://cf.geekdo-images.com/uiVZ7QVfRFQx3EBG8eDU8w__itemrep/img/KKHTlNTf8JbSyL9tHwPrC5J_lQM=/fit-in/246x300/filters:strip_icc()/pic6339446.png'
   name: 'Hanamikoji'
-  description: "Win the favor of the geishas through careful speculation and bold moves"
+  description: "Win the favor of the geishas through careful speculation and bold moves."
 mapping:
   requiredCardsCount: 31
   deckVersion: "v0.4b"
   compatibility: 4
 ---
-
-Deck version: v0.4b
 
 **TLDR;** Check the [Infography](#infography)
 
