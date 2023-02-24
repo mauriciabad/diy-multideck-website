@@ -23,6 +23,8 @@ To play Hanamikoji you need 31 cards.
 
 ### Instructions
 
+![cards mapping](/images/games/hanamikoji/hanamikoji.jpg)
+
 1. Select 7 suits.
 1. For each suit, pick the following amount of ranks: 3, 3, 3, 4, 4, 5 and 6.
    {% callout type="idea" text="Use the same rank for every Geisha card."/%}
@@ -40,12 +42,6 @@ To play Hanamikoji you need 31 cards.
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
 | ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg)|
-
-### Infography
-
-{% callout type="info" text="1 image is worth 100 words" /%}
-
-![cards mapping](/images/games/hanamikoji/hanamikoji.jpg)
 
 ## Usage
 
