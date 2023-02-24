@@ -1,5 +1,6 @@
 ---
 import type { gameSchema } from 'src/lib/markdoc/frontmatter.schema'
+import { getCompatibility } from 'src/utils/compatibility'
 import type { z } from 'zod'
 
 type GameSchema = z.infer<typeof gameSchema>
@@ -10,34 +11,10 @@ interface Props {
 }
 
 const { game, mapping } = Astro.props
-
-const compatibilities = {
-  0: 'Incompatible',
-  1: 'Very bad',
-  2: 'Bad',
-  3: 'Good',
-  4: 'Very good',
-  5: 'Exelent',
-} as const
-
-const getCompatibility = (
-  value: number
-): (typeof compatibilities)[keyof typeof compatibilities] | null => {
-  if (
-    value !== 0 &&
-    value !== 1 &&
-    value !== 2 &&
-    value !== 3 &&
-    value !== 4 &&
-    value !== 5
-  )
-    return null
-  return compatibilities[value]
-}
 ---
 
 <div
-  class="bg-stone-200 text-black dark:bg-[#0d1115] dark:text-white flex flex-wrap justify-center p-6 gap-6 rounded-2xl"
+  class="bg-white-200 text-black dark:bg-[#0d1115] dark:border-[#192129] shadow-lg border dark:shadow-none border-stone-200 dark:text-white flex flex-wrap justify-center p-6 gap-6 rounded-2xl"
 >
   <img class="grow-0 m-0 max-h-64 max-w-[50vw] rounded" src={game.image} />
   <div class="grow basis-40">

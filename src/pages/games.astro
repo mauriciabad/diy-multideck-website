@@ -4,6 +4,7 @@ import { gameSchema } from '../lib/markdoc/frontmatter.schema'
 import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
+import { getCompatibility } from 'src/utils/compatibility'
 
 const posts = await readAll({
   directory: 'games',
@@ -20,34 +21,47 @@ const sortedPosts = posts.sort(
 <PageLayout>
   <PageMeta title={`Games | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
-    <ul>
+    <h1
+      class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-8 overflow-hidden"
+    >
+      How to <span class="whitespace-nowrap"
+        >play
+        <span
+          class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
+          aria-label="any game"
+        >
+          ___
+        </span>
+        ?</span
+      >
+      <span class="block text-2xl mt-2 font-bold tracking-tight"
+        >With the DIY Multideck</span
+      >
+    </h1>
+    <ul class="unset space-y-4">
       {
-        sortedPosts.map((post) => {
-          const formattedDate = new Date(
-            post.frontmatter.post.date
-          ).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })
-          return (
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-              <div class="title">
-                <a
-                  href={`/games/${post.slug}`}
-                  class="unset hover:text-text-link"
-                >
-                  {post.frontmatter.game.name}
-                </a>
+        sortedPosts.map(({ frontmatter: { game, mapping }, slug }) => (
+          <li class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none">
+            <a
+              href={`/games/${slug}`}
+              class="flex unset hover:text-text-link items-center gap-4 p-2"
+            >
+              <img
+                class="grow-0 m-0 max-h-24 max-w-[6rem] rounded"
+                src={game.image}
+              />
+              <div class="leading-normal">
+                <span class="block">{game.name}</span>
+                <div class="font-normal text-base text-stone-700 dark:text-[#8da1b6] leading-inherit">
+                  <span class="block">
+                    {getCompatibility(mapping.compatibility)} compatibility
+                  </span>
+                  <span class="block">{mapping.requiredCardsCount} cards</span>
+                </div>
               </div>
-              <div class="text-text-muted text-sm italic">
-                <time datetime={post.frontmatter.post.date.toISOString()}>
-                  {formattedDate}
-                </time>
-              </div>
-            </li>
-          )
-        })
+            </a>
+          </li>
+        ))
       }
     </ul>
   </section>
