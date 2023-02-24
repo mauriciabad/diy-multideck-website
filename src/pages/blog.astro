@@ -20,7 +20,16 @@ const sortedPosts = posts.sort(
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
-    <ul>
+    <h1
+      class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-8 overflow-hidden"
+    >
+      Blog
+    </h1>
+
+    <p class="">
+      Sorry, there are <strong>no posts</strong> yet, come back later.
+    </p>
+    <!-- <ul>
       {
         sortedPosts.map((post) => {
           const formattedDate = new Date(
@@ -49,6 +58,6 @@ const sortedPosts = posts.sort(
           )
         })
       }
-    </ul>
+    </ul> -->
   </section>
 </PageLayout>
