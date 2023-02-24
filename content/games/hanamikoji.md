@@ -1,7 +1,7 @@
 ---
 post: 
    date: 2023-02-22
-   ogImagePath: '/images/games/hanamikoji/hanamikoji.jpg'
+   ogImagePath: '/images/games/hanamikoji/guide.jpg'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/158600/hanamikoji'
   image: 'https://cf.geekdo-images.com/uiVZ7QVfRFQx3EBG8eDU8w__itemrep/img/KKHTlNTf8JbSyL9tHwPrC5J_lQM=/fit-in/246x300/filters:strip_icc()/pic6339446.png'
@@ -21,7 +21,7 @@ To play Hanamikoji you need 31 cards.
 
 ### Instructions
 
-![cards mapping](/images/games/hanamikoji/hanamikoji.jpg)
+![cards mapping](/images/games/hanamikoji/guide.jpg)
 
 1. Select 7 suits.
 1. For each suit, pick the following amount of ranks: 3, 3, 3, 4, 4, 5 and 6.
@@ -36,6 +36,7 @@ To play Hanamikoji you need 31 cards.
 
 1. On the cards with rotated numbers (the Geisha cards), draw an arrow pointing up in the drawing area A.
    {% callout type="idea" text="If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark." /%}
+   {% callout type="idea" text="If you have 7 small objects, like coins, you can avoid drawing the arrow, and use the token like in the normal game instea of rotating the card" /%}
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
@@ -44,3 +45,5 @@ To play Hanamikoji you need 31 cards.
 ## Usage
 
 The Victory markers are merged into the Geisha cards. To use them, rotate the Geisha card pointing to the winning player (up or down). In case of a tie, point to wherever are no players (left or right).
+
+{% callout type="idea" text="It's also posible to use coins as Victory marker" /%}

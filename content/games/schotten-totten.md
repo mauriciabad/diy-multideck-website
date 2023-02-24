@@ -1,0 +1,46 @@
+---
+post:
+   date: 2023-02-24
+   ogImagePath: '/images/games/schotten-totten/guide.png'
+game:
+  bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
+  image: 'https://cf.geekdo-images.com/69mwXe7c6HNYmT6S35Y4zg__itemrep/img/TVk3kfPLpSzQrQyHj6ByToSrLS0=/fit-in/246x300/filters:strip_icc()/pic2932872.jpg'
+  name: 'Schotten Totten'
+  description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
+mapping:
+  requiredCardsCount: 64
+  deckVersion: "v0.4b"
+  compatibility: 5
+---
+
+## Cards selection and drawing
+
+To play Schotten Totten you need 64 cards.
+
+{% callout type="idea" text="Ideally use this cards: 1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, and 113." /%}
+
+### Instructions
+
+![cards mapping](/images/games/schotten-totten/guide.png)
+
+1. Select 6 suits.
+1. Pick the ranks 1 to 9 from every chosen suit.
+1. Select 10 cards from any other suit.
+{% callout type="idea" text="Chose a black suit, so it's easy to tell appart the two kind of cards" /%}
+{% callout type="idea" text="Alternatively, chose use 0s of any suit" /%}
+{% callout type="idea" text="But, don't chose any card with a number from 1-9 or it will be confusing" /%}
+1. With those 10 cards. Draw the icons 9 below in the drawing area B, on the rop-left and bottom-right corners. Draw another joker on the remaining card.
+
+   {% callout type="idea" text="You can draw in only one corner to save up space, but it will be inconvinient while playing" /%}
+
+1. Use any other 9 cards facing down as Stones tiles.
+{% callout type="idea" text="Use coins as Stone tiles" /%}
+
+|   |   |   |   |   |
+|:-:|:-:|:-:|:-:|:-:|
+| ![action-1](/images/games/schotten-totten/action-1.png) | ![action-2](/images/games/schotten-totten/action-2.png) | ![action-3](/images/games/schotten-totten/action-3.png) | ![action-4](/images/games/schotten-totten/action-4.png)| ![action-5](/images/games/schotten-totten/action-5.png) |
+| ![action-6](/images/games/schotten-totten/action-6.png) | ![action-7](/images/games/schotten-totten/action-7.png) | ![action-8](/images/games/schotten-totten/action-8.png)| ![action-9](/images/games/schotten-totten/action-9.png)| ![action-9](/images/games/schotten-totten/action-9.png)|
+
+## Usage
+
+The Victory markers are merged into the Geisha cards. To use them, rotate the Geisha card pointing to the winning player (up or down). In case of a tie, point to wherever are no players (left or right).
