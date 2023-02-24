@@ -13,8 +13,6 @@ mapping:
   compatibility: 4
 ---
 
-**TLDR;** Check the [Infography](#infography)
-
 ## Cards selection and drawing
 
 To play Hanamikoji you need 31 cards.
