@@ -9,6 +9,7 @@ game:
   description: "You've got to know when to hold 'em; know when to fold 'em."
 mapping:
   requiredCardsCount: 54
+  requiredDrawingsCount: 0
   deckVersion: "v0.4b"
   compatibility: 5
 ---

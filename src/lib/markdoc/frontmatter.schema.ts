@@ -32,6 +32,7 @@ export const gameSchema = z.object({
   mapping: z.object({
     compatibility: z.number().min(0).max(5).step(1),
     requiredCardsCount: z.number().min(0).step(1).max(120),
+    requiredDrawingsCount: z.number().min(0).step(1).max(120 * 16),
     deckVersion: z.enum(['v0.4b']),
   }),
 });

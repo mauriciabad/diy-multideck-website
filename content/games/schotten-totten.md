@@ -9,13 +9,14 @@ game:
   description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
 mapping:
   requiredCardsCount: 64
+  requiredDrawingsCount: 10
   deckVersion: "v0.4b"
   compatibility: 5
 ---
 
 ## Cards selection and drawing
 
-To play Schotten Totten you need 64 cards plus 9 optional ones and a minimum of 10 drawings, up to 20nfor better playability.
+To play Schotten Totten you need 64 cards plus 9 optional ones and a minimum of 10 drawings, up to 20 for better playability.
 
 {% callout type="idea" text="Ideally use this cards: 1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, and 113." /%}
 

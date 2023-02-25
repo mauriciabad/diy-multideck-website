@@ -9,13 +9,14 @@ game:
   description: "Win the favor of the geishas through careful speculation and bold moves."
 mapping:
   requiredCardsCount: 31
+  requiredDrawingsCount: 31
   deckVersion: "v0.4b"
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play Hanamikoji you need 31 cards.
+To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if you want to play with only cards.
 
 {% callout type="idea" text="Ideally use this cards: 1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, and 113." /%}
 

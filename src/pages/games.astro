@@ -71,7 +71,10 @@ const sortedPosts = posts.sort(
                   <span class="block">
                     {getCompatibility(mapping.compatibility)} compatibility
                   </span>
-                  <span class="block">{mapping.requiredCardsCount} cards</span>
+                  <span class="block">
+                    {mapping.requiredCardsCount} cards -
+                    {mapping.requiredDrawingsCount} drawings
+                  </span>
                 </div>
               </div>
             </a>

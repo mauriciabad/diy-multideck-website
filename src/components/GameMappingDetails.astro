@@ -36,6 +36,12 @@ const { game, mapping } = Astro.props
         {mapping.requiredCardsCount}
       </li>
       <li class="p-0 m-0">
+        <span class="text-stone-700 dark:text-[#8da1b6]"
+          >Required drawings:</span
+        >
+        {mapping.requiredDrawingsCount}
+      </li>
+      <li class="p-0 m-0">
         <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
         {mapping.deckVersion}
       </li>
