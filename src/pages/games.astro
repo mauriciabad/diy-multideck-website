@@ -104,7 +104,17 @@ const sortedPosts = posts.sort(
   searchInput.addEventListener('keyup', () => {
     const elements = document.querySelectorAll<HTMLElement>('[data-searchable]')
     elements.forEach((element) => {
-      const isMatch = element.dataset.searchable?.includes(searchInput.value)
+      const elementTextNormalized =
+        element.dataset.searchable
+          ?.normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '')
+          .toLowerCase() ?? ''
+      const inputTextNormalized = searchInput.value
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+        .toLowerCase()
+      const isMatch = elementTextNormalized.includes(inputTextNormalized)
+
       if (isMatch) {
         element.classList.remove('hidden')
       } else {
