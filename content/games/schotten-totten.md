@@ -37,4 +37,6 @@ To play Schotten Totten you need 64 cards plus 9 optional ones and a minimum of 
 |   |   |   |   |   |
 |:-:|:-:|:-:|:-:|:-:|
 | ![action-1](/images/games/schotten-totten/action-1.png) | ![action-2](/images/games/schotten-totten/action-2.png) | ![action-3](/images/games/schotten-totten/action-3.png) | ![action-4](/images/games/schotten-totten/action-4.png)| ![action-5](/images/games/schotten-totten/action-5.png) |
+| Mud Fight  |  Banshee |   Strategist | Traiter  | Recruiter  |
 | ![action-6](/images/games/schotten-totten/action-6.png) | ![action-7](/images/games/schotten-totten/action-7.png) | ![action-8](/images/games/schotten-totten/action-8.png)| ![action-9](/images/games/schotten-totten/action-9.png)| ![action-9](/images/games/schotten-totten/action-9.png)|
+|  Spy |  Shield-Bearer | Blind-Man’s Bluf  | Joker 1/2  |  Joker 2/2 |
