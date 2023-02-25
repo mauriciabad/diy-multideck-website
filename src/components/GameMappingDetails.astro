@@ -26,25 +26,39 @@ const { game, mapping } = Astro.props
     >
     <p>{game.description}</p>
 
-    <ul class="list-none p-0 m-0">
-      <li class="p-0 m-0">
-        <span class="text-stone-700 dark:text-[#8da1b6]">Compatibility:</span>
-        {getCompatibility(mapping.compatibility)} ({mapping.compatibility}/5)
-      </li>
-      <li class="p-0 m-0">
-        <span class="text-stone-700 dark:text-[#8da1b6]">Required cards:</span>
-        {mapping.requiredCardsCount}
-      </li>
-      <li class="p-0 m-0">
-        <span class="text-stone-700 dark:text-[#8da1b6]"
-          >Required drawings:</span
-        >
-        {mapping.requiredDrawingsCount}
-      </li>
-      <li class="p-0 m-0">
-        <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
-        {mapping.deckVersion}
-      </li>
-    </ul>
+    <div class="flex items-center justify-center flex-wrap gap-4">
+      <ul class="list-none p-0 m-0 grow basis-52">
+        <li class="p-0 m-0">
+          <span class="text-stone-700 dark:text-[#8da1b6]">Compatibility:</span>
+          {getCompatibility(mapping.compatibility)} ({mapping.compatibility}/5)
+        </li>
+        <li class="p-0 m-0">
+          <span class="text-stone-700 dark:text-[#8da1b6]">Required cards:</span
+          >
+          {mapping.requiredCardsCount}
+        </li>
+        <li class="p-0 m-0">
+          <span class="text-stone-700 dark:text-[#8da1b6]"
+            >Required drawings:</span
+          >
+          {mapping.requiredDrawingsCount}
+        </li>
+        <li class="p-0 m-0">
+          <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
+          {mapping.deckVersion}
+        </li>
+      </ul>
+      {
+        game.rules && (
+          <a
+            href={game.rules}
+            class="unset w-24 h-24 leading-none gap-1 pb-2 !bg-none flex flex-col items-center justify-center rounded-full shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 text-white font-bold uppercase tracking-wider"
+          >
+            <i class="ti ti-file-text text-3xl block" />
+            <span>Rules</span>
+          </a>
+        )
+      }
+    </div>
   </div>
 </div>

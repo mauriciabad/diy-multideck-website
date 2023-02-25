@@ -4,6 +4,7 @@ post:
    ogImagePath: '/images/games/hanamikoji/guide.jpg'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/158600/hanamikoji'
+  rules: 'https://boardgamegeek.com/filepage/131424/hanamikoji-english-rules'
   image: 'https://cf.geekdo-images.com/uiVZ7QVfRFQx3EBG8eDU8w__itemrep/img/KKHTlNTf8JbSyL9tHwPrC5J_lQM=/fit-in/246x300/filters:strip_icc()/pic6339446.png'
   name: 'Hanamikoji'
   description: "Win the favor of the geishas through careful speculation and bold moves."

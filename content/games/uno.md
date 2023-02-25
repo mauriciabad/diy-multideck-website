@@ -4,6 +4,7 @@ post:
    ogImagePath: '/images/games/uno/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/2223/uno'
+  rules: 'https://www.unorules.org/'
   image: 'https://cf.geekdo-images.com/6V2cU_EV_vPdE_C3MEyMkw__itemrep/img/5PllXAcUEihn4JdqHc9YM2qfU8M=/fit-in/246x300/filters:strip_icc()/pic6332152.png'
   name: 'UNO'
   description: "Get rid of your cards first, but don't forget to say \"UNO!\""
