@@ -21,7 +21,7 @@ export const blogSchema = z.object({
 export const gameSchema = z.object({
   game: z.object({
     bgg: z.string().url(),
-    image: z.string().url(),
+    image: z.union([z.string().url(), z.string().regex(/^\/images\/games(\/[\w\d-_]+)+\.[\w\d]+$/, 'Must be a relative path')]),
     name: z.string(),
     description: z.string(),
   }),
