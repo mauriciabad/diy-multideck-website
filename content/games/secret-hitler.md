@@ -62,4 +62,5 @@ To play Secret Hitler you need 30 cards (plus 20 optionally) and 15 drawings (in
 ## Usage
 
 - For Party Membership cards, just get an unused card that has a coin flip with tails (`X`), if you're a fascist, or heads (`O`), if you're a liveral.
-   {% callout type="idea" text="If you show the bottom of your Secret Role card, the other player may know if you're hittlet because she memorised the card in wich it's written. So, pic a new card every time." /%}
+   {% callout type="idea" text="If you show the bottom of your Secret Role card, the other player may know if you're Hitler because she memorised the card in wich it's written. So, pic a new card every time." /%}
+- Use 2 pairs of card backs to count approved policies. Make one pair count nevative points, and the other positive points. The negative points count approved fascist policies and the positive points count approved liveral policies.
