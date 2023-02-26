@@ -32,6 +32,7 @@ To play Secret Hitler you need 30 cards (plus 20 optionally) and 15 drawings (in
    {% callout type="idea" text="To save up drawings, you could not draw this, and instead use the coin flips from the cards. Heads (O) would represent \"Liveral\" and tails (X) \"Fascist\". Writing \"Hitler\" is unavoidable. But be maindful, doing this will hurt the playability." /%}
 1. Select any 2 other cards and, on the drawing area D, write "1st." (represents the President) and "2nd." (represents the Chancellor) on each card.
    {% callout type="idea" text="It's recommended to use generic terms like \"1st.\" and \"2nd.\" over game-specific terms like \"President\" and \"Chancellor\" because this way you can re-use the same cards for many games." /%}
+   {% callout type="idea" text="Ideally pick ranks 1 and 2 from the black suit." /%}
 1. Pic any 11 other cards with a tails coin flip (`X`) to use as "Fascist Policy tiles".
    1. \[Optional\] Pic 10 more to use as "Ballot cards".
 1. Pic any 6 other cards with a tails coin flip (`O`) to use as "Liveral Policy tiles".
