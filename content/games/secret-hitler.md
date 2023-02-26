@@ -28,7 +28,7 @@ To play Secret Hitler you need 30 cards (plus 20 optionally) and 15 drawings (in
    {% callout type="idea" text="It's recommended to use generic terms like \"Good team\" and \"Bad team\" over game-specific terms like \"Fascist\" and \"Liveral\" because this way you can re-use the same cards for many games. In this case, with the game \"The resistance: Avalon\"." /%}
 1. Select 4 ranks from 1 suit and, on the drawing area D, write "Bad team" on 3 cards, and "Hitler" on 1 card.
    {% callout type="idea" text="Ideally the red suit." /%}
-   {% callout type="idea" text="Ideally pick ranks that have a tails coin flip in the same card." /%}
+   {% callout type="idea" text="Ideally pick ranks that have a tails coin flip in the same card (odd rank numbers)." /%}
    {% callout type="idea" text="To save up drawings, you could not draw this, and instead use the coin flips from the cards. Heads (O) would represent \"Liveral\" and tails (X) \"Fascist\". Writing \"Hitler\" is unavoidable. But be maindful, doing this will hurt the playability." /%}
 1. Select any 2 other cards and, on the drawing area D, write "1st." (represents the President) and "2nd." (represents the Chancellor) on each card.
    {% callout type="idea" text="It's recommended to use generic terms like \"1st.\" and \"2nd.\" over game-specific terms like \"President\" and \"Chancellor\" because this way you can re-use the same cards for many games." /%}
