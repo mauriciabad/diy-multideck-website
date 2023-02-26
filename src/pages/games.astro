@@ -47,7 +47,9 @@ const sortedPosts = posts.sort(
         placeholder="Search"
         aria-label="Search"
       />
-      <i class="ti ti-search absolute text-[1.5rem] top-3 right-3"></i>
+      <i
+        class="ti ti-search absolute text-[1.5rem] top-3 right-3 pointer-events-none"
+      ></i>
     </div>
 
     <ul class="unset space-y-4 mt-8">
@@ -62,7 +64,7 @@ const sortedPosts = posts.sort(
               class="flex unset hover:text-text-link items-center gap-4 p-2"
             >
               <img
-                class="grow-0 m-0 max-h-24 max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
+                class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
                 src={game.image}
               />
               <div class="leading-normal">
