@@ -47,7 +47,7 @@ To play Secret Hitler you need 30 cards (plus 20 optionally) and 15 drawings (in
 
 #### Game board
 
-![cboard drawing](/images/games/secret-hitler/drawing-board.png)
+![board drawing](/images/games/secret-hitler/drawing-board.png)
 
 |   |   |   |   |   |
 |:-:|:-:|:-:|:-:|:-:|

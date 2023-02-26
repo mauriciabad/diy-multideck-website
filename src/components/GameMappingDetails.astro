@@ -39,7 +39,9 @@ const { game, mapping } = Astro.props
         </li>
         <li class="p-0 m-0">
           <span class="text-stone-700 dark:text-[#8da1b6]"
-            >Required drawings:</span
+            >Required drawing{
+              mapping.requiredDrawingsCount === 1 ? '' : 's'
+            }:</span
           >
           {mapping.requiredDrawingsCount}
         </li>

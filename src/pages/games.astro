@@ -75,7 +75,10 @@ const sortedPosts = posts.sort(
                   </span>
                   <span class="block">
                     {mapping.requiredCardsCount} cards -
-                    {mapping.requiredDrawingsCount} drawings
+                    {mapping.requiredDrawingsCount}{' '}
+                    <span>
+                      drawing{mapping.requiredDrawingsCount === 1 ? '' : 's'}
+                    </span>
                   </span>
                 </div>
               </div>
