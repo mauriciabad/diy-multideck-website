@@ -22,31 +22,36 @@ const { game, mapping } = Astro.props
   />
   <div class="grow basis-40">
     <a href={game.bgg} class="!bg-none text-current text-3xl"
-      ><span>{game.name}</span><i class="ti ti-external-link ml-1"></i></a
+      ><span>{game.name}</span><i
+        class="text-stone-500 dark:text-[#8da1b6] ti ti-external-link ml-1"
+      ></i></a
     >
     <p>{game.description}</p>
 
     <div class="flex items-center justify-center flex-wrap gap-4">
       <ul class="list-none p-0 m-0 grow basis-52">
         <li class="p-0 m-0">
-          <span class="text-stone-700 dark:text-[#8da1b6]">Compatibility:</span>
+          <span class="text-stone-700 dark:text-[#8da1b6]"
+            ><i class="ti ti-circle-square"></i> Compatibility:</span
+          >
           {getCompatibility(mapping.compatibility)} ({mapping.compatibility}/5)
         </li>
         <li class="p-0 m-0">
-          <span class="text-stone-700 dark:text-[#8da1b6]">Required cards:</span
+          <span class="text-stone-700 dark:text-[#8da1b6]"
+            ><i class="ti ti-play-card"></i> Min. cards:</span
           >
           {mapping.requiredCardsCount}
         </li>
         <li class="p-0 m-0">
           <span class="text-stone-700 dark:text-[#8da1b6]"
-            >Required drawing{
-              mapping.requiredDrawingsCount === 1 ? '' : 's'
-            }:</span
+            ><i class="ti ti-brush"></i> Min. drawings:</span
           >
           {mapping.requiredDrawingsCount}
         </li>
         <li class="p-0 m-0">
-          <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
+          <span class="text-stone-700 dark:text-[#8da1b6]"
+            ><i class="ti ti-clock"></i> Deck version:</span
+          >
           {mapping.deckVersion}
         </li>
       </ul>
