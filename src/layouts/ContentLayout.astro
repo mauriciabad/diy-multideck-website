@@ -68,6 +68,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
         </h1>
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
+        <h2 class="mt-6 mb-2 text-3xl font-bold" id="#comments">Comments</h2>
         <Comments />
       </section>
     </main>
