@@ -36,12 +36,12 @@ const ogImageAbsoluteUrl = post.ogImagePath
   ? new URL(post.ogImagePath, SITE_URL).toString()
   : undefined
 
-const title = ['How to play ', game.name, ' with the DIY Multideck'] as const
+const title = ['How to play ', game.title, ' with the DIY Multideck'] as const
 ---
 
 <ContentLayout title={title} date={post.date}>
   <GamePostMeta
-    title={`${game.name} | How to play with the DIY Multideck tutorial`}
+    title={`${game.title} | How to play with the DIY Multideck tutorial`}
     description={title.join('')}
     publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}

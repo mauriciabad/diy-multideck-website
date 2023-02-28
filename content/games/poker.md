@@ -6,7 +6,7 @@ game:
   bgg: 'https://boardgamegeek.com/boardgame/1115/poker'
   rules: 'https://www.pokerstars.es/en/poker/games/rules/'
   image: '/images/games/poker/cover.jpg'
-  name: 'Poker'
+  title: 'Poker'
   description: "You've got to know when to hold 'em; know when to fold 'em."
 mapping:
   requiredCardsCount: 54

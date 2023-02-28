@@ -6,7 +6,7 @@ game:
   bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
   rules: 'https://boardgamegeek.com/filepage/137335/english-rules'
   image: 'https://cf.geekdo-images.com/69mwXe7c6HNYmT6S35Y4zg__itemrep/img/TVk3kfPLpSzQrQyHj6ByToSrLS0=/fit-in/246x300/filters:strip_icc()/pic2932872.jpg'
-  name: 'Schotten Totten'
+  title: 'Schotten Totten'
   description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
 mapping:
   requiredCardsCount: 64

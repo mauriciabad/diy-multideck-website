@@ -6,7 +6,7 @@ game:
   bgg: 'https://boardgamegeek.com/boardgame/140934/arboretum'
   rules: 'https://boardgamegeek.com/filepage/165094/english-rules-arboretum-renegade-game-studios'
   image: 'https://cf.geekdo-images.com/XYOn10oXBrDqHySf0jvnyQ__itemrep/img/RRL2F2DBTNG4cO4c_oJIOlfGPes=/fit-in/246x300/filters:strip_icc()/pic4172124.png'
-  name: 'Arboretum'
+  title: 'Arboretum'
   description: "Build the Arboretum of your dreams, and prevent your rival from building theirs."
 mapping:
   requiredCardsCount: 80

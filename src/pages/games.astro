@@ -66,7 +66,7 @@ const sortedPosts = posts.sort(
       {
         sortedPosts.map(({ frontmatter: { game, mapping }, slug }) => (
           <li
-            data-searchable={game.name}
+            data-searchable={game.title}
             class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
           >
             <a
@@ -78,7 +78,7 @@ const sortedPosts = posts.sort(
                 src={game.image}
               />
               <div class="leading-normal">
-                <span class="block">{game.name}</span>
+                <span class="block">{game.title}</span>
                 <div class="font-normal text-base text-stone-700 dark:text-[#8da1b6] leading-inherit">
                   <span class="block">
                     {getCompatibility(mapping.compatibility)} compatibility

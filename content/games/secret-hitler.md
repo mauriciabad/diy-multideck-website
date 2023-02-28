@@ -6,7 +6,7 @@ game:
   bgg: 'https://boardgamegeek.com/boardgame/188834/secret-hitler'
   rules: 'https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf'
   image: 'https://cf.geekdo-images.com/rAQ3hIXoH6xDcj41v9iqCg__itemrep/img/EQ1jwjZYnucHSizVlzHE8DiyEQI=/fit-in/246x300/filters:strip_icc()/pic5164305.jpg'
-  name: 'Secret Hitler'
+  title: 'Secret Hitler'
   description: "In pre-WW2 Germany, Liberals and Fascists square off in an intrigue-filled parliament."
 mapping:
   requiredCardsCount: 30

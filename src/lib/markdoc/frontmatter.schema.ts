@@ -23,7 +23,7 @@ export const gameSchema = z.object({
     bgg: z.string().url(),
     rules: z.string().url().optional(),
     image: z.union([z.string().url(), z.string().regex(/^\/images\/games(\/[\w\d-_]+)+\.[\w\d]+$/, 'Must be a relative path')]),
-    name: z.string(),
+    title: z.string(),
     description: z.string(),
   }),
   post: z.object({

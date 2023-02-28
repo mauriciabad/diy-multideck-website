@@ -6,7 +6,7 @@ game:
   bgg: 'https://boardgamegeek.com/boardgame/244992/mind'
   rules: 'https://boardgamegeek.com/filepage/164796/english-rules'
   image: 'https://cf.geekdo-images.com/q_JGK291hrhnhiRB0667oA__itemrep/img/w6x_ahGLQVe2u6trDx0kO91OprM=/fit-in/246x300/filters:strip_icc()/pic3979766.png'
-  name: 'The Mind'
+  title: 'The Mind'
   description: "Play your cards in ascending order without communicating. Timing is key!"
 mapping:
   requiredCardsCount: 104
