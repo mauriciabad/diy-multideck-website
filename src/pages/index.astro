@@ -3,6 +3,15 @@ import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
+// import { readOne } from 'src/lib/markdoc/read'
+// import { z } from 'zod'
+// import Renderer from '../components/Renderer.astro'
+
+// const { content } = await readOne({
+//   directory: 'others',
+//   slug: 'home',
+//   frontmatterSchema: z.object({}),
+// })
 ---
 
 <PageLayout>
@@ -26,93 +35,878 @@ import { SITE_TITLE } from '../config'
         </h1>
         <p class="text-2xl pb-4">Draw in your cards!</p>
       </div>
-      <div>
+
+      <article>
         <p>
           The DIY multideck is a deck of 120 poker-sized playing cards that lets
-          you play many games by writing in the cards and using a bit of
-          imagination.
-        </p>
-
-        <h2>Features</h2>
-        <ul>
-          <li>A...</li>
-          <li>B...</li>
-          <li>C...</li>
-        </ul>
-
-        <h3>Letter</h3>
-        <p>
-          It can be: <strong>latin</strong> letter, <strong>other</strong> letter
-          or
-          <strong>symbol</strong>.
-        </p>
-        <ul>
-          <li>
-            3 × <span
-              class="bg-black/5 break-words px-2 rounded dark:bg-black/20"
-              >ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
+          you play many games by using a bit of imagination and sometimes
+          drawing in the cards. The cards have
+        </p><h2 id="feature-list" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Feature list"
+              href="#feature-list"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
             >
-          </li>
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Feature list</span>
+        </h2><ul>
           <li>
-            1 × <span
-              class="bg-black/5 break-words px-2 rounded dark:bg-black/20"
-              >ÁÅÄĄÆĆČÇÐÉĖĘĞÍĮŁŃÑÓÖŐÕØŚŠŞẞÚÜŰŲŪÝŹŽŻÞ</span
-            >
+            Corners:<ul>
+              <li>12 suits of 10 ranks (top-left).</li><li>
+                8 suits of 15 ranks (bottom-right).
+              </li><li>4 suits of 30 ranks (bottom-left).</li><li>
+                Numbers from 0 to 119 (top-right).
+              </li>
+            </ul>
+          </li><li>
+            Draw in the cards: words, points, icons, tiles, boards, etc.<ul>
+              <li>
+                16 drawing slots in each card, grouped in 5 drawing areas.<ul>
+                  <li><p>A: Top and bottom, 1 big or 2 small slots.</p></li><li>
+                    <p>B: Below the suits, 1 small slot.</p>
+                  </li><li><p>C: Below area A, 3 small slots.</p></li><li>
+                    <p>D: Center grid, 4 big rectangular slots.</p>
+                  </li><li><p>E: Card center, circle slot.</p></li>
+                </ul>
+              </li>
+            </ul>
+          </li><li>
+            Edge marks, to represent paths. 12 sets of 10 combinations (all).
+          </li><li>
+            Random numbers / Dice throws:<ul>
+              <li>Out of: 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30.</li><li>
+                Polyhedral dice set for GPG/DND/MTG (D4, D6, D8, D10, D12, D20).
+              </li><li>Coin flip</li>
+            </ul>
+          </li><li>
+            Random letter<ul>
+              <li>3 times the alphabet.</li><li>
+                36 other letters to make the abecedary of 35 languages.
+              </li><li>5 symbols to use as wildcards or others.</li>
+            </ul>
+          </li><li>
+            Counting system with the back cards. For counting points, coins,
+            lives, etc.<ul>
+              <li>Stacking method. Very clear, but multiple cards used.</li><li>
+                Pointing method. Only 2 cards used, but less clear.
+              </li>
+            </ul>
+          </li><li>
+            Usability<ul>
+              <li>5 explanation cards.</li><li>5 notes cards.</li><li>
+                Distinct shapes and colors for the suits (color-blind friendly).
+              </li><li>High contrast in important elements.</li><li>
+                Standard poker card size.
+              </li><li>Hint below the suit.</li><li>
+                Drawing slots:<ul>
+                  <li>
+                    Designed to let you draw twice, upright and upside-down, to
+                    make cards work both ways.
+                  </li><li>Big enough for handwriting, but not too much.</li><li
+                  >
+                    Variated shapes strategically placed, to cover a wide
+                    variety of needs and keep organization.
+                  </li>
+                </ul>
+              </li><li>
+                Systems to avoid confusions when playing:<ul>
+                  <li>
+                    All card corner's numbers match in the units digit.
+                  </li><li>
+                    All cards from 8 suits out of 12, match the number in the
+                    top left and bottom right corner.
+                  </li><li>
+                    Card number unit digit is highlighted, and always matches
+                    the top-left corner.
+                  </li><li>
+                    When the corners don't match, the suit has a black border or
+                    the rank is a letter.
+                  </li>
+                </ul>
+              </li><li></li>
+            </ul>
           </li>
+        </ul><h2 id="features-in-depth" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Features In-Depth"
+              href="#features-in-depth"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Features In-Depth</span>
+        </h2><h3 id="why-drawing" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Why drawing?"
+              href="#why-drawing"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Why drawing?</span>
+        </h3><p>
+          Even tough it may seem like by drawing you'll destroy your cards,
+          they'll look very ugly and you'll have wasted them, the truth is the
+          opposite: <strong
+            >if you don't do draw on them, you're wasting the cards</strong
+          >. Because they are meant to provide a solid base to play many games
+          (the card corners) and use the remaining space to add the special
+          cards that make each game unique.
+        </p><p>
+          I decided not to fill the cards with information, about my favorite
+          games, and force you to adapt to my criteria. But instead, <strong
+            >let you choose what games you want to have in your deck</strong
+          >. This ensures all the information in the cards is used in some way,
+          and makes them so much minimalistic and versatile.
+        </p><p>
+          In this website, there's a section with many game mapping
+          instructions, hopefully you'll enjoy some of them. And if a game you
+          want is not there, just think by yourself how to map it, and if you
+          feel generous, submit a proposal.
+        </p><h3 id="drawing-areas" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Drawing areas"
+              href="#drawing-areas"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Drawing areas</span>
+        </h3><p>
+          <img
+            src="/images/home/drawing-areas.png"
+            style="width: 750px;"
+            alt="drawing-areas"
+          />
+        </p><h3 id="usability" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Usability"
+              href="#usability"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Usability</span>
+        </h3><ul>
           <li>
-            1 × <span
-              class="bg-black/5 break-words px-2 rounded dark:bg-black/20"
-              >*•@#$</span
-            >
+            66% (80/120) of the cards match in the top-left and bottom-right
+            corners.<ul>
+              <li>8 suits from 0 to 9 match corners.</li><li>
+                The suits with a black border (4 suits from 0 to 9) or ranks
+                with a letter () don't have matching corners.
+              </li>
+            </ul>
           </li>
-        </ul>
-
-        <blockquote>
-          <strong>Supported 35 languages</strong>
-          <br />
-
-          English, Afrikaans, Arabic, Bulgarian, Catalan, Croatian, Danish,
-          Dutch, Estonian, Faroese, Finnish, French, German, Greek, Hebrew,
-          Hungarian, Icelandic, Indonesian, Irish, Italian, Latin, Lithuanian,
-          Malagasy, Malay, Norwegian, Polish, Portuguese, Romanian, Russian,
-          Slovenian, Spanish, Swedish, Turkish, Ukrainian, Welsh
-        </blockquote>
-
-        <h2>Is it legal?</h2>
-        <p>Yes!</p>
-        <p>
-          Board games are generally not protected intelectual property. What is
-          protected, with copyright, are the assets they use, like: cards,
-          tokens, boards or rulebooks.
-        </p>
-        <p>
+        </ul><h3 id="path" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Path"
+              href="#path"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Path</span>
+        </h3><p><img src="/images/home/paths.svg" alt="paths" /></p><p>
+          All combinations, allowing rotations, 12 times. Or all combinations,
+          not allowing rotations, 6 times.
+        </p><p>
+          All suits (the ones from 0 to 9), have the same set of paths.
+        </p><h3
+          id="random-numbers-or-dice-throws"
+          class="group flex -ml-[1rem]"
+        >
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Random numbers or Dice throws"
+              href="#random-numbers-or-dice-throws"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Random numbers or Dice throws</span>
+        </h3><p>
+          <img src="/images/home/random-numbers.svg" alt="random-numbers" />
+        </p><p>
+          Each card has 12 random numbers. The random numbers are out of: <strong
+            >3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30</strong
+          >.
+        </p><p>
+          This can be used as dice throws. The deck includes the <strong
+            >DND dice set</strong
+          > in the cards (D4, D6, D8, D10, D12, D20)
+        </p><p>
+          The random number, actually is the result of the modulus operation,
+          from <a href="https://en.wikipedia.org/wiki/Modular_arithmetic"
+            >modular arithmetic</a
+          >, between the card number (top right corner) and the total (bottom
+          number in the fraction). This is to ensure all values are equally
+          distributed.
+        </p><p>
+          In 2 cases, there are some random numbers that have slightly more
+          chances of appearing than others. Because 7 and 9 are not factors of
+          120, there are extra values.
+        </p><ul>
+          <li>
+            For 7, there's an extra 7 in the deck. So obtaining a 7 is 0.83%
+            more likely than a another number, negligible.
+          </li><li>
+            For 9, there's an extra 9, 1, and 2 in the deck. So obtaining a 9,
+            1, or 2 is 0.83% more likely than a another number, negligible.
+          </li>
+        </ul><p>
+          If, for some weird reason, you need absolute precision when drawing a
+          random number out of 7, 9, or a total not in the cards, don't use this
+          feature. Instead, select all the cards with the possible results you
+          want in the card number (top right corner), shuffle and pick one.
+        </p><h4 id="coin-flip" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Coin flip"
+              href="#coin-flip"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Coin flip</span>
+        </h4><p><img src="/images/home/coin-flip.svg" alt="coin-flip" /></p><p>
+          There's also a coin flip in the middle of the random numbers.
+        </p><p>
+          When the card number is even, it's a head, and when the card number is
+          odd, it's tails.
+        </p><h3 id="letter" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Letter"
+              href="#letter"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Letter</span>
+        </h3><p><img src="/images/home/letters.svg" alt="letters" /></p><p>
+          At the bottom center of every card there's a letter. It can be a Latin
+          letter, an other letter or a symbol. These are the letters from every
+          set:
+        </p><ul>
+          <li><strong>Latin</strong> letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ</li><li
+          >
+            <strong>Other</strong> letters: ÁÅÄĄÆĆČÇÐÉĖĘĞÍĮŁŃÑÓÖŐÕØŚŠŞẞÚÜŰŲŪÝŹŽŻÞ
+          </li><li><strong>Symbols</strong>: *•@#$</li>
+        </ul><p>The "Latin letters" are repeated 3 times.</p><p>
+          The "Other letters" are there to complete the abecedary of 35
+          languages. This are the supported language abecedaries: English,
+          Afrikaans, Arabic, Bulgarian, Catalan, Croatian, Danish, Dutch,
+          Estonian, Faroese, Finnish, French, German, Greek, Hebrew, Hungarian,
+          Icelandic, Indonesian, Irish, Italian, Latin, Lithuanian, Malagasy,
+          Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovenian,
+          Spanish, Swedish, Turkish, Ukrainian, Welsh.
+        </p><p>The "Symbols" an be used as wildcards.</p><h3
+          id="counting"
+          class="group flex -ml-[1rem]"
+        >
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Counting"
+              href="#counting"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Counting</span>
+        </h3><p>
+          <img
+            src="/images/home/counting.png"
+            style="zoom: 25%"
+            alt="counting"
+          />
+        </p><p>
+          The back side of the cards also has utility, they serve as counters.
+        </p><p>
+          You can add a title to the counter by writing it in the area A of a
+          card and putting it below. Don't overuse this technique or you'll run
+          out of space, for example, if every player only has to count coins,
+          don't put titles on the counters, it's assumed they are points.
+        </p><ul>
+          <li>
+            <strong>Stacking method</strong>: Very clear, but multiple cards
+            used.<ul>
+              <li>
+                Stack cards upright (worth 1) or upside-down (worth 5), the sum
+                is the result.
+              </li>
+            </ul>
+          </li><li>
+            <strong>Pointing method</strong>: Only 2 cards used, but less clear.<ul
+            >
+              <li>
+                Put 2 cards on top of each other, and align the arrow from the
+                card in front to point a number in the card on the back, the
+                pointed number is the result.
+              </li><li>
+                You can rotate the front card, and count negative or positive
+                points.
+              </li>
+            </ul>
+          </li>
+        </ul><h2 id="cards-in-the-deck" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Cards in the deck"
+              href="#cards-in-the-deck"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Cards in the deck</span>
+        </h2><h3 id="card-fronts" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Card fronts"
+              href="#card-fronts"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Card fronts</span>
+        </h3><p>
+          The cards can be arranged in many ways. These are the two most
+          representative arrangement. On each arrangement, the cards are rotated
+          180 degrees compared to the other one.
+        </p><h4 id="groups-of-10" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Groups of 10"
+              href="#groups-of-10"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Groups of 10</span>
+        </h4><blockquote>
+          <p>Up-left corner: 12 suits of 10 ranks</p><p>
+            Up-right corner: Numbers from 0 to 119
+          </p><p>Borders: 12 sets of 10 paths</p>
+        </blockquote><p>
+          This arrangement also displays the numbers in ascending order. Also,
+          the letters are in alphabetical order, and the special letters and
+          symbols are at the end.
+        </p><p>
+          <img
+            src="/images/home/preview-groups-of-10.png"
+            alt="preview-groups-of-10"
+          />
+        </p><h4 id="groups-of-15" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Groups of 15"
+              href="#groups-of-15"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Groups of 15</span>
+        </h4><blockquote>
+          <p>Up-left corner: 8 suits of 15 ranks</p><p>
+            Up-right corner: 4 suits of 30 ranks
+          </p>
+        </blockquote><p>
+          <img
+            src="/images/home/preview-groups-of-15.png"
+            alt="preview-groups-of-15"
+          />
+        </p><h3 id="explanation-cards" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Explanation cards"
+              href="#explanation-cards"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Explanation cards</span>
+        </h3><p>
+          The cards are printed in grids of 3x3 in DIN A4 sheets, so to print
+          120 cards, there are 6 spaces left. These spaces are used to add a
+          cover card and 5 explanation cards.
+        </p><p>
+          The information is very condensed because there isn't much space. So
+          they are meant to be a reminder, not a complete explanation.
+        </p><p>![](/images/home/special-card</p><h3
+          id="card-backs"
+          class="group flex -ml-[1rem]"
+        >
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Card backs"
+              href="#card-backs"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Card backs</span>
+        </h3><p>
+          <img src="/images/home/back-cards.png" alt="back-cards" />
+        </p><h4 id="notes-cards" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Notes cards"
+              href="#notes-cards"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Notes cards</span>
+        </h4><p>Use them to keep any useful information.</p><p>
+          Some use cases are:
+        </p><ul>
+          <li>Player aid.</li><li>Simplified game board.</li><li>
+            Game setup (what cards, how many per player...).
+          </li><li>Definition/Diagram of specific rule or mechanic.</li><li>
+            List of games in the deck.
+          </li>
+        </ul><h4 id="regular-card-backs" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Regular card backs"
+              href="#regular-card-backs"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Regular card backs</span>
+        </h4><p>
+          50% of the regular card backs are inverted, in a non-alternating way.
+          Otherwise, if someone was holding a card upright, the other players
+          would know he's holding not holding a letter (XAJQK) for sure.
+        </p><h2 id="other-details" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Other details"
+              href="#other-details"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Other details</span>
+        </h2><h3 id="suit-names" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Suit names"
+              href="#suit-names"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Suit names</span>
+        </h3><p>The name of the suits are:</p><table>
+          <thead
+            ><tr
+              ><th align="center"></th><th align="center"></th><th
+                align="center"></th><th align="center"></th></tr
+            ></thead
+          ><tbody
+            ><tr
+              ><td align="center">Clubs</td><td align="center">Drops</td><td
+                align="center">Hearts</td
+              ><td align="center">Leaves</td></tr
+            ><tr
+              ><td align="center">Spades</td><td align="center">Magic</td><td
+                align="center">Diamonds</td
+              ><td align="center">Crowns</td></tr
+            ><tr
+              ><td align="center">Poops</td><td align="center">Bubbles</td><td
+                align="center">Flowers</td
+              ><td align="center">Candies</td></tr
+            ><tr
+              ><td align="center">Mosaics</td><td align="center">Spikes</td><td
+                align="center">Lollypops</td
+              ><td align="center">Cells</td></tr
+            ></tbody
+          >
+        </table><h3 id="design-choices" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Design choices"
+              href="#design-choices"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Design choices</span>
+        </h3><ul>
+          <li>
+            The rank is inside the suit to save up space. The downside is that
+            it requires players to spread more the cards in hand to see the
+            rank, but it's not uncomfortable.
+          </li><li>
+            The bottom-left suits are composited by the 3 colors of the cards
+            they appear in, this way they look different from the other
+            one-colored suits, and at the same time don't look too different
+            because the average color tone is close to the one of the card.
+          </li><li>All suits are very distinct shapes.</li><li>
+            The colors of the suits can be grouped by similar hue in pairs but
+            also trios.
+          </li><li>
+            4 of the suits are the ones from the French deck because this lets
+            players use the cards as poker cards. The colors are also similar,
+            black/ gray and red/orange, to keep consistency with the traditional
+            deck but also to have different colors for modern games.
+          </li><li>
+            The slogan "Draw your cards" is there to encourage people to draw,
+            and lose the fear of drawing in cards. It's fine! If you run out of
+            space, you'll have amortized very well the cards, don't worry.
+          </li>
+        </ul><h3 id="inspiration" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Inspiration"
+              href="#inspiration"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Inspiration</span>
+        </h3><p>
+          My main inspiration was The Everdeck, and the amazing forum thread in
+          bgg that was used to get feedback and updates about the project. <em
+            >I wish I've done the same, but I wanted to have something solid
+            before showing it up to the world (And walla!, here it is!).</em
+          >
+        </p><p>
+          What inspired me so much about The Ever deck was it's card
+          distribution and mathematical approach to make everything fit evenly.
+          The only thing that didn't convince me about The Everdeck was it's aim
+          to have a "mystic" theme/utility. It's totally fine and awesome, but
+          it didn't fulfill my specific need, that is: "play as many modern
+          games as possible with a small deck".
+        </p><p>
+          My other motivation for this project, was that I was planning a
+          sabbatical year bagpacking through the world, and I wanted to keep
+          playing many board games, without having to carry them. So I did it as
+          quick as possible, do I could have a printed beta version to take to
+          the adventure, and when I come back from the trip, make some changes
+          and release it to the public.
+        </p><h2 id="printing" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Printing"
+              href="#printing"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Printing</span>
+        </h2><ul>
+          <li>
+            The card's size is <strong>2.5 by 3.5 inches</strong>, the same as
+            standard poker cards. You can fit 9 cards in a DIN A4 sheet, and 18
+            cards in a DIN A3 sheet.
+          </li><li>
+            They are meant to be printed in <strong>100% plastic</strong> sheets
+            of <strong>300 g/m²</strong> or more, so they are waterproof and extremely
+            durable.<ul>
+              <li>
+                You could also use thick paper and/or laminate it, but they'd
+                last less time, probably wouldn't shuffle satisfyingly, and
+                possibly you couldn't either use pencils to draw on them.
+              </li>
+            </ul>
+          </li><li>
+            Drawing in the cards:<ul>
+              <li>
+                Pens/markers ink sticks into it and it cannot be erased, even
+                the special whiteboard markers.
+              </li><li>
+                <strong>Pencils</strong> work as usual, making them the <strong
+                  >best option</strong
+                > to write and erase.
+              </li>
+            </ul>
+          </li><li>
+            For now, the <strong>print-n-play</strong> pdf document is <strong
+              >not public</strong
+            >.<ul>
+              <li>
+                But, you can <a href="/buy"
+                  ><strong>buy</strong> the DIY Multideck</a
+                > online in the official website to get a copy.
+              </li>
+            </ul>
+          </li><li>
+            The cards can be printed in a regular copy shop or at home.
+          </li><li>
+            It's very important to ensure all cards have the <strong
+              >same size</strong
+            > (for shuffling).<ul>
+              <li>
+                The best way is by using an industrial guillotine, to cut all
+                cards at once.
+              </li><li>
+                This is more important than the cards dimension, so don't worry
+                if they don't measure exactly 2.5 x 3.5 inches.
+              </li>
+            </ul>
+          </li><li>
+            Try to have the maximum <strong>precision</strong> in matching the <strong
+              >front and back</strong
+            >.<ul>
+              <li>
+                If you're at home, make sure the paper tray is well aligned
+                before printing and that you flip the paper correctly when
+                printing the other side.
+              </li><li>
+                If you go to a shop, ask them to pay special attention to this
+                and use a precise printer.
+              </li>
+            </ul>
+          </li><li>
+            To round the <strong>corners</strong>, it's best buy a small tool to
+            do so, and do it yourself <strong>manually</strong>. Many copy shops
+            won't do it or may charge a lot.<ul>
+              <li>
+                In Barcelona, Spain at Feb 2023, I managed to print a single
+                deck for 26.2 € in a copy shop with great results. With 100%
+                plastic (the most expensive sheet they sold) and without rounded
+                corners.
+              </li>
+            </ul>
+          </li>
+        </ul><h3 id="is-it-legal" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Is it legal?"
+              href="#is-it-legal"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Is it legal?</span>
+        </h3><p>
+          <strong>Yes!</strong> Selling/buying or printing the DIY Multideck is legal,
+          even if the porpoise is to play other games. Also, this website, with explanations
+          of how to play other games, an all it's contents, is legal.
+        </p><p>
+          Board games are generally not protected intellectual property. What is
+          usually protected with copyright, are the assets they use, like:
+          cards, tokens, boards or rulebooks. Some game mechanics may be
+          patented, but it's very rare.
+        </p><p>
           Explaining how to play a board game is legal, as long as you don't use
           copyrighted material to do so.
-        </p>
-        <p>
-          Some game mechanics may be pattented, but it's very rare (and anyways,
-          this deck doesn't include any mechanic at all).
-        </p>
-        <p>
-          Selling/buying or printing the DIY Multideck is legal, even if the
-          porpouse is to play other games.
-        </p>
-        <p>
-          All this website, with explanations of how to play other games, an all
-          it's contents, is totally legit.
-        </p>
-        <p>
+        </p><p>
           About the trademarks; in this case, using other board games names and
           logos is fare use because it's "Informational use", also called
           "editorial use".
-        </p>
-        <p>
+        </p><p>
           About the copyright; in this case, no assets from the game are used in
           the deck or this website.
-        </p>
-      </div>
+        </p><h2 id="appendix" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Appendix"
+              href="#appendix"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Appendix</span>
+        </h2><h3 id="vocabulary" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Vocabulary"
+              href="#vocabulary"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Vocabulary</span>
+        </h3><ul>
+          <li>
+            <strong>Suit</strong>: In a card, the shape and color. (<a
+              href="https://en.wikipedia.org/wiki/Playing_card_suit"
+              >Wikipedia</a
+            >)
+          </li><li>
+            <strong>Ranks</strong>: In a card, the numbers or letter.
+          </li>
+        </ul><h3 id="discarded-ideas" class="group flex -ml-[1rem]">
+          <span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a
+              aria-label="link to this heading"
+              aria-describedby="Discarded ideas"
+              href="#discarded-ideas"
+              class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100"
+            >
+              <i class="fa-solid fa-hashtag"></i>
+            </a>
+          </span><span>Discarded ideas</span>
+        </h3><p>
+          This are some main ideas I was trying to bring to the deck, but I had
+          to give up on them for various reasons.
+        </p><p>
+          For all of them, I found a way to fix the issues, and it was letting
+          the players draw the game-specific elements in the cards not being
+          used as numbered cards. Yes, it feels bad to write on cards, but they
+          are meant for that, and the space would be used anyway with another
+          less convenient thing.
+        </p><ul>
+          <li>
+            Words<ul>
+              <li>
+                What is it about? Adding 1 or many words to the cards to use as
+                social games like Werewolf, Mafia, Avalon... Or for some other
+                word games, like Cross clues.
+              </li><li>
+                Why discarded?<ul>
+                  <li>
+                    Because it would force players to only play the games I
+                    chose, I prefer you write the specific words you need for
+                    the games you like.
+                  </li><li>
+                    Also, with many words it would be confusing to know what is
+                    the word in use.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li><li>
+            Emojis in the cards<ul>
+              <li>
+                What is it about? Adding 1 or many emojis to the cards. To use
+                as roles for social games, actions in specific games or any
+                creative use players may come up with.
+              </li><li>
+                Why discarded?<ul>
+                  <li>
+                    Because it's actually the same as words, but more ambiguous.
+                    Could be good for multiple game re-using and using less
+                    space, but it could also could cause confusion up to a point
+                    of making games unplayable. For example: a player sees 🧪 in
+                    her card, she thinks she has the doctor, but she's actually
+                    the witch and the doctor was: 💊.
+                  </li><li>
+                    A part from that, the uses of emojis where not clear and,
+                    yes they look cool, but most of them wouldn't be used and
+                    confuse noob players.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li><li>
+            Index<ul>
+              <li>
+                What is it about? On the side of the cards, leave some light
+                marks to let the owner of the deck draw a small line in the card
+                edge, to indicate what cards belong to what games. And then, to
+                setup a game he would just have to slightly displace the cards
+                and pick the ones with the mark on the same position.
+              </li><li>
+                Why discarded?<ul>
+                  <li>
+                    Because it requires high precision in printing and cutting,
+                    and it's unrealistic to do at home.
+                  </li><li>
+                    Also, the marks where so small and close, that it was too
+                    easy to pick other game's cards by mistake. Also, added
+                    clutter.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li><li>
+            Generic action icons<ul>
+              <li>
+                What is it about? On the top-right corner, put a generic icon of
+                something related to card games, like a crossed card or a
+                shield, to be used to play games that have special cards, like
+                the UNO.
+              </li><li>
+                Why discarded?<ul>
+                  <li>
+                    Because games use very specific icons, and is very difficult
+                    to make a set of icons that work in many games.
+                  </li><li>
+                    Also, the killer factor is that, I realized that, when
+                    playing a game with regular suits and special cards, it's
+                    very easy to get confused and think that an icon card is
+                    meant to be used as a number card and vice-versa, specially
+                    in games with more than 4 suits. This makes the game
+                    unplayable.
+                  </li><li>
+                    And another reason was that if the action icon you need, is
+                    in a card that you need for the numbered cards, you're in
+                    trouble, because you'll have to chose another less-ideal
+                    icon and players will confuse the original card as the
+                    action card and the less-ideal with the number card, messing
+                    everything up.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <!-- <Renderer content={content} /> -->
     </section>
 
+    <style>
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: bold !important;
+      }
+      h2 {
+        font-size: 1.75rem !important;
+      }
+      h3 {
+        font-size: 1.5rem !important;
+      }
+      h4 {
+        font-size: 1.25rem !important;
+      }
+      img {
+        zoom: 50%;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 1rem;
+      }
+    </style>
     <BuyBanner />
   </Fragment>
 </PageLayout>
