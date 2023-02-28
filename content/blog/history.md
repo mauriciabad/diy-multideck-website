@@ -2,6 +2,7 @@
 title: "History of the first version of the DIY Multideck"
 description: "From nothing to the first deck printed"
 date: 2023-02-20
+draft: true
 ---
 
 ## Inspiration

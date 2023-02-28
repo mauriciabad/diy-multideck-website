@@ -12,9 +12,11 @@ export async function getStaticPaths() {
     frontmatterSchema: blogSchema,
   })
 
-  return posts.map((post) => {
-    return { params: { slug: post.slug } }
-  })
+  return posts
+    .filter((p) => p.frontmatter.draft !== true)
+    .map((p) => {
+      return { params: { slug: p.slug } }
+    })
 }
 
 const { slug } = Astro.params

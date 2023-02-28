@@ -2,6 +2,7 @@
 title: "Printing the DIW Multideck"
 description: "How to print the deck at home or in a copy shop"
 date: 2023-02-20
+draft: true
 ---
 
 - The card's size is **2.5 by 3.5 inches**, the same as standard poker cards. You can fit 9 cards in a DIN A4 sheet, and 18 cards in a DIN A3 sheet.

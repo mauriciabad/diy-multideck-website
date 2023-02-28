@@ -10,11 +10,13 @@ const posts = await readAll({
   frontmatterSchema: blogSchema,
 })
 
-const sortedPosts = posts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
-)
+const sortedPosts = posts
+  .filter((p) => p.frontmatter.draft !== true)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  )
 ---
 
 <PageLayout>
@@ -26,38 +28,41 @@ const sortedPosts = posts.sort(
       Blog
     </h1>
 
-    <p class="">
-      Sorry, there are <strong>no posts</strong> yet, come back later.
-    </p>
-    <!-- <ul>
-      {
-        sortedPosts.map((post) => {
-          const formattedDate = new Date(
-            post.frontmatter.date
-          ).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })
-          return (
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-              <div class="title">
-                <a
-                  href={`/blog/${post.slug}`}
-                  class="unset hover:text-text-link"
-                >
-                  {post.frontmatter.title}
-                </a>
-              </div>
-              <div class="text-text-muted text-sm italic">
-                <time datetime={post.frontmatter.date.toISOString()}>
-                  {formattedDate}
-                </time>
-              </div>
-            </li>
-          )
-        })
-      }
-    </ul> -->
+    {
+      sortedPosts.length ? (
+        <ul>
+          {sortedPosts.map((post) => {
+            const formattedDate = new Date(
+              post.frontmatter.date
+            ).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })
+            return (
+              <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+                <div class="title">
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="unset hover:text-text-link"
+                  >
+                    {post.frontmatter.title}
+                  </a>
+                </div>
+                <div class="text-text-muted text-sm italic">
+                  <time datetime={post.frontmatter.date.toISOString()}>
+                    {formattedDate}
+                  </time>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <p class="">
+          Sorry, there are <strong>no posts</strong> yet, come back later.
+        </p>
+      )
+    }
   </section>
 </PageLayout>

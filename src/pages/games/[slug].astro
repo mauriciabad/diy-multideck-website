@@ -13,9 +13,11 @@ export async function getStaticPaths() {
     frontmatterSchema: gameSchema,
   })
 
-  return posts.map((post) => {
-    return { params: { slug: post.slug } }
-  })
+  return posts
+    .filter((p) => p.frontmatter.post.draft !== true)
+    .map((p) => {
+      return { params: { slug: p.slug } }
+    })
 }
 
 const { slug } = Astro.params

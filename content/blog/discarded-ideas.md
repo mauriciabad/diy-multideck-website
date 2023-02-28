@@ -2,6 +2,7 @@
 title: "Discarded ideas for v0.4b"
 description: "Discover the ideas that didn't make it to the final version and the reasonings why."
 date: 2023-02-28
+draft: true
 ---
 
 This are some main ideas I was trying to bring to the deck, but I had to give up on them for various reasons.
