@@ -138,7 +138,7 @@ You can add a title to the counter by writing it in the area A of a card and put
 
 ### Card fronts
 
-The cards can be arranged in many ways. These are the two most representative arrangement. On each arrangement, the cards are rotated 180 degrees compared to the other one.
+The cards can be arranged in many ways. These are the two most representative arrangement.
 
 #### Groups of 10
 
@@ -157,6 +157,8 @@ This arrangement also displays the numbers in ascending order. Also, the letters
 > Up-left corner: 8 suits of 15 ranks
 >
 > Up-right corner: 4 suits of 30 ranks
+
+The cards are rotated 180 degrees.
 
 ![preview-groups-of-15](/images/home/preview-groups-of-15.png)
 
@@ -217,7 +219,7 @@ The name of the suits are:
 
 Explain everdeck, rainbow deck and some more.
 
-## Printing
+### Printing
 
 > Read more in the blog post
 
@@ -229,7 +231,7 @@ Designed to be ready to print
 
 Board games are generally not protected intellectual property. What is usually protected with copyright, are the assets they use, like: cards, tokens, boards or rulebooks. Some game mechanics may be patented, but it's very rare.
 
-Explaining how to play a board game is legal, as long as you don't use copyrighted material to do so.
+Explaining how to play a board game is legal, as long as you don't use copyrighted material without permission to do so.
 
 About the trademarks; in this case, using other board games names and logos is fare use because it's "Informational use", also called "editorial use".
 
