@@ -150,17 +150,17 @@ The cards can be arranged in many ways. These are the two most representative ar
 
 This arrangement also displays the numbers in ascending order. Also, the letters are in alphabetical order, and the special letters and symbols are at the end.
 
-![preview-groups-of-10](/images/home/preview-groups-of-10.png)
+![mini-cards-10](/images/home/mini-cards-10.png)
 
 #### Groups of 15
 
-> Up-left corner: 8 suits of 15 ranks
+> Bottom-right corner: 8 suits of 15 ranks
 >
-> Up-right corner: 4 suits of 30 ranks
+> Bottom-left corner: 4 suits of 30 ranks
 
-The cards are rotated 180 degrees.
+The cards are meant to be used rotated 180 degrees.
 
-![preview-groups-of-15](/images/home/preview-groups-of-15.png)
+![mini-cards-15](/images/home/mini-cards-15.png)
 
 ### Explanation cards
 
