@@ -2,7 +2,7 @@
 
 > Draw in your cards!
 
-The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing in the cards. The cards have
+The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing in the cards. The cards are meant to be drawn on, so don't be afraid! Draw on the cards to create game-specific special cards. The cards can be arranged in 4 different combinations of suits and ranks, plus any other subset of those arrangements. The key
 
 ## Feature list
 
@@ -54,15 +54,78 @@ The DIY multideck is a deck of 120 poker-sized playing cards that lets you play 
 
 ### Why drawing?
 
-Even tough it may seem like by drawing you'll destroy your cards, they'll look very ugly and you'll have wasted them, the truth is the opposite: **if you don't do draw on them, you're wasting the cards**. Because they are meant to provide a solid base to play many games (the card corners) and use the remaining space to add the special cards that make each game unique.
+For 3 reasons:
 
-I decided not to fill the cards with information, about my favorite games, and force you to adapt to my criteria. But instead, **let you choose what games you want to have in your deck**. This ensures all the information in the cards is used in some way, and makes them so much minimalistic and versatile.
+1. To resemble the original games.
+2. To support more games.
+3. To let you choose the games in your deck.
 
-In this website, there's a section with many game mapping instructions, hopefully you'll enjoy some of them. And if a game you want is not there, just think by yourself how to map it, and if you feel generous, submit a proposal.
+Even tough it may seem that by drawing you'll destroy your cards, make them ugly or waste them, the truth is the opposite: **if you don't do draw on them, you're wasting the cards**, because they are meant for that. The DIY Multideck provides a solid base to play many games and, additionally, draw in the cards to support more games. Drawing on the cards also make games easier to play, because the drawings can resemble the original game card's.
+
+Rather than filling the cards with predetermined games, I want to encourage you to personalize them by adding the games you enjoy playing. By doing so, the cards won't have unused information and will lead to less confusions while playing.
+
+This website provides a wide range of game mapping instructions. If you don't see a particular game you're interested in, feel free to create your own game mapping instructions and submit them to us.
+
+So, what are you waiting for? Grab a pen or marker, open one of our game mapping guides, add a new game to your deck!
 
 ### Drawing areas
 
 ![drawing-areas](/images/home/drawing-areas.png)
+
+Check your this blog post about tips to create your own game mappings and more details about this topic.
+
+As shown in the image, each card has 14-16 drawing drawing slots, grouped in 5 drawing areas.
+
+#### Area A
+
+Amount: 2 big or 4 small.
+
+In some games, you may need duplicate the drawing on the top and bottom slots to make the card playable in any rotation.
+
+Draw here when:
+
+- The card need to be hold in hand and contain a big drawing or word.
+- The card need to be stacked on the table while keeping the top or bottom part visible.
+
+#### Area B
+
+Amount: 4
+
+In some games, you may need duplicate the drawing on the opposite corner's slots to make the card playable in any rotation.
+
+Draw here when:
+
+- The card need to be hold in hand and contain a big drawing or word.
+- The card need to be stacked on the table while keeping the top or bottom part visible.
+
+#### Area C
+
+Amount: 3
+
+Draw here when:
+
+- The card need a hint, like punctuation.
+- The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.
+
+#### Area D
+
+Amount: 4
+
+Draw here when:
+
+- The card needs to be placed in the table.
+- The card can be hold in hand, but it's the only one.
+- The card needs to contain a big drawing or word.
+
+#### Area E
+
+Amount: 1
+
+Draw here when:
+
+- You want to represent a tile, chip, token, or similar.
+- The card needs to be placed in the table.
+- The card is important.
 
 ### Usability
 
