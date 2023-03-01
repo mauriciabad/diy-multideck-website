@@ -1,4 +1,9 @@
-# The DIY Multideck
+---
+title: "The DIY Multideck"
+description: ""
+date: 2023-02-28
+draft: false
+---
 
 > Draw in your cards!
 

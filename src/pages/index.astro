@@ -3,15 +3,6 @@ import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
-// import { readOne } from 'src/lib/markdoc/read'
-// import { z } from 'zod'
-// import Renderer from '../components/Renderer.astro'
-
-// const { content } = await readOne({
-//   directory: 'others',
-//   slug: 'home',
-//   frontmatterSchema: z.object({}),
-// })
 ---
 
 <PageLayout>
@@ -38,6 +29,7 @@ import { SITE_TITLE } from '../config'
 
       <article>
         <p>Comming soon...</p>
+        <p><a href="/blog/landing">The page is here for now</a></p>
       </article>
     </section>
     <BuyBanner />
