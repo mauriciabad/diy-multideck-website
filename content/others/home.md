@@ -169,19 +169,19 @@ When the card number is even, it's a head, and when the card number is odd, it's
 
 ### Letter
 
-![letters](/images/home/letters.svg)
+At the bottom center of every card there's a letter. They have a frequency distribution compatible with English word games.
 
-At the bottom center of every card there's a letter. It can be a Latin letter, an other letter or a symbol. These are the letters from every set:
+Here’s the distribution compared to Scrabble, Words With Friends, and standard English:
 
-- **Latin** letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
-- **Other** letters: ÁÅÄĄÆĆČÇÐÉĖĘĞÍĮŁŃÑÓÖŐÕØŚŠŞẞÚÜŰŲŪÝŹŽŻÞ
-- **Symbols**: *•@#$
+![letters](https://thewrongtools.files.wordpress.com/2019/09/letter-distribution.png)
 
-The "Latin letters" are repeated 3 times.
+### Points value
 
-The "Other letters" are there to complete the abecedary of 35 languages. This are the supported language abecedaries: English, Afrikaans, Arabic, Bulgarian, Catalan, Croatian, Danish, Dutch, Estonian, Faroese, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Irish, Italian, Latin, Lithuanian, Malagasy, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovenian, Spanish, Swedish, Turkish, Ukrainian, Welsh.
+At the bottom of the bottom-right corner, there are a set of dots, those arwe the Points value.
 
-The "Symbols" an be used as wildcards.
+Point values are distributed equally across suits. Specifically, each suit has five 1’s, four 2’s, three 3’s, two 4’s, and one 5 (12345 • 54321). They can be used as an alternative rank value for games that require an uneven number of specific ranks, like Hanabi.
+
+A card’s point value also indicate the score of the letter in the card. Most letters have one or two possible point values, with rarer letters having higher average scores.
 
 ### Counting
 
