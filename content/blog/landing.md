@@ -7,18 +7,22 @@ draft: false
 
 > Draw in your cards!
 
-The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing on the cards. The cards are meant to be drawn on, so don't be afraid! Draw on the cards to create game-specific cards.
-The cards can be arranged in 6 different combinations of suits and ranks, plus any other subset of those arrangements. The key
+The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing on the cards. Drawing on the cards allows creating game-specific cards.
+
+The cards can be arranged in many different combinations of suits and ranks to support many game systems.
+
+The DIY Multideck is heavily inspired by [The Everdeck](https://thewrongtools.wordpress.com/2019/10/10/the-everdeck/), and it supports [all games for it](https://boardgamegeek.com/geeklist/230703/games-playable-everdeck), plus [many more](/games).
 
 ## Feature list
 
-- Arrangements:
-  - 12 suits of 10 ranks. \[0..9\] × 12
-  - 8 suits of 15 ranks. \[0..9 + XJQKA\] × 15
-  - 4 suits of 30 ranks. \[0..29\] × 4
-  - 4 suits of 10 ranks, every rank repeated 3 times. \[0..29 × 3\] × 4
-  - Numbers from 0 to 119. \[0..119\]
-  - 8 suits of 5 uneven ranks, ascending or descending. \[1×5 + 2×4 + 3×3 + 4×2 + 5×1\]
+- Game systems:
+  - 12 suits of 10 ranks.
+  - 8 suits of 15 ranks.
+  - 4 suits of 30 ranks.
+  - 4 suits of 10 ranks, every rank repeated 3 times.
+  - Numbers from 0 to 119.
+  - 8 suits of 5 uneven ranks, in 2 variations.
+  - 10-level pyramidal deck.
   - Others, by drawing.
 - Draw in the cards to add words, points, icons, tiles, boards, extra ranks, etc.
   - Up to 16 drawing slots in each card, grouped in 5 drawing areas.
