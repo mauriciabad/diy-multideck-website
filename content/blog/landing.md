@@ -7,39 +7,40 @@ draft: false
 
 > Draw in your cards!
 
-The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing in the cards. The cards are meant to be drawn on, so don't be afraid! Draw on the cards to create game-specific special cards. The cards can be arranged in 4 different combinations of suits and ranks, plus any other subset of those arrangements. The key
+The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by using a bit of imagination and sometimes drawing on the cards. The cards are meant to be drawn on, so don't be afraid! Draw on the cards to create game-specific cards.
+The cards can be arranged in 6 different combinations of suits and ranks, plus any other subset of those arrangements. The key
 
 ## Feature list
 
-- Corners:
-  - 12 suits of 10 ranks (top-left).
-  - 8 suits of 15 ranks (bottom-right).
-  - 4 suits of 30 ranks (bottom-left).
-  - Numbers from 0 to 119 (top-right).
-- Draw in the cards: words, points, icons, tiles, boards, etc.
+- Arrangements:
+  - 12 suits of 10 ranks. \[0..9\] × 12
+  - 8 suits of 15 ranks. \[0..9 + XJQKA\] × 15
+  - 4 suits of 30 ranks. \[0..29\] × 4
+  - 4 suits of 10 ranks, every rank repeated 3 times. \[0..29 × 3\] × 4
+  - Numbers from 0 to 119. \[0..119\]
+  - 8 suits of 5 uneven ranks, ascending or descending. \[1×5 + 2×4 + 3×3 + 4×2 + 5×1\]
+  - Others, by drawing.
+- Draw in the cards to add words, points, icons, tiles, boards, extra ranks, etc.
   - Up to 16 drawing slots in each card, grouped in 5 drawing areas.
-    - A: Top and bottom, 1 big or 2 small slots.
-
-    - B: Below the suits, 1 small slot.
-
-    - C: Below area A, 3 small slots.
-
-    - D: Center grid, 4 big rectangular slots.
-
-    - E: Card center, circle slot.
-- Edge marks, to represent paths. 12 sets of 10 combinations (all).
+- Paths (connecting top, bottom, left, and right in all combinations):
+  - 12 sets of 10 paths (upright and upside-down are equivalent).
+  - 6 sets of 16 paths, plus 4 duplicated paths per set (upright and upside-down are different).
 - Random numbers / Dice throws:
   - Out of: 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30.
   - Polyhedral dice set for GPG/DND/MTG (D4, D6, D8, D10, D12, D20).
   - Coin flip
-- Random letter
-  - 3 times the alphabet.
-  - 36 other letters to make the abecedary of 35 languages.
-  - 5 symbols to use as wildcards or others.
+- Letter:
+  - In the English frequency distribution.
+  - Letter rarity score from 1 to 5.
+- Dots:
+  - From 1 to 5.
+  - Filled dots: Five 1s, four 2s, three 3s, two 4s, one 5, per suit.
+  - Empty dots: One 1, two 2s, three 3s, four 4s, five 5s, per suit.
+  - 2 shapes: 4 suits use circles, and 4 suits use squares.
 - Counting system using the cards' back face. For counting: points, coins, lives, etc.
   - Stacking method: Very clear, but multiple cards used.
   - Pointing method: Only 2 cards used, but less clear.
-- Usability
+- Usability:
   - 5 explanation cards.
   - 5 notes cards.
   - Distinct shapes and colors for the suits (color-blind friendly).
@@ -48,7 +49,7 @@ The DIY multideck is a deck of 120 poker-sized playing cards that lets you play 
   - Drawing slots:
     - Designed to let you draw twice, upright and upside-down, to make cards work both ways.
     - Big enough for handwriting, but not too much.
-    - Variated shapes strategically placed, to cover a wide variety of needs and keep organization.
+    - Varied shapes strategically placed, to cover a wide variety of needs and keep organization.
   - Systems to avoid confusions when playing:
     - All card corner's numbers match in the units digit.
     - All cards from 8 out of 12 suits, match the number in the top-left and bottom-right corner.
