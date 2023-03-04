@@ -7,7 +7,7 @@ game:
   rules: 'https://boardgamegeek.com/filepage/180052/lama-official-rules'
   image: 'https://cf.geekdo-images.com/_K4k5XqtcHc947wtMcwafA__itemrep/img/npajGySTXRLgC7nfZemMWaBrccU=/fit-in/246x300/filters:strip_icc()/pic4961695.jpg'
   title: 'L.L.A.M.A.'
-  description: "What's your bid? Bid on promising property bundles, then sell properties for checks."
+  description: "Play all your cards? Or bluff to mess with opponents? Don't get stuck with a llama!"
 mapping:
   requiredCardsCount: 42
   requiredDrawingsCount: 0
