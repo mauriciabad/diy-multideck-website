@@ -17,7 +17,7 @@ mapping:
 
 ## Cards selection and drawing
 
-To play Skull you need 60 cards and 0 drawings.
+To play Skull you need 24 cards and 0 drawings.
 
 ### Instructions
 
