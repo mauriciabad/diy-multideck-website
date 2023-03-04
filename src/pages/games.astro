@@ -68,7 +68,7 @@ const sortedPosts = posts
       {
         sortedPosts.map(({ frontmatter: { game, mapping }, slug }) => (
           <li
-            data-searchable={game.title}
+            data-searchable={`${game.title}---${game.keywords.join('---')}`}
             class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
           >
             <a

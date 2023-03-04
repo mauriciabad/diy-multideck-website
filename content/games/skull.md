@@ -2,6 +2,8 @@
 post: 
   date: 2023-03-02
   ogImagePath: '/images/games/for-sale/guide.png'
+  keywords:
+  - "Skulls and roses"
 game:
   bgg: 'https://boardgamegeek.com/boardgame/92415/skull'
   rules: 'https://boardgamegeek.com/filepage/102645/skull-roses-rules-reminder-full-page'
