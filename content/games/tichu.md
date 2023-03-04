@@ -1,8 +1,7 @@
 ---
 post: 
-   date: 2023-   date: 2023-03-02
-02-27
-   ogImagePath: '/images/games/tichu/guide.png'
+  date: 2023-03-02
+  ogImagePath: '/images/games/tichu/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/215/tichu'
   rules: 'https://www.ultraboardgames.com/tichu/game-rules.php'

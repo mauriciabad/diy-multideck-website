@@ -1,7 +1,7 @@
 ---
 post: 
-   date: 2023-03-02
-   ogImagePath: '/images/games/cockroach-poker-royal/guide.png'
+  date: 2023-03-02
+  ogImagePath: '/images/games/cockroach-poker-royal/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/129736/cockroach-poker-royal'
   rules: 'https://boardgamegeek.com/filepage/164853/kakerlakenpoker-royal-english-rules'

@@ -1,7 +1,7 @@
 ---
 post: 
-   date: 2023-03-02
-   ogImagePath: '/images/games/virus/guide.png'
+  date: 2023-03-02
+  ogImagePath: '/images/games/virus/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/180020/virus'
   rules: 'https://tranjisgames.com/wp-content/uploads/2020/11/Virus-2-english-rules-web.pdf'

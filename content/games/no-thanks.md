@@ -1,7 +1,7 @@
 ---
 post: 
-   date: 2023-03-02
-   ogImagePath: '/images/games/no-thanks/guide.png'
+  date: 2023-03-02
+  ogImagePath: '/images/games/no-thanks/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/12942/no-thanks'
   rules: 'https://boardgamegeek.com/filepage/155412/official-english-rules'
