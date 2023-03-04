@@ -26,6 +26,10 @@ export const gameSchema = z.object({
     image: z.union([z.string().url(), z.string().regex(/^\/images\/games(\/[\w\d-_]+)+\.[\w\d]+$/, 'Must be a relative path')]),
     title: z.string(),
     description: z.string(),
+    players: s.string().regex(/\d+-\d+/, "Must be in format N-N"),
+    mechanics: s.array(z.string()),
+    time: z.number().min(1),
+    complexity: z.number().min(0).max(5),
   }),
   post: z.object({
     date: dateSchema,
