@@ -30,12 +30,12 @@ export const gameSchema = z.object({
     mechanics: s.array(z.string()),
     time: z.number().min(1),
     complexity: z.number().min(0).max(5),
+    keywords: z.optional(z.array(z.string())),
   }),
   post: z.object({
     date: dateSchema,
     ogImagePath: z.optional(z.string()),
     draft: z.boolean().default(false),
-    keywords: z.optional(z.array(z.string())),
   }),
   mapping: z.object({
     compatibility: z.number().min(0).max(5).step(1),
