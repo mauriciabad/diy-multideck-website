@@ -2,6 +2,8 @@
 post:
    date: 2023-02-24
    ogImagePath: '/images/games/schotten-totten/guide.png'
+   keywords:
+   - "Battle lines"
 game:
   bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
   rules: 'https://boardgamegeek.com/filepage/137335/english-rules'
