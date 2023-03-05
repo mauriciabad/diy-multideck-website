@@ -1,7 +1,7 @@
 ---
 post: 
   date: 2023-03-02
-  ogImagePath: '/images/games/for-sale/guide.png'
+  ogImagePath: '/images/games/skull/guide.png'
   keywords:
   - "Skulls and roses"
 game:
