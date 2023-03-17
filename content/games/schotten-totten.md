@@ -10,6 +10,7 @@ game:
   image: 'https://cf.geekdo-images.com/69mwXe7c6HNYmT6S35Y4zg__itemrep/img/TVk3kfPLpSzQrQyHj6ByToSrLS0=/fit-in/246x300/filters:strip_icc()/pic2932872.jpg'
   title: 'Schotten Totten'
   description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
+  players: '2'
 mapping:
   requiredCardsCount: 64
   requiredDrawingsCount: 10
