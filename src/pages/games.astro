@@ -68,7 +68,9 @@ const sortedPosts = posts
       {
         sortedPosts.map(({ frontmatter: { game, mapping, post }, slug }) => (
           <li
-            data-searchable={`${game.title}---${post.keywords?.join('---') ?? ''}`}
+            data-searchable={`${game.title}---${
+              post.keywords?.join('---') ?? ''
+            }`}
             class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
           >
             <a
@@ -92,6 +94,22 @@ const sortedPosts = posts
                       drawing{mapping.requiredDrawingsCount === 1 ? '' : 's'}
                     </span>
                   </span>
+
+                  {game.players && (
+                    <span class="block">{game.players} payers</span>
+                  )}
+                  {game.time && <span class="block">{game.time} min</span>}
+                  {game.complexity && (
+                    <span class="block">{game.complexity} / 5 Complexity</span>
+                  )}
+                  {game.mechanics && (
+                    <span class="block">
+                      <span class="text-stone-700 dark:text-[#8da1b6]">
+                        Mechanics:
+                      </span>
+                      {game.mechanics.join(', ')}.
+                    </span>
+                  )}
                 </div>
               </div>
             </a>

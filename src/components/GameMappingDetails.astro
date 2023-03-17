@@ -49,6 +49,47 @@ const { game, mapping } = Astro.props
           <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
           {mapping.deckVersion}
         </li>
+
+        {
+          (game.players || game.time || game.mechanics || game.complexity) && (
+            <div class="h-[2px] bg-gray-200 rounded-full my-2" />
+          )
+        }
+
+        {
+          game.players && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">Players:</span>
+              {game.players}
+            </li>
+          )
+        }
+        {
+          game.time && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">Time:</span>
+              {game.time} min
+            </li>
+          )
+        }
+        {
+          game.mechanics && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">Mechanics:</span>
+              {game.mechanics.join(', ')}.
+            </li>
+          )
+        }
+        {
+          game.complexity && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">
+                Complexity:
+              </span>
+              {game.complexity} / 5
+            </li>
+          )
+        }
       </ul>
       {
         game.rules && (
