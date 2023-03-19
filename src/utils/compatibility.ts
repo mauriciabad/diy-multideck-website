@@ -1,10 +1,10 @@
 const compatibilities = {
-  0: 'Incompatible',
-  1: 'Very bad',
-  2: 'Bad',
-  3: 'Good',
-  4: 'Very good',
-  5: 'Exelent',
+  0: 'Unplayable',
+  1: 'Bad',
+  2: 'Good',
+  3: 'Great',
+  4: 'Exelent',
+  5: 'Perfect',
 } as const
 
 export const getCompatibility = (

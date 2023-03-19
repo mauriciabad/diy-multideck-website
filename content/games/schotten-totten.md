@@ -25,7 +25,7 @@ mapping:
   requiredCardsCount: 64
   requiredDrawingsCount: 10
   deckVersion: "v0.4b"
-  compatibility: 5
+  compatibility: 4
 ---
 
 ## Cards selection and drawing
