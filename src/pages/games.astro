@@ -15,9 +15,15 @@ const sortedPosts = posts
   .filter((p) => p.frontmatter.post.draft !== true)
   .sort(
     (a, b) =>
-      new Date(b.frontmatter.post.date).valueOf() -
-      new Date(a.frontmatter.post.date).valueOf()
+    (b.frontmatter.mapping.compatibility + (b.frontmatter.game.rating ?? 5)) - (a.frontmatter.mapping.compatibility + (a.frontmatter.game.rating ?? 5))
   )
+  
+  // Sort by compatibility > rating
+  // .sort(
+  //   (a, b) =>
+  //   b.frontmatter.mapping.compatibility - a.frontmatter.mapping.compatibility ||
+  //   (b.frontmatter.game.rating ?? 0) - (a.frontmatter.game.rating ?? 0)
+  // )
 ---
 
 <PageLayout>
