@@ -4,7 +4,7 @@ post:
   ogImagePath: '/images/games/win-lose-or-banana/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/47082/win-lose-or-banana'
-  image: 'https://cf.geekdo-images.com/_K4k5XqtcHc947wtMcwafA__itemrep/img/npajGySTXRLgC7nfZemMWaBrccU=/fit-in/246x300/filters:strip_icc()/pic4961695.jpg'
+  image: 'https://cf.geekdo-images.com/ptMHtFvHbJ6RvVg7Q2ne1A__thumb/img/O8QIguzI6G9nn8aQIdSJweMCiMM=/fit-in/200x150/filters:strip_icc()/pic511669.jpg'
   title: 'Win, Lose, or Banana'
   description: "Three cards, three players. WIN must find BANANA, else LOSE will win. Simple as that! "
 mapping:
