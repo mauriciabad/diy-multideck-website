@@ -12,7 +12,7 @@ game:
   rules: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards#Games'
   image: '/images/games/spanish-deck/cover.jpg'
   title: 'Spanish standard deck'
-  description: "A spanish suited cards consists of four suits, twelve or fewer ranks, and possibly jokers. There are a multitude of regional variations in card games."
+  description: "A spanish suited cards consists of four suits, twelve or fewer ranks, and possibly jokers."
 mapping:
   requiredCardsCount: 50
   requiredDrawingsCount: 0

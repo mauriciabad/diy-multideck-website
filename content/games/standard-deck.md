@@ -13,7 +13,7 @@ game:
   rules: 'https://boardgamegeek.com/geeklist/171804/favorite-games-standard-playing-cards'
   image: '/images/games/standard-deck/cover.jpg'
   title: 'Standard deck (Poker)'
-  description: "A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers. There are a multitude of regional variations in card games."
+  description: "A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers."
 mapping:
   requiredCardsCount: 54
   requiredDrawingsCount: 0
