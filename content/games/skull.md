@@ -10,6 +10,14 @@ game:
   image: 'https://cf.geekdo-images.com/OPrd2iXm43dir7BwKAMOuQ__itemrep/img/-OqEtnWB7kEI_C_Zq9XkhDYAnNI=/fit-in/246x300/filters:strip_icc()/pic6097488.jpg'
   title: 'Skull'
   description: "Does the token hide a flower or skull? Bid, bluff and laugh with striking components."
+  score: 7.2
+  players: '3-6'
+  complexity: 1.12
+  time: '15-45'
+  mechanics:
+  -  Auction/Bidding
+  - Hand Management
+  - Player Elimination 
 mapping:
   requiredCardsCount: 24
   requiredDrawingsCount: 0

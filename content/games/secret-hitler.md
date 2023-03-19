@@ -8,6 +8,16 @@ game:
   image: 'https://cf.geekdo-images.com/rAQ3hIXoH6xDcj41v9iqCg__itemrep/img/EQ1jwjZYnucHSizVlzHE8DiyEQI=/fit-in/246x300/filters:strip_icc()/pic5164305.jpg'
   title: 'Secret Hitler'
   description: "In pre-WW2 Germany, Liberals and Fascists square off in an intrigue-filled parliament."
+  score: 7.5
+  players: '5-10'
+  complexity: 1.68
+  time: '45'
+  mechanics:
+  -  Hidden Roles
+  - Player Elimination
+  - Team-Based Game
+  - Traitor Game
+  - Voting 
 mapping:
   requiredCardsCount: 30
   requiredDrawingsCount: 15

@@ -28,8 +28,9 @@ export const gameSchema = z.object({
     description: z.string(),
     players: z.string().regex(/^\d+(-\d+)?$/, "Must be in format N or N-N").optional(),
     mechanics: z.array(z.string()).optional(),
-    time: z.number().min(1).optional(),
-    complexity: z.number().min(0).max(5).optional(),
+    time: z.string().regex(/^\d+(-\d+)?$/, "Must be in format N or N-N").optional(),
+    complexity: z.number().min(1).max(5).optional(),
+    score: z.number().min(1).max(10).optional(),
   }),
   post: z.object({
     date: dateSchema,

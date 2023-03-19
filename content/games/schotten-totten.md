@@ -3,6 +3,7 @@ post:
    date: 2023-02-24
    ogImagePath: '/images/games/schotten-totten/guide.png'
    keywords:
+   - "Battle line"
    - "Battle lines"
 game:
   bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
@@ -10,7 +11,16 @@ game:
   image: 'https://cf.geekdo-images.com/69mwXe7c6HNYmT6S35Y4zg__itemrep/img/TVk3kfPLpSzQrQyHj6ByToSrLS0=/fit-in/246x300/filters:strip_icc()/pic2932872.jpg'
   title: 'Schotten Totten'
   description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
+  score: 7.3
   players: '2'
+  complexity: 1.71
+  time: '30'
+  mechanics:
+  - Card Play
+  - Conflict Resolution
+  - Hand Management
+  - Melding and Splaying
+  - Set Collection 
 mapping:
   requiredCardsCount: 64
   requiredDrawingsCount: 10

@@ -1,13 +1,24 @@
 ---
 post: 
-   date: 2023-02-21
+   date: 2023-02-22
    ogImagePath: '/images/games/uno/guide.png'
+   keywords:
+   - Super Numeros
 game:
   bgg: 'https://boardgamegeek.com/boardgame/2223/uno'
   rules: 'https://www.unorules.org/'
   image: 'https://cf.geekdo-images.com/6V2cU_EV_vPdE_C3MEyMkw__itemrep/img/5PllXAcUEihn4JdqHc9YM2qfU8M=/fit-in/246x300/filters:strip_icc()/pic6332152.png'
   title: 'UNO'
   description: "Get rid of your cards first, but don't forget to say \"UNO!\""
+  score: 5.4
+  players: '2-10'
+  complexity: 1.11
+  time: '30'
+  mechanics:
+  -  Hand Management
+  - Lose a Turn
+  - Matching
+  - Take That 
 mapping:
   requiredCardsCount: 112
   requiredDrawingsCount: 24

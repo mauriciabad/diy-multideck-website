@@ -8,6 +8,13 @@ game:
   image: 'https://cf.geekdo-images.com/q_JGK291hrhnhiRB0667oA__itemrep/img/w6x_ahGLQVe2u6trDx0kO91OprM=/fit-in/246x300/filters:strip_icc()/pic3979766.png'
   title: 'The Mind'
   description: "Play your cards in ascending order without communicating. Timing is key!"
+  score: 6.8
+  players: '2-4'
+  complexity: 1.07
+  time: '20'
+  mechanics:
+  -  Communication Limits
+  - Cooperative Game 
 mapping:
   requiredCardsCount: 104
   requiredDrawingsCount: 1
