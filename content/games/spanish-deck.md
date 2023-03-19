@@ -6,11 +6,12 @@ post:
    - 'Playing cards'
    - 'Baraja española'
    - 'Traditional Playing Cards'
+   - 'Spanish-suited playing cards'
 game:
   bgg: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards'
   rules: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards#Games'
   image: '/images/games/spanish-deck/cover.jpg'
-  title: 'Spanish-suited playing cards'
+  title: 'Spanish standard deck'
   description: "A spanish suited cards consists of four suits, twelve or fewer ranks, and possibly jokers. There are a multitude of regional variations in card games."
 mapping:
   requiredCardsCount: 50
