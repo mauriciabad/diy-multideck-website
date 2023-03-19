@@ -2,12 +2,18 @@
 post: 
    date: 2023-02-21
    ogImagePath: '/images/games/poker/guide.png'
+   keywords:
+   - 'Playing cards'
+   - 'Poker'
+   - 'French cards'
+   - 'Anglo-American deck'
+   - 'Traditional Playing Cards'
 game:
-  bgg: 'https://boardgamegeek.com/boardgame/1115/poker'
-  rules: 'https://www.pokerstars.es/en/poker/games/rules/'
+  bgg: 'https://boardgamegeek.com/wiki/page/standard_deck_playing_card_games'
+  rules: 'https://boardgamegeek.com/geeklist/171804/favorite-games-standard-playing-cards'
   image: '/images/games/poker/cover.jpg'
-  title: 'Poker'
-  description: "You've got to know when to hold 'em; know when to fold 'em."
+  title: 'Standard deck (Poker)'
+  description: "A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers. There are a multitude of regional variations in card games."
 mapping:
   requiredCardsCount: 54
   requiredDrawingsCount: 0
