@@ -44,7 +44,7 @@ import { SITE_TITLE } from '../config'
             >The Everdeck</a
           >, and it supports <a
             href="https://boardgamegeek.com/geeklist/230703/games-playable-everdeck"
-            >all games for it</a
+            >almost all games for it</a
           >, plus <a href="/games">many more</a>.
         </p>
 
@@ -646,9 +646,12 @@ import { SITE_TITLE } from '../config'
             worry.
           </li>
           <li>
-            The black suit is the first one, because the it's cards' numbers
-            only have units digits and they don't need to be highlighted,
-            otherwise, highlighting black with black wouldn't work.
+            The black suit is the first one for a reason. The card number (from
+            0 to 119) have the units digits highlighted. If another suit was the
+            black one, the unit digits would be highlightes in the same color as
+            the decimal digit, and wouldn't be noticable. But because cards'
+            numbers of the first suit don't have decimal digits, there's no need
+            to highlight.
           </li>
         </ul>
         <h3 id="inspiration">Inspiration</h3>
