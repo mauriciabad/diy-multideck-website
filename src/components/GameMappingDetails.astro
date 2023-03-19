@@ -51,11 +51,23 @@ const { game, mapping } = Astro.props
         </li>
 
         {
-          (game.players || game.time || game.mechanics || game.complexity) && (
+          (game.score ||
+            game.players ||
+            game.time ||
+            game.mechanics ||
+            game.complexity) && (
             <div class="h-[2px] bg-gray-200 rounded-full my-2" />
           )
         }
 
+        {
+          game.score && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">Score:</span>
+              {game.score}
+            </li>
+          )
+        }
         {
           game.players && (
             <li class="p-0 m-0">
@@ -73,20 +85,24 @@ const { game, mapping } = Astro.props
           )
         }
         {
-          game.mechanics && (
-            <li class="p-0 m-0">
-              <span class="text-stone-700 dark:text-[#8da1b6]">Mechanics:</span>
-              {game.mechanics.join(', ')}.
-            </li>
-          )
-        }
-        {
           game.complexity && (
             <li class="p-0 m-0">
               <span class="text-stone-700 dark:text-[#8da1b6]">
                 Complexity:
               </span>
               {game.complexity} / 5
+            </li>
+          )
+        }
+        {
+          game.mechanics && (
+            <li class="p-0 m-0">
+              <span class="text-stone-700 dark:text-[#8da1b6]">Mechanics:</span>
+              <ul class="p-0 m-0 pl-6 text-sm leading-5">
+                {game.mechanics?.map((mechanic) => (
+                  <li class="p-0 m-0">{mechanic}</li>
+                ))}
+              </ul>
             </li>
           )
         }
