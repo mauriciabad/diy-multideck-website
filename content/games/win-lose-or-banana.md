@@ -7,7 +7,7 @@ game:
   image: 'https://cf.geekdo-images.com/ptMHtFvHbJ6RvVg7Q2ne1A__thumb/img/O8QIguzI6G9nn8aQIdSJweMCiMM=/fit-in/200x150/filters:strip_icc()/pic511669.jpg'
   title: 'Win, Lose, or Banana'
   description: "Three cards, three players. WIN must find BANANA, else LOSE will win. Simple as that!"
-  score: 5.4
+  rating: 5.4
   players: '3'
   complexity: 1.07
   time: '1'

@@ -8,7 +8,7 @@ game:
   image: 'https://cf.geekdo-images.com/dJh9HkZC346NgPTAicJq_A__itemrep/img/f97jITL2ueA_2OAEOW-l6niBLFA=/fit-in/246x300/filters:strip_icc()/pic1513085.jpg'
   title: 'For Sale'
   description: "What's your bid? Bid on promising property bundles, then sell properties for checks."
-  score: 7.2
+  rating: 7.2
   players: '3-6'
   complexity: 1.26
   time: '30'

@@ -8,7 +8,7 @@ game:
   image: 'https://cf.geekdo-images.com/_K4k5XqtcHc947wtMcwafA__itemrep/img/npajGySTXRLgC7nfZemMWaBrccU=/fit-in/246x300/filters:strip_icc()/pic4961695.jpg'
   title: 'L.L.A.M.A.'
   description: "Play all your cards? Or bluff to mess with opponents? Don't get stuck with a llama!"
-  score: 6.5
+  rating: 6.5
   players: '2-6'
   complexity: 1.06
   time: '20'

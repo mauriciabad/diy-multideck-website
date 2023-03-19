@@ -10,7 +10,7 @@ game:
   image: 'https://cf.geekdo-images.com/loNpxkO1sWM_Xs4Pk2AMgA__itemrep/img/WwEO-rs9KKkrpNeNrPiZeDwHQdg=/fit-in/246x300/filters:strip_icc()/pic4129570.jpg'
   title: 'Cockroach Poker Royal'
   description: "Bluff your way to victory using creepy, crawly creatures!"
-  score: 7.1
+  rating: 7.1
   players: '2-6'
   complexity: 1.1
   time: '15-20'

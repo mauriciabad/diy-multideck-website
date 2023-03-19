@@ -29,15 +29,18 @@ const { game, mapping } = Astro.props
     <div class="flex items-center justify-center flex-wrap gap-4">
       <ul class="list-none p-0 m-0 grow basis-52">
         <li class="p-0 m-0">
+          <i class="ti ti-discount-check"></i>
           <span class="text-stone-700 dark:text-[#8da1b6]">Compatibility:</span>
           {getCompatibility(mapping.compatibility)} ({mapping.compatibility}/5)
         </li>
         <li class="p-0 m-0">
+          <i class="ti ti-cards"></i>
           <span class="text-stone-700 dark:text-[#8da1b6]">Required cards:</span
           >
           {mapping.requiredCardsCount}
         </li>
         <li class="p-0 m-0">
+          <i class="ti ti-brush"></i>
           <span class="text-stone-700 dark:text-[#8da1b6]"
             >Required drawing{
               mapping.requiredDrawingsCount === 1 ? '' : 's'
@@ -46,12 +49,13 @@ const { game, mapping } = Astro.props
           {mapping.requiredDrawingsCount}
         </li>
         <li class="p-0 m-0">
+          <i class="ti ti-timeline-event"></i>
           <span class="text-stone-700 dark:text-[#8da1b6]">Deck version:</span>
           {mapping.deckVersion}
         </li>
 
         {
-          (game.score ||
+          (game.rating ||
             game.players ||
             game.time ||
             game.mechanics ||
@@ -61,16 +65,18 @@ const { game, mapping } = Astro.props
         }
 
         {
-          game.score && (
+          game.rating && (
             <li class="p-0 m-0">
-              <span class="text-stone-700 dark:text-[#8da1b6]">Score:</span>
-              {game.score}
+              <i class="ti ti-star" />
+              <span class="text-stone-700 dark:text-[#8da1b6]">Rating:</span>
+              {game.rating}/10
             </li>
           )
         }
         {
           game.players && (
             <li class="p-0 m-0">
+              <i class="ti ti-users" />
               <span class="text-stone-700 dark:text-[#8da1b6]">Players:</span>
               {game.players}
             </li>
@@ -79,6 +85,7 @@ const { game, mapping } = Astro.props
         {
           game.time && (
             <li class="p-0 m-0">
+              <i class="ti ti-clock" />
               <span class="text-stone-700 dark:text-[#8da1b6]">Time:</span>
               {game.time} min
             </li>
@@ -87,18 +94,20 @@ const { game, mapping } = Astro.props
         {
           game.complexity && (
             <li class="p-0 m-0">
+              <i class="ti ti-brain" />
               <span class="text-stone-700 dark:text-[#8da1b6]">
                 Complexity:
               </span>
-              {game.complexity} / 5
+              {game.complexity}/5
             </li>
           )
         }
         {
           game.mechanics && (
             <li class="p-0 m-0">
+              <i class="ti ti-settings" />
               <span class="text-stone-700 dark:text-[#8da1b6]">Mechanics:</span>
-              <ul class="p-0 m-0 pl-6 text-sm leading-5">
+              <ul class="p-0 m-0 pl-7 text-sm leading-5">
                 {game.mechanics?.map((mechanic) => (
                   <li class="p-0 m-0">{mechanic}</li>
                 ))}

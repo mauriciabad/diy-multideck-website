@@ -11,7 +11,7 @@ game:
   image: 'https://cf.geekdo-images.com/JFhLVSRFQ2mtWRNHgbZ3Wg__itemrep/img/3WuuxgYlgoEMP5-CUl6bakeKVts=/fit-in/246x300/filters:strip_icc()/pic2602138.jpg'
   title: '6 nimmt!'
   description: "Choose sequential cards for rows simultaneously, but avoid adding the 6th card!"
-  score: 6.9
+  rating: 6.9
   players: '2-10'
   complexity: 1.2
   time: '45'

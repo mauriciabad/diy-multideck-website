@@ -8,7 +8,7 @@ game:
   image: 'https://cf.geekdo-images.com/uiVZ7QVfRFQx3EBG8eDU8w__itemrep/img/KKHTlNTf8JbSyL9tHwPrC5J_lQM=/fit-in/246x300/filters:strip_icc()/pic6339446.png'
   title: 'Hanamikoji'
   description: "Win the favor of the geishas through careful speculation and bold moves."
-  score: 7.5
+  rating: 7.5
   players: '2'
   complexity: 1.7
   time: '15'
