@@ -21,44 +21,50 @@ import PageLayout from '../layouts/PageLayout.astro'
       development.
     </p>
 
-    <p class="mt-4 text-center">
-      But I can send you an email when I release it.
-    </p>
+    <!-- Hide until fixed -->
 
-    <label
-      for="subscribe-input"
-      class="block mt-12 max-w-[450px] mx-auto w-full"
-      id="subscribe-div"
-    >
-      <span>Email</span>
-      <div class="flex">
-        <input
-          type="email"
-          name="email"
-          id="subscribe-input"
-          required
-          class="grow min-w-0 bg-white dark:bg-slate-800 border border-slate-400 dark:border-slate-500 rounded px-3 py-1 focus-visible:ring-4 outline-none ring-orange-500 mr-3"
-        />
-        <button
-          id="subscribe-button"
-          class="grow-0 cursor-pointer bg-orange-500 text-white rounded-md px-4 focus-visible:ring-4 outline-none ring-offset-2 ring-stone-500"
-          ><i class="ti ti-mail text-lg align-bottom pr-2"></i>Subscribe</button
-        >
+    <!-- TODO: Fix -->
+    <div class="hidden">
+      <p class="mt-4 text-center">
+        But I can send you an email when I release it.
+      </p>
+
+      <label
+        for="subscribe-input"
+        class="block mt-12 max-w-[450px] mx-auto w-full"
+        id="subscribe-div"
+      >
+        <span>Email</span>
+        <div class="flex">
+          <input
+            type="email"
+            name="email"
+            id="subscribe-input"
+            required
+            class="grow min-w-0 bg-white dark:bg-slate-800 border border-slate-400 dark:border-slate-500 rounded px-3 py-1 focus-visible:ring-4 outline-none ring-orange-500 mr-3"
+          />
+          <button
+            id="subscribe-button"
+            class="grow-0 cursor-pointer bg-orange-500 text-white rounded-md px-4 focus-visible:ring-4 outline-none ring-offset-2 ring-stone-500"
+            ><i class="ti ti-mail text-lg align-bottom pr-2"
+            ></i>Subscribe</button
+          >
+        </div>
+      </label>
+      <div
+        id="subscribe-done"
+        class="hidden mt-16 text-center text-4xl text-green-600 font-light"
+      >
+        <i class="ti ti-circle-check text-4xl"></i>
+        Subscribed!
       </div>
-    </label>
-    <div
-      id="subscribe-done"
-      class="hidden mt-16 text-center text-4xl text-green-600 font-light"
-    >
-      <i class="ti ti-circle-check text-4xl"></i>
-      Subscribed!
-    </div>
-    <div
-      id="subscribe-error"
-      class="hidden mt-16 text-center text-4xl text-red-600 font-light"
-    >
-      <i class="ti ti-circle-x text-4xl"></i>
-      Error
+      <div
+        id="subscribe-error"
+        class="hidden mt-16 text-center text-4xl text-red-600 font-light"
+      >
+        <i class="ti ti-circle-x text-4xl"></i>
+        Error
+      </div>
     </div>
   </Fragment>
 </PageLayout>
