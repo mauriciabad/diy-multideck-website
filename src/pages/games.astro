@@ -101,17 +101,17 @@ const sortedPosts = posts
                       <span><span class="font-[450]">{game.time}</span> <span class="text-sm text-stone-600 dark:text-stone-300">min</span></span>
                       )}
                     </div>
-                    <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                    <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
                       {game.complexity && (
                         <i class="ti ti-brain" />
                         <span class="font-[450]">
-                          {game.complexity}<span class="text-sm text-stone-400 dark:text-stone-400">/5</span> <span class="hidden sm:inline-block text-sm text-stone-600 dark:text-stone-300">Complexity</span>
+                          {game.complexity}<span class="text-sm text-stone-400 dark:text-stone-400">/5</span> <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">Complexity</span>
                         </span>
                       )}
                     </div>
-                    <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                    <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
                         <i class="ti ti-discount-check" />
-                        <span><span class="font-[450]">{getCompatibility(mapping.compatibility)}</span> <span class="text-sm text-stone-600 dark:text-stone-300">compatibility</span></span>
+                        <span class=""><span class="font-[450]">{getCompatibility(mapping.compatibility)}</span> <span class="hidden @[90px]:inline-block text-sm text-stone-600 dark:text-stone-300">compatibility</span></span>
                     </div>
                     <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
                       <i class="ti ti-cards" />
