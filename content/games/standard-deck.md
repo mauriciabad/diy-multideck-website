@@ -1,7 +1,7 @@
 ---
 post: 
    date: 2023-02-21
-   ogImagePath: '/images/games/poker/guide.png'
+   ogImagePath: '/images/games/standard-deck/guide.png'
    keywords:
    - 'Playing cards'
    - 'Poker'
@@ -11,7 +11,7 @@ post:
 game:
   bgg: 'https://boardgamegeek.com/wiki/page/standard_deck_playing_card_games'
   rules: 'https://boardgamegeek.com/geeklist/171804/favorite-games-standard-playing-cards'
-  image: '/images/games/poker/cover.jpg'
+  image: '/images/games/standard-deck/cover.jpg'
   title: 'Standard deck (Poker)'
   description: "A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers. There are a multitude of regional variations in card games."
 mapping:
@@ -23,11 +23,11 @@ mapping:
 
 ## Cards selection and drawing
 
-To play Poker you need 54 cards and 0 drawings.
+To play any game with a Standard Deck of playing cards you need 54 cards and 0 drawings.
 
 ### Instructions
 
-![cards mapping](/images/games/poker/guide.png)
+![cards mapping](/images/games/standard-deck/guide.png)
 
 1. Select 4 suits.
    {% callout type="idea" text="Ideally the poker ones: Hearts, Diamonds, Aces and Spides" /%}
