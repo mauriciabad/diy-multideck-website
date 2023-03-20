@@ -1,22 +1,22 @@
 ---
-import { getBlogPostMeta } from "../lib/seo";
+import { getBlogPostMeta } from '../lib/seo'
 import {
   SITE_TITLE,
   SITE_DESCRIPTION,
   SITE_URL,
   TWITTER_HANDLE,
   MY_NAME,
-} from "../config";
+} from '../config'
 
 export interface Props {
-  title?: string;
-  description?: string;
-  publishDate: string;
-  pagePath?: string;
-  ogImageAbsoluteUrl?: string;
-  ogImageAltText?: string;
-  ogImageWidth?: number;
-  ogImageHeight?: number;
+  title?: string
+  description?: string
+  publishDate: string
+  pagePath?: string
+  ogImageAbsoluteUrl?: string
+  ogImageAltText?: string
+  ogImageWidth?: number
+  ogImageHeight?: number
 }
 
 const {
@@ -28,7 +28,7 @@ const {
   ogImageAltText,
   ogImageWidth,
   ogImageHeight,
-} = Astro.props;
+} = Astro.props
 
 const { meta, og, twitter } = getBlogPostMeta({
   title: title || SITE_TITLE,
@@ -42,7 +42,7 @@ const { meta, og, twitter } = getBlogPostMeta({
   ogImageHeight,
   siteOwnerTwitterHandle: TWITTER_HANDLE,
   contentAuthorTwitterHandle: TWITTER_HANDLE,
-});
+})
 ---
 
 <!-- Primary Meta Tags -->
