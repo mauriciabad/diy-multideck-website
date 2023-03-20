@@ -5,8 +5,6 @@ post:
   keywords:
     - You Have Got Crabs
     - You Have Crabs
-    - The cheater
-    - The lier
 game:
   bgg: https://boardgamegeek.com/boardgame/246759/youve-got-crabs
   rules: https://www.explodingkittens.com/pages/rules-youve-got-crabs

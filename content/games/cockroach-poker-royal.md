@@ -4,6 +4,8 @@ post:
   ogImagePath: '/images/games/cockroach-poker-royal/guide.png'
   keywords:
   - "Cockroach Poker"
+  - The cheater
+  - The lier
 game:
   bgg: 'https://boardgamegeek.com/boardgame/129736/cockroach-poker-royal'
   rules: 'https://boardgamegeek.com/filepage/164853/kakerlakenpoker-royal-english-rules'
