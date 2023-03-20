@@ -12,7 +12,7 @@ game:
   rules: 'https://www.explodingkittens.com/pages/rules-youve-got-crabs'
   image: 'https://cf.geekdo-images.com/CoM8e_rTlygT6O2Xgk9Ekw__itemrep/img/8i9tE7RSy-G33Sk7cr3EgBn7Q7E=/fit-in/246x300/filters:strip_icc()/pic5886130.jpg'
   title: 'You've Got Crabs'
-  description: "Players collect 4 of the same crabs and secretly signal to each other to get points."
+  description: 'Players collect 4 of the same crabs and secretly signal to each other to get points.'
   rating: 6
   players: '4-10'
   complexity: 1.23
