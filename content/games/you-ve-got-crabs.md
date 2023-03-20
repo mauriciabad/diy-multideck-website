@@ -1,5 +1,4 @@
 ---
----
 post:
   date: 2023-03-20
   ogImagePath: /images/games/you-ve-got-crabs/guide.png
