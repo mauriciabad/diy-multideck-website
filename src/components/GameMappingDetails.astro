@@ -14,13 +14,13 @@ const { game, mapping } = Astro.props
 ---
 
 <div
-  class="bg-white-200 text-black dark:bg-[#0d1115] items-start dark:border-[#192129] shadow-lg border dark:shadow-none border-stone-200 dark:text-white flex flex-wrap justify-center p-6 gap-6 rounded-2xl"
+  class="custom-grid bg-white-200 text-black dark:bg-[#0d1115] items-start dark:border-[#192129] shadow-lg border dark:shadow-none border-stone-200 dark:text-white p-6 gap-6 rounded-2xl"
 >
   <img
-    class="grow-0 m-0 max-h-64 max-w-[50vw] rounded border shadow border-stone-200 dark:border-[#192129]"
+    class="custom-grid__img block justify-self-center m-0 rounded border shadow border-stone-200 dark:border-[#192129]"
     src={game.image}
   />
-  <div class="grow basis-40">
+  <div class="custom-grid__text">
     <a href={game.bgg} class="!bg-none text-current text-3xl"
       ><span>{game.title}</span><i class="ti ti-external-link ml-1"></i></a
     >
@@ -116,17 +116,52 @@ const { game, mapping } = Astro.props
           )
         }
       </ul>
-      {
-        game.rules && (
-          <a
-            href={game.rules}
-            class="unset w-24 h-24 leading-none gap-1 pb-2 !bg-none flex flex-col items-center justify-center rounded-full shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 text-white font-bold uppercase tracking-wider"
-          >
-            <i class="ti ti-file-text text-3xl block" />
-            <span>Rules</span>
-          </a>
-        )
-      }
     </div>
   </div>
+  <div class="custom-grid__rules">
+    {
+      game.rules && (
+        <a
+          href={game.rules}
+          class="unset block p-3 px-4 mx-auto max-w-xs border-none w-full leading-none shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 bg-none rounded-lg text-white font-bold uppercase tracking-wider"
+        >
+          <>
+            <i class="ti ti-file-text mr-2" />
+            <span>Rules</span>
+          </>
+        </a>
+      )
+    }
+  </div>
 </div>
+
+<style lang="scss" scoped>
+  .custom-grid {
+    $img-height-mobile: 18rem;
+    $img-width-desktop: 12rem;
+
+    display: grid;
+    grid-template: auto auto auto auto / auto;
+    grid-template-areas: 'img' 'text' 'text' 'rules';
+
+    @screen sm {
+      grid-template: auto 1fr / #{$img-width-desktop} auto;
+      grid-template-areas: 'img text' 'rules text';
+    }
+    &__img {
+      grid-area: img;
+      width: auto;
+      max-height: $img-height-mobile;
+      @screen sm {
+        width: $img-width-desktop;
+        max-height: unset;
+      }
+    }
+    &__text {
+      grid-area: text;
+    }
+    &__rules {
+      grid-area: rules;
+    }
+  }
+</style>
