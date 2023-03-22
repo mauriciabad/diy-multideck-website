@@ -5,17 +5,22 @@ import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
 import { getCompatibility } from 'src/utils/compatibility'
+import type { z } from 'zod'
 
 const posts = await readAll({
   directory: 'games',
   frontmatterSchema: gameSchema,
 })
 
+const gameRelevance = ({game, mapping}: z.TypeOf<typeof gameSchema>) => {
+  return mapping.compatibility * 0.75 + (game.rating ?? 5)
+}
+
 const sortedPosts = posts
   .filter((p) => p.frontmatter.post.draft !== true)
   .sort(
     (a, b) =>
-    (b.frontmatter.mapping.compatibility + (b.frontmatter.game.rating ?? 5)) - (a.frontmatter.mapping.compatibility + (a.frontmatter.game.rating ?? 5))
+    gameRelevance(b.frontmatter) - gameRelevance(a.frontmatter)
   )
   
   // Sort by compatibility > rating
