@@ -25,15 +25,15 @@ game:
    - Variable Player Powers
    - Voting 
 mapping:
-  requiredCardsCount: 29
-  requiredDrawingsCount: 29
+  requiredCardsCount: 32
+  requiredDrawingsCount: 32
   deckVersion: "v0.4b"
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play  Love Letter: Premium Edition you need 29 cards and 29 drawings. It is reccommended to have a player aid text/paper.
+To play  Love Letter: Premium Edition you need 32 cards and 32 drawings. It is reccommended to have a player aid text/paper.
 
 ### Instructions
 
