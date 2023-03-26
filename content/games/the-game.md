@@ -1,0 +1,33 @@
+---
+post: 
+  date: 2023-03-02
+  ogImagePath: '/images/games/the-game/guide.png'
+game:
+  bgg: 'https://boardgamegeek.com/boardgame/173090/game'
+  rules: 'https://boardgamegeek.com/filepage/199792/game-eng-rules'
+  image: 'https://cf.geekdo-images.com/g4pn1ieUKfIhERl5Ym6joQ__itemrep/img/4fI4jFXRtKw-ItHIqpzp8tH7r1A=/fit-in/246x300/filters:strip_icc()/pic4203279.png'
+  title: 'The game'
+  description: "Can you discard all the cards in ascending & descending order without getting stuck? "
+  rating: 6.7
+  players: '1-5'
+  complexity: 1.24
+  time: '20'
+  mechanics:
+  - Communication Limits
+  - Cooperative Game
+  - Hand Management
+  - Solo / Solitaire Game 
+mapping:
+  requiredCardsCount: 98
+  requiredDrawingsCount: 0
+  deckVersion: "v0.4b"
+  compatibility: 5
+---
+
+## Cards selection and drawing
+
+To play The game you need 98 cards and 0 drawings.
+
+### Instructions
+
+![cards mapping](/images/games/the-game/guide.png)

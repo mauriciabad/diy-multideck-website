@@ -39,6 +39,8 @@ To play  Love Letter: Premium Edition you need 32 cards and 32 drawings. It is r
 
 ![cards mapping](/images/games/love-letter-premium/guide.png)
 
+{% callout type="idea" text="You can avoid drawing if you memorize what every number means." /%}
+
 ## Usage
 
 - The number in the bottom-left is the character number.
