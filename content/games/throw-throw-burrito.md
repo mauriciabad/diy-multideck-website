@@ -20,14 +20,14 @@ game:
     - Take That 
 mapping:
   requiredCardsCount: 120
-  requiredDrawingsCount: 0
+  requiredDrawingsCount: 36
   deckVersion: v0.4b
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play Throw Throw Burrito you need 120 cards and 0 drawings.
+To play Throw Throw Burrito you need 120 cards and 36 drawings.
 
 {% callout type="idea" text="The mapping is exactly the same for the game: Throw Throw Avocado" /%}
 
