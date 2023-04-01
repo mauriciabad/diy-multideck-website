@@ -35,3 +35,7 @@ To play "The Crew: The Quest for Planet Nine" you need 40 cards and 0 drawings.
 ### Instructions
 
 ![cards mapping](/images/games/the-crew-1/guide.png)
+
+## Usage
+
+- Logbook: <https://cdn.1j1ju.com/medias/dd/5a/3a-the-crew-the-quest-for-planet-nine-log-book.pdf>

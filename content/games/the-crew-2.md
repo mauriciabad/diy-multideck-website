@@ -35,3 +35,7 @@ To play "The Crew: Mission Deep Sea" you need 40 cards and 0 drawings.
 ### Instructions
 
 ![cards mapping](/images/games/the-crew-2/guide.png)
+
+## Usage
+
+- Logbook: <https://c.tabletopia.com/games/mission-deep-sea/rules/logbook/en>
