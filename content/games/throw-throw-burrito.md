@@ -10,7 +10,7 @@ game:
   image: https://cf.geekdo-images.com/5ClVKrQcLkzRdBGiEfjevQ__itemrep/img/dYq9z1LZxdI90c_RvHPiqA9mgu8=/fit-in/246x300/filters:strip_icc()/pic7073068.jpg
   title: Throw Throw Burrito
   description: Throw, dodge, rage in this exciting party game! 
-  rating: 6.4
+  rating: 6.6
   players: 2-6
   complexity: 1.08
   time: '15'
@@ -20,14 +20,14 @@ game:
     - Take That 
 mapping:
   requiredCardsCount: 120
-  requiredDrawingsCount: 0
+  requiredDrawingsCount: 36
   deckVersion: v0.4b
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play Throw Throw Burrito you need 120 cards and 0 drawings.
+To play Throw Throw Burrito you need 120 cards and 36 drawings.
 
 {% callout type="idea" text="The mapping is exactly the same for the game: Throw Throw Avocado" /%}
 
