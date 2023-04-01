@@ -4,7 +4,7 @@ post:
   ogImagePath: /images/games/regicide/guide.png
 game:
   bgg: https://boardgamegeek.com/boardgame/307002/regicide
-  rules: https://capstone-games.com/wp-content/uploads/2020/04/CG_Sticheln_Rule-final.pdf
+  rules: https://www.regicidegame.com/site_files/33132/upload_files/RegicideRulesA4.pdf
   image: https://cf.geekdo-images.com/C9U2E51tkzLljewFEGQ74g__itemrep/img/gMi_9WcTU5PYLxfyrSDTch7rDMI=/fit-in/246x300/filters:strip_icc()/pic5837347.jpg
   title: Regicide
   description: Work together as brave adventurers to defeat the corrupted monarchy. 
