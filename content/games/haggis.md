@@ -11,7 +11,7 @@ game:
   rating: 7
   players: 2-3
   complexity: 2.21
-  time: 45
+  time: '45'
   mechanics:
     - Betting and Bluffing
     - Hand Management

@@ -13,7 +13,7 @@ game:
   rating: 6.4
   players: 2-6
   complexity: 1.08
-  time: 15
+  time: '15'
   mechanics:
     - Real-Time
     - Set Collection

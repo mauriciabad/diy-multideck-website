@@ -12,7 +12,7 @@ game:
   rating: 7
   players: 2
   complexity: 1.58
-  time: 25
+  time: '25'
   mechanics:
     - Trick-taking
     - Take That 
