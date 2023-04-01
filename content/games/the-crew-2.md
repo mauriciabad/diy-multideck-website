@@ -5,7 +5,7 @@ post:
   keywords:
   - The crew 2
   - The crew two
-  - space
+  - underwater
 game:
   bgg: https://boardgamegeek.com/boardgame/324856/crew-mission-deep-sea
   rules: https://cdn.1j1ju.com/medias/e3/06/41-the-crew-mission-deep-sea-rulebook.pdf
