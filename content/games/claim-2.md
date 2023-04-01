@@ -10,7 +10,7 @@ game:
   title: Claim 2
   description: Recruit followers to retake control the kingdom by taking the right tricks. 
   rating: 7
-  players: 2
+  players: '2'
   complexity: 1.58
   time: '25'
   mechanics:
