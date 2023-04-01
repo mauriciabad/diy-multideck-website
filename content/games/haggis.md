@@ -31,3 +31,7 @@ To play Haggis you need 54 cards and 0 drawings.
 ### Instructions
 
 ![cards mapping](/images/games/haggis/guide.png)
+
+## Usage
+
+- The `0`s represent `10`s.
