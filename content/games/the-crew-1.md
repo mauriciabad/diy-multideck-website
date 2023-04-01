@@ -15,13 +15,14 @@ game:
   rating: 7.9
   players: 2-5
   complexity: 1.98
-  time: 20
+  time: '20'
   mechanics:
     - Communication Limits
     - Cooperative Game
     - Hand Management
     - Scenario / Mission / Campaign Game
     - Trick-taking 
+mapping:
   requiredCardsCount: 40
   requiredDrawingsCount: 0
   deckVersion: v0.4b
