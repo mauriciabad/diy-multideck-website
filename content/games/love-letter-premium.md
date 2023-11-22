@@ -3,8 +3,8 @@ post:
    date: 2023-03-23
    ogImagePath: '/images/games/love-letter-premium/guide.png'
    keywords:
-    -  Love Letter
-    -  Love Letters
+    - Love Letter
+    - Love Letters
 game:
   bgg: 'https://boardgamegeek.com/boardgame/196326/love-letter-premium-edition/files'
   rules: 'http://alderac.com/wp-content/uploads/2017/11/Love-Letter-Premium_Rulebook.pdf'
@@ -16,14 +16,14 @@ game:
   complexity: 1.32
   time: '20-30'
   mechanics:
-   - Finale Ending
-   - Hidden Roles
-   - Roles with Asymmetric Information
-   - Simultaneous Action Selection
-   - Team-Based Game
-   - Traitor Game
-   - Variable Player Powers
-   - Voting 
+    - Finale Ending
+    - Hidden Roles
+    - Roles with Asymmetric Information
+    - Simultaneous Action Selection
+    - Team-Based Game
+    - Traitor Game
+    - Variable Player Powers
+    - Voting 
 mapping:
   requiredCardsCount: 32
   requiredDrawingsCount: 32

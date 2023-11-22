@@ -29,6 +29,8 @@ mapping:
 
 To play Regicide you need 54 cards and 0 drawings.
 
+It uses the [Standard deck](/games/standard-deck).
+
 ### Instructions
 
 ![cards mapping](/images/games/regicide/guide.png)

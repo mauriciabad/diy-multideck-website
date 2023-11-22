@@ -3,7 +3,7 @@ post:
   date: 2023-03-02
   ogImagePath: '/images/games/skull/guide.png'
   keywords:
-  - "Skulls and roses"
+    - "Skulls and roses"
 game:
   bgg: 'https://boardgamegeek.com/boardgame/92415/skull'
   rules: 'https://boardgamegeek.com/filepage/102645/skull-roses-rules-reminder-full-page'
@@ -15,9 +15,9 @@ game:
   complexity: 1.12
   time: '15-45'
   mechanics:
-  -  Auction/Bidding
-  - Hand Management
-  - Player Elimination 
+    - Auction/Bidding
+    - Hand Management
+    - Player Elimination 
 mapping:
   requiredCardsCount: 24
   requiredDrawingsCount: 0

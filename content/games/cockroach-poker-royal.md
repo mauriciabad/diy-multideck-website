@@ -17,9 +17,9 @@ game:
   complexity: 1.1
   time: '15-20'
   mechanics:
-  - Hand Management
-  - Set Collection
-  - Single Loser Game 
+    - Hand Management
+    - Set Collection
+    - Single Loser Game 
 mapping:
   requiredCardsCount: 76
   requiredDrawingsCount: 2

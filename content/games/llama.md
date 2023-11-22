@@ -13,10 +13,10 @@ game:
   complexity: 1.06
   time: '20'
   mechanics:
-  - Hand Management
-  - Ladder Climbing
-  - Matching
-  - Push Your Luck 
+    - Hand Management
+    - Ladder Climbing
+    - Matching
+    - Push Your Luck 
 mapping:
   requiredCardsCount: 42
   requiredDrawingsCount: 0

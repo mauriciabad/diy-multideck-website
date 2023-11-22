@@ -2,6 +2,8 @@
 post:
   date: 2023-11-22
   ogImagePath: /images/games/claim-2/guide.png
+  keywords:
+    - Claim 1
   draft: true # Draft because the Giants and Gnomes distributions are wrong (check rulebook)
 game:
   bgg: https://boardgamegeek.com/boardgame/249763/claim-2

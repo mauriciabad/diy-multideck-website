@@ -13,7 +13,7 @@ game:
   complexity: 1.88
   time: '30'
   mechanics:
-  - Trick-taking
+    - Trick-taking
 mapping:
   requiredCardsCount: 30
   requiredDrawingsCount: 3

@@ -13,11 +13,11 @@ game:
   complexity: 1.14
   time: '20'
   mechanics:
-  - Auction/Bidding
-  - Closed Economy Auction
-  - Increase Value of Unchosen Resources
-  - Push Your Luck
-  - Set Collection 
+    - Auction/Bidding
+    - Closed Economy Auction
+    - Increase Value of Unchosen Resources
+    - Push Your Luck
+    - Set Collection 
 mapping:
   requiredCardsCount: 33
   requiredDrawingsCount: 0

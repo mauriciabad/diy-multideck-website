@@ -13,11 +13,11 @@ game:
   complexity: 1.62
   time: '20'
   mechanics:
-   - Area Majority / Influence
-   - Hot Potato
-   - Investment
-   - Score-and-Reset Game
-   - Set Collection 
+    - Area Majority / Influence
+    - Hot Potato
+    - Investment
+    - Score-and-Reset Game
+    - Set Collection 
 mapping:
   requiredCardsCount: 51
   requiredDrawingsCount: 0

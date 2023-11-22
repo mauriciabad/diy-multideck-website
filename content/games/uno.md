@@ -1,9 +1,9 @@
 ---
 post: 
-   date: 2023-02-22
-   ogImagePath: '/images/games/uno/guide.png'
-   keywords:
-   - Super Numeros
+  date: 2023-02-22
+  ogImagePath: '/images/games/uno/guide.png'
+  keywords:
+    - Super Numeros
 game:
   bgg: 'https://boardgamegeek.com/boardgame/2223/uno'
   rules: 'https://www.unorules.org/'
@@ -15,10 +15,10 @@ game:
   complexity: 1.11
   time: '30'
   mechanics:
-  -  Hand Management
-  - Lose a Turn
-  - Matching
-  - Take That 
+    - Hand Management
+    - Lose a Turn
+    - Matching
+    - Take That 
 mapping:
   requiredCardsCount: 112
   requiredDrawingsCount: 24
@@ -36,11 +36,11 @@ To play UNO you need 112 cards and 24 drawings.
 
 1. Select all cards exept the ranks `X`.
 1. In the cards with rank greater than `20` in the top-right corner, for every suit, draw:
-   - 2x Skip
-   - 2x Reverse
-   - 2x Draw 2
-   - 1x Wild
-   - 1x Wild Draw 4
+    - 2x Skip
+    - 2x Reverse
+    - 2x Draw 2
+    - 1x Wild
+    - 1x Wild Draw 4
 
 |   |   |   |   |   |
 |:-:|:-:|:-:|:-:|:-:|

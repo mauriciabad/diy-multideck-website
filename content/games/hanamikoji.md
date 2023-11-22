@@ -13,10 +13,10 @@ game:
   complexity: 1.7
   time: '15'
   mechanics:
-  - Area Majority / Influence
-  - Force Commitment
-  - Hand Management
-  - I Cut, You Choose 
+      - Area Majority / Influence
+      - Force Commitment
+      - Hand Management
+      - I Cut, You Choose 
 mapping:
   requiredCardsCount: 31
   requiredDrawingsCount: 31

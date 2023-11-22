@@ -13,11 +13,11 @@ game:
   complexity: 1.47
   time: '10-20'
   mechanics:
-  - Role Playing
-  - Team-Based Game
-  - Variable Player Powers
-  - Hidden Roles
-  - Player Elimination
+    - Role Playing
+    - Team-Based Game
+    - Variable Player Powers
+    - Hidden Roles
+    - Player Elimination
 mapping:
   requiredCardsCount: 25
   requiredDrawingsCount: 8

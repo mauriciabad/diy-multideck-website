@@ -13,14 +13,14 @@ game:
   complexity: 1.75
   time: '30'
   mechanics:
-   - Finale Ending
-   - Hidden Roles
-   - Roles with Asymmetric Information
-   - Simultaneous Action Selection
-   - Team-Based Game
-   - Traitor Game
-   - Variable Player Powers
-   - Voting 
+    - Finale Ending
+    - Hidden Roles
+    - Roles with Asymmetric Information
+    - Simultaneous Action Selection
+    - Team-Based Game
+    - Traitor Game
+    - Variable Player Powers
+    - Voting 
 mapping:
   requiredCardsCount: 34
   requiredDrawingsCount: 15

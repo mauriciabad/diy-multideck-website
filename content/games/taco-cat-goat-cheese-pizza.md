@@ -13,10 +13,10 @@ game:
   complexity: 1.02
   time: '10-30'
   mechanics:
-  - Flicking
-  - Pattern Recognition
-  - Race
-  - Real-Time
+    - Flicking
+    - Pattern Recognition
+    - Race
+    - Real-Time
 mapping:
   requiredCardsCount: 59
   requiredDrawingsCount: 0

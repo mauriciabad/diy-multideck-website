@@ -13,10 +13,10 @@ game:
   complexity: 1.24
   time: '20'
   mechanics:
-  - Communication Limits
-  - Cooperative Game
-  - Hand Management
-  - Solo / Solitaire Game 
+    - Communication Limits
+    - Cooperative Game
+    - Hand Management
+    - Solo / Solitaire Game 
 mapping:
   requiredCardsCount: 98
   requiredDrawingsCount: 0

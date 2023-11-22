@@ -13,11 +13,11 @@ game:
   complexity: 1.16
   time: '30-90'
   mechanics:
-  - Commodity Speculation
-  - Negotiation
-  - Real-Time
-  - Set Collection
-  - Trading
+    - Commodity Speculation
+    - Negotiation
+    - Real-Time
+    - Set Collection
+    - Trading
 mapping:
   requiredCardsCount: 74
   requiredDrawingsCount: 0

@@ -13,7 +13,7 @@ game:
   complexity: 1.00
   time: '10'
   mechanics:
-  - Player Elimination
+    - Player Elimination
 mapping:
   requiredCardsCount: 16
   requiredDrawingsCount: 0

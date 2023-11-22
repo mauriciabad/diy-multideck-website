@@ -2,6 +2,9 @@
 post:
   date: 2023-11-22
   ogImagePath: /images/games/claim/guide.png
+  keywords:
+    - Claim 1
+    - Claim 2
 game:
   bgg: https://boardgamegeek.com/boardgame/233961/claim
   rules: https://cdn.1j1ju.com/medias/f6/35/f8-claim-rulebook.pdf

@@ -3,10 +3,10 @@ post:
    date: 2023-02-21
    ogImagePath: '/images/games/spanish-deck/guide.png'
    keywords:
-   - 'Playing cards'
-   - 'Baraja española'
-   - 'Traditional Playing Cards'
-   - 'Spanish-suited playing cards'
+      - 'Playing cards'
+      - 'Baraja española'
+      - 'Traditional Playing Cards'
+      - 'Spanish-suited playing cards'
 game:
   bgg: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards'
   rules: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards#Games'

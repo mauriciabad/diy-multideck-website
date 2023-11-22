@@ -3,11 +3,11 @@ post:
    date: 2023-02-21
    ogImagePath: '/images/games/standard-deck/guide.png'
    keywords:
-   - 'Playing cards'
-   - 'Poker'
-   - 'French cards'
-   - 'Anglo-American deck'
-   - 'Traditional Playing Cards'
+      - 'Playing cards'
+      - 'Poker'
+      - 'French cards'
+      - 'Anglo-American deck'
+      - 'Traditional Playing Cards'
 game:
   bgg: 'https://boardgamegeek.com/wiki/page/standard_deck_playing_card_games'
   rules: 'https://boardgamegeek.com/geeklist/171804/favorite-games-standard-playing-cards'

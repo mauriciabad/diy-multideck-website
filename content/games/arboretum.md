@@ -13,10 +13,10 @@ game:
   complexity: 2.15
   time: '30'
   mechanics:
-  - Hand Management
-  - Pattern Building
-  - Set Collection
-  - Tile Placement
+    - Hand Management
+    - Pattern Building
+    - Set Collection
+    - Tile Placement
 mapping:
   requiredCardsCount: 80
   requiredDrawingsCount: 0

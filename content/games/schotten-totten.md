@@ -3,9 +3,9 @@ post:
    date: 2023-02-24
    ogImagePath: '/images/games/schotten-totten/guide.png'
    keywords:
-   - "Battle line"
-   - "Battle lines"
-   - "Battle Line: Medieval"
+      - "Battle line"
+      - "Battle lines"
+      - "Battle Line: Medieval"
 game:
   bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
   rules: 'https://boardgamegeek.com/filepage/137335/english-rules'
@@ -17,11 +17,11 @@ game:
   complexity: 1.71
   time: '30'
   mechanics:
-  - Card Play
-  - Conflict Resolution
-  - Hand Management
-  - Melding and Splaying
-  - Set Collection 
+      - Card Play
+      - Conflict Resolution
+      - Hand Management
+      - Melding and Splaying
+      - Set Collection 
 mapping:
   requiredCardsCount: 64
   requiredDrawingsCount: 10

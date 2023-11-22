@@ -3,9 +3,9 @@ post:
   date: 2023-03-31
   ogImagePath: /images/games/the-crew-1/guide.png
   keywords:
-  - The crew 1
-  - The crew one
-  - space
+    - The crew 1
+    - The crew one
+    - space
 game:
   bgg: https://boardgamegeek.com/boardgame/284083/crew-quest-planet-nine
   rules: https://cdn.1j1ju.com/medias/8f/13/09-the-crew-the-quest-for-planet-nine-rulebook.pdf

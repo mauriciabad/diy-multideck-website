@@ -13,8 +13,8 @@ game:
   complexity: 1.07
   time: '20'
   mechanics:
-  -  Communication Limits
-  - Cooperative Game 
+      - Communication Limits
+      - Cooperative Game 
 mapping:
   requiredCardsCount: 104
   requiredDrawingsCount: 1

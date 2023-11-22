@@ -13,11 +13,11 @@ game:
   complexity: 2.34
   time: '60'
   mechanics:
-  - Hand Management
-  - Ladder Climbing
-  - Predictive Bid
-  - Team-Based Game
-  - Trick-taking 
+    - Hand Management
+    - Ladder Climbing
+    - Predictive Bid
+    - Team-Based Game
+    - Trick-taking 
 mapping:
   requiredCardsCount: 56
   requiredDrawingsCount: 4

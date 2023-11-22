@@ -13,11 +13,11 @@ game:
   complexity: 1.26
   time: '30'
   mechanics:
-  -  Auction/Bidding 
-  - 'Auction: Sealed Bid' 
-  - 'Auction: Turn Order Until Pass' 
-  - Hand Management 
-  - Selection Order Bid 
+    -  Auction/Bidding 
+    - 'Auction: Sealed Bid' 
+    - 'Auction: Turn Order Until Pass' 
+    - Hand Management 
+    - Selection Order Bid 
 mapping:
   requiredCardsCount: 60
   requiredDrawingsCount: 0

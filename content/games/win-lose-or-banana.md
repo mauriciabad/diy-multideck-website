@@ -12,7 +12,7 @@ game:
   complexity: 1.07
   time: '1'
   mechanics:
-  - Roles with Asymmetric Information
+    - Roles with Asymmetric Information
 mapping:
   requiredCardsCount: 3
   requiredDrawingsCount: 0

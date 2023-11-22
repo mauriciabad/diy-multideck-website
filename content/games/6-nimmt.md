@@ -16,10 +16,10 @@ game:
   complexity: 1.2
   time: '45'
   mechanics:
-  - Hand Manageme
-  - Kill Steal
-  - Score-and-Reset Game
-  - Simultaneous Action Selection 
+    - Hand Manageme
+    - Kill Steal
+    - Score-and-Reset Game
+    - Simultaneous Action Selection 
 mapping:
   requiredCardsCount: 104
   requiredDrawingsCount: 28

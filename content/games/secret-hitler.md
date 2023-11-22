@@ -13,11 +13,11 @@ game:
   complexity: 1.68
   time: '45'
   mechanics:
-  -  Hidden Roles
-  - Player Elimination
-  - Team-Based Game
-  - Traitor Game
-  - Voting 
+      - Hidden Roles
+      - Player Elimination
+      - Team-Based Game
+      - Traitor Game
+      - Voting 
 mapping:
   requiredCardsCount: 30
   requiredDrawingsCount: 15

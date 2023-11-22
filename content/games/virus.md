@@ -13,9 +13,9 @@ game:
   complexity: 1.05
   time: '20'
   mechanics:
-  - Hand Management
-  - Set Collection
-  - Take That 
+    - Hand Management
+    - Set Collection
+    - Take That 
 mapping:
   requiredCardsCount: 101
   requiredDrawingsCount: 101
