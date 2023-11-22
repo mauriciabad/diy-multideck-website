@@ -2,7 +2,6 @@
 post:
   date: 2023-11-22
   ogImagePath: /images/games/claim/guide.png
-  draft: true # Draft because the Goblins and Knights distributions are wrong (check rulebook)
 game:
   bgg: https://boardgamegeek.com/boardgame/233961/claim
   rules: https://cdn.1j1ju.com/medias/f6/35/f8-claim-rulebook.pdf
@@ -19,7 +18,7 @@ game:
     - "Auction: Once Around"
     - Auction/Bidding
 mapping:
-  requiredCardsCount: 50
+  requiredCardsCount: 52
   requiredDrawingsCount: 0
   deckVersion: v0.4b
   compatibility: 5
@@ -27,7 +26,7 @@ mapping:
 
 ## Cards selection and drawing
 
-To play Claim you need 50 cards and 0 drawings.
+To play Claim you need 52 cards and 0 drawings.
 
 You can add the [Claim 2](/games/claim-2) cards and play with both games.
 

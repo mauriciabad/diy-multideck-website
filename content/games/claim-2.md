@@ -17,7 +17,7 @@ game:
     - Trick-taking
     - Take That 
 mapping:
-  requiredCardsCount: 25
+  requiredCardsCount: 52
   requiredDrawingsCount: 0
   deckVersion: v0.4b
   compatibility: 5
