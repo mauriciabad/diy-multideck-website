@@ -33,4 +33,4 @@ To play Cheating Moth you need 68 cards (plus 1 card backs as guard) and 0 drawi
 
 ## Usage
 
-- The value of the moths is, the card number (top-right), and if it's greater than 5, substract 5. So: `0 => 5` `1 => 1` `2 => 2` `3 => 3` `4 => 4` `5 => 5` `1 => 1` `2 => 2` `3 => 3`
+- The value of the moths is, the card number (top-right), and if it's greater than 5, substract 5. So: `0 → 5` `1 → 1` `2 → 2` `3 → 3` `4 → 4` `5 → 5` `6 → 1` `7 → 2` `8 → 3`

@@ -12,7 +12,7 @@ game:
   image: https://cf.geekdo-images.com/98LnQShydr11OBKS46xY-Q__itemrep/img/etVRTXdF6IDsnGKQe77FRFP4H7M=/fit-in/246x300/filters:strip_icc()/pic5687013.jpg
   title: 'The Crew: The Quest for Planet Nine'
   description: Go on a planet-discovering space mission in this cooperative trick-taking game. 
-  rating: 7.9
+  rating: 7.8
   players: 2-5
   complexity: 1.98
   time: '20'
