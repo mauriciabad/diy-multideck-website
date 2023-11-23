@@ -13,7 +13,7 @@ game:
   image: https://cf.geekdo-images.com/VuBqZ1sMaDAVVHF_OEJP4g__itemrep/img/tgB3g7PECxG14yQ0FkMiMaXaOFE=/fit-in/246x300/filters:strip_icc()/pic5988903.jpg
   title: 'The Crew: Mission Deep Sea'
   description: Dive into the deep sea in this co-operative trick-taking game. 
-  rating: 8.3
+  rating: 8.2
   players: 2-5
   complexity: 2.04
   time: '20'
