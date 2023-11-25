@@ -53,7 +53,9 @@ To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if y
    {% callout type="idea" text="If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark." /%}
    {% callout type="idea" text="If you have 7 small objects, like coins, you can avoid drawing the arrow, and use the token like in the normal game instea of rotating the card" /%}
 
-|                                                                  |                                                                  |                                                                  |                                                                  |
+### Drawings
+
+| | | | |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
 | ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg) |
 
