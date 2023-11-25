@@ -1,13 +1,13 @@
 ---
-post: 
-   date: 2023-02-27
-   ogImagePath: '/images/games/arboretum/guide.png'
+post:
+  date: 2023-02-27
+  ogImagePath: '/images/games/arboretum/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/140934/arboretum'
   rules: 'https://boardgamegeek.com/filepage/165094/english-rules-arboretum-renegade-game-studios'
   image: 'https://cf.geekdo-images.com/XYOn10oXBrDqHySf0jvnyQ__itemrep/img/RRL2F2DBTNG4cO4c_oJIOlfGPes=/fit-in/246x300/filters:strip_icc()/pic4172124.png'
   title: 'Arboretum'
-  description: "Build the Arboretum of your dreams, and prevent your rival from building theirs."
+  description: 'Build the Arboretum of your dreams, and prevent your rival from building theirs.'
   rating: 7.3
   players: '2-4'
   complexity: 2.15
@@ -20,7 +20,7 @@ game:
 mapping:
   requiredCardsCount: 80
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

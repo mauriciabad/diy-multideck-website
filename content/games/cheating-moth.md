@@ -13,7 +13,7 @@ game:
   rating: 6.4
   players: 3-5
   complexity: 1.14
-  time: "30"
+  time: '30'
   mechanics:
     - Hand Management
 mapping:

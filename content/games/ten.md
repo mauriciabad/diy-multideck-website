@@ -7,7 +7,7 @@ game:
   rules: https://www.alderac.com/wp-content/uploads/2021/05/TEN_Rulebook-lowrez.pdf
   image: https://cf.geekdo-images.com/74OIxWD8fvpVGILu7s5I0g__itemrep/img/RkxPQBKJF6Go467qxvYYmCZCEkQ=/fit-in/246x300/filters:strip_icc()/pic6109559.png
   title: TEN (1-2 players)
-  description: An exciting push-your-luck and auction game for the whole family! 
+  description: An exciting push-your-luck and auction game for the whole family!
   rating: 7.1
   players: 1-2
   complexity: 1.41
@@ -16,7 +16,7 @@ game:
     - Auction/Bidding
     - 'Auction: Once Around'
     - Push Your Luck
-    - Set Collection 
+    - Set Collection
 mapping:
   requiredCardsCount: 89
   requiredDrawingsCount: 0
@@ -26,7 +26,7 @@ mapping:
 
 ## Cards selection and drawing
 
-To play TEN  (only variant for 1-2 players) you need 89 cards and 0 drawings.
+To play TEN (only variant for 1-2 players) you need 89 cards and 0 drawings.
 
 ### Instructions
 

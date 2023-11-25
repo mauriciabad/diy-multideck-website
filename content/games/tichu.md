@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-03-02
   ogImagePath: '/images/games/tichu/guide.png'
 game:
@@ -7,7 +7,7 @@ game:
   rules: 'https://www.ultraboardgames.com/tichu/game-rules.php'
   image: 'https://cf.geekdo-images.com/gz8_8iYP2SSGVAxpp7CwLg__itemrep/img/lnzwJvF8Ez8vuV_QBKXuvqiWcK8=/fit-in/246x300/filters:strip_icc()/pic5854968.png'
   title: 'Tichu'
-  description: "Be the first team to empty your hands in this popular partnership climbing card game."
+  description: 'Be the first team to empty your hands in this popular partnership climbing card game.'
   rating: 7.6
   players: '4'
   complexity: 2.34
@@ -17,11 +17,11 @@ game:
     - Ladder Climbing
     - Predictive Bid
     - Team-Based Game
-    - Trick-taking 
+    - Trick-taking
 mapping:
   requiredCardsCount: 56
   requiredDrawingsCount: 4
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 4
 ---
 

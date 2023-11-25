@@ -18,7 +18,7 @@ game:
   mechanics:
     - Trick-taking
     - Area Majority / Influence
-    - "Auction: Once Around"
+    - 'Auction: Once Around'
     - Auction/Bidding
 mapping:
   requiredCardsCount: 52

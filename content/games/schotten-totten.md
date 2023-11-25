@@ -1,31 +1,31 @@
 ---
 post:
-   date: 2023-02-24
-   ogImagePath: '/images/games/schotten-totten/guide.png'
-   keywords:
-      - "Battle line"
-      - "Battle lines"
-      - "Battle Line: Medieval"
+  date: 2023-02-24
+  ogImagePath: '/images/games/schotten-totten/guide.png'
+  keywords:
+    - 'Battle line'
+    - 'Battle lines'
+    - 'Battle Line: Medieval'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten'
   rules: 'https://boardgamegeek.com/filepage/137335/english-rules'
   image: 'https://cf.geekdo-images.com/69mwXe7c6HNYmT6S35Y4zg__itemrep/img/TVk3kfPLpSzQrQyHj6ByToSrLS0=/fit-in/246x300/filters:strip_icc()/pic2932872.jpg'
   title: 'Schotten Totten'
-  description: "Place your kilted clansmen, control stones, expand territory & foil the rival clan."
+  description: 'Place your kilted clansmen, control stones, expand territory & foil the rival clan.'
   rating: 7.4
   players: '2'
   complexity: 1.71
   time: '30'
   mechanics:
-      - Card Play
-      - Conflict Resolution
-      - Hand Management
-      - Melding and Splaying
-      - Set Collection 
+    - Card Play
+    - Conflict Resolution
+    - Hand Management
+    - Melding and Splaying
+    - Set Collection
 mapping:
   requiredCardsCount: 64
   requiredDrawingsCount: 10
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 
@@ -48,9 +48,9 @@ To play Schotten Totten you need 64 cards plus 9 optional ones and a minimum of 
 1. Use any other 9 cards facing down as Stones tiles.
    {% callout type="idea" text="Use coins as Stone tiles" /%}
 
-|   |   |   |   |   |
-|:-:|:-:|:-:|:-:|:-:|
-| ![action-1](/images/games/schotten-totten/action-1.png) | ![action-2](/images/games/schotten-totten/action-2.png) | ![action-3](/images/games/schotten-totten/action-3.png) | ![action-4](/images/games/schotten-totten/action-4.png)| ![action-5](/images/games/schotten-totten/action-5.png) |
-| Mud Fight  |  Banshee |   Strategist | Traiter  | Recruiter  |
-| ![action-6](/images/games/schotten-totten/action-6.png) | ![action-7](/images/games/schotten-totten/action-7.png) | ![action-8](/images/games/schotten-totten/action-8.png)| ![action-9](/images/games/schotten-totten/action-9.png)| ![action-9](/images/games/schotten-totten/action-9.png)|
-|  Spy |  Shield-Bearer | Blind-Man’s Bluf  | Joker 1/2  |  Joker 2/2 |
+|                                                         |                                                         |                                                         |                                                         |                                                         |
+| :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: |
+| ![action-1](/images/games/schotten-totten/action-1.png) | ![action-2](/images/games/schotten-totten/action-2.png) | ![action-3](/images/games/schotten-totten/action-3.png) | ![action-4](/images/games/schotten-totten/action-4.png) | ![action-5](/images/games/schotten-totten/action-5.png) |
+|                        Mud Fight                        |                         Banshee                         |                       Strategist                        |                         Traiter                         |                        Recruiter                        |
+| ![action-6](/images/games/schotten-totten/action-6.png) | ![action-7](/images/games/schotten-totten/action-7.png) | ![action-8](/images/games/schotten-totten/action-8.png) | ![action-9](/images/games/schotten-totten/action-9.png) | ![action-9](/images/games/schotten-totten/action-9.png) |
+|                           Spy                           |                      Shield-Bearer                      |                    Blind-Man’s Bluf                     |                        Joker 1/2                        |                        Joker 2/2                        |

@@ -1,26 +1,26 @@
 ---
-post: 
-   date: 2023-02-22
-   ogImagePath: '/images/games/hanamikoji/guide.jpg'
+post:
+  date: 2023-02-22
+  ogImagePath: '/images/games/hanamikoji/guide.jpg'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/158600/hanamikoji'
   rules: 'https://boardgamegeek.com/filepage/131424/hanamikoji-english-rules'
   image: 'https://cf.geekdo-images.com/uiVZ7QVfRFQx3EBG8eDU8w__itemrep/img/KKHTlNTf8JbSyL9tHwPrC5J_lQM=/fit-in/246x300/filters:strip_icc()/pic6339446.png'
   title: 'Hanamikoji'
-  description: "Win the favor of the geishas through careful speculation and bold moves."
+  description: 'Win the favor of the geishas through careful speculation and bold moves.'
   rating: 7.5
   players: '2'
   complexity: 1.7
   time: '15'
   mechanics:
-      - Area Majority / Influence
-      - Force Commitment
-      - Hand Management
-      - I Cut, You Choose 
+    - Area Majority / Influence
+    - Force Commitment
+    - Hand Management
+    - I Cut, You Choose
 mapping:
   requiredCardsCount: 31
   requiredDrawingsCount: 31
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 3
 ---
 
@@ -49,9 +49,9 @@ To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if y
    {% callout type="idea" text="If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark." /%}
    {% callout type="idea" text="If you have 7 small objects, like coins, you can avoid drawing the arrow, and use the token like in the normal game instea of rotating the card" /%}
 
-|   |   |   |   |
-|:-:|:-:|:-:|:-:|
-| ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg)|
+|                                                                  |                                                                  |                                                                  |                                                                  |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+| ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg) |
 
 ## Usage
 

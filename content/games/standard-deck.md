@@ -1,23 +1,23 @@
 ---
-post: 
-   date: 2023-02-21
-   ogImagePath: '/images/games/standard-deck/guide.png'
-   keywords:
-      - 'Playing cards'
-      - 'Poker'
-      - 'French cards'
-      - 'Anglo-American deck'
-      - 'Traditional Playing Cards'
+post:
+  date: 2023-02-21
+  ogImagePath: '/images/games/standard-deck/guide.png'
+  keywords:
+    - 'Playing cards'
+    - 'Poker'
+    - 'French cards'
+    - 'Anglo-American deck'
+    - 'Traditional Playing Cards'
 game:
   bgg: 'https://boardgamegeek.com/wiki/page/standard_deck_playing_card_games'
   rules: 'https://boardgamegeek.com/geeklist/171804/favorite-games-standard-playing-cards'
   image: '/images/games/standard-deck/cover.jpg'
   title: 'Standard deck (Poker)'
-  description: "A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers."
+  description: 'A standard deck of cards consists of four suits, thirteen or fewer ranks, and possibly jokers.'
 mapping:
   requiredCardsCount: 54
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

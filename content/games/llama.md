@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-03-02
   ogImagePath: '/images/games/llama/guide.png'
 game:
@@ -16,11 +16,11 @@ game:
     - Hand Management
     - Ladder Climbing
     - Matching
-    - Push Your Luck 
+    - Push Your Luck
 mapping:
   requiredCardsCount: 42
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

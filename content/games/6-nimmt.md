@@ -1,16 +1,16 @@
 ---
-post: 
+post:
   date: 2023-03-03
   ogImagePath: '/images/games/6-nimmt/guide.png'
   keywords:
-  - "Take 6!"
-  - "Take 5!"
+    - 'Take 6!'
+    - 'Take 5!'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/432/6-nimmt'
   rules: 'https://world-of-board-games.com.sg/docs/6-Nimmt.pdf'
   image: 'https://cf.geekdo-images.com/JFhLVSRFQ2mtWRNHgbZ3Wg__itemrep/img/3WuuxgYlgoEMP5-CUl6bakeKVts=/fit-in/246x300/filters:strip_icc()/pic2602138.jpg'
   title: '6 nimmt!'
-  description: "Choose sequential cards for rows simultaneously, but avoid adding the 6th card!"
+  description: 'Choose sequential cards for rows simultaneously, but avoid adding the 6th card!'
   rating: 6.9
   players: '2-10'
   complexity: 1.2
@@ -19,11 +19,11 @@ game:
     - Hand Manageme
     - Kill Steal
     - Score-and-Reset Game
-    - Simultaneous Action Selection 
+    - Simultaneous Action Selection
 mapping:
   requiredCardsCount: 104
   requiredDrawingsCount: 28
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 4
 ---
 

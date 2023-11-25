@@ -1,5 +1,5 @@
 ---
-title: "Discarded ideas for v0.4b"
+title: 'Discarded ideas for v0.4b'
 description: "Discover the ideas that didn't make it to the final version and the reasonings why."
 date: 2023-02-28
 draft: true

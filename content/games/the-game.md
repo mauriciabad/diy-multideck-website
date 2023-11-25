@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-03-02
   ogImagePath: '/images/games/the-game/guide.png'
 game:
@@ -7,7 +7,7 @@ game:
   rules: 'https://boardgamegeek.com/filepage/199792/game-eng-rules'
   image: 'https://cf.geekdo-images.com/g4pn1ieUKfIhERl5Ym6joQ__itemrep/img/4fI4jFXRtKw-ItHIqpzp8tH7r1A=/fit-in/246x300/filters:strip_icc()/pic4203279.png'
   title: 'The game'
-  description: "Can you discard all the cards in ascending & descending order without getting stuck? "
+  description: 'Can you discard all the cards in ascending & descending order without getting stuck? '
   rating: 6.7
   players: '1-5'
   complexity: 1.24
@@ -16,11 +16,11 @@ game:
     - Communication Limits
     - Cooperative Game
     - Hand Management
-    - Solo / Solitaire Game 
+    - Solo / Solitaire Game
 mapping:
   requiredCardsCount: 98
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

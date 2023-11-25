@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-11-22
   ogImagePath: '/images/games/deluxe-pit/guide.png'
 game:
@@ -21,7 +21,7 @@ game:
 mapping:
   requiredCardsCount: 74
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

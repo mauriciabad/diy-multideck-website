@@ -9,7 +9,7 @@ game:
   rules: https://dumekj556jp75.cloudfront.net/ttb/burrito-english.pdf
   image: https://cf.geekdo-images.com/5ClVKrQcLkzRdBGiEfjevQ__itemrep/img/dYq9z1LZxdI90c_RvHPiqA9mgu8=/fit-in/246x300/filters:strip_icc()/pic7073068.jpg
   title: Throw Throw Burrito
-  description: Throw, dodge, rage in this exciting party game! 
+  description: Throw, dodge, rage in this exciting party game!
   rating: 6.6
   players: 2-6
   complexity: 1.08
@@ -17,7 +17,7 @@ game:
   mechanics:
     - Real-Time
     - Set Collection
-    - Take That 
+    - Take That
 mapping:
   requiredCardsCount: 120
   requiredDrawingsCount: 72

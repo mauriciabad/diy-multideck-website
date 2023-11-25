@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-11-22
   ogImagePath: '/images/games/taco-cat-goat-cheese-pizza/guide.png'
 game:
@@ -7,7 +7,7 @@ game:
   rules: 'https://cdn.1j1ju.com/medias/f1/da/23-taco-cat-goat-cheese-pizza-rulebook.pdf'
   image: 'https://cf.geekdo-images.com/GHrnr-Khb0LvBU_QkrC_qA__itemrep/img/cWh2D89fj4HLBkLT71g7JYWiM1s=/fit-in/246x300/filters:strip_icc()/pic7192024.png'
   title: 'Taco Cat Goat Cheese Pizza'
-  description: "Act fast when the flipped card actually is that taco, cat, goat, cheese or pizza..."
+  description: 'Act fast when the flipped card actually is that taco, cat, goat, cheese or pizza...'
   rating: 6.6
   players: '2-8'
   complexity: 1.02
@@ -20,7 +20,7 @@ game:
 mapping:
   requiredCardsCount: 59
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

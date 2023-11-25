@@ -1,8 +1,8 @@
 ---
-post: 
-   date: 2023-03-23
-   ogImagePath: '/images/games/love-letter-premium/guide.png'
-   keywords:
+post:
+  date: 2023-03-23
+  ogImagePath: '/images/games/love-letter-premium/guide.png'
+  keywords:
     - Love Letter
     - Love Letters
 game:
@@ -10,7 +10,7 @@ game:
   rules: 'http://alderac.com/wp-content/uploads/2017/11/Love-Letter-Premium_Rulebook.pdf'
   image: 'https://cf.geekdo-images.com/40eKIHpHIDO6VBsZtHAXpA__itemrep/img/IcznG5pagi-Irx8K14A6hnFi3ug=/fit-in/246x300/filters:strip_icc()/pic3124998.jpg'
   title: ' Love Letter: Premium Edition'
-  description: "Navigate the intrigue and politics of the court to earn favour with the princess."
+  description: 'Navigate the intrigue and politics of the court to earn favour with the princess.'
   rating: 7.4
   players: '4-8'
   complexity: 1.32
@@ -23,17 +23,17 @@ game:
     - Team-Based Game
     - Traitor Game
     - Variable Player Powers
-    - Voting 
+    - Voting
 mapping:
   requiredCardsCount: 32
   requiredDrawingsCount: 32
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play  Love Letter: Premium Edition you need 32 cards and 32 drawings. It is reccommended to have a player aid text/paper.
+To play Love Letter: Premium Edition you need 32 cards and 32 drawings. It is reccommended to have a player aid text/paper.
 
 ### Instructions
 

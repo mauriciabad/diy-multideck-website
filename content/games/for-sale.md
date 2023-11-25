@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-03-02
   ogImagePath: '/images/games/for-sale/guide.png'
 game:
@@ -13,15 +13,15 @@ game:
   complexity: 1.26
   time: '30'
   mechanics:
-    -  Auction/Bidding 
-    - 'Auction: Sealed Bid' 
-    - 'Auction: Turn Order Until Pass' 
-    - Hand Management 
-    - Selection Order Bid 
+    - Auction/Bidding
+    - 'Auction: Sealed Bid'
+    - 'Auction: Turn Order Until Pass'
+    - Hand Management
+    - Selection Order Bid
 mapping:
   requiredCardsCount: 60
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

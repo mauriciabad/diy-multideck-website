@@ -1,9 +1,9 @@
 ---
 type Props = {
-  url: string;
-};
+  url: string
+}
 
-const { url } = Astro.props;
+const { url } = Astro.props
 ---
 
 <div class="relative not-prose flex flex-col items-center justify-center">
@@ -14,7 +14,9 @@ const { url } = Astro.props;
     data-lang="en"
     data-dnt="true"
   >
-    <a class="unset absolute left-0 top-0" href={url}>Loading embedded tweet...</a>
+    <a class="unset absolute left-0 top-0" href={url}
+      >Loading embedded tweet...</a
+    >
   </blockquote>
 </div>
 <script

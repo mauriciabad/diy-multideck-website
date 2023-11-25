@@ -1,22 +1,22 @@
 ---
-post: 
-   date: 2023-02-21
-   ogImagePath: '/images/games/spanish-deck/guide.png'
-   keywords:
-      - 'Playing cards'
-      - 'Baraja española'
-      - 'Traditional Playing Cards'
-      - 'Spanish-suited playing cards'
+post:
+  date: 2023-02-21
+  ogImagePath: '/images/games/spanish-deck/guide.png'
+  keywords:
+    - 'Playing cards'
+    - 'Baraja española'
+    - 'Traditional Playing Cards'
+    - 'Spanish-suited playing cards'
 game:
   bgg: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards'
   rules: 'https://en.wikipedia.org/wiki/Spanish-suited_playing_cards#Games'
   image: '/images/games/spanish-deck/cover.jpg'
   title: 'Spanish standard deck'
-  description: "A spanish suited cards consists of four suits, twelve or fewer ranks, and possibly jokers."
+  description: 'A spanish suited cards consists of four suits, twelve or fewer ranks, and possibly jokers.'
 mapping:
   requiredCardsCount: 50
   requiredDrawingsCount: 0
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 5
 ---
 

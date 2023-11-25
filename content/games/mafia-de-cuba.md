@@ -1,5 +1,5 @@
 ---
-post: 
+post:
   date: 2023-11-22
   ogImagePath: '/images/games/mafia-de-cuba/guide.png'
 game:
@@ -7,7 +7,7 @@ game:
   rules: 'https://cdn.1j1ju.com/medias/53/87/ed-mafia-de-cuba-rulebook.pdf'
   image: 'https://cf.geekdo-images.com/nvdogXld5bIr8uXIq2M-uA__itemrep/img/RX8xHz9gbSTPYr7PYS2jIqVpAGU=/fit-in/246x300/filters:strip_icc()/pic2519675.jpg'
   title: 'Mafia de Cuba'
-  description: "Catch diamond thieves or steal from the mob boss in this social deduction game."
+  description: 'Catch diamond thieves or steal from the mob boss in this social deduction game.'
   rating: 6.5
   players: '6-12'
   complexity: 1.47
@@ -21,7 +21,7 @@ game:
 mapping:
   requiredCardsCount: 25
   requiredDrawingsCount: 8
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 4
 ---
 

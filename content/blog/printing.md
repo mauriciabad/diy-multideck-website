@@ -1,12 +1,12 @@
 ---
-title: "Printing the DIW Multideck"
-description: "How to print the deck at home or in a copy shop"
+title: 'Printing the DIW Multideck'
+description: 'How to print the deck at home or in a copy shop'
 date: 2023-02-20
 draft: true
 ---
 
 - The card's size is **2.5 by 3.5 inches**, the same as standard poker cards. You can fit 9 cards in a DIN A4 sheet, and 18 cards in a DIN A3 sheet.
-- They are meant to be printed in **100% plastic** sheets of  **300 g/m²** or more, so they are waterproof and extremely durable.
+- They are meant to be printed in **100% plastic** sheets of **300 g/m²** or more, so they are waterproof and extremely durable.
   - You could also use thick paper and/or laminate it, but they'd last less time, probably wouldn't shuffle satisfyingly, and possibly you couldn't either use pencils to draw on them.
 - Drawing in the cards:
   - Pens/markers ink sticks into it and it cannot be erased, even the special whiteboard markers.

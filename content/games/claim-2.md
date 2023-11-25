@@ -10,14 +10,14 @@ game:
   rules: https://cdn.1j1ju.com/medias/f1/93/6e-claim-2-rulebook.pdf
   image: https://cf.geekdo-images.com/lLKWqJzEFSlOU8Cs5G54dg__itemrep/img/K2iqJ3RfAhuEuDD1NtnbGPs4Esk=/fit-in/246x300/filters:strip_icc()/pic4059108.jpg
   title: Claim 2
-  description: Recruit followers to retake control the kingdom by taking the right tricks. 
+  description: Recruit followers to retake control the kingdom by taking the right tricks.
   rating: 7
   players: '2'
   complexity: 1.57
   time: '25'
   mechanics:
     - Trick-taking
-    - Take That 
+    - Take That
 mapping:
   requiredCardsCount: 52
   requiredDrawingsCount: 0

@@ -11,7 +11,7 @@ game:
   rules: https://cdn.1j1ju.com/medias/8f/13/09-the-crew-the-quest-for-planet-nine-rulebook.pdf
   image: https://cf.geekdo-images.com/98LnQShydr11OBKS46xY-Q__itemrep/img/etVRTXdF6IDsnGKQe77FRFP4H7M=/fit-in/246x300/filters:strip_icc()/pic5687013.jpg
   title: 'The Crew: The Quest for Planet Nine'
-  description: Go on a planet-discovering space mission in this cooperative trick-taking game. 
+  description: Go on a planet-discovering space mission in this cooperative trick-taking game.
   rating: 7.8
   players: 2-5
   complexity: 1.98
@@ -21,7 +21,7 @@ game:
     - Cooperative Game
     - Hand Management
     - Scenario / Mission / Campaign Game
-    - Trick-taking 
+    - Trick-taking
 mapping:
   requiredCardsCount: 40
   requiredDrawingsCount: 0

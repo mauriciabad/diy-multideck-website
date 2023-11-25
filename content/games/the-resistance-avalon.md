@@ -1,13 +1,13 @@
 ---
-post: 
-   date: 2023-03-22
-   ogImagePath: '/images/games/the-resistance-avalon/guide.png'
+post:
+  date: 2023-03-22
+  ogImagePath: '/images/games/the-resistance-avalon/guide.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/128882/resistance-avalon'
   rules: 'https://avalon.fun/pdfs/rules.pdf'
   image: 'https://cf.geekdo-images.com/LPa6rsGcv8S0-OeNjCOAEQ__itemrep/img/KtGX_JFWNUXci7H5zs7GjS0QrQk=/fit-in/246x300/filters:strip_icc()/pic1398895.jpg'
   title: 'The Resistance: Avalon'
-  description: "Who can you trust? A game of social deduction set in King Arthur’s legendary realm. "
+  description: 'Who can you trust? A game of social deduction set in King Arthur’s legendary realm. '
   rating: 7.5
   players: '5-10'
   complexity: 1.75
@@ -20,11 +20,11 @@ game:
     - Team-Based Game
     - Traitor Game
     - Variable Player Powers
-    - Voting 
+    - Voting
 mapping:
   requiredCardsCount: 34
   requiredDrawingsCount: 15
-  deckVersion: "v0.4b"
+  deckVersion: 'v0.4b'
   compatibility: 4
 ---
 
