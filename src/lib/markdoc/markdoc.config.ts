@@ -114,6 +114,15 @@ export const config: Config = {
         },
       },
     },
+    usedCards: {
+      render: 'UsedCards',
+      selfClosing: true,
+      attributes: {
+        cardIds: {
+          type: Array,
+        },
+      },
+    },
   },
   nodes: {
     heading: {

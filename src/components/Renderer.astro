@@ -2,6 +2,7 @@
 import { MarkdocRenderer } from 'astro-markdoc-renderer'
 import type { Content } from 'astro-markdoc-renderer'
 import Callout from './Callout.astro'
+import UsedCards from './UsedCards.astro'
 import YouTubeEmbed from './YouTubeEmbed.astro'
 import TweetEmbed from './TweetEmbed.astro'
 import CodePenEmbed from './CodePenEmbed.astro'
@@ -42,6 +43,10 @@ const components = {
   },
   Callout: {
     Component: Callout,
+    props: {},
+  },
+  UsedCards: {
+    Component: UsedCards,
     props: {},
   },
 }
