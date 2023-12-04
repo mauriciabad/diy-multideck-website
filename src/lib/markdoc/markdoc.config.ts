@@ -118,8 +118,15 @@ export const config: Config = {
       render: 'UsedCards',
       selfClosing: true,
       attributes: {
-        cardIds: {
+        cards: {
           type: Array,
+          errorLevel: 'critical',
+        },
+        layout: {
+          type: String,
+          default: 'basic',
+          matches: ['basic', '3d', 'sequential', 'pyramidal', 'coin'],
+          errorLevel: 'critical',
         },
       },
     },

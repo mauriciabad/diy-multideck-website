@@ -1,4 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "prettier.useEditorConfig": false,
+  "prettier.useEditorConfig": false
 }

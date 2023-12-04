@@ -34,7 +34,7 @@ To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if y
 
 #### Used cards
 
-{% usedCards cardIds=[1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, 113] /%}
+{% usedCards layout="basic" cards=[1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, 113] /%}
 
 ### Instructions
 
@@ -55,7 +55,7 @@ To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if y
 
 ### Drawings
 
-| | | | |
+|                                                                  |                                                                  |                                                                  |                                                                  |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
 | ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg) |
 
