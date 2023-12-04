@@ -1,19 +1,14 @@
 ---
-import { readOne, readAll } from '../../lib/markdoc/read'
-import { blogSchema } from '../../lib/markdoc/frontmatter.schema'
-import Renderer from '../../components/Renderer.astro'
 import BlogPostMeta from '../../components/BlogPostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
+import { getCollection, getEntry } from 'astro:content'
 
 export async function getStaticPaths() {
-  const posts = await readAll({
-    directory: 'blog',
-    frontmatterSchema: blogSchema,
-  })
+  const posts = await getCollection('blog')
 
   return posts
-    .filter((p) => p.frontmatter.draft !== true)
+    .filter((p) => p.data.draft !== true)
     .map((p) => {
       return { params: { slug: p.slug } }
     })
@@ -24,27 +19,26 @@ if (typeof slug !== 'string') {
   throw Error(`slug should be string. Received: ${slug}`)
 }
 
-const { content, frontmatter } = await readOne({
-  directory: 'blog',
-  slug,
-  frontmatterSchema: blogSchema,
-})
+const entry = await getEntry('blog', slug)
+const data = entry.data
 
-const ogImageAbsoluteUrl = frontmatter.ogImagePath
-  ? new URL(frontmatter.ogImagePath, SITE_URL).toString()
+const { Content } = await entry.render()
+
+const ogImageAbsoluteUrl = data.ogImagePath
+  ? new URL(data.ogImagePath, SITE_URL).toString()
   : undefined
 ---
 
-<ContentLayout title={frontmatter.title} date={frontmatter.date}>
+<ContentLayout title={data.title} date={data.date}>
   <BlogPostMeta
-    title={frontmatter.title}
-    description={frontmatter.description}
-    publishDate={frontmatter.date.toISOString()}
+    title={data.title}
+    description={data.description}
+    publishDate={data.date.toISOString()}
     pagePath={`/blog/${slug}`}
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
   <Fragment slot="content">
-    <Renderer content={content} />
+    <Content />
   </Fragment>
 </ContentLayout>

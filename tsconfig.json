@@ -1,8 +1,7 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "display": "theme/sleek",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "types": ["astro/client"],
-    "baseUrl": "."
+    "exactOptionalPropertyTypes": false,
+    "strictNullChecks": true
   }
 }

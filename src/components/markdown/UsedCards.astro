@@ -22,7 +22,6 @@ const layouts = [
 type NonNumberedCard = 'cover' | 'notes' | 'back'
 type Layout = (typeof layouts)[number]['key']
 
-
 const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
   basic: [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 120, 121, 122, 123, 124],
@@ -226,26 +225,39 @@ const miniCardVersionByLayout = {
   pyramidal: 'sequential',
   coin: 'sequential',
 } as const satisfies Record<Layout, 'basic' | '3d' | 'sequential'>
-
 ---
 
 <div class="overflow-x-auto -mx-3 sm:mx-0 px-3 sm:px-0">
-  <div class="grid gap-0.5 items-center grid-cols-[repeat(var(--columns,15),minmax(2.5rem,3.5rem))] w-full mx-auto justify-center"
-  style={{
-    '--columns':  cardGrids[layout][0].length
-  }}>
-    {cardGrids[layout].flat().map((cardIdOrName) => (
-      cardIdOrName === null ? (<div />) :
-    (<img
-      height="200"
-      width="200"
-      src={typeof cardIdOrName === 'string' ? `/images/mini-cards/extra-cards/${cardIdOrName}.svg` :`/images/mini-cards/${miniCardVersionByLayout[layout]}/${cardIdOrName}.png`} alt={`Card ${cardIdOrName}`} class:list={[
-      'm-0 shadow-xl rounded-lg border-2 bg-white',
-      { 
-        'opacity-25 border-white': !cardsSet.has(cardIdOrName),
-        'border-stone-500': cardsSet.has(cardIdOrName) ,
-      }
-    ]} />)
-    ))}
+  <div
+    class="grid gap-0.5 items-center grid-cols-[repeat(var(--columns,15),minmax(2.5rem,3.5rem))] w-full mx-auto justify-center"
+    style={{
+      '--columns': cardGrids[layout][0]?.length ?? 15,
+    }}
+  >
+    {
+      cardGrids[layout].flat().map((cardIdOrName) =>
+        cardIdOrName === null ? (
+          <div />
+        ) : (
+          <img
+            height="200"
+            width="200"
+            src={
+              typeof cardIdOrName === 'string'
+                ? `/images/mini-cards/extra-cards/${cardIdOrName}.svg`
+                : `/images/mini-cards/${miniCardVersionByLayout[layout]}/${cardIdOrName}.png`
+            }
+            alt={`Card ${cardIdOrName}`}
+            class:list={[
+              'm-0 shadow-xl rounded-lg border-2 bg-white',
+              {
+                'opacity-25 border-white': !cardsSet.has(cardIdOrName),
+                'border-stone-500': cardsSet.has(cardIdOrName),
+              },
+            ]}
+          />
+        )
+      )
+    }
   </div>
 </div>

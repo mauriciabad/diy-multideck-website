@@ -4,7 +4,7 @@
 
 ![preview](/public/images/og.png)
 
-The DIY multideck is a deck of 120 poker-sized playing cards that lets you play many games by writing in the cards and using a bit of imagination.
+The DIY multideck is a deck of 160 poker-sized playing cards that lets you play many games by writing in the cards and using a bit of imagination.
 
 More details about the deck in: <https://diymultideck.mauri.app/>
 
@@ -12,8 +12,8 @@ More details about the deck in: <https://diymultideck.mauri.app/>
 
 ```zsh
 # Run locally
-npm run dev
+pnpm run dev
 
 # Build
-npm run build
+pnpm run build
 ```

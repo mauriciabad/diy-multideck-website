@@ -1,33 +1,29 @@
 ---
-import { readAll } from '../lib/markdoc/read'
-import { gameSchema } from '../lib/markdoc/frontmatter.schema'
 import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
-import { getCompatibility } from 'src/utils/compatibility'
-import type { z } from 'zod'
+import { getCompatibility } from '../utils/compatibility'
+import { getCollection } from 'astro:content'
+import type { GameInfo } from '../lib/schemas'
 
-const posts = await readAll({
-  directory: 'games',
-  frontmatterSchema: gameSchema,
-})
+const games = await getCollection('games')
 
-const gameRelevance = ({game, mapping}: z.TypeOf<typeof gameSchema>) => {
+const gameRelevance = ({game, mapping}: GameInfo): number => {
   return mapping.compatibility * 0.75 + (game.rating ?? 5)
 }
 
-const sortedPosts = posts
-  .filter((p) => p.frontmatter.post.draft !== true)
+const sortedGames = games
+  .filter((p) => p.data.post.draft !== true)
   .sort(
     (a, b) =>
-    gameRelevance(b.frontmatter) - gameRelevance(a.frontmatter)
+    gameRelevance(b.data) - gameRelevance(a.data)
   )
   
   // Sort by compatibility > rating
   // .sort(
   //   (a, b) =>
-  //   b.frontmatter.mapping.compatibility - a.frontmatter.mapping.compatibility ||
-  //   (b.frontmatter.game.rating ?? 0) - (a.frontmatter.game.rating ?? 0)
+  //   b.data.mapping.compatibility - a.data.mapping.compatibility ||
+  //   (b.data.game.rating ?? 0) - (a.data.game.rating ?? 0)
   // )
 ---
 
@@ -66,18 +62,18 @@ const sortedPosts = posts
     </div>
 
     <p class="text-xl font-bold mt-8 mb-4" id="games-count-no-search">
-      {sortedPosts.length} games in total
+      {sortedGames.length} games in total
     </p>
 
     <p class="hidden text-xl font-bold mt-8 mb-4" id="games-count-search">
-      Showing <span id="games-count-showing">{sortedPosts.length}</span> out of <span
-        >{sortedPosts.length}</span
+      Showing <span id="games-count-showing">{sortedGames.length}</span> out of <span
+        >{sortedGames.length}</span
       > games
     </p>
 
     <ul class="unset space-y-4">
       {
-        sortedPosts.map(({ frontmatter: { game, mapping, post }, slug }) => (
+        sortedGames.map(({ data: { game, mapping, post }, slug }) => (
           <li
             data-searchable={`${game.title}---${
               post.keywords?.join('---') ?? ''

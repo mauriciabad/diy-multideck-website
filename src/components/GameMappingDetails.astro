@@ -1,13 +1,10 @@
 ---
-import type { gameSchema } from 'src/lib/markdoc/frontmatter.schema'
-import { getCompatibility } from 'src/utils/compatibility'
-import type { z } from 'zod'
-
-type GameSchema = z.infer<typeof gameSchema>
+import type { GameInfo } from '../lib/schemas'
+import { getCompatibility } from '../utils/compatibility'
 
 interface Props {
-  game: GameSchema['game']
-  mapping: GameSchema['mapping']
+  game: GameInfo['game']
+  mapping: GameInfo['mapping']
 }
 
 const { game, mapping } = Astro.props
@@ -165,3 +162,4 @@ const { game, mapping } = Astro.props
     }
   }
 </style>
+ ../lib/schemas

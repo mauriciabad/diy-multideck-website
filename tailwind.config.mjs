@@ -1,6 +1,9 @@
+import typography from '@tailwindcss/typography'
+import containerQueries from '@tailwindcss/container-queries'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/**/*.astro'],
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,mdoc,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -110,8 +113,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-  ],
+  plugins: [typography, containerQueries],
 }
