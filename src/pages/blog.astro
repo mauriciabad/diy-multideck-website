@@ -1,21 +1,15 @@
 ---
-import { readAll } from '../lib/markdoc/read'
-import { blogSchema } from '../lib/markdoc/frontmatter.schema'
 import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
+import { getCollection } from 'astro:content'
 
-const posts = await readAll({
-  directory: 'blog',
-  frontmatterSchema: blogSchema,
-})
+const posts = await getCollection('blog')
 
 const sortedPosts = posts
-  .filter((p) => p.frontmatter.draft !== true)
+  .filter((p) => p.data.draft !== true)
   .sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
   )
 ---
 
@@ -32,13 +26,14 @@ const sortedPosts = posts
       sortedPosts.length ? (
         <ul>
           {sortedPosts.map((post) => {
-            const formattedDate = new Date(
-              post.frontmatter.date
-            ).toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })
+            const formattedDate = new Date(post.data.date).toLocaleDateString(
+              'en-us',
+              {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              }
+            )
             return (
               <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
                 <div class="title">
@@ -46,11 +41,11 @@ const sortedPosts = posts
                     href={`/blog/${post.slug}`}
                     class="unset hover:text-text-link"
                   >
-                    {post.frontmatter.title}
+                    {post.data.title}
                   </a>
                 </div>
                 <div class="text-text-muted text-sm italic">
-                  <time datetime={post.frontmatter.date.toISOString()}>
+                  <time datetime={post.data.date.toISOString()}>
                     {formattedDate}
                   </time>
                 </div>

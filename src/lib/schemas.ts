@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from 'astro:content'
 
 const dateSchema = z.date({
   required_error: 'Required frontmatter missing: date',
@@ -63,3 +63,6 @@ export const gameSchema = z.object({
     deckVersion: z.enum(['v0.4b']),
   }),
 })
+
+export type GameInfo = z.infer<typeof gameSchema>
+export type BlogInfo = z.infer<typeof blogSchema>

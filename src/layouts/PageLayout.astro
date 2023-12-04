@@ -17,14 +17,13 @@ import ThemeScript from './ThemeScript.astro'
 import Favicon from './Favicon.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import MetaTags from './MetaTags.astro'
 ---
 
 <!DOCTYPE html>
 <html class="theme-sleek" lang="en">
   <head>
-    <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <MetaTags />
     <Favicon />
     <slot name="meta" />
     <GoogleFont />
