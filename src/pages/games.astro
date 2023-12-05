@@ -85,13 +85,15 @@ const sortedGames = games
               class="unset"
             >
             <article class="p-3 sm:p-4" >
-              <h1 class="block leading-4">{game.title}</h1>
+              <h1 class="block leading-4" transition:name={`game-title-${slug}`}
+              >{game.title}</h1>
               <p class="text-sm sm:text-base font-normal mt-1 mb-2">{game.description}</p>
               
               <div class="flex items-center gap-3 sm:gap-4">
               <img
                 class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
                 src={game.image}
+                transition:name={`game-image-${slug}`}
               />
               <div class="leading-normal grow">
                 <div class="font-normal text-base text-stone-700 dark:text-stone-200 leading-inherit">
@@ -156,71 +158,73 @@ const sortedGames = games
 </PageLayout>
 
 <script>
-  const searchInput = document.getElementById(
-    'search'
-  ) as HTMLInputElement | null
-  if (!searchInput) throw new Error("search element doesn't exist")
-  const noResultsElement = document.getElementById(
-    'no-results'
-  ) as HTMLDivElement | null
-  if (!noResultsElement) throw new Error("no-results element doesn't exist")
-  const gamesCountNoSearchElement = document.getElementById(
-    'games-count-no-search'
-  ) as HTMLDivElement | null
-  if (!gamesCountNoSearchElement)
-    throw new Error("games-count-no-search element doesn't exist")
-  const gamesCountSearchElement = document.getElementById(
-    'games-count-search'
-  ) as HTMLDivElement | null
-  if (!gamesCountSearchElement)
-    throw new Error("games-count-search element doesn't exist")
-  const gamesCountShowingElement = document.getElementById(
-    'games-count-showing'
-  ) as HTMLDivElement | null
-  if (!gamesCountShowingElement)
-    throw new Error("games-count-showing element doesn't exist")
+  document.addEventListener('astro:page-load', () => {
+    const searchInput = document.getElementById(
+      'search'
+    ) as HTMLInputElement | null
+    if (!searchInput) throw new Error("search element doesn't exist")
+    const noResultsElement = document.getElementById(
+      'no-results'
+    ) as HTMLDivElement | null
+    if (!noResultsElement) throw new Error("no-results element doesn't exist")
+    const gamesCountNoSearchElement = document.getElementById(
+      'games-count-no-search'
+    ) as HTMLDivElement | null
+    if (!gamesCountNoSearchElement)
+      throw new Error("games-count-no-search element doesn't exist")
+    const gamesCountSearchElement = document.getElementById(
+      'games-count-search'
+    ) as HTMLDivElement | null
+    if (!gamesCountSearchElement)
+      throw new Error("games-count-search element doesn't exist")
+    const gamesCountShowingElement = document.getElementById(
+      'games-count-showing'
+    ) as HTMLDivElement | null
+    if (!gamesCountShowingElement)
+      throw new Error("games-count-showing element doesn't exist")
 
-  searchInput.addEventListener('input', () => {
-    const elements = document.querySelectorAll<HTMLElement>('[data-searchable]')
-    elements.forEach((element) => {
-      const elementTextNormalized =
-        element.dataset.searchable
-          ?.normalize('NFD')
+    searchInput.addEventListener('input', () => {
+      const elements = document.querySelectorAll<HTMLElement>('[data-searchable]')
+      elements.forEach((element) => {
+        const elementTextNormalized =
+          element.dataset.searchable
+            ?.normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+            .toLowerCase() ?? ''
+        const inputTextNormalized = searchInput.value
+          .normalize('NFD')
           .replace(/\p{Diacritic}/gu, '')
-          .toLowerCase() ?? ''
-      const inputTextNormalized = searchInput.value
-        .normalize('NFD')
-        .replace(/\p{Diacritic}/gu, '')
-        .toLowerCase()
-      const isMatch = elementTextNormalized.includes(inputTextNormalized)
+          .toLowerCase()
+        const isMatch = elementTextNormalized.includes(inputTextNormalized)
 
-      if (isMatch) {
-        element.classList.remove('hidden')
+        if (isMatch) {
+          element.classList.remove('hidden')
+        } else {
+          element.classList.add('hidden')
+        }
+      })
+
+      // Update count
+      const visibleElements = document.querySelectorAll<HTMLElement>(
+        '[data-searchable]:not(.hidden)'
+      )
+      if (visibleElements.length === elements.length) {
+        gamesCountNoSearchElement.classList.remove('hidden')
+        gamesCountSearchElement.classList.add('hidden')
       } else {
-        element.classList.add('hidden')
+        gamesCountNoSearchElement.classList.add('hidden')
+        gamesCountSearchElement.classList.remove('hidden')
+      }
+      gamesCountShowingElement.innerText = visibleElements.length.toFixed(0)
+
+      // Update empty block
+      if (
+        [...elements].every((element) => element.classList.contains('hidden'))
+      ) {
+        noResultsElement.classList.remove('hidden')
+      } else {
+        noResultsElement.classList.add('hidden')
       }
     })
-
-    // Update count
-    const visibleElements = document.querySelectorAll<HTMLElement>(
-      '[data-searchable]:not(.hidden)'
-    )
-    if (visibleElements.length === elements.length) {
-      gamesCountNoSearchElement.classList.remove('hidden')
-      gamesCountSearchElement.classList.add('hidden')
-    } else {
-      gamesCountNoSearchElement.classList.add('hidden')
-      gamesCountSearchElement.classList.remove('hidden')
-    }
-    gamesCountShowingElement.innerText = visibleElements.length.toFixed(0)
-
-    // Update empty block
-    if (
-      [...elements].every((element) => element.classList.contains('hidden'))
-    ) {
-      noResultsElement.classList.remove('hidden')
-    } else {
-      noResultsElement.classList.add('hidden')
-    }
   })
 </script>

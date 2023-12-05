@@ -18,6 +18,7 @@ import Favicon from './Favicon.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import MetaTags from './MetaTags.astro'
+import { ViewTransitions } from 'astro:transitions'
 ---
 
 <!doctype html>
@@ -31,10 +32,11 @@ import MetaTags from './MetaTags.astro'
     <ThemeScript />
     <FontAwesome />
     <TablerIcons />
+    <ViewTransitions />
   </head>
 
   <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
-    <Header />
+    <Header transition:persist />
     <main id="main">
       <slot name="main" />
     </main>

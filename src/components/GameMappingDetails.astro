@@ -5,9 +5,10 @@ import { getCompatibility } from '../utils/compatibility'
 interface Props {
   game: GameInfo['game']
   mapping: GameInfo['mapping']
+  slug: string
 }
 
-const { game, mapping } = Astro.props
+const { game, mapping, slug } = Astro.props
 ---
 
 <div
@@ -16,10 +17,12 @@ const { game, mapping } = Astro.props
   <img
     class="custom-grid__img block justify-self-center m-0 rounded border shadow border-stone-200 dark:border-[#192129]"
     src={game.image}
+    transition:name={`game-title-${slug}`}
   />
   <div class="custom-grid__text">
     <a href={game.bgg} class="!bg-none text-current text-3xl"
-      ><span>{game.title}</span><i class="ti ti-external-link ml-1"></i></a
+      ><span transition:name={`game-image-${slug}`}>{game.title}</span><i
+        class="ti ti-external-link ml-1"></i></a
     >
     <p>{game.description}</p>
 
@@ -162,4 +165,3 @@ const { game, mapping } = Astro.props
     }
   }
 </style>
- ../lib/schemas

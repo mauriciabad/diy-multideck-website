@@ -78,7 +78,7 @@
     /* base font-size 1px larger for better visibility */
     font-size: 1.0625em;
     line-height: 1.75;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; It breaks with view transitions when scrolling */
   }
 
   h1,

@@ -42,7 +42,7 @@ const { Content } = await entry.render()
     slot="meta"
   />
   <Fragment slot="content">
-    <GameMappingDetails game={game} mapping={mapping} />
+    <GameMappingDetails game={game} mapping={mapping} slug={slug} />
     <Content />
   </Fragment>
 </ContentLayout>

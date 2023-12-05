@@ -8,12 +8,14 @@
   ></script>
   <script>
     // @ts-nocheck
-    window.dataLayer = window.dataLayer || []
-    window.gtag = function gtag() {
-      dataLayer.push(arguments)
-    }
-    window.gtag('js', new Date())
+    document.addEventListener('astro:page-load', () => {
+      window.dataLayer = window.dataLayer || []
+      window.gtag = function gtag() {
+        dataLayer.push(arguments)
+      }
+      window.gtag('js', new Date())
 
-    window.gtag('config', 'G-M6KQHNY94C')
+      window.gtag('config', 'G-M6KQHNY94C')
+    })
   </script>
 </Fragment>

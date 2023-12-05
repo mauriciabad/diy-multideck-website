@@ -18,6 +18,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Comments from '../components/Comments.astro'
 import MetaTags from './MetaTags.astro'
+import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
   title: string | readonly [string, string, string]
@@ -43,10 +44,11 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
     <ThemeScript />
     <FontAwesome />
     <TablerIcons />
+    <ViewTransitions />
   </head>
 
   <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
-    <Header />
+    <Header transition:persist />
     <main id="main">
       <section class="blog-post prose max-w-none prose-sleek">
         <h1 class="m-0 mb-[0.25em]">
