@@ -9,7 +9,7 @@ export default {
       },
     },
   ],
-  trailingComma: "es5",
+  trailingComma: 'es5',
   semi: false,
-  singleQuote: true
-};
+  singleQuote: true,
+}
