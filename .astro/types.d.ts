@@ -473,6 +473,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
+"yokai-pagoda.mdoc": {
+	id: "yokai-pagoda.mdoc";
+  slug: "yokai-pagoda";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
 "you-ve-got-crabs.mdoc": {
 	id: "you-ve-got-crabs.mdoc";
   slug: "you-ve-got-crabs";
