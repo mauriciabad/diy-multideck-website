@@ -459,6 +459,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
+"what-the-heck.mdoc": {
+	id: "what-the-heck.mdoc";
+  slug: "what-the-heck";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
 "win-lose-or-banana.mdoc": {
 	id: "win-lose-or-banana.mdoc";
   slug: "win-lose-or-banana";
