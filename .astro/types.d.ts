@@ -495,6 +495,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
 };
+"pages": {
+"home.mdoc": {
+	id: "home.mdoc";
+  slug: "home";
+  body: string;
+  collection: "pages";
+  data: any
+} & { render(): Render[".mdoc"] };
+};
 
 	};
 
