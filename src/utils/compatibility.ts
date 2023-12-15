@@ -1,7 +1,7 @@
 const compatibilities = {
   0: 'Unplayable',
   1: 'Bad',
-  2: 'Good',
+  2: 'Decent',
   3: 'Great',
   4: 'Exellent',
   5: 'Perfect',
