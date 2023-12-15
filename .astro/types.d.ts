@@ -284,6 +284,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
+"heat.mdoc": {
+	id: "heat.mdoc";
+  slug: "heat";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
 "in-vino-morte.mdoc": {
 	id: "in-vino-morte.mdoc";
   slug: "in-vino-morte";
