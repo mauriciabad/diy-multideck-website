@@ -19,7 +19,7 @@ const layouts = [
   text: string
 }[]
 
-type NonNumberedCard = 'cover' | 'notes' | 'back'
+type NonNumberedCard = 'cover' | 'notes' | 'back' | 'other'
 type Layout = (typeof layouts)[number]['key']
 
 const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
@@ -62,7 +62,7 @@ const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
       117,
       118,
       119,
-      null,
+      'other',
       null,
       null,
       null,
@@ -86,7 +86,7 @@ const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
     [130, 131, 132, 133, 134, 135, 136, 137, 138, 139],
     [140, 141, 142, 143, 144, 145, 146, 147, 148, 149],
     [150, 151, 152, 153, 154, 155, 156, 157, 158, 159],
-    ['cover', 'notes', 'back', null, null, null, null, null, null],
+    ['cover', 'notes', 'back', 'other', null, null, null, null, null],
   ],
   '3d': [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -105,7 +105,7 @@ const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
     [130, 131, 132, 133, 134, 135, 136, 137, 138, 139],
     [140, 141, 142, 143, 144, 145, 146, 147, 148, 149],
     [150, 151, 152, 153, 154, 155, 156, 157, 158, 159],
-    ['cover', 'notes', 'back', null, null, null, null, null, null],
+    ['cover', 'notes', 'back', 'other', null, null, null, null, null],
   ],
   pyramidal: [
     [0, 1, 5, 6, 121, 2, 4, 7, 122, 3, 8, 123, 9, 124, 120],
@@ -156,7 +156,7 @@ const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
       'cover',
       'notes',
       'back',
-      null,
+      'other',
       null,
       null,
       null,
@@ -209,7 +209,7 @@ const cardGrids: Record<Layout, (number | NonNumberedCard | null)[][]> = {
       117,
       118,
       119,
-      null,
+      'other',
       null,
       null,
       null,
