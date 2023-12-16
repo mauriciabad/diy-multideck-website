@@ -1,6 +1,6 @@
 ---
 post:
-  date: 2023-03-20
+  date: 2023-12-16
   ogImagePath: /images/games/cheating-moth/guide.png
   keywords:
     - Mogel Motte
@@ -17,20 +17,40 @@ game:
   mechanics:
     - Hand Management
 mapping:
-  requiredCardsCount: 68
+  requiredCardsCount: 69
   requiredDrawingsCount: 0
-  deckVersion: v0.4b
+  deckVersion: v1.0
   compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play Cheating Moth you need 68 cards (plus 1 card backs as guard) and 0 drawings (or 20 to avoid memorizing suit actions).
+To play Cheating Moth you need 69 cards and 0 drawings.
 
 ### Instructions
 
 ![cards mapping](/images/games/cheating-moth/guide.png)
 
+{% usedCards layout="basic" cards=[
+    1,  2,  3,  4,  5,
+   11, 12, 13, 14, 15,
+   21, 22, 23, 24, 25,
+   31, 32, 33, 34, 35,
+   41, 42, 43, 44, 45,
+   51, 52, 53, 54, 55,
+   61, 62, 63, 64, 65,
+   71, 72, 73, 74, 75,
+   81, 82, 83, 84, 85,
+   91, 92, 93, 94, 95,
+  101,102,103,104,105,
+  111,112,113,114,115,
+
+  120,130,140,150,
+  125,135,145,155,
+
+  "cover"
+] /%}
+
 ## Usage
 
-- The value of the moths is, the card number (top-right), and if it's greater than 5, substract 5. So: `0 → 5` `1 → 1` `2 → 2` `3 → 3` `4 → 4` `5 → 5` `6 → 1` `7 → 2` `8 → 3`
+- The value of the moths is, the second digit of the card's sequential number. So: `120 → 2` `130 → 3` `140 → 4` `150 → 5` `125 → 2` `135 → 3` `145 → 4` `155 → 5`
