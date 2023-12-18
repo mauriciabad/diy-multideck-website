@@ -4,10 +4,18 @@ interface Props {
 }
 const { href } = Astro.props
 
-const pathname = new URL(Astro.request.url).pathname
-const currentPath = pathname.slice(1)
-const linkPath = href.slice(1)
-const isActive = currentPath === linkPath
+const currentPath = new URL(Astro.request.url).pathname
+
+function clean(path: string) {
+  return path
+    .replace(/#.*$/, '')
+    .replace(/index\.html$/, '')
+    .replace(/\/$/, '')
+    .replace(/^\//, '')
+    .toLocaleLowerCase()
+}
+
+const isActive = clean(currentPath) === clean(href)
 ---
 
 <a href={href} class:list={[{ show: isActive }, 'unset animated-link']}
