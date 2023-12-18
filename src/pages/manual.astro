@@ -5,20 +5,23 @@ import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
 import { getEntry } from 'astro:content'
 import Title from '../components/Title.astro'
-import TableOfContents from '../components/TableOfContents.astro'
 
 const entry = await getEntry('pages', 'manual')
 
 const { Content, headings } = await entry.render()
 ---
 
-<PageLayout hasProse withToc>
+<PageLayout
+  hasProse
+  tocHeadings={headings}
+  classes={{
+    main: '[&_#introduction]:invisible [&_#introduction]:m-0 [&_#introduction]:h-0 [&_#introduction]:w-0 [&_#introduction]:overflow-hidden',
+  }}
+>
   <PageMeta
     title={`${SITE_TITLE} | A game system to play hundreds of board games`}
     slot="meta"
   />
-
-  <TableOfContents slot="toc" headings={headings} />
 
   <Fragment slot="main">
     <Title text={['The', 'DIY Multideck']} />

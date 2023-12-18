@@ -11,6 +11,8 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import MetaTags from './MetaTags.astro'
 import { ViewTransitions } from 'astro:transitions'
+import type { MarkdownHeading } from 'astro'
+import TableOfContents from '../components/TableOfContents.astro'
 
 interface Props {
   classes?: {
@@ -18,10 +20,10 @@ interface Props {
     footer?: string
   }
   hasProse?: boolean
-  withToc?: boolean
+  tocHeadings?: MarkdownHeading[]
 }
 
-const { classes: classNames, hasProse, withToc } = Astro.props
+const { classes: classNames, hasProse, tocHeadings } = Astro.props
 ---
 
 <!doctype html>
@@ -38,27 +40,32 @@ const { classes: classNames, hasProse, withToc } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
-    <Header transition:persist id="header" />
+  <body
+    class:list={[
+      'min-h-screen max-w-3xl mx-auto px-3 sm:px-8 box-content',
+      'grid grid-areas-[header,main,footer] grid-rows-[5rem_minmax(0,1fr)_5rem] grid-cols-1',
+      tocHeadings &&
+        "lg:pr-8 lg:pl-[calc(theme('spacing.8')+theme('spacing.64'))]",
+    ]}
+  >
     {
-      withToc && (
+      tocHeadings && (
         <aside
-          id="toc"
           class:list={[
-            'unset not-prose',
-            'relative hidden',
-            'xl:block xl:fixed xl:p-4 xl:top-0 xl:left-0 xl:bottom-0 xl:overflow-y-auto xl:border-r xl:border-white/10 xl:bg-black/20 xl:w-[16rem]',
+            'unset not-prose w-64 pt-8 grid-in-[toc] fixed top-0 left-0 right-0 h-full overflow-y-auto',
+            'hidden lg:block p-4 border-r border-white/10 bg-black/20',
           ]}
         >
-          <div class="font-lg font-bold">Table of content</div>
-          <slot name="toc" />
+          <div class="font-lg font-bold mb-2">Table of content</div>
+          <TableOfContents headings={tocHeadings} />
         </aside>
       )
     }
+
+    <Header transition:persist class="grid-in-[header]" />
     <main
-      id="main"
       class:list={[
-        'content-center grid',
+        'content-center grid grid-in-[main]',
         hasProse &&
           'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25',
         classNames?.main,
@@ -66,27 +73,6 @@ const { classes: classNames, hasProse, withToc } = Astro.props
     >
       <slot name="main" />
     </main>
-    <Footer class:list={classNames?.footer} id="footer" />
-
-    <style>
-      body {
-        display: grid;
-        grid-template-areas:
-          'header'
-          'main'
-          'footer';
-        grid-template-rows: 5rem minmax(0, 1fr) 5rem;
-        grid-template-columns: minmax(0, 1fr);
-      }
-      #header {
-        grid-area: header;
-      }
-      #main {
-        grid-area: main;
-      }
-      #footer {
-        grid-area: footer;
-      }
-    </style>
+    <Footer class:list={classNames?.footer} class="grid-in-[footer]" />
   </body>
 </html>

@@ -2,6 +2,7 @@ import typography from '@tailwindcss/typography'
 import containerQueries from '@tailwindcss/container-queries'
 import safeContainer from 'tailwind-safe-container'
 import defaultTheme from 'tailwindcss/defaultTheme'
+import gridAreas from '@savvywombat/tailwindcss-grid-areas'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -122,5 +123,5 @@ export default {
       }),
     },
   },
-  plugins: [typography, containerQueries, safeContainer],
+  plugins: [typography, containerQueries, safeContainer, gridAreas],
 }
