@@ -54,8 +54,9 @@ const suitId =
       src={`/images/suits/${suitId}.svg`}
       height={size}
       width={size}
-      class="not-prose unset align-middle inline-block"
+      class="not-prose unset align-middle inline-block pointer-events-none"
       alt={suitEmojisById[suitId]}
+      draggable="false"
     />
   ) : (
     <span>{emoji ?? '🚫'}</span>
