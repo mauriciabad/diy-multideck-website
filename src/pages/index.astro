@@ -1,9 +1,9 @@
 ---
 import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
-import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
 import Title from '../components/Title.astro'
+import LinkCard from '../components/LinkCard.astro'
 ---
 
 <PageLayout>
@@ -13,90 +13,37 @@ import Title from '../components/Title.astro'
   />
 
   <Fragment slot="main">
-    <Title text={['The', 'DIY Multideck']} subtitle="Manual" />
+    <Title text={['The', 'DIY Multideck']} class="mb-4 sm:mb-8" />
 
-    <div class="grid sm:grid-cols-2 gap-4 my-4">
-      <a
+    <nav class="grid sm:grid-cols-2 gap-4">
+      <LinkCard
         href="/manual"
-        class="unset group relative overflow-hidden p-6 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
-      >
-        <i
-          class="ti ti-book text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5"
-        ></i>
-        <h5
-          class="mb-2
-          text-2xl
-          font-bold
-          tracking-tight
-          text-gray-900
-          dark:text-white"
-        >
-          Deck's manual
-        </h5>
-
-        <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Learn how to use the deck.
-        </div>
-
-        <div
-          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full group-hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:group-hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Read manual
-          <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-          </svg>
-        </div>
-      </a>
-      <a
+        icon="book"
+        title="Deck's manual"
+        description="Learn how to use the deck."
+        cta="Read manual"
+      />
+      <LinkCard
         href="/games"
-        class="unset group relative overflow-hidden p-6 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
-      >
-        <i
-          class="ti ti-play-card text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5"
-        ></i>
-        <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-        >
-          Games list
-        </h5>
-
-        <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Learn how to play games.
-        </div>
-
-        <div
-          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full group-hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:group-hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          View games
-          <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-          </svg>
-        </div>
-      </a>
-    </div>
-
-    <BuyBanner />
+        icon="play-card"
+        title="Games list"
+        description="Learn how to play games."
+        cta="View games"
+      />
+      <LinkCard
+        href="/blog"
+        icon="news"
+        title="Project's blog"
+        description="Read about the project."
+        cta="Read blog"
+      />
+      <LinkCard
+        href="/buy"
+        icon="shopping-cart"
+        title="Official store"
+        description="Buy the deck and support the project."
+        cta="Buy now"
+      />
+    </nav>
   </Fragment>
 </PageLayout>

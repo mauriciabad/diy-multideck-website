@@ -2,13 +2,17 @@
 export interface Props {
   text: string | readonly [string, string] | readonly [string, string, string]
   subtitle?: string
+  class?: string
 }
 
-const { text, subtitle } = Astro.props
+const { text, subtitle, class: className } = Astro.props
 ---
 
 <h1
-  class="not-prose unset mb-4 text-balance font-extrabold text-5xl md:text-6xl tracking-tight"
+  class:list={[
+    'not-prose unset mb-4 text-balance font-extrabold text-5xl md:text-6xl tracking-tight',
+    className,
+  ]}
 >
   {
     typeof text === 'string' ? (
