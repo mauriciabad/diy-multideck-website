@@ -3,11 +3,6 @@ import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
-import { getEntry } from 'astro:content'
-
-const entry = await getEntry('pages', 'home')
-
-const { Content } = await entry.render()
 ---
 
 <PageLayout>
@@ -17,27 +12,98 @@ const { Content } = await entry.render()
   />
 
   <Fragment slot="main">
-    <section class="mb-8">
-      <div class="mb-4">
-        <h1
-          class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
-        >
-          The
-          <span
-            class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
-          >
-            DIY Multideck
-          </span>
-        </h1>
-        <p class="text-2xl pb-4">Draw in your cards!</p>
-      </div>
-
-      <div
-        class="prose prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25"
+    <h1
+      class="font-extrabold text-5xl md:text-6xl tracking-tight overflow-hidden mb-8 text-center"
+    >
+      The
+      <span
+        class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
       >
-        <Content />
-      </div>
-    </section>
+        DIY Multideck
+      </span>
+    </h1>
+
+    <div class="grid sm:grid-cols-2 gap-8 mb-8">
+      <a
+        href="/manual"
+        class="unset group relative overflow-hidden p-6 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
+      >
+        <i
+          class="ti ti-book text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5"
+        ></i>
+        <h5
+          class="mb-2
+          text-2xl
+          font-bold
+          tracking-tight
+          text-gray-900
+          dark:text-white"
+        >
+          Deck's manual
+        </h5>
+
+        <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Learn how to use the deck.
+        </div>
+
+        <div
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full group-hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:group-hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Read manual
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+          </svg>
+        </div>
+      </a>
+      <a
+        href="/games"
+        class="unset group relative overflow-hidden p-6 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
+      >
+        <i
+          class="ti ti-play-card text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5"
+        ></i>
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        >
+          Games list
+        </h5>
+
+        <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Learn how to play games.
+        </div>
+
+        <div
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full group-hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:group-hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          View games
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
 
     <BuyBanner />
   </Fragment>

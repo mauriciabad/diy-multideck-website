@@ -1,0 +1,44 @@
+---
+import PageMeta from '../components/PageMeta.astro'
+import PageLayout from '../layouts/PageLayout.astro'
+import BuyBanner from '../components/BuyBanner.astro'
+import { SITE_TITLE } from '../config'
+import { getEntry } from 'astro:content'
+
+const entry = await getEntry('pages', 'manual')
+
+const { Content } = await entry.render()
+---
+
+<PageLayout>
+  <PageMeta
+    title={`${SITE_TITLE} | A game system to play hundreds of board games`}
+    slot="meta"
+  />
+
+  <Fragment slot="main">
+    <section class="mb-8">
+      <div class="mb-4">
+        <h1
+          class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
+        >
+          The
+          <span
+            class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
+          >
+            DIY Multideck
+          </span>
+        </h1>
+        <p class="text-2xl pb-4">Draw in your cards!</p>
+      </div>
+
+      <div
+        class="prose prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25"
+      >
+        <Content />
+      </div>
+    </section>
+
+    <BuyBanner />
+  </Fragment>
+</PageLayout>

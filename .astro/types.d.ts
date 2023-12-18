@@ -503,9 +503,9 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "pages": {
-"home.mdoc": {
-	id: "home.mdoc";
-  slug: "home";
+"manual.mdoc": {
+	id: "manual.mdoc";
+  slug: "manual";
   body: string;
   collection: "pages";
   data: any

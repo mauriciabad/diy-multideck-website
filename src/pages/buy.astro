@@ -7,7 +7,7 @@ import PageLayout from '../layouts/PageLayout.astro'
   <PageMeta title="Buy the DIY Multideck" slot="meta" />
   <Fragment slot="main">
     <h1
-      class="text-center mb-8 font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
+      class="mb-8 font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
     >
       Buy the
       <span
@@ -16,9 +16,51 @@ import PageLayout from '../layouts/PageLayout.astro'
         DIY Multideck
       </span>
     </h1>
-    <p class="text-center">
-      Sorry, the deck is <strong>not avilable</strong> yet, because it's still
-      in development.
+
+    <h2 class="font-bold mt-4">How to buy</h2>
+    <p class="mb-4">
+      The buying process is not automated, so we'll have to chat to arrange the
+      payment and shipping. I will carefully prepare your kit and mail it when
+      ready. 😊
     </p>
+    <p
+      class="mb-4 font-bold py-4 px-6 bg-[rgb(var(--color-text-link)/0.1)] rounded-xl text-center text-balance"
+    >
+      Contact me on WhatsApp
+      <a href="https://wa.me/34690613037" class="whitespace-nowrap"
+        >+34 690 613 037</a
+      >
+       or email
+      <a href="mailto:hello@mauriciabad.com"> hello@mauriciabad.com</a>
+    </p>
+
+    <h2 class="font-bold mt-4">Price</h2>
+    <p class="mb-4">
+      <strong>30 €</strong> + shipping costs.
+    </p>
+
+    <h2 class="font-bold mt-4">What's included</h2>
+    <ul class="unset list-disc pl-4">
+      <li class="my-0 p-0">1 deck of cards (162 cards)</li>
+      <li class="my-0 p-0">1 case</li>
+      <li class="my-0 p-0">1 pencil and rubber</li>
+      <li class="my-0 p-0">50 multicolor chips (5 colors).</li>
+    </ul>
+
+    <h2 class="font-bold mt-4">Disclaimer</h2>
+    <p class="mb-4">
+      Cards are homemade and can have small imperfections! Slightly miss-aligned
+      card fronts and not fully opaque material.
+    </p>
+
+    <div class="text-center mt-4">
+      <a
+        href="https://wa.me/34690613037"
+        class="unset px-6 py-3.5 text-base font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        <i class="ti ti-shopping-cart mr-2 text-xl"></i>
+         Chat to buy now
+      </a>
+    </div>
   </Fragment>
 </PageLayout>
