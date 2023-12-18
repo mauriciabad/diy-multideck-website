@@ -2,51 +2,18 @@
 import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import { SITE_TITLE } from '../config'
+import Title from '../components/Title.astro'
+import { getEntry } from 'astro:content'
+
+const entry = await getEntry('pages', 'privacy')
+
+const { Content } = await entry.render()
 ---
 
-<PageLayout>
-  <PageMeta title={`Privacy policy | ${SITE_TITLE}`} slot="meta" />
-
+<PageLayout hasProse>
+  <PageMeta title={`${entry.data.post.title} | ${SITE_TITLE}`} slot="meta" />
   <Fragment slot="main">
-    <section class="mb-8">
-      <h1
-        class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
-      >
-        Privacy policy
-      </h1>
-      <p class="mb-4">
-        This site uses <a href="https://remark42.com/">Remark 42</a> library to
-        provide coments.
-      </p>
-      <p>
-        Check more detais of the Remark 42 privacy in
-        <a href="https://remark42.com/privacy/">their privacy policy page</a>
-        and
-        <a href="https://remark42.com/#privacy"
-          >their landing page's privacy section</a
-        >
-      </p>
-      <p>This are some key aspects of how user data is managed:</p>
-      <ul>
-        <li>
-          It keeps user ID, username and avatar link only. None of these fields
-          exposed directly - ID and name hashed, avatar proxied.
-        </li>
-        <li>There is no tracking of any sort.</li>
-        <li>
-          Login mechanic uses JWT stored in a cookie (HttpOnly, secured). The
-          second cookie (XSRF_TOKEN) is a random ID preventing CSRF.
-        </li>
-        <li>
-          There is no cross-site login, i.e., user's behavior can't be analyzed
-          across independent sites running Remark42.
-        </li>
-        <li>There are no third-party analytic services involved.</li>
-        <li>
-          Users can request all information Remark42 knows about them and
-          receive the export in the gz file.
-        </li>
-      </ul>
-    </section>
+    <Title text={entry.data.post.title} />
+    <Content />
   </Fragment>
 </PageLayout>

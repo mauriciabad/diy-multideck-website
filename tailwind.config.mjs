@@ -1,6 +1,7 @@
 import typography from '@tailwindcss/typography'
 import containerQueries from '@tailwindcss/container-queries'
 import safeContainer from 'tailwind-safe-container'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,6 +9,13 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      minHeight: {
+        ...defaultTheme.minHeight,
+
+        screen: /** @type {string} */ (
+          /** @type {unknown} */ (['100vh', '100dvh'])
+        ),
+      },
       fontFamily: {
         body: ['Inter var', 'sans-serif'],
         heading: ['Inter var', 'sans-serif'],

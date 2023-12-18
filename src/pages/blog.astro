@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
 import { getCollection } from 'astro:content'
+import Title from '../components/Title.astro'
 
 const posts = await getCollection('blog')
 
@@ -15,12 +16,8 @@ const sortedPosts = posts
 
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
-  <section slot="main">
-    <h1
-      class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-8 overflow-hidden"
-    >
-      Blog
-    </h1>
+  <Fragment slot="main">
+    <Title text="Blog" />
 
     {
       sortedPosts.length ? (
@@ -59,5 +56,5 @@ const sortedPosts = posts
         </p>
       )
     }
-  </section>
+  </Fragment>
 </PageLayout>

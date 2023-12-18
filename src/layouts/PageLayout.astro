@@ -19,6 +19,16 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import MetaTags from './MetaTags.astro'
 import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+  classes?: {
+    main?: string
+    footer?: string
+  }
+  hasProse?: boolean
+}
+
+const { classes: classNames, hasProse } = Astro.props
 ---
 
 <!doctype html>
@@ -37,10 +47,18 @@ import { ViewTransitions } from 'astro:transitions'
 
   <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
     <Header transition:persist />
-    <main id="main" class="content-center grid">
+    <main
+      id="main"
+      class:list={[
+        'content-center grid',
+        hasProse &&
+          'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25',
+        classNames?.main,
+      ]}
+    >
       <slot name="main" />
     </main>
-    <Footer />
+    <Footer class:list={classNames?.footer} />
     <style>
       body {
         display: grid;

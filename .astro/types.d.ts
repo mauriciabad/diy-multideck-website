@@ -510,6 +510,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: any
 } & { render(): Render[".mdoc"] };
+"privacy.mdoc": {
+	id: "privacy.mdoc";
+  slug: "privacy";
+  body: string;
+  collection: "pages";
+  data: any
+} & { render(): Render[".mdoc"] };
 };
 
 	};

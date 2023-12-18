@@ -1,21 +1,13 @@
 ---
 import PageMeta from '../components/PageMeta.astro'
+import Title from '../components/Title.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 ---
 
 <PageLayout>
   <PageMeta title="Buy the DIY Multideck" slot="meta" />
   <Fragment slot="main">
-    <h1
-      class="mb-8 font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
-    >
-      Buy the
-      <span
-        class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
-      >
-        DIY Multideck
-      </span>
-    </h1>
+    <Title text={['Buy the', 'DIY Multideck']} />
 
     <h2 class="font-bold mt-4">How to buy</h2>
     <p class="mb-4">

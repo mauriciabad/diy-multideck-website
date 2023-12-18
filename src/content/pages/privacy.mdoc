@@ -1,0 +1,19 @@
+---
+post:
+  date: 2023-12-18
+  ogImagePath: '/images/og.png'
+  title: 'Privacy policy'
+---
+
+This site uses [Remark 42](https://remark42.com/) library to provide coments.
+
+Check more detais of the Remark 42 privacy in [their privacy policy page](https://remark42.com/privacy/) and [their landing page's privacy section](https://remark42.com/#privacy)
+
+This are some key aspects of how user data is managed:
+
+- It keeps user ID, username and avatar link only. None of these fields exposed directly - ID and name hashed, avatar proxied.
+- There is no tracking of any sort.
+- Login mechanic uses JWT stored in a cookie (HttpOnly, secured). The second cookie (XSRF\_TOKEN) is a random ID preventing CSRF.
+- There is no cross-site login, i.e., user's behavior can't be analyzed across independent sites running Remark42.
+- There are no third-party analytic services involved.
+- Users can request all information Remark42 knows about them and receive the export in the gz file.

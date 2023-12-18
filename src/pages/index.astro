@@ -3,6 +3,7 @@ import PageMeta from '../components/PageMeta.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
+import Title from '../components/Title.astro'
 ---
 
 <PageLayout>
@@ -12,16 +13,7 @@ import { SITE_TITLE } from '../config'
   />
 
   <Fragment slot="main">
-    <h1
-      class="font-extrabold text-5xl md:text-6xl tracking-tight overflow-hidden mb-4 text-center"
-    >
-      The
-      <span
-        class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
-      >
-        DIY Multideck
-      </span>
-    </h1>
+    <Title text={['The', 'DIY Multideck']} subtitle="Manual" />
 
     <div class="grid sm:grid-cols-2 gap-4 my-4">
       <a
