@@ -12,67 +12,43 @@ interface Props {
 const { drawingAreas, imageSrc, imageTexts } = Astro.props
 ---
 
-<div class="drawing-areas-wrapper">
-  <img src={imageSrc} alt="Drawing areas" />
-  <div>
-    {imageTexts.map((text) => <p>{text}</p>)}
+<div class="flex flex-wrap items-start justify-center gap-4 mb-4">
+  <img
+    src={imageSrc}
+    alt="Drawing areas"
+    class="not-prose w-full max-w-[300px]"
+  />
+  <div class="basis-[24ch] grow">
+    {imageTexts.map((text) => <p class="first:mt-0 last:mb-0">{text}</p>)}
   </div>
 </div>
-<div class="drawing-area-wrapper">
+
+<div
+  class="prose-p:mt-2 prose-headings:m-0 prose-p:mb-0 grid sm:grid-cols-2 gap-3"
+>
   {
     drawingAreas.map((area) => (
-      <div class="drawing-area">
+      <div class="p-4 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700">
         <h4
           id={area.title
             .toLowerCase()
             .replace(/[^a-z0-9]/g, '-')
             .replace(/-+/g, '-')}
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 leading-none dark:text-white"
         >
           {area.title}
         </h4>
-        <p>Amount: {area.amount}</p>
-        <p>{area.description}</p>
-        <p>Draw here when:</p>
-        <ul class="unset">
-          {area.useCases.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
+        <div class="font-normal text-gray-700 dark:text-gray-400">
+          <p>Amount: {area.amount}</p>
+          <p>{area.description}</p>
+          <p>Draw here when:</p>
+          <ul>
+            {area.useCases.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     ))
   }
 </div>
-
-<style>
-  .drawing-areas-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .drawing-areas-wrapper > div {
-    flex: 1 1 10rem;
-    padding: 1rem;
-  }
-  .drawing-areas-wrapper > img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .drawing-area-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .drawing-area {
-    flex: 1 1 17rem;
-    padding: 1rem;
-    border: solid 1px #eee;
-    border-radius: 1rem;
-  }
-  .drawing-area > *:first-child {
-    margin-top: 0;
-  }
-</style>
