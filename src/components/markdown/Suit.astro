@@ -36,10 +36,9 @@ type SuitId = keyof typeof suitEmojisById
 export interface Props {
   id?: SuitId
   emoji?: SuitEmoji
-  size?: number
 }
 
-const { id, emoji, size = 20 } = Astro.props
+const { id, emoji } = Astro.props
 
 const suitId =
   id ??
@@ -52,9 +51,7 @@ const suitId =
   suitId !== undefined ? (
     <img
       src={`/images/suits/${suitId}.svg`}
-      height={size}
-      width={size}
-      class="not-prose unset align-middle inline-block pointer-events-none"
+      class="not-prose unset align-middle inline-block pointer-events-none h-[1.25em] w-[1.25em]"
       alt={suitEmojisById[suitId]}
       draggable="false"
     />
