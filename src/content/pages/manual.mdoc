@@ -85,62 +85,61 @@ So, what are you waiting for? Grab a pen or marker, open one of our [game mappin
 
 ### Drawing areas
 
-![drawing-areas](/images/home/drawing-areas.png)
-
-In the future, we'll release a blog post about tips to create your own game mappings and more details about this topic.
-
-As shown in the image, each card has 14-16 drawing drawing slots, grouped in 5 drawing areas.
-
-#### Area A
-
-Amount: 2 big or 4 small.
-
-In some games, you may need duplicate the drawing on the top and bottom slots to make the card playable in any rotation.
-
-Draw here when:
-
-- The card need to be hold in hand and contain a big drawing or word.
-- The card need to be stacked on the table while keeping the top or bottom part visible.
-
-#### Area B
-
-Amount: 4
-
-In some games, you may need duplicate the drawing on the opposite corner's slots to make the card playable in any rotation.
-
-Draw here when:
-
-- The card need to be hold in hand and contain a big drawing or word.
-- The card need to be stacked on the table while keeping the top or bottom part visible.
-
-#### Area C
-
-Amount: 3
-
-Draw here when:
-
-- The card need a hint, like punctuation.
-- The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.
-
-#### Area D
-
-Amount: 4
-
-Draw here when:
-
-- The card needs to be placed in the table.
-- The card can be hold in hand, but it's the only one.
-- The card needs to contain a big drawing or word.
-
-#### Area E
-
-Amount: 1
-
-Draw here when:
-
-- You want to represent a tile, chip, token, or similar.
-- The card needs to be placed in the table.
-- The card is important.
+{% drawingAreas
+  imageSrc="/images/home/drawing-areas.png"
+  imageTexts=[
+    "In the future, we'll release a blog post about tips to create your own game mappings and more details about this topic.",
+    "As shown in the image, each card has 14-16 drawing drawing slots, grouped in 5 drawing areas."
+  ]
+  drawingAreas=[
+    {
+      title: "Area A",
+      amount: "2 big or 4 small",
+      description:
+        "In some games, you may need duplicate the drawing on the top and bottom slots to make the card playable in any rotation.",
+      useCases: [
+        "The card need to be hold in hand and contain a big drawing or word.",
+        "The card need to be stacked on the table while keeping the top or bottom part visible.",
+      ],
+    },
+    {
+      title: "Area B",
+      amount: "4",
+      description:
+        "In some games, you may need duplicate the drawing on the opposite corner's slots to make the card playable in any rotation.",
+      useCases: [
+        "The card need to be hold in hand and contain a big drawing or word.",
+        "The card need to be stacked on the table while keeping the top or bottom part visible.",
+      ],
+    },
+    {
+      title: "Area C",
+      amount: "3",
+      useCases: [
+        "The card need a hint, like punctuation.",
+        "The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.",
+      ],
+    },
+    {
+      title: "Area D",
+      amount: "4",
+      useCases: [
+        "The card needs to be placed in the table.",
+        "The card can be hold in hand, but it's the only one.",
+        "The card needs to contain a big drawing or word.",
+      ],
+    },
+    {
+      title: "Area E",
+      amount: "1",
+      useCases: [
+        "You want to represent a tile, chip, token, or similar.",
+        "The card needs to be placed in the table.",
+        "The card is important.",
+      ],
+    },
+  ]
+/%}
 
 ### Usability
 

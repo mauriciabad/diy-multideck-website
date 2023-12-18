@@ -1,0 +1,78 @@
+---
+interface Props {
+  drawingAreas: {
+    title: string
+    amount: string
+    description?: string
+    useCases: string[]
+  }[]
+  imageSrc: string
+  imageTexts: string[]
+}
+const { drawingAreas, imageSrc, imageTexts } = Astro.props
+---
+
+<div class="drawing-areas-wrapper">
+  <img src={imageSrc} alt="Drawing areas" />
+  <div>
+    {imageTexts.map((text) => <p>{text}</p>)}
+  </div>
+</div>
+<div class="drawing-area-wrapper">
+  {
+    drawingAreas.map((area) => (
+      <div class="drawing-area">
+        <h4
+          id={area.title
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, '-')
+            .replace(/-+/g, '-')}
+        >
+          {area.title}
+        </h4>
+        <p>Amount: {area.amount}</p>
+        <p>{area.description}</p>
+        <p>Draw here when:</p>
+        <ul class="unset">
+          {area.useCases.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .drawing-areas-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .drawing-areas-wrapper > div {
+    flex: 1 1 10rem;
+    padding: 1rem;
+  }
+  .drawing-areas-wrapper > img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .drawing-area-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .drawing-area {
+    flex: 1 1 17rem;
+    padding: 1rem;
+    border: solid 1px #eee;
+    border-radius: 1rem;
+  }
+  .drawing-area > *:first-child {
+    margin-top: 0;
+  }
+</style>

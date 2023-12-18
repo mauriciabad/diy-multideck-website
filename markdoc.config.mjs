@@ -76,6 +76,24 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    drawingAreas: {
+      render: component('./src/components/markdown/DrawingAreas.astro'),
+      selfClosing: true,
+      attributes: {
+        drawingAreas: {
+          type: Array,
+          errorLevel: 'critical',
+        },
+        imageTexts: {
+          type: Array,
+          errorLevel: 'critical',
+        },
+        imageSrc: {
+          type: String,
+          errorLevel: 'critical',
+        },
+      },
+    },
     usedCards: {
       render: component('./src/components/markdown/UsedCards.astro'),
       selfClosing: true,
