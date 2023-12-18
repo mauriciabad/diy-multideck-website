@@ -1,12 +1,4 @@
 ---
-/* 
-  This layout is used in 
-  - pages/index.astro
-  - pages/blog.astro
-  - pages/games.astro
-*/
-
-// Import the global.css file here so that it is included on
 import '../styles/global.css'
 
 import GoogleFont from './GoogleFont.astro'
@@ -26,13 +18,14 @@ interface Props {
     footer?: string
   }
   hasProse?: boolean
+  withToc?: boolean
 }
 
-const { classes: classNames, hasProse } = Astro.props
+const { classes: classNames, hasProse, withToc } = Astro.props
 ---
 
 <!doctype html>
-<html class="theme-sleek" lang="en">
+<html class="theme-sleek scroll-smooth" lang="en">
   <head>
     <MetaTags />
     <Favicon />
@@ -46,7 +39,22 @@ const { classes: classNames, hasProse } = Astro.props
   </head>
 
   <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
-    <Header transition:persist />
+    <Header transition:persist id="header" />
+    {
+      withToc && (
+        <aside
+          id="toc"
+          class:list={[
+            'unset not-prose',
+            'relative hidden',
+            'xl:block xl:fixed xl:p-4 xl:top-0 xl:left-0 xl:bottom-0 xl:overflow-y-auto xl:border-r xl:border-white/10 xl:bg-black/20 xl:w-[16rem]',
+          ]}
+        >
+          <div class="font-lg font-bold">Table of content</div>
+          <slot name="toc" />
+        </aside>
+      )
+    }
     <main
       id="main"
       class:list={[
@@ -58,7 +66,8 @@ const { classes: classNames, hasProse } = Astro.props
     >
       <slot name="main" />
     </main>
-    <Footer class:list={classNames?.footer} />
+    <Footer class:list={classNames?.footer} id="footer" />
+
     <style>
       body {
         display: grid;
@@ -69,8 +78,14 @@ const { classes: classNames, hasProse } = Astro.props
         grid-template-rows: 5rem minmax(0, 1fr) 5rem;
         grid-template-columns: minmax(0, 1fr);
       }
-      main {
+      #header {
+        grid-area: header;
+      }
+      #main {
         grid-area: main;
+      }
+      #footer {
+        grid-area: footer;
       }
     </style>
   </body>

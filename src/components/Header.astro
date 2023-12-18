@@ -1,9 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import DarkModeToggle from './DarkModeToggle.astro'
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'header'> {}
+
+const { class: className, ...attrs } = Astro.props
 ---
 
-<header>
+<header {...attrs} class:list={[className]}>
   <a
     class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
     href="#main"
