@@ -22,19 +22,31 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 }, [] as HeadingWithSubheadings[])
 ---
 
-<nav id="table-of-contents" aria-label="Table Of Contents">
+<nav
+  id="table-of-contents"
+  class="not-prose text-sm"
+  aria-label="Table Of Contents"
+>
   <ol>
     {
       grouppedHeadings.map((h) => (
         <li>
-          <a href={`#${h.slug}`} class="unset">
+          <a
+            href={`#${h.slug}`}
+            class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
+            data-active="false"
+          >
             {h.text}
           </a>
           {h.subheadings.length > 0 && (
             <ol>
               {h.subheadings.map((sub) => (
                 <li>
-                  <a href={`#${sub.slug}`} class="unset">
+                  <a
+                    href={`#${sub.slug}`}
+                    class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
+                    data-active="false"
+                  >
                     {sub.text}
                   </a>
                 </li>
@@ -48,43 +60,49 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 </nav>
 
 <script is:inline>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const headingFragment = `#${entry.target.id}`
-        const tocItem = document.querySelector(`a[href="${headingFragment}"]`)
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const headingFragment = `#${entry.target.id}`
+            const tocItem = document.querySelector(
+              `a[href="${headingFragment}"]`
+            )
 
-        if (entry.isIntersecting) {
-          const previouslyActivatedItem =
-            document.querySelector('.active-toc-item')
+            if (entry.isIntersecting) {
+              /** @type {HTMLAnchorElement | null} */
+              const previouslyActivatedItem = document.querySelector(
+                '[data-active="true"]'
+              )
 
-          previouslyActivatedItem?.classList.remove('active-toc-item')
-          tocItem.classList.add('active-toc-item')
-        } else {
-          const isAnyOtherEntryIntersecting = entries.some(
-            (e) => e.target.id !== entry.target.id && e.isIntersecting
-          )
+              if (previouslyActivatedItem) {
+                previouslyActivatedItem.dataset.active = 'false'
+              }
+              tocItem.dataset.active = 'true'
+            } else {
+              const isAnyOtherEntryIntersecting = entries.some(
+                (e) => e.target.id !== entry.target.id && e.isIntersecting
+              )
 
-          if (isAnyOtherEntryIntersecting) {
-            tocItem.classList.remove('active-toc-item')
+              if (isAnyOtherEntryIntersecting) {
+                tocItem.dataset.active = 'false'
+              }
+            }
           }
-        }
+        },
+        { root: null, rootMargin: '0px', threshold: [1] }
+      )
+
+      const sectionHeadings = document.querySelectorAll(
+        'article > h2, article > h3'
+      )
+
+      for (const heading of sectionHeadings) {
+        observer.observe(heading)
       }
     },
-    { root: null, rootMargin: '0px', threshold: [1] }
+    { once: true }
   )
-
-  const sectionHeadings = document.querySelectorAll(
-    'article > h2, article > h3'
-  )
-
-  for (const heading of sectionHeadings) {
-    observer.observe(heading)
-  }
 </script>
-
-<style>
-  .active-toc-item {
-    font-weight: bold;
-  }
-</style>
