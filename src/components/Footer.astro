@@ -1,12 +1,12 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+interface Props {
+  class?: string
+}
 
-interface Props extends HTMLAttributes<'footer'> {}
-
-const { class: className, ...attrs } = Astro.props
+const { class: className } = Astro.props
 ---
 
-<footer {...attrs} class:list={['text-sm leading-[1.75] mt-4', className]}>
+<footer class:list={['text-sm leading-[1.75] mt-4', className]}>
   <div>
     <span>Made with</span>
 

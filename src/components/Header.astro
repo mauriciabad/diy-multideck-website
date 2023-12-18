@@ -1,14 +1,15 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import DarkModeToggle from './DarkModeToggle.astro'
-import type { HTMLAttributes } from 'astro/types'
 
-interface Props extends HTMLAttributes<'header'> {}
+interface Props {
+  class?: string
+}
 
-const { class: className, ...attrs } = Astro.props
+const { class: className } = Astro.props
 ---
 
-<header {...attrs} class:list={['flex items-center', className]}>
+<header class:list={['flex items-center', className]}>
   <a
     class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
     href="#main"
