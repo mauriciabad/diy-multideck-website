@@ -18,6 +18,17 @@ export default defineMarkdocConfig({
         },
       },
     },
+    coinFlip: {
+      render: component('./src/components/markdown/CoinFlip.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: String,
+          matches: ['yes', 'no', 'unknown'],
+          errorLevel: 'critical',
+        },
+      },
+    },
     suit: {
       render: component('./src/components/markdown/Suit.astro'),
       selfClosing: true,
@@ -62,10 +73,6 @@ export default defineMarkdocConfig({
             '⬛️',
             '🌈',
           ],
-          errorLevel: 'critical',
-        },
-        size: {
-          type: Number,
           errorLevel: 'critical',
         },
       },

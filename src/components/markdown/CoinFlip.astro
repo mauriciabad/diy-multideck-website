@@ -1,0 +1,59 @@
+---
+const coinFlipEmojisById = {
+  yes: '✔️',
+  no: '❌',
+  unknown: '❓',
+} as const
+
+type CoinFlipId = keyof typeof coinFlipEmojisById
+
+export interface Props {
+  id: CoinFlipId
+}
+
+const { id } = Astro.props
+---
+
+<>
+  <svg
+    class="not-prose inline-block align-[-0.15em] h-[1em] w-[1em]"
+    viewBox="0 0 70 70"
+    fill="none"
+  >
+    {
+      id === 'no' ? (
+        <>
+          <circle
+            cx="35"
+            cy="35"
+            r="31"
+            stroke="currentColor"
+            stroke-width="8"
+          />
+          <path
+            d="M25 24L35.5 34.5M46 45L35.5 34.5M35.5 34.5L46 24M35.5 34.5L25 45"
+            stroke="currentColor"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </>
+      ) : id === 'yes' ? (
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M35 70C54.33 70 70 54.33 70 35C70 15.67 54.33 0 35 0C15.67 0 0 15.67 0 35C0 54.33 15.67 70 35 70ZM52.3282 23.2188C53.5536 21.3807 53.0569 18.8972 51.2188 17.6718C49.3807 16.4464 46.8972 16.9431 45.6718 18.7812L30.3333 41.7889L24.3282 32.7812C23.1028 30.9431 20.6193 30.4464 18.7812 31.6718C16.9431 32.8972 16.4464 35.3807 17.6718 37.2188L27.0051 51.2188C27.747 52.3316 28.9959 53 30.3333 53C31.6707 53 32.9197 52.3316 33.6615 51.2188L52.3282 23.2188Z"
+          fill="currentColor"
+        />
+      ) : (
+        <path
+          d="M23 23C23 20.6131 24.1062 18.3239 26.0754 16.636C28.0445 14.9482 30.7152 14 33.5 14H36.5C39.2848 14 41.9555 14.9482 43.9246 16.636C45.8938 18.3239 47 20.6131 47 23C47.1105 24.9478 46.5851 26.8787 45.5029 28.5019C44.4207 30.1252 42.8404 31.3528 41 32C39.1596 32.8629 37.5793 34.4998 36.4971 36.6641C35.4149 38.8284 34.8895 41.403 35 44M35 56V56.03"
+          stroke="currentColor"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      )
+    }
+  </svg><span class="sr-only">{coinFlipEmojisById[id]}</span>
+</>
