@@ -1,0 +1,63 @@
+---
+const suitEmojisById = {
+  0: '🔥',
+  1: '💧',
+  2: '⭐',
+  3: '🍀',
+  4: '🍊',
+  5: '🍆',
+  6: '💭',
+  7: '🕷️',
+  8: '🌸',
+  9: '💎',
+  10: '💩',
+  11: '🗿',
+  111: '❤️',
+  121: '🔴',
+  131: '🟥',
+  112: '💙',
+  122: '🔵',
+  132: '🟦',
+  113: '💛',
+  123: '🟡',
+  133: '🟨',
+  114: '💚',
+  124: '🟢',
+  134: '🟩',
+  115: '🖤',
+  125: '⚫️',
+  135: '⬛️',
+  145: '🌈',
+} as const
+
+type SuitEmoji = (typeof suitEmojisById)[keyof typeof suitEmojisById]
+type SuitId = keyof typeof suitEmojisById
+
+export interface Props {
+  id?: SuitId
+  emoji?: SuitEmoji
+  size?: number
+}
+
+const { id, emoji, size = 20 } = Astro.props
+
+const suitId =
+  id ??
+  (Object.entries(suitEmojisById).find(([_, e]) => e === emoji)?.[0] as
+    | SuitId
+    | undefined)
+---
+
+{
+  suitId !== undefined ? (
+    <img
+      src={`/images/suits/${suitId}.svg`}
+      height={size}
+      width={size}
+      class="not-prose unset align-middle inline-block"
+      alt={suitEmojisById[suitId]}
+    />
+  ) : (
+    <span>{emoji ?? '🚫'}</span>
+  )
+}

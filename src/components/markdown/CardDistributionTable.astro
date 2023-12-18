@@ -1,4 +1,7 @@
 ---
+import Suit from './Suit.astro'
+import type { Props as SuitProps } from './Suit.astro'
+
 const rows = [
   ['🔥', '0', '❤️', '0', '1', '1', '00', '1', '✔️'],
   ['🔥', '1', '❤️', '1', '1', '1', '01', '1', '✔️'],
@@ -209,7 +212,11 @@ const rows = [
                 },
               ]}
             >
-              {cell}
+              {i === 0 || i === 2 ? (
+                <Suit emoji={cell as SuitProps['emoji']} />
+              ) : (
+                cell
+              )}
             </td>
           ))}
         </tr>
