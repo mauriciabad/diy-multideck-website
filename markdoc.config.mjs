@@ -18,6 +18,12 @@ export default defineMarkdocConfig({
         },
       },
     },
+    cardDistributionTable: {
+      render: component(
+        './src/components/markdown/CardDistributionTable.astro'
+      ),
+      selfClosing: true,
+    },
     usedCards: {
       render: component('./src/components/markdown/UsedCards.astro'),
       selfClosing: true,
