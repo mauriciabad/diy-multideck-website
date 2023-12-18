@@ -48,10 +48,6 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 </nav>
 
 <script is:inline>
-  // This script tag is useful only if you want to display the TOC alongside the blog post...
-  // ... and highlight the section that the user is currently reading through.
-  // Feel free to remove this tag if you don't need this type of functionality.
-
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {

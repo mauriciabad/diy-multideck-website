@@ -1,19 +1,15 @@
 ---
-export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+interface Props {
+  href: string
+}
+const { href } = Astro.props
 
-const { href, class: className, ...props } = Astro.props
-const path = Astro.url.pathname.replace(/\/$/, '')
-
-const isHome = href === '/' && path === ''
-const isOtherPages =
-  typeof href === 'string' && href.length > 1
-    ? path.substring(1).startsWith(href.substring(1))
-    : false
-const isActive = isHome || isOtherPages
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+const linkPath = href.slice(1)
+const isActive = currentPath === linkPath
 ---
 
-<a
-  href={href}
-  class:list={[className, { show: isActive }, 'unset animated-link']}
-  {...props}><slot /></a
+<a href={href} class:list={[{ show: isActive }, 'unset animated-link']}
+  ><slot /></a
 >
