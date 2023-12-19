@@ -38,7 +38,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
     - 8 times: five 1s, four 2s, three 3s, two 4s, one 5.
     - 12 times: four 1s, three 2s, two 3s, one 4.
     - 10-level pyramidal deck. (Using the basic deck)
-  - **Voting deck**: 60×{% coinFlip id="yes" /%} (yes) + 60×{% coinFlip id="no" /%} (no) + 40×{% coinFlip id="unknown" /%} (unknown)
+  - **Voting deck**: 60×{% coinFlip id="yes" /%} + 60×{% coinFlip id="no" /%} + 40×{% coinFlip id="unknown" /%}
   - **Custom deck**: by drawing.
 - **Counters** using the cards' back face.
   - **Stacking**: Count from 0 to 30 with less than 10 cards.
@@ -61,102 +61,70 @@ This is how it works: when you play a game, you pick a subset of cards and focus
 
 ## Card anatomy
 
+{% cardImg src="/images/home/card-front.png" /%}
+
 TODO: Add an image of the card with arrows and numbers, and then explain what each thing is.
 
 ![example-cards](/images/home/example-cards.png)
 
 ## Features In-Depth
 
-### Why drawing?
+### Drawing
 
-For 3 reasons:
+Even tough it may seem that by drawing you'll destroy your cards, make them ugly or waste them, the truth is the opposite: **if you don't draw on them, you're wasting the cards**, because they are meant for that. The DIY Multideck provides a solid base to play many games and, additionally, draw in the cards to support more games. Drawing on the cards also make games easier to play, because the drawings can resemble the original game card's.
 
-1. To resemble the original games.
-2. To support more games.
-3. To let you choose the games in your deck.
+Rather than filling the cards with predetermined games, I want to encourage you to personalize them by adding the games you enjoy playing. This is why it's called "The DIY Multideck".
 
-Even tough it may seem that by drawing you'll destroy your cards, make them ugly or waste them, the truth is the opposite: **if you don't do draw on them, you're wasting the cards**, because they are meant for that. The DIY Multideck provides a solid base to play many games and, additionally, draw in the cards to support more games. Drawing on the cards also make games easier to play, because the drawings can resemble the original game card's.
+**Use a pencil** to draw, so you can erase or tweak the drawing if needed. Pens, markers, and other things also work, but I don't recommend using them because making changes is very common.
 
-Rather than filling the cards with predetermined games, I want to encourage you to personalize them by adding the games you enjoy playing. This is why it's called "The DIY Multideck". By not prefilling the cards, they won't have unused information and will lead to less confusions while playing.
+#### Drawing areas
 
-This website provides a wide range of [game mapping instructions](/games). If you don't see a particular game you're interested in, feel free to create your own game mapping instructions and [send them to us](hello@mauriciabad.com).
+{% cardImg src="/images/home/drawing-areas.png" /%}
 
-So, what are you waiting for? Grab a pen or marker, open one of our [game mapping guides](/games), add a new game to your deck!
+As shown in the image, each card has 14 drawing drawing slots, grouped in 5 drawing areas.
 
-### Drawing areas
+In some games, you may need duplicate the drawing on the opposite side slots to make the card playable in any rotation.
 
-{% drawingAreas
-  imageSrc="/images/home/drawing-areas.png"
-  imageTexts=[
-    "In the future, we'll release a blog post about tips to create your own game mappings and more details about this topic.",
-    "As shown in the image, each card has 14-16 drawing drawing slots, grouped in 5 drawing areas."
-  ]
-  drawingAreas=[
-    {
-      title: "Area A",
-      amount: "2 big or 4 small",
-      description:
-        "In some games, you may need duplicate the drawing on the top and bottom slots to make the card playable in any rotation.",
-      useCases: [
-        "The card need to be hold in hand and contain a big drawing or word.",
-        "The card need to be stacked on the table while keeping the top or bottom part visible.",
-      ],
-    },
-    {
-      title: "Area B",
-      amount: "4",
-      description:
-        "In some games, you may need duplicate the drawing on the opposite corner's slots to make the card playable in any rotation.",
-      useCases: [
-        "The card need to be hold in hand and contain a big drawing or word.",
-        "The card need to be stacked on the table while keeping the top or bottom part visible.",
-      ],
-    },
-    {
-      title: "Area C",
-      amount: "3",
-      useCases: [
-        "The card need a hint, like punctuation.",
-        "The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.",
-      ],
-    },
-    {
-      title: "Area D",
-      amount: "4",
-      useCases: [
-        "The card needs to be placed in the table.",
-        "The card can be hold in hand, but it's the only one.",
-        "The card needs to contain a big drawing or word.",
-      ],
-    },
-    {
-      title: "Area E",
-      amount: "1",
-      useCases: [
-        "You want to represent a tile, chip, token, or similar.",
-        "The card needs to be placed in the table.",
-        "The card is important.",
-      ],
-    },
-  ]
-/%}
+##### Drawing area A
 
-### Usability
+- The card needs to be hold in hand and contain a big drawing or word.
+- The card needs to be stacked on the table while keeping the top or bottom part visible.
 
-- 100% of the cards have the same unit digit in all corners when the corners have numbers (JQKA don't apply).
-- High contrast in important elements.
+##### Drawing area B
 
-#### Coin flip
+- The card needs to be hold in hand.
+- The drawing is related to the suit.
 
-![coin-flip](/images/home/coin-flip.svg)
+##### Drawing area C
 
-There's also a coin flip in the middle of the random numbers.
+- The card needs a hint, like punctuation.
+- The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.
 
-When the card number is even, it's a head, and when the card number is odd, it's tails.
+##### Drawing area D
 
-### Points value
+- The card needs to be placed in the table.
+- The card can be hold in hand, but it's the only one.
+- The card needs to contain a big drawing or word.
+- The card is not used actively during the gameplay, like hints or boards, and your notes cards are full.
 
-At the bottom of the bottom-right corner, there are a set of dots, those are the Points value.
+##### Drawing area E
+
+- You want to represent a tile, chip, token, or similar.
+- The card needs to be placed in the table.
+
+### Coin flip
+
+{% coinFlipImg /%}
+
+Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
+
+The 4 first even suits have a {% coinFlip id="yes" /%}, the 4 first odd suits have a {% coinFlip id="no" /%}, and the rest of the cards have a {% coinFlip id="unknown" /%}. Notice that the suits that only have ranks 0-9 and not letters, have a {% coinFlip id="unknown" /%} always.
+
+The icon has the color of the basic suit.
+
+### Pyramidal rank
+
+At the bottom of the bottom-right corner, there are a set of dots, those are the Pyramidal rank.
 
 Point values are distributed equally across suits. Specifically, each suit has five 1's, four 2's, three 3's, two 4's, and one 5 (12345 • 54321). They can be used as an alternative rank value for games that require an uneven number of specific ranks, like Hanabi.
 
@@ -174,19 +142,47 @@ You can add a title to the counter by writing it in the area A of a card and put
   - Put 2 cards on top of each other, and align the arrow from the card in front to point a number in the card on the back, the pointed number is the result.
   - You can rotate the front card, and count negative or positive points.
 
-## Cards in the deck
+## Card arrangements
 
-### Card fronts
+When mapping new games, it's handy to visualize the cards in a layout that fits with the main sub-deck it uses.
 
-This image show a simplified version of each card used to visualize the deck's several distributions.
+The next images show simplified versions of the cards to focus better on the distribution. Notice that the 3 elements of the card get re-arranged based on the distribution, this way the element on the top is always the main one of that layout.
 
-![mini-cards](/images/home/mini-cards.png)
+### Basic layout
 
-### Card backs
+![mini-cards-basic](/images/home/mini-cards-basic.png)
 
-![back-cards](/images/home/back-cards.png)
+### 3D layout
 
-#### Notes cards
+![mini-cards-3d](/images/home/mini-cards-3d.png)
+
+### Sequential layout
+
+![mini-cards-sequential](/images/home/mini-cards-sequential.png)
+
+### Pyramidal layout
+
+![mini-cards-pyramidal](/images/home/mini-cards-pyramidal.png)
+
+### Voting layout
+
+![mini-cards-coin](/images/home/mini-cards-coin.png)
+
+## Extra cards
+
+### Cover card
+
+{% cardImg src="/images/home/card-cover.png" /%}
+
+Contains:
+
+- Name of the deck.
+- Preview of all basic suits.
+- QR code pointing to the website.
+
+### Notes cards
+
+{% cardImg src="/images/home/card-notes.png" /%}
 
 Use them to keep any useful information.
 
@@ -197,10 +193,6 @@ Some use cases are:
 - Game setup (what cards, how many per player...).
 - Definition/Diagram of specific rule or mechanic.
 - List of games in the deck.
-
-#### Regular card backs
-
-50% of the regular card backs are inverted, in a non-alternating way. Otherwise, if someone was holding a card upright, the other players would know he's holding not holding a letter (XAJQK) for sure.
 
 ## Other details
 
@@ -221,6 +213,7 @@ The deck was heavily inspired by [The Everdeck](https://thewrongtools.wordpress.
 - The voting icom and pyramidal rank are in the sequential number's corner to concentrate all the printed parts in the corners, so the rest of the space is perfectly symetrical and drawings can be drawn twice, upright and upside-down, to make cards work both orientations.
 - Small digits in the 3D deck corner, start on 1 instead of on 0, for a more natural use of the cards, although then you cant just concatenate the digits to create numbers from 00 to 29.
 - Small digits in the 3D deck corner are there for color-blind people, so they can know the color of the suit. And the number on the other side is also there to let players identify quicker the 3 components of the suit. The numbers are there also to add an order to the suits that may be used in some games, although it's preatty rare.
+- The card backs use a lot of ink to increase the opacity of the card, specially on the corners, that's why the arrows are black.
 
 ### Inspiration
 
@@ -230,9 +223,11 @@ A short spoiler: from The Everdeck and Rainbow deck mainly.
 
 ### Printing
 
-_In the future, we'll release a blog post about this topic._
+The cards are designed to be to printed at home or basic copy shop.
 
-A short spoiler: Designed to be to printable at home or basic copy shop. The material is polyester 300 grams.
+The material used is polyester 300 grams, almost all copy shops have it (at least in Spain) and it offers great resistance and it's waterproof. The only downsides are that it is not environmentaly friendly and that it is not fully opaque.
+
+For now the pdf document to print the cards is not public, but I may reconsider it and licence them with a Creative Commons license.
 
 ### Is it legal?
 

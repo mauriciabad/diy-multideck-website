@@ -27,7 +27,7 @@ const { classes: classNames, hasProse, tocHeadings } = Astro.props
 ---
 
 <!doctype html>
-<html class="theme-sleek scroll-smooth" lang="en">
+<html class="theme-sleek" lang="en">
   <head>
     <MetaTags />
     <Favicon />
@@ -67,7 +67,7 @@ const { classes: classNames, hasProse, tocHeadings } = Astro.props
       class:list={[
         'content-center grid grid-in-[main]',
         hasProse &&
-          'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25',
+          'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25 prose-h4:text-lg prose-h5:font-semibold',
         classNames?.main,
       ]}
     >

@@ -1,0 +1,14 @@
+---
+interface Props {
+  src: string
+}
+const { src } = Astro.props
+---
+
+<div class="flex flex-wrap items-start justify-center gap-4 mb-4">
+  <img
+    src={src}
+    alt="card"
+    class="not-prose w-full max-w-[300px] rounded-[calc(50/750*100%)/calc(50/1050*100%)] border border-stone-200 shadow-lg"
+  />
+</div>

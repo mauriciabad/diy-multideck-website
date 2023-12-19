@@ -83,19 +83,15 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    drawingAreas: {
-      render: component('./src/components/markdown/DrawingAreas.astro'),
+    coinFlipImg: {
+      render: component('./src/components/markdown/CoinFlipImg.astro'),
+      selfClosing: true,
+    },
+    cardImg: {
+      render: component('./src/components/markdown/CardImg.astro'),
       selfClosing: true,
       attributes: {
-        drawingAreas: {
-          type: Array,
-          errorLevel: 'critical',
-        },
-        imageTexts: {
-          type: Array,
-          errorLevel: 'critical',
-        },
-        imageSrc: {
+        src: {
           type: String,
           errorLevel: 'critical',
         },
