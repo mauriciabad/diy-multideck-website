@@ -50,7 +50,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - 1 cover: With QR code pointing to the website.
 - **Usability**:
   - Color-blind friendly.
-  - All suits are emojis: {% suit emoji="🔥" /%} {% suit emoji="💧" /%} {% suit emoji="⭐" /%} {% suit emoji="🍀" /%} {% suit emoji="🍊" /%} {% suit emoji="🍆" /%} {% suit emoji="💭" /%} {% suit emoji="🕷️" /%} {% suit emoji="🌸" /%} {% suit emoji="💎" /%} {% suit emoji="💩" /%} {% suit emoji="🗿" /%}
+  - All suits are emojis: {% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%} {% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}
   - Standard poker card size (2.5 × 3.5 inches).
   - Waterproof & resistant material.
   - Many small design details that make the cards easier to use.
@@ -59,15 +59,61 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - [List of games](/games) with instructions of how to play.
   - [Official store](/buy) to buy the deck.
 
-## Card anatomy
-
-{% cardImg src="/images/home/card-front.png" /%}
-
-TODO: Add an image of the card with arrows and numbers, and then explain what each thing is.
+This is how the cards look:
 
 ![example-cards](/images/home/example-cards.png)
 
-## Features In-Depth
+## Card anatomy
+
+The normal cards have the following features:
+
+1. [Basic suit](#basic-suit)
+2. [3D suit](#3d-suit)
+3. [Sequential number](#sequential-number)
+4. [Pyramidal rank](#pyramidal-rank)
+5. [Coin flip](#coin-flip)
+6. [Drawing areas](#drawing)
+7. [Counter](#counting) (on the back face)
+
+Here you can see where is each feature located, and a summary of each one
+
+![card-anatomy-diagram](/images/home/card-anatomy.png)
+
+### Basic suit
+
+TODO: Fill this section
+
+Notice that if you need 13 to 15 suits, you can "switch" the suits for the ranks and have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}).
+
+### 3D suit
+
+TODO: Fill this section
+
+### Sequential number
+
+TODO: Fill this section
+
+### Pyramidal rank
+
+{% pyramidalRankImg /%}
+
+On the 8 suits that have 15 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+
+On the 4 suits that have only 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+
+The pyramidal rank can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
+
+Besides this feature, you can also achieve an unuited pyramidal deck of 10 levels. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
+
+### Coin flip
+
+{% coinFlipImg /%}
+
+Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
+
+The 4 first even suits have a {% coinFlip id="yes" /%}, the 4 first odd suits have a {% coinFlip id="no" /%}, and the rest of the cards have a {% coinFlip id="unknown" /%}. Notice that the suits that only have ranks 0...9 and not letters, have a {% coinFlip id="unknown" /%} always.
+
+The icon has the color of the basic suit in that card.
 
 ### Drawing
 
@@ -112,22 +158,6 @@ In some games, you may need duplicate the drawing on the opposite side slots to 
 - You want to represent a tile, chip, token, or similar.
 - The card needs to be placed in the table.
 
-### Coin flip
-
-{% coinFlipImg /%}
-
-Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
-
-The 4 first even suits have a {% coinFlip id="yes" /%}, the 4 first odd suits have a {% coinFlip id="no" /%}, and the rest of the cards have a {% coinFlip id="unknown" /%}. Notice that the suits that only have ranks 0-9 and not letters, have a {% coinFlip id="unknown" /%} always.
-
-The icon has the color of the basic suit.
-
-### Pyramidal rank
-
-At the bottom of the bottom-right corner, there are a set of dots, those are the Pyramidal rank.
-
-Point values are distributed equally across suits. Specifically, each suit has five 1's, four 2's, three 3's, two 4's, and one 5 (12345 • 54321). They can be used as an alternative rank value for games that require an uneven number of specific ranks, like Hanabi.
-
 ### Counting
 
 ![counting](/images/home/counting.png)
@@ -150,29 +180,29 @@ The next images show simplified versions of the cards to focus better on the dis
 
 ### Basic layout
 
-![mini-cards-basic](/images/home/mini-cards-basic.png)
+![mini-cards-basic](/images/home/layouts/mini-cards-basic.png)
 
 ### 3D layout
 
-![mini-cards-3d](/images/home/mini-cards-3d.png)
+![mini-cards-3d](/images/home/layouts/mini-cards-3d.png)
 
 ### Sequential layout
 
-![mini-cards-sequential](/images/home/mini-cards-sequential.png)
+![mini-cards-sequential](/images/home/layouts/mini-cards-sequential.png)
 
 ### Pyramidal layout
 
-![mini-cards-pyramidal](/images/home/mini-cards-pyramidal.png)
+![mini-cards-pyramidal](/images/home/layouts/mini-cards-pyramidal.png)
 
 ### Voting layout
 
-![mini-cards-coin](/images/home/mini-cards-coin.png)
+![mini-cards-coin](/images/home/layouts/mini-cards-coin.png)
 
 ## Extra cards
 
 ### Cover card
 
-{% cardImg src="/images/home/card-cover.png" /%}
+{% cardImg src="/images/home/cards/card-cover.png" /%}
 
 Contains:
 
@@ -182,7 +212,7 @@ Contains:
 
 ### Notes cards
 
-{% cardImg src="/images/home/card-notes.png" /%}
+{% cardImg src="/images/home/cards/card-notes.png" /%}
 
 Use them to keep any useful information.
 
@@ -214,6 +244,7 @@ The deck was heavily inspired by [The Everdeck](https://thewrongtools.wordpress.
 - Small digits in the 3D deck corner, start on 1 instead of on 0, for a more natural use of the cards, although then you cant just concatenate the digits to create numbers from 00 to 29.
 - Small digits in the 3D deck corner are there for color-blind people, so they can know the color of the suit. And the number on the other side is also there to let players identify quicker the 3 components of the suit. The numbers are there also to add an order to the suits that may be used in some games, although it's preatty rare.
 - The card backs use a lot of ink to increase the opacity of the card, specially on the corners, that's why the arrows are black.
+- Not all suits have the same amount of ranks. I decided to cut on some cards and make an overall uneven distribution, because it's rare to find games that use high ranks (+10) and many suits (+8) at the same time. There are very few of those games because the amount of cards would grow to more than 150 and it feels too many cards to handle for the player. Moreover, games with many cards usually have several kinds of cards with low ranks, so you need more suits without mattering much the amount of ranks.
 
 ### Inspiration
 
@@ -229,17 +260,15 @@ The material used is polyester 300 grams, almost all copy shops have it (at leas
 
 For now the pdf document to print the cards is not public, but I may reconsider it and licence them with a Creative Commons license.
 
-### Is it legal?
+### Legal note
 
-**Yes!** Selling/buying or printing the DIY Multideck is legal, even if the porpoise is to play other games. Also, this website, with explanations of how to play other games, and all it's contents, is legal.
+_Is all of this legal?_ Yes, it is. Selling/buying or printing the DIY Multideck is legal, even if the porpoise is to play other games. Also, this website, with explanations of how to play other games, and all it's contents, is legal.
 
 Board games are generally not protected intellectual property. What is usually protected with copyright, are the assets they use, like: cards, tokens, boards or rulebooks. Some game mechanics may be patented, but it's very rare.
 
 Explaining how to play a board game is legal, as long as you don't use copyrighted material without permission to do so.
 
-About the trademarks; in this case, using other board games names and logos is fare use because it's "Informational use", also called "editorial use".
-
-About the copyright; in this case, no assets from the game are used in the deck or this website.
+Regardless of all that, the original games will always be better than any adaptation done with the DIY Multideck, simply because the original games are made to just play a single game. But meanwhile you don't own the game, you can at least play an inferior version of it.
 
 ## Appendix
 

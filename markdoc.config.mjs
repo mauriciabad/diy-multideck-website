@@ -87,6 +87,10 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/CoinFlipImg.astro'),
       selfClosing: true,
     },
+    pyramidalRankImg: {
+      render: component('./src/components/markdown/PyramidalRankImg.astro'),
+      selfClosing: true,
+    },
     cardImg: {
       render: component('./src/components/markdown/CardImg.astro'),
       selfClosing: true,
