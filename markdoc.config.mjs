@@ -99,6 +99,10 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    basicSuitImg: {
+      render: component('./src/components/markdown/BasicSuitImg.astro'),
+      selfClosing: true,
+    },
     coinFlipImg: {
       render: component('./src/components/markdown/CoinFlipImg.astro'),
       selfClosing: true,
