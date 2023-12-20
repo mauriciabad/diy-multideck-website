@@ -29,6 +29,22 @@ export default defineMarkdocConfig({
         },
       },
     },
+    colorSuit: {
+      render: component('./src/components/markdown/ColorSuit.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: Number,
+          matches: [1, 2, 3, 4, 5, 6],
+          errorLevel: 'critical',
+        },
+        color: {
+          type: String,
+          matches: ['red', 'blue', 'yellow', 'green', 'black', 'rainbow'],
+          errorLevel: 'critical',
+        },
+      },
+    },
     suit: {
       render: component('./src/components/markdown/Suit.astro'),
       selfClosing: true,
