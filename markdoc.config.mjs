@@ -19,6 +19,19 @@ export default defineMarkdocConfig({
         },
       },
     },
+    cardImgWithText: {
+      render: component(
+        './src/components/markdown/images/CardImgWithText.astro'
+      ),
+      children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
+      selfClosing: false,
+      attributes: {
+        src: {
+          type: String,
+          errorLevel: 'error',
+        },
+      },
+    },
     coinFlip: {
       render: component('./src/components/markdown/CoinFlip.astro'),
       selfClosing: true,

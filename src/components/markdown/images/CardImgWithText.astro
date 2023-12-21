@@ -1,0 +1,14 @@
+---
+import CardImg from './CardImg.astro'
+interface Props {
+  src: string
+}
+const { src } = Astro.props
+---
+
+<div class="flex flex-wrap items-start justify-center gap-4 mb-4">
+  <CardImg src={src} />
+  <div class="grow basis-40">
+    <slot />
+  </div>
+</div>
