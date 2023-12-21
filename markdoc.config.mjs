@@ -5,8 +5,8 @@ export default defineMarkdocConfig({
   tags: {
     callout: {
       render: component('./src/components/markdown/Callout.astro'),
-      children: ['text'],
-      selfClosing: true,
+      children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
+      selfClosing: false,
       attributes: {
         text: {
           type: String,
@@ -15,7 +15,7 @@ export default defineMarkdocConfig({
           type: String,
           default: 'info',
           matches: ['info', 'idea'],
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
@@ -26,7 +26,7 @@ export default defineMarkdocConfig({
         id: {
           type: String,
           matches: ['yes', 'no', 'unknown'],
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
@@ -37,12 +37,12 @@ export default defineMarkdocConfig({
         id: {
           type: Number,
           matches: [1, 2, 3, 4, 5, 6],
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
         color: {
           type: String,
           matches: ['red', 'blue', 'yellow', 'green', 'black', 'rainbow'],
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
@@ -53,12 +53,12 @@ export default defineMarkdocConfig({
         id: {
           type: Number,
           matches: suitIds,
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
         emoji: {
           type: String,
           matches: suitEmojis,
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
@@ -92,7 +92,7 @@ export default defineMarkdocConfig({
       attributes: {
         src: {
           type: String,
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
@@ -102,13 +102,13 @@ export default defineMarkdocConfig({
       attributes: {
         cards: {
           type: Array,
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
         layout: {
           type: String,
           default: 'basic',
           matches: ['basic', '3d', 'sequential', 'pyramidal', 'coin'],
-          errorLevel: 'critical',
+          errorLevel: 'error',
         },
       },
     },
