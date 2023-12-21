@@ -109,13 +109,15 @@ Colors: {% colorSuit id=1 /%} {% colorSuit id=2 /%} {% colorSuit id=3 /%} {% col
 
 On the top-right or bottom-left corner you can find a number that's not on top of a suit, it is the "Sequential number".
 
-It contains numbers from 0 to 159.
+It contains numbers **from 0 to 159**.
+
+Because **each card has a different number**, it is used to reference the cards.
 
 The number has two colors:
 
 - The **black part** indicates the **number of the suit**.  When the _sequential number_ is greater than 120 it no longer indicates the suit number.
-  - For example the suit {% suit id=11 /%} is the suit number 11, because there's only 12 suits.
-- The **colored part** **matches the color** of the basic suit of that card. It allso **matches the rank** of the _basic suit_ (except when the rank is a letter (XJQKA)), and the _3D suit_.
+  - For example the card 117 has the suit {% suit id=11 /%}, and is the suit number 11 because the black part of the number is 11.
+- The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
 #### Use cases
 
@@ -227,8 +229,6 @@ Count **from 0 to 30** with **less than 10 cards**.
 
 Stack cards upright (worth 1) or upside-down (worth 5), the sum is the result.
 
-##### Comments
-
 - Cards han be holded in the hand.
 - Convinient when coins are exchanged frequently by the players.
 - Use when counter needs to be "private" (only known by the own player).
@@ -239,8 +239,6 @@ Count **from 0 to 10** with only **2 cards**.
 
 Put 2 cards on top of each other, and align the arrow from the card in front to point a number in the card on the back, the pointed number is the result.
 
-##### Comments
-
 - Watch out to not move the cards by mistake or you'll lose the count.
 - You can rotate the front card, and count negative or positive points.
 
@@ -248,14 +246,10 @@ Put 2 cards on top of each other, and align the arrow from the card in front to 
 
 Count **any amount** with very **few cards**.
 
-Create a counter for every digit of the result number.
+Create a pointing counter for every digit of the result number.
 {% callout type="info" %}
 For example, to represent 750: Take 6 cards to create 3 counters using the pointing method each. Place them side by side. Move the first pointing card to 7, the second to 5, and the third to 0. The first counter represents the hundreds, the second the tens, and the third the units.
 {% /callout %}
-
-##### Comments
-
-- Same comments as the _Pointing method_.
 
 ## Extra cards
 
