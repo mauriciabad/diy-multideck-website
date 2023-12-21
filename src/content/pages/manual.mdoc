@@ -89,6 +89,8 @@ Notice that if you need 13 to 15 suits, you can "switch" the suits for the ranks
 
 ### 3D suit
 
+{% 3dSuitImg /%}
+
 TODO: Fill this section
 
 Colors: {% colorSuit id=1 /%} {% colorSuit id=2 /%} {% colorSuit id=3 /%} {% colorSuit id=4 /%} {% colorSuit id=5 /%} {% colorSuit id=6 /%}
@@ -101,13 +103,18 @@ TODO: Fill this section
 
 {% pyramidalRankImg /%}
 
-On the 8 suits that have 15 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+Under the sequential number, there's a number indicating the pyramidal rank.
 
-On the 4 suits that have only 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+- On the 8 suits that have 15 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+- On the 4 suits that have only 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+
+The pyramidal rank has the color of the basic suit in that card.
+
+#### Use cases
 
 The pyramidal rank can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
 
-Besides this feature, you can also achieve an unuited pyramidal deck of 10 levels. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
+{% callout type="idea" text="You can also make an unuited pyramidal deck of 10 levels. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups)." /%}
 
 ### Coin flip
 
@@ -115,9 +122,11 @@ Besides this feature, you can also achieve an unuited pyramidal deck of 10 level
 
 Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
 
-The 4 first even suits have a {% coinFlip id="yes" /%}, the 4 first odd suits have a {% coinFlip id="no" /%}, and the rest of the cards have a {% coinFlip id="unknown" /%}. Notice that the suits that only have ranks 0...9 and not letters, have a {% coinFlip id="unknown" /%} always.
+- The 4 first even suits ({% suit id=0 /%} {% suit id=2 /%} {% suit id=4 /%} {% suit id=6 /%}) have a {% coinFlip id="yes" /%}.
+- The 4 first odd suits ({% suit id=1 /%} {% suit id=3 /%} {% suit id=5 /%} {% suit id=7 /%}) have a {% coinFlip id="no" /%}.
+- The 4 suits that only have 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
 
-The icon has the color of the basic suit in that card.
+The coin flip icon has the color of the basic suit in that card.
 
 ### Drawing
 
@@ -129,11 +138,11 @@ Rather than filling the cards with predetermined games, I want to encourage you 
 
 #### Drawing areas
 
+Each card has 14 drawing drawing slots, grouped in 5 drawing areas.
+
 {% cardImg src="/images/home/drawing-areas.png" /%}
 
-As shown in the image, each card has 14 drawing drawing slots, grouped in 5 drawing areas.
-
-In some games, you may need duplicate the drawing on the opposite side slots to make the card playable in any rotation.
+{% callout type="idea" text="In some games, you may need duplicate the drawing on the opposite side slots to make the card playable in any rotation." /%}
 
 ##### Drawing area A
 

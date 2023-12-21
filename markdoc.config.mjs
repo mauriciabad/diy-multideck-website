@@ -1,4 +1,5 @@
 import { defineMarkdocConfig, component } from '@astrojs/markdoc/config'
+import { suitIds, suitEmojis } from './src/components/markdown/suits'
 
 export default defineMarkdocConfig({
   tags: {
@@ -51,44 +52,12 @@ export default defineMarkdocConfig({
       attributes: {
         id: {
           type: Number,
-          matches: [
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 111, 121, 131, 112, 122, 132,
-            113, 123, 133, 114, 124, 134, 115, 125, 135, 145,
-          ],
+          matches: suitIds,
           errorLevel: 'critical',
         },
         emoji: {
           type: String,
-          matches: [
-            '🔥',
-            '💧',
-            '⭐',
-            '🍀',
-            '🍊',
-            '🍆',
-            '💭',
-            '🕷️',
-            '🌸',
-            '💎',
-            '💩',
-            '🗿',
-            '❤️',
-            '🔴',
-            '🟥',
-            '💙',
-            '🔵',
-            '🟦',
-            '💛',
-            '🟡',
-            '🟨',
-            '💚',
-            '🟢',
-            '🟩',
-            '🖤',
-            '⚫️',
-            '⬛️',
-            '🌈',
-          ],
+          matches: suitEmojis,
           errorLevel: 'critical',
         },
       },
@@ -100,19 +69,25 @@ export default defineMarkdocConfig({
       selfClosing: true,
     },
     basicSuitImg: {
-      render: component('./src/components/markdown/BasicSuitImg.astro'),
+      render: component('./src/components/markdown/images/BasicSuitImg.astro'),
+      selfClosing: true,
+    },
+    '3dSuitImg': {
+      render: component('./src/components/markdown/images/3dSuitImg.astro'),
       selfClosing: true,
     },
     coinFlipImg: {
-      render: component('./src/components/markdown/CoinFlipImg.astro'),
+      render: component('./src/components/markdown/images/CoinFlipImg.astro'),
       selfClosing: true,
     },
     pyramidalRankImg: {
-      render: component('./src/components/markdown/PyramidalRankImg.astro'),
+      render: component(
+        './src/components/markdown/images/PyramidalRankImg.astro'
+      ),
       selfClosing: true,
     },
     cardImg: {
-      render: component('./src/components/markdown/CardImg.astro'),
+      render: component('./src/components/markdown/images/CardImg.astro'),
       selfClosing: true,
       attributes: {
         src: {

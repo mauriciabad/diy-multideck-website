@@ -21,7 +21,7 @@ const { id } = Astro.props
     fill="none"
   >
     {
-      id === 'no' ? (
+      id === 'no' && (
         <>
           <circle
             cx="35"
@@ -38,14 +38,21 @@ const { id } = Astro.props
             stroke-linejoin="round"
           />
         </>
-      ) : id === 'yes' ? (
+      )
+    }
+    {
+      id === 'yes' && (
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M35 70C54.33 70 70 54.33 70 35C70 15.67 54.33 0 35 0C15.67 0 0 15.67 0 35C0 54.33 15.67 70 35 70ZM52.3282 23.2188C53.5536 21.3807 53.0569 18.8972 51.2188 17.6718C49.3807 16.4464 46.8972 16.9431 45.6718 18.7812L30.3333 41.7889L24.3282 32.7812C23.1028 30.9431 20.6193 30.4464 18.7812 31.6718C16.9431 32.8972 16.4464 35.3807 17.6718 37.2188L27.0051 51.2188C27.747 52.3316 28.9959 53 30.3333 53C31.6707 53 32.9197 52.3316 33.6615 51.2188L52.3282 23.2188Z"
           fill="currentColor"
         />
-      ) : (
+      )
+    }
+
+    {
+      id === 'unknown' && (
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -54,5 +61,6 @@ const { id } = Astro.props
         />
       )
     }
-  </svg><span class="sr-only">{coinFlipEmojisById[id]}</span>
+  </svg>
+  <span class="sr-only">{coinFlipEmojisById[id]}</span>
 </>

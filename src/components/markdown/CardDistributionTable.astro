@@ -1,8 +1,7 @@
 ---
-import type { Props as CoinFlipProps } from './CoinFlip.astro'
 import CoinFlip from './CoinFlip.astro'
-import type { Props as SuitProps } from './Suit.astro'
 import Suit from './Suit.astro'
+import { isSuitEmoji } from './suits'
 
 const rows = [
   ['🔥', '0', '❤️', '0', '1', '1', '00', '1', 'yes'],
@@ -165,12 +164,14 @@ const rows = [
   ['🕷️', 'Q', '🌈', '7', '4', '6', '157', '2', 'no'],
   ['🕷️', 'K', '🌈', '8', '4', '6', '158', '3', 'no'],
   ['🕷️', 'A', '🌈', '9', '4', '6', '159', '4', 'no'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-'],
 ] satisfies string[][]
 ---
 
 <table
   class:list={[
-    'relative before:absolute before:inset-0 before:z-[1] before:shadow-lg before:rounded-xl before:border before:border-black/30 before:dark:border-white/30',
+    'relative before:absolute before:pointer-events-none before:inset-0 before:z-[1] before:shadow-lg before:rounded-xl before:border before:border-black/30 before:dark:border-white/30',
     'border-collapse [&_*]:border-black/30 [&_*]:dark:border-white/30',
     'not-prose w-full table-fixed text-center [&_th]:overflow-hidden [&_th]:px-0 [&_td]:px-0 [&_th]:py-1 [&_td]:py-1 leading-none [&_th]:align-middle [&_td]:align-middle',
   ]}
@@ -215,9 +216,17 @@ const rows = [
               ]}
             >
               {i === 0 || i === 2 ? (
-                <Suit emoji={cell as SuitProps['emoji']} />
+                isSuitEmoji(cell) ? (
+                  <Suit emoji={cell} />
+                ) : (
+                  cell
+                )
               ) : i === 8 ? (
-                <CoinFlip id={cell as CoinFlipProps['id']} />
+                cell === 'yes' || cell === 'no' || cell === 'unknown' ? (
+                  <CoinFlip id={cell} />
+                ) : (
+                  cell
+                )
               ) : (
                 cell
               )}
