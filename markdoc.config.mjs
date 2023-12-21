@@ -82,6 +82,12 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/images/3dSuitImg.astro'),
       selfClosing: true,
     },
+    sequentialNumberImg: {
+      render: component(
+        './src/components/markdown/images/SequentialNumberImg.astro'
+      ),
+      selfClosing: true,
+    },
     coinFlipImg: {
       render: component('./src/components/markdown/images/CoinFlipImg.astro'),
       selfClosing: true,
