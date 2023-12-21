@@ -107,7 +107,19 @@ Colors: {% colorSuit id=1 /%} {% colorSuit id=2 /%} {% colorSuit id=3 /%} {% col
 
 {% sequentialNumberImg /%}
 
-TODO: Fill this section
+On the top-right or bottom-left corner you can find a number that's not on top of a suit, it is the "Sequential number".
+
+It contains numbers from 0 to 159.
+
+The number has two colors:
+
+- The **black part** indicates the **number of the suit**.  When the _sequential number_ is greater than 120 it no longer indicates the suit number.
+  - For example the suit {% suit id=11 /%} is the suit number 11, because there's only 12 suits.
+- The **colored part** **matches the color** of the basic suit of that card. It allso **matches the rank** of the _basic suit_ (except when the rank is a letter (XJQKA)), and the _3D suit_.
+
+#### Use cases
+
+It is used in games that need many unsuited ranks. Games that use it are [The mind](/games/the-mind) and [No thanks!](/games/no-thanks).
 
 ### Pyramidal rank
 
@@ -118,15 +130,13 @@ Under the sequential number, there's a number indicating the pyramidal rank.
 - On the 8 suits that have 15 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
 - On the 4 suits that have only 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
 
-The pyramidal rank has the color of the basic suit in that card.
+The _pyramidal rank_ has the color of the _basic suit_ in that card.
 
 #### Use cases
 
-The pyramidal rank can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
+The _pyramidal rank_ can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
 
-{% callout type="idea" %}
-You can also make an unuited pyramidal deck of 10 levels. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
-{% /callout %}
+You can also make an **unuited pyramidal deck of 10 levels** without using the _Pyramidal ranks_. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
 
 ### Coin flip
 
@@ -134,11 +144,17 @@ You can also make an unuited pyramidal deck of 10 levels. To do it, pick one 1, 
 
 Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
 
-- The 4 first even suits ({% suit id=0 /%} {% suit id=2 /%} {% suit id=4 /%} {% suit id=6 /%}) have a {% coinFlip id="yes" /%}.
-- The 4 first odd suits ({% suit id=1 /%} {% suit id=3 /%} {% suit id=5 /%} {% suit id=7 /%}) have a {% coinFlip id="no" /%}.
+- The 4 first even suits ({% suit id=0 /%} {% suit id=2 /%} {% suit id=4 /%} {% suit id=6 /%}) have a {% coinFlip id="no" /%}.
+- The 4 first odd suits ({% suit id=1 /%} {% suit id=3 /%} {% suit id=5 /%} {% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
 - The 4 suits that only have 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
 
 The coin flip icon has the color of the basic suit in that card.
+
+#### Use cases
+
+It comes in handy when players need to emit a vote and reveal them all at the same time. This voting mechanism can be fond in [The Resistance: Avalon](/games/the-resistance-avalon) and [Secret Hitler](/games/secret-hitler).
+
+Another usage is when there are many copies of 2 to 3 kind of cards. The game [Skulls and Roses](/games/skull) uses this feature where {% coinFlip id="no" /%} are skulls and {% coinFlip id="yes" /%} roses.
 
 ### Drawing
 
