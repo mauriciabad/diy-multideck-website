@@ -68,6 +68,12 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    cardAnatomyImg: {
+      render: component(
+        './src/components/markdown/images/CardAnatomyImg.astro'
+      ),
+      selfClosing: true,
+    },
     basicSuitImg: {
       render: component('./src/components/markdown/images/BasicSuitImg.astro'),
       selfClosing: true,
