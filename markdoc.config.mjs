@@ -111,6 +111,24 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    pointingCounterImg: {
+      render: component(
+        './src/components/markdown/images/PointingCounterImg.astro'
+      ),
+      selfClosing: true,
+    },
+    chainedPointingCounterImg: {
+      render: component(
+        './src/components/markdown/images/ChainedPointingCounterImg.astro'
+      ),
+      selfClosing: true,
+    },
+    stackingCounterImg: {
+      render: component(
+        './src/components/markdown/images/StackingCounterImg.astro'
+      ),
+      selfClosing: true,
+    },
     cardImg: {
       render: component('./src/components/markdown/images/CardImg.astro'),
       selfClosing: true,
