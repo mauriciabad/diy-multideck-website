@@ -34,6 +34,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - **Sequential deck**: numbers from 0 to 159
     - 1 time: numbers from 0 to 159
     - 2 times: numbers from 0 to 59 (ignoring hundreds digit)
+    - 15 ordered suits of 10 ranks.
   - **Pyramidal deck**: 8 suits of 5 uneven ranks + 4 suits of 4 uneven ranks
     - 8 times: five 1s, four 2s, three 3s, two 4s, one 5.
     - 12 times: four 1s, three 2s, two 3s, one 4.
@@ -118,6 +119,8 @@ The number has two colors:
 - The **black part** indicates the **number of the suit**.  When the _sequential number_ is greater than 120 it no longer indicates the suit number.
   - For example the card 117 has the suit {% suit id=11 /%}, and is the suit number 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
+
+You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa) by making the _black part_ the suit, and the _colored part_ the rank.
 
 #### Use cases
 
@@ -351,9 +354,45 @@ The deck was heavily inspired by [The Everdeck](https://thewrongtools.wordpress.
 
 ### Inspiration
 
-_In the future, we'll release a blog post about this topic._
+I got insipired from The Everdeck and Rainbow deck mainly. But I found interesting ideas on other multidecks.
 
-A short spoiler: from The Everdeck and Rainbow deck mainly.
+#### Other multidecks
+
+- [The Everdeck](https://thewrongtools.wordpress.com/2019/10/10/the-everdeck/) ([BGG](https://boardgamegeek.com/boardgame/291951/everdeck))
+- [The Flexicat](https://thewrongtools.wordpress.com/2019/01/10/the-flexicat-a-card-game-system-for-new-games-or-to-emulate-way-too-many-existing-ones/)
+- [Rainbow deck](https://boardgamegeek.com/boardgame/59655/rainbow-deck) ([BGG](https://boardgamegeek.com/boardgame/59655/rainbow-deck))
+- [Singularity Deck](https://www.singularity.games/singularity-deck) ([BGG](https://boardgamegeek.com/boardgame/251957/singularity-deck))
+- [Banjo Deck](https://banjodeck.com/)
+- [Multi Playing Cards](https://multiplayingcards.com) ([BGG](https://boardgamegeek.com/boardgame/301125/multi-playing-cards))
+- [The Swiss Army Deck](https://boardgamegeek.com/geeklist/187686/swiss-army-deck)
+- [Emergency Games Kit](https://kevan.org/games/emergency)
+- [The Skeleton Deck](https://kevan.org/games/skeleton)
+- [The heckadeck](https://boardgamegeek.com/boardgame/296334/heckadeck) ([BGG](https://boardgamegeek.com/boardgame/296334/heckadeck))
+- [The Badger Deck](https://boardgamegeek.com/boardgame/160950/badger-deck) ([BGG](https://boardgamegeek.com/boardgame/160950/badger-deck))
+- [Glyph deck](https://boardgamegeek.com/boardgame/153898/glyph) ([BGG](https://boardgamegeek.com/boardgame/153898/glyph))
+- [The Decktet](https://www.decktet.com/) ([BGG](https://boardgamegeek.com/boardgame/37301/decktet))
+- [The Mystique Deck](https://nestorgames.com/mystique.html) ([BGG](https://boardgamegeek.com/boardgame/141291/mystique-deck))
+- [Quarq](https://boardgamegeek.com/boardgame/144081/quarq) ([BGG](https://boardgamegeek.com/boardgame/144081/quarq)
+
+#### Interesting articles or threads
+
+- [The Ultimate Deck of Cards](https://thewrongtools.wordpress.com/2017/10/08/the-ultimate-deck-of-cards/). The Everdeck creator explaining the state of the art for multidecks when he created it.
+- [General form for defining a deck of cards](https://boardgamegeek.com/thread/1470707/article/21595979#21595979). BGG thread talking about deck notation.
+- [Ranks and Suits - The Anatomy of Decks of Cards](https://boardgamegeek.com/geeklist/165733/ranks-and-suits-anatomy-decks-cards). BBG geeklist of games and their card sistribution, with interesting comments.
+- [Rainbow Deck - a cardgame system](https://boardgamegeek.com/thread/453565/rainbow-deck-cardgame-system). BGG thread where the Rainbow deck was created.
+- [I Created My Own Minimalist Deck of 54 Playing Cards for All My Favorite Games (Coup, Love Letter, Schotten Totten, Ultimate Werewolf, 2p Arboretum, etc)](https://medium.com/@banjoanton/i-created-my-own-minimalist-deck-of-54-playing-cards-for-all-my-favorite-games-coup-love-letter-4d69f17ae8b9). Banjo Deck creation article.
+- [UPDATE: I Created My Own Minimalistic Deck and Now It’s Available to Print or Buy](https://medium.com/@banjoanton/update-i-created-my-own-minimalistic-deck-and-now-its-available-to-print-or-buy-741d8362b30a). Banjo Deck release asticle.
+- [Playing Card Game Systems](https://boardgamegeek.com/geeklist/252876/playing-card-game-systems). BGG geeklist of many multidecks.
+
+#### Lists of possibly compatible games
+
+- [Games that can be played with the Heckadeck](https://boardgamegeek.com/geeklist/307921/games-can-be-played-heckadeck)
+- [Games Playable with The Everdeck](https://boardgamegeek.com/geeklist/230703/games-playable-everdeck)
+- [Games you can play with the Badger Deck](https://boardgamegeek.com/geeklist/174857/games-you-can-play-badger-deck)
+- [Many Games for the Price of One!: The Definitive "Games that Can Be Played with a Sticheln Deck" GeekList](https://boardgamegeek.com/geeklist/20503/many-games-price-one-definitive-games-can-be-playe)
+- [Games playable with Glyph card system](https://boardgamegeek.com/geeklist/169175/games-playable-glyph-card-system)
+- [Card games with ONLY colours/suits, NO numbers/text](https://boardgamegeek.com/geeklist/269717/card-games-only-colourssuits-no-numberstext)
+- [Games playable with Rage deck (not the CCG) - please add!](https://boardgamegeek.com/geeklist/1907/games-playable-rage-deck-not-ccg-please-add)
 
 ### Printing
 
