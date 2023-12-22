@@ -389,13 +389,6 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
-"stick-em.mdoc": {
-	id: "stick-em.mdoc";
-  slug: "stick-em";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".mdoc"] };
 "taco-cat-goat-cheese-pizza.mdoc": {
 	id: "taco-cat-goat-cheese-pizza.mdoc";
   slug: "taco-cat-goat-cheese-pizza";
