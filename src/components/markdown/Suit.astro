@@ -20,11 +20,11 @@ const suitId = id ?? (emoji ? getSuitIdByEmoji(emoji) : undefined)
   suitId !== undefined ? (
     <img
       src={`/images/suits/${suitId}.svg`}
-      class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em]"
+      class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em] [font-variant-emoji:emoji]"
       alt={getEmojiBySuitId(suitId)}
       draggable="false"
     />
   ) : (
-    <span>🚫</span>
+    <span class="[font-variant-emoji:emoji]">🚫</span>
   )
 }

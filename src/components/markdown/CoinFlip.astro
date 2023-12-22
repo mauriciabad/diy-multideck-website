@@ -16,7 +16,7 @@ const { id } = Astro.props
 
 <>
   <svg
-    class="not-prose inline-block align-[-0.15em] h-[1em]"
+    class="not-prose inline-block align-[-0.15em] h-[1em] [font-variant-emoji:emoji]"
     viewBox={id === 'unknown' ? '0 0 33 70' : '0 0 70 70'}
     fill="none"
   >
@@ -62,5 +62,7 @@ const { id } = Astro.props
       )
     }
   </svg>
-  <span class="sr-only">{coinFlipEmojisById[id]}</span>
+  <span class="sr-only [font-variant-emoji:emoji]"
+    >{coinFlipEmojisById[id]}</span
+  >
 </>
