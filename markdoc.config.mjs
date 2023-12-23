@@ -64,6 +64,17 @@ export default defineMarkdocConfig({
         },
       },
     },
+    drawingAreaIcon: {
+      render: component('./src/components/markdown/DrawingAreaIcon.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: String,
+          matches: ['A', 'B', 'C', 'D', 'E'],
+          errorLevel: 'error',
+        },
+      },
+    },
     suit: {
       render: component('./src/components/markdown/Suit.astro'),
       selfClosing: true,
