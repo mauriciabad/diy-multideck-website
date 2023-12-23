@@ -45,6 +45,9 @@ export default {
           code: 'rgb(var(--color-border-code) / <alpha-value>)',
         },
       },
+      screens: {
+        xs: '475px',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

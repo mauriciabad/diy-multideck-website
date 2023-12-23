@@ -19,6 +19,11 @@ export default defineMarkdocConfig({
         },
       },
     },
+    columns: {
+      render: component('./src/components/markdown/Columns.astro'),
+      children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
+      selfClosing: false,
+    },
     cardImgWithText: {
       render: component(
         './src/components/markdown/images/CardImgWithText.astro'
