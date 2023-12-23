@@ -122,6 +122,10 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    drawingImg: {
+      render: component('./src/components/markdown/images/DrawingImg.astro'),
+      selfClosing: true,
+    },
     chainedPointingCounterImg: {
       render: component(
         './src/components/markdown/images/ChainedPointingCounterImg.astro'
