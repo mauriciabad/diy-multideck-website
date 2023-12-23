@@ -17,7 +17,9 @@ const { type } = Astro.props
       <i class="ti ti-info-circle px-2 -mt-0.5 text-2xl text-blue-500 dark:text-blue-300" />
     )
   }
-  <div class="grow [&>:first-child]:mt-0 [&>:last-child]:mb-0 self-center">
+  <div
+    class="grow [&>:first-child]:mt-0 [&>:last-child]:mb-0 self-center prose-p:my-1"
+  >
     <slot />
   </div>
 </div>
