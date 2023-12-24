@@ -26,19 +26,22 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - **Basic deck**: 8 suits of 15 ranks + 4 suits of 10 ranks
     - 12 suits of 10 ranks.
     - 8 suits of 15 ranks.
-    - Remaining cards can be used to either add more ranks to some suits or add new suits of fewer ranks.
+      - Plus 4 suits of 10 ranks.
+    - 10-level pyramidal deck.
   - **3D deck**: 5 colors × 3 shapes × 10 ranks + 10 ranks.
     - 5 suits of 3 times 10 ranks, or 5 suits of 30 ranks.
     - 3 suits of 5 times 10 ranks, or 3 suits of 50 ranks.
-    - Extra suit of 10 ranks (rainbow).
+    - Extra suit of 10 ranks ({% suit emoji="🌈" /%}).
   - **Sequential deck**: numbers from 0 to 159
-    - 1 time: numbers from 0 to 159
-    - 2 times: numbers from 0 to 59 (ignoring hundreds digit)
+    - Numbers from 0 to 159.
+    - Numbers from 0 to 59, 2 times.
+      - Plus 1 time numbers from 60 to 99.
+    - Numbers from -59 to 100.
     - 15 ordered suits of 10 ranks.
   - **Pyramidal deck**: 8 suits of 5 uneven ranks + 4 suits of 4 uneven ranks
     - 8 times: five 1s, four 2s, three 3s, two 4s, one 5.
+      - Plus 4 times: four 1s, three 2s, two 3s, one 4.
     - 12 times: four 1s, three 2s, two 3s, one 4.
-    - 10-level pyramidal deck. (Using the basic deck)
   - **Voting deck**: 60×{% coinFlip id="yes" /%} + 60×{% coinFlip id="no" /%} + 40×{% coinFlip id="unknown" /%}
   - **Custom deck**: by drawing.
 - **Counters** using the cards' back face.
@@ -120,6 +123,10 @@ The number has two colors:
   - For example the card 117 has the suit {% suit id=11 /%}, and is the suit number 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
+You can also have 2 times numbers from 0 to 59, plus 1 time numbers from 60 to 99, by ignoring the hundreds digit. So, for example, 120 would become 20, and 20 would stay as 20.
+
+Similarly, you can also have negative numbers if you treat numbers greater than 100 negative (or positive), to make a distribution of -59...100 (or -100...59).
+
 You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa) by making the _black part_ the suit, and the _colored part_ the rank. But it is quite unintuitive to use, so only use this combination if you need ordered suits or 9...10 ranks, otherwise it's better to use the "switched" [basic suit](#basic-suit).
 
 #### Use cases
@@ -169,15 +176,21 @@ Rather than filling the cards with predetermined games, I want to encourage you 
 
 {% callout type="info" %}
 **Use a pencil** to draw, so you can erase or tweak the drawing if needed. Pens, markers, and other things also work, but I don't recommend using them because making changes is very common.
+
+Anyways, although you can erase the drawings, I generally don't recommend doing it. If you keep the drawings, you won't have to spend time again to prepare that game. It is generally not anoying to play with drawings from other games.
 {% /callout %}
+
+When adding new drawings:
+
+- Consider duplicating the drawing on the opposite side slots to make the card playable in any rotation.
+- Place them strategically to leave the most usable spots to your favorite games.
+- Try to come up with generic drawings that may be used in other games, so you save up space.
+
+In some cases generic drawings can be counter-productive, so be mindfull. For example, consider two unrelated games (A and B) using a similar drawing. On game A, there's a card with a drawing. That same card is also used in game B. But game B is not suposed to have a drawing on that card. So a player can mistakenly think that that card in game B is something special, when it is not.
 
 {% drawingImg /%}
 
 Each card has 14 drawing drawing slots, grouped in 5 drawing areas.
-
-{% callout type="idea" %}
-In some games, you may need duplicate the drawing on the opposite side slots to make the card playable in any rotation.
-{% /callout %}
 
 #### {% drawingAreaIcon id="A" /%} Drawing area A
 
@@ -276,6 +289,8 @@ You can also represent decimal numbers with this method, by defining a counter a
 
 When printing cards on a A3 sized paper, there's room for 18 cards per page. This deck uses 160 cards, leaving 2 blank spaces. This 2 spaces are used in the form of "extra cards", that don't have any suit or rank.
 
+You can use the extra cards in games that need a card with a different background and no information on the front (you can also flip a normal card, but it can be confusing). For example in [The crew](/games/the-crew-1), the "reminder cards".
+
 ### Cover card
 
 {% cardImgWithText src="/images/home/cards/card-cover.png" %}
@@ -333,6 +348,71 @@ The next images show simplified versions of the cards to focus better on the dis
 ### Coin flip layout
 
 ![mini-cards-coin](/images/home/layouts/mini-cards-coin.png)
+
+## Mapping new games
+
+You may want to play a game that is not on [the official supported games list](/games), so here you have some tips about how to do it.
+
+### Finding out the game's components
+
+The first thing you have to figure out is the **components used** on the game. To do so I reccomend:
+
+- Find the **official rulebook**, usually there's a section with the game's components.
+  - To find it, google the game's name plus "rulebook" or "rules".
+  - You can also go to the game's Goard Game Geek entry _Files_ section, usually you find the rules in a PDF.
+  - If none of that works, try looking for the rulebook in other languages like german, spanish or french.
+- Find **unofficial rulebooks** or other resources explaining the game, there are **websites** dedicated to this.
+- Search for **images** of the game.
+  - For example on Google Images, Goard Game Geek, or eCommerces selling the game.
+- Watch **unboxings or how to play videos** of the game.
+- Try to find a **print and play** version of the game.
+- Find a fanmade **re-theme** of the game.
+  - Usually ther are on the game's Goard Game Geek entry _Files_ section.
+
+### Map the game
+
+Next, you have to map every component of the game to a feature of The DIY Multideck.
+
+#### Chose a game system
+
+{% callout type="idea" %}
+My recommendation is that you go to the [Feature summary](#feature-summary) find out what's the best game system to use.
+{% /callout %}
+
+You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-suit), [Sequential](#sequential-number), [Pyramidal](#pyramidal-rank), or [Voting](#coin-flip)) by answering the following questions in order: (There are edge cases not covered)
+
+1. Does it use coins, chips, tokens, progress boards, or similar things? → [Counting](#counting).
+1. Does it just use 3 or less types of cards repeated many times? → [Coin flip](#coin-flip).
+1. Does it need 1 or 2 cards with a different back face? → [Extra cards](#extra-cards)
+1. Does it need icons, words, or extra info on the card (a.k.a. drawings)? → [Drawing](#drawing).
+1. Does it just have numbers, and are they larger than 30?
+    1. Are there numbers larger than 160? → _Not compatible_.
+    1. Are there numbers repeated 2 or more times that are larger than 59? → _Not compatible_.
+    1. Else → [Sequential number](#sequential-number).
+1. Does each rank get repeated?
+    1. Is it repeated 4 or more times? → _Not compatible_.
+    1. Does it have 7 or more suits? → _Not compatible_.
+    1. Else → [3D suit](#3d-suit).
+1. Does it have ranks larger than 15? → [3D suit](#3d-suit).
+    1. With 6 or more suits? → _Not compatible_.
+    1. Else → [3D suit](#3d-suit).
+1. Does it use a 3D deck of 5x3x10 or less? → [3D suit](#3d-suit).
+1. Does each suit have an uneven distribution where there's just numbers form 1 to 5? → [Pyramidal rank](#pyramidal-rank).
+1. Does it have more than 8 suits of more than 10 ranks each?
+    1. Does it have more than 16 suits of more than 11 ranks (or vice versa)? → _Not compatible_
+    1. Else → [Sequential number](#sequential-number).
+1. Does it have 8 or less suits of 15 or les ranks? [Basic](#basic-suit).
+1. Else → _Not compatible_.
+
+Now you just select the cards the game will need, it will probably be a subset of the game system chosen.
+
+If the game has multiple components, you'll have to put more effort into trying to find a combination of cards that meets all the requirements. To do so, I recommend you pick the main game system used, and use the respective layout on the [Card arrangements](#card-arrangements) section as a visual aid to decide what cards to use for each component.
+
+If the game needs drawings, read the [Drawing](#drawing) section.
+
+### Submit the mapping
+
+Finally send us the mapping to [hello@mauriciabad.com](mailto:hello@mauriciabad.com), so we can add it to the website and make it easily accessible to you and other people.
 
 ## Other details
 
