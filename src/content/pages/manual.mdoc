@@ -54,7 +54,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - 1 cover: With QR code pointing to the website.
 - **Usability**:
   - Color-blind friendly.
-  - All suits are emojis: {% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%} {% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}
+  - All suits are emojis: {% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}
   - Standard poker card size (2.5 × 3.5 inches).
   - Waterproof & resistant material.
   - Many small design details that make the cards easier to use.
@@ -90,7 +90,7 @@ Here you can see where is each feature located, and a summary of each one
 TODO: Fill this section
 
 {% callout type="idea" %}
-Notice that if you need 13 to 15 suits, you can "switch" the suits for the ranks and have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}).
+Notice that if you need 13 to 15 suits, you can "switch" the suits for the ranks and have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}).
 {% /callout %}
 
 ### 3D suit
@@ -105,7 +105,7 @@ TODO: Fill this section
 - Use cases
 - Example games
 
-Colors: {% colorSuit id=1 /%} {% colorSuit id=2 /%} {% colorSuit id=3 /%} {% colorSuit id=4 /%} {% colorSuit id=5 /%} {% colorSuit id=6 /%}
+Colors: {% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}{% colorSuit id=6 /%}
 
 ### Sequential number
 
@@ -139,8 +139,8 @@ It is used in games that need many unsuited ranks. Games that use it are [The mi
 
 Under the sequential number, there's a number indicating the pyramidal rank.
 
-- On the 8 suits that have 15 ranks ({% suit id=0 /%} {% suit id=1 /%} {% suit id=2 /%} {% suit id=3 /%} {% suit id=4 /%} {% suit id=5 /%} {% suit id=6 /%} {% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
-- On the 4 suits that have only 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+- On the 8 suits that have 15 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+- On the 4 suits that have only 10 ranks ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
 
 The _pyramidal rank_ has the color of the _basic suit_ in that card.
 
@@ -156,9 +156,9 @@ You can also make an **unuited pyramidal deck of 10 levels** without using the _
 
 Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
 
-- The 4 first even suits ({% suit id=0 /%} {% suit id=2 /%} {% suit id=4 /%} {% suit id=6 /%}) have a {% coinFlip id="no" /%}.
-- The 4 first odd suits ({% suit id=1 /%} {% suit id=3 /%} {% suit id=5 /%} {% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
-- The 4 suits that only have 10 ranks ({% suit id=8 /%} {% suit id=9 /%} {% suit id=10 /%} {% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
+- The 4 first even suits ({% suit id=0 /%}{% suit id=2 /%}{% suit id=4 /%}{% suit id=6 /%}) have a {% coinFlip id="no" /%}.
+- The 4 first odd suits ({% suit id=1 /%}{% suit id=3 /%}{% suit id=5 /%}{% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
+- The 4 suits that only have 10 ranks ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
 
 The coin flip icon has the color of the basic suit in that card.
 
