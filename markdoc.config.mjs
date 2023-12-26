@@ -24,6 +24,21 @@ export default defineMarkdocConfig({
       children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
       selfClosing: false,
     },
+    buyBanner: {
+      render: component('./src/components/BuyBanner.astro'),
+      selfClosing: true,
+      attributes: {
+        size: {
+          type: String,
+          default: 'large',
+          matches: ['large', 'small'],
+          errorLevel: 'error',
+        },
+        class: {
+          type: String,
+        },
+      },
+    },
     cardImgWithText: {
       render: component(
         './src/components/markdown/images/CardImgWithText.astro'
