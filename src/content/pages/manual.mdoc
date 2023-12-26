@@ -28,6 +28,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
     - 8 suits of 15 ranks.
       - Plus 4 suits of 10 ranks.
     - 10-level pyramidal deck.
+      - Or 12-level if unranked.
   - **3D deck**: 5 colors × 3 shapes × 10 ranks + 10 ranks.
     - 5 suits of 3 times 10 ranks, or 5 suits of 30 ranks.
     - 3 suits of 5 times 10 ranks, or 3 suits of 50 ranks.
@@ -144,11 +145,11 @@ Under the sequential number, there's a number indicating the pyramidal rank.
 
 The _pyramidal rank_ has the color of the _basic suit_ in that card.
 
-#### Use cases
-
 The _pyramidal rank_ can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
 
-You can also make an **unuited pyramidal deck of 10 levels** without using the _Pyramidal ranks_. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
+You can also make an **unsuited pyramidal deck of 10 levels** without using the _Pyramidal ranks_. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
+
+You can also make an **unranked pyramidal deck of 12 levels** without using the _Pyramidal ranks_. To do it, pick 12×{% suit id=0 /%}, 11×{% suit id=2 /%}, 10×{% suit id=3 /%}, ..., 4×{% suit id=8 /%}, 3×{% suit id=9 /%}, 2×{% suit id=10 /%}, and 1×{% suit id=11 /%}. Each level uses a different suit, and there's no rank indicating how many cards does that level have.
 
 ### Coin flip
 
