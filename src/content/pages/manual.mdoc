@@ -25,10 +25,11 @@ This is how it works: when you play a game, you pick a subset of cards and focus
 - **Game systems**:
   - **Basic deck**: 8 suits of 15 ranks + 4 suits of 10 ranks
     - 12 suits of 10 ranks.
+      - Plus 5 letter ranks in 8 of the suits.
     - 8 suits of 15 ranks.
       - Plus 4 suits of 10 ranks.
-    - 10-level pyramidal deck.
-      - Or 12-level if unranked.
+    - 10-level pyramidal deck with same ranks.
+    - 12-level pyramidal deck with different ranks.
   - **3D deck**: 5 colors × 3 shapes × 10 ranks + 10 ranks.
     - 5 suits of 3 times 10 ranks, or 5 suits of 30 ranks.
     - 3 suits of 5 times 10 ranks, or 3 suits of 50 ranks.
@@ -134,15 +135,25 @@ The number has two colors:
   - For example the card 117 has the suit {% suit id=11 /%}, and is the suit number 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
+#### Numbers from 0 to 159
+
+Just use the _Sequential number_ as is.
+
+It is used in games that need many unsuited ranks. Games that use it are [The mind](/games/the-mind) and [No thanks!](/games/no-thanks).
+
+#### Numbers from 0 to 59, 2 times
+
 You can also have 2 times numbers from 0 to 59, plus 1 time numbers from 60 to 99, by ignoring the hundreds digit. So, for example, 120 would become 20, and 20 would stay as 20.
+
+#### Numbers from -59 to 100
 
 Similarly, you can also have negative numbers if you treat numbers greater than 100 negative (or positive), to make a distribution of -59...100 (or -100...59).
 
-You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa) by making the _black part_ the suit, and the _colored part_ the rank. But it is quite unintuitive to use, so only use this combination if you need ordered suits or 9...10 ranks, otherwise it's better to use the "switched" [basic suit](#basic-suit).
+#### 15 ordered suits of 10 ranks (or vice versa)
 
-#### Use cases
+You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa) by making the _black part_ the suit, and the _colored part_ the rank.
 
-It is used in games that need many unsuited ranks. Games that use it are [The mind](/games/the-mind) and [No thanks!](/games/no-thanks).
+But it is quite unintuitive to use, so only use this combination if you need ordered suits or 9...10 ranks, otherwise it's better to use the "switched" [basic suit](#basic-suit).
 
 ### Pyramidal rank
 
@@ -150,12 +161,22 @@ It is used in games that need many unsuited ranks. Games that use it are [The mi
 
 Under the sequential number, there's a number indicating the pyramidal rank.
 
-- On the 8 suits that have 15 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
-- On the 4 suits that have only 10 ranks ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+- On the 8 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+- On the 4 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
 
 The _pyramidal rank_ has the color of the _basic suit_ in that card.
 
 The _pyramidal rank_ can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
+
+#### 8 times: five 1s, four 2s, three 3s, two 4s, one 5
+
+Use the _Pyramidal rank_ of the 15-ranked suits.
+
+#### 12 times: four 1s, three 2s, two 3s, one 4
+
+Use the _Pyramidal rank_ of the 10-ranked suits.
+
+#### Other pyramidal decks
 
 You can also make pyramidal decks of 10-12 levels without using the _Pyramidal ranks_. Learn how in the [Basic suit section](#basic-suit).
 
