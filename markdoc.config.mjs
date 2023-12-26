@@ -159,6 +159,11 @@ export default defineMarkdocConfig({
         },
       },
     },
+    featureSummary: {
+      render: component('./src/components/markdown/FeatureSummary.astro'),
+      children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
+      selfClosing: false,
+    },
     usedCards: {
       render: component('./src/components/markdown/UsedCards.astro'),
       selfClosing: true,
