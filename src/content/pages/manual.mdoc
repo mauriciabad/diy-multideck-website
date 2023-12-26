@@ -94,6 +94,16 @@ TODO: Fill this section
 Notice that if you need 13 to 15 suits, you can "switch" the suits for the ranks and have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}).
 {% /callout %}
 
+#### 10-level pyramidal deck with same ranks
+
+You can also make an pyramidal deck of 10 levels, where each suit has the same rank. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick.
+
+#### 12-level pyramidal deck with different ranks
+
+You can also make an pyramidal deck of 12 levels, where each suit has different ranks. To do it, for every suit pick a different amount of cards: 1, 2, 3, ..., 10, 11, 12. Make sure that the suits that are repeated 12 and 11 times are the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}). Each level uses a different suit, and there's no rank indicating how many cards does that level have.
+
+An example game that uses it is [Startups](/games/startups).
+
 ### 3D suit
 
 {% 3dSuitImg /%}
@@ -147,9 +157,7 @@ The _pyramidal rank_ has the color of the _basic suit_ in that card.
 
 The _pyramidal rank_ can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
 
-You can also make an **unsuited pyramidal deck of 10 levels** without using the _Pyramidal ranks_. To do it, pick one 1, two 2's, three 3s... Up to ten 0's (0 would count as 10), no matter the suit you pick. An example game that uses it is [Startups](/games/startups).
-
-You can also make an **unranked pyramidal deck of 12 levels** without using the _Pyramidal ranks_. To do it, pick 12×{% suit id=0 /%}, 11×{% suit id=2 /%}, 10×{% suit id=3 /%}, ..., 4×{% suit id=8 /%}, 3×{% suit id=9 /%}, 2×{% suit id=10 /%}, and 1×{% suit id=11 /%}. Each level uses a different suit, and there's no rank indicating how many cards does that level have.
+You can also make pyramidal decks of 10-12 levels without using the _Pyramidal ranks_. Learn how in the [Basic suit section](#basic-suit).
 
 ### Coin flip
 
@@ -159,7 +167,7 @@ Under the sequential number, there's an icon representing "yes" ({% coinFlip id=
 
 - The 4 first even suits ({% suit id=0 /%}{% suit id=2 /%}{% suit id=4 /%}{% suit id=6 /%}) have a {% coinFlip id="no" /%}.
 - The 4 first odd suits ({% suit id=1 /%}{% suit id=3 /%}{% suit id=5 /%}{% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
-- The 4 suits that only have 10 ranks ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
+- The 4 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
 
 The coin flip icon has the color of the basic suit in that card.
 
