@@ -2,6 +2,7 @@
 import CoinFlip from './CoinFlip.astro'
 import Suit from './Suit.astro'
 import { isSuitEmoji } from './suits'
+import GenericTable from '../GenericTable.astro'
 
 const rows = [
   ['🔥', '0', '❤️', '0', '1', '1', '00', '1', 'no'],
@@ -169,22 +170,14 @@ const rows = [
 ] satisfies string[][]
 ---
 
-<table
-  class:list={[
-    'relative before:absolute before:pointer-events-none before:inset-0 before:z-[1] before:shadow-lg before:rounded-xl before:border before:border-black/30 before:dark:border-white/30',
-    'border-collapse [&_*]:border-black/30 [&_*]:dark:border-white/30',
-    'not-prose w-full table-fixed text-center [&_th]:overflow-hidden [&_th]:px-0 [&_td]:px-0 [&_th]:py-1 [&_td]:py-1 leading-none [&_th]:align-middle [&_td]:align-middle',
-  ]}
->
-  <thead
-    class="text-sm border-b sticky top-0 bg-white dark:bg-[rgb(var(--color-bg-body))] shadow rounded-t-xl"
-  >
-    <tr>
+<GenericTable>
+  <Fragment slot="thead">
+    <tr class="[&_th]:font-semibold">
       <th colspan="2">Ba<wbr />sic</th>
       <th colspan="4" class="border-l">3D</th>
       <th colspan="3" class="border-l">Se<wbr />quen<wbr />tial</th>
     </tr>
-    <tr class="[&_th]:font-normal">
+    <tr>
       <th>Suit</th>
       <th>Rank</th>
       <th class="border-l">Suit</th>
@@ -195,9 +188,9 @@ const rows = [
       <th>Py<wbr />ra<wbr />mi<wbr />dal</th>
       <th>Coin flip</th>
     </tr>
-  </thead>
+  </Fragment>
 
-  <tbody>
+  <Fragment slot="tbody">
     {
       rows.map((row, rowN) => (
         <tr
@@ -207,39 +200,38 @@ const rows = [
             },
           ]}
         >
-          {row.map((cell, i) => (
-            <td
-              class:list={[
-                {
-                  'border-l': i === 2 || i === 6,
-                },
-              ]}
-            >
-              {i === 0 || i === 2 ? (
-                isSuitEmoji(cell) ? (
-                  <Suit emoji={cell} />
-                ) : (
-                  cell
-                )
-              ) : i === 8 ? (
-                cell === 'yes' || cell === 'no' || cell === 'unknown' ? (
-                  <CoinFlip id={cell} />
-                ) : (
-                  cell
-                )
-              ) : i === 6 && isFinite(parseInt(cell,10)) ? (
-                <span>{
-                  cell.slice(0, -1)
-                }</span><span class="font-semibold">{
-                  cell.at(-1)
-                }</span>
-              ) : (
-                cell
-              )}
-            </td>
-          ))}
+          <td>{isSuitEmoji(row[0]) ? <Suit emoji={row[0]} /> : row[0]}</td>
+
+          <td>{row[1]}</td>
+
+          <td class="border-l">
+            {isSuitEmoji(row[2]) ? <Suit emoji={row[2]} /> : row[2]}
+          </td>
+          <td>{row[3]}</td>
+          <td>{row[4]}</td>
+          <td>{row[5]}</td>
+          <td class="border-l">
+            {isFinite(parseInt(row[6], 10)) ? (
+              <span class="flex justify-center">
+                <span>{row[6].slice(0, -1)}</span>
+                <span class="font-semibold">{row[6].at(-1)}</span>
+              </span>
+            ) : (
+              row[6]
+            )}
+          </td>
+
+          <td>{row[7]}</td>
+
+          <td>
+            {row[8] === 'yes' || row[8] === 'no' || row[8] === 'unknown' ? (
+              <CoinFlip id={row[8]} />
+            ) : (
+              row[8]
+            )}
+          </td>
         </tr>
       ))
     }
-  </tbody>
-</table>
+  </Fragment>
+</GenericTable>

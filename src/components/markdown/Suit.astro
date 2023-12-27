@@ -5,13 +5,15 @@ import {
   getEmojiBySuitId,
   getSuitIdByEmoji,
 } from './suits'
+import { cn } from '../../lib/cn'
 
 export interface Props {
   id?: SuitId
   emoji?: SuitEmoji
+  size?: 'small' | 'large'
 }
 
-const { id, emoji } = Astro.props
+const { id, emoji, size = 'small' } = Astro.props
 
 const suitId = id ?? (emoji ? getSuitIdByEmoji(emoji) : undefined)
 ---
@@ -20,7 +22,14 @@ const suitId = id ?? (emoji ? getSuitIdByEmoji(emoji) : undefined)
   suitId !== undefined ? (
     <img
       src={`/images/suits/${suitId}.svg`}
-      class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em] [font-variant-emoji:emoji]"
+      class={cn(
+        'not-prose unset align-[-0.25em] inline-block pointer-events-none [font-variant-emoji:emoji]',
+        'h-[1.25em]',
+        {
+          'h-[1.25em]': size === 'small',
+          'h-[2em]': size === 'large',
+        }
+      )}
       alt={getEmojiBySuitId(suitId)}
       draggable="false"
     />

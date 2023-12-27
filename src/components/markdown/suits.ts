@@ -50,3 +50,42 @@ export function getSuitIdByEmoji(emoji: SuitEmoji): SuitId | undefined {
     | SuitId
     | undefined
 }
+
+// Suit colors ---------------------------------------------------------------
+
+const suitColorsById = {
+  1: 'red',
+  2: 'blue',
+  3: 'green',
+  4: 'yellow',
+  5: 'black',
+  6: 'rainbow',
+} as const
+
+export const suitColors = [
+  ...Object.values(suitColorsById),
+  'orange',
+  'purple',
+  'white',
+  'pink',
+  'cyan',
+  'brown',
+  'gray',
+] as const
+
+export type SuitColor = (typeof suitColors)[number]
+export type SuitColorId = keyof typeof suitColorsById
+
+export function isSuitColor(text: string): text is SuitColor {
+  return (suitColors as readonly string[]).includes(text)
+}
+
+export function getColorBySuitId(suitId: SuitColorId): SuitColor {
+  return suitColorsById[suitId]
+}
+
+export function getSuitIdByColor(color: SuitColor): SuitColorId | undefined {
+  return Object.entries(suitColorsById).find(([_, e]) => e === color)?.[0] as
+    | SuitColorId
+    | undefined
+}

@@ -1,5 +1,9 @@
 import { defineMarkdocConfig, component } from '@astrojs/markdoc/config'
-import { suitIds, suitEmojis } from './src/components/markdown/suits'
+import {
+  suitIds,
+  suitEmojis,
+  suitColors,
+} from './src/components/markdown/suits'
 
 export default defineMarkdocConfig({
   tags: {
@@ -74,8 +78,12 @@ export default defineMarkdocConfig({
         },
         color: {
           type: String,
-          matches: ['red', 'blue', 'yellow', 'green', 'black', 'rainbow'],
+          matches: suitColors,
           errorLevel: 'error',
+        },
+        noAlt: {
+          type: Boolean,
+          default: false,
         },
       },
     },
@@ -110,6 +118,10 @@ export default defineMarkdocConfig({
       render: component(
         './src/components/markdown/CardDistributionTable.astro'
       ),
+      selfClosing: true,
+    },
+    suitsTable: {
+      render: component('./src/components/markdown/SuitsTable.astro'),
       selfClosing: true,
     },
     cardAnatomyImg: {

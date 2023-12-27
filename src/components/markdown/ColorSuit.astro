@@ -1,35 +1,21 @@
 ---
-const suitColorsById = {
-  1: 'red',
-  2: 'blue',
-  3: 'green',
-  4: 'yellow',
-  5: 'black',
-  6: 'rainbow',
-} as const
-
-type SuitColor = (typeof suitColorsById)[keyof typeof suitColorsById]
-type SuitId = keyof typeof suitColorsById
+import { getSuitIdByColor, getColorBySuitId } from './suits'
 
 export interface Props {
-  id?: SuitId
+  id?: SuitColorId
   color?: SuitColor
+  noAlt?: boolean
 }
 
-const { id, color } = Astro.props
+const { id, color, noAlt = false } = Astro.props
 
-const suitId =
-  id ??
-  (Object.entries(suitColorsById).find(([_, e]) => e === color)?.[0] as
-    | SuitId
-    | undefined)
-const suitColor =
-  color ?? (suitId !== undefined ? suitColorsById[suitId] : undefined)
+const suitColorId = id ?? (color ? getSuitIdByColor(color) : undefined)
+const suitColor = getColorBySuitId(suitColorId)
 ---
 
 <img
   src={`/images/colors/${suitColor}.svg`}
   class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em]"
-  alt={` ${suitColor} `}
+  alt={noAlt ? '' : ` ${suitColor} `}
   draggable="false"
 />

@@ -94,23 +94,53 @@ Here you can see where is each feature located, and a summary of each one
 
 {% basicSuitImg /%}
 
-TODO: Fill this section
+On the top left and bottom right corners, there's a number overlapping an emoji, it is the _Basic suit_.
+
+It is the most used game system of the deck, and thus, the most easy to use. When mapping new games, always give priority to it.
+
+It contains 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) of 15 ranks (0...9 + XJQKA) and 4 suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) of 10 ranks (0...9). They can be combined into several distributions.
+
+#### Ranks
+
+- 0...9: Numeric ranks.
+  - 0 can be used as Joker or wildards.
+  - 0 can be used as 10 in some games.
+  - 1 can be used as an Ase.
+- X: 10, Tens, or T.
+- JQKA: Jack, Queen, King, Ase.
+  - Can be used as 11, 12, 13, 14.
+
+The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectivelly. For example, when the rank A, the other corners end in 1 or 6.
+
+#### Suits
+
+The suits can be classified into 2 categories by the amount of ranks they contain. So there are the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) or 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+
+{% suitsTable /%}
+
+Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suit id=0 /%} is always {% coinFlip id="no" /%}.
+
+Each suit has a number id, it can be found on the _black part_ of the [Sequential number](#sequential-number).
 
 #### 12 suits of 10 ranks
 
-TODO: Fill this section
+One combination is 12 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) of 10 rank (0...9).
 
-{% callout type="idea" %}
+There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 _letter ranks_ (XJQKA) of the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}).
+
+To get it pick all the cards, and remove the _letter ranks_ (XJQKA).
+
 Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}). Only use this if you need 9 or 10 suits of 11 or 12 ranks.
-{% /callout %}
 
 #### 8 suits of 15 ranks
 
-TODO: Fill this section
+Another combination is 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) of 15 ranks (0...9 + XJQKA).
 
-{% callout type="idea" %}
+There will be some unused cards, that may be optionally used to add extra suits. The remaining cards are: all the ranks (0...9) of the 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+
+To get it pick all the cards, and remove the 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+
 Switch the suits for the ranks to have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}). Only use this if you need 13 to 15 suits of 8 or less ranks.
-{% /callout %}
 
 #### 10-level pyramidal deck with same ranks
 
@@ -441,6 +471,8 @@ You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-s
 1. Does it just use 3 or less types of cards repeated many times? → [Coin flip](#coin-flip).
 1. Does it need 1 or 2 cards with a different back face? → [Extra cards](#extra-cards)
 1. Does it need icons, words, or extra info on the card (a.k.a. drawings)? → [Drawing](#drawing).
+1. Does it have 8 or less suits of 15 or les ranks? → [Basic](#basic-suit).
+1. Does it have 12 or less suits of 10 or les ranks? → [Basic](#basic-suit).
 1. Does it just have numbers, and are they larger than 30?
     1. Are there numbers larger than 160? → _Not compatible_.
     1. Are there numbers repeated 2 or more times that are larger than 59? → _Not compatible_.
@@ -449,7 +481,7 @@ You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-s
     1. Is it repeated 4 or more times? → _Not compatible_.
     1. Does it have 7 or more suits? → _Not compatible_.
     1. Else → [3D suit](#3d-suit).
-1. Does it have ranks larger than 15? → [3D suit](#3d-suit).
+1. Does it have 16 or more different ranks?.
     1. With 6 or more suits? → _Not compatible_.
     1. Else → [3D suit](#3d-suit).
 1. Does it use a 3D deck of 5x3x10 or less? → [3D suit](#3d-suit).
@@ -457,8 +489,7 @@ You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-s
 1. Does it have more than 8 suits of more than 10 ranks each?
     1. Does it have more than 16 suits of more than 11 ranks (or vice versa)? → _Not compatible_
     1. Else → [Sequential number](#sequential-number).
-1. Does it have 8 or less suits of 15 or les ranks? [Basic](#basic-suit).
-1. Else → _Not compatible_.
+1. Else → Probably "_Not compatible_" or "_Low usability_". Read the [deck's manual](/manual) deeper to find the right game system if it exists.
 
 Now you just select the cards the game will need, it will probably be a subset of the game system chosen.
 
