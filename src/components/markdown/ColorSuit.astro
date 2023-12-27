@@ -1,5 +1,5 @@
 ---
-import { getSuitIdByColor, getColorBySuitId } from './suits'
+import { getColorBySuitId, type SuitColorId, type SuitColor } from './suits'
 
 export interface Props {
   id?: SuitColorId
@@ -9,8 +9,7 @@ export interface Props {
 
 const { id, color, noAlt = false } = Astro.props
 
-const suitColorId = id ?? (color ? getSuitIdByColor(color) : undefined)
-const suitColor = getColorBySuitId(suitColorId)
+const suitColor = id !== undefined ? getColorBySuitId(id) : color
 ---
 
 <img
