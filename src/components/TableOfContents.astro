@@ -106,7 +106,6 @@ const grouppedHeadings = headings.reduce((array, heading) => {
       /** @type {NodeListOf<HTMLAnchorElement>} */
       const tocLinks = document.querySelectorAll('#table-of-contents a')
       let temp = makeTemp(tocLinks)
-      console.log(temp)
 
       addEventListener(
         'scroll',
