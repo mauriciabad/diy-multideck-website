@@ -45,5 +45,7 @@ const { Content } = await entry.render()
     slot="meta"
   />
   <GameMappingDetails game={game} mapping={mapping} slug={slug} />
-  <Prose content={Content} />
+  <Prose>
+    <Content />
+  </Prose>
 </ContentLayout>

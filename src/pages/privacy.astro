@@ -14,5 +14,7 @@ const { Content } = await entry.render()
 <PageLayout>
   <PageMeta title={`${entry.data.post.title} | ${SITE_TITLE}`} slot="meta" />
   <Title text={entry.data.post.title} />
-  <Prose content={Content} />
+  <Prose>
+    <Content />
+  </Prose>
 </PageLayout>

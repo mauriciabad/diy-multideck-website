@@ -25,7 +25,9 @@ const { Content, headings } = await entry.render()
 
   <Title text={['The', 'DIY Multideck']} />
 
-  <Prose content={Content} />
+  <Prose>
+    <Content />
+  </Prose>
 
   <BuyBanner class="not-prose mt-4" />
 </PageLayout>

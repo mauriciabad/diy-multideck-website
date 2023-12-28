@@ -1,18 +1,18 @@
 ---
 import { cn } from '../lib/cn'
-import type { MarkdownContent } from '../utils/types'
 
 interface Props {
   class?: string
-  content: MarkdownContent
 }
 
-const { class: className, content: Content } = Astro.props
+const { class: className } = Astro.props
 ---
 
-<Content
+<div
   class={cn(
     'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25 prose-h5:text-sm prose-h5:font-semibold prose-img:my-4 first:prose-img:mt-0 last:prose-img:mb-0 prose-li:leading-5 prose-li:my-2',
     className
   )}
-/>
+>
+  <slot />
+</div>
