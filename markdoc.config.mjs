@@ -7,6 +7,27 @@ import {
 
 export default defineMarkdocConfig({
   tags: {
+    img: {
+      render: component('./src/components/markdown/Img.astro'),
+      selfClosing: true,
+      attributes: {
+        src: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        width: {
+          type: Number,
+          required: false,
+          errorLevel: 'error',
+        },
+        alt: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+      },
+    },
     callout: {
       render: component('./src/components/markdown/Callout.astro'),
       children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],

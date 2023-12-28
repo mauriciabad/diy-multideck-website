@@ -18,7 +18,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
 })
 ---
 
-<PageLayout classes={{ main: 'max-w-none' }}>
+<PageLayout>
   <Title text={title} subtitle={subtitle} />
   <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
   <slot />
