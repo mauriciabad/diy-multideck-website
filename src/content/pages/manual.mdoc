@@ -50,7 +50,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
     - [12 times: four 1s, three 2s, two 3s, one 4](#12-times-four-1s-three-2s-two-3s-one-4).
   - [**Voting deck**](#coin-flip): 60×{% coinFlip id="yes" /%} + 60×{% coinFlip id="no" /%} + 40×{% coinFlip id="unknown" /%}
   - **Custom deck**: by [drawing](#drawing).
-- [**Counters**](#counting) using the cards' back face.
+- [**Counters**](#counters) using the cards' back face.
   - [**Stacking**](#stacking-method): Count from 0 to 30 with less than 10 cards.
   - [**Pointing**](#pointing-method): Count from 0 to 10 with only 2 cards.
   - [**Chained pointing**](#chained-pointing-method): Count any amount with very few cards.
@@ -84,13 +84,15 @@ The normal cards have the following features:
 4. [Pyramidal rank](#pyramidal-rank)
 5. [Coin flip](#coin-flip)
 6. [Drawing areas](#drawing)
-7. [Counter](#counting) (on the back face)
+7. [Counters](#counters) (on the back face)
 
 Here you can see where is each feature located, and a summary of each one
 
 {% cardAnatomyImg /%}
 
-### Basic suit
+Besides the normal cards, there are 2 [extra cards](#extra-cards) with different designs.
+
+## Basic suit
 
 {% basicSuitImg /%}
 
@@ -100,7 +102,17 @@ It is the most used game system of the deck, and thus, the most easy to use. Whe
 
 It contains 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) of 15 ranks (0...9 + XJQKA), named _15-ranked suits_, and 4 suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
 
-#### Ranks
+### Suits
+
+The suits can be classified into 2 categories by the amount of ranks they contain. So there are the "15-ranked suits" ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), and "10-ranked suits" ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+
+{% suitsTable /%}
+
+Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suit id=0 /%} is always {% coinFlip id="no" /%}.
+
+Each suit has a number id, it can be found on the _black part_ of the [Sequential number](#sequential-number).
+
+### Ranks
 
 - 0...9: _Numeric ranks_ (0123456789).
   - 0 can be used as Joker or wildards.
@@ -112,15 +124,7 @@ It contains 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=
 
 The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectivelly. For example, when the rank A, the other corners end in 1 or 6.
 
-#### Suits
-
-The suits can be classified into 2 categories by the amount of ranks they contain. So there are the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) or 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
-
-{% suitsTable /%}
-
-Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suit id=0 /%} is always {% coinFlip id="no" /%}.
-
-Each suit has a number id, it can be found on the _black part_ of the [Sequential number](#sequential-number).
+### Distributions
 
 #### 12 suits of 10 ranks
 
@@ -155,7 +159,11 @@ You can also make an pyramidal deck of 12 levels, where each suit has different 
 
 An example game that uses it is [Startups](/games/startups).
 
-### 3D suit
+### Layout
+
+{% img src="/images/home/layouts/mini-cards-basic.png" width="100%" alt="mini-cards-basic" /%}
+
+## 3D suit
 
 {% 3dSuitImg /%}
 
@@ -171,6 +179,8 @@ TODO: Fill this section
 
 Colors: {% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}{% colorSuit id=6 /%}
 
+### Distributions
+
 #### 5 suits of 3 times 10 ranks
 
 TODO: Fill this section
@@ -179,7 +189,11 @@ TODO: Fill this section
 
 TODO: Fill this section
 
-### Sequential number
+### Layout
+
+{% img src="/images/home/layouts/mini-cards-3d.png" width="67%" alt="mini-cards-3d" /%}
+
+## Sequential number
 
 {% sequentialNumberImg /%}
 
@@ -194,6 +208,8 @@ The number has two colors:
 - The **black part** indicates the **number of the suit**.  When the _sequential number_ is greater than 120 it no longer indicates the suit number.
   - For example the card 117 has the suit {% suit id=11 /%}, and is the suit number 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
+
+### Distributions
 
 #### Numbers from 0 to 159
 
@@ -215,7 +231,11 @@ You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa)
 
 But it is quite unintuitive to use, so only use this combination if you need ordered suits, or 13 to 15 suits of 9...10 ranks, otherwise it's better to use the ["switched" basic suit](#basic-suit).
 
-### Pyramidal rank
+### Layout
+
+{% img src="/images/home/layouts/mini-cards-sequential.png" width="67%" alt="mini-cards-sequential" /%}
+
+## Pyramidal rank
 
 {% pyramidalRankImg /%}
 
@@ -227,6 +247,8 @@ Under the [sequential number](#sequential-number), there's a small number indica
 The _pyramidal rank_ has the color of the [basic suit](#basic-suit) in that card.
 
 The _pyramidal rank_ can be used as an alternative rank for games that require an uneven number of specific ranks, like [Hanabi](/games/hanabi).
+
+### Distributions
 
 #### 8 times: five 1s, four 2s, three 3s, two 4s, one 5
 
@@ -242,11 +264,13 @@ Use the _Pyramidal rank_ of the _10-ranked suits_ and _15-ranked suits_, but exc
 
 You can also make pyramidal decks of 10-12 levels without using the _Pyramidal ranks_. Learn how in the [Basic suit section](#basic-suit).
 
-### Coin flip
+## Coin flip
 
 {% coinFlipImg /%}
 
-Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}). There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
+Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}).
+
+There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
 
 - The 4 first even suits ({% suit id=0 /%}{% suit id=2 /%}{% suit id=4 /%}{% suit id=6 /%}) have a {% coinFlip id="no" /%}.
 - The 4 first odd suits ({% suit id=1 /%}{% suit id=3 /%}{% suit id=5 /%}{% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
@@ -254,13 +278,11 @@ Under the sequential number, there's an icon representing "yes" ({% coinFlip id=
 
 The coin flip icon has the color of the basic suit in that card.
 
-#### Use cases
-
 It comes in handy when players need to emit a vote and reveal them all at the same time. This voting mechanism can be fond in [The Resistance: Avalon](/games/the-resistance-avalon) and [Secret Hitler](/games/secret-hitler).
 
 Another usage is when there are many copies of 2 to 3 kind of cards. The game [Skulls and Roses](/games/skull) uses this feature where {% coinFlip id="no" /%} are skulls and {% coinFlip id="yes" /%} roses.
 
-### Drawing
+## Drawing
 
 Even tough it may seem that by drawing you'll destroy your cards, make them ugly or waste them, the truth is the opposite: **if you don't draw on them, you're wasting the cards**, because they are meant for that. The DIY Multideck provides a solid base to play many games and, additionally, draw in the cards to support more games. Drawing on the cards also make games easier to play, because the drawings can resemble the original game card's.
 
@@ -284,28 +306,28 @@ In some cases generic drawings can be counter-productive, so be mindfull. For ex
 
 Each card has 14 drawing drawing slots, grouped in 5 drawing areas.
 
-#### {% drawingAreaIcon id="A" /%} Drawing area A
+### {% drawingAreaIcon id="A" /%} Drawing area A
 
 2 rectangular slots on the top and bottom edges.
 
 - The card needs to be hold in hand and contain a big drawing or word.
 - The card needs to be stacked on the table while keeping the top or bottom part visible.
 
-#### {% drawingAreaIcon id="B" /%} Drawing area B
+### {% drawingAreaIcon id="B" /%} Drawing area B
 
 4 square slots just below every suit.
 
 - The card needs to be hold in hand.
 - The drawing is related to the suit.
 
-#### {% drawingAreaIcon id="C" /%} Drawing area C
+### {% drawingAreaIcon id="C" /%} Drawing area C
 
 6 square slots between the _Drawing areas B_, in groups of 3 columns.
 
 - The card needs a hint, like punctuation.
 - The card's hint doesn't need to be visible while holding it on hand, otherwise use the area A.
 
-#### {% drawingAreaIcon id="D" /%} Drawing area D
+### {% drawingAreaIcon id="D" /%} Drawing area D
 
 4 rectangular slots on the center, forming a 2x2 grid.
 
@@ -314,24 +336,24 @@ Each card has 14 drawing drawing slots, grouped in 5 drawing areas.
 - The card needs to contain a big drawing or word.
 - The card is not used actively during the gameplay, like hints or boards, and your notes cards are full.
 
-#### {% drawingAreaIcon id="E" /%} Drawing area E
+### {% drawingAreaIcon id="E" /%} Drawing area E
 
 1 circular slot on the center, overlapping the _Drawing areas D_.
 
 - You want to represent a tile, chip, token, or similar.
 - The card needs to be placed in the table.
 
-### Counting
+## Counters
 
 The back side of the cards also has utility, they serve as counters.
 
 {% callout type="idea" %}
 **Optional**: You can add a title to the counter by writing it in the area A of a card and putting it below.
 
-Don't overuse this technique or you'll run out of space, for example, if every player _only_ has to count coins, don't put titles on the counters, it's assumed they are coins.
+Don't overuse this technique or you'll run out of space. For example, if every player _only_ has to count coins, don't put titles on the counters, it's assumed they are coins.
 {% /callout %}
 
-#### Stacking method
+### Stacking method
 
 {% stackingCounterImg /%}
 
@@ -345,7 +367,7 @@ The example is counting 13, 3 times 1 plus 2 times 5.
 - Convinient when coins are exchanged frequently by the players.
 - Use when counter needs to be "private" (only known by the own player).
 
-#### Pointing method
+### Pointing method
 
 {% pointingCounterImg /%}
 
@@ -360,7 +382,7 @@ The example is counting 1, because the arrow is pointing at 1.
 
 It works well as point tracking boards, like the one in the game [Jekyll vs Hyde](/games/jekyll-vs-hyde).
 
-#### Chained pointing method
+### Chained pointing method
 
 {% chainedPointingCounterImg /%}
 
@@ -415,32 +437,6 @@ Some use cases are:
 
 {% /cardImgWithText %}
 
-## Card arrangements
-
-When mapping new games, it's handy to visualize the cards in a layout that fits with the main sub-deck it uses.
-
-The next images show simplified versions of the cards to focus better on the distribution. Notice that the 3 elements of the card get re-arranged based on the distribution, this way the element on the top is always the main one of that layout.
-
-### Basic layout
-
-{% img src="/images/home/layouts/mini-cards-basic.png" width="100%" alt="mini-cards-basic" /%}
-
-### 3D layout
-
-{% img src="/images/home/layouts/mini-cards-3d.png" width="67%" alt="mini-cards-3d" /%}
-
-### Sequential layout
-
-{% img src="/images/home/layouts/mini-cards-sequential.png" width="67%" alt="mini-cards-sequential" /%}
-
-### Pyramidal layout
-
-{% img src="/images/home/layouts/mini-cards-pyramidal.png" width="100%" alt="mini-cards-pyramidal" /%}
-
-### Coin flip layout
-
-{% img src="/images/home/layouts/mini-cards-coin.png" width="100%" alt="mini-cards-coin" /%}
-
 ## Mapping new games
 
 You may want to play a game that is not on [the official supported games list](/games), so here you have some tips about how to do it.
@@ -471,7 +467,7 @@ My recommendation is that you go to the [Feature summary](#feature-summary) find
 
 You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-suit), [Sequential](#sequential-number), [Pyramidal](#pyramidal-rank), or [Voting](#coin-flip)) by answering the following questions in order: (There are edge cases not covered)
 
-1. Does it use coins, chips, tokens, progress boards, or similar things? → [Counting](#counting).
+1. Does it use coins, chips, tokens, progress boards, or similar things? → [Counter](#counters).
 1. Does it just use 3 or less types of cards repeated many times? → [Coin flip](#coin-flip).
 1. Does it need 1 or 2 cards with a different back face? → [Extra cards](#extra-cards)
 1. Does it need icons, words, or extra info on the card (a.k.a. drawings)? → [Drawing](#drawing).

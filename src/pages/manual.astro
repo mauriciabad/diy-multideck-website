@@ -10,10 +10,21 @@ import Prose from '../components/Prose.astro'
 const entry = await getEntry('pages', 'manual')
 
 const { Content, headings } = await entry.render()
+
+const filteredHeadings = headings.filter(
+  ({ depth, text }) =>
+    !(
+      depth >= 2 &&
+      (text === 'Layout' ||
+        text === 'Suits' ||
+        text === 'Ranks' ||
+        text === 'Distributions')
+    )
+)
 ---
 
 <PageLayout
-  tocHeadings={headings}
+  tocHeadings={filteredHeadings}
   classes={{
     main: '[&_#introduction]:invisible [&_#introduction]:m-0 [&_#introduction]:h-0 [&_#introduction]:w-0 [&_#introduction]:overflow-hidden',
   }}
