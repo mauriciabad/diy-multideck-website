@@ -10,7 +10,7 @@ import { cn } from '../../lib/cn'
 export interface Props {
   id?: SuitId
   emoji?: SuitEmoji
-  size?: 'small' | 'large'
+  size?: 'small' | 'large-responsive'
 }
 
 const { id, emoji, size = 'small' } = Astro.props
@@ -26,8 +26,7 @@ const suitId = id ?? (emoji ? getSuitIdByEmoji(emoji) : undefined)
         'not-prose unset align-[-0.25em] inline-block pointer-events-none [font-variant-emoji:emoji]',
         'h-[1.25em]',
         {
-          'h-[1.25em]': size === 'small',
-          'h-[2em]': size === 'large',
+          'h-[1.5em] xs:h-[2em]': size === 'large-responsive',
         }
       )}
       alt={getEmojiBySuitId(suitId)}

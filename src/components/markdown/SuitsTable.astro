@@ -10,15 +10,15 @@ const rows = [
   ['🔥', 'Fi-re', 'Red', '0', '0...9 + XJQKA', 'no'],
   ['💧', 'Wa-ter', 'Blue', '1', '0...9 + XJQKA', 'yes'],
   ['⭐', 'Stars', 'Ye-llow', '2', '0...9 + XJQKA', 'no'],
-  ['🍀', 'Clubs', 'Green', '3', '0...9 + XJQKA', 'yes'],
-  ['🍊', 'Oran-ges', 'Oran-ge', '4', '0...9 + XJQKA', 'no'],
+  ['🍀', 'Clubs', 'Gre-en', '3', '0...9 + XJQKA', 'yes'],
+  ['🍊', 'Oran-ges', 'O-ran-ge', '4', '0...9 + XJQKA', 'no'],
   ['🍆', 'Egg-plants', 'Pur-ple', '5', '0...9 + XJQKA', 'yes'],
   ['💭', 'Clo-uds', 'Whi-te', '6', '0...9 + XJQKA', 'no'],
-  ['🕷️', 'Spi-ders', 'Black', '7', '0...9 + XJQKA', 'yes'],
-  ['🌸', 'Flo-wers', 'Pink', '8', '0...9', 'unknown'],
-  ['💎', 'Dia-monds', 'Cyan', '9', '0...9', 'unknown'],
-  ['💩', 'Poops', 'Brown', '10', '0...9', 'unknown'],
-  ['🗿', 'Moais', 'Gray', '11', '0...9', 'unknown'],
+  ['🕷️', 'Spi-ders', 'Bla-ck', '7', '0...9 + XJQKA', 'yes'],
+  ['🌸', 'Flo-wers', 'Pi-nk', '8', '0...9', 'unknown'],
+  ['💎', 'Dia-monds', 'Cy-an', '9', '0...9', 'unknown'],
+  ['💩', 'Poops', 'Bro-wn', '10', '0...9', 'unknown'],
+  ['🗿', 'Moais', 'Gr-ay', '11', '0...9', 'unknown'],
 ] as const satisfies string[][]
 ---
 
@@ -50,7 +50,7 @@ const rows = [
           >
             <td>
               {isSuitEmoji(row[0]) ? (
-                <Suit emoji={row[0]} size="large" />
+                <Suit emoji={row[0]} size="large-responsive" />
               ) : (
                 row[0]
               )}
@@ -60,8 +60,12 @@ const rows = [
               <TextWithBreaks text={row[1]} breakChar="-" />
             </td>
             <td class="text-left pl-2">
-              {isSuitColor(colorId) && <ColorSuit color={colorId} noAlt />}
-              <TextWithBreaks text={row[2]} breakChar="-" />
+              <div class=" flex items-center gap-1">
+                {isSuitColor(colorId) && <ColorSuit color={colorId} noAlt />}
+                <span class="grow">
+                  <TextWithBreaks text={row[2]} breakChar="-" />
+                </span>
+              </div>
             </td>
             <td>{row[3]}</td>
             <td>{row[4]}</td>
