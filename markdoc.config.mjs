@@ -17,7 +17,7 @@ export default defineMarkdocConfig({
           errorLevel: 'error',
         },
         width: {
-          type: Number,
+          type: [Number, String],
           required: false,
           errorLevel: 'error',
         },

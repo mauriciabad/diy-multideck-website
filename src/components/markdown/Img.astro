@@ -1,7 +1,7 @@
 ---
 interface Props {
   src: string
-  width?: number
+  width?: number | string
   alt?: string
 }
 
@@ -10,7 +10,7 @@ const { src, width, alt } = Astro.props
 
 <img
   src={src}
-  style={{ maxWidth: `${width}px` }}
+  style={{ maxWidth: typeof width === 'string' ? width : `${width}px` }}
   alt={alt}
   class="mx-auto block w-full"
 />
