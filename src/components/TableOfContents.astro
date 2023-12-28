@@ -60,48 +60,73 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 </nav>
 
 <script is:inline>
+  // @ts-check
+
+  /**
+   * @template {{ y: number }} T
+   * @param {T[]} links
+   * @param {number} y
+   * @returns {T | null}
+   */
+  function activeLink(links, y) {
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i]
+      if (!link) continue
+      if (link.y > y) return links[i - 1] ?? link
+    }
+    return links.at(-1) ?? null
+  }
+
   document.addEventListener(
     'astro:page-load',
     () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            const headingFragment = `#${entry.target.id}`
-            const tocItem = document.querySelector(
-              `a[href="${headingFragment}"]`
-            )
+      /** @type {(links: NodeListOf<HTMLAnchorElement>) => ({ y: number, href: string })[]} */
+      function makeTemp(links) {
+        /** @type {({ y: number, href: string } | null)[]} */
+        const a = Array.from(links).map((link) => {
+          const href = link.getAttribute('href')
+          if (!href) return null
 
-            if (entry.isIntersecting) {
-              /** @type {HTMLAnchorElement | null} */
-              const previouslyActivatedItem = document.querySelector(
-                '[data-active="true"]'
-              )
+          const header = document.getElementById(href.slice(1))
+          if (!header) return null
 
-              if (previouslyActivatedItem) {
-                previouslyActivatedItem.dataset.active = 'false'
-              }
-              tocItem.dataset.active = 'true'
-            } else {
-              const isAnyOtherEntryIntersecting = entries.some(
-                (e) => e.target.id !== entry.target.id && e.isIntersecting
-              )
+          return {
+            href,
+            y: header.getBoundingClientRect().top + window.scrollY,
+          }
+        })
+        /** @type {({ y: number, href: string })[]} */
+        // @ts-ignore
+        const b = a.filter((link) => link !== null)
 
-              if (isAnyOtherEntryIntersecting) {
-                tocItem.dataset.active = 'false'
-              }
-            }
+        return b.sort((a, b) => a.y - b.y)
+      }
+
+      const OFFSET = 160
+      /** @type {NodeListOf<HTMLAnchorElement>} */
+      const tocLinks = document.querySelectorAll('#table-of-contents a')
+      let temp = makeTemp(tocLinks)
+      console.log(temp)
+
+      addEventListener(
+        'scroll',
+        () => {
+          const y = window.scrollY
+          const active = activeLink(temp, y + OFFSET)
+          if (active) {
+            tocLinks.forEach((link) => {
+              link.dataset.active = link.href.endsWith(active.href)
+                ? 'true'
+                : 'false'
+            })
           }
         },
-        { root: null, rootMargin: '0px', threshold: [1] }
+        { passive: true }
       )
 
-      const sectionHeadings = document.querySelectorAll(
-        'article > h2, article > h3'
-      )
-
-      for (const heading of sectionHeadings) {
-        observer.observe(heading)
-      }
+      new ResizeObserver(() => {
+        temp = makeTemp(tocLinks)
+      }).observe(document.body)
     },
     { once: true }
   )
