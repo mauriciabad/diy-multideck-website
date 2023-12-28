@@ -4,16 +4,15 @@ import PageLayout from '../layouts/PageLayout.astro'
 import { SITE_TITLE } from '../config'
 import Title from '../components/Title.astro'
 import { getEntry } from 'astro:content'
+import Prose from '../components/Prose.astro'
 
 const entry = await getEntry('pages', 'privacy')
 
 const { Content } = await entry.render()
 ---
 
-<PageLayout hasProse>
+<PageLayout>
   <PageMeta title={`${entry.data.post.title} | ${SITE_TITLE}`} slot="meta" />
-  <Fragment slot="main">
-    <Title text={entry.data.post.title} />
-    <Content />
-  </Fragment>
+  <Title text={entry.data.post.title} />
+  <Prose content={Content} />
 </PageLayout>

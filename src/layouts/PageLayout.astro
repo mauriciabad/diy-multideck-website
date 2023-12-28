@@ -13,17 +13,17 @@ import MetaTags from './MetaTags.astro'
 import { ViewTransitions } from 'astro:transitions'
 import type { MarkdownHeading } from 'astro'
 import TableOfContents from '../components/TableOfContents.astro'
+import { cn } from '../lib/cn'
 
 interface Props {
   classes?: {
     main?: string
     footer?: string
   }
-  hasProse?: boolean
   tocHeadings?: MarkdownHeading[]
 }
 
-const { classes: classNames, hasProse, tocHeadings } = Astro.props
+const { classes: classNames, tocHeadings } = Astro.props
 ---
 
 <!doctype html>
@@ -63,15 +63,8 @@ const { classes: classNames, hasProse, tocHeadings } = Astro.props
     }
 
     <Header transition:persist class="grid-in-[header]" />
-    <main
-      class:list={[
-        'content-center grid grid-in-[main]',
-        hasProse &&
-          'prose mx-auto prose-sleek prose-li:m-0 prose-ul:m-0 prose-table:border-current/25 prose-h5:text-sm prose-h5:font-semibold prose-img:my-4 first:prose-img:mt-0 last:prose-img:mb-0 prose-li:leading-5 prose-li:my-2',
-        classNames?.main,
-      ]}
-    >
-      <slot name="main" />
+    <main class={cn('content-center grid grid-in-[main]', classNames?.main)}>
+      <slot />
     </main>
     <Footer class:list={classNames?.footer} class="grid-in-[footer]" />
   </body>

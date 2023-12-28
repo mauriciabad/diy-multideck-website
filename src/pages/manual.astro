@@ -5,6 +5,7 @@ import BuyBanner from '../components/BuyBanner.astro'
 import { SITE_TITLE } from '../config'
 import { getEntry } from 'astro:content'
 import Title from '../components/Title.astro'
+import Prose from '../components/Prose.astro'
 
 const entry = await getEntry('pages', 'manual')
 
@@ -12,7 +13,6 @@ const { Content, headings } = await entry.render()
 ---
 
 <PageLayout
-  hasProse
   tocHeadings={headings}
   classes={{
     main: '[&_#introduction]:invisible [&_#introduction]:m-0 [&_#introduction]:h-0 [&_#introduction]:w-0 [&_#introduction]:overflow-hidden',
@@ -23,11 +23,9 @@ const { Content, headings } = await entry.render()
     slot="meta"
   />
 
-  <Fragment slot="main">
-    <Title text={['The', 'DIY Multideck']} />
+  <Title text={['The', 'DIY Multideck']} />
 
-    <Content />
+  <Prose content={Content} />
 
-    <BuyBanner class="not-prose mt-4" />
-  </Fragment>
+  <BuyBanner class="not-prose mt-4" />
 </PageLayout>

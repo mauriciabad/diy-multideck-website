@@ -18,12 +18,10 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
 })
 ---
 
-<PageLayout hasProse classes={{ main: 'max-w-none' }}>
-  <Fragment slot="main">
-    <Title text={title} subtitle={subtitle} />
-    <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
-    <slot name="content" />
-    <h2 class="mt-6 mb-2 text-3xl font-bold" id="#comments">Comments</h2>
-    <Comments />
-  </Fragment>
+<PageLayout classes={{ main: 'max-w-none' }}>
+  <Title text={title} subtitle={subtitle} />
+  <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
+  <slot />
+  <h2 class="mt-6 mb-2 text-3xl font-bold" id="#comments">Comments</h2>
+  <Comments />
 </PageLayout>

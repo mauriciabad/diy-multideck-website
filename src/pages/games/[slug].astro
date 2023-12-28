@@ -4,6 +4,7 @@ import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import { getCollection, getEntry } from 'astro:content'
+import Prose from '../../components/Prose.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('games')
@@ -43,8 +44,6 @@ const { Content } = await entry.render()
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
-  <Fragment slot="content">
-    <GameMappingDetails game={game} mapping={mapping} slug={slug} />
-    <Content />
-  </Fragment>
+  <GameMappingDetails game={game} mapping={mapping} slug={slug} />
+  <Prose content={Content} />
 </ContentLayout>
