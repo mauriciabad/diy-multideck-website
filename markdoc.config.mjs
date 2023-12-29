@@ -3,6 +3,7 @@ import {
   suitIds,
   suitEmojis,
   suitColors,
+  shapeSuitIds,
 } from './src/components/markdown/suits'
 
 export default defineMarkdocConfig({
@@ -105,6 +106,17 @@ export default defineMarkdocConfig({
         noAlt: {
           type: Boolean,
           default: false,
+        },
+      },
+    },
+    shapeSuit: {
+      render: component('./src/components/markdown/ShapeSuit.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: String,
+          matches: shapeSuitIds,
+          errorLevel: 'error',
         },
       },
     },

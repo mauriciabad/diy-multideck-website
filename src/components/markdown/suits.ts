@@ -89,3 +89,24 @@ export function getSuitIdByColor(color: SuitColor): SuitColorId | undefined {
     | SuitColorId
     | undefined
 }
+
+// Shape suits ---------------------------------------------------------------
+
+export const shapeSuitEmojisById = {
+  heart: '🖤',
+  circle: '⚫️',
+  square: '⬛️',
+  rainbow: '🌈',
+} as const
+
+export type ShapeSuitId = keyof typeof shapeSuitEmojisById
+export type ShapeSuitEmoji =
+  (typeof shapeSuitEmojisById)[keyof typeof shapeSuitEmojisById]
+
+export const shapeSuitIds = Object.keys(
+  shapeSuitEmojisById
+) as readonly ShapeSuitId[]
+
+export function getShapeSuitEmojiById(suitId: ShapeSuitId): ShapeSuitEmoji {
+  return shapeSuitEmojisById[suitId]
+}
