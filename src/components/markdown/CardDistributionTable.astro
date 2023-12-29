@@ -3,6 +3,7 @@ import CoinFlip from './CoinFlip.astro'
 import Suit from './Suit.astro'
 import { isSuitEmoji } from './suits'
 import GenericTable from '../GenericTable.astro'
+import { cn } from '../../lib/cn'
 
 const rows = [
   ['🔥', '0', '❤️', '0', '1', '1', '00', '1', 'no'],
@@ -194,11 +195,9 @@ const rows = [
     {
       rows.map((row, rowN) => (
         <tr
-          class:list={[
-            {
-              'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
-            },
-          ]}
+          class={cn({
+            'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
+          })}
         >
           <td>{isSuitEmoji(row[0]) ? <Suit emoji={row[0]} /> : row[0]}</td>
 

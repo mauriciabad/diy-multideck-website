@@ -1,4 +1,6 @@
 ---
+import { cn } from '../lib/cn'
+
 type IconName = 'book' | 'play-card' | 'shopping-cart' | 'news'
 
 interface Props {
@@ -15,16 +17,16 @@ const { title, description, href, icon, cta, class: className } = Astro.props
 
 <a
   href={href}
-  class:list={[
+  class={cn(
     'unset group flex flex-col relative overflow-hidden p-6 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700',
-    className,
-  ]}
+    className
+  )}
 >
   <i
-    class:list={[
+    class={cn(
       `ti ti-${icon}`,
-      'text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5',
-    ]}></i>
+      'text-[10rem] absolute -right-4 -bottom-4 text-black/5 dark:text-white/5'
+    )}></i>
 
   <div
     class="mb-2 text-2xl font-bold tracking-tight text-gray-900 leading-none dark:text-white"

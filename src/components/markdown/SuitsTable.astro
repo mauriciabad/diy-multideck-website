@@ -5,6 +5,7 @@ import { isSuitColor, isSuitEmoji } from './suits'
 import TextWithBreaks from '../TextWithBreaks.astro'
 import GenericTable from '../GenericTable.astro'
 import ColorSuit from './ColorSuit.astro'
+import { cn } from '../../lib/cn'
 
 const rows = [
   ['🔥', 'Fi-re', 'Red', '0', '0...9 + XJQKA', 'no'],
@@ -41,12 +42,9 @@ const rows = [
 
         return (
           <tr
-            class:list={[
-              '[&_td]:border-l first:[&_td]:border-l-0',
-              {
-                'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
-              },
-            ]}
+            class={cn('[&_td]:border-l first:[&_td]:border-l-0', {
+              'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
+            })}
           >
             <td>
               {isSuitEmoji(row[0]) ? (

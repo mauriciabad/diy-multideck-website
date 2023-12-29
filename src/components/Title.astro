@@ -1,4 +1,6 @@
 ---
+import { cn } from '../lib/cn'
+
 export interface Props {
   text: string | readonly [string, string] | readonly [string, string, string]
   subtitle?: string
@@ -9,10 +11,10 @@ const { text, subtitle, class: className } = Astro.props
 ---
 
 <h1
-  class:list={[
+  class={cn(
     'not-prose unset mb-4 text-balance font-extrabold text-5xl md:text-6xl tracking-tight',
-    className,
-  ]}
+    className
+  )}
 >
   {
     typeof text === 'string' ? (

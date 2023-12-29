@@ -1,4 +1,6 @@
 ---
+import { cn } from '../../lib/cn'
+
 interface Props {
   cards: (number | NonNumberedCard)[]
   layout: Layout
@@ -248,13 +250,10 @@ const miniCardVersionByLayout = {
                 : `/images/mini-cards/${miniCardVersionByLayout[layout]}/${cardIdOrName}.png`
             }
             alt={`Card ${cardIdOrName}`}
-            class:list={[
-              'm-0 shadow-xl rounded-lg border-2 bg-white',
-              {
-                'opacity-25 border-white': !cardsSet.has(cardIdOrName),
-                'border-stone-500': cardsSet.has(cardIdOrName),
-              },
-            ]}
+            class={cn('m-0 shadow-xl rounded-lg border-2 bg-white', {
+              'opacity-25 border-white': !cardsSet.has(cardIdOrName),
+              'border-stone-500': cardsSet.has(cardIdOrName),
+            })}
           />
         )
       )

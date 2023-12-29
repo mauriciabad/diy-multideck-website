@@ -41,20 +41,20 @@ const { classes: classNames, tocHeadings } = Astro.props
   </head>
 
   <body
-    class:list={[
+    class={cn(
       'min-h-screen max-w-3xl mx-auto px-3 sm:px-8 box-content',
       'grid grid-areas-[header,main,footer] grid-rows-[5rem_minmax(0,1fr)_5rem] grid-cols-1',
       tocHeadings &&
-        "lg:pr-8 lg:pl-[calc(theme('spacing.8')+theme('spacing.64'))]",
-    ]}
+        "lg:pr-8 lg:pl-[calc(theme('spacing.8')+theme('spacing.64'))]"
+    )}
   >
     {
       tocHeadings && (
         <aside
-          class:list={[
+          class={cn(
             'unset not-prose w-64 pt-8 grid-in-[toc] fixed top-0 left-0 right-0 h-full overflow-y-auto',
-            'hidden lg:block p-4 border-r border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-black/20',
-          ]}
+            'hidden lg:block p-4 border-r border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-black/20'
+          )}
         >
           <div class="text-md font-bold mb-2">Table of contents</div>
           <TableOfContents headings={tocHeadings} />

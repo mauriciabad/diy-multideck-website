@@ -1,4 +1,6 @@
 ---
+import { cn } from '../lib/cn'
+
 interface Props {
   href: string
 }
@@ -18,6 +20,5 @@ function clean(path: string) {
 const isActive = clean(currentPath) === clean(href)
 ---
 
-<a href={href} class:list={[{ show: isActive }, 'unset animated-link']}
-  ><slot /></a
+<a href={href} class={cn({ show: isActive }, 'unset animated-link')}><slot /></a
 >
