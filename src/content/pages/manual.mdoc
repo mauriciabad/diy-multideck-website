@@ -35,8 +35,8 @@ This is how it works: when you play a game, you pick a subset of cards and focus
     - [10-level pyramidal deck with same ranks](#10-level-pyramidal-deck-with-same-ranks).
     - [12-level pyramidal deck with different ranks](#12-level-pyramidal-deck-with-different-ranks).
   - [**3D deck**](#3d-suit): 5 colors × 3 shapes × 10 ranks + 10 ranks.
-    - [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), or 5 suits of 30 ranks.
-    - [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), or 3 suits of 50 ranks.
+    - [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), or [5 suits of 30 ranks](#5-suits-of-30-ranks).
+    - [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), or [3 suits of 50 ranks](#3-suits-of-50-ranks).
     - Extra suit of 10 ranks ({% suit emoji="🌈" /%}).
   - [**Sequential deck**](#sequential-number): numbers from 0 to 159
     - [Numbers from 0 to 159](#numbers-from-0-to-159).
@@ -176,23 +176,43 @@ The small numbers on the bottom sides, indicate the shape and color. This is use
 - Left numbers (Shape): 1={% shapeSuit id="heart" /%}, 2={% shapeSuit id="circle" /%}, 3={% shapeSuit id="square" /%}, 4={% shapeSuit id="rainbow" /%}.
 - Right numbers (Color): 1={% colorSuit id=1 /%}, 2={% colorSuit id=2 /%}, 3={% colorSuit id=3 /%}, 4={% colorSuit id=4 /%}, 5={% colorSuit id=5 /%}, 6={% colorSuit id=6 /%}.
 
-TODO: Fill this section
-
-- Where
-- Distribution
-- What is it
-- Use cases
-- Example games
-
 ### Distributions
 
 #### 5 suits of 3 times 10 ranks
 
-TODO: Fill this section
+The most used distribution of the _3D suit_ is 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 3 times 10 ranks (0...9). Plus an extra suit ({% shapeSuit id="rainbow" /%}) of 1 time 10 ranks (0...9).
+
+The shape is not used in this distribution ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}). When two suits have the same color, but different shape, they are considered equal. For example: {% suit id=122 /%} and {% suit id=132 /%} are the same because they are {% colorSuit id=2 noAlt=true /%} Blue.
+
+A very well known game that uses this distribution is [UNO](/games/uno).
+
+#### 5 suits of 30 ranks
+
+Same as [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), but use the left number (indicating the shape) minus 1 as the digits. It has 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 30 ranks (0...29).
+
+For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 3 {% colorSuit id=2 noAlt=true /%} Blue because its left number is 1, we substract 1, the result is 0, and 03 is the same as just 3.
+
+A game that uses this distribution is [What the Heck?](/games/what-the-heck).
 
 #### 3 suits of 5 times 10 ranks
 
 TODO: Fill this section
+
+#### 3 suits of 50 ranks
+
+TODO: Fill this section
+
+#### Multi-dimensional system of 10 by 3 by 5
+
+You can make a multi-dimensional game system of 3 dimensions:
+
+- Dimension 1: 10 Numbers (0...9).
+- Dimension 2: 3 Shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%})
+- Dimension 3: 5 Colors ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%})
+
+Besides that, there's an extra shape and color ({% shapeSuit id="rainbow" /%}) that is not in the other shapes or colors, and it has the numbers 0 to 9.
+
+Not many games use it.
 
 ### Layout
 

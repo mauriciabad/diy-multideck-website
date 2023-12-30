@@ -147,6 +147,17 @@ export default defineMarkdocConfig({
         },
       },
     },
+    exampleSuit: {
+      render: component('./src/components/markdown/ExampleSuit.astro'),
+      selfClosing: true,
+      attributes: {
+        suit: {
+          type: String,
+          matches: ['3d'],
+          errorLevel: 'error',
+        },
+      },
+    },
     cardDistributionTable: {
       render: component(
         './src/components/markdown/CardDistributionTable.astro'
