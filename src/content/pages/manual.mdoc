@@ -169,7 +169,7 @@ An example game that uses it is [Startups](/games/startups).
 
 On the top-right or bottom-left corner you can find a number overlapping a shape with two small numbers on the bottom sides, it is the "3D suit". It is called 3D because it is a multidimensional game system of 3 dimensions: shape, rank, and color.
 
-It contains 10 ranks (0...9) × 3 shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) × 5 colors ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}), plus 10 ranks (0...9) in a special shape and color ({% shapeSuit id="rainbow" /%}). So it is a distribution of 10×3×5 + 10.
+It contains 10 _ranks_ (0...9) × 3 _shapes_ ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) × 5 _colors_ ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}), plus 10 ranks (0...9) in a special shape and color ({% shapeSuit id="rainbow" /%}). So it is a distribution of 10×3×5 + 10.
 
 The small numbers on the bottom sides, indicate the shape and color. This is usefull for color-blind players and for quick comparison of suits. Each shape and circle has an associated number, these are the values:
 
@@ -182,31 +182,35 @@ The small numbers on the bottom sides, indicate the shape and color. This is use
 
 The most used distribution of the _3D suit_ is 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 3 times 10 ranks (0...9). Plus an extra suit ({% shapeSuit id="rainbow" /%}) of 1 time 10 ranks (0...9).
 
-The shape is not used in this distribution ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}). When two suits have the same color, but different shape, they are considered equal. For example: {% suit id=122 /%} and {% suit id=132 /%} are the same because they are {% colorSuit id=2 noAlt=true /%} Blue.
+The _shape_ ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) is not used in this distribution . When two suits have the same _color_, but different _shape_, they are considered equal. For example: {% suit id=122 /%} and {% suit id=132 /%} are the same because they are blue ({% colorSuit id=2 noAlt=true /%}).
 
 A very well known game that uses this distribution is [UNO](/games/uno).
 
 #### 5 suits of 30 ranks
 
-Same as [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), but use the left number (indicating the shape) minus 1 as the digits. It has 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 30 ranks (0...29).
+Same as [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), but use the left number (indicating the _shape_) minus 1 as the tens' digit. It has 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 30 ranks (0...29).
 
-For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 3 {% colorSuit id=2 noAlt=true /%} Blue because its left number is 1, we substract 1, the result is 0, and 03 is the same as just 3.
+For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 3 {% colorSuit id=2 noAlt=true /%} Blue because its left number is 1, we substract 1, the result is 0, and using it as the tens' digit we get 03, that is the same as just 3.
 
 A game that uses this distribution is [What the Heck?](/games/what-the-heck).
 
 #### 3 suits of 5 times 10 ranks
 
-TODO: Fill this section
+Another distribution of the _3D suit_ is 3 suits ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) of 5 times 10 ranks (0...9). Plus an extra suit ({% shapeSuit id="rainbow" /%}) of 1 time 10 ranks (0...9).
+
+The _color_ ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) is not used in this distribution . When two suits have the same _shape_, but different _color_, they are considered equal. For example: {% suit id=121 /%} and {% suit id=122 /%} are the same because they are circles ({% shapeSuit id="circle" /%}).
 
 #### 3 suits of 50 ranks
 
-TODO: Fill this section
+Same as [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), but use the right number (indicating the _color_) minus 1 as the tens' digit. It has 3 suits ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) of 50 ranks (0...49).
+
+For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 13 of circles {% shapeSuit id="heart" /%} because its right number is 2, we substract 1, the result is 1, and using it as the tens' digit we get 13.
 
 #### Multi-dimensional system of 10 by 3 by 5
 
 You can make a multi-dimensional game system of 3 dimensions:
 
-- Dimension 1: 10 Numbers (0...9).
+- Dimension 1: 10 Ranks (0...9).
 - Dimension 2: 3 Shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%})
 - Dimension 3: 5 Colors ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%})
 
