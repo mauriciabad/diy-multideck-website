@@ -120,6 +120,8 @@ Each suit has a numerical ID, it can be found on the _black part_ of the [Sequen
 
 The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
 
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is either black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}).
+
 ### Distributions
 
 #### 12 suits of 10 ranks
@@ -171,6 +173,8 @@ The small numbers on the bottom sides indicate the shape and color. This is usef
 
 - Left numbers (Shape): 1={% shapeSuit id="heart" /%}, 2={% shapeSuit id="circle" /%}, 3={% shapeSuit id="square" /%}, 4={% shapeSuit id="rainbow" /%}.
 - Right numbers (Color): 1={% colorSuit id=1 /%}, 2={% colorSuit id=2 /%}, 3={% colorSuit id=3 /%}, 4={% colorSuit id=4 /%}, 5={% colorSuit id=5 /%}, 6={% colorSuit id=6 /%}.
+
+When the suit is black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}), the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit id=1 noAlt=true /%}{% colorSuit id=2 noAlt=true /%}{% colorSuit id=3 noAlt=true /%}{% colorSuit id=4 noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
 
 ### Distributions
 
