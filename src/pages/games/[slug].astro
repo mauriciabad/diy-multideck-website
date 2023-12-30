@@ -4,6 +4,7 @@ import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import { getCollection, getEntry } from 'astro:content'
+import Prose from '../../components/Prose.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('games')
@@ -27,22 +28,24 @@ const ogImageAbsoluteUrl = post.ogImagePath
   ? new URL(post.ogImagePath, SITE_URL).toString()
   : undefined
 
-const title = ['How to play ', game.title, ' with the DIY Multideck'] as const
-
 const { Content } = await entry.render()
 ---
 
-<ContentLayout title={title} date={post.date}>
+<ContentLayout
+  title={['How to play ', game.title]}
+  subtitle="with the DIY Multideck"
+  date={post.date}
+>
   <GamePostMeta
     title={`${game.title} | How to play with the DIY Multideck tutorial`}
-    description={title.join('')}
+    description={`Learn how to play ${game.title} with the DIY Multideck`}
     publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
-  <Fragment slot="content">
-    <GameMappingDetails game={game} mapping={mapping} slug={slug} />
+  <GameMappingDetails game={game} mapping={mapping} slug={slug} />
+  <Prose>
     <Content />
-  </Fragment>
+  </Prose>
 </ContentLayout>

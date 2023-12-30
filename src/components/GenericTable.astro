@@ -1,0 +1,27 @@
+---
+import { cn } from '../lib/cn'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<table
+  class={cn(
+    'relative before:absolute before:pointer-events-none before:inset-0 before:z-[1] before:shadow-lg before:rounded-xl before:border before:border-black/30 before:dark:border-white/30',
+    'border-collapse [&_*]:border-black/30 [&_*]:dark:border-white/30',
+    'not-prose w-full min-w-0 table-auto text-center [&_th]:overflow-hidden [&_th]:py-1 [&_td]:py-1 leading-tight [&_th]:align-middle [&_td]:align-middle [&_th]:font-normal',
+    className
+  )}
+>
+  <thead
+    class="text-sm border-b sticky top-0 bg-white dark:bg-[rgb(var(--color-bg-body))] shadow rounded-t-xl"
+  >
+    <slot name="thead" />
+  </thead>
+  <tbody>
+    <slot name="tbody" />
+  </tbody>
+</table>

@@ -3,6 +3,7 @@ import BlogPostMeta from '../../components/BlogPostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
 import { SITE_URL } from '../../config'
 import { getCollection, getEntry } from 'astro:content'
+import Prose from '../../components/Prose.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -38,7 +39,7 @@ const ogImageAbsoluteUrl = data.ogImagePath
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
-  <Fragment slot="content">
+  <Prose>
     <Content />
-  </Fragment>
+  </Prose>
 </ContentLayout>

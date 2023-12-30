@@ -1,0 +1,23 @@
+---
+import { cn } from '../../../lib/cn'
+
+interface Props {
+  src: string
+  class?: string
+}
+const { src, class: className } = Astro.props
+---
+
+<div
+  class={cn([
+    'flex flex-wrap items-start justify-center gap-4 mb-4',
+    className,
+  ])}
+>
+  <img
+    src={src}
+    alt="card"
+    class="not-prose w-full max-w-[300px] rounded-[calc(50/750*100%)/calc(50/1050*100%)] border border-stone-200 shadow-lg"
+    loading="lazy"
+  />
+</div>

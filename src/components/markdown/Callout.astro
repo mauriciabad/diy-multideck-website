@@ -1,22 +1,25 @@
 ---
 interface Props {
-  text: string
   type: 'idea' | 'info'
 }
 
-const { text, type } = Astro.props
+const { type } = Astro.props
 ---
 
-<div class="flex bg-stone-200/50 dark:bg-slate-900 rounded-md p-2 pl-0 mt-2">
+<div class="flex bg-stone-100 dark:bg-slate-800 rounded-md p-2 pl-0 my-4">
   {
     type === 'idea' && (
-      <i class="ti ti-bulb px-3 text-lg text-yellow-500 dark:text-yellow-300" />
+      <i class="ti ti-bulb px-2 -mt-0.5 text-2xl text-yellow-500 dark:text-yellow-300" />
     )
   }
   {
     type === 'info' && (
-      <i class="ti ti-info-circle px-3 text-lg text-blue-500 dark:text-blue-300" />
+      <i class="ti ti-info-circle px-2 -mt-0.5 text-2xl text-blue-500 dark:text-blue-300" />
     )
   }
-  <div class="grow">{text}</div>
+  <div
+    class="grow [&>:first-child]:mt-0 [&>:last-child]:mb-0 self-center prose-p:my-1"
+  >
+    <slot />
+  </div>
 </div>

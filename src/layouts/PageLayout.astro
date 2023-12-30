@@ -1,12 +1,4 @@
 ---
-/* 
-  This layout is used in 
-  - pages/index.astro
-  - pages/blog.astro
-  - pages/games.astro
-*/
-
-// Import the global.css file here so that it is included on
 import '../styles/global.css'
 
 import GoogleFont from './GoogleFont.astro'
@@ -19,6 +11,19 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import MetaTags from './MetaTags.astro'
 import { ViewTransitions } from 'astro:transitions'
+import type { MarkdownHeading } from 'astro'
+import TableOfContents from '../components/TableOfContents.astro'
+import { cn } from '../lib/cn'
+
+interface Props {
+  classes?: {
+    main?: string
+    footer?: string
+  }
+  tocHeadings?: MarkdownHeading[]
+}
+
+const { classes: classNames, tocHeadings } = Astro.props
 ---
 
 <!doctype html>
@@ -35,25 +40,32 @@ import { ViewTransitions } from 'astro:transitions'
     <ViewTransitions />
   </head>
 
-  <body class="min-h-screen max-w-3xl mx-auto px-3 sm:px-8">
-    <Header transition:persist />
-    <main id="main">
-      <slot name="main" />
+  <body
+    class={cn(
+      'min-h-screen max-w-3xl mx-auto px-3 sm:px-8 box-content',
+      'grid grid-areas-[header,main,footer] grid-rows-[5rem_minmax(0,1fr)_5rem] grid-cols-1',
+      tocHeadings &&
+        "lg:pr-8 lg:pl-[calc(theme('spacing.8')+theme('spacing.64'))]"
+    )}
+  >
+    {
+      tocHeadings && (
+        <aside
+          class={cn(
+            'unset not-prose w-64 pt-8 grid-in-[toc] fixed top-0 left-0 right-0 h-full overflow-y-auto',
+            'hidden lg:block p-4 border-r border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-black/20'
+          )}
+        >
+          <div class="text-md font-bold mb-2">Table of contents</div>
+          <TableOfContents headings={tocHeadings} />
+        </aside>
+      )
+    }
+
+    <Header transition:persist class="grid-in-[header]" />
+    <main class={cn('content-center grid grid-in-[main]', classNames?.main)}>
+      <slot />
     </main>
-    <Footer />
-    <style>
-      body {
-        display: grid;
-        grid-template-areas:
-          'header'
-          'main'
-          'footer';
-        grid-template-rows: 5rem minmax(0, 1fr) 5rem;
-        grid-template-columns: minmax(0, 1fr);
-      }
-      main {
-        grid-area: main;
-      }
-    </style>
+    <Footer class:list={classNames?.footer} class="grid-in-[footer]" />
   </body>
 </html>

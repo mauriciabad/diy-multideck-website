@@ -1,6 +1,8 @@
 import typography from '@tailwindcss/typography'
 import containerQueries from '@tailwindcss/container-queries'
 import safeContainer from 'tailwind-safe-container'
+import defaultTheme from 'tailwindcss/defaultTheme'
+import gridAreas from '@savvywombat/tailwindcss-grid-areas'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,6 +10,13 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      minHeight: {
+        ...defaultTheme.minHeight,
+
+        screen: /** @type {string} */ (
+          /** @type {unknown} */ (['100vh', '100dvh'])
+        ),
+      },
       fontFamily: {
         body: ['Inter var', 'sans-serif'],
         heading: ['Inter var', 'sans-serif'],
@@ -35,6 +44,9 @@ export default {
         border: {
           code: 'rgb(var(--color-border-code) / <alpha-value>)',
         },
+      },
+      screens: {
+        xs: '475px',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -114,5 +126,5 @@ export default {
       }),
     },
   },
-  plugins: [typography, containerQueries, safeContainer],
+  plugins: [typography, containerQueries, safeContainer, gridAreas],
 }

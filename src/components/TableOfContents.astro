@@ -1,0 +1,132 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+type Props = {
+  headings: MarkdownHeading[]
+}
+
+type HeadingWithSubheadings = MarkdownHeading & {
+  subheadings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props
+
+const grouppedHeadings = headings.reduce((array, heading) => {
+  if (heading.depth === 2) {
+    array.push({ ...heading, subheadings: [] })
+  } else if (heading.depth === 3) {
+    array.at(-1)?.subheadings.push(heading)
+  }
+
+  return array
+}, [] as HeadingWithSubheadings[])
+---
+
+<nav
+  id="table-of-contents"
+  class="not-prose text-sm"
+  aria-label="Table Of Contents"
+>
+  <ol>
+    {
+      grouppedHeadings.map((h) => (
+        <li>
+          <a
+            href={`#${h.slug}`}
+            class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
+            data-active="false"
+          >
+            {h.text}
+          </a>
+          {h.subheadings.length > 0 && (
+            <ol>
+              {h.subheadings.map((sub) => (
+                <li>
+                  <a
+                    href={`#${sub.slug}`}
+                    class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
+                    data-active="false"
+                  >
+                    {sub.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<script is:inline>
+  // @ts-check
+
+  /**
+   * @template {{ y: number }} T
+   * @param {T[]} links
+   * @param {number} y
+   * @returns {T | null}
+   */
+  function activeLink(links, y) {
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i]
+      if (!link) continue
+      if (link.y > y) return links[i - 1] ?? link
+    }
+    return links.at(-1) ?? null
+  }
+
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      /** @type {(links: NodeListOf<HTMLAnchorElement>) => ({ y: number, href: string })[]} */
+      function makeTemp(links) {
+        /** @type {({ y: number, href: string } | null)[]} */
+        const a = Array.from(links).map((link) => {
+          const href = link.getAttribute('href')
+          if (!href) return null
+
+          const header = document.getElementById(href.slice(1))
+          if (!header) return null
+
+          return {
+            href,
+            y: header.getBoundingClientRect().top + window.scrollY,
+          }
+        })
+        /** @type {({ y: number, href: string })[]} */
+        // @ts-ignore
+        const b = a.filter((link) => link !== null)
+
+        return b.sort((a, b) => a.y - b.y)
+      }
+
+      const OFFSET = 160
+      /** @type {NodeListOf<HTMLAnchorElement>} */
+      const tocLinks = document.querySelectorAll('#table-of-contents a')
+      let temp = makeTemp(tocLinks)
+
+      addEventListener(
+        'scroll',
+        () => {
+          const y = window.scrollY
+          const active = activeLink(temp, y + OFFSET)
+          if (active) {
+            tocLinks.forEach((link) => {
+              link.dataset.active = link.href.endsWith(active.href)
+                ? 'true'
+                : 'false'
+            })
+          }
+        },
+        { passive: true }
+      )
+
+      new ResizeObserver(() => {
+        temp = makeTemp(tocLinks)
+      }).observe(document.body)
+    },
+    { once: true }
+  )
+</script>

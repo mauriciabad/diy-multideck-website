@@ -389,13 +389,6 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
-"stick-em.mdoc": {
-	id: "stick-em.mdoc";
-  slug: "stick-em";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".mdoc"] };
 "taco-cat-goat-cheese-pizza.mdoc": {
 	id: "taco-cat-goat-cheese-pizza.mdoc";
   slug: "taco-cat-goat-cheese-pizza";
@@ -500,6 +493,22 @@ declare module 'astro:content' {
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
+};
+"pages": {
+"manual.mdoc": {
+	id: "manual.mdoc";
+  slug: "manual";
+  body: string;
+  collection: "pages";
+  data: any
+} & { render(): Render[".mdoc"] };
+"privacy.mdoc": {
+	id: "privacy.mdoc";
+  slug: "privacy";
+  body: string;
+  collection: "pages";
+  data: any
 } & { render(): Render[".mdoc"] };
 };
 

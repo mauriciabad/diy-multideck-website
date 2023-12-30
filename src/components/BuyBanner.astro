@@ -1,14 +1,34 @@
 ---
+import LinkCard from './LinkCard.astro'
+import { cn } from '../lib/cn'
 
+interface Props {
+  class?: string
+  size?: 'small' | 'large'
+}
+
+const { class: className, size = 'large' } = Astro.props
 ---
 
-<div
-  class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] text-white p-12 rounded-2xl"
->
-  <p class="text-xl mb-6 font-bold">Buy the DIY Multideck now</p>
-  <a
-    href="/buy"
-    class="bg-white rounded text-blue-700 hover:!text-white hover:!bg-stone-800 font-bold uppercase inline-block px-4 py-2 !bg-none"
-    >Buy now</a
-  >
-</div>
+{
+  size === 'small' ? (
+    <div class={cn('text-center', className)}>
+      <a
+        href="/buy"
+        class="unset not-prose inline-flex justify-between gap-2 items-center group p-4 leading-none bg-stone-50 border border-stone-200 rounded-lg dark:bg-gray-800 dark:border-gray-700"
+      >
+        <i class={cn(['ti ti-shopping-cart', 'text-xl leading-none'])} />
+        <span>Buy the DIY Multideck</span>
+      </a>
+    </div>
+  ) : (
+    <LinkCard
+      href="/buy"
+      title="Buy the DIY Multideck"
+      description="Get your copy of the DIY Multideck and start playing your favorite games with your friends and family."
+      cta="Buy now"
+      icon="shopping-cart"
+      class={className}
+    />
+  )
+}

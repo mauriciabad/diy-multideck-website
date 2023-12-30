@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string
+  breakChar?: string
+}
+
+const { text, breakChar = '-' } = Astro.props
+---
+
+{
+  text.split(breakChar).map((part, i) => (
+    <>
+      {i > 0 && <wbr />}
+      {part}
+    </>
+  ))
+}

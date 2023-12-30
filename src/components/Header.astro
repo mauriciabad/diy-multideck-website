@@ -1,19 +1,26 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import DarkModeToggle from './DarkModeToggle.astro'
+import { cn } from '../lib/cn'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
 ---
 
-<header>
+<header class={cn('flex items-center', className)}>
   <a
     class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
     href="#main"
   >
     Skip to content
   </a>
-  <nav>
+  <nav class="grow">
     <section class="text-text-bold">
       <ul class="unset flex gap-4 [&>li]:p-0">
-        <li><HeaderLink href="/">Home</HeaderLink></li>
+        <li><HeaderLink href="/manual">Manual</HeaderLink></li>
         <li><HeaderLink href="/games">Games</HeaderLink></li>
         <li><HeaderLink href="/blog">Blog</HeaderLink></li>
         <li><HeaderLink href="/buy">Buy</HeaderLink></li>
@@ -25,7 +32,7 @@ import DarkModeToggle from './DarkModeToggle.astro'
   >
     <a
       class="hidden sm:inline-block unset text-xl ml-4 outline-none focus-visible:ring-2 ring-stone-700 rounded-sm ring-offset-4"
-      href="https://boardgamegeek.com/"
+      href="https://boardgamegeek.com/thread/3128477/diy-multideck-deck-cards-play-many-games"
     >
       <svg
         aria-hidden="true"
@@ -48,14 +55,3 @@ import DarkModeToggle from './DarkModeToggle.astro'
   </div>
   <DarkModeToggle transition:persist />
 </header>
-<style>
-  header {
-    grid-area: header;
-    display: grid;
-    align-items: center;
-    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(
-        0,
-        max-content
-      );
-  }
-</style>

@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro'
 import PageMeta from '../components/PageMeta.astro'
 import { SITE_TITLE } from '../config'
 import { getCollection } from 'astro:content'
+import Title from '../components/Title.astro'
 
 const posts = await getCollection('blog')
 
@@ -15,49 +16,43 @@ const sortedPosts = posts
 
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
-  <section slot="main">
-    <h1
-      class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-8 overflow-hidden"
-    >
-      Blog
-    </h1>
+  <Title text="Blog" />
 
-    {
-      sortedPosts.length ? (
-        <ul>
-          {sortedPosts.map((post) => {
-            const formattedDate = new Date(post.data.date).toLocaleDateString(
-              'en-us',
-              {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              }
-            )
-            return (
-              <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-                <div class="title">
-                  <a
-                    href={`/blog/${post.slug}`}
-                    class="unset hover:text-text-link"
-                  >
-                    {post.data.title}
-                  </a>
-                </div>
-                <div class="text-text-muted text-sm italic">
-                  <time datetime={post.data.date.toISOString()}>
-                    {formattedDate}
-                  </time>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-      ) : (
-        <p class="">
-          Sorry, there are <strong>no posts</strong> yet, come back later.
-        </p>
-      )
-    }
-  </section>
+  {
+    sortedPosts.length ? (
+      <ul>
+        {sortedPosts.map((post) => {
+          const formattedDate = new Date(post.data.date).toLocaleDateString(
+            'en-us',
+            {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            }
+          )
+          return (
+            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="unset hover:text-text-link"
+                >
+                  {post.data.title}
+                </a>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime={post.data.date.toISOString()}>
+                  {formattedDate}
+                </time>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    ) : (
+      <p>
+        Sorry, there are <strong>no posts</strong> yet, come back later.
+      </p>
+    )
+  }
 </PageLayout>

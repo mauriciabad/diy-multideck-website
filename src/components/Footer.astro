@@ -1,8 +1,14 @@
 ---
+import { cn } from '../lib/cn'
 
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
 ---
 
-<footer class="text-sm leading-[1.75] mt-4">
+<footer class={cn('text-sm leading-[1.75] mt-4', className)}>
   <div>
     <span>Made with</span>
 

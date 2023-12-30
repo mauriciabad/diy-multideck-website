@@ -1,0 +1,44 @@
+---
+import PageMeta from '../components/PageMeta.astro'
+import PageLayout from '../layouts/PageLayout.astro'
+import BuyBanner from '../components/BuyBanner.astro'
+import { SITE_TITLE } from '../config'
+import { getEntry } from 'astro:content'
+import Title from '../components/Title.astro'
+import Prose from '../components/Prose.astro'
+
+const entry = await getEntry('pages', 'manual')
+
+const { Content, headings } = await entry.render()
+
+const filteredHeadings = headings.filter(
+  ({ depth, text }) =>
+    !(
+      depth >= 2 &&
+      (text === 'Layout' ||
+        text === 'Suits' ||
+        text === 'Ranks' ||
+        text === 'Distributions')
+    )
+)
+---
+
+<PageLayout
+  tocHeadings={filteredHeadings}
+  classes={{
+    main: '[&_#introduction]:invisible [&_#introduction]:m-0 [&_#introduction]:h-0 [&_#introduction]:w-0 [&_#introduction]:overflow-hidden',
+  }}
+>
+  <PageMeta
+    title={`${SITE_TITLE} | A game system to play hundreds of board games`}
+    slot="meta"
+  />
+
+  <Title text={['The', 'DIY Multideck']} />
+
+  <Prose>
+    <Content />
+  </Prose>
+
+  <BuyBanner class="not-prose mt-4" />
+</PageLayout>

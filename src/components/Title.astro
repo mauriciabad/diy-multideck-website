@@ -1,0 +1,39 @@
+---
+import { cn } from '../lib/cn'
+
+export interface Props {
+  text: string | readonly [string, string] | readonly [string, string, string]
+  subtitle?: string
+  class?: string
+}
+
+const { text, subtitle, class: className } = Astro.props
+---
+
+<h1
+  class={cn(
+    'not-prose unset mb-4 text-balance font-extrabold text-5xl md:text-6xl tracking-tight',
+    className
+  )}
+>
+  {
+    typeof text === 'string' ? (
+      <span>{text}</span>
+    ) : (
+      <Fragment>
+        {text[0]}
+        <span class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent">
+          {text[1]}
+        </span>
+        {text[2]}
+      </Fragment>
+    )
+  }
+  {
+    subtitle && (
+      <span class="block text-2xl mt-2 font-bold tracking-tight">
+        {subtitle}
+      </span>
+    )
+  }
+</h1>

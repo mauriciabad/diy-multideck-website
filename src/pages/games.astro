@@ -5,6 +5,7 @@ import { SITE_TITLE } from '../config'
 import { getCompatibility } from '../utils/compatibility'
 import { getCollection } from 'astro:content'
 import type { GameInfo } from '../lib/schemas'
+import Title from '../components/Title.astro'
 
 const games = await getCollection('games')
 
@@ -29,32 +30,16 @@ const sortedGames = games
 
 <PageLayout>
   <PageMeta title={`Games | ${SITE_TITLE}`} slot="meta" />
-  <section slot="main">
-    <h1
-      class="font-extrabold text-5xl md:text-6xl tracking-tight pt-4 pb-8 overflow-hidden"
-    >
-      How to <span class="whitespace-nowrap"
-        >play
-        <span
-          class="bg-gradient-to-br from-[#3c72fb] via-[#f91669] to-[#c10cea] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
-          aria-label="any game"
-        >
-          ___
-        </span>
-        ?</span
-      >
-      <span class="block text-2xl mt-2 font-bold tracking-tight"
-        >With the DIY Multideck</span
-      >
-    </h1>
+    <Title text={['How to play', '___', '?']} subtitle="With the DIY Multideck" />
+
     <div class="relative">
       <input
         class="w-full px-4 py-3 pr-12 rounded-lg outline-none focus-visible:ring-4 ring-blue-400 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
         type="search"
         name="search"
         id="search"
-        placeholder="Search"
-        aria-label="Search"
+        placeholder="Search a game"
+        aria-label="Search a game"
       />
       <i
         class="ti ti-search absolute text-[1.5rem] top-3 right-3 pointer-events-none"
@@ -154,7 +139,6 @@ const sortedGames = games
     >
       <span>No results</span>
     </div>
-  </section>
 </PageLayout>
 
 <script>
