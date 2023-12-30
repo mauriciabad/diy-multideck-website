@@ -9,6 +9,7 @@ type PageOgMeta = {
   description?: string // page description
   type: 'website'
   url?: string // site URL
+  publishDate?: string // ISO string
   image?: string // preview image
   imageAlt?: string // alt text for preview image
   imageWidth?: string // preview image width - 1200px standard
@@ -53,6 +54,7 @@ export function getPageMeta({
   title: pageTitle,
   description,
   baseUrl,
+  publishDate,
   ogImageAbsoluteUrl,
   ogImageAltText,
   ogImageWidth,
@@ -63,6 +65,7 @@ export function getPageMeta({
   title: string
   description: string
   baseUrl?: string
+  publishDate?: string
   ogImageAbsoluteUrl?: string // should always be absolute
   ogImageAltText?: string
   ogImageWidth?: number
@@ -88,6 +91,7 @@ export function getPageMeta({
     description: description,
     type: 'website',
     url: baseUrl,
+    publishDate: publishDate,
     image: ogImageAbsoluteUrl,
     imageAlt: ogImageAltText,
     imageWidth: ogImageWidth ? String(ogImageWidth) : undefined,

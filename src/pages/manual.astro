@@ -6,6 +6,7 @@ import { SITE_TITLE } from '../config'
 import { getEntry } from 'astro:content'
 import Title from '../components/Title.astro'
 import Prose from '../components/Prose.astro'
+import { absoluteUrlOptional } from '../lib/url'
 
 const entry = await getEntry('pages', 'manual')
 
@@ -21,6 +22,8 @@ const filteredHeadings = headings.filter(
         text === 'Distributions')
     )
 )
+
+const post = entry.data.post
 ---
 
 <PageLayout
@@ -31,6 +34,8 @@ const filteredHeadings = headings.filter(
 >
   <PageMeta
     title={`${SITE_TITLE} | A game system to play hundreds of board games`}
+    publishDate={post.ogImagePath}
+    ogImageAbsoluteUrl={absoluteUrlOptional(post.ogImagePath)}
     slot="meta"
   />
 

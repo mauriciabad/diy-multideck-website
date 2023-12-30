@@ -1,10 +1,10 @@
 ---
 import GameMappingDetails from '../../components/GameMappingDetails.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
-import { SITE_URL } from '../../config'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import { getCollection, getEntry } from 'astro:content'
 import Prose from '../../components/Prose.astro'
+import { absoluteUrlOptional } from '../../lib/url'
 
 export async function getStaticPaths() {
   const posts = await getCollection('games')
@@ -24,10 +24,6 @@ if (typeof slug !== 'string') {
 const entry = await getEntry('games', slug)
 const { game, post, mapping } = entry.data
 
-const ogImageAbsoluteUrl = post.ogImagePath
-  ? new URL(post.ogImagePath, SITE_URL).toString()
-  : undefined
-
 const { Content } = await entry.render()
 ---
 
@@ -41,7 +37,7 @@ const { Content } = await entry.render()
     description={`Learn how to play ${game.title} with the DIY Multideck`}
     publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}
-    ogImageAbsoluteUrl={ogImageAbsoluteUrl}
+    ogImageAbsoluteUrl={absoluteUrlOptional(post.ogImagePath)}
     slot="meta"
   />
   <GameMappingDetails game={game} mapping={mapping} slug={slug} />

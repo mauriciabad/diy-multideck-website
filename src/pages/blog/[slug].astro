@@ -1,9 +1,9 @@
 ---
 import BlogPostMeta from '../../components/BlogPostMeta.astro'
 import ContentLayout from '../../layouts/ContentLayout.astro'
-import { SITE_URL } from '../../config'
 import { getCollection, getEntry } from 'astro:content'
 import Prose from '../../components/Prose.astro'
+import { absoluteUrlOptional } from '../../lib/url'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -24,10 +24,6 @@ const entry = await getEntry('blog', slug)
 const data = entry.data
 
 const { Content } = await entry.render()
-
-const ogImageAbsoluteUrl = data.ogImagePath
-  ? new URL(data.ogImagePath, SITE_URL).toString()
-  : undefined
 ---
 
 <ContentLayout title={data.title} date={data.date}>
@@ -36,7 +32,7 @@ const ogImageAbsoluteUrl = data.ogImagePath
     description={data.description}
     publishDate={data.date.toISOString()}
     pagePath={`/blog/${slug}`}
-    ogImageAbsoluteUrl={ogImageAbsoluteUrl}
+    ogImageAbsoluteUrl={absoluteUrlOptional(data.ogImagePath)}
     slot="meta"
   />
   <Prose>
