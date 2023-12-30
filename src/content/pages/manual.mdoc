@@ -76,7 +76,7 @@ The normal cards have the following features:
 4. [Pyramidal Rank](#pyramidal-rank)
 5. [Coin Flip](#coin-flip)
 6. [Drawing Areas](#drawing)
-7. [Counters](#counters) (on the back face)
+7. [Counter](#counters) (on the back face)
 
 The following diagram shows where each feature is located with a graphic explanation:
 
@@ -106,7 +106,13 @@ The suits can be classified into 2 categories by the number of ranks they contai
 
 Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suit id=0 /%} is always {% coinFlip id="no" /%}.
 
-Each suit has a numerical ID, it can be found on the _black part_ of the [Sequential Number](#sequential-number).
+Each suit has a numerical ID (called "_Suit ID_"), it can be found on the _black part_ of the [Sequential Number](#sequential-number).
+
+Notice that the _15-ranked suits_ ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), and _10-ranked suits_ ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) can be differentiated by the suit ID. The first 8 suits (IDs 0 to 7) are _15-ranked_, and the remaining 4 suits (IDs 8 to 11) are _10-ranked_.
+
+{% callout type="idea" %}
+All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players.
+{% /callout %}
 
 ### Ranks
 
@@ -118,7 +124,9 @@ Each suit has a numerical ID, it can be found on the _black part_ of the [Sequen
   - They are: 10, Jack, Queen, King, Ace.
   - Can be used as 10, 11, 12, 13, 14.
 
-The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 1 or 6.
+The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
+
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is either black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}).
 
 ### Distributions
 
@@ -161,6 +169,8 @@ An example game that uses it is [Startups](/games/startups).
 
 ## 3D Suit
 
+<!-- TODO: change in v1.1 -->
+
 {% 3dSuitImg /%}
 
 In the top-right or bottom-left corner, you can find a number overlapping a shape with two small numbers on the bottom sides; it is the "3D suit". It is called 3D because it is a multidimensional game system of 3 dimensions: shape, rank, and color.
@@ -171,6 +181,8 @@ The small numbers on the bottom sides indicate the shape and color. This is usef
 
 - Left numbers (Shape): 1={% shapeSuit id="heart" /%}, 2={% shapeSuit id="circle" /%}, 3={% shapeSuit id="square" /%}, 4={% shapeSuit id="rainbow" /%}.
 - Right numbers (Color): 1={% colorSuit id=1 /%}, 2={% colorSuit id=2 /%}, 3={% colorSuit id=3 /%}, 4={% colorSuit id=4 /%}, 5={% colorSuit id=5 /%}, 6={% colorSuit id=6 /%}.
+
+When the suit is black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}), the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit id=1 noAlt=true /%}{% colorSuit id=2 noAlt=true /%}{% colorSuit id=3 noAlt=true /%}{% colorSuit id=4 noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
 
 ### Distributions
 
@@ -560,7 +572,7 @@ The rank is inside the suit to save up space. The downside is that it requires p
 
 All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players.
 
-The colors of the suits can be grouped by similar hue in pairs but also trios.
+The colors of the suits can be grouped by similar hue in pairs but also trios. As a consequence, the [Basic suit](#basic-suit) and [3D suit](#3d-suit) corners have similar colors. For example, the suit {% suit id=4 /%}, which is orange ({% colorSuit color="orange" /%}), has red ({% colorSuit id=1 /%}) 3D suits.
 
 The slogan "Draw your cards" is there to encourage people to draw and lose the fear of drawing in cards. It's fine! If you run out of space, you'll have amortized the cards very well, don't worry.
 
@@ -570,9 +582,7 @@ The check is filled and the cross hollow to increase the contrast between the tw
 
 The coin flip icon and pyramidal rank are in the sequential number's corner to concentrate all the printed parts in the corners, so the rest of the space is perfectly symmetrical, and drawings can be drawn twice, upright and upside-down, to make cards work both orientations.
 
-Small digits in the 3D deck corner start on 1 instead of on 0, for a more natural use of the cards, although then you can't just concatenate the digits to create numbers from 00 to 29.
-
-Small digits in the 3D deck corner are there for color-blind people, so they can know the color of the suit. And the number on the other side is also there to let players identify quicker the 3 components of the suit. The numbers are there also to add an order to the suits that may be used in some games, although it's pretty rare.
+Small digits in the 3D deck corner start at 1 instead of 0 for a more natural use of the cards. However, this means you can't simply concatenate the digits to create numbers from 00 to 29, and you are required to perform subtraction. <!-- TODO: change in v1.1 -->
 
 The card backs use a lot of ink to increase the opacity of the card, especially on the corners, that's why the arrows are black.
 
