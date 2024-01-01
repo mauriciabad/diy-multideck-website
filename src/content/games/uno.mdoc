@@ -22,7 +22,7 @@ game:
 mapping:
   requiredCardsCount: 112
   requiredDrawingsCount: 24
-  deckVersion: 'v0.4b'
+  deckVersion: 'v1.0'
   compatibility: 4
 ---
 
@@ -34,19 +34,4 @@ To play UNO you need 112 cards and 24 drawings.
 
 ![cards mapping](/images/mappings/uno.png)
 
-1. Select all cards exept the ranks `X`.
-1. In the cards with rank greater than `20` in the top-right corner, for every suit, draw:
-   - 2x Skip
-   - 2x Reverse
-   - 2x Draw 2
-   - 1x Wild
-   - 1x Wild Draw 4
-
-|                                         |                                         |                                         |                                         |                                         |
-| :-------------------------------------: | :-------------------------------------: | :-------------------------------------: | :-------------------------------------: | :-------------------------------------: |
-| ![icon-1](/images/games/uno/icon-1.png) | ![icon-2](/images/games/uno/icon-2.png) | ![icon-3](/images/games/uno/icon-3.png) | ![icon-4](/images/games/uno/icon-4.png) | ![icon-5](/images/games/uno/icon-5.png) |
-|                  Skip                   |                 Reverse                 |                 Draw 2                  |                  Wild                   |               Wild Draw 4               |
-
-## Usage
-
-- Notice that on the cards with a value above 10, you can tell what number it matches by ignoring the decimal digit. Like so: `11` → `1`, `12` → `2`, `13` → `3`, `14` → `4`...
+{% usedCards layout="3d" cards=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 71, 72, 73, 74, 75, 76, 77, 78, 79, 81, 82, 83, 84, 85, 86, 91, 92, 93, 94, 95, 96, 111, 112, 113, 114, 115, 116, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 61, 62, 63, 64, 65, 66, 67, 68, 69, 101, 102, 103, 104, 105, 106, 141, 142, 143, 144, 140, 145, 146, 147] /%}
