@@ -2,23 +2,26 @@
 
 ---
 
-<button
-  transition:persist
-  class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full"
-  id="mode-toggle"
-  role="switch"
-  type="button"
-  tabindex="0"
-  aria-checked="false"
-  data-headlessui-state=""
-  ><span class="sr-only">Toggle dark mode</span><span
-    id="mode-circle"
-    class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible"
-    ><span
-      class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0]"
-    ></span>
-  </span>
-</button>
+<label for="mode-toggle" class="flex flex-col items-center">
+  <span class="text-xs uppercase font-medium" id="mode-toggle-text">Theme</span>
+  <button
+    transition:persist
+    class="justify-self-end bg-neutral-200 dark:bg-neutral-700 inline-flex h-6 w-11 items-center rounded-full"
+    id="mode-toggle"
+    role="switch"
+    type="button"
+    tabindex="0"
+    aria-checked="false"
+    data-headlessui-state=""
+    ><span class="sr-only">Toggle dark mode</span><span
+      id="mode-circle"
+      class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible"
+      ><span
+        class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0]"
+      ></span>
+    </span>
+  </button>
+</label>
 
 <script>
   document.addEventListener('astro:page-load', () => {
@@ -64,9 +67,12 @@
     let currentMode: 'light' | 'dark' =
       document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 
+    const modeToggleText = document.querySelector('#mode-toggle-text')
+    if (!modeToggleText) throw new Error('#mode-toggle-text not found')
     const toggle = document.querySelector('#mode-toggle')
-    const iconElem = toggle?.querySelector('#mode-circle')
-    if (!iconElem) return
+    if (!toggle) throw new Error('#mode-toggle not found')
+    const iconElem = toggle.querySelector('#mode-circle')
+    if (!iconElem) throw new Error('#mode-circle not found')
 
     // set the toggle mode based on the html classname set in ThemeScript.astro
     if (currentMode === 'dark') {
@@ -74,6 +80,9 @@
       iconElem.classList.add('dark')
 
       updateCommentsTheme('dark')
+      modeToggleText.textContent = 'Dark'
+    } else {
+      modeToggleText.textContent = 'Light'
     }
 
     // we load the toggle invisible to prevent flash
@@ -81,7 +90,7 @@
     iconElem.classList.remove('invisible')
 
     // Each time the button is clicked, update the count.
-    toggle?.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
       if (currentMode === 'dark') {
         const modeToSwitch = 'light'
         iconElem.classList.remove('dark')
@@ -89,6 +98,7 @@
         updateHTMLTheme(modeToSwitch)
         updateStorageTheme(modeToSwitch)
         updateCommentsTheme(modeToSwitch)
+        modeToggleText.textContent = 'Light'
         currentMode = modeToSwitch
       } else {
         const modeToSwitch = 'dark'
@@ -97,6 +107,7 @@
         updateHTMLTheme(modeToSwitch)
         updateStorageTheme(modeToSwitch)
         updateCommentsTheme(modeToSwitch)
+        modeToggleText.textContent = 'Dark'
         currentMode = modeToSwitch
       }
 
