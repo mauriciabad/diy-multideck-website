@@ -235,13 +235,6 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
-"claim-2.mdoc": {
-	id: "claim-2.mdoc";
-  slug: "claim-2";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".mdoc"] };
 "claim.mdoc": {
 	id: "claim.mdoc";
   slug: "claim";
