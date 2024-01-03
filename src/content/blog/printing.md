@@ -12,7 +12,7 @@ draft: true
   - Pens/markers ink sticks into it and it cannot be erased, even the special whiteboard markers.
   - **Pencils** work as usual, making them the **best option** to write and erase.
 - For now, the **print-n-play** pdf document is **not public**.
-  - But, you can [**buy** the DIY Multideck](/buy) online in the official website to get a copy.
+  - But, you can [**buy** the DIY Multideck](/shop) online in the official website to get a copy.
 - The cards can be printed in a regular copy shop or at home.
 - It's very important to ensure all cards have the **same size** (for shuffling).
   - The best way is by using an industrial guillotine, to cut all cards at once.
