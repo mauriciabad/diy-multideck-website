@@ -30,7 +30,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
   <ol>
     {
       grouppedHeadings.map((h) => (
-        <li>
+        <li class="my-1">
           <a
             href={`#${h.slug}`}
             class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
@@ -39,9 +39,9 @@ const grouppedHeadings = headings.reduce((array, heading) => {
             {h.text}
           </a>
           {h.subheadings.length > 0 && (
-            <ol>
+            <ol class="pl-4">
               {h.subheadings.map((sub) => (
-                <li>
+                <li class="my-1">
                   <a
                     href={`#${sub.slug}`}
                     class="unset animated-link data-[active=true]:font-bold data-[active=true]:show"
