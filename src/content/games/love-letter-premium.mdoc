@@ -27,7 +27,7 @@ game:
 mapping:
   requiredCardsCount: 32
   requiredDrawingsCount: 32
-  deckVersion: 'v0.4b'
+  deckVersion: 'v1.0'
   compatibility: 4
 ---
 
@@ -45,6 +45,8 @@ You can avoid drawing if you memorize what every number means.
 
 ## Usage
 
-- The number in the bottom-left is the character number.
-- The number in the bottom-right is the amount of cards of the same type.
-- The character number is the same a sthe suit number (black number on the top-right corner).
+- The drawing of each card has 3 parts:
+  1. The character name.
+  1. Character number (bottom-left number).
+  1. Amount of cards of the same type (bottom-right number).
+- The character number is the same as the [suit number](/manual#sequential-number) (black part of the sequential number).
