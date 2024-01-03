@@ -21,7 +21,7 @@ function clean(path: string) {
     .toLocaleLowerCase()
 }
 
-const isActive = clean(currentPath) === clean(href)
+const isActive = clean(currentPath).startsWith(clean(href))
 ---
 
 <a
