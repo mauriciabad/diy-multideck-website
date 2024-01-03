@@ -4,6 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro'
 import { SITE_TITLE } from '../config'
 import Title from '../components/Title.astro'
 import LinkCard from '../components/LinkCard.astro'
+import BuyBanner from '../components/BuyBanner.astro'
 ---
 
 <PageLayout>
@@ -29,19 +30,22 @@ import LinkCard from '../components/LinkCard.astro'
       description="Learn how to play games."
       cta="View games"
     />
-    <LinkCard
+    <!-- NOTE: Uncomment when adding blog entries -->
+    <!-- <LinkCard
       href="/blog"
       icon="news"
       title="Project's blog"
       description="Read about the project."
       cta="Read blog"
-    />
+    /> 
     <LinkCard
       href="/buy"
       icon="shopping-cart"
       title="Official store"
       description="Buy the deck and support the project."
       cta="Buy now"
-    />
+    /> -->
   </nav>
+  <!-- NOTE: Remove this when adding blog entries -->
+  <BuyBanner class="mt-4" />
 </PageLayout>
