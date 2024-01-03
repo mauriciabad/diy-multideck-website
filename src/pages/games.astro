@@ -9,136 +9,180 @@ import Title from '../components/Title.astro'
 
 const games = await getCollection('games')
 
-const gameRelevance = ({game, mapping}: GameInfo): number => {
+const gameRelevance = ({ game, mapping }: GameInfo): number => {
   return mapping.compatibility * 0.75 + (game.rating ?? 5)
 }
 
 const sortedGames = games
   .filter((p) => p.data.post.draft !== true)
-  .sort(
-    (a, b) =>
-    gameRelevance(b.data) - gameRelevance(a.data)
-  )
-  
-  // Sort by compatibility > rating
-  // .sort(
-  //   (a, b) =>
-  //   b.data.mapping.compatibility - a.data.mapping.compatibility ||
-  //   (b.data.game.rating ?? 0) - (a.data.game.rating ?? 0)
-  // )
+  .sort((a, b) => gameRelevance(b.data) - gameRelevance(a.data))
+
+// Sort by compatibility > rating
+// .sort(
+//   (a, b) =>
+//   b.data.mapping.compatibility - a.data.mapping.compatibility ||
+//   (b.data.game.rating ?? 0) - (a.data.game.rating ?? 0)
+// )
 ---
 
 <PageLayout>
   <PageMeta title={`Games | ${SITE_TITLE}`} slot="meta" />
-    <Title text={['How to play', '___', '?']} subtitle="With the DIY Multideck" />
+  <Title text={['How to play', '___', '?']} subtitle="With the DIY Multideck" />
 
-    <div class="relative">
-      <input
-        class="w-full px-4 py-3 pr-12 rounded-lg outline-none focus-visible:ring-4 ring-blue-400 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
-        type="search"
-        name="search"
-        id="search"
-        placeholder="Search a game"
-        aria-label="Search a game"
-      />
-      <i
-        class="ti ti-search absolute text-[1.5rem] top-3 right-3 pointer-events-none"
-      ></i>
-    </div>
+  <div class="relative">
+    <input
+      class="w-full px-4 py-3 pr-12 rounded-lg outline-none focus-visible:ring-4 ring-blue-400 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
+      type="search"
+      name="search"
+      id="search"
+      placeholder="Search a game"
+      aria-label="Search a game"
+    />
+    <i
+      class="ti ti-search absolute text-[1.5rem] top-3 right-3 pointer-events-none"
+    ></i>
+  </div>
 
-    <p class="text-xl font-bold mt-8 mb-4" id="games-count-no-search">
-      {sortedGames.length} games in total
-    </p>
+  <p class="text-xl font-bold mt-8 mb-4" id="games-count-no-search">
+    {sortedGames.length} games in total
+  </p>
 
-    <p class="hidden text-xl font-bold mt-8 mb-4" id="games-count-search">
-      Showing <span id="games-count-showing">{sortedGames.length}</span> out of <span
-        >{sortedGames.length}</span
-      > games
-    </p>
+  <p class="hidden text-xl font-bold mt-8 mb-4" id="games-count-search">
+    Showing <span id="games-count-showing">{sortedGames.length}</span> out of <span
+      >{sortedGames.length}</span
+    > games
+  </p>
 
-    <ul class="unset space-y-4">
-      {
-        sortedGames.map(({ data: { game, mapping, post }, slug }) => (
-          <li
-            data-searchable={`${game.title}---${
-              post.keywords?.join('---') ?? ''
-            }`}
-            class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
-          >
-            <a
-              href={`/games/${slug}`}
-              class="unset"
-            >
-            <article class="p-3 sm:p-4" >
-              <h1 class="block leading-4" transition:name={`game-title-${slug}`}
-              >{game.title}</h1>
-              <p class="text-sm sm:text-base font-normal mt-1 mb-2">{game.description}</p>
-              
+  <ul class="unset space-y-4">
+    {
+      sortedGames.map(({ data: { game, mapping, post }, slug }) => (
+        <li
+          data-searchable={`${game.title}---${
+            post.keywords?.join('---') ?? ''
+          }`}
+          class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
+        >
+          <a href={`/games/${slug}`} class="unset">
+            <article class="p-3 sm:p-4">
+              <h1
+                class="block leading-4"
+                transition:name={`game-title-${slug}`}
+              >
+                {game.title}
+              </h1>
+              <p class="text-sm sm:text-base font-normal mt-1 mb-2">
+                {game.description}
+              </p>
+
               <div class="flex items-center gap-3 sm:gap-4">
-              <img
-                class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
-                src={game.image}
-                transition:name={`game-image-${slug}`}
-              />
-              <div class="leading-normal grow">
-                <div class="font-normal text-base text-stone-700 dark:text-stone-200 leading-inherit">
-                  <div class="grid grid-cols-3 gap-2">
-                    <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                      {game.players && (
-                        <i class="ti ti-users" />
-                        <span><span class="font-[450]">{game.players}</span> <span class="text-sm text-stone-600 dark:text-stone-300">player{game.players === '1' ? '' : 's'}</span></span>
-                      )}
-                    </div>
-                    <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                      {game.time && (
-                        <i class="ti ti-clock" />
-                      <span><span class="font-[450]">{game.time}</span> <span class="text-sm text-stone-600 dark:text-stone-300">min</span></span>
-                      )}
-                    </div>
-                    <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                      {game.complexity && (
-                        <i class="ti ti-brain" />
-                        <span class="font-[450]">
-                          {game.complexity}<span class="text-sm text-stone-400 dark:text-stone-400">/5</span> <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">Complexity</span>
-                        </span>
-                      )}
-                    </div>
-                    <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                <img
+                  class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
+                  src={game.image}
+                  transition:name={`game-image-${slug}`}
+                />
+                <div class="leading-normal grow">
+                  <div class="font-normal text-base text-stone-700 dark:text-stone-200 leading-inherit">
+                    <div class="grid grid-cols-3 gap-2">
+                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                        {game.players && (
+                          <>
+                            <i class="ti ti-users" />
+                            <span>
+                              <span class="font-[450]">{game.players}</span>
+                              <span class="text-sm text-stone-600 dark:text-stone-300">
+                                player{game.players === '1' ? '' : 's'}
+                              </span>
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                        {game.time && (
+                          <>
+                            <i class="ti ti-clock" />
+                            <span>
+                              <span class="font-[450]">{game.time}</span>
+                              <span class="text-sm text-stone-600 dark:text-stone-300">
+                                min
+                              </span>
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                        {game.complexity && (
+                          <>
+                            <i class="ti ti-brain" />
+                            <span class="font-[450]">
+                              {game.complexity}
+                              <span class="text-sm text-stone-400 dark:text-stone-400">
+                                /5
+                              </span>
+                              <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">
+                                Complexity
+                              </span>
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
                         <i class="ti ti-discount-check" />
-                        <span class=""><span class="font-[450]">{getCompatibility(mapping.compatibility)}</span> <span class="hidden @[90px]:inline-block text-sm text-stone-600 dark:text-stone-300">compatibility</span></span>
-                    </div>
-                    <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                      <i class="ti ti-cards" />
-                      <span><span class="font-[450]">{mapping.requiredCardsCount}</span> <span class="text-sm text-stone-600 dark:text-stone-300">cards</span></span>
+                        <span class="">
+                          <span class="font-[450]">
+                            {getCompatibility(mapping.compatibility)}
+                          </span>
+                          <span class="hidden @[90px]:inline-block text-sm text-stone-600 dark:text-stone-300">
+                            compatibility
+                          </span>
+                        </span>
+                      </div>
+                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                        <i class="ti ti-cards" />
+                        <span>
+                          <span class="font-[450]">
+                            {mapping.requiredCardsCount}
+                          </span>
+                          <span class="text-sm text-stone-600 dark:text-stone-300">
+                            cards
+                          </span>
+                        </span>
                       </div>
                       <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
                         <i class="ti ti-brush" />
-                        <span><span class="font-[450]">{mapping.requiredDrawingsCount}</span> <span class="text-sm text-stone-600 dark:text-stone-300">drawing{mapping.requiredDrawingsCount === 1 ? '' : 's'}</span></span>
+                        <span>
+                          <span class="font-[450]">
+                            {mapping.requiredDrawingsCount}
+                          </span>
+                          <span class="text-sm text-stone-600 dark:text-stone-300">
+                            drawing
+                            {mapping.requiredDrawingsCount === 1 ? '' : 's'}
+                          </span>
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   <div class="hidden sm:flex gap-1 flex-wrap text-sm mt-3">
-                    {
-                      game.mechanics?.map((mechanic) => (
-                        <span class="px-2 py-1 leading-3 rounded-md bg-stone-100 dark:bg-stone-900">{mechanic}</span>
-                      ))
-                    }
+                    {game.mechanics?.map((mechanic) => (
+                      <span class="px-2 py-1 leading-3 rounded-md bg-stone-100 dark:bg-stone-900">
+                        {mechanic}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                </div>
-              </article>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <div
-      id="no-results"
-      class="hidden py-8 text-2xl text-center text-stone-500 dark:text-slate-200 border-2 border-dashed border-stone-200 dark:border-[#192129] rounded-2xl"
-    >
-      <span>No results</span>
-    </div>
+              </div>
+            </article>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div
+    id="no-results"
+    class="hidden py-8 text-2xl text-center text-stone-500 dark:text-slate-200 border-2 border-dashed border-stone-200 dark:border-[#192129] rounded-2xl"
+  >
+    <span>No results</span>
+  </div>
 </PageLayout>
 
 <script>
@@ -168,7 +212,8 @@ const sortedGames = games
       throw new Error("games-count-showing element doesn't exist")
 
     searchInput.addEventListener('input', () => {
-      const elements = document.querySelectorAll<HTMLElement>('[data-searchable]')
+      const elements =
+        document.querySelectorAll<HTMLElement>('[data-searchable]')
       elements.forEach((element) => {
         const elementTextNormalized =
           element.dataset.searchable

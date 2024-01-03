@@ -107,7 +107,7 @@ const { game, mapping, slug } = Astro.props
             <li class="p-0 m-0">
               <i class="ti ti-settings" />
               <span class="text-stone-700 dark:text-[#8da1b6]">Mechanics:</span>
-              <ul class="p-0 m-0 pl-7 text-sm leading-5">
+              <ul class="p-0 m-0 pl-9 text-sm leading-5 list-disc marker:text-stone-400 dark:marker:text-[#8da1b6]">
                 {game.mechanics?.map((mechanic) => (
                   <li class="p-0 m-0">{mechanic}</li>
                 ))}

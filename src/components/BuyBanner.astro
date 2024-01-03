@@ -14,7 +14,7 @@ const { class: className, size = 'large' } = Astro.props
   size === 'small' ? (
     <div class={cn('text-center', className)}>
       <a
-        href="/buy"
+        href="/shop"
         class="unset not-prose inline-flex justify-between gap-2 items-center group p-4 leading-none bg-stone-50 border border-stone-200 rounded-lg dark:bg-gray-800 dark:border-gray-700"
       >
         <i class={cn(['ti ti-shopping-cart', 'text-xl leading-none'])} />
@@ -23,7 +23,7 @@ const { class: className, size = 'large' } = Astro.props
     </div>
   ) : (
     <LinkCard
-      href="/buy"
+      href="/shop"
       title="Buy the DIY Multideck"
       description="Get your copy of the DIY Multideck and start playing your favorite games with friends and family."
       cta="Buy now"
