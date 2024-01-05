@@ -10,7 +10,9 @@ import Title from '../components/Title.astro'
 const games = await getCollection('games')
 
 const gameRelevance = ({ game, mapping }: GameInfo): number => {
-  return mapping.compatibility * 0.75 + (game.rating ?? 5)
+  return (
+    mapping.compatibility * 0.75 + (game.rating ?? 5) + game.scoreAdjustment
+  )
 }
 
 const sortedGames = games
@@ -114,9 +116,11 @@ const sortedGames = games
                           <>
                             <i class="ti ti-brain" />
                             <span class="font-[450]">
-                              {game.complexity}
-                              <span class="text-sm text-stone-400 dark:text-stone-400">
-                                /5
+                              <span class="inline-flex items-baseline">
+                                <span>{game.complexity}</span>
+                                <span class="text-sm text-stone-400 dark:text-stone-400">
+                                  /5
+                                </span>
                               </span>
                               <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">
                                 Complexity
@@ -154,8 +158,9 @@ const sortedGames = games
                             {mapping.requiredDrawingsCount}
                           </span>
                           <span class="text-sm text-stone-600 dark:text-stone-300">
-                            drawing
-                            {mapping.requiredDrawingsCount === 1 ? '' : 's'}
+                            {`drawing${
+                              mapping.requiredDrawingsCount === 1 ? '' : 's'
+                            }`}
                           </span>
                         </span>
                       </div>

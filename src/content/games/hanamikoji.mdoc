@@ -1,7 +1,7 @@
 ---
 post:
-  date: 2023-02-22
-  ogImagePath: '/images/mappings/hanamikoji.jpg'
+  date: 2024-01-05
+  ogImagePath: '/images/mappings/hanamikoji.png'
 game:
   bgg: 'https://boardgamegeek.com/boardgame/158600/hanamikoji'
   rules: 'https://boardgamegeek.com/filepage/131424/hanamikoji-english-rules'
@@ -18,65 +18,38 @@ game:
     - Hand Management
     - I Cut, You Choose
 mapping:
-  requiredCardsCount: 31
-  requiredDrawingsCount: 31
-  deckVersion: 'v0.4b'
-  compatibility: 3
+  requiredCardsCount: 36
+  requiredDrawingsCount: 15
+  deckVersion: 'v1.0'
+  compatibility: 4
 ---
 
 ## Cards selection and drawing
 
-To play Hanamikoji you need 31 cards and a minimum of 31 drawings, up to 38 if you want to play with only cards.
-
-### Visual guide
-
-![cards mapping](/images/mappings/hanamikoji.jpg)
-
-#### Used cards
-
-{% usedCards layout="basic" cards=[1, 11, 18, 19, 28, 29, 31, 37, 38, 39, 41, 46, 47, 48, 49, 51, 55, 56, 57, 58, 59, 61, 68, 69, 71, 78, 79, 82, 83, 92, 93, 102, 103, 112, 113] /%}
+To play Hanamikoji you need 36 cards and a minimum of 8 drawings, up to 15 if you want to play with only cards.
 
 ### Instructions
 
-1. Select 7 suits.
-1. For each suit, pick the following amount of ranks: 3, 3, 3, 4, 4, 5 and 6.
-   {% callout type="idea" %}
-   Use the same rank for every Geisha card.
-   {% /callout %}
-1. Draw the numbers 2, 2, 2, 3, 3, 4 and 5 respectively on every card of each suit in the drawing area C. Exept on 1 card of every suit (the Geisha cards), on those ones, draw the number rotated 90 degrees.
-   {% callout type="idea" %}
-   It's possible to make some numbers match with the decimal digit of the card number.
-   {% /callout %}
-   {% callout type="idea" %}
-   For the geisha cards, use the rank 1 (the ones with a path going up or down). If not possible, chose the same rank for all Geisha cards.
-   {% /callout %}
-1. Pick any other 8 cards and draw the icons below in the drawing area D, two times each.
+![cards mapping](/images/mappings/hanamikoji.png)
 
-   {% callout type="idea" %}
-   Pick the same suit for every pair.
-   {% /callout %}
-   {% callout type="idea" %}
-   Pick the the black suits.
-   {% /callout %}
-
-1. On the cards with rotated numbers (the Geisha cards), draw an arrow pointing up in the drawing area A.
-   {% callout type="idea" %}
-   If you chose the ranks 1, rotate the necessary cards to make the arrow match the card's path mark.
-   {% /callout %}
-   {% callout type="idea" %}
-   If you have 7 small objects, like coins, you can avoid drawing the arrow, and use the token like in the normal game instea of rotating the card
-   {% /callout %}
-
-### Drawings
-
-|                                                                  |                                                                  |                                                                  |                                                                  |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-| ![action-marker-1](/images/games/hanamikoji/action-marker-1.jpg) | ![action-marker-2](/images/games/hanamikoji/action-marker-2.jpg) | ![action-marker-3](/images/games/hanamikoji/action-marker-3.jpg) | ![action-marker-4](/images/games/hanamikoji/action-marker-4.jpg) |
+{% usedCards layout="basic" cards=[
+   50, 51, 52,
+   0, 1, 2,
+   20, 21, 22,
+   10, 11, 12, 13,
+   40, 41, 42, 43,
+   30, 31, 32, 33, 34,
+   80, 81, 82, 83, 84, 85,
+   60, 61, 62, 63,
+   70, 71, 72, 73,
+] /%}
 
 ## Usage
 
 The Victory markers are merged into the Geisha cards. To use them, rotate the Geisha card pointing to the winning player (up or down). In case of a tie, point to wherever are no players (left or right).
 
+If you have 7 small objects, like coins, you can avoid drawing the Victory markers' arrows, and use the tokens like in the normal game insted of rotating the card.
+
 {% callout type="idea" %}
-It's also posible to use coins as Victory marker
+If you want to make the game easier to play, write the amount of item cards of its own suit in the drawing area C.
 {% /callout %}
