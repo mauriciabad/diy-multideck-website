@@ -55,12 +55,22 @@ const { game, mapping, slug } = Astro.props
         </li>
 
         {
-          (game.rating ||
+          (game.recommended ||
+            game.rating ||
             game.players ||
             game.time ||
             game.mechanics ||
             game.complexity) && (
             <div class="h-[2px] bg-gray-200 rounded-full my-2" />
+          )
+        }
+
+        {
+          game.recommended && (
+            <li class="p-0 m-0">
+              <i class="ti ti-trophy" />
+              Recommended game
+            </li>
           )
         }
 

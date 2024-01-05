@@ -1,17 +1,21 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro'
-import PageMeta from '../components/PageMeta.astro'
-import { SITE_TITLE } from '../config'
-import { getCompatibility } from '../utils/compatibility'
 import { getCollection } from 'astro:content'
-import type { GameInfo } from '../lib/schemas'
+import PageMeta from '../components/PageMeta.astro'
 import Title from '../components/Title.astro'
+import { SITE_TITLE } from '../config'
+import PageLayout from '../layouts/PageLayout.astro'
+import { cn } from '../lib/cn'
+import type { GameInfo } from '../lib/schemas'
+import { getCompatibility } from '../utils/compatibility'
 
 const games = await getCollection('games')
 
 const gameRelevance = ({ game, mapping }: GameInfo): number => {
   return (
-    mapping.compatibility * 0.75 + (game.rating ?? 5) + game.scoreAdjustment
+    mapping.compatibility * 0.75 +
+    (game.rating ?? 5) +
+    game.scoreAdjustment +
+    (game.recommended ? 100 : 0)
   )
 }
 
@@ -65,14 +69,20 @@ const sortedGames = games
           class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
         >
           <a href={`/games/${slug}`} class="unset">
-            <article class="p-3 sm:p-4">
+            <article class="p-3 sm:p-4 relative">
               <h1
-                class="block leading-4"
+                class={cn('block leading-5', {
+                  'pr-24': game.recommended,
+                })}
                 transition:name={`game-title-${slug}`}
               >
                 {game.title}
               </h1>
-              <p class="text-sm sm:text-base font-normal mt-1 mb-2">
+              <p
+                class={cn('text-sm sm:text-base font-normal mt-1 mb-2', {
+                  'pr-14': game.recommended,
+                })}
+              >
                 {game.description}
               </p>
 
@@ -176,6 +186,20 @@ const sortedGames = games
                   </div>
                 </div>
               </div>
+              {game.recommended && (
+                <div class="absolute inset-0 overflow-hidden rounded-lg pr-12 pt-12 pointer-events-none">
+                  <p
+                    class={cn(
+                      'w-60 py-2 ml-auto translate-x-1/2 -translate-y-1/2 leading-none rotate-45',
+                      'border-y text-center text-xs',
+                      'bg-yellow-200 border-yellow-300 text-yellow-950',
+                      'dark:bg-yellow-950 dark:border-yellow-900 dark:text-yellow-50'
+                    )}
+                  >
+                    Recommended
+                  </p>
+                </div>
+              )}
             </article>
           </a>
         </li>

@@ -46,6 +46,7 @@ export const gameSchema = z.object({
     complexity: z.number().min(1).max(5).optional(),
     rating: z.number().min(1).max(10).optional(),
     scoreAdjustment: z.number().min(-10).max(10).default(0),
+    recommended: z.boolean().default(false),
   }),
   post: z.object({
     date: dateSchema,
