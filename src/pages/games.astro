@@ -10,7 +10,9 @@ import Title from '../components/Title.astro'
 const games = await getCollection('games')
 
 const gameRelevance = ({ game, mapping }: GameInfo): number => {
-  return mapping.compatibility * 0.75 + (game.rating ?? 5)
+  return (
+    mapping.compatibility * 0.75 + (game.rating ?? 5) + game.scoreAdjustment
+  )
 }
 
 const sortedGames = games
