@@ -270,6 +270,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
+"hanabi.mdoc": {
+	id: "hanabi.mdoc";
+  slug: "hanabi";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
 "hanamikoji.mdoc": {
 	id: "hanamikoji.mdoc";
   slug: "hanamikoji";
