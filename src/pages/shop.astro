@@ -1,7 +1,10 @@
 ---
+import { getCollection } from 'astro:content'
 import PageMeta from '../components/PageMeta.astro'
 import Title from '../components/Title.astro'
 import PageLayout from '../layouts/PageLayout.astro'
+
+const games = await getCollection('games', (p) => p.data.post.draft !== true)
 ---
 
 <PageLayout>
@@ -25,24 +28,39 @@ import PageLayout from '../layouts/PageLayout.astro'
     <a href="mailto:diymultideck@mauri.app">diymultideck@mauri.app</a>
   </p>
 
-  <h2 class="font-bold mt-4">Price</h2>
-  <p class="mb-4">
-    <strong>30 €</strong> + shipping costs.
-  </p>
+  <div class="grid sm:grid-cols-[26ch,1fr] gap-4">
+    <div>
+      <h2 class="font-bold mt-4">Price</h2>
+      <p class="mb-1">
+        <strong>30 €</strong> + shipping costs.
+      </p>
+      <p class="mb-4">🚚 Spain 3€, Europe 7€, USA 12€.</p>
 
-  <h2 class="font-bold mt-4">What's included</h2>
-  <ul class="unset list-disc pl-4">
-    <li class="my-0 p-0">1 deck of cards (162 cards)</li>
-    <li class="my-0 p-0">1 case</li>
-    <li class="my-0 p-0">1 pencil and rubber</li>
-    <li class="my-0 p-0">50 multicolor chips (5 colors).</li>
-  </ul>
+      <h2 class="font-bold mt-4">What's included</h2>
+      <ul class="unset list-disc pl-4">
+        <li class="my-0 p-0">1 deck of cards (162 cards)</li>
+        <li class="my-0 p-0">1 case</li>
+        <li class="my-0 p-0">1 pencil and rubber</li>
+        <li class="my-0 p-0">50 multicolor chips (5 colors).</li>
+      </ul>
 
-  <h2 class="font-bold mt-4">Disclaimer</h2>
-  <p class="mb-4">
-    Cards are homemade and can have small imperfections! Slightly miss-aligned
-    card fronts and not fully opaque material.
-  </p>
+      <h2 class="font-bold mt-4">Other benefits</h2>
+      <ul class="unset list-disc pl-4">
+        <li class="my-0 p-0">Fully waterproof</li>
+        <li class="my-0 p-0">{games.length} game instructions</li>
+        <li class="my-0 p-0">Can request new games</li>
+      </ul>
+    </div>
+    <div class="sm:justify-self-end justify-self-center self-center">
+      <a href="/images/shop/package-contents.jpg" class="cursor-zoom-in"
+        ><img
+          src="/images/shop/package-contents.jpg"
+          alt="Preview the package contents"
+          class="max-w-96 w-full object-cover rounded-xl shadow-xl"
+        /></a
+      >
+    </div>
+  </div>
 
   <div class="text-center mt-4">
     <a
