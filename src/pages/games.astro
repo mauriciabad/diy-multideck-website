@@ -33,7 +33,11 @@ const sortedGames = games
 
 <PageLayout>
   <PageMeta title={`Games | ${SITE_TITLE}`} slot="meta" />
-  <Title text={['How to play', '___', '?']} subtitle="With the DIY Multideck" />
+  <Title
+    text={['How to play', '___', '?']}
+    subtitle="With the DIY Multideck"
+    class="sm:mt-10"
+  />
 
   <div class="relative">
     <input
@@ -49,7 +53,7 @@ const sortedGames = games
     ></i>
   </div>
 
-  <p class="text-xl font-bold mt-8 mb-4" id="games-count-no-search">
+  <p class="text-xl font-bold mt-8 sm:mt-16 mb-4" id="games-count-no-search">
     {sortedGames.length} games in total
   </p>
 
