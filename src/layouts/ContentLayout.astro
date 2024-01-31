@@ -19,6 +19,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
 ---
 
 <PageLayout>
+  <slot name="meta" slot="meta" />
   <Title text={title} subtitle={subtitle} />
   <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
   <slot />

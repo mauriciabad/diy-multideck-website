@@ -6,7 +6,6 @@ import { SITE_TITLE } from '../config'
 import { getEntry } from 'astro:content'
 import Title from '../components/Title.astro'
 import Prose from '../components/Prose.astro'
-import { absoluteUrlOptional } from '../lib/url'
 
 const entry = await getEntry('pages', 'manual')
 
@@ -35,7 +34,7 @@ const post = entry.data.post
   <PageMeta
     title={`${SITE_TITLE} | A game system to play hundreds of board games`}
     publishDate={post.ogImagePath}
-    ogImageAbsoluteUrl={absoluteUrlOptional(post.ogImagePath)}
+    ogImageAbsoluteUrl={new URL(post.ogImagePath, Astro.site).toString()}
     slot="meta"
   />
 

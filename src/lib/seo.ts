@@ -1,7 +1,6 @@
 type PageMeta = {
   title: string
   description?: string
-  canonicalUrl?: string
 }
 
 type PageOgMeta = {
@@ -84,7 +83,7 @@ export function getPageMeta({
     // ogImageHeight = !ogImageHeight ? 627 : ogImageHeight;
   }
 
-  const meta: PageMeta = { title: pageTitle, description: description }
+  const meta: PageMeta = { title: pageTitle, description }
 
   const og: PageOgMeta = {
     title: pageTitle,
@@ -118,7 +117,6 @@ export function getPageMeta({
 export function getBlogPostMeta({
   title: pageTitle,
   description,
-  canonicalUrl,
   pageUrl,
   authorName,
   publishDate,
@@ -131,7 +129,6 @@ export function getBlogPostMeta({
 }: {
   title: string
   description: string
-  canonicalUrl?: string
   pageUrl?: string
   authorName?: string
   publishDate: string
@@ -152,7 +149,6 @@ export function getBlogPostMeta({
   const meta: PageMeta = {
     title: pageTitle,
     description: description,
-    canonicalUrl,
   }
 
   const og: BlogPostOgMeta = {
@@ -210,7 +206,6 @@ type GamePostTwitterMeta = {
 export function getGamePostMeta({
   title: pageTitle,
   description,
-  canonicalUrl,
   pageUrl,
   publishDate,
   ogImageAbsoluteUrl,
@@ -220,7 +215,6 @@ export function getGamePostMeta({
 }: {
   title: string
   description: string
-  canonicalUrl?: string
   pageUrl?: string
   publishDate: string
   ogImageAbsoluteUrl?: string // should always be absolute
@@ -238,7 +232,6 @@ export function getGamePostMeta({
   const meta: PageMeta = {
     title: pageTitle,
     description: description,
-    canonicalUrl,
   }
 
   const og: BlogPostOgMeta = {

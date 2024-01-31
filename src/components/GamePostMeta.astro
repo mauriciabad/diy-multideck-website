@@ -1,6 +1,6 @@
 ---
 import { getGamePostMeta } from '../lib/seo'
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../config'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 
 export interface Props {
   title?: string
@@ -27,7 +27,7 @@ const {
 const { meta, og, twitter } = getGamePostMeta({
   title: title || SITE_TITLE,
   description: description || SITE_DESCRIPTION,
-  pageUrl: pagePath ? new URL(pagePath, SITE_URL).toString() : undefined,
+  pageUrl: pagePath ? new URL(pagePath, Astro.site).toString() : undefined,
   publishDate,
   ogImageAbsoluteUrl,
   ogImageAltText,
@@ -40,7 +40,7 @@ const { meta, og, twitter } = getGamePostMeta({
 <title>{meta.title}</title>
 <meta name="title" content={meta.title} />
 {meta.description && <meta name="description" content={meta.description} />}
-{meta.canonicalUrl && <link rel="canonical" href={meta.canonicalUrl} />}
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
 <!-- Open Graph / Facebook -->
 {og.title && <meta property="og:title" content={og.title} />}

@@ -4,7 +4,6 @@ import ContentLayout from '../../layouts/ContentLayout.astro'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import { getCollection, getEntry } from 'astro:content'
 import Prose from '../../components/Prose.astro'
-import { absoluteUrlOptional } from '../../lib/url'
 
 export async function getStaticPaths() {
   const posts = await getCollection('games')
@@ -37,7 +36,7 @@ const { Content } = await entry.render()
     description={`Learn how to play ${game.title} with the DIY Multideck`}
     publishDate={post.date.toISOString()}
     pagePath={`/games/${slug}`}
-    ogImageAbsoluteUrl={absoluteUrlOptional(post.ogImagePath)}
+    ogImageAbsoluteUrl={new URL(post.ogImagePath, Astro.site).toString()}
     slot="meta"
   />
   <GameMappingDetails game={game} mapping={mapping} slug={slug} />

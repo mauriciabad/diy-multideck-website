@@ -1,6 +1,6 @@
 ---
 import { getPageMeta } from '../lib/seo'
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../config'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 
 export interface Props {
   title?: string
@@ -17,7 +17,7 @@ const {
   title,
   description,
   publishDate,
-  ogImageAbsoluteUrl = `${SITE_URL}/images/og.png`,
+  ogImageAbsoluteUrl = new URL('/images/og.png', Astro.site).toString(),
   ogImageAltText,
   ogImageWidth,
   ogImageHeight,
@@ -26,7 +26,7 @@ const {
 const { meta, og, twitter } = getPageMeta({
   title: title || SITE_TITLE,
   description: description || SITE_DESCRIPTION,
-  baseUrl: SITE_URL,
+  baseUrl: Astro.site?.toString(),
   publishDate,
   ogImageAbsoluteUrl,
   ogImageAltText,
@@ -39,6 +39,7 @@ const { meta, og, twitter } = getPageMeta({
 <title>{meta.title}</title>
 <meta name="title" content={meta.title} />
 {meta.description && <meta name="description" content={meta.description} />}
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
 <!-- Open Graph / Facebook -->
 {og.title && <meta property="og:title" content={og.title} />}

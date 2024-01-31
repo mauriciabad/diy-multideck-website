@@ -15,8 +15,7 @@ export const blogSchema = z.object({
   }),
   date: dateSchema,
   description: z.optional(z.string()),
-  ogImagePath: z.optional(z.string()),
-  canonicalUrl: z.optional(z.string()),
+  ogImagePath: z.string(),
 })
 
 export const gameSchema = z.object({
@@ -50,7 +49,7 @@ export const gameSchema = z.object({
   }),
   post: z.object({
     date: dateSchema,
-    ogImagePath: z.optional(z.string()),
+    ogImagePath: z.string(),
     draft: z.boolean().default(false),
     keywords: z.optional(z.array(z.string())),
   }),
