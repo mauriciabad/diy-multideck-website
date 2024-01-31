@@ -1,6 +1,7 @@
 ---
 title: 'Printing the DIW Multideck'
 description: 'How to print the deck at home or in a copy shop'
+ogImagePath: '/images/og.png'
 date: 2023-02-20
 draft: true
 ---
