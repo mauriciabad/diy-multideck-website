@@ -2,19 +2,16 @@
 import { getColorBySuitId, type SuitColorId, type SuitColor } from './suits'
 
 export interface Props {
-  id?: SuitColorId
   color?: SuitColor
   noAlt?: boolean
 }
 
-const { id, color, noAlt = false } = Astro.props
-
-const suitColor = id !== undefined ? getColorBySuitId(id) : color
+const { color, noAlt = false } = Astro.props
 ---
 
 <img
-  src={`/images/colors/${suitColor}.svg`}
+  src={`/images/colors/${color}.svg`}
   class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em]"
-  alt={noAlt ? '' : ` ${suitColor} `}
+  alt={noAlt ? '' : ` ${color} `}
   draggable="false"
 />

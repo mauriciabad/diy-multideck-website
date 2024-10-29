@@ -41,7 +41,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - [**3D deck**](#3d-suit): 5 colors × 3 shapes × 10 ranks + 10 ranks.
     - [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), or [5 suits of 30 ranks](#5-suits-of-30-ranks).
     - [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), or [3 suits of 50 ranks](#3-suits-of-50-ranks).
-    - Extra suit of 10 ranks ({% suit emoji="🌈" /%}).
+    - Extra suit of 10 ranks ({% suitV1 emoji="🌈" /%}).
   - [**Sequential deck**](#sequential-number): numbers from 0 to 159
     - [Numbers from 0 to 159](#numbers-from-0-to-159).
     - [Numbers from 0 to 59, 2 times](#numbers-from-0-to-59-2-times).
@@ -52,7 +52,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
     - [8 times: five 1s, four 2s, three 3s, two 4s, one 5](#8-times-five-1s-four-2s-three-3s-two-4s-one-5).
       - Plus 4 times: four 1s, three 2s, two 3s, one 4.
     - [12 times: four 1s, three 2s, two 3s, one 4](#12-times-four-1s-three-2s-two-3s-one-4).
-  - [**Voting deck**](#coin-flip): 60×{% coinFlip id="yes" /%} + 60×{% coinFlip id="no" /%} + 40×{% coinFlip id="unknown" /%}
+  - [**Voting deck**](#coin-flip): 60×{% coinFlipV1 id="yes" /%} + 60×{% coinFlipV1 id="no" /%} + 40×{% coinFlipV1 id="unknown" /%}
   - **Custom deck**: by [drawing](#drawing).
 - [**Counters**](#counters) using the cards' back face.
   - [**Stacking**](#stacking-method): Count from 0 to 30 with fewer than 10 cards.
@@ -64,7 +64,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - [1 cover](#cover-card): With a QR code pointing to the website.
 - **Usability**:
   - Color-blind friendly.
-  - All suits are emojis: {% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}
+  - All suits are emojis: {% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}{% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}
   - Standard poker card size (2.5 × 3.5 inches).
   - Waterproof & resistant material.
   - Many small design details that make the cards easier to use.
@@ -100,19 +100,19 @@ In the top left and bottom right corners, there's a number overlapping an emoji 
 
 It is the most used game system of the deck, and thus, the easiest to use. When mapping new games, always give priority to it.
 
-It contains 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) of 15 ranks (0...9 + XJQKA), named _15-ranked suits_, and 4 suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
+It contains 8 suits ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}) of 15 ranks (0...9 + XJQKA), named _15-ranked suits_, and 4 suits ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
 
 ### Suits
 
-The suits can be classified into 2 categories by the number of ranks they contain. So there are the "15-ranked suits" ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), and "10-ranked suits" ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+The suits can be classified into 2 categories by the number of ranks they contain. So there are the "15-ranked suits" ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}), and "10-ranked suits" ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}).
 
-{% suitsTable /%}
+{% suitsTableV1 /%}
 
-Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suit id=0 /%} is always {% coinFlip id="no" /%}.
+Each suit has a fixed [coin flip](#coin-flip) value. For example, {% suitV1 id=0 /%} is always {% coinFlipV1 id="no" /%}.
 
 Each suit has an assigned number from 0 to 11, called "_Suit ID_", it can be found on the _black part_ of the [Sequential Number](#sequential-number).
 
-Notice that the _15-ranked suits_ ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), and _10-ranked suits_ ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) can be differentiated by the suit ID. The first 8 suits (IDs 0 to 7) are _15-ranked_, and the remaining 4 suits (IDs 8 to 11) are _10-ranked_.
+Notice that the _15-ranked suits_ ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}), and _10-ranked suits_ ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}) can be differentiated by the suit ID. The first 8 suits (IDs 0 to 7) are _15-ranked_, and the remaining 4 suits (IDs 8 to 11) are _10-ranked_.
 
 {% callout type="idea" %}
 All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players.
@@ -130,29 +130,29 @@ All suits are emojis, so you can easily write cheat sheets on your phone and sen
 
 The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
 
-When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is either black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}).
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is either black ({% colorSuitV1 id=5 /%}) or rainbow ({% colorSuitV1 id=6 /%}).
 
 ### Distributions
 
 #### 12 suits of 10 ranks
 
-One combination is 12 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) of 10 ranks (0...9).
+One combination is 12 suits ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}{% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}) of 10 ranks (0...9).
 
-There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 _letter ranks_ (XJQKA) of the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}).
+There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 _letter ranks_ (XJQKA) of the 15-ranked suits ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}).
 
 To get it, pick all the cards, and remove the _letter ranks_ (XJQKA).
 
-Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}). Only use this if you need 9 or 10 suits of 11 or 12 ranks.
+Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}{% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}). Only use this if you need 9 or 10 suits of 11 or 12 ranks.
 
 #### 8 suits of 15 ranks
 
-Another combination is 8 suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}) of 15 ranks (0...9 + XJQKA).
+Another combination is 8 suits ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}) of 15 ranks (0...9 + XJQKA).
 
-There will be some unused cards, that may be optionally used to add extra suits. The remaining cards are: all the ranks (0...9) of the 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+There will be some unused cards, that may be optionally used to add extra suits. The remaining cards are: all the ranks (0...9) of the 10-ranked suits ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}).
 
-To get it, pick all the cards, and remove the 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}).
+To get it, pick all the cards, and remove the 10-ranked suits ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}).
 
-Switch the suits for the ranks to have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}). Only use this if you need 13 to 15 suits of 8 or fewer ranks.
+Switch the suits for the ranks to have 15 suits (0...9 + XJQKA) of 8 ranks ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}). Only use this if you need 13 to 15 suits of 8 or fewer ranks.
 
 #### 10-Level Pyramidal Deck with the Same Ranks
 
@@ -163,7 +163,7 @@ You can also create a pyramidal deck of 10 levels, where each suit has the same 
 
 #### 12-Level Pyramidal Deck with Different Ranks
 
-You can also create a pyramidal deck of 12 levels, where each suit has different ranks. To do this, for every suit, pick a different number of cards: 1, 2, 3, ..., 10, 11, 12. Make sure that the suits that are repeated 12 and 11 times are the 15-ranked suits ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}). Each level uses a different suit, and there's no rank indicating how many cards that level has.
+You can also create a pyramidal deck of 12 levels, where each suit has different ranks. To do this, for every suit, pick a different number of cards: 1, 2, 3, ..., 10, 11, 12. Make sure that the suits that are repeated 12 and 11 times are the 15-ranked suits ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}). Each level uses a different suit, and there's no rank indicating how many cards that level has.
 
 An example game that uses it is [Startups](/games/startups).
 
@@ -179,54 +179,54 @@ An example game that uses it is [Startups](/games/startups).
 
 In the top-right or bottom-left corner, you can find a number overlapping a shape with two small numbers on the bottom sides; it is the "3D suit". It is called 3D because it is a multidimensional game system of 3 dimensions: shape, rank, and color.
 
-It contains 10 _ranks_ (0...9) × 3 _shapes_ ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) × 5 _colors_ ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}), plus 10 ranks (0...9) in a special shape and color ({% shapeSuit id="rainbow" /%}). So it is a distribution of 10×3×5 + 10.
+It contains 10 _ranks_ (0...9) × 3 _shapes_ ({% shapeSuitV1 id="heart" /%}{% shapeSuitV1 id="circle" /%}{% shapeSuitV1 id="square" /%}) × 5 _colors_ ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}), plus 10 ranks (0...9) in a special shape and color ({% shapeSuitV1 id="rainbow" /%}). So it is a distribution of 10×3×5 + 10.
 
 The small numbers on the bottom sides indicate the shape and color. This is useful for color-blind players and for quick comparison of suits. Each shape and circle has an associated number; these are the values:
 
-- Left numbers (Shape): 1={% shapeSuit id="heart" /%}, 2={% shapeSuit id="circle" /%}, 3={% shapeSuit id="square" /%}, 4={% shapeSuit id="rainbow" /%}.
-- Right numbers (Color): 1={% colorSuit id=1 /%}, 2={% colorSuit id=2 /%}, 3={% colorSuit id=3 /%}, 4={% colorSuit id=4 /%}, 5={% colorSuit id=5 /%}, 6={% colorSuit id=6 /%}.
+- Left numbers (Shape): 1={% shapeSuitV1 id="heart" /%}, 2={% shapeSuitV1 id="circle" /%}, 3={% shapeSuitV1 id="square" /%}, 4={% shapeSuitV1 id="rainbow" /%}.
+- Right numbers (Color): 1={% colorSuitV1 id=1 /%}, 2={% colorSuitV1 id=2 /%}, 3={% colorSuitV1 id=3 /%}, 4={% colorSuitV1 id=4 /%}, 5={% colorSuitV1 id=5 /%}, 6={% colorSuitV1 id=6 /%}.
 
-When the suit is black ({% colorSuit id=5 /%}) or rainbow ({% colorSuit id=6 /%}), the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit id=1 noAlt=true /%}{% colorSuit id=2 noAlt=true /%}{% colorSuit id=3 noAlt=true /%}{% colorSuit id=4 noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
+When the suit is black ({% colorSuitV1 id=5 /%}) or rainbow ({% colorSuitV1 id=6 /%}), the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuitV1 id=1 noAlt=true /%}{% colorSuitV1 id=2 noAlt=true /%}{% colorSuitV1 id=3 noAlt=true /%}{% colorSuitV1 id=4 noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
 
 ### Distributions
 
 #### 5 Suits of 3 Times 10 Ranks
 
-The most used distribution of the _3D suit_ is 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 3 times 10 ranks (0...9). Plus an extra suit ({% shapeSuit id="rainbow" /%}) of 1 time 10 ranks (0...9).
+The most used distribution of the _3D suit_ is 5 suits ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}) of 3 times 10 ranks (0...9). Plus an extra suit ({% shapeSuitV1 id="rainbow" /%}) of 1 time 10 ranks (0...9).
 
-The _shape_ ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) is not used in this distribution. When two suits have the same _color_, but different _shape_, they are considered equal. For example: {% suit id=122 /%} and {% suit id=132 /%} are the same because they are blue ({% colorSuit id=2 noAlt=true /%}).
+The _shape_ ({% shapeSuitV1 id="heart" /%}{% shapeSuitV1 id="circle" /%}{% shapeSuitV1 id="square" /%}) is not used in this distribution. When two suits have the same _color_, but different _shape_, they are considered equal. For example: {% suitV1 id=122 /%} and {% suitV1 id=132 /%} are the same because they are blue ({% colorSuitV1 id=2 noAlt=true /%}).
 
 A very well-known game that uses this distribution is [UNO](/games/uno).
 
 #### 5 Suits of 30 Ranks
 
-Same as [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), but use the left number (indicating the _shape_) minus 1 as the tens' digit. It has 5 suits ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) of 30 ranks (0...29).
+Same as [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), but use the left number (indicating the _shape_) minus 1 as the tens' digit. It has 5 suits ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}) of 30 ranks (0...29).
 
-For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 3 of blue ({% colorSuit id=2 noAlt=true /%}) because its left number is 1, we subtract 1, the result is 0, and using it as the tens' digit we get 03, that is the same as just 3.
+For example: {% exampleSuitV1 suit="3d" /%} ({% colorSuitV1 id=2 /%}, 3, {% shapeSuitV1 id="heart" /%}) is the 3 of blue ({% colorSuitV1 id=2 noAlt=true /%}) because its left number is 1, we subtract 1, the result is 0, and using it as the tens' digit we get 03, that is the same as just 3.
 
 A game that uses this distribution is [What the Heck?](/games/what-the-heck).
 
 #### 3 Suits of 5 Times 10 Ranks
 
-Another distribution of the _3D suit_ is 3 suits ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) of 5 times 10 ranks (0...9). Plus an extra suit ({% shapeSuit id="rainbow" /%}) of 1 time 10 ranks (0...9).
+Another distribution of the _3D suit_ is 3 suits ({% shapeSuitV1 id="heart" /%}{% shapeSuitV1 id="circle" /%}{% shapeSuitV1 id="square" /%}) of 5 times 10 ranks (0...9). Plus an extra suit ({% shapeSuitV1 id="rainbow" /%}) of 1 time 10 ranks (0...9).
 
-The _color_ ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}) is not used in this distribution. When two suits have the same _shape_, but different _color_, they are considered equal. For example: {% suit id=121 /%} and {% suit id=122 /%} are the same because they are circles ({% shapeSuit id="circle" /%}).
+The _color_ ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}) is not used in this distribution. When two suits have the same _shape_, but different _color_, they are considered equal. For example: {% suitV1 id=121 /%} and {% suitV1 id=122 /%} are the same because they are circles ({% shapeSuitV1 id="circle" /%}).
 
 #### 3 Suits of 50 Ranks
 
-Same as [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), but use the right number (indicating the _color_) minus 1 as the tens' digit. It has 3 suits ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) of 50 ranks (0...49).
+Same as [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), but use the right number (indicating the _color_) minus 1 as the tens' digit. It has 3 suits ({% shapeSuitV1 id="heart" /%}{% shapeSuitV1 id="circle" /%}{% shapeSuitV1 id="square" /%}) of 50 ranks (0...49).
 
-For example: {% exampleSuit suit="3d" /%} ({% colorSuit id=2 /%}, 3, {% shapeSuit id="heart" /%}) is the 13 of hearts {% shapeSuit id="heart" /%} because its right number is 2, we subtract 1, the result is 1, and using it as the tens' digit we get 13.
+For example: {% exampleSuitV1 suit="3d" /%} ({% colorSuitV1 id=2 /%}, 3, {% shapeSuitV1 id="heart" /%}) is the 13 of hearts {% shapeSuitV1 id="heart" /%} because its right number is 2, we subtract 1, the result is 1, and using it as the tens' digit we get 13.
 
 #### Multi-dimensional System of 10 by 3 by 5
 
 You can create a multi-dimensional game system with 3 dimensions:
 
 - Dimension 1: 10 Ranks (0...9).
-- Dimension 2: 3 Shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%})
-- Dimension 3: 5 Colors ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%})
+- Dimension 2: 3 Shapes ({% shapeSuitV1 id="heart" /%}{% shapeSuitV1 id="circle" /%}{% shapeSuitV1 id="square" /%})
+- Dimension 3: 5 Colors ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%})
 
-Besides that, there's an extra shape and color ({% shapeSuit id="rainbow" /%}) that is not in the other shapes or colors, and it has the numbers 0 to 9.
+Besides that, there's an extra shape and color ({% shapeSuitV1 id="rainbow" /%}) that is not in the other shapes or colors, and it has the numbers 0 to 9.
 
 Not many games use it.
 
@@ -247,7 +247,7 @@ Because **each card has a different number**, it is used to reference the cards.
 The number has two colors:
 
 - The **black part** indicates the [**suit id**](#basic-suit) of the basic suit of the card. When the _sequential number_ is greater than 120, it no longer indicates the suit id.
-  - For example, the card 117 has the suit {% suit id=11 /%}, and is the suit id 11 because the black part of the number is 11.
+  - For example, the card 117 has the suit {% suitV1 id=11 /%}, and is the suit id 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
 ### Distributions
@@ -282,8 +282,8 @@ But it is quite unintuitive to use, so only use this combination if you need ord
 
 Under the [Sequential Number](#sequential-number), there's a small number indicating the "Pyramidal rank."
 
-- On the 8 _15-ranked suits_ ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
-- On the 4 _10-ranked suits_ ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
+- On the 8 _15-ranked suits_ ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}), each suit has: five 1's, four 2's, three 3's, two 4's, and one 5.
+- On the 4 _10-ranked suits_ ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}), each suit has: four 1's, three 2's, two 3's, and one 4.
 
 The _Pyramidal Rank_ has the color of the [Basic Suit](#basic-suit) in that card.
 
@@ -311,21 +311,21 @@ You can also make pyramidal decks of 10-12 levels without using the _Pyramidal R
 
 ## Coin flip
 
-{% coinFlipImg /%}
+{% coinFlipV1Img /%}
 
-Under the sequential number, there's an icon representing "yes" ({% coinFlip id="yes" /%}), "no" ({% coinFlip id="no" /%}) or "unknown" ({% coinFlip id="unknown" /%}).
+Under the sequential number, there's an icon representing "yes" ({% coinFlipV1 id="yes" /%}), "no" ({% coinFlipV1 id="no" /%}) or "unknown" ({% coinFlipV1 id="unknown" /%}).
 
-There are 60 {% coinFlip id="yes" /%}, 60 {% coinFlip id="no" /%} and 40 {% coinFlip id="unknown" /%}.
+There are 60 {% coinFlipV1 id="yes" /%}, 60 {% coinFlipV1 id="no" /%} and 40 {% coinFlipV1 id="unknown" /%}.
 
-- The 4 first even suits ({% suit id=0 /%}{% suit id=2 /%}{% suit id=4 /%}{% suit id=6 /%}) have a {% coinFlip id="no" /%}.
-- The 4 first odd suits ({% suit id=1 /%}{% suit id=3 /%}{% suit id=5 /%}{% suit id=7 /%}) have a {% coinFlip id="yes" /%}.
-- The 4 10-ranked suits ({% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}), have a {% coinFlip id="unknown" /%}.
+- The 4 first even suits ({% suitV1 id=0 /%}{% suitV1 id=2 /%}{% suitV1 id=4 /%}{% suitV1 id=6 /%}) have a {% coinFlipV1 id="no" /%}.
+- The 4 first odd suits ({% suitV1 id=1 /%}{% suitV1 id=3 /%}{% suitV1 id=5 /%}{% suitV1 id=7 /%}) have a {% coinFlipV1 id="yes" /%}.
+- The 4 10-ranked suits ({% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}), have a {% coinFlipV1 id="unknown" /%}.
 
 The coin flip icon has the color of the basic suit in that card.
 
 It comes in handy when players need to emit a vote and reveal them all at the same time. This voting mechanism can be found in [The Resistance: Avalon](/games/the-resistance-avalon) and [Secret Hitler](/games/secret-hitler).
 
-Another usage is when there are many copies of 2 to 3 kinds of cards. The game [Skulls and Roses](/games/skull) uses this feature where {% coinFlip id="no" /%} are skulls and {% coinFlip id="yes" /%} are roses.
+Another usage is when there are many copies of 2 to 3 kinds of cards. The game [Skulls and Roses](/games/skull) uses this feature where {% coinFlipV1 id="no" /%} are skulls and {% coinFlipV1 id="yes" /%} are roses.
 
 ## Drawing
 
@@ -359,28 +359,28 @@ In some cases generic drawings can be counter-productive, so be mindful. For exa
 
 Each card has 14 drawing slots, grouped in 5 drawing areas.
 
-#### {% drawingAreaIcon id="A" /%} Drawing area A
+#### {% drawingAreaIconV1 id="A" /%} Drawing area A
 
 2 rectangular slots on the top and bottom edges.
 
 - The card needs to be held in hand and contain a big drawing or word.
 - The card needs to be stacked on the table while keeping the top or bottom part visible.
 
-#### {% drawingAreaIcon id="B" /%} Drawing area B
+#### {% drawingAreaIconV1 id="B" /%} Drawing area B
 
 4 square slots just below every suit.
 
 - The card needs to be held in hand.
 - The drawing is related to the suit.
 
-#### {% drawingAreaIcon id="C" /%} Drawing area C
+#### {% drawingAreaIconV1 id="C" /%} Drawing area C
 
 6 square slots between the _Drawing areas B_, in groups of 3 columns.
 
 - The card needs a hint, like punctuation.
 - The card's hint doesn't need to be visible while holding it on hand; otherwise, use the area A.
 
-#### {% drawingAreaIcon id="D" /%} Drawing area D
+#### {% drawingAreaIconV1 id="D" /%} Drawing area D
 
 4 rectangular slots in the center, forming a 2x2 grid.
 
@@ -389,7 +389,7 @@ Each card has 14 drawing slots, grouped in 5 drawing areas.
 - The card needs to contain a big drawing or word.
 - The card is not used actively during the gameplay, like hints or boards, and your notes cards are full.
 
-#### {% drawingAreaIcon id="E" /%} Drawing area E
+#### {% drawingAreaIconV1 id="E" /%} Drawing area E
 
 1 circular slot in the center, overlapping the _Drawing areas D_.
 
@@ -499,7 +499,7 @@ Recommended items for transporting the deck:
 - The deck of cards itself.
 - A storage bag. Ideally a DIN B7 plastic stationery zipper bag.
 - A pen and eraser. Tip: sharpen both sides of the pencil.
-- 50 tokens. Ideally 10 of each color ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}).
+- 50 tokens. Ideally 10 of each color ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}).
 
 The following items may be handy sometimes, but they are not worth carrying all the time:
 
@@ -581,9 +581,9 @@ If the game needs drawings, read the [Drawing](#drawing) section.
 Because all the suits are emojis, you can easily write cheat sheets on your phone.
 {% /callout %}
 
-Consider adding meaning to the emojis ({% suit id=0 /%}{% suit id=1 /%}{% suit id=2 /%}{% suit id=3 /%}{% suit id=4 /%}{% suit id=5 /%}{% suit id=6 /%}{% suit id=7 /%}{% suit id=8 /%}{% suit id=9 /%}{% suit id=10 /%}{% suit id=11 /%}) or colors ({% colorSuit id=1 /%}{% colorSuit id=2 /%}{% colorSuit id=3 /%}{% colorSuit id=4 /%}{% colorSuit id=5 /%}{% shapeSuit id="rainbow" /%}) if possible, to help players remember which card is which.
+Consider adding meaning to the emojis ({% suitV1 id=0 /%}{% suitV1 id=1 /%}{% suitV1 id=2 /%}{% suitV1 id=3 /%}{% suitV1 id=4 /%}{% suitV1 id=5 /%}{% suitV1 id=6 /%}{% suitV1 id=7 /%}{% suitV1 id=8 /%}{% suitV1 id=9 /%}{% suitV1 id=10 /%}{% suitV1 id=11 /%}) or colors ({% colorSuitV1 id=1 /%}{% colorSuitV1 id=2 /%}{% colorSuitV1 id=3 /%}{% colorSuitV1 id=4 /%}{% colorSuitV1 id=5 /%}{% shapeSuitV1 id="rainbow" /%}) if possible, to help players remember which card is which.
 
-- For example: In [Mafia de Cuba](/games/mafia-de-cuba), the {% suit id=2 /%} represents the diamonds "because stars and diamonds shine". This reason is totaly random, but it actually helps to remember the cards. Notice that using {% suit id=9 /%} would be ideal for the game, but 15 ranks are needed, and {% suit id=9 /%} is a [10-ranked suit](#basic-suit)... So {% suit id=2 /%} is the next best option emoji-wise.
+- For example: In [Mafia de Cuba](/games/mafia-de-cuba), the {% suitV1 id=2 /%} represents the diamonds "because stars and diamonds shine". This reason is totaly random, but it actually helps to remember the cards. Notice that using {% suitV1 id=9 /%} would be ideal for the game, but 15 ranks are needed, and {% suitV1 id=9 /%} is a [10-ranked suit](#basic-suit)... So {% suitV1 id=2 /%} is the next best option emoji-wise.
 - Another example: In [Claim](/games/claim), the suits' colors try to match the ones from the original game.
 
 #### Step 3: Submit the mapping
@@ -622,13 +622,13 @@ The ranks are inside the suits to save up space. The downside is that it require
 
 All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players.
 
-The colors of the suits can be grouped by similar hue in pairs but also trios. As a consequence, the [Basic suit](#basic-suit) and [3D suit](#3d-suit) corners have similar colors. For example, the suit {% suit id=4 /%}, which is orange ({% colorSuit color="orange" /%}), has red ({% colorSuit id=1 /%}) 3D suits.
+The colors of the suits can be grouped by similar hue in pairs but also trios. As a consequence, the [Basic suit](#basic-suit) and [3D suit](#3d-suit) corners have similar colors. For example, the suit {% suitV1 id=4 /%}, which is orange ({% colorSuitV1 color="orange" /%}), has red ({% colorSuitV1 id=1 /%}) 3D suits.
 
 The slogan "Draw your cards" is there to encourage people to draw and lose the fear of drawing in cards. It's fine! If you run out of space, you'll have amortized the cards very well, don't worry. See the [Drawing](#drawing) section for more information.
 
 The first 10 numbers of the [Sequential number](#sequential-number) corner start with 0 to maintain the visual pattern of color in the number (left side black, right side colored).
 
-In the [Coin Flip](#coin-flip), the {% coinFlip id="yes" /%} is filled and the {% coinFlip id="no" /%} is hollow to increase the contrast between the two icons. And the {% coinFlip id="unknown" /%} is also different by removing the enclosing circle.
+In the [Coin Flip](#coin-flip), the {% coinFlipV1 id="yes" /%} is filled and the {% coinFlipV1 id="no" /%} is hollow to increase the contrast between the two icons. And the {% coinFlipV1 id="unknown" /%} is also different by removing the enclosing circle.
 
 The [Coin Flip](#coin-flip) icon and [Pyramidal rank](#pyramidal-rank) are in the [Sequential number](#sequential-number)'s corner to concentrate all the printed parts in the corners, so the rest of the space is perfectly symmetrical, and drawings can be drawn twice, upright and upside-down, to make cards work both orientations.
 
@@ -729,4 +729,4 @@ This is how all the actual cards look like.
 
 This are the values of each feature on all cards.
 
-{% cardDistributionTable /%}
+{% cardDistributionTableV1 /%}

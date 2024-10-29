@@ -1,10 +1,16 @@
-import { defineMarkdocConfig, component } from '@astrojs/markdoc/config'
+import { component, defineMarkdocConfig } from '@astrojs/markdoc/config'
 import {
-  suitIds,
-  suitEmojis,
-  suitColors,
   shapeSuitIds,
+  suitColors,
+  suitEmojis,
+  suitIds,
 } from './src/components/markdown/suits'
+import {
+  shapeSuitV1Ids,
+  suitV1Colors,
+  suitV1Emojis,
+  suitV1Ids,
+} from './src/components/markdown/suits-v1'
 
 export default defineMarkdocConfig({
   tags: {
@@ -78,8 +84,8 @@ export default defineMarkdocConfig({
         },
       },
     },
-    coinFlip: {
-      render: component('./src/components/markdown/CoinFlip.astro'),
+    coinFlipV1: {
+      render: component('./src/components/markdown/CoinFlipV1.astro'),
       selfClosing: true,
       attributes: {
         id: {
@@ -93,6 +99,21 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/ColorSuit.astro'),
       selfClosing: true,
       attributes: {
+        color: {
+          type: String,
+          matches: suitColors,
+          errorLevel: 'error',
+        },
+        noAlt: {
+          type: Boolean,
+          default: false,
+        },
+      },
+    },
+    colorSuitV1: {
+      render: component('./src/components/markdown/ColorSuitV1.astro'),
+      selfClosing: true,
+      attributes: {
         id: {
           type: Number,
           matches: [1, 2, 3, 4, 5, 6],
@@ -100,7 +121,7 @@ export default defineMarkdocConfig({
         },
         color: {
           type: String,
-          matches: suitColors,
+          matches: suitV1Colors,
           errorLevel: 'error',
         },
         noAlt: {
@@ -120,8 +141,30 @@ export default defineMarkdocConfig({
         },
       },
     },
+    shapeSuitV1: {
+      render: component('./src/components/markdown/ShapeSuitV1.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: String,
+          matches: shapeSuitV1Ids,
+          errorLevel: 'error',
+        },
+      },
+    },
     drawingAreaIcon: {
       render: component('./src/components/markdown/DrawingAreaIcon.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: String,
+          matches: ['A', 'B', 'C', 'D', 'E'],
+          errorLevel: 'error',
+        },
+      },
+    },
+    drawingAreaIconV1: {
+      render: component('./src/components/markdown/DrawingAreaIconV1.astro'),
       selfClosing: true,
       attributes: {
         id: {
@@ -147,8 +190,24 @@ export default defineMarkdocConfig({
         },
       },
     },
-    exampleSuit: {
-      render: component('./src/components/markdown/ExampleSuit.astro'),
+    suitV1: {
+      render: component('./src/components/markdown/SuitV1.astro'),
+      selfClosing: true,
+      attributes: {
+        id: {
+          type: Number,
+          matches: suitV1Ids,
+          errorLevel: 'error',
+        },
+        emoji: {
+          type: String,
+          matches: suitV1Emojis,
+          errorLevel: 'error',
+        },
+      },
+    },
+    exampleSuitV1: {
+      render: component('./src/components/markdown/ExampleSuitV1.astro'),
       selfClosing: true,
       attributes: {
         suit: {
@@ -164,8 +223,18 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    cardDistributionTableV1: {
+      render: component(
+        './src/components/markdown/CardDistributionTableV1.astro'
+      ),
+      selfClosing: true,
+    },
     suitsTable: {
       render: component('./src/components/markdown/SuitsTable.astro'),
+      selfClosing: true,
+    },
+    suitsTableV1: {
+      render: component('./src/components/markdown/SuitsTableV1.astro'),
       selfClosing: true,
     },
     cardAnatomyImg: {
@@ -188,8 +257,8 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    coinFlipImg: {
-      render: component('./src/components/markdown/images/CoinFlipImg.astro'),
+    coinFlipV1Img: {
+      render: component('./src/components/markdown/images/CoinFlipV1Img.astro'),
       selfClosing: true,
     },
     pyramidalRankImg: {
