@@ -1,0 +1,47 @@
+---
+import PageMeta from '../components/PageMeta.astro'
+import PageLayout from '../layouts/PageLayout.astro'
+import BuyBanner from '../components/BuyBanner.astro'
+import { getEntry } from 'astro:content'
+import Title from '../components/Title.astro'
+import Prose from '../components/Prose.astro'
+
+const entry = await getEntry('pages', 'manual-v1')
+
+const { Content, headings } = await entry.render()
+
+const filteredHeadings = headings.filter(
+  ({ depth, text }) =>
+    !(
+      depth >= 2 &&
+      (text === 'Layout' ||
+        text === 'Suits' ||
+        text === 'Ranks' ||
+        text === 'Distributions')
+    )
+)
+
+const post = entry.data.post
+---
+
+<PageLayout
+  tocHeadings={filteredHeadings}
+  classes={{
+    main: '[&_#introduction]:invisible [&_#introduction]:m-0 [&_#introduction]:h-0 [&_#introduction]:w-0 [&_#introduction]:overflow-hidden',
+  }}
+>
+  <PageMeta
+    title="DIY Multideck v1 manual"
+    publishDate={post.ogImagePath}
+    ogImageAbsoluteUrl={new URL(post.ogImagePath, Astro.site).toString()}
+    slot="meta"
+  />
+
+  <Title text={['The', 'DIY Multideck', 'v1']} />
+
+  <Prose>
+    <Content />
+  </Prose>
+
+  <BuyBanner class="not-prose mt-4" />
+</PageLayout>

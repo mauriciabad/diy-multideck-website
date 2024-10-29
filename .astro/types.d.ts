@@ -510,6 +510,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "pages": {
+"manual-v1.mdoc": {
+	id: "manual-v1.mdoc";
+  slug: "manual-v1";
+  body: string;
+  collection: "pages";
+  data: any
+} & { render(): Render[".mdoc"] };
 "manual.mdoc": {
 	id: "manual.mdoc";
   slug: "manual";

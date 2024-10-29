@@ -40,7 +40,7 @@ export default defineMarkdocConfig({
         type: {
           type: String,
           default: 'info',
-          matches: ['info', 'idea'],
+          matches: ['info', 'idea', 'warning'],
           errorLevel: 'error',
         },
       },

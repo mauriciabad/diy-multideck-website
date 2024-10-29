@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'idea' | 'info'
+  type: 'idea' | 'info' | 'warning'
 }
 
 const { type } = Astro.props
@@ -15,6 +15,11 @@ const { type } = Astro.props
   {
     type === 'info' && (
       <i class="ti ti-info-circle px-2 -mt-0.5 text-2xl text-blue-500 dark:text-blue-300" />
+    )
+  }
+  {
+    type === 'warning' && (
+      <i class="ti ti-alert-triangle px-2 -mt-0.5 text-2xl text-orange-500 dark:text-orange-300" />
     )
   }
   <div
