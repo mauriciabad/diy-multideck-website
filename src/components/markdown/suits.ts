@@ -35,9 +35,7 @@ export type SuitEmoji = (typeof suitEmojisById)[keyof typeof suitEmojisById]
 export type SuitId = keyof typeof suitEmojisById
 
 export const suitEmojis = Object.values(suitEmojisById) as readonly SuitEmoji[]
-export const suitIds = Object.keys(suitEmojisById).map(
-  Number
-) as readonly SuitId[]
+export const suitIds = Object.keys(suitEmojisById) as readonly SuitId[]
 
 export function isSuitEmoji(text: string): text is SuitEmoji {
   return (suitEmojis as readonly string[]).includes(text)

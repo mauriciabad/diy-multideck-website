@@ -179,7 +179,7 @@ export default defineMarkdocConfig({
       selfClosing: true,
       attributes: {
         id: {
-          type: Number,
+          type: String,
           matches: suitIds,
           errorLevel: 'error',
         },
