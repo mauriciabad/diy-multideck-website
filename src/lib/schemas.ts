@@ -61,7 +61,7 @@ export const gameSchema = z.object({
       .min(0)
       .step(1)
       .max(162 * 16),
-    deckVersion: z.enum(['v0.4b', 'v1.0']),
+    deckVersion: z.enum(['v0.4b', 'v1', 'v2']),
   }),
 })
 
