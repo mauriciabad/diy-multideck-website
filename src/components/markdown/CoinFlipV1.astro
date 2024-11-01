@@ -1,14 +1,14 @@
 ---
-const coinFlipEmojisById = {
+const coinFlipV1EmojisById = {
   yes: '✅',
   no: '❌',
   unknown: '?',
 } as const
 
-type CoinFlipId = keyof typeof coinFlipEmojisById
+type CoinFlipV1Id = keyof typeof coinFlipV1EmojisById
 
 export interface Props {
-  id: CoinFlipId
+  id: CoinFlipV1Id
 }
 
 const { id } = Astro.props
@@ -63,6 +63,6 @@ const { id } = Astro.props
     }
   </svg>
   <span class="sr-only [font-variant-emoji:emoji]"
-    >{coinFlipEmojisById[id]}</span
+    >{coinFlipV1EmojisById[id]}</span
   >
 </>

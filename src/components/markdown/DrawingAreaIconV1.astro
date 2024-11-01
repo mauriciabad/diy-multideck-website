@@ -1,0 +1,14 @@
+---
+export interface Props {
+  id: 'A' | 'B' | 'C' | 'D' | 'E'
+}
+
+const { id } = Astro.props
+---
+
+<img
+  src={`/images/drawing-areas/v1/${id}.svg`}
+  class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em]"
+  alt={`"Drawing area ${id} icon"`}
+  draggable="false"
+/>

@@ -1,0 +1,38 @@
+---
+import {
+  type SuitV1Id,
+  type SuitV1Emoji,
+  getEmojiBySuitV1Id,
+  getSuitV1IdByEmoji,
+} from './suits-v1'
+import { cn } from '../../lib/cn'
+
+export interface Props {
+  id?: SuitV1Id
+  emoji?: SuitV1Emoji
+  size?: 'small' | 'large-responsive'
+}
+
+const { id, emoji, size = 'small' } = Astro.props
+
+const suitV1Id = id ?? (emoji ? getSuitV1IdByEmoji(emoji) : undefined)
+---
+
+{
+  suitV1Id !== undefined ? (
+    <img
+      src={`/images/suits/v1/${suitV1Id}.svg`}
+      class={cn(
+        'not-prose unset align-[-0.25em] inline-block pointer-events-none [font-variant-emoji:emoji]',
+        'h-[1.25em]',
+        {
+          'h-[1.5em] xs:h-[2em]': size === 'large-responsive',
+        }
+      )}
+      alt={getEmojiBySuitV1Id(suitV1Id)}
+      draggable="false"
+    />
+  ) : (
+    <span class="[font-variant-emoji:emoji]">🚫</span>
+  )
+}

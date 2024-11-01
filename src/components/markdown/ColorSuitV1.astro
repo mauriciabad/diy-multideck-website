@@ -1,0 +1,24 @@
+---
+import {
+  getColorBySuitV1Id,
+  type SuitV1ColorId,
+  type SuitV1Color,
+} from './suits-v1'
+
+export interface Props {
+  id?: SuitV1ColorId
+  color?: SuitV1Color
+  noAlt?: boolean
+}
+
+const { id, color, noAlt = false } = Astro.props
+
+const suitV1Color = id !== undefined ? getColorBySuitV1Id(id) : color
+---
+
+<img
+  src={`/images/colors/v1/${suitV1Color}.svg`}
+  class="not-prose unset align-[-0.25em] inline-block pointer-events-none h-[1.25em]"
+  alt={noAlt ? '' : ` ${suitV1Color} `}
+  draggable="false"
+/>
