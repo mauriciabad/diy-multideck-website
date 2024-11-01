@@ -237,7 +237,13 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/SuitsTableV1.astro'),
       selfClosing: true,
     },
-    cardAnatomyImg: {
+    cardAnatomyImgV1: {
+      render: component(
+        './src/components/markdown/images/CardAnatomyImg.astro'
+      ),
+      selfClosing: true,
+    },
+    cardAnatomyImgV1: {
       render: component(
         './src/components/markdown/images/CardAnatomyImg.astro'
       ),
