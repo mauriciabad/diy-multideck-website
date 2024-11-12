@@ -257,9 +257,23 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/images/3dSuitImg.astro'),
       selfClosing: true,
     },
-    sequentialNumberImg: {
+    numberSuitImg: {
+      render: component('./src/components/markdown/images/NumberSuitImg.astro'),
+      selfClosing: true,
+    },
+    basicSuitImgV1: {
       render: component(
-        './src/components/markdown/images/SequentialNumberImg.astro'
+        './src/components/markdown/images/BasicSuitImgV1.astro'
+      ),
+      selfClosing: true,
+    },
+    '3dSuitImgV1': {
+      render: component('./src/components/markdown/images/3dSuitImgV1.astro'),
+      selfClosing: true,
+    },
+    numberSuitImgV1: {
+      render: component(
+        './src/components/markdown/images/NumberSuitImgV1.astro'
       ),
       selfClosing: true,
     },
