@@ -287,9 +287,9 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    pointingCounterImg: {
+    pointingCounterImgV1: {
       render: component(
-        './src/components/markdown/images/PointingCounterImg.astro'
+        './src/components/markdown/images/PointingCounterImgV1.astro'
       ),
       selfClosing: true,
     },
@@ -319,15 +319,15 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    chainedPointingCounterImg: {
+    chainedPointingCounterImgV1: {
       render: component(
-        './src/components/markdown/images/ChainedPointingCounterImg.astro'
+        './src/components/markdown/images/ChainedPointingCounterImgV1.astro'
       ),
       selfClosing: true,
     },
-    stackingCounterImg: {
+    stackingCounterImgV1: {
       render: component(
-        './src/components/markdown/images/StackingCounterImg.astro'
+        './src/components/markdown/images/StackingCounterImgV1.astro'
       ),
       selfClosing: true,
     },
