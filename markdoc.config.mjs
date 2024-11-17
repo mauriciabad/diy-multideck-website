@@ -315,7 +315,13 @@ export default defineMarkdocConfig({
     },
     travelKitComponentsImg: {
       render: component(
-        './src/components/markdown/images/TravelKitComponents.astro'
+        './src/components/markdown/images/TravelKitComponentsImg.astro'
+      ),
+      selfClosing: true,
+    },
+    travelKitComponentsImgV1: {
+      render: component(
+        './src/components/markdown/images/TravelKitComponentsImgV1.astro'
       ),
       selfClosing: true,
     },
