@@ -11,9 +11,9 @@ The DIY multideck is a deck of 162 playing cards (3 standard decks) that allows 
 
 This is how it works: when you play a game, you pick a subset of cards and focus on a specific corner. Sometimes, you may draw on the cards to play games that use words, icons, or boards. On the [official website](/), you'll find instructions to play many games. Here are some example games for every game system supported:
 
-- Basic deck: [Schotten Totten](/games/schotten-totten), [The Crew](/games/the-crew-1), [Cockroach Poker](/games/cockroach-poker-royal), [L.L.A.M.A.](/games/llama), [Claim](/games/claim)...
-- 3D deck: [UNO](/games/uno), [Spicy](/games/spicy), [Raj](/games/what-the-heck), [TEN](/games/ten)...
-- Sequential deck: [The Mind](/games/the-mind), [6 Nimmt!](/games/6-nimmt), [No Thanks!](/games/no-thanks)...
+- Basic suit: [Schotten Totten](/games/schotten-totten), [The Crew](/games/the-crew-1), [Cockroach Poker](/games/cockroach-poker-royal), [L.L.A.M.A.](/games/llama), [Claim](/games/claim)...
+- 3D suit: [UNO](/games/uno), [Spicy](/games/spicy), [Raj](/games/what-the-heck), [TEN](/games/ten)...
+- Number suit: [The Mind](/games/the-mind), [6 Nimmt!](/games/6-nimmt), [No Thanks!](/games/no-thanks)...
 - Drawing deck: [Secret Hitler](/games/secret-hitler), [Hanamikoji](/games/hanamikoji), [Virus!](/games/virus)...
 
 ![Preview of some cards of The DIY Multideck](/images/home/spread-cards.png)
@@ -25,18 +25,18 @@ This is how it works: when you play a game, you pick a subset of cards and focus
 {% featureSummary %}
 
 - **Game systems**:
-  - [**Basic deck**](#basic-suit): 8 suits of 15 ranks + 4 suits of 10 ranks
+  - [**Basic suit**](#basic-suit): 8 suits of 15 ranks + 4 suits of 10 ranks
     - [12 suits of 10 ranks](#12-suits-of-10-ranks).
       - Plus 5 letter ranks in 8 of the suits.
     - [8 suits of 15 ranks](#8-suits-of-15-ranks).
       - Plus 4 suits of 10 ranks.
     - [10-level pyramidal deck with the same ranks](#10-level-pyramidal-deck-with-the-same-ranks).
     - [12-level pyramidal deck with different ranks](#12-level-pyramidal-deck-with-different-ranks).
-  - [**3D deck**](#3d-suit): 5 colors × 3 shapes × 10 ranks + 10 ranks.
+  - [**3D suit**](#3d-suit): 5 colors × 3 shapes × 10 ranks + 10 ranks.
     - [5 suits of 3 times 10 ranks](#5-suits-of-3-times-10-ranks), or [5 suits of 30 ranks](#5-suits-of-30-ranks).
     - [3 suits of 5 times 10 ranks](#3-suits-of-5-times-10-ranks), or [3 suits of 50 ranks](#3-suits-of-50-ranks).
     - Extra suit of 10 ranks ({% suit id="A05" /%}).
-  - [**Sequential deck**](#sequential-number): numbers from 0 to 159
+  - [**Number suit**](#number-suit): numbers from 0 to 159
     - [Numbers from 0 to 159](#numbers-from-0-to-159).
     - [Numbers from 0 to 59, 2 times](#numbers-from-0-to-59-2-times).
       - Plus 1 time numbers from 60 to 99.
@@ -62,7 +62,7 @@ The normal cards have the following features:
 
 1. [Basic Suit](#basic-suit)
 2. [3D Suit](#3d-suit)
-3. [Sequential Number](#sequential-number)
+3. [Number Suit](#number-suit)
 4. [Drawing Areas](#drawing)
 5. [Counter](#counters) (on the back face)
 
@@ -92,7 +92,7 @@ The suits can be classified into 2 categories by the number of ranks they contai
 
 {% suitsTable /%}
 
-Each suit has an assigned number from 0 to 11, called "_Suit ID_", it can be found on the _black part_ of the [Sequential Number](#sequential-number).
+Each suit has an assigned number from 0 to 11, called "_Suit ID_", it can be found on the _black part_ of the [Number suit](#number-suit).
 
 Notice that the _15-ranked suits_ ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}), and _10-ranked suits_ ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) can be differentiated by the suit ID. The first 8 suits (IDs 0 to 7) are _15-ranked_, and the remaining 4 suits (IDs 8 to 11) are _10-ranked_.
 
@@ -151,7 +151,7 @@ An example game that uses it is [Startups](/games/startups).
 
 ### Layout
 
-{% img src="/images/home/layouts/preview-mini-basic.png" width="100%" alt="preview-mini-basic" /%}
+{% img src="/images/home/layouts/table-basic.svg" width="100%" alt="table basic" /%}
 
 ## 3D Suit
 
@@ -165,13 +165,13 @@ An example game that uses it is [Startups](/games/startups).
 
 ### Layout
 
-{% img src="/images/home/layouts/preview-mini-3d.png" width="67%" alt="preview-mini-3d" /%}
+{% img src="/images/home/layouts/table-3d.svg" width="67%" alt="table 3d" /%}
 
-## Sequential number
+## Number suit
 
 {% numberSuitImg /%}
 
-On the top-right or bottom-left corner, you can find a number without a suit behind; it is the "Sequential number."
+On the top-right or bottom-left corner, you can find a number without a suit behind; it is the "Number suit."
 
 It contains numbers **from 0 to 159**.
 
@@ -179,7 +179,7 @@ Because **each card has a different number**, it is used to reference the cards.
 
 The number has two colors:
 
-- The **black part** indicates the [**suit id**](#basic-suit) of the basic suit of the card. When the _sequential number_ is greater than 120, it no longer indicates the suit id.
+- The **black part** indicates the **suit id** of the [basic suit](#basic-suit) of the card. When the _number suit_ is greater than 120, it no longer indicates the suit id.
   - For example, the card 117 has the suit {% suit id="11" /%}, and is the suit id 11 because the black part of the number is 11.
 - The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
@@ -187,7 +187,7 @@ The number has two colors:
 
 #### Numbers from 0 to 159
 
-Just use the _Sequential number_ as is.
+Just use the _Number suit_ as is.
 
 It is used in games that need many unsuited ranks. Games that use it are [The mind](/games/the-mind) and [No thanks!](/games/no-thanks).
 
@@ -207,7 +207,7 @@ But it is quite unintuitive to use, so only use this combination if you need ord
 
 ### Layout
 
-{% img src="/images/home/layouts/preview-mini-sequential.png" width="67%" alt="preview-mini-sequential" /%}
+{% img src="/images/home/layouts/table-number.svg" width="67%" alt="table number" /%}
 
 ## Drawing
 
@@ -435,7 +435,7 @@ Next, you have to map every component of the game to a feature of The DIY Multid
 My recommendation is that you go to the [Feature summary](#feature-summary) to find out what's the best game system to use.
 {% /callout %}
 
-You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-suit), [Sequential](#sequential-number), [Pyramidal](#pyramidal-rank), or [Voting](#coin-flip)) by answering the following questions in order: (There are edge cases not covered)
+You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-suit), or [Number](#number-suit)) by answering the following questions in order: (There are edge cases not covered)
 
 1. Does it use coins, chips, tokens, progress boards, or similar things? → [Counter](#counters).
 1. Does it just use 3 or fewer types of cards repeated many times? → [Coin flip](#coin-flip).
@@ -446,7 +446,7 @@ You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-s
 1. Does it just have numbers, and are they larger than 30?
     1. Are there numbers larger than 160? → _Not compatible_.
     1. Are there numbers repeated 2 or more times that are larger than 59? → _Not compatible_.
-    1. Else → [Sequential number](#sequential-number).
+    1. Else → [Number suit](#number-suit).
 1. Does each rank get repeated?
     1. Is it repeated 4 or more times? → _Not compatible_.
     1. Does it have 7 or more suits? → _Not compatible_.
@@ -458,12 +458,12 @@ You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-s
 1. Does each suit have an uneven distribution where there's just numbers from 1 to 5? → [Pyramidal rank](#pyramidal-rank).
 1. Does it have more than 8 suits of more than 10 ranks each?
     1. Does it have more than 16 suits of more than 11 ranks (or vice versa)? → _Not compatible_
-    1. Else → [Sequential number](#sequential-number).
+    1. Else → [Number suit](#number-suit).
 1. Else → Probably "_Not compatible_" or "_Low usability_". Read the [deck's manual](/manual) deeper to find the right game system if it exists.
 
 Now you just select the cards the game will need; it will probably be a subset of the game system chosen.
 
-If the game has multiple components, you'll have to put more effort into trying to find a combination of cards that meets all the requirements. To do so, I recommend you pick the main game system used and use the respective layout ([Basic](#layout), [3D](#layout-1), [Sequential](#layout-2)) as a visual aid to decide what cards to use for each component.
+If the game has multiple components, you'll have to put more effort into trying to find a combination of cards that meets all the requirements. To do so, I recommend you pick the main game system used and use the respective layout as a visual aid to decide what cards to use for each component. See the [Mini versions by layout](#mini-versions-by-layout), or in a table format: [Basic](#layout), [3D](#layout-1), [Number](#layout-2).
 
 If the game needs drawings, read the [Drawing](#drawing) section.
 
@@ -516,7 +516,7 @@ The colors of the suits can be grouped by similar hue in pairs but also trios. A
 
 The slogan "Draw your cards" is there to encourage people to draw and lose the fear of drawing in cards. It's fine! If you run out of space, you'll have amortized the cards very well, don't worry. See the [Drawing](#drawing) section for more information.
 
-The first 10 numbers of the [Sequential number](#sequential-number) corner start with 0 to maintain the visual pattern of color in the number (left side black, right side colored).
+The first 10 numbers of the [Number suit](#number-suit) corner start with 0 to maintain the visual pattern of color in the number (left side black, right side colored).
 
 Small digits in the [3D deck](#3d-suit) corner start at 1 instead of 0 for a more natural use of the cards. However, this means you can't simply concatenate the digits to create numbers from 00 to 29, and you are required to perform subtraction. <!-- TODO: change in v1.1 -->
 
@@ -610,6 +610,22 @@ Some months after the DIY Multideck was released, accompanied by this website, t
 This is how all the actual cards look like.
 
 ![all cards preview](/images/home/preview.png)
+
+#### Mini versions by layout
+
+These are a simplified version of the cards, useful for understanding what other features are shared per card.
+
+##### [Basic layout](/layouts/basic)
+
+{% img src="/images/home/layouts/preview-mini-basic.png" width="100%" alt="preview-mini-basic" /%}
+
+##### [3D layout](/layouts/3d)
+
+{% img src="/images/home/layouts/preview-mini-3d.png" width="67%" alt="preview-mini-3d" /%}
+
+##### [Number layout](/layouts/number)
+
+{% img src="/images/home/layouts/preview-mini-number.png" width="67%" alt="preview-mini-number" /%}
 
 ### Cards spreadsheet
 
