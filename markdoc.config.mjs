@@ -35,6 +35,32 @@ export default defineMarkdocConfig({
         },
       },
     },
+    imgLightDark: {
+      render: component('./src/components/markdown/ImgLightDark.astro'),
+      selfClosing: true,
+      attributes: {
+        light: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        dark: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        width: {
+          type: [Number, String],
+          required: false,
+          errorLevel: 'error',
+        },
+        alt: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+      },
+    },
     callout: {
       render: component('./src/components/markdown/Callout.astro'),
       children: ['paragraph', 'list', 'strong', 'em', 'code', 'link'],
@@ -255,6 +281,18 @@ export default defineMarkdocConfig({
     },
     '3dSuitImg': {
       render: component('./src/components/markdown/images/3dSuitImg.astro'),
+      selfClosing: true,
+    },
+    '3dSuitDistribution2x6Img': {
+      render: component(
+        './src/components/markdown/images/3dSuitDistribution2x6Img.astro'
+      ),
+      selfClosing: true,
+    },
+    '3dSuitDistribution3x5Img': {
+      render: component(
+        './src/components/markdown/images/3dSuitDistribution3x5Img.astro'
+      ),
       selfClosing: true,
     },
     numberSuitImg: {

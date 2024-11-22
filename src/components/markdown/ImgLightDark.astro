@@ -1,0 +1,17 @@
+---
+import { cn } from '../../lib/cn'
+import Img from './Img.astro'
+
+interface Props {
+  light: string
+  dark: string
+  width?: number | string
+  alt?: string
+  class?: string
+}
+
+const { light, dark, class: className, ...rest } = Astro.props
+---
+
+<Img src={light} {...rest} class={cn('block dark:hidden', className)} />
+<Img src={dark} {...rest} class={cn('hidden dark:block', className)} />
