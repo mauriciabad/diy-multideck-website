@@ -269,18 +269,6 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    '3dSuitDistribution2x6Img': {
-      render: component(
-        './src/components/markdown/images/3dSuitDistribution2x6Img.astro'
-      ),
-      selfClosing: true,
-    },
-    '3dSuitDistribution3x5Img': {
-      render: component(
-        './src/components/markdown/images/3dSuitDistribution3x5Img.astro'
-      ),
-      selfClosing: true,
-    },
     basicSuitImgV1: {
       render: component(
         './src/components/markdown/images/BasicSuitImgV1.astro'
