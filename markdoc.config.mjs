@@ -263,24 +263,10 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/SuitsTableV1.astro'),
       selfClosing: true,
     },
-    cardAnatomyImg: {
-      render: component(
-        './src/components/markdown/images/CardAnatomyImg.astro'
-      ),
-      selfClosing: true,
-    },
     cardAnatomyImgV1: {
       render: component(
         './src/components/markdown/images/CardAnatomyImgV1.astro'
       ),
-      selfClosing: true,
-    },
-    basicSuitImg: {
-      render: component('./src/components/markdown/images/BasicSuitImg.astro'),
-      selfClosing: true,
-    },
-    '3dSuitImg': {
-      render: component('./src/components/markdown/images/3dSuitImg.astro'),
       selfClosing: true,
     },
     '3dSuitDistribution2x6Img': {
@@ -293,10 +279,6 @@ export default defineMarkdocConfig({
       render: component(
         './src/components/markdown/images/3dSuitDistribution3x5Img.astro'
       ),
-      selfClosing: true,
-    },
-    numberSuitImg: {
-      render: component('./src/components/markdown/images/NumberSuitImg.astro'),
       selfClosing: true,
     },
     basicSuitImgV1: {
