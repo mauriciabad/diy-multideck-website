@@ -369,12 +369,6 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
-    travelKitComponentsImg: {
-      render: component(
-        './src/components/markdown/images/TravelKitComponentsImg.astro'
-      ),
-      selfClosing: true,
-    },
     travelKitComponentsImgV1: {
       render: component(
         './src/components/markdown/images/TravelKitComponentsImgV1.astro'
