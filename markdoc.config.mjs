@@ -309,24 +309,6 @@ export default defineMarkdocConfig({
       render: component('./src/components/markdown/images/DrawingImgV1.astro'),
       selfClosing: true,
     },
-    counterBingoImg: {
-      render: component(
-        './src/components/markdown/images/CounterBingoImg.astro'
-      ),
-      selfClosing: true,
-    },
-    counterPointingImg: {
-      render: component(
-        './src/components/markdown/images/CounterPointingImg.astro'
-      ),
-      selfClosing: true,
-    },
-    counter1to1Img: {
-      render: component(
-        './src/components/markdown/images/Counter1to1Img.astro'
-      ),
-      selfClosing: true,
-    },
     chainedPointingCounterImgV1: {
       render: component(
         './src/components/markdown/images/ChainedPointingCounterImgV1.astro'
