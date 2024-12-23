@@ -1,41 +1,41 @@
 const suitEmojisById = {
-  0: '🔥',
-  1: '💧',
-  2: '⭐',
-  3: '🍀',
-  4: '🍊',
-  5: '🍆',
-  6: '💭',
-  7: '🕷️',
-  8: '🌸',
-  9: '💎',
-  10: '💩',
-  11: '🗿',
-  111: '❤️',
-  121: '🔴',
-  131: '🟥',
-  112: '💙',
-  122: '🔵',
-  132: '🟦',
-  113: '💛',
-  123: '🟡',
-  133: '🟨',
-  114: '💚',
-  124: '🟢',
-  134: '🟩',
-  115: '🖤',
-  125: '⚫️',
-  135: '⬛️',
-  145: '🌈',
+  '0': '🔥',
+  '1': '💧',
+  '2': '⭐',
+  '3': '☘️',
+  '4': '🍊',
+  '5': '🍆',
+  '6': '💭',
+  '7': '🕷️',
+  '8': '🌸',
+  '9': '💎',
+  '10': '💩',
+  '11': '🌈',
+  A00: '❤️',
+  A10: '🔴',
+  A20: '🟥',
+  A01: '💙',
+  A11: '🔵',
+  A21: '🟦',
+  A02: '💛',
+  A12: '🟡',
+  A22: '🟨',
+  A03: '💚',
+  A13: '🟢',
+  A23: '🟩',
+  A04: '🖤',
+  A14: '⚫️',
+  A24: '🔲',
+  'A24-alt': '⬛️',
+  A05: '🤍',
+  A15: '⚪️',
 } as const
 
 export type SuitEmoji = (typeof suitEmojisById)[keyof typeof suitEmojisById]
 export type SuitId = keyof typeof suitEmojisById
 
 export const suitEmojis = Object.values(suitEmojisById) as readonly SuitEmoji[]
-export const suitIds = Object.keys(suitEmojisById).map(
-  Number
-) as readonly SuitId[]
+export const suitIds = Object.keys(suitEmojisById) as readonly SuitId[]
 
 export function isSuitEmoji(text: string): text is SuitEmoji {
   return (suitEmojis as readonly string[]).includes(text)
@@ -53,41 +53,31 @@ export function getSuitIdByEmoji(emoji: SuitEmoji): SuitId | undefined {
 
 // Suit colors ---------------------------------------------------------------
 
-const suitColorsById = {
-  1: 'red',
-  2: 'blue',
-  3: 'green',
-  4: 'yellow',
-  5: 'black',
-  6: 'rainbow',
-} as const
-
 export const suitColors = [
-  ...Object.values(suitColorsById),
+  'textured-red',
+  'textured-blue',
+  'textured-green',
+  'textured-yellow',
+  'textured-black',
+  'textured-white',
+  'red',
+  'blue',
+  'green',
+  'yellow',
   'orange',
   'purple',
   'white',
+  'black',
   'pink',
   'cyan',
   'brown',
-  'gray',
+  'rainbow',
 ] as const
 
 export type SuitColor = (typeof suitColors)[number]
-export type SuitColorId = keyof typeof suitColorsById
 
 export function isSuitColor(text: string): text is SuitColor {
   return (suitColors as readonly string[]).includes(text)
-}
-
-export function getColorBySuitId(suitId: SuitColorId): SuitColor {
-  return suitColorsById[suitId]
-}
-
-export function getSuitIdByColor(color: SuitColor): SuitColorId | undefined {
-  return Object.entries(suitColorsById).find(([_, e]) => e === color)?.[0] as
-    | SuitColorId
-    | undefined
 }
 
 // Shape suits ---------------------------------------------------------------
@@ -96,7 +86,6 @@ export const shapeSuitEmojisById = {
   heart: '🖤',
   circle: '⚫️',
   square: '⬛️',
-  rainbow: '🌈',
 } as const
 
 export type ShapeSuitId = keyof typeof shapeSuitEmojisById
@@ -106,6 +95,10 @@ export type ShapeSuitEmoji =
 export const shapeSuitIds = Object.keys(
   shapeSuitEmojisById
 ) as readonly ShapeSuitId[]
+
+export function isSuitShape(text: string): text is ShapeSuitId {
+  return text in shapeSuitEmojisById
+}
 
 export function getShapeSuitEmojiById(suitId: ShapeSuitId): ShapeSuitEmoji {
   return shapeSuitEmojisById[suitId]

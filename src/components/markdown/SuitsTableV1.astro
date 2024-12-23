@@ -1,0 +1,84 @@
+---
+import CoinFlipV1 from './CoinFlipV1.astro'
+import SuitV1 from './SuitV1.astro'
+import { isSuitV1Color, isSuitV1Emoji } from './suits-v1'
+import TextWithBreaks from '../TextWithBreaks.astro'
+import GenericTable from '../GenericTable.astro'
+import ColorSuitV1 from './ColorSuitV1.astro'
+import { cn } from '../../lib/cn'
+
+const rows = [
+  ['🔥', 'Fi-re', 'Red', '0', '0...9 + XJQKA', 'no'],
+  ['💧', 'Wa-ter', 'Blue', '1', '0...9 + XJQKA', 'yes'],
+  ['⭐', 'Stars', 'Ye-llow', '2', '0...9 + XJQKA', 'no'],
+  ['🍀', 'Clubs', 'Gre-en', '3', '0...9 + XJQKA', 'yes'],
+  ['🍊', 'Oran-ges', 'O-ran-ge', '4', '0...9 + XJQKA', 'no'],
+  ['🍆', 'Egg-plants', 'Pur-ple', '5', '0...9 + XJQKA', 'yes'],
+  ['💭', 'Clo-uds', 'Whi-te', '6', '0...9 + XJQKA', 'no'],
+  ['🕷️', 'Spi-ders', 'Bla-ck', '7', '0...9 + XJQKA', 'yes'],
+  ['🌸', 'Flo-wers', 'Pi-nk', '8', '0...9', 'unknown'],
+  ['💎', 'Dia-monds', 'Cy-an', '9', '0...9', 'unknown'],
+  ['💩', 'Poops', 'Bro-wn', '10', '0...9', 'unknown'],
+  ['🗿', 'Moais', 'Gr-ay', '11', '0...9', 'unknown'],
+] as const satisfies string[][]
+---
+
+<GenericTable>
+  <Fragment slot="thead">
+    <tr>
+      <th>Emo<wbr />ji</th>
+      <th class="border-l text-left pl-2">Na<wbr />me</th>
+      <th class="border-l text-left pl-2">Co<wbr />lor</th>
+      <th class="border-l">Id</th>
+      <th class="border-l">Ra<wbr />nks</th>
+      <th class="border-l">Coin</th>
+    </tr>
+  </Fragment>
+
+  <Fragment slot="tbody">
+    {
+      rows.map((row, rowN) => {
+        const colorId = row[2].toLowerCase().replace(/-/g, '')
+
+        return (
+          <tr
+            class={cn('[&_td]:border-l first:[&_td]:border-l-0', {
+              'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
+            })}
+          >
+            <td>
+              {isSuitV1Emoji(row[0]) ? (
+                <SuitV1 emoji={row[0]} size="large-responsive" />
+              ) : (
+                row[0]
+              )}
+            </td>
+
+            <td class="text-left pl-2">
+              <TextWithBreaks text={row[1]} breakChar="-" />
+            </td>
+            <td class="text-left pl-2">
+              <div class="flex items-center gap-1">
+                {isSuitV1Color(colorId) && (
+                  <ColorSuitV1 color={colorId} noAlt />
+                )}
+                <span class="grow">
+                  <TextWithBreaks text={row[2]} breakChar="-" />
+                </span>
+              </div>
+            </td>
+            <td>{row[3]}</td>
+            <td>{row[4]}</td>
+            <td>
+              {row[5] === 'yes' || row[5] === 'no' || row[5] === 'unknown' ? (
+                <CoinFlipV1 id={row[5]} />
+              ) : (
+                row[5]
+              )}
+            </td>
+          </tr>
+        )
+      })
+    }
+  </Fragment>
+</GenericTable>

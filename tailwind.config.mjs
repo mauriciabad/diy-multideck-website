@@ -18,8 +18,17 @@ export default {
         ),
       },
       fontFamily: {
-        body: ['Inter var', 'sans-serif'],
-        heading: ['Inter var', 'sans-serif'],
+        body: [
+          'Inter var',
+          'Inter var experimental',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        heading: [
+          'Manrope',
+          'Inter var',
+          'Inter var experimental',
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       colors: {
         transparent: 'transparent',

@@ -1,5 +1,4 @@
 ---
-import CoinFlip from './CoinFlip.astro'
 import Suit from './Suit.astro'
 import { isSuitColor, isSuitEmoji } from './suits'
 import TextWithBreaks from '../TextWithBreaks.astro'
@@ -8,30 +7,30 @@ import ColorSuit from './ColorSuit.astro'
 import { cn } from '../../lib/cn'
 
 const rows = [
-  ['🔥', 'Fi-re', 'Red', '0', '0...9 + XJQKA', 'no'],
-  ['💧', 'Wa-ter', 'Blue', '1', '0...9 + XJQKA', 'yes'],
-  ['⭐', 'Stars', 'Ye-llow', '2', '0...9 + XJQKA', 'no'],
-  ['🍀', 'Clubs', 'Gre-en', '3', '0...9 + XJQKA', 'yes'],
-  ['🍊', 'Oran-ges', 'O-ran-ge', '4', '0...9 + XJQKA', 'no'],
-  ['🍆', 'Egg-plants', 'Pur-ple', '5', '0...9 + XJQKA', 'yes'],
-  ['💭', 'Clo-uds', 'Whi-te', '6', '0...9 + XJQKA', 'no'],
-  ['🕷️', 'Spi-ders', 'Bla-ck', '7', '0...9 + XJQKA', 'yes'],
-  ['🌸', 'Flo-wers', 'Pi-nk', '8', '0...9', 'unknown'],
-  ['💎', 'Dia-monds', 'Cy-an', '9', '0...9', 'unknown'],
-  ['💩', 'Poops', 'Bro-wn', '10', '0...9', 'unknown'],
-  ['🗿', 'Moais', 'Gr-ay', '11', '0...9', 'unknown'],
+  ['🔥', 'Fi-re', 'Red', '0', '0...9 + XJQKA'],
+  ['💧', 'Wa-ter', 'Blue', '1', '0...9 + XJQKA'],
+  ['⭐', 'Stars', 'Ye-llow', '2', '0...9 + XJQKA'],
+  ['☘️', 'Clubs', 'Gre-en', '3', '0...9 + XJQKA'],
+  ['🍊', 'Oran-ges', 'O-ran-ge', '4', '0...9 + XJQKA'],
+  ['🍆', 'Egg-plants', 'Pur-ple', '5', '0...9 + XJQKA'],
+  ['💭', 'Clo-uds', 'Whi-te', '6', '0...9 + XJQKA'],
+  ['🕷️', 'Spi-ders', 'Bla-ck', '7', '0...9 + XJQKA'],
+  ['🌸', 'Flo-wers', 'Pi-nk', '8', '0...9'],
+  ['💎', 'Dia-monds', 'Cy-an', '9', '0...9'],
+  ['💩', 'Poops', 'Bro-wn', '10', '0...9'],
+  ['🌈', 'Rainbows', 'Rain-bow', '11', '0...9'],
 ] as const satisfies string[][]
 ---
 
 <GenericTable>
   <Fragment slot="thead">
     <tr>
-      <th>Emo<wbr />ji</th>
+      <th>I<wbr />con</th>
+      <th class="border-l w-0">Emoji</th>
       <th class="border-l text-left pl-2">Na<wbr />me</th>
       <th class="border-l text-left pl-2">Co<wbr />lor</th>
       <th class="border-l">Id</th>
       <th class="border-l">Ra<wbr />nks</th>
-      <th class="border-l">Coin</th>
     </tr>
   </Fragment>
 
@@ -54,11 +53,13 @@ const rows = [
               )}
             </td>
 
+            <td>{row[0]}</td>
+
             <td class="text-left pl-2">
               <TextWithBreaks text={row[1]} breakChar="-" />
             </td>
             <td class="text-left pl-2">
-              <div class=" flex items-center gap-1">
+              <div class="flex items-center gap-1">
                 {isSuitColor(colorId) && <ColorSuit color={colorId} noAlt />}
                 <span class="grow">
                   <TextWithBreaks text={row[2]} breakChar="-" />
@@ -67,13 +68,6 @@ const rows = [
             </td>
             <td>{row[3]}</td>
             <td>{row[4]}</td>
-            <td>
-              {row[5] === 'yes' || row[5] === 'no' || row[5] === 'unknown' ? (
-                <CoinFlip id={row[5]} />
-              ) : (
-                row[5]
-              )}
-            </td>
           </tr>
         )
       })

@@ -1,0 +1,21 @@
+---
+interface Props {
+  link: string
+  text: string
+  icon?: `ti-${string}` // Tabler Icons
+  download?: string
+}
+
+const { link, text, icon, download } = Astro.props
+---
+
+<div class="text-center my-6 not-prose">
+  <a
+    href={link}
+    class="unset px-6 py-3.5 text-base font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    download={download}
+  >
+    {icon && <i class={`ti ${icon} mr-2 text-xl`} />}
+    {text}
+  </a>
+</div>
