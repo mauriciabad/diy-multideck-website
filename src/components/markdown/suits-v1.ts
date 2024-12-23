@@ -1,32 +1,32 @@
 const suitV1EmojisById = {
-  0: '🔥',
-  1: '💧',
-  2: '⭐',
-  3: '🍀',
-  4: '🍊',
-  5: '🍆',
-  6: '💭',
-  7: '🕷️',
-  8: '🌸',
-  9: '💎',
-  10: '💩',
-  11: '🗿',
-  111: '❤️',
-  121: '🔴',
-  131: '🟥',
-  112: '💙',
-  122: '🔵',
-  132: '🟦',
-  113: '💛',
-  123: '🟡',
-  133: '🟨',
-  114: '💚',
-  124: '🟢',
-  134: '🟩',
-  115: '🖤',
-  125: '⚫️',
-  135: '⬛️',
-  145: '🌈',
+  '0': '🔥',
+  '1': '💧',
+  '2': '⭐',
+  '3': '🍀',
+  '4': '🍊',
+  '5': '🍆',
+  '6': '💭',
+  '7': '🕷️',
+  '8': '🌸',
+  '9': '💎',
+  '10': '💩',
+  '11': '🗿',
+  '111': '❤️',
+  '121': '🔴',
+  '131': '🟥',
+  '112': '💙',
+  '122': '🔵',
+  '132': '🟦',
+  '113': '💛',
+  '123': '🟡',
+  '133': '🟨',
+  '114': '💚',
+  '124': '🟢',
+  '134': '🟩',
+  '115': '🖤',
+  '125': '⚫️',
+  '135': '⬛️',
+  '145': '🌈',
 } as const
 
 export type SuitV1Emoji =
@@ -36,9 +36,7 @@ export type SuitV1Id = keyof typeof suitV1EmojisById
 export const suitV1Emojis = Object.values(
   suitV1EmojisById
 ) as readonly SuitV1Emoji[]
-export const suitV1Ids = Object.keys(suitV1EmojisById).map(
-  Number
-) as readonly SuitV1Id[]
+export const suitV1Ids = Object.keys(suitV1EmojisById) as readonly SuitV1Id[]
 
 export function isSuitV1Emoji(text: string): text is SuitV1Emoji {
   return (suitV1Emojis as readonly string[]).includes(text)

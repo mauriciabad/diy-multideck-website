@@ -1,3 +1,5 @@
+// @ts-check
+
 import { component, defineMarkdocConfig } from '@astrojs/markdoc/config'
 import {
   shapeSuitIds,
@@ -154,7 +156,7 @@ export default defineMarkdocConfig({
       attributes: {
         color: {
           type: String,
-          matches: suitColors,
+          matches: Array.from(suitColors),
           errorLevel: 'error',
         },
         noAlt: {
@@ -168,13 +170,13 @@ export default defineMarkdocConfig({
       selfClosing: true,
       attributes: {
         id: {
-          type: Number,
-          matches: [1, 2, 3, 4, 5, 6],
+          type: String,
+          matches: ['1', '2', '3', '4', '5', '6'],
           errorLevel: 'error',
         },
         color: {
           type: String,
-          matches: suitV1Colors,
+          matches: Array.from(suitV1Colors),
           errorLevel: 'error',
         },
         noAlt: {
@@ -189,7 +191,7 @@ export default defineMarkdocConfig({
       attributes: {
         id: {
           type: String,
-          matches: shapeSuitIds,
+          matches: Array.from(shapeSuitIds),
           errorLevel: 'error',
         },
       },
@@ -200,7 +202,7 @@ export default defineMarkdocConfig({
       attributes: {
         id: {
           type: String,
-          matches: shapeSuitV1Ids,
+          matches: Array.from(shapeSuitV1Ids),
           errorLevel: 'error',
         },
       },
@@ -233,12 +235,12 @@ export default defineMarkdocConfig({
       attributes: {
         id: {
           type: String,
-          matches: suitIds,
+          matches: Array.from(suitIds),
           errorLevel: 'error',
         },
         emoji: {
           type: String,
-          matches: suitEmojis,
+          matches: Array.from(suitEmojis),
           errorLevel: 'error',
         },
       },
@@ -248,13 +250,13 @@ export default defineMarkdocConfig({
       selfClosing: true,
       attributes: {
         id: {
-          type: Number,
-          matches: suitV1Ids,
+          type: String,
+          matches: Array.from(suitV1Ids),
           errorLevel: 'error',
         },
         emoji: {
           type: String,
-          matches: suitV1Emojis,
+          matches: Array.from(suitV1Emojis),
           errorLevel: 'error',
         },
       },
