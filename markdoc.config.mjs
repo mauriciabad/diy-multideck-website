@@ -126,6 +126,11 @@ export default defineMarkdocConfig({
         },
       },
     },
+    bigButtonWrapper: {
+      render: component('./src/components/markdown/BigButtonWrapper.astro'),
+      children: ['bigButton'],
+      selfClosing: false,
+    },
     cardImgWithText: {
       render: component(
         './src/components/markdown/images/CardImgWithText.astro'

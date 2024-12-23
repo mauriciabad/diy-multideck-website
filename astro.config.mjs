@@ -159,6 +159,24 @@ export default defineConfig({
           },
         },
         {
+          name: 'downloads/mapping-sheets.zip',
+          content: {
+            'table-3d-dark.svg': 'images/home/layouts/table-3d-dark.svg',
+            'table-3d-light.svg': 'images/home/layouts/table-3d-light.svg',
+            'table-3d-alt-dark.svg':
+              'images/home/layouts/table-3d-alt-dark.svg',
+            'table-3d-alt-light.svg':
+              'images/home/layouts/table-3d-alt-light.svg',
+            'table-basic-dark.svg': 'images/home/layouts/table-basic-dark.svg',
+            'table-basic-light.svg':
+              'images/home/layouts/table-basic-light.svg',
+            'table-number-dark.svg':
+              'images/home/layouts/table-number-dark.svg',
+            'table-number-light.svg':
+              'images/home/layouts/table-number-light.svg',
+          },
+        },
+        {
           name: 'downloads/assets-v1.zip',
           content: {
             suits: {
