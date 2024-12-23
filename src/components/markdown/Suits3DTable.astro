@@ -1,0 +1,138 @@
+---
+import { cn } from '../../lib/cn'
+import GenericTable from '../GenericTable.astro'
+import TextWithBreaks from '../TextWithBreaks.astro'
+import ColorSuit from './ColorSuit.astro'
+import ShapeSuit from './ShapeSuit.astro'
+import Suit from './Suit.astro'
+import { isSuitColor, isSuitEmoji, isSuitShape } from './suits'
+
+const rows = [
+  ['❤️', 'Red hearts', 'Red', 'Heart', '0...9'],
+  ['🔴', 'Red cir-cles', 'Red', 'Cir-cle', '0...9'],
+  ['🟥', 'Red squa-res', 'Red', 'Squa-re', '0...9'],
+  ['💙', 'Blue hearts', 'Blue', 'Heart', '0...9'],
+  ['🔵', 'Blue cir-cles', 'Blue', 'Cir-cle', '0...9'],
+  ['🟦', 'Blue squa-res', 'Blue', 'Squa-re', '0...9'],
+  ['💛', 'Ye-llow hearts', 'Ye-llow', 'Heart', '0...9'],
+  ['🟡', 'Ye-llow cir-cles', 'Ye-llow', 'Cir-cle', '0...9'],
+  ['🟨', 'Ye-llow squa-res', 'Ye-llow', 'Squa-re', '0...9'],
+  ['💚', 'Gre-en hearts', 'Gre-en', 'Heart', '0...9'],
+  ['🟢', 'Gre-en cir-cles', 'Gre-en', 'Cir-cle', '0...9'],
+  ['🟩', 'Gre-en squa-res', 'Gre-en', 'Squa-re', '0...9'],
+  ['🖤', 'Bla-ck hearts', 'Bla-ck', 'Heart', '0...9'],
+  ['⚫️', 'Bla-ck cir-cles', 'Bla-ck', 'Cir-cle', '0...9'],
+  [
+    '🔲',
+    'Bla-ck squa-res / White cir-cles',
+    'Bla-ck/Whi-te',
+    'Squ-are/Cir-cle',
+    '0...9',
+  ],
+  ['🤍', 'Whi-te hearts', 'Whi-te', 'Heart', '0...9'],
+] as const satisfies string[][]
+---
+
+<GenericTable>
+  <Fragment slot="thead">
+    <tr>
+      <th>Emo<wbr />ji</th>
+      <th class="border-l text-left pl-2">Na<wbr />me</th>
+      <th class="border-l text-left pl-2">Co<wbr />lor</th>
+      <th class="border-l text-left pl-2">Sha<wbr />pe</th>
+      <th class="border-l">Ra<wbr />nks</th>
+    </tr>
+  </Fragment>
+
+  <Fragment slot="tbody">
+    {
+      rows.map((row, rowN) => {
+        const colorId = `textured-${row[2].toLowerCase().replace(/-/g, '')}`
+        const shapeId = row[3].toLowerCase().replace(/-/g, '')
+
+        return (
+          <tr
+            class={cn('[&_td]:border-l first:[&_td]:border-l-0', {
+              'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
+            })}
+          >
+            <td>
+              {isSuitEmoji(row[0]) ? (
+                <Suit emoji={row[0]} size="large-responsive" />
+              ) : (
+                row[0]
+              )}
+            </td>
+
+            <td class="text-left pl-2">
+              {row[1].includes('/') ? (
+                <div class="space-y-1">
+                  {row[1].split('/').map((part) => (
+                    <span class="block">
+                      <TextWithBreaks text={part} breakChar="-" />
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <TextWithBreaks text={row[1]} breakChar="-" />
+              )}
+            </td>
+            <td class="text-left pl-2">
+              {row[2].includes('/') ? (
+                <div class="space-y-1">
+                  {row[2].split('/').map((part) => {
+                    const partColorId = `textured-${part
+                      .toLowerCase()
+                      .replace(/-/g, '')}`
+
+                    return (
+                      <div class="flex items-center gap-1">
+                        {isSuitColor(partColorId) && (
+                          <ColorSuit color={partColorId} noAlt />
+                        )}
+                        <TextWithBreaks text={part} breakChar="-" />
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div class="flex items-center gap-1">
+                  {isSuitColor(colorId) && <ColorSuit color={colorId} noAlt />}
+                  <span class="grow">
+                    <TextWithBreaks text={row[2]} breakChar="-" />
+                  </span>
+                </div>
+              )}
+            </td>
+            <td class="text-left pl-2">
+              {row[3].includes('/') ? (
+                <div class="space-y-1">
+                  {row[3].split('/').map((part) => {
+                    const partShapeId = part.toLowerCase().replace(/-/g, '')
+
+                    return (
+                      <div class="flex items-center gap-1">
+                        {isSuitShape(partShapeId) && (
+                          <ShapeSuit id={partShapeId} />
+                        )}
+                        <TextWithBreaks text={part} breakChar="-" />
+                      </div>
+                    )
+                  })}{' '}
+                </div>
+              ) : (
+                <div class="flex items-center gap-1">
+                  {isSuitShape(shapeId) && <ShapeSuit id={shapeId} />}
+                  <span class="grow">
+                    <TextWithBreaks text={row[3]} breakChar="-" />
+                  </span>
+                </div>
+              )}
+            </td>
+            <td>{row[4]}</td>
+          </tr>
+        )
+      })
+    }
+  </Fragment>
+</GenericTable>

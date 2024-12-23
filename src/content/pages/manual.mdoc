@@ -80,7 +80,7 @@ These are some example cards: one of each basic suit, the 2 extra cards, and 1 c
 
 {% imgLightDark light="/images/home/guides/basic-suit-light.svg" dark="/images/home/guides/basic-suit-dark.svg" width="23.5rem" alt="Basic suit guide" /%}
 
-In the top left and bottom right corners, there's a number overlapping an emoji (suit), it is the "Basic Suit".
+On the top-left and bottom-right corner, you can find a number (rank) overlapping an emoji (suit); it is the "Basic suit".
 
 It is the most used game system of the deck, and thus, the easiest to use. When mapping new games, always give priority to it.
 
@@ -112,7 +112,7 @@ All suits are emojis, so you can easily write cheat sheets on your phone and sen
 
 The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
 
-When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is either black ({% colorSuit color="textured-black" /%}) or white ({% colorSuit color="textured-white" /%}).
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is {% colorSuit color="textured-black" /%} black or {% colorSuit color="textured-white" /%} white.
 
 ### Distributions
 
@@ -157,7 +157,7 @@ You can also create a pyramidal deck of 12 levels, where each suit has different
 
 An example game that uses it is [Startups](/games/startups).
 
-### Layout
+### Game-mapping sheet
 
 {% imgLightDark light="/images/home/layouts/table-basic-light.svg" dark="/images/home/layouts/table-basic-dark.svg" width="33.3rem" alt="table basic" /%}
 
@@ -167,6 +167,22 @@ An example game that uses it is [Startups](/games/startups).
 
 {% imgLightDark light="/images/home/guides/3d-suit-light.svg" dark="/images/home/guides/3d-suit-dark.svg" width="23.5rem" alt="3D suit guide" /%}
 
+On the top-right or bottom-left corner, you can find a number overlapping simple shape with a textured background; it is the "3D suit".
+
+Each suit has 3 components, this is why it's called _3D_:
+
+- Color: {% colorSuit color="textured-red" /%}{% colorSuit color="textured-blue" /%}{% colorSuit color="textured-yellow" /%}{% colorSuit color="textured-green" /%}{% colorSuit color="textured-black" /%}{% colorSuit color="textured-white" /%}
+- Shape: {% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}
+- Rank: 0...9
+
+{% callout type="idea" %}
+The {% suit id="A24" /%} suit can be used as a {% suit id="A24-alt" /%} Black square or {% suit id="A15" /%} White circle, to get different distributions.
+{% /callout %}
+
+{% suits3DTable /%}
+
+When the _3D suit_ is {% colorSuit color="black" noAlt=true /%} black or {% colorSuit color="white" noAlt=true /%} white, the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit color="red" noAlt=true /%}{% colorSuit color="blue" noAlt=true /%}{% colorSuit color="green" noAlt=true /%}{% colorSuitV1 color="yellow" noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
+
 ### Distributions
 
 <!-- TODO: change in v1.1 -->
@@ -175,11 +191,23 @@ An example game that uses it is [Startups](/games/startups).
 
 {% imgLightDark light="/images/home/distributions/2-shapes-x-6-colors-x-10-ranks-light.svg" dark="/images/home/distributions/2-shapes-x-6-colors-x-10-ranks-dark.svg" width=300 alt="2 shapes x 6 colors x 10 ranks distribution diagram" /%}
 
+Use {% suit id="A24" /%} as {% suit id="A15" /%} White circle, to get 6 colors × 2 shapes × 10 ranks.
+
+There will be some unused cards, that may be optionally used to add 1 extra shape to 4 colors. The remaining cards are: red, blue, green and yellow squares ({% suit id="A20" /%}{% suit id="A21" /%}{% suit id="A22" /%}{% suit id="A23" /%}) with ranks 0...9.
+
+An example game that uses it is [Stick 'Em](/games/stick-em).
+
 #### 5 colors × 3 shapes × 10 ranks
 
 {% imgLightDark light="/images/home/distributions/3-shapes-x-5-colors-x-10-ranks-light.svg" dark="/images/home/distributions/3-shapes-x-5-colors-x-10-ranks-dark.svg" width=300 alt="3 shapes x 5 colors x 10 ranks distribution diagram" /%}
 
-### Layout
+Use {% suit id="A24" /%} as {% suit id="A24-alt" /%} Black square, to get 5 colors × 3 shapes × 10 ranks.
+
+There will be some unused cards, that may be optionally used to add 1 extra color to 1 sapes. The remaining cards are: {% suit id="A05" /%} white hearts with ranks 0...9.
+
+An example game that uses it is [Spicy](/games/spicy).
+
+### Game-mapping sheet
 
 {% imgLightDark light="/images/home/layouts/table-3d-light.svg" dark="/images/home/layouts/table-3d-dark.svg" width="23.5rem" alt="table 3d" /%}
 <!-- {% imgLightDark light="/images/home/layouts/table-3d-alt-light.svg" dark="/images/home/layouts/table-3d-alt-dark.svg" width="23.5rem" alt="table 3d" /%} -->
@@ -188,7 +216,7 @@ An example game that uses it is [Startups](/games/startups).
 
 {% imgLightDark light="/images/home/guides/number-suit-light.svg" dark="/images/home/guides/number-suit-dark.svg" width="7.2rem" alt="Number suit guide" /%}
 
-On the top-right or bottom-left corner, you can find a number without a suit behind; it is the "Number suit."
+On the top-right or bottom-left corner, you can find a number without a suit behind; it is the "Number suit".
 
 It contains numbers **from 0 to 159**.
 
@@ -222,7 +250,7 @@ You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa)
 
 But it is quite unintuitive to use, so only use this combination if you need ordered suits, or 13 to 15 suits of 9...10 ranks; otherwise, it's better to use the ["switched" basic suit](#basic-suit).
 
-### Layout
+### Game-mapping sheet
 
 {% imgLightDark light="/images/home/layouts/table-number-light.svg" dark="/images/home/layouts/table-number-dark.svg" width="23.5rem" alt="table number" /%}
 
