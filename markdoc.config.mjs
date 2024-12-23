@@ -97,6 +97,33 @@ export default defineMarkdocConfig({
         },
       },
     },
+    bigButton: {
+      render: component('./src/components/markdown/BigButton.astro'),
+      selfClosing: true,
+      attributes: {
+        link: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        text: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        icon: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+        download: {
+          type: String,
+          required: false,
+          default: undefined,
+          errorLevel: 'error',
+        },
+      },
+    },
     cardImgWithText: {
       render: component(
         './src/components/markdown/images/CardImgWithText.astro'
