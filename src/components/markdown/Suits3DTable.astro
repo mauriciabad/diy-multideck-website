@@ -8,35 +8,37 @@ import Suit from './Suit.astro'
 import { isSuitColor, isSuitEmoji, isSuitShape } from './suits'
 
 const rows = [
-  ['❤️', 'Red hearts', 'Red', 'Heart', '0...9'],
-  ['🔴', 'Red cir-cles', 'Red', 'Cir-cle', '0...9'],
-  ['🟥', 'Red squa-res', 'Red', 'Squa-re', '0...9'],
-  ['💙', 'Blue hearts', 'Blue', 'Heart', '0...9'],
-  ['🔵', 'Blue cir-cles', 'Blue', 'Cir-cle', '0...9'],
-  ['🟦', 'Blue squa-res', 'Blue', 'Squa-re', '0...9'],
-  ['💛', 'Ye-llow hearts', 'Ye-llow', 'Heart', '0...9'],
-  ['🟡', 'Ye-llow cir-cles', 'Ye-llow', 'Cir-cle', '0...9'],
-  ['🟨', 'Ye-llow squa-res', 'Ye-llow', 'Squa-re', '0...9'],
-  ['💚', 'Gre-en hearts', 'Gre-en', 'Heart', '0...9'],
-  ['🟢', 'Gre-en cir-cles', 'Gre-en', 'Cir-cle', '0...9'],
-  ['🟩', 'Gre-en squa-res', 'Gre-en', 'Squa-re', '0...9'],
-  ['🖤', 'Bla-ck hearts', 'Bla-ck', 'Heart', '0...9'],
-  ['⚫️', 'Bla-ck cir-cles', 'Bla-ck', 'Cir-cle', '0...9'],
+  ['❤️', '❤️', 'Red hearts', 'Red', 'Heart', '0...9'],
+  ['🔴', '🔴', 'Red cir-cles', 'Red', 'Cir-cle', '0...9'],
+  ['🟥', '🟥', 'Red squa-res', 'Red', 'Squa-re', '0...9'],
+  ['💙', '💙', 'Blue hearts', 'Blue', 'Heart', '0...9'],
+  ['🔵', '🔵', 'Blue cir-cles', 'Blue', 'Cir-cle', '0...9'],
+  ['🟦', '🟦', 'Blue squa-res', 'Blue', 'Squa-re', '0...9'],
+  ['💛', '💛', 'Ye-llow hearts', 'Ye-llow', 'Heart', '0...9'],
+  ['🟡', '🟡', 'Ye-llow cir-cles', 'Ye-llow', 'Cir-cle', '0...9'],
+  ['🟨', '🟨', 'Ye-llow squa-res', 'Ye-llow', 'Squa-re', '0...9'],
+  ['💚', '💚', 'Gre-en hearts', 'Gre-en', 'Heart', '0...9'],
+  ['🟢', '🟢', 'Gre-en cir-cles', 'Gre-en', 'Cir-cle', '0...9'],
+  ['🟩', '🟩', 'Gre-en squa-res', 'Gre-en', 'Squa-re', '0...9'],
+  ['🖤', '🖤', 'Bla-ck hearts', 'Bla-ck', 'Heart', '0...9'],
+  ['⚫️', '⚫️', 'Bla-ck cir-cles', 'Bla-ck', 'Cir-cle', '0...9'],
   [
     '🔲',
+    '⬛️/⚪️',
     'Bla-ck squa-res / White cir-cles',
     'Bla-ck/Whi-te',
     'Squ-are/Cir-cle',
     '0...9',
   ],
-  ['🤍', 'Whi-te hearts', 'Whi-te', 'Heart', '0...9'],
+  ['🤍', '🤍', 'Whi-te hearts', 'Whi-te', 'Heart', '0...9'],
 ] as const satisfies string[][]
 ---
 
 <GenericTable>
   <Fragment slot="thead">
     <tr>
-      <th>Emo<wbr />ji</th>
+      <th>I<wbr />con</th>
+      <th class="border-l w-0">Emoji</th>
       <th class="border-l text-left pl-2">Na<wbr />me</th>
       <th class="border-l text-left pl-2">Co<wbr />lor</th>
       <th class="border-l text-left pl-2">Sha<wbr />pe</th>
@@ -47,8 +49,8 @@ const rows = [
   <Fragment slot="tbody">
     {
       rows.map((row, rowN) => {
-        const colorId = `textured-${row[2].toLowerCase().replace(/-/g, '')}`
-        const shapeId = row[3].toLowerCase().replace(/-/g, '')
+        const colorId = `textured-${row[3].toLowerCase().replace(/-/g, '')}`
+        const shapeId = row[4].toLowerCase().replace(/-/g, '')
 
         return (
           <tr
@@ -63,24 +65,35 @@ const rows = [
                 row[0]
               )}
             </td>
-
-            <td class="text-left pl-2">
+            <td class="text-[2remZ]">
               {row[1].includes('/') ? (
                 <div class="space-y-1">
                   {row[1].split('/').map((part) => (
+                    <span class="block">{part}</span>
+                  ))}
+                </div>
+              ) : (
+                row[1]
+              )}
+            </td>
+
+            <td class="text-left pl-2">
+              {row[2].includes('/') ? (
+                <div class="space-y-1">
+                  {row[2].split('/').map((part) => (
                     <span class="block">
                       <TextWithBreaks text={part} breakChar="-" />
                     </span>
                   ))}
                 </div>
               ) : (
-                <TextWithBreaks text={row[1]} breakChar="-" />
+                <TextWithBreaks text={row[2]} breakChar="-" />
               )}
             </td>
             <td class="text-left pl-2">
-              {row[2].includes('/') ? (
+              {row[3].includes('/') ? (
                 <div class="space-y-1">
-                  {row[2].split('/').map((part) => {
+                  {row[3].split('/').map((part) => {
                     const partColorId = `textured-${part
                       .toLowerCase()
                       .replace(/-/g, '')}`
@@ -99,15 +112,15 @@ const rows = [
                 <div class="flex items-center gap-1">
                   {isSuitColor(colorId) && <ColorSuit color={colorId} noAlt />}
                   <span class="grow">
-                    <TextWithBreaks text={row[2]} breakChar="-" />
+                    <TextWithBreaks text={row[3]} breakChar="-" />
                   </span>
                 </div>
               )}
             </td>
             <td class="text-left pl-2">
-              {row[3].includes('/') ? (
+              {row[4].includes('/') ? (
                 <div class="space-y-1">
-                  {row[3].split('/').map((part) => {
+                  {row[4].split('/').map((part) => {
                     const partShapeId = part.toLowerCase().replace(/-/g, '')
 
                     return (
@@ -124,12 +137,12 @@ const rows = [
                 <div class="flex items-center gap-1">
                   {isSuitShape(shapeId) && <ShapeSuit id={shapeId} />}
                   <span class="grow">
-                    <TextWithBreaks text={row[3]} breakChar="-" />
+                    <TextWithBreaks text={row[4]} breakChar="-" />
                   </span>
                 </div>
               )}
             </td>
-            <td>{row[4]}</td>
+            <td>{row[5]}</td>
           </tr>
         )
       })

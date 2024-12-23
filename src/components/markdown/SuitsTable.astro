@@ -25,7 +25,8 @@ const rows = [
 <GenericTable>
   <Fragment slot="thead">
     <tr>
-      <th>Emo<wbr />ji</th>
+      <th>I<wbr />con</th>
+      <th class="border-l w-0">Emoji</th>
       <th class="border-l text-left pl-2">Na<wbr />me</th>
       <th class="border-l text-left pl-2">Co<wbr />lor</th>
       <th class="border-l">Id</th>
@@ -51,6 +52,8 @@ const rows = [
                 row[0]
               )}
             </td>
+
+            <td>{row[0]}</td>
 
             <td class="text-left pl-2">
               <TextWithBreaks text={row[1]} breakChar="-" />
