@@ -175,6 +175,10 @@ Each suit has 3 components, this is why it's called _3D_:
 - Shape: {% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}
 - Rank: 0...9
 
+Most of the times, the shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) are ignored and used as repetitions of the color instead. This is useful for games like [UNO](/games/uno), where each color has the ranks repeated.
+
+Alternatively, the shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) can be used as tens digits. So hearts are valued 0...9, circles 10...19, and squares 20...29 ({% shapeSuit id="heart" /%} < {% shapeSuit id="circle" /%} < {% shapeSuit id="square" /%}). This is used in games that require 16 to 30 ranks per color, like [For Sale](/games/for-sale) or [What the Heck?](/games/what-the-heck). If you need 15 or less ranks per color, use the [Basic suit](#basic-suit) instead.
+
 {% callout type="idea" %}
 The {% suit id="A24" /%} suit can be used as a {% suit id="A24-alt" /%} Black square or {% suit id="A15" /%} White circle, to get different distributions.
 {% /callout %}
@@ -563,9 +567,9 @@ The slogan "Draw your cards" is there to encourage people to draw and lose the f
 
 The first 10 numbers of the [Number suit](#number-suit) corner start with 0 to maintain the visual pattern of color in the number (left side black, right side colored).
 
-Small digits in the [3D deck](#3d-suit) corner start at 1 instead of 0 for a more natural use of the cards. However, this means you can't simply concatenate the digits to create numbers from 00 to 29, and you are required to perform subtraction. <!-- TODO: change in v1.1 -->
+The shapes in the [3D suit](#3d-suit) are ordered by their area, from smallest to largest. Specifically, the order is {% shapeSuit id="heart" /%} < {% shapeSuit id="circle" /%} < {% shapeSuit id="square" /%}.
 
-The card backs use a lot of ink to increase the opacity of the card, especially on the corners, that's why the arrows are black. <!-- TODO: change in v1.1 -->
+The card backs use a lot of ink to increase the opacity of the card.
 
 Not all suits have the same amount of ranks. I decided to cut on some cards and make an overall uneven distribution because it's rare to find games that use high ranks (+10) and many suits (+8) at the same time. There are very few of those games because the amount of cards would grow to more than 150 and it feels too many cards to handle for the player. Moreover, games with many cards usually have several kinds of cards with low ranks, so you need more suits without mattering much the amount of ranks.
 
