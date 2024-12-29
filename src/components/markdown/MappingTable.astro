@@ -1,0 +1,16 @@
+---
+import type { GameMappingVariant } from '../../lib/schemas/gameMappingsSchema'
+
+interface Props {
+  mapping: GameMappingVariant
+}
+
+const { mapping } = Astro.props
+---
+
+<div class="not-prose bg-stone-100 p-4 rounded-lg mt-8">
+  <h3 class="text-lg font-semibold mb-2">Mapping Debug Info:</h3>
+  <pre class="overflow-auto">
+    {JSON.stringify(mapping, null, 2)}
+  </pre>
+</div>

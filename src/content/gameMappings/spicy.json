@@ -1,0 +1,860 @@
+{
+  "variants": [
+    {
+      "name": "Spicy",
+      "slug": "spicy",
+      "description": "Testing **bold**",
+      "cells": [
+        {
+          "cardId": 0,
+          "name": "0 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 1,
+          "name": "1 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 2,
+          "name": "2 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 3,
+          "name": "3 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 4,
+          "name": "4 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 5,
+          "name": "5 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 6,
+          "name": "6 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 7,
+          "name": "7 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 8,
+          "name": "8 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 9,
+          "name": "9 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 0,
+          "name": "0 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 11,
+          "name": "1 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 12,
+          "name": "2 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 13,
+          "name": "3 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 14,
+          "name": "4 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 15,
+          "name": "5 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 16,
+          "name": "6 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 17,
+          "name": "7 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 18,
+          "name": "8 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 19,
+          "name": "9 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 20,
+          "name": "0 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 21,
+          "name": "1 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 22,
+          "name": "2 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 23,
+          "name": "3 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 24,
+          "name": "4 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 25,
+          "name": "5 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 26,
+          "name": "6 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 27,
+          "name": "7 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 28,
+          "name": "8 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        {
+          "cardId": 29,
+          "name": "9 of Red spice",
+          "groups": ["red"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+
+        {
+          "cardId": 30,
+          "name": "0 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 31,
+          "name": "1 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 32,
+          "name": "2 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 33,
+          "name": "3 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 34,
+          "name": "4 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 35,
+          "name": "5 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 36,
+          "name": "6 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 37,
+          "name": "7 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 38,
+          "name": "8 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 39,
+          "name": "9 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 30,
+          "name": "0 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 41,
+          "name": "1 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 42,
+          "name": "2 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 43,
+          "name": "3 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 44,
+          "name": "4 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 45,
+          "name": "5 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 46,
+          "name": "6 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 47,
+          "name": "7 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 48,
+          "name": "8 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 49,
+          "name": "9 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 50,
+          "name": "0 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 51,
+          "name": "1 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 52,
+          "name": "2 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 53,
+          "name": "3 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 54,
+          "name": "4 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 55,
+          "name": "5 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 56,
+          "name": "6 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 57,
+          "name": "7 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 58,
+          "name": "8 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        {
+          "cardId": 59,
+          "name": "9 of Blue spice",
+          "groups": ["blue"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+
+        {
+          "cardId": 90,
+          "name": "0 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 91,
+          "name": "1 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 92,
+          "name": "2 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 93,
+          "name": "3 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 94,
+          "name": "4 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 95,
+          "name": "5 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 96,
+          "name": "6 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 97,
+          "name": "7 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 98,
+          "name": "8 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 99,
+          "name": "9 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 90,
+          "name": "0 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 101,
+          "name": "1 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 102,
+          "name": "2 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 103,
+          "name": "3 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 104,
+          "name": "4 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 105,
+          "name": "5 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 106,
+          "name": "6 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 107,
+          "name": "7 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 108,
+          "name": "8 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 109,
+          "name": "9 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 110,
+          "name": "0 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 111,
+          "name": "1 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 112,
+          "name": "2 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 113,
+          "name": "3 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 114,
+          "name": "4 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 115,
+          "name": "5 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 116,
+          "name": "6 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 117,
+          "name": "7 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 118,
+          "name": "8 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        },
+        {
+          "cardId": 119,
+          "name": "9 of Green spice",
+          "groups": ["green"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        }
+      ],
+      "notes": "Testing",
+      "groups": {
+        "red": {
+          "name": "Red spices",
+          "notes": "\"Chili\" on the original game.",
+          "color": "red",
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "red"
+          }
+        },
+        "blue": {
+          "name": "Blue spices",
+          "notes": "\"Pepper\" on the original game.",
+          "color": "blue",
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "blue"
+          }
+        },
+        "green": {
+          "name": "Green spices",
+          "notes": "\"Wasabi\" on the original game.",
+          "color": "green",
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "green"
+          }
+        }
+      },
+      "templateIcons": {
+        "spice": {
+          "srcIconId": "game-icons/lorc/powder",
+          "alt": "Spice"
+        }
+      },
+      "layout": "basic"
+    }
+  ]
+}
