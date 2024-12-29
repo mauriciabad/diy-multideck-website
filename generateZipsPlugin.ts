@@ -59,17 +59,19 @@ async function addFileOrFolder(
   )
 }
 
+export type GenerateZipsOptions = {
+  zips: AssetZips
+  /** Base directory to read files from. Defaults to Vite's public directory. */
+  baseDir?: string
+}
+
 /**
  * Generates zip files from the specified assets.
  * @param zips For each zip file, specify the name and the content of the zip file.
  *                  The content is an object where the keys are file/folder names and the values
  *                  are either the file paths or deeper folder structures.
  */
-export const generateZipsVitePlugin = (options: {
-  zips: AssetZips
-  /** Base directory to read files from. Defaults to Vite's public directory. */
-  baseDir?: string
-}) => {
+export const generateZipsVitePlugin = (options: GenerateZipsOptions) => {
   let config: ResolvedConfig
 
   const plugin: Plugin = {
@@ -117,11 +119,7 @@ export const generateZipsVitePlugin = (options: {
   return plugin
 }
 
-export const generateZips = (options: {
-  zips: AssetZips
-  /** Base directory to read files from. Defaults to Vite's public directory. */
-  baseDir?: string
-}) => {
+export const generateZips = (options: GenerateZipsOptions) => {
   const integration: AstroIntegration = {
     name: 'generate-zips',
     hooks: {
