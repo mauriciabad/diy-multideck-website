@@ -2,6 +2,7 @@
 import markdoc from '@astrojs/markdoc'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
+import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 import { generateZipsOptions } from './generateZipsOptions.ts'
 import { generateZips } from './generateZipsPlugin.ts'
@@ -14,5 +15,6 @@ export default defineConfig({
     sitemap(),
     tailwind({ applyBaseStyles: false }),
     generateZips(generateZipsOptions),
+    icon(),
   ],
 })
