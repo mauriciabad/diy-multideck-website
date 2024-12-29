@@ -850,7 +850,7 @@
       },
       "templateIcons": {
         "spice": {
-          "srcIconId": "game-icons/lorc/powder",
+          "srcIconId": "game-icons:powder",
           "alt": "Spice"
         }
       },

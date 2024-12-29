@@ -1,5 +1,9 @@
 ---
-import type { GameMappingVariant } from '../../lib/schemas/gameMappingsSchema'
+import { Icon } from 'astro-icon/components'
+import {
+  mergeIcon,
+  type GameMappingVariant,
+} from '../../lib/schemas/gameMappingsSchema'
 
 interface Props {
   mapping: GameMappingVariant
@@ -10,6 +14,34 @@ const { mapping } = Astro.props
 
 <div class="not-prose bg-stone-100 p-4 rounded-lg mt-8">
   <h3 class="text-lg font-semibold mb-2">Mapping Debug Info:</h3>
+  <h4>Template icons:</h4>
+  <div class="flex flex-wrap gap-2">
+    {
+      Object.entries(mapping.templateIcons ?? {}).map(([, templateIcon]) => {
+        return <Icon name={templateIcon.srcIconId} fill={templateIcon.fill} />
+      })
+    }
+  </div>
+  <h4>Cells:</h4>
+  <div class="flex flex-wrap gap-2">
+    {
+      mapping.cells.map((cell) => {
+        const mergedIcon = mergeIcon(cell.icon, mapping.templateIcons)
+
+        return (
+          <div>
+            {mergedIcon && (
+              <Icon
+                name={mergedIcon.srcIconId}
+                style={{ color: mergedIcon.fill }}
+              />
+            )}
+            <p>{cell.name}</p>
+          </div>
+        )
+      })
+    }
+  </div>
   <pre class="overflow-auto">
     {JSON.stringify(mapping, null, 2)}
   </pre>

@@ -1,4 +1,5 @@
 import { z } from 'astro:content'
+import { merge } from 'lodash'
 
 const strokeSchema = z.object({
   width: z.number(),
@@ -93,3 +94,23 @@ export const gameMappingsSchema = z.object({
 
 export type GameMappingVariant = z.infer<typeof variantSchema>
 export type GameMapping = z.infer<typeof gameMappingsSchema>
+
+type IconSchema = z.infer<typeof iconSchema>
+type IconFromTemplateSchema = z.infer<typeof iconFromTemplateSchema>
+
+export function iconIsFromTemplate(
+  icon: IconSchema | IconFromTemplateSchema
+): icon is IconFromTemplateSchema {
+  return 'templateIconId' in icon
+}
+
+export function mergeIcon(
+  icon: IconSchema | IconFromTemplateSchema | undefined,
+  templateIcons: Record<string, IconSchema> | undefined
+) {
+  if (!icon) return undefined
+  if (iconIsFromTemplate(icon)) {
+    return merge({}, templateIcons?.[icon.templateIconId], icon)
+  }
+  return icon
+}
