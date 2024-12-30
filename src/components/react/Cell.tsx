@@ -36,8 +36,9 @@ export const Cell: FC<{
     <div
       key={cardId}
       className={cn(
-        'flex flex-col items-center justify-center overflow-hidden relative cursor-pointer transition-colors',
-        isSelected && 'bg-primary/10',
+        'flex flex-col items-center justify-center overflow-hidden relative transition-colors',
+        isSelected && 'bg-stone-200',
+        !!cell && 'cursor-pointer',
         className
       )}
       onClick={onClick ? () => onClick(cardId) : undefined}

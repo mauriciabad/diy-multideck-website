@@ -19,7 +19,13 @@ export const CellDetailsPanel: FC<{
     return (
       <Card className={cn('w-full', className)}>
         <CardBody>
-          <p className="text-default-500 text-center text-sm">Unused Card</p>
+          <p className="text-default-800 text-center text-lg font-bold mb-2">
+            Unused card
+          </p>
+          <p className="text-default-500 text-center text-sm">
+            <span className="hidden sm:inline">Click</span>
+            <span className="sm:hidden">Tap</span> another cell for more details
+          </p>
         </CardBody>
       </Card>
     )
@@ -30,10 +36,10 @@ export const CellDetailsPanel: FC<{
       <CardBody className="block">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold leading-none sm:leading-none">
+            <h2 className="text-xl sm:text-2xl font-bold leading-none sm:leading-none text-pretty">
               {cell.name}
             </h2>
-            <p className="text-sm sm:text-base text-default-500">
+            <p className="text-sm sm:text-base text-default-500 text-pretty">
               {cell.notes}
             </p>
           </div>
@@ -41,7 +47,7 @@ export const CellDetailsPanel: FC<{
         </div>
 
         {cell.groups && cell.groups.length > 0 && (
-          <div className="flex gap-4 mt-2">
+          <div className="flex flex-col gap-3 mt-2 mb-4">
             {cell.groups.map((groupId) => {
               const group = mapping.groups?.[groupId] || {
                 name: groupId,
@@ -52,7 +58,7 @@ export const CellDetailsPanel: FC<{
                 <div key={groupId} className="flex items-center gap-2">
                   <div
                     className={cn(
-                      'w-2 h-full min-h-6 rounded-full flex items-center justify-center box-content',
+                      'w-2 self-stretch min-h-6 rounded-full box-content',
                       group.color === 'white' && 'outline outline-stone-700'
                     )}
                     style={{
@@ -60,10 +66,10 @@ export const CellDetailsPanel: FC<{
                     }}
                   />
                   <div>
-                    <p className="font-semibold leading-none text-lg">
+                    <p className="font-semibold leading-none text-lg text-pretty">
                       {group.name}
                     </p>
-                    <p className="text-small text-default-500 leading-tight">
+                    <p className="text-small text-default-500 leading-tight text-pretty">
                       {group.notes}
                     </p>
                   </div>
@@ -74,27 +80,27 @@ export const CellDetailsPanel: FC<{
         )}
 
         {cell.drawings && cell.drawings.length > 0 && (
-          <>
-            <h3 className="text-xl font-bold mb-2 mt-4 leading-none">
-              Drawings
-            </h3>
-            <div className="flex flex-col gap-3">
-              {cell.drawings.map((drawing, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="bg-default-100 w-24 h-24 flex items-center justify-center rounded-lg">
-                    AREA {drawing.area?.letter}
-                    {drawing.area?.number}
-                  </div>
-                  <div>
-                    <p className="font-semibold">{drawing.name}</p>
-                    <p className="text-default-500 leading-tight">
-                      {drawing.notes}
-                    </p>
-                  </div>
+          <div className="flex flex-col gap-2 my-4">
+            {cell.drawings.map((drawing, index) => (
+              <div key={index} className="flex items-start gap-3">
+                {drawing.area ? (
+                  <img
+                    src={`/images/drawing-areas/usage/${drawing.area?.letter}.svg`}
+                    alt={`Drawing area ${drawing.area?.letter}${drawing.area?.number}`}
+                    className="w-16"
+                  />
+                ) : (
+                  <div className="w-16" />
+                )}
+                <div>
+                  <p className="font-semibold text-pretty">{drawing.name}</p>
+                  <p className="text-default-500 leading-tight text-pretty">
+                    {drawing.notes}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </>
+              </div>
+            ))}
+          </div>
         )}
       </CardBody>
     </Card>

@@ -221,6 +221,7 @@ export function fillDrawingFromTemplate(
 
 export function getFullCell(cardId: number, mapping: GameMappingVariant) {
   const originalCell = mapping.cells.find((cell) => cell.cardId === cardId)
+  if (!originalCell) return undefined
   const mergedCell = fillCellFromTemplate(originalCell, mapping.templateCells)
 
   return {
