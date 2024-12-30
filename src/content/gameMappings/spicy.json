@@ -1264,7 +1264,8 @@
             "letter": "B",
             "number": 2
           },
-          "description": "Write the name of the card, or a drawing to hint it's effect."
+          "name": "Spice it up! Effect",
+          "notes": "Write the name of the card, or a drawing to hint it's effect."
         }
       },
       "layout": "3d"

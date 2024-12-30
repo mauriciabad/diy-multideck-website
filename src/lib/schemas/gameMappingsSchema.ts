@@ -63,7 +63,8 @@ const drawingBaseSchema = z.object({
       number: z.literal(1).optional(),
     }),
   ]),
-  description: z.string(),
+  name: z.string(),
+  notes: z.string().optional(),
 })
 
 const drawingSchema = drawingBaseSchema.partial().extend({

@@ -33,8 +33,11 @@ export const CellDetailsPanel: FC<{
             <p className="font-semibold">Drawings:</p>
             <ul className="list-disc list-inside">
               {cell.drawings.map((drawing, i) => (
-                <li key={i} className="text-default-500">
-                  {drawing.description}
+                <li
+                  key={`${drawing.area?.letter}-${drawing.area?.number}-${i}`}
+                  className="text-default-500"
+                >
+                  {drawing.name}
                 </li>
               ))}
             </ul>
