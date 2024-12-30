@@ -60,8 +60,10 @@ const COLOR_MAPPINGS = {
   pink: '#ff77c4',
   cyan: '#12cdd4',
   brown: '#b79664',
-  // rainbow: 'linear-gradient(90deg, #8B83FF 0%, #8B83FF 16%, #00C0E9 17%, #00C0E9 33%, #5FDF6C 34%, #5FDF6C 49%, #F8D71E 50%, #F8D71E 66%, #FF8E00 67%, #FF8E00 83%, #FF532E 84%, #FF532E 100%)',
 } as const satisfies Record<string, string>
+
+const RAINBOW_GRADIENT_ID_PREFIX = 'rainbow-gradient'
+const ICON_MASK_ID_PREFIX = 'icon-mask'
 
 function iconTransformToCss(transform: GameMappingIconSchema['transform']) {
   if (!transform) return undefined
@@ -166,6 +168,9 @@ export const MappingTable: FC<{
   const layout = LAYOUT_CONFIGS[mapping.layout]
   const gridLayout = GRID_LAYOUTS[mapping.layout]
 
+  // Create unique IDs for this table instance
+  const rainbowGradientId = `${RAINBOW_GRADIENT_ID_PREFIX}-${mapping.layout}`
+
   // Create a map of cardId to cell for quick lookup
   const cellsByCardId = new Map(
     mapping.cells.map((cell) => [cell.cardId, cell])
@@ -181,6 +186,32 @@ export const MappingTable: FC<{
         maxWidth: layout.maxWidth,
       }}
     >
+      <svg className="absolute w-0 h-0">
+        <defs>
+          <linearGradient
+            id={rainbowGradientId}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+            gradientTransform="rotate(45, 0.5, 0.5)"
+          >
+            <stop offset="0%" stopColor="#8B83FF" />
+            <stop offset="25%" stopColor="#8B83FF" />
+            <stop offset="25%" stopColor="#00C0E9" />
+            <stop offset="37.5%" stopColor="#00C0E9" />
+            <stop offset="37.5%" stopColor="#5FDF6C" />
+            <stop offset="50%" stopColor="#5FDF6C" />
+            <stop offset="50%" stopColor="#F8D71E" />
+            <stop offset="62.5%" stopColor="#F8D71E" />
+            <stop offset="62.5%" stopColor="#FF8E00" />
+            <stop offset="75%" stopColor="#FF8E00" />
+            <stop offset="75%" stopColor="#FF532E" />
+            <stop offset="100%" stopColor="#FF532E" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <div
         className="grid absolute"
         style={{
@@ -208,26 +239,81 @@ export const MappingTable: FC<{
               fillDrawingFromTemplate(drawing, mapping.templateDrawings)
             ) ?? []
 
+          const isRainbow = mergedIcon?.fill === 'rainbow'
+          const maskId = `${ICON_MASK_ID_PREFIX}-${mapping.layout}-${cardId}`
+
           return (
             <div
               key={`${mergedCell.cardId}-${index}`}
               className="flex flex-col items-center justify-center overflow-hidden relative"
             >
               {mergedIcon?.srcIconId && (
-                <Icon
-                  icon={mergedIcon.srcIconId}
-                  className="size-full"
-                  stroke={translateColor(mergedIcon.stroke?.color)}
-                  strokeWidth={
-                    mergedIcon.stroke?.width
-                      ? (mergedIcon.stroke.width / 190) * 512
-                      : undefined
-                  }
-                  style={{
-                    color: translateColor(mergedIcon.fill),
-                    transform: iconTransformToCss(mergedIcon.transform),
-                  }}
-                />
+                <>
+                  {isRainbow ? (
+                    <svg className="absolute inset-0" viewBox="0 0 512 512">
+                      <defs>
+                        <mask id={maskId}>
+                          <rect
+                            x="0"
+                            y="0"
+                            width="512"
+                            height="512"
+                            fill="black"
+                          />
+                          <Icon
+                            icon={mergedIcon.srcIconId}
+                            width="512"
+                            height="512"
+                            style={{
+                              color: '#ffffff',
+                            }}
+                          />
+                        </mask>
+                      </defs>
+                      <rect
+                        x="0"
+                        y="0"
+                        width="512"
+                        height="512"
+                        fill={`url(#${rainbowGradientId})`}
+                        mask={`url(#${maskId})`}
+                        style={{
+                          transform: iconTransformToCss(mergedIcon.transform),
+                        }}
+                      />
+                      {mergedIcon.stroke && (
+                        <Icon
+                          icon={mergedIcon.srcIconId}
+                          width="512"
+                          height="512"
+                          style={{
+                            color: 'transparent',
+                            stroke: translateColor(mergedIcon.stroke.color),
+                            strokeWidth: mergedIcon.stroke.width
+                              ? (mergedIcon.stroke.width / 190) * 512
+                              : undefined,
+                            transform: iconTransformToCss(mergedIcon.transform),
+                          }}
+                        />
+                      )}
+                    </svg>
+                  ) : (
+                    <Icon
+                      icon={mergedIcon.srcIconId}
+                      className="size-full"
+                      stroke={translateColor(mergedIcon.stroke?.color)}
+                      strokeWidth={
+                        mergedIcon.stroke?.width
+                          ? (mergedIcon.stroke.width / 190) * 512
+                          : undefined
+                      }
+                      style={{
+                        color: translateColor(mergedIcon.fill),
+                        transform: iconTransformToCss(mergedIcon.transform),
+                      }}
+                    />
+                  )}
+                </>
               )}
               {mergedCell.text && (
                 <svg
