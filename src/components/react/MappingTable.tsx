@@ -3,7 +3,8 @@ import { cn } from '../../lib/cn'
 import {
   type GameMappingIconSchema,
   type GameMappingVariant,
-  mergeIcon,
+  fillCellFromTemplate,
+  fillIconFromTemplate,
 } from '../../lib/schemas/gameMappingsSchema'
 import { Icon } from '@iconify/react'
 import TableBasicLight from '../../assets/layouts/table-basic-light.svg'
@@ -66,8 +67,12 @@ function iconTransformToCss(transform: GameMappingIconSchema['transform']) {
   return (
     [
       transform.scale ? `scale(${transform.scale})` : null,
-      transform.translateX ? `translateX(${transform.translateX})` : null,
-      transform.translateY ? `translateY(${transform.translateY})` : null,
+      transform.translateX
+        ? `translateX(${transform.translateX * 100}%)`
+        : null,
+      transform.translateY
+        ? `translateY(${transform.translateY * 100}%)`
+        : null,
       transform.rotate ? `rotate(${transform.rotate}deg)` : null,
     ]
       .filter((value) => value !== null)
@@ -75,7 +80,7 @@ function iconTransformToCss(transform: GameMappingIconSchema['transform']) {
   )
 }
 
-function iconFillToCss(fill: string | undefined) {
+function translateColor(fill: string | undefined) {
   if (!fill) return undefined
   return COLOR_MAPPINGS[fill as keyof typeof COLOR_MAPPINGS] ?? fill
 }
@@ -108,24 +113,71 @@ export const MappingTable: FC<{
         }}
       >
         {mapping.cells.map((cell, index) => {
-          const mergedIcon = cell.icon
-            ? mergeIcon(cell.icon, mapping.templateIcons)
-            : null
+          const mergedCell = fillCellFromTemplate(cell, mapping.templateCells)
+          const mergedIcon = fillIconFromTemplate(
+            mergedCell.icon,
+            mapping.templateIcons
+          )
 
           return (
             <div
-              key={`${cell.cardId}-${index}`}
-              className="flex flex-col items-center justify-center overflow-hidden"
+              key={`${mergedCell.cardId}-${index}`}
+              className="flex flex-col items-center justify-center overflow-hidden relative"
             >
-              {mergedIcon && (
+              {mergedIcon?.srcIconId && (
                 <Icon
                   icon={mergedIcon.srcIconId}
                   className="size-full"
                   style={{
-                    color: iconFillToCss(mergedIcon.fill),
+                    color: translateColor(mergedIcon.fill),
                     transform: iconTransformToCss(mergedIcon.transform),
                   }}
                 />
+              )}
+              {mergedCell.text && (
+                <svg
+                  className="absolute select-none font-brand inset-0"
+                  style={{
+                    transform: iconTransformToCss(mergedCell.text.transform),
+                  }}
+                  viewBox="0 0 190 190"
+                >
+                  <g
+                    xmlns="http://www.w3.org/2000/svg"
+                    font-family="Manrope, Inter var, Inter var experimental, Inter, Arial, Helvetica, sans-serif"
+                    font-size={mergedCell.text.size ?? 100}
+                    font-style="normal"
+                    font-weight={mergedCell.text.weight ?? 700}
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    text-decoration={
+                      translateColor(mergedCell.text.fill) ?? '#fff'
+                    }
+                  >
+                    <g>
+                      <text
+                        stroke={
+                          translateColor(mergedCell.text.stroke?.color) ??
+                          '#000'
+                        }
+                        strokeWidth={mergedCell.text.stroke?.width ?? 20}
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        x="50%"
+                        y="50%"
+                      >
+                        {mergedCell.text.content}
+                      </text>
+                      <text
+                        fill={translateColor(mergedCell.text.fill) ?? '#fff'}
+                        x="50%"
+                        y="50%"
+                      >
+                        {mergedCell.text.content}
+                      </text>
+                    </g>
+                  </g>
+                </svg>
               )}
             </div>
           )

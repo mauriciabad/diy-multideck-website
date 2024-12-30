@@ -2,31 +2,32 @@ import { z } from 'astro:content'
 import { merge } from 'lodash'
 
 const strokeSchema = z.object({
-  width: z.number(),
-  color: z.string(),
+  width: z.number().optional(),
+  color: z.string().optional(),
 })
 
 const transformSchema = z.object({
   scale: z.number().optional(),
-  translateX: z.string().optional(),
-  translateY: z.string().optional(),
+  translateX: z.number().optional(),
+  translateY: z.number().optional(),
   rotate: z.number().optional(),
 })
 
-const iconSchema = z.object({
-  srcIconId: z.string(),
+const iconBaseSchema = z.object({
   fill: z.string().optional(),
   bgFill: z.string().optional(),
   stroke: strokeSchema.optional(),
   transform: transformSchema.optional(),
 })
 
-const iconFromTemplateSchema = z.object({
-  templateIconId: z.string(),
-  fill: z.string().optional(),
-  bgFill: z.string().optional(),
-  stroke: strokeSchema.optional(),
-  transform: transformSchema.optional(),
+const iconSchema = iconBaseSchema.extend({
+  templateIconId: z.string().optional(),
+  srcIconId: z.string().optional(),
+})
+
+const iconTemplateSchema = iconBaseSchema.extend({
+  templateIconId: z.undefined().optional(),
+  srcIconId: z.string(),
 })
 
 const drawingSchema = z.object({
@@ -44,12 +45,10 @@ const drawingSchema = z.object({
   alt: z.string(),
 })
 
-const cellSchema = z.object({
-  cardId: z.number(),
-  name: z.string(),
+const cellBaseSchema = z.object({
   notes: z.string().optional(),
   bgFill: z.string().optional(),
-  icon: z.union([iconSchema, iconFromTemplateSchema]).optional(),
+  icon: iconSchema.optional(),
   emoji: z
     .object({
       content: z.string(),
@@ -63,17 +62,38 @@ const cellSchema = z.object({
       fill: z.string().optional(),
       stroke: strokeSchema.optional(),
       transform: transformSchema.optional(),
+      weight: z
+        .enum([
+          'thin',
+          'light',
+          'normal',
+          'medium',
+          'semi-bold',
+          'bold',
+          'black',
+        ])
+        .optional(),
     })
     .optional(),
   drawings: z.array(drawingSchema).optional(),
   groups: z.array(z.string()).optional(),
 })
 
+const cellTemplateSchema = cellBaseSchema.extend({
+  templateCellId: z.undefined().optional(),
+})
+
+const cellSchema = cellBaseSchema.extend({
+  templateCellId: z.string().optional(),
+  cardId: z.number(),
+  name: z.string(),
+})
+
 const groupSchema = z.object({
   name: z.string(),
   notes: z.string().optional(),
   color: z.string(),
-  icon: z.union([iconSchema, iconFromTemplateSchema]).optional(),
+  icon: iconSchema.optional(),
   emoji: z.string().optional(),
 })
 
@@ -84,7 +104,8 @@ const variantSchema = z.object({
   cells: z.array(cellSchema),
   notes: z.string().optional(),
   groups: z.record(groupSchema).optional(),
-  templateIcons: z.record(iconSchema).optional(),
+  templateIcons: z.record(iconTemplateSchema).optional(),
+  templateCells: z.record(cellTemplateSchema).optional(),
   layout: z.enum(['basic', '3d', '3d-alt', 'number']),
 })
 
@@ -96,21 +117,49 @@ export type GameMappingVariant = z.infer<typeof variantSchema>
 export type GameMapping = z.infer<typeof gameMappingsSchema>
 
 export type GameMappingIconSchema = z.infer<typeof iconSchema>
-type GameMappingIconFromTemplateSchema = z.infer<typeof iconFromTemplateSchema>
+type GameMappingIconTemplatesSchema = z.infer<
+  typeof variantSchema
+>['templateIcons']
 
-export function iconIsFromTemplate(
-  icon: GameMappingIconSchema | GameMappingIconFromTemplateSchema
-): icon is GameMappingIconFromTemplateSchema {
-  return 'templateIconId' in icon
-}
-
-export function mergeIcon(
-  icon: GameMappingIconSchema | GameMappingIconFromTemplateSchema | undefined,
-  templateIcons: Record<string, GameMappingIconSchema> | undefined
+export function fillIconFromTemplate(
+  icon: GameMappingIconSchema,
+  templateIcons: GameMappingIconTemplatesSchema
+): GameMappingIconSchema
+export function fillIconFromTemplate(
+  icon: GameMappingIconSchema | undefined,
+  templateIcons: GameMappingIconTemplatesSchema
+): GameMappingIconSchema | undefined
+export function fillIconFromTemplate(
+  icon: GameMappingIconSchema | undefined,
+  templateIcons: GameMappingIconTemplatesSchema
 ) {
   if (!icon) return undefined
-  if (iconIsFromTemplate(icon)) {
-    return merge({}, templateIcons?.[icon.templateIconId], icon)
+  if (icon.templateIconId) {
+    return merge(templateIcons?.[icon.templateIconId], icon)
   }
   return icon
+}
+
+type GameMappingCellSchema = z.infer<typeof cellSchema>
+type GameMappingCellTemplatesSchema = z.infer<
+  typeof variantSchema
+>['templateCells']
+
+export function fillCellFromTemplate(
+  cell: GameMappingCellSchema,
+  templateCells: GameMappingCellTemplatesSchema
+): GameMappingCellSchema
+export function fillCellFromTemplate(
+  cell: GameMappingCellSchema | undefined,
+  templateCells: GameMappingCellTemplatesSchema
+): GameMappingCellSchema | undefined
+export function fillCellFromTemplate(
+  cell: GameMappingCellSchema | undefined,
+  templateCells: GameMappingCellTemplatesSchema
+) {
+  if (!cell) return undefined
+  if (cell.templateCellId) {
+    return merge(templateCells?.[cell.templateCellId], cell)
+  }
+  return cell
 }
