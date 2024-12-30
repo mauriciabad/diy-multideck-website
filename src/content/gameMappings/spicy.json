@@ -851,10 +851,13 @@
       "templateIcons": {
         "spice": {
           "srcIconId": "game-icons:powder",
-          "alt": "Spice"
+          "alt": "Spice",
+          "transform": {
+            "scale": 0.8
+          }
         }
       },
-      "layout": "basic"
+      "layout": "3d"
     }
   ]
 }

@@ -7,10 +7,10 @@ const strokeSchema = z.object({
 })
 
 const transformSchema = z.object({
-  scale: z.string().optional(),
+  scale: z.number().optional(),
   translateX: z.string().optional(),
   translateY: z.string().optional(),
-  rotate: z.string().optional(),
+  rotate: z.number().optional(),
 })
 
 const iconSchema = z.object({
@@ -85,7 +85,7 @@ const variantSchema = z.object({
   notes: z.string().optional(),
   groups: z.record(groupSchema).optional(),
   templateIcons: z.record(iconSchema).optional(),
-  layout: z.enum(['basic', '3d', '3d-alt', 'sequential']),
+  layout: z.enum(['basic', '3d', '3d-alt', 'number']),
 })
 
 export const gameMappingsSchema = z.object({
@@ -95,18 +95,18 @@ export const gameMappingsSchema = z.object({
 export type GameMappingVariant = z.infer<typeof variantSchema>
 export type GameMapping = z.infer<typeof gameMappingsSchema>
 
-type IconSchema = z.infer<typeof iconSchema>
-type IconFromTemplateSchema = z.infer<typeof iconFromTemplateSchema>
+export type GameMappingIconSchema = z.infer<typeof iconSchema>
+type GameMappingIconFromTemplateSchema = z.infer<typeof iconFromTemplateSchema>
 
 export function iconIsFromTemplate(
-  icon: IconSchema | IconFromTemplateSchema
-): icon is IconFromTemplateSchema {
+  icon: GameMappingIconSchema | GameMappingIconFromTemplateSchema
+): icon is GameMappingIconFromTemplateSchema {
   return 'templateIconId' in icon
 }
 
 export function mergeIcon(
-  icon: IconSchema | IconFromTemplateSchema | undefined,
-  templateIcons: Record<string, IconSchema> | undefined
+  icon: GameMappingIconSchema | GameMappingIconFromTemplateSchema | undefined,
+  templateIcons: Record<string, GameMappingIconSchema> | undefined
 ) {
   if (!icon) return undefined
   if (iconIsFromTemplate(icon)) {

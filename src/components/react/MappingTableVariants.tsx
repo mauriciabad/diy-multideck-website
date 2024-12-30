@@ -6,8 +6,11 @@ import { cn } from '../../lib/cn'
 
 export const MappingTableVariants: FC<{
   mapping: GameMapping
-  className?: string
-}> = ({ mapping, className }) => {
+  classNames?: {
+    container?: string
+    table?: string
+  }
+}> = ({ mapping, classNames }) => {
   const [selectedVariant, setSelectedVariant] = useState<Selection>(
     new Set(mapping.variants[0] ? [mapping.variants[0].slug] : [])
   )
@@ -30,7 +33,9 @@ export const MappingTableVariants: FC<{
   }, [selectedVariant, mapping.variants])
 
   return (
-    <div className={cn('flex flex-col gap-4 items-center', className)}>
+    <div
+      className={cn('flex flex-col gap-4 items-center', classNames?.container)}
+    >
       {mapping.variants.length >= 2 && (
         <Select
           label="Variant"
@@ -50,7 +55,9 @@ export const MappingTableVariants: FC<{
         </Select>
       )}
 
-      {currentVariant && <MappingTable mapping={currentVariant} />}
+      {currentVariant && (
+        <MappingTable mapping={currentVariant} className={classNames?.table} />
+      )}
     </div>
   )
 }
