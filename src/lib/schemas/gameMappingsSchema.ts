@@ -165,7 +165,7 @@ export function fillIconFromTemplate(
 ) {
   if (!icon) return undefined
   if (icon.templateIconId) {
-    return merge(templateIcons?.[icon.templateIconId], icon)
+    return merge({}, templateIcons?.[icon.templateIconId], icon)
   }
   return icon
 }
@@ -189,7 +189,7 @@ export function fillCellFromTemplate(
 ) {
   if (!cell) return undefined
   if (cell.templateCellId) {
-    return merge(templateCells?.[cell.templateCellId], cell)
+    return merge({}, templateCells?.[cell.templateCellId], cell)
   }
   return cell
 }
@@ -213,7 +213,7 @@ export function fillDrawingFromTemplate(
 ) {
   if (!drawing) return undefined
   if (drawing.templateDrawingId) {
-    return merge(templateDrawings?.[drawing.templateDrawingId], drawing)
+    return merge({}, templateDrawings?.[drawing.templateDrawingId], drawing)
   }
   return drawing
 }
