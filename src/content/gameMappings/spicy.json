@@ -127,7 +127,7 @@
         },
         {
           "templateCellId": "spice-card",
-          "cardId": 0,
+          "cardId": 10,
           "name": "0 of Red spice",
           "text": {
             "content": "0"
@@ -488,7 +488,7 @@
         },
         {
           "templateCellId": "spice-card",
-          "cardId": 30,
+          "cardId": 40,
           "name": "0 of Blue spice",
           "text": {
             "content": "0"
@@ -849,7 +849,7 @@
         },
         {
           "templateCellId": "spice-card",
-          "cardId": 90,
+          "cardId": 100,
           "name": "0 of Green spice",
           "text": {
             "content": "0"
