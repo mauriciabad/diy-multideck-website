@@ -20,6 +20,7 @@ import {
   translateColor,
 } from '../../lib/utils/mappingUtils'
 import { CellDetailsPanel } from './CellDetailsPanel'
+import { Card, CardBody } from '@nextui-org/react'
 
 const LAYOUT_CONFIGS = {
   basic: {
@@ -365,8 +366,17 @@ export const MappingTable: FC<{
         />
       </div>
 
-      {selectedCell && (
+      {selectedCell ? (
         <CellDetailsPanel cell={selectedCell} mapping={mapping} />
+      ) : (
+        <Card className="w-full">
+          <CardBody>
+            <p className="text-default-500 text-center text-sm">
+              <span className="hidden sm:inline">Click</span>
+              <span className="sm:hidden">Tap</span> a cell for more details
+            </p>
+          </CardBody>
+        </Card>
       )}
     </div>
   )
