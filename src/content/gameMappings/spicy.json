@@ -1116,6 +1116,46 @@
           "templateCellId": "spice-it-up-card",
           "cardId": 25,
           "name": "Copy Cat"
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 120
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 121
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 122
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 123
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 124
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 150
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 151
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 152
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 153
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 154
         }
       ],
       "notes": "Testing",
@@ -1188,6 +1228,33 @@
             }
           ],
           "groups": ["spice-it-up-cards"]
+        },
+        "wild-all-numbers-card": {
+          "name": "Wild all numbers",
+          "text": {
+            "content": "0-9"
+          },
+          "groups": ["wild-all-numbers-card"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "#dfdfdf",
+            "stroke": {
+              "color": "#bfbfbf",
+              "width": 3
+            }
+          }
+        },
+        "wild-all-spices-card": {
+          "name": "Wild all spices",
+          "groups": ["wild-all-spices-card"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "rainbow",
+            "stroke": {
+              "color": "#000000",
+              "width": 1
+            }
+          }
         }
       },
       "templateDrawings": {

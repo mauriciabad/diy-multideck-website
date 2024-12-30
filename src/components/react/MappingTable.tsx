@@ -217,6 +217,12 @@ export const MappingTable: FC<{
                 <Icon
                   icon={mergedIcon.srcIconId}
                   className="size-full"
+                  stroke={translateColor(mergedIcon.stroke?.color)}
+                  strokeWidth={
+                    mergedIcon.stroke?.width
+                      ? (mergedIcon.stroke.width / 190) * 512
+                      : undefined
+                  }
                   style={{
                     color: translateColor(mergedIcon.fill),
                     transform: iconTransformToCss(mergedIcon.transform),

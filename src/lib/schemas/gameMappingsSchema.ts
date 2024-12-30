@@ -75,6 +75,7 @@ const drawingTemplateSchema = drawingBaseSchema.extend({
 })
 
 const cellBaseSchema = z.object({
+  name: z.string(),
   notes: z.string().optional(),
   bgFill: z.string().optional(),
   icon: iconSchema.optional(),
@@ -108,14 +109,13 @@ const cellBaseSchema = z.object({
   groups: z.array(z.string()).optional(),
 })
 
-const cellTemplateSchema = cellBaseSchema.extend({
+const cellTemplateSchema = cellBaseSchema.partial().extend({
   templateCellId: z.undefined().optional(),
 })
 
 const cellSchema = cellBaseSchema.partial().extend({
   templateCellId: z.string().optional(),
   cardId: z.number(),
-  name: z.string(),
 })
 
 const groupSchema = z.object({
