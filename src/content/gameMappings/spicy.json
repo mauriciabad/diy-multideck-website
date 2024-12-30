@@ -1186,7 +1186,15 @@
         },
         "spice-it-up-cards": {
           "name": "Spice it up! cards",
+          "color": "yellow"
+        },
+        "wild-all-numbers-card": {
+          "name": "Wild all numbers",
           "color": "black"
+        },
+        "wild-all-spices-card": {
+          "name": "Wild all spices",
+          "color": "white"
         }
       },
       "templateIcons": {
@@ -1207,6 +1215,7 @@
               "translateY": -0.025
             }
           },
+          "notes": "Use 0-9 instead of 1-10.",
           "icon": {
             "templateIconId": "spice",
             "alt": "Spice",
@@ -1216,6 +1225,7 @@
           }
         },
         "spice-it-up-card": {
+          "notes": "One of the Spice it up! cards.",
           "icon": {
             "templateIconId": "spice-it-up",
             "transform": {
@@ -1231,6 +1241,7 @@
         },
         "wild-all-numbers-card": {
           "name": "Wild all numbers",
+          "notes": "All numbers, no color (spice).",
           "text": {
             "content": "0-9",
             "size": 90
@@ -1247,6 +1258,7 @@
         },
         "wild-all-spices-card": {
           "name": "Wild all spices",
+          "notes": "All colors (spices), no number.",
           "groups": ["wild-all-spices-card"],
           "icon": {
             "templateIconId": "spice",
