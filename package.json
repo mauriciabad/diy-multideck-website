@@ -13,15 +13,23 @@
   "dependencies": {
     "@astrojs/check": "0.3.1",
     "@astrojs/markdoc": "0.7.2",
+    "@astrojs/react": "^4.1.2",
     "@astrojs/sitemap": "3.0.3",
     "@astrojs/tailwind": "5.0.2",
+    "@nextui-org/react": "^2.6.10",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
     "astro": "3.6.4",
     "astro-icon": "^1.1.5",
+    "framer-motion": "^11.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "typescript": "5.3.2"
   },
   "devDependencies": {
     "@iconify-json/game-icons": "^1.2.1",
     "@iconify-json/tabler": "^1.2.13",
+    "@iconify/react": "^5.1.0",
     "@savvywombat/tailwindcss-grid-areas": "4.0.0",
     "@tailwindcss/container-queries": "0.1.1",
     "@tailwindcss/typography": "0.5.10",
