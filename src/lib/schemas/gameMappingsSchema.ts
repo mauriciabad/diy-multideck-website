@@ -170,7 +170,7 @@ export function fillIconFromTemplate(
   return icon
 }
 
-type GameMappingCellSchema = z.infer<typeof cellSchema>
+export type GameMappingCellSchema = z.infer<typeof cellSchema>
 type GameMappingCellTemplatesSchema = z.infer<
   typeof variantSchema
 >['templateCells']

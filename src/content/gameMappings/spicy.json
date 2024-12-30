@@ -1232,7 +1232,8 @@
         "wild-all-numbers-card": {
           "name": "Wild all numbers",
           "text": {
-            "content": "0-9"
+            "content": "0-9",
+            "size": 90
           },
           "groups": ["wild-all-numbers-card"],
           "icon": {
