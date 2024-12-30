@@ -218,3 +218,17 @@ export function fillDrawingFromTemplate(
   }
   return drawing
 }
+
+export function getFullCell(cardId: number, mapping: GameMappingVariant) {
+  const originalCell = mapping.cells.find((cell) => cell.cardId === cardId)
+  const mergedCell = fillCellFromTemplate(originalCell, mapping.templateCells)
+
+  return {
+    ...mergedCell,
+    cardId,
+    icon: fillIconFromTemplate(mergedCell?.icon, mapping.templateIcons),
+    drawings: mergedCell?.drawings?.map((drawing) =>
+      fillDrawingFromTemplate(drawing, mapping.templateDrawings)
+    ),
+  }
+}

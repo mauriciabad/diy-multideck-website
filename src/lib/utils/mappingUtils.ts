@@ -14,9 +14,6 @@ export const COLOR_MAPPINGS = {
   brown: '#b79664',
 } as const
 
-export const RAINBOW_GRADIENT_ID_PREFIX = 'rainbow-gradient'
-export const ICON_MASK_ID_PREFIX = 'icon-mask'
-
 export function iconTransformToCss(
   transform: GameMappingIconSchema['transform']
 ) {

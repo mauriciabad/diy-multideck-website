@@ -1,18 +1,30 @@
 import { Card, CardBody } from '@nextui-org/react'
-import type { FC } from 'react'
+import { useMemo, type FC } from 'react'
 import { cn } from '../../lib/cn'
-import type {
-  GameMappingCellSchema,
-  GameMappingVariant,
+import {
+  getFullCell,
+  type GameMappingVariant,
 } from '../../lib/schemas/gameMappingsSchema'
 import { translateColor } from '../../lib/utils/mappingUtils'
+import { Cell } from './Cell'
 
 export const CellDetailsPanel: FC<{
-  cell: GameMappingCellSchema
+  cardId: number
   mapping: GameMappingVariant
   className?: string
-}> = ({ cell, mapping, className }) => {
-  console.log(cell)
+}> = ({ cardId, mapping, className }) => {
+  const cell = useMemo(() => getFullCell(cardId, mapping), [cardId, mapping])
+
+  if (!cell) {
+    return (
+      <Card className={cn('w-full', className)}>
+        <CardBody>
+          <p className="text-default-500 text-center text-sm">Unused Card</p>
+        </CardBody>
+      </Card>
+    )
+  }
+
   return (
     <Card className={cn('w-full', className)}>
       <CardBody className="block">
@@ -25,9 +37,7 @@ export const CellDetailsPanel: FC<{
               {cell.notes}
             </p>
           </div>
-          <div className="bg-default-100 size-14 flex items-center justify-center rounded-lg">
-            ICON
-          </div>
+          <Cell cardId={cell.cardId} mapping={mapping} className="size-14" />
         </div>
 
         {cell.groups && cell.groups.length > 0 && (
@@ -53,7 +63,9 @@ export const CellDetailsPanel: FC<{
                     <p className="font-semibold leading-none text-lg">
                       {group.name}
                     </p>
-                    <p className="text-small text-default-500">{group.notes}</p>
+                    <p className="text-small text-default-500 leading-tight">
+                      {group.notes}
+                    </p>
                   </div>
                 </div>
               )
@@ -75,7 +87,9 @@ export const CellDetailsPanel: FC<{
                   </div>
                   <div>
                     <p className="font-semibold">{drawing.name}</p>
-                    <p className="text-default-500">{drawing.notes}</p>
+                    <p className="text-default-500 leading-tight">
+                      {drawing.notes}
+                    </p>
                   </div>
                 </div>
               ))}
