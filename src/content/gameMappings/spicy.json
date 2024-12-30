@@ -1182,7 +1182,21 @@
               "scale": 0.8
             }
           },
+          "drawings": [
+            {
+              "templateDrawingId": "spice-it-up-generic-drawing"
+            }
+          ],
           "groups": ["spice-it-up-cards"]
+        }
+      },
+      "templateDrawings": {
+        "spice-it-up-generic-drawing": {
+          "area": {
+            "letter": "B",
+            "number": 2
+          },
+          "description": "Write the name of the card, or a drawing to hint it's effect."
         }
       },
       "layout": "3d"

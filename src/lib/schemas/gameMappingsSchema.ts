@@ -14,35 +14,64 @@ const transformSchema = z.object({
 })
 
 const iconBaseSchema = z.object({
+  srcIconId: z.string(),
   fill: z.string().optional(),
   bgFill: z.string().optional(),
   stroke: strokeSchema.optional(),
   transform: transformSchema.optional(),
 })
 
-const iconSchema = iconBaseSchema.extend({
+const iconSchema = iconBaseSchema.partial().extend({
   templateIconId: z.string().optional(),
-  srcIconId: z.string().optional(),
 })
 
 const iconTemplateSchema = iconBaseSchema.extend({
   templateIconId: z.undefined().optional(),
-  srcIconId: z.string(),
 })
 
-const drawingSchema = z.object({
-  area: z.enum(
-    // prettier-ignore
-    [
-      'A1', 'A2',
-      'B1', 'B2', 'B3', 'B4',
-      'C1', 'C2', 'C3', 'C4', 'C5', 'C6',
-      'D1', 'D2', 'D3', 'D4',
-      'E1'
-    ]
-  ),
-  src: z.string(),
-  alt: z.string(),
+const drawingBaseSchema = z.object({
+  area: z.discriminatedUnion('letter', [
+    z.object({
+      letter: z.literal('A'),
+      number: z.union([z.literal(1), z.literal(2)]).optional(),
+    }),
+    z.object({
+      letter: z.literal('B'),
+      number: z
+        .union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)])
+        .optional(),
+    }),
+    z.object({
+      letter: z.literal('C'),
+      number: z.union([
+        z.literal(1),
+        z.literal(2),
+        z.literal(3),
+        z.literal(4),
+        z.literal(5),
+        z.literal(6),
+      ]),
+    }),
+    z.object({
+      letter: z.literal('D'),
+      number: z
+        .union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)])
+        .optional(),
+    }),
+    z.object({
+      letter: z.literal('E'),
+      number: z.literal(1).optional(),
+    }),
+  ]),
+  description: z.string(),
+})
+
+const drawingSchema = drawingBaseSchema.partial().extend({
+  templateDrawingId: z.string().optional(),
+})
+
+const drawingTemplateSchema = drawingBaseSchema.extend({
+  templateDrawingId: z.undefined().optional(),
 })
 
 const cellBaseSchema = z.object({
@@ -83,7 +112,7 @@ const cellTemplateSchema = cellBaseSchema.extend({
   templateCellId: z.undefined().optional(),
 })
 
-const cellSchema = cellBaseSchema.extend({
+const cellSchema = cellBaseSchema.partial().extend({
   templateCellId: z.string().optional(),
   cardId: z.number(),
   name: z.string(),
@@ -104,6 +133,7 @@ const variantSchema = z.object({
   cells: z.array(cellSchema),
   notes: z.string().optional(),
   groups: z.record(groupSchema).optional(),
+  templateDrawings: z.record(drawingTemplateSchema).optional(),
   templateIcons: z.record(iconTemplateSchema).optional(),
   templateCells: z.record(cellTemplateSchema).optional(),
   layout: z.enum(['basic', '3d', '3d-alt', 'number']),
@@ -162,4 +192,28 @@ export function fillCellFromTemplate(
     return merge(templateCells?.[cell.templateCellId], cell)
   }
   return cell
+}
+
+type GameMappingDrawingSchema = z.infer<typeof drawingSchema>
+type GameMappingDrawingTemplatesSchema = z.infer<
+  typeof variantSchema
+>['templateDrawings']
+
+export function fillDrawingFromTemplate(
+  drawing: GameMappingDrawingSchema,
+  templateDrawings: GameMappingDrawingTemplatesSchema
+): GameMappingDrawingSchema
+export function fillDrawingFromTemplate(
+  drawing: GameMappingDrawingSchema | undefined,
+  templateDrawings: GameMappingDrawingTemplatesSchema
+): GameMappingDrawingSchema | undefined
+export function fillDrawingFromTemplate(
+  drawing: GameMappingDrawingSchema | undefined,
+  templateDrawings: GameMappingDrawingTemplatesSchema
+) {
+  if (!drawing) return undefined
+  if (drawing.templateDrawingId) {
+    return merge(templateDrawings?.[drawing.templateDrawingId], drawing)
+  }
+  return drawing
 }
