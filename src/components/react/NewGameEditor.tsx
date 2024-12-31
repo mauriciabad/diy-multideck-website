@@ -22,6 +22,7 @@ import {
   IconChevronsRight,
   IconCode,
   IconDownload,
+  IconSend,
 } from '@tabler/icons-react'
 import { Resplit } from 'react-resplit'
 import {
@@ -313,6 +314,26 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
     URL.revokeObjectURL(url)
   }, [jsonContent])
 
+  const handleSubmitSuggestion = useCallback(() => {
+    const timestamp = new Date().toISOString().replace('T', ' ').split('.')[0]
+
+    const emailTemplate = `Hi, I'm submitting a new game mapping suggestion.
+
+Board Game Name: 
+BoardGameGeek Link: 
+Comments (optional): 
+Mapped by (optional): 
+
+Game Mapping JSON:
+${jsonContent}`
+
+    const subject = encodeURIComponent(`Game Mapping Suggestion | ${timestamp}`)
+    const mailtoUrl = `mailto:diymultideck@mauri.app?subject=${subject}&body=${encodeURIComponent(
+      emailTemplate
+    )}`
+    window.location.href = mailtoUrl
+  }, [jsonContent])
+
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
@@ -346,8 +367,18 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               size="sm"
               onPress={handleDownload}
               startContent={<IconDownload className="size-4" />}
+              className="mr-2"
             >
               Download
+            </Button>
+            <Button
+              variant="solid"
+              size="sm"
+              color="secondary"
+              onPress={handleSubmitSuggestion}
+              startContent={<IconSend className="size-4" />}
+            >
+              Submit suggestion
             </Button>
           </NavbarItem>
         </NavbarContent>
