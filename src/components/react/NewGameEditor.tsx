@@ -90,7 +90,12 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   } = useDisclosure()
 
   const handleEditorChange = (value: string | undefined) => {
-    if (!value) return
+    if (!value) {
+      setJsonContent('')
+      setError('JSON cannot be empty')
+      setParsedData(defaultJson)
+      return
+    }
     setJsonContent(value)
 
     try {
@@ -139,9 +144,12 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
     if (!selectedExampleContent) return
     setJsonContent(selectedExampleContent)
     try {
-      setParsedData(JSON.parse(selectedExampleContent) as GameMapping)
+      const parsed = JSON.parse(selectedExampleContent)
+      const validated = gameMappingsSchema.parse(parsed)
+      setParsedData(validated)
+      setError('')
     } catch (e) {
-      console.error('Error parsing example:', e)
+      setError(e instanceof Error ? e.message : 'Invalid JSON')
     }
     onExamplesClose()
   }
