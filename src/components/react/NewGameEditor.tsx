@@ -17,7 +17,12 @@ import {
   SelectItem,
   useDisclosure,
 } from '@nextui-org/react'
-import { IconBook, IconCode, IconDownload } from '@tabler/icons-react'
+import {
+  IconBook,
+  IconChevronsRight,
+  IconCode,
+  IconDownload,
+} from '@tabler/icons-react'
 import Split from '@uiw/react-split'
 import { useCallback, useMemo, useState, type FC } from 'react'
 import Markdown from 'react-markdown'
@@ -289,22 +294,33 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
           </ModalHeader>
           <ModalBody className="flex flex-col gap-0">
             <div className="border-b border-divider p-4">
-              <Select
-                label="Game"
-                labelPlacement="outside"
-                placeholder="Choose a game mapping"
-                selectedKeys={selectedExample ? [selectedExample] : []}
-                onChange={(e) => setSelectedExample(e.target.value)}
-                classNames={{
-                  base: 'max-w-xs',
-                }}
-              >
-                {examples.map((example) => (
-                  <SelectItem key={example.name} value={example.name}>
-                    {example.name}
-                  </SelectItem>
-                ))}
-              </Select>
+              <div className="flex items-end gap-4">
+                <Select
+                  label="Game"
+                  labelPlacement="outside-left"
+                  placeholder="Choose a game mapping"
+                  selectedKeys={selectedExample ? [selectedExample] : []}
+                  onChange={(e) => setSelectedExample(e.target.value)}
+                  classNames={{
+                    base: 'max-w-xs items-center',
+                  }}
+                >
+                  {examples.map((example) => (
+                    <SelectItem key={example.name} value={example.name}>
+                      {example.name}
+                    </SelectItem>
+                  ))}
+                </Select>
+                <Button
+                  variant="solid"
+                  color="secondary"
+                  onPress={loadExample}
+                  isDisabled={!selectedExample}
+                  startContent={<IconChevronsRight className="size-4" />}
+                >
+                  Use this example
+                </Button>
+              </div>
             </div>
             <div className="flex-1 min-h-0">
               {selectedExampleContent && (
@@ -339,18 +355,6 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               )}
             </div>
           </ModalBody>
-          <ModalFooter className="border-t border-divider bg-stone-800 text-foreground dark">
-            <Button color="default" variant="flat" onPress={onExamplesClose}>
-              Cancel
-            </Button>
-            <Button
-              color="primary"
-              onPress={loadExample}
-              isDisabled={!selectedExample}
-            >
-              Use This Example
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </div>
