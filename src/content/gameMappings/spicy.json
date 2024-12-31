@@ -3,7 +3,6 @@
     {
       "name": "Spicy",
       "slug": "spicy",
-      "description": "Testing **bold**",
       "cells": [
         {
           "templateCellId": "spice-card",
@@ -1158,7 +1157,7 @@
           "cardId": 154
         }
       ],
-      "notes": "Testing",
+      "notes": "Use 3 tokens to represent the *Trophy cards*.\n\nFor the *World's End card*, do the following:\n- 2 players: remove 1/2 of the cards.\n- 3-4 players: remove 1/3 of the cards.\n- 5-6 players: remove 1/8 of the cards.",
       "groups": {
         "red": {
           "name": "Red spices",

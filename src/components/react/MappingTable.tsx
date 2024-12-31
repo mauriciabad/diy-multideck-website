@@ -1,6 +1,7 @@
 import { Card, CardBody } from '@nextui-org/react'
 import type { CSSProperties, FC, PropsWithChildren } from 'react'
 import { useId, useMemo, useState } from 'react'
+import Markdown from 'react-markdown'
 import Table3dAltLight from '../../assets/layouts/table-3d-alt-light.svg'
 import Table3dLight from '../../assets/layouts/table-3d-light.svg'
 import TableBasicLight from '../../assets/layouts/table-basic-light.svg'
@@ -230,6 +231,14 @@ export const MappingTable: FC<{
             </p>
           </CardBody>
         </Card>
+      )}
+      {mapping.notes && (
+        <div>
+          <h2 className="text-center text-2xl leading-none font-bold mb-2">
+            Notes
+          </h2>
+          <Markdown className="prose">{mapping.notes}</Markdown>
+        </div>
       )}
     </div>
   )
