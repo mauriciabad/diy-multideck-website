@@ -17,12 +17,7 @@ import {
   SelectItem,
   useDisclosure,
 } from '@nextui-org/react'
-import {
-  IconBook,
-  IconCode,
-  IconDownload,
-  IconTrash,
-} from '@tabler/icons-react'
+import { IconBook, IconCode, IconDownload } from '@tabler/icons-react'
 import Split from '@uiw/react-split'
 import { useCallback, useMemo, useState, type FC } from 'react'
 import Markdown from 'react-markdown'
@@ -77,7 +72,6 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   const [error, setError] = useState<string>('')
   const [parsedData, setParsedData] = useState<GameMapping>(defaultJson)
   const [selectedExample, setSelectedExample] = useState<string>('')
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const {
     isOpen: isHelpOpen,
     onOpen: onHelpOpen,
@@ -105,7 +99,6 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
       setError('')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Invalid JSON')
-      // Keep the last valid state in preview if JSON is invalid
       try {
         const parsed = JSON.parse(value)
         if (parsed?.variants) {
@@ -115,24 +108,6 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
         // If JSON parsing fails, keep the last valid state
       }
     }
-  }
-
-  const isDefaultJson = useMemo(
-    () => jsonContent === JSON.stringify(defaultJson, null, 2),
-    [jsonContent]
-  )
-
-  const handleClear = () => {
-    if (isDefaultJson) return
-    onOpen()
-  }
-
-  const confirmClear = () => {
-    const defaultContent = JSON.stringify(defaultJson, null, 2)
-    setJsonContent(defaultContent)
-    setParsedData(defaultJson)
-    setError('')
-    onClose()
   }
 
   const selectedExampleContent = useMemo(() => {
@@ -205,19 +180,8 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               size="sm"
               onPress={handleDownload}
               startContent={<IconDownload className="size-4" />}
-              className="mr-2"
             >
               Download
-            </Button>
-            <Button
-              color="danger"
-              variant="flat"
-              size="sm"
-              onPress={handleClear}
-              startContent={<IconTrash className="size-4" />}
-              isDisabled={isDefaultJson}
-            >
-              Clear
             </Button>
           </NavbarItem>
         </NavbarContent>
@@ -289,21 +253,6 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
           </div>
         </Split>
       </div>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalContent>
-          <ModalHeader>Confirm Reset</ModalHeader>
-          <ModalBody>Are you sure? All changes will be lost.</ModalBody>
-          <ModalFooter>
-            <Button color="default" variant="light" onPress={onClose}>
-              Cancel
-            </Button>
-            <Button color="danger" onPress={confirmClear}>
-              Reset
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
 
       <Modal size="2xl" isOpen={isHelpOpen} onClose={onHelpClose}>
         <ModalContent>
