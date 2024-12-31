@@ -313,7 +313,7 @@ const MappingTableGroupHighlight: FC<{
           <feMorphology
             in="SourceAlpha"
             operator="dilate"
-            radius="4"
+            radius="6"
             result="thickened"
           />
           <feComposite
@@ -322,7 +322,7 @@ const MappingTableGroupHighlight: FC<{
             operator="out"
             result="outline"
           />
-          <feFlood flood-color="#44403c" result="black" />
+          <feFlood flood-color="#333" result="black" />
           <feComposite in="black" in2="outline" operator="in" result="border" />
           <feComposite
             in="SourceGraphic"
