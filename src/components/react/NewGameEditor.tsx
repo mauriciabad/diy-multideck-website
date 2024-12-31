@@ -270,7 +270,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             </div>
           </ModalBody>
           <ModalFooter className="border-t border-divider">
-            <Button color="primary" onPress={onHelpClose}>
+            <Button color="secondary" onPress={onHelpClose}>
               Got it
             </Button>
           </ModalFooter>
