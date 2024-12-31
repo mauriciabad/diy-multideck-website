@@ -1,0 +1,1285 @@
+{
+  "variants": [
+    {
+      "name": "Spicy",
+      "slug": "spicy",
+      "cells": [
+        {
+          "templateCellId": "spice-card",
+          "cardId": 0,
+          "name": "0 of Red spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 1,
+          "name": "1 of Red spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 2,
+          "name": "2 of Red spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 3,
+          "name": "3 of Red spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 4,
+          "name": "4 of Red spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 5,
+          "name": "5 of Red spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 6,
+          "name": "6 of Red spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 7,
+          "name": "7 of Red spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 8,
+          "name": "8 of Red spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 9,
+          "name": "9 of Red spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 40,
+          "name": "0 of Red spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 41,
+          "name": "1 of Red spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 42,
+          "name": "2 of Red spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 43,
+          "name": "3 of Red spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 44,
+          "name": "4 of Red spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 45,
+          "name": "5 of Red spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 46,
+          "name": "6 of Red spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 47,
+          "name": "7 of Red spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 48,
+          "name": "8 of Red spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 49,
+          "name": "9 of Red spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 80,
+          "name": "0 of Red spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 81,
+          "name": "1 of Red spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 82,
+          "name": "2 of Red spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 83,
+          "name": "3 of Red spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 84,
+          "name": "4 of Red spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 85,
+          "name": "5 of Red spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 86,
+          "name": "6 of Red spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 87,
+          "name": "7 of Red spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 88,
+          "name": "8 of Red spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 89,
+          "name": "9 of Red spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["red"],
+          "icon": {
+            "fill": "red"
+          }
+        },
+
+        {
+          "templateCellId": "spice-card",
+          "cardId": 10,
+          "name": "0 of Blue spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 11,
+          "name": "1 of Blue spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 12,
+          "name": "2 of Blue spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 13,
+          "name": "3 of Blue spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 14,
+          "name": "4 of Blue spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 15,
+          "name": "5 of Blue spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 16,
+          "name": "6 of Blue spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 17,
+          "name": "7 of Blue spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 18,
+          "name": "8 of Blue spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 19,
+          "name": "9 of Blue spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 50,
+          "name": "0 of Blue spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 51,
+          "name": "1 of Blue spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 52,
+          "name": "2 of Blue spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 53,
+          "name": "3 of Blue spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 54,
+          "name": "4 of Blue spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 55,
+          "name": "5 of Blue spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 56,
+          "name": "6 of Blue spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 57,
+          "name": "7 of Blue spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 58,
+          "name": "8 of Blue spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 59,
+          "name": "9 of Blue spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 90,
+          "name": "0 of Blue spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 91,
+          "name": "1 of Blue spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 92,
+          "name": "2 of Blue spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 93,
+          "name": "3 of Blue spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 94,
+          "name": "4 of Blue spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 95,
+          "name": "5 of Blue spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 96,
+          "name": "6 of Blue spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 97,
+          "name": "7 of Blue spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 98,
+          "name": "8 of Blue spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 99,
+          "name": "9 of Blue spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["blue"],
+          "icon": {
+            "fill": "blue"
+          }
+        },
+
+        {
+          "templateCellId": "spice-card",
+          "cardId": 30,
+          "name": "0 of Green spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 31,
+          "name": "1 of Green spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 32,
+          "name": "2 of Green spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 33,
+          "name": "3 of Green spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 34,
+          "name": "4 of Green spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 35,
+          "name": "5 of Green spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 36,
+          "name": "6 of Green spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 37,
+          "name": "7 of Green spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 38,
+          "name": "8 of Green spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 39,
+          "name": "9 of Green spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 70,
+          "name": "0 of Green spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 71,
+          "name": "1 of Green spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 72,
+          "name": "2 of Green spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 73,
+          "name": "3 of Green spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 74,
+          "name": "4 of Green spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 75,
+          "name": "5 of Green spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 76,
+          "name": "6 of Green spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 77,
+          "name": "7 of Green spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 78,
+          "name": "8 of Green spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 79,
+          "name": "9 of Green spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 110,
+          "name": "0 of Green spice",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 111,
+          "name": "1 of Green spice",
+          "text": {
+            "content": "1"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 112,
+          "name": "2 of Green spice",
+          "text": {
+            "content": "2"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 113,
+          "name": "3 of Green spice",
+          "text": {
+            "content": "3"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 114,
+          "name": "4 of Green spice",
+          "text": {
+            "content": "4"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 115,
+          "name": "5 of Green spice",
+          "text": {
+            "content": "5"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 116,
+          "name": "6 of Green spice",
+          "text": {
+            "content": "6"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 117,
+          "name": "7 of Green spice",
+          "text": {
+            "content": "7"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 118,
+          "name": "8 of Green spice",
+          "text": {
+            "content": "8"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-card",
+          "cardId": 119,
+          "name": "9 of Green spice",
+          "text": {
+            "content": "9"
+          },
+          "groups": ["green"],
+          "icon": {
+            "fill": "green"
+          }
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 20,
+          "name": "We love chili!"
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 21,
+          "name": "Start It Up!"
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 22,
+          "name": "Spice Raider"
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 23,
+          "name": "Change Your Luck"
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 24,
+          "name": "Turn It Up!"
+        },
+        {
+          "templateCellId": "spice-it-up-card",
+          "cardId": 25,
+          "name": "Copy Cat"
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 120
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 121
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 122
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 123
+        },
+        {
+          "templateCellId": "wild-all-numbers-card",
+          "cardId": 124
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 150
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 151
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 152
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 153
+        },
+        {
+          "templateCellId": "wild-all-spices-card",
+          "cardId": 154
+        }
+      ],
+      "notes": "Use 3 tokens to represent the *Trophy cards*.\n\nFor the *World's End card*, do the following:\n- 2 players: remove 1/2 of the cards.\n- 3-4 players: remove 1/3 of the cards.\n- 5-6 players: remove 1/8 of the cards.",
+      "groups": {
+        "red": {
+          "name": "Red spices",
+          "notes": "\"Chili\" on the original game.",
+          "color": "red",
+          "icon": {
+            "fill": "red"
+          }
+        },
+        "blue": {
+          "name": "Blue spices",
+          "notes": "\"Pepper\" on the original game.",
+          "color": "blue",
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        "green": {
+          "name": "Green spices",
+          "notes": "\"Wasabi\" on the original game.",
+          "color": "green",
+          "icon": {
+            "fill": "green"
+          }
+        },
+        "spice-it-up-cards": {
+          "name": "Spice it up! cards",
+          "color": "yellow"
+        },
+        "wild-all-numbers-card": {
+          "name": "Wild all numbers",
+          "color": "black"
+        },
+        "wild-all-spices-card": {
+          "name": "Wild all spices",
+          "color": "white"
+        }
+      },
+      "templateIcons": {
+        "spice": {
+          "srcIconId": "game-icons:powder",
+          "alt": "Spice"
+        },
+        "spice-it-up": {
+          "srcIconId": "game-icons:cog",
+          "alt": "Spice it up!"
+        }
+      },
+      "templateCells": {
+        "spice-card": {
+          "text": {
+            "content": "N",
+            "transform": {
+              "translateY": -0.025
+            }
+          },
+          "notes": "Use 0-9 instead of 1-10.",
+          "icon": {
+            "templateIconId": "spice",
+            "alt": "Spice",
+            "transform": {
+              "scale": 0.95
+            }
+          }
+        },
+        "spice-it-up-card": {
+          "notes": "One of the Spice it up! cards.",
+          "icon": {
+            "templateIconId": "spice-it-up",
+            "transform": {
+              "scale": 0.8
+            }
+          },
+          "drawings": [
+            {
+              "templateDrawingId": "spice-it-up-generic-drawing"
+            }
+          ],
+          "groups": ["spice-it-up-cards"]
+        },
+        "wild-all-numbers-card": {
+          "name": "Wild all numbers",
+          "notes": "All numbers, no color (spice).",
+          "text": {
+            "content": "0-9",
+            "size": 90
+          },
+          "groups": ["wild-all-numbers-card"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "#dfdfdf",
+            "stroke": {
+              "color": "#bfbfbf",
+              "width": 3
+            }
+          }
+        },
+        "wild-all-spices-card": {
+          "name": "Wild all spices",
+          "notes": "All colors (spices), no number.",
+          "groups": ["wild-all-spices-card"],
+          "icon": {
+            "templateIconId": "spice",
+            "fill": "rainbow",
+            "stroke": {
+              "color": "#000000",
+              "width": 2
+            }
+          }
+        }
+      },
+      "templateDrawings": {
+        "spice-it-up-generic-drawing": {
+          "area": {
+            "letter": "D",
+            "number": 2
+          },
+          "name": "Spice it up! Effect",
+          "notes": "Write the name of the card, or a drawing to hint it's effect."
+        }
+      },
+      "layout": "3d"
+    }
+  ]
+}

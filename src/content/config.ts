@@ -1,5 +1,7 @@
 import { defineCollection } from 'astro:content'
-import { blogSchema, gameSchema } from '../lib/schemas'
+import { gameMappingsSchema } from '../lib/schemas/gameMappingsSchema'
+import { blogSchema } from '../lib/schemas/blog'
+import { gameSchema } from '../lib/schemas/game'
 
 export const collections = {
   blog: defineCollection({
@@ -9,5 +11,9 @@ export const collections = {
   games: defineCollection({
     type: 'content',
     schema: gameSchema,
+  }),
+  gameMappings: defineCollection({
+    type: 'data',
+    schema: gameMappingsSchema,
   }),
 }

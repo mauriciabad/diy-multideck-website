@@ -5,7 +5,7 @@ import Title from '../components/Title.astro'
 import { SITE_TITLE } from '../config'
 import PageLayout from '../layouts/PageLayout.astro'
 import { cn } from '../lib/cn'
-import type { GameInfo } from '../lib/schemas'
+import type { GameInfo } from '../lib/schemas/game'
 import { getCompatibility } from '../utils/compatibility'
 
 const games = await getCollection('games')

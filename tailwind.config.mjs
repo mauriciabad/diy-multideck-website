@@ -1,12 +1,16 @@
-import typography from '@tailwindcss/typography'
+import { nextui } from '@nextui-org/react'
+import gridAreas from '@savvywombat/tailwindcss-grid-areas'
 import containerQueries from '@tailwindcss/container-queries'
+import typography from '@tailwindcss/typography'
 import safeContainer from 'tailwind-safe-container'
 import defaultTheme from 'tailwindcss/defaultTheme'
-import gridAreas from '@savvywombat/tailwindcss-grid-areas'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,mdoc,svelte,ts,tsx,vue}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,mdoc,svelte,ts,tsx,vue}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -135,5 +139,5 @@ export default {
       }),
     },
   },
-  plugins: [typography, containerQueries, safeContainer, gridAreas],
+  plugins: [typography, containerQueries, safeContainer, gridAreas, nextui()],
 }

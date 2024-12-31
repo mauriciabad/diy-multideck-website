@@ -1,9 +1,10 @@
 ---
-import GameMappingDetails from '../../components/GameMappingDetails.astro'
-import ContentLayout from '../../layouts/ContentLayout.astro'
-import GamePostMeta from '../../components/GamePostMeta.astro'
 import { getCollection, getEntry } from 'astro:content'
+import GameMappingDetails from '../../components/GameMappingDetails.astro'
+import GamePostMeta from '../../components/GamePostMeta.astro'
 import Prose from '../../components/Prose.astro'
+import { MappingTableVariants } from '../../components/react/MappingTableVariants'
+import ContentLayout from '../../layouts/ContentLayout.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('games')
@@ -23,6 +24,8 @@ if (typeof slug !== 'string') {
 const entry = await getEntry('games', slug)
 const { game, post, mapping } = entry.data
 
+const resolvedMappings = await getEntry('gameMappings', slug)
+
 const { Content } = await entry.render()
 ---
 
@@ -40,6 +43,17 @@ const { Content } = await entry.render()
     slot="meta"
   />
   <GameMappingDetails game={game} mapping={mapping} slug={slug} />
+  {
+    resolvedMappings && (
+      <MappingTableVariants
+        client:load
+        mapping={resolvedMappings.data}
+        classNames={{
+          container: 'mt-8',
+        }}
+      />
+    )
+  }
   <Prose>
     <Content />
   </Prose>
