@@ -529,7 +529,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             <Resplit.Root direction="horizontal" className="flex-1 min-h-0">
               <Resplit.Pane
                 order={0}
-                initialSize="0.67fr"
+                initialSize="0.75fr"
                 className="overflow-auto"
               >
                 <MonacoEditor
@@ -549,7 +549,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               <Resplit.Splitter order={1} size="4px" className="bg-divider" />
               <Resplit.Pane
                 order={2}
-                initialSize="0.33fr"
+                initialSize="0.25fr"
                 className="p-4 overflow-auto"
               >
                 <MappingTableVariants
