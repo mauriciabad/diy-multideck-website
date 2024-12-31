@@ -1,8 +1,18 @@
 ---
 import FullscreenLayout from '../layouts/FullscreenLayout.astro'
 import { NewGameEditor } from '../components/react/NewGameEditor'
+import type { GameMapping } from '../lib/schemas/gameMappingsSchema'
+
+const gameMappings = await import.meta.glob(
+  '/src/content/gameMappings/*.json',
+  { eager: true }
+)
+const examples = Object.entries(gameMappings).map(([path, content]) => ({
+  name: path.split('/').pop()?.replace('.json', '') ?? '',
+  content: (content as { default: GameMapping }).default,
+}))
 ---
 
 <FullscreenLayout title="New Game Mapping">
-  <NewGameEditor client:load />
+  <NewGameEditor client:load examples={examples} />
 </FullscreenLayout>
