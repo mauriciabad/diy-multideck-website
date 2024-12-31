@@ -151,9 +151,11 @@ export const MappingTable: FC<{
       Object.keys(mapping.groups).map((groupId) => [
         groupId,
         fullCells
-          .filter((cell): cell is NonNullable<typeof cell> => cell !== null)
-          .filter((cell) => cell.groups?.includes(groupId))
-          .map((cell) => cell.cardId),
+          .filter((cell) => cell?.groups?.includes(groupId))
+          .map((cell) => cell?.cardId ?? null)
+          .filter(
+            (cell): cell is number => cell !== null && Number.isFinite(cell)
+          ),
       ])
     )
   }, [mapping])
