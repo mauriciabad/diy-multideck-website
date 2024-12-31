@@ -1,4 +1,4 @@
-import Editor from '@monaco-editor/react'
+import { Editor as MonacoEditor } from '@monaco-editor/react'
 import {
   Button,
   Card,
@@ -356,7 +356,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
       <div className="flex-1">
         <Split mode="horizontal" className="h-full">
           <div className="h-full" style={{ width: '67%' }}>
-            <Editor
+            <MonacoEditor
               defaultLanguage="json"
               value={jsonContent}
               onChange={handleEditorChange}
@@ -521,7 +521,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               {selectedExampleContent && (
                 <Split mode="horizontal" className="h-full">
                   <div className="h-full w-2/3">
-                    <Editor
+                    <MonacoEditor
                       height="100%"
                       defaultLanguage="json"
                       value={selectedExampleContent}
