@@ -256,13 +256,15 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
 
       <Modal size="2xl" isOpen={isHelpOpen} onClose={onHelpClose}>
         <ModalContent>
-          <ModalHeader>Help</ModalHeader>
+          <ModalHeader className="border-b border-divider">
+            Documentation
+          </ModalHeader>
           <ModalBody>
-            <div className="prose prose-invert max-w-none">
+            <div className="prose max-w-none">
               <Markdown>{helpContent}</Markdown>
             </div>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter className="border-t border-divider">
             <Button color="primary" onPress={onHelpClose}>
               Got it
             </Button>
