@@ -12,7 +12,7 @@ export const COLOR_MAPPINGS = {
   pink: '#ff77c4',
   cyan: '#12cdd4',
   brown: '#b79664',
-} as const
+} as const satisfies Record<string, string>
 
 export function iconTransformToCss(
   transform: GameMappingIconSchema['transform']

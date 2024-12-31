@@ -1,26 +1,15 @@
 import { z } from 'astro:content'
 import { merge } from 'lodash'
+import { COLOR_MAPPINGS } from '../utils/mappingUtils'
 
-// Color validation regex for hex and rgba
 const colorRegex =
   /^(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*(?:0|1|0?\.\d+))?\s*\))$/
 
-// Named colors from COLOR_MAPPINGS
-const namedColors = [
-  'red',
-  'blue',
-  'green',
-  'yellow',
-  'orange',
-  'purple',
-  'white',
-  'black',
-  'pink',
-  'cyan',
-  'brown',
-] as const
+const namedColors = Object.keys(
+  COLOR_MAPPINGS
+) as (keyof typeof COLOR_MAPPINGS)[]
 
-const colorSchema = z.string().refine(
+const baseColorSchema = z.string().refine(
   (color) => namedColors.includes(color as any) || colorRegex.test(color),
   (val) => ({
     message: `Invalid color format: ${val}. Must be a hex color, rgba color, or one of the named colors: ${namedColors.join(
@@ -28,6 +17,9 @@ const colorSchema = z.string().refine(
     )}`,
   })
 )
+
+const colorWithRainbowSchema = z.union([baseColorSchema, z.literal('rainbow')])
+const colorSchema = baseColorSchema
 
 const strokeSchema = z.object({
   width: z.number().min(0).optional(),
@@ -43,7 +35,7 @@ const transformSchema = z.object({
 
 const iconBaseSchema = z.object({
   srcIconId: z.string().min(1),
-  fill: colorSchema.optional(),
+  fill: colorWithRainbowSchema.optional(),
   bgFill: colorSchema.optional(),
   stroke: strokeSchema.optional(),
   transform: transformSchema.optional(),
@@ -176,7 +168,6 @@ const variantSchema = z
   })
   .refine(
     (variant) => {
-      // Validate that all template references exist
       const templateIconIds = variant.templateIcons
         ? Object.keys(variant.templateIcons)
         : []
@@ -189,7 +180,6 @@ const variantSchema = z
       const groupIds = variant.groups ? Object.keys(variant.groups) : []
 
       for (const cell of variant.cells) {
-        // Check templateCellId reference
         if (
           cell.templateCellId &&
           !templateCellIds.includes(cell.templateCellId)
@@ -197,7 +187,6 @@ const variantSchema = z
           return false
         }
 
-        // Check icon templateIconId reference
         if (
           cell.icon?.templateIconId &&
           !templateIconIds.includes(cell.icon.templateIconId)
@@ -205,7 +194,6 @@ const variantSchema = z
           return false
         }
 
-        // Check drawings templateDrawingId references
         if (cell.drawings) {
           for (const drawing of cell.drawings) {
             if (
@@ -217,7 +205,6 @@ const variantSchema = z
           }
         }
 
-        // Check group references
         if (cell.groups) {
           for (const groupId of cell.groups) {
             if (!groupIds.includes(groupId)) {
