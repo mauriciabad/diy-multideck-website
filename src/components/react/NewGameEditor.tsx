@@ -1,6 +1,9 @@
 import Editor from '@monaco-editor/react'
 import {
   Button,
+  Card,
+  CardBody,
+  Chip,
   Modal,
   ModalBody,
   ModalContent,
@@ -97,6 +100,15 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
       setError('')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Invalid JSON')
+      // Keep the last valid state in preview if JSON is invalid
+      try {
+        const parsed = JSON.parse(value)
+        if (parsed?.variants) {
+          setParsedData(parsed as GameMapping)
+        }
+      } catch {
+        // If JSON parsing fails, keep the last valid state
+      }
     }
   }
 
@@ -205,7 +217,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
 
       <div className="flex-1">
         <Split mode="horizontal" className="h-full">
-          <div className="h-full w-2/3">
+          <div className="h-full" style={{ width: '67%' }}>
             <Editor
               defaultLanguage="json"
               value={jsonContent}
@@ -220,14 +232,53 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               }}
             />
           </div>
-          <Split mode="vertical" className="h-full w-1/3">
-            <div className="h-2/3 w-full overflow-auto p-4">
-              <MappingTableVariants mapping={parsedData} />
-            </div>
-            <div className="h-1/3 w-full overflow-auto p-4 text-sm text-red-500 whitespace-pre">
-              {error}
-            </div>
-          </Split>
+          <div className="h-full" style={{ width: '33%' }}>
+            <Split mode="vertical" className="h-full">
+              <div style={{ height: '67%' }} className="overflow-auto">
+                <div className="p-4">
+                  <MappingTableVariants mapping={parsedData} />
+                </div>
+              </div>
+              <div
+                style={{ height: '33%' }}
+                className="overflow-auto bg-default-50"
+              >
+                <div className="p-4">
+                  {error ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg text-danger">⚠️</span>
+                        <span className="font-medium text-danger">
+                          Validation Error
+                        </span>
+                        <Chip variant="flat" color="danger" size="sm">
+                          JSON
+                        </Chip>
+                      </div>
+                      <Card className="border-danger">
+                        <CardBody className="text-sm">
+                          <pre className="whitespace-pre-wrap font-mono text-danger">
+                            {error}
+                          </pre>
+                        </CardBody>
+                      </Card>
+                    </div>
+                  ) : (
+                    <Card className="border-success bg-success-50/50">
+                      <CardBody>
+                        <div className="flex items-center gap-2 text-success">
+                          <span className="text-lg">✓</span>
+                          <span className="text-sm font-medium">
+                            JSON is valid
+                          </span>
+                        </div>
+                      </CardBody>
+                    </Card>
+                  )}
+                </div>
+              </div>
+            </Split>
+          </div>
         </Split>
       </div>
 
