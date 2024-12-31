@@ -46,6 +46,7 @@ const documentationContent = `# Game Mapping Editor Documentation
 ## Overview
 The Game Mapping Editor allows you to create and edit game mappings in JSON format. Each mapping represents a card game's layout and configuration, with support for multiple variants, custom layouts, and rich card customization.
 
+
 ## Schema Structure
 
 ### Root Object
@@ -81,7 +82,7 @@ Represents a single card in the game.
   cardId: number        // Unique identifier for the card position (0-159)
   name?: string         // Display name of the card
   notes?: string       // Optional notes about the card
-  bgFill?: string      // Background color
+  bgFill?: string      // Background color (color)
   templateCellId?: string  // Use properties from a cell template
   icon?: Icon          // Card's icon configuration
   emoji?: {            // Optional emoji display
@@ -91,7 +92,7 @@ Represents a single card in the game.
   text?: {             // Optional text display
     content: string
     size?: number
-    fill?: string
+    fill?: string      // Text color (color)
     stroke?: Stroke
     transform?: Transform
     weight?: "thin" | "light" | "normal" | "medium" | "semi-bold" | "bold" | "black"
@@ -108,11 +109,11 @@ Configures the icon display on a card.
 {
   srcIconId: string     // Icon identifier from the icon library
   templateIconId?: string  // Use properties from an icon template
-  fill?: string        // Icon fill color
-  bgFill?: string      // Icon background color
+  fill?: string        // Icon fill color (color, supports rainbow)
+  bgFill?: string      // Icon background color (color)
   stroke?: {           // Icon outline configuration
     width?: number
-    color?: string
+    color?: string     // Stroke color (color)
   }
   transform?: Transform  // Icon positioning and scaling
 }
@@ -140,7 +141,7 @@ Defines a group of related cards.
 {
   name: string         // Display name of the group
   notes?: string      // Optional notes about the group
-  color: string       // Color identifier for the group
+  color: string       // Group highlight color (color)
   icon?: Icon         // Optional group icon
   emoji?: string      // Optional group emoji
 }
@@ -177,6 +178,12 @@ templateCells: {
   icon: { fill: "yellow" }     // Overrides just the icon color
 }
 \`\`\`
+
+## Color Values
+Valid color formats:
+- Named colors: \`red\`, \`blue\`, \`green\`, \`yellow\`, \`orange\`, \`purple\`, \`white\`, \`black\`, \`pink\`, \`cyan\`, and \`brown\`.
+- Special values: \`rainbow\` (*Only valid for icon fills*).
+- Hex and rgb/rgba colors.
 
 ## Layout Types
 - **basic**: Traditional grid layout
@@ -447,7 +454,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             </div>
           </ModalBody>
           <ModalFooter className="border-t border-divider">
-            <Button color="primary" onPress={onDocumentationClose}>
+            <Button color="secondary" onPress={onDocumentationClose}>
               Got it
             </Button>
           </ModalFooter>
