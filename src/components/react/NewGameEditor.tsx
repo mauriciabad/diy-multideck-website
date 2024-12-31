@@ -367,6 +367,11 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               scrollBeyondLastLine: false,
               automaticLayout: true,
             }}
+            loading={
+              <div className="flex-1 h-full bg-[#1e1e1e] flex items-center justify-center relative text-white">
+                Loading...
+              </div>
+            }
           />
         </Resplit.Pane>
         <Resplit.Splitter order={1} size="4px" className="bg-divider" />
