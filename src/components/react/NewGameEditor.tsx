@@ -26,6 +26,7 @@ import {
 import Split from '@uiw/react-split'
 import {
   useCallback,
+  useEffect,
   useMemo,
   useState,
   type ComponentPropsWithoutRef,
@@ -238,25 +239,41 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
     onClose: onExamplesClose,
   } = useDisclosure()
 
-  const handleEditorChange = (value: string | undefined) => {
-    if (!value) {
-      setJsonContent('')
-      setError('JSON cannot be empty')
-      setParsedData(defaultJson)
-      return
-    }
-    setJsonContent(value)
+  const validateAndUpdateState = useCallback(
+    (value: string | undefined) => {
+      if (!value) {
+        setJsonContent('')
+        setError('JSON cannot be empty')
+        setParsedData(defaultJson)
+        return
+      }
 
-    try {
-      const parsed = JSON.parse(value)
-      const validated = gameMappingsSchema.parse(parsed)
-      setParsedData(validated)
-      setError('')
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Invalid JSON')
-      // Don't update parsedData when there's a validation error
-      // This ensures the last valid state is maintained
-    }
+      let parsed
+      try {
+        parsed = JSON.parse(value)
+      } catch (e) {
+        setError('Invalid JSON syntax')
+        return
+      }
+
+      try {
+        const validated = gameMappingsSchema.parse(parsed)
+        setParsedData(validated)
+        setError('')
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Invalid JSON schema')
+      }
+    },
+    [setJsonContent]
+  )
+
+  useEffect(() => {
+    validateAndUpdateState(jsonContent)
+  }, [validateAndUpdateState, jsonContent])
+
+  const handleEditorChange = (value: string | undefined) => {
+    setJsonContent(value ?? '')
+    validateAndUpdateState(value)
   }
 
   const selectedExampleContent = useMemo(() => {
