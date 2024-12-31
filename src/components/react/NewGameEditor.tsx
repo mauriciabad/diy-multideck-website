@@ -254,14 +254,8 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
       setError('')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Invalid JSON')
-      try {
-        const parsed = JSON.parse(value)
-        if (parsed?.variants) {
-          setParsedData(parsed as GameMapping)
-        }
-      } catch {
-        // If JSON parsing fails, keep the last valid state
-      }
+      // Don't update parsedData when there's a validation error
+      // This ensures the last valid state is maintained
     }
   }
 
