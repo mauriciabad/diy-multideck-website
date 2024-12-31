@@ -1,10 +1,9 @@
 ---
-import PageMeta from '../components/PageMeta.astro'
-import PageLayout from '../layouts/PageLayout.astro'
-import { SITE_TITLE } from '../config'
-import Title from '../components/Title.astro'
 import LinkCard from '../components/LinkCard.astro'
-import BuyBanner from '../components/BuyBanner.astro'
+import PageMeta from '../components/PageMeta.astro'
+import Title from '../components/Title.astro'
+import { SITE_TITLE } from '../config'
+import PageLayout from '../layouts/PageLayout.astro'
 ---
 
 <PageLayout>
@@ -33,6 +32,20 @@ import BuyBanner from '../components/BuyBanner.astro'
       description="Learn how to play games."
       cta="View games"
     />
+    <LinkCard
+      href="/new-game"
+      icon="plus"
+      title="Create new game"
+      description="Create a new game mapping."
+      cta="Create game"
+    />
+    <LinkCard
+      href="/shop"
+      icon="shopping-cart"
+      title="Official store"
+      description="Buy the deck and support the project."
+      cta="Buy now"
+    />
     <!-- NOTE: Uncomment when adding blog entries -->
     <!-- <LinkCard
       href="/blog"
@@ -40,15 +53,8 @@ import BuyBanner from '../components/BuyBanner.astro'
       title="Project's blog"
       description="Read about the project."
       cta="Read blog"
-    /> 
-    <LinkCard
-      href="/shop"
-      icon="shopping-cart"
-      title="Official store"
-      description="Buy the deck and support the project."
-      cta="Buy now"
     /> -->
   </nav>
   <!-- NOTE: Remove this when adding blog entries -->
-  <BuyBanner class="mt-4" />
+  <!-- <BuyBanner class="mt-4" /> -->
 </PageLayout>
