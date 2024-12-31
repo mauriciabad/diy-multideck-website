@@ -122,6 +122,8 @@ Configures the icon display on a card.
 }
 \`\`\`
 
+Icons are sourced from [game-icons.net](https://game-icons.net/). Visit their website to browse and find the right icon identifier for your cards.
+
 ### Drawing Object
 Represents a drawing or annotation on a card.
 
