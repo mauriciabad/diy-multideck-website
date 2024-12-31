@@ -1,4 +1,4 @@
-import { Editor as MonacoEditor } from '@monaco-editor/react'
+import { Editor as MonacoEditor, type OnMount } from '@monaco-editor/react'
 import {
   Button,
   Card,
@@ -42,6 +42,7 @@ import {
   type GameMapping,
 } from '../../lib/schemas/gameMappingsSchema'
 import { MappingTableVariants } from './MappingTableVariants'
+import { gameMappingsJsonSchema } from '../../lib/schemas/gameMappingsJsonSchema'
 
 const documentationContent = `# Game Mapping Editor Documentation
 
@@ -334,6 +335,19 @@ ${jsonContent}`
     window.location.href = mailtoUrl
   }, [jsonContent])
 
+  const handleEditorMount = useCallback<OnMount>((_editor, monaco) => {
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      validate: true,
+      schemas: [
+        {
+          uri: 'schema:game-mappings',
+          fileMatch: ['*'],
+          schema: gameMappingsJsonSchema,
+        },
+      ],
+    })
+  }, [])
+
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
@@ -391,6 +405,7 @@ ${jsonContent}`
             value={jsonContent}
             onChange={handleEditorChange}
             theme="vs-dark"
+            onMount={handleEditorMount}
             options={{
               minimap: { enabled: false },
               fontSize: 14,
