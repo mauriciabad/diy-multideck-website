@@ -21,6 +21,8 @@ type LayoutConfig = {
   gridColumns: number
   gridRows: number
   maxWidth: string
+  gridWidth: number
+  gridHeight: number
   cardPositions: (number | null)[][]
 }
 
@@ -30,6 +32,8 @@ const LAYOUT_CONFIGS = {
     gridColumns: 15,
     gridRows: 12,
     maxWidth: '33.3rem',
+    gridWidth: 3230,
+    gridHeight: 2660,
     // prettier-ignore
     cardPositions: [
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 120, 121, 122, 123, 124],
@@ -51,6 +55,8 @@ const LAYOUT_CONFIGS = {
     gridColumns: 10,
     gridRows: 16,
     maxWidth: '23.5rem',
+    gridWidth: 2280,
+    gridHeight: 3420,
     // prettier-ignore
     cardPositions: [
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -76,6 +82,8 @@ const LAYOUT_CONFIGS = {
     gridColumns: 10,
     gridRows: 16,
     maxWidth: '23.5rem',
+    gridWidth: 2280,
+    gridHeight: 3420,
     // prettier-ignore
     cardPositions: [
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -101,6 +109,8 @@ const LAYOUT_CONFIGS = {
     gridColumns: 10,
     gridRows: 16,
     maxWidth: '23.5rem',
+    gridWidth: 2280,
+    gridHeight: 3420,
     // prettier-ignore
     cardPositions: [
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -251,8 +261,6 @@ const MAPPING_TABLE_GRID_RIGHT_MARGIN = 95
 const MAPPING_TABLE_GRID_TOP_MARGIN = 285
 const MAPPING_TABLE_GRID_BOTTOM_MARGIN = 95
 const MAPPING_TABLE_GRID_CELL_SIZE = 190
-const MAPPING_TABLE_GRID_HEIGHT = 3420
-const MAPPING_TABLE_GRID_WIDTH = 2280
 
 const MappingTableGrid: FC<
   PropsWithChildren<{
@@ -306,7 +314,7 @@ const MappingTableGroupHighlight: FC<{
 
   return (
     <svg
-      viewBox={`0 0 ${MAPPING_TABLE_GRID_WIDTH} ${MAPPING_TABLE_GRID_HEIGHT}`}
+      viewBox={`0 0 ${layout.gridWidth} ${layout.gridHeight}`}
       className={cn(
         className,
         isWhite ? 'mix-blend-normal' : 'mix-blend-multiply'
@@ -317,8 +325,8 @@ const MappingTableGroupHighlight: FC<{
           id={borderFilterId}
           x="-10"
           y="-10"
-          width={MAPPING_TABLE_GRID_WIDTH + 20}
-          height={MAPPING_TABLE_GRID_HEIGHT + 20}
+          width={layout.gridWidth + 20}
+          height={layout.gridHeight + 20}
           color-interpolation-filters="sRGB"
         >
           <feMorphology
@@ -363,8 +371,8 @@ const MappingTableGroupHighlight: FC<{
           <rect
             x={0}
             y={0}
-            width={MAPPING_TABLE_GRID_WIDTH}
-            height={MAPPING_TABLE_GRID_HEIGHT}
+            width={layout.gridWidth}
+            height={layout.gridHeight}
             fill="white"
           />
           {layout.cardPositions.map((row, iRow) => {
@@ -439,7 +447,7 @@ const MappingTableCellHighlight: FC<{
 }> = ({ layout, cardIds, color = 'currentColor', className }) => {
   return (
     <svg
-      viewBox={`0 0 ${MAPPING_TABLE_GRID_WIDTH} ${MAPPING_TABLE_GRID_HEIGHT}`}
+      viewBox={`0 0 ${layout.gridWidth} ${layout.gridHeight}`}
       className={className}
     >
       {layout.cardPositions.map((row, iRow) => {
