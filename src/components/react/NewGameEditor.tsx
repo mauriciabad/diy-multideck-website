@@ -316,7 +316,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
-        <NavbarBrand>
+        <NavbarBrand className="flex-1 min-w-0">
           <p className="font-bold text-inherit tracking-wide font-heading">
             Game Mapping Editor
           </p>
@@ -383,7 +383,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
           <Resplit.Root direction="vertical" className="flex-1 h-full min-h-0">
             <Resplit.Pane
               order={0}
-              initialSize="0.67fr"
+              initialSize="0.8fr"
               className="p-4 overflow-y-auto"
             >
               <MappingTableVariants mapping={parsedData} />
@@ -391,7 +391,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             <Resplit.Splitter order={1} size="4px" className="bg-divider" />
             <Resplit.Pane
               order={2}
-              initialSize="0.33fr"
+              initialSize="0.2fr"
               className="bg-default-50 p-4 overflow-auto"
             >
               {error ? (
@@ -529,7 +529,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             <Resplit.Root direction="horizontal" className="flex-1 min-h-0">
               <Resplit.Pane
                 order={0}
-                initialSize="0.75fr"
+                initialSize="0.67fr"
                 className="overflow-auto"
               >
                 <MonacoEditor
@@ -549,7 +549,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               <Resplit.Splitter order={1} size="4px" className="bg-divider" />
               <Resplit.Pane
                 order={2}
-                initialSize="0.25fr"
+                initialSize="0.33fr"
                 className="p-4 overflow-auto"
               >
                 <MappingTableVariants
