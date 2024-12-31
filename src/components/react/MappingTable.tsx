@@ -172,9 +172,9 @@ export const MappingTable: FC<{
         <RainbowGradientSvg id={rainbowGradientId} />
 
         <MappingTableGrid layout={layout}>
-          {layout.cardPositions.flat().map((cardId) =>
+          {layout.cardPositions.flat().map((cardId, index) =>
             cardId === null ? (
-              <div key={cardId} />
+              <div key={`empty-${index}`} />
             ) : (
               <Cell
                 key={cardId}
