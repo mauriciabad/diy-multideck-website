@@ -32,7 +32,12 @@ export const RainbowGradientSvg: FC<{ id: string; className?: string }> = ({
   className,
 }) => {
   return (
-    <svg className={cn('absolute inset-0', className)}>
+    <svg
+      className={cn(
+        'absolute top-0 left-0 size-0 pointer-events-none',
+        className
+      )}
+    >
       <defs>
         <RainbowGradient id={id} />
       </defs>

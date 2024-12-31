@@ -16,14 +16,12 @@ export const Cell: FC<{
   mapping: GameMappingVariant
   className?: string
   onClick?: (cardId: number) => void
-  isSelected?: boolean
   rainbowGradientId?: string
 }> = ({
   cardId,
   mapping,
   className,
   onClick,
-  isSelected,
   rainbowGradientId: rainbowGradientIdProp,
 }) => {
   const cell = useMemo(() => getFullCell(cardId, mapping), [cardId, mapping])
@@ -37,7 +35,6 @@ export const Cell: FC<{
       key={cardId}
       className={cn(
         'flex flex-col items-center justify-center overflow-hidden relative transition-colors',
-        isSelected && 'bg-stone-200',
         !!cell && 'cursor-pointer',
         className
       )}
