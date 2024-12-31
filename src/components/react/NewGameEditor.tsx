@@ -353,10 +353,11 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
         </NavbarContent>
       </Navbar>
 
-      <div className="flex-1">
+      <div className="flex-1 min-h-0 overflow-hidden">
         <Split mode="horizontal" className="h-full">
-          <div className="h-full" style={{ width: '67%' }}>
+          <div className="h-full overflow-hidden" style={{ width: '67%' }}>
             <MonacoEditor
+              height="100%"
               defaultLanguage="json"
               value={jsonContent}
               onChange={handleEditorChange}
@@ -370,7 +371,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               }}
             />
           </div>
-          <div className="h-full" style={{ width: '33%' }}>
+          <div className="h-full overflow-hidden" style={{ width: '33%' }}>
             <Split mode="vertical" className="h-full">
               <div style={{ height: '67%' }} className="overflow-auto">
                 <div className="p-4">
