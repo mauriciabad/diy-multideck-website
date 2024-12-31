@@ -170,30 +170,6 @@ export const MappingTable: FC<{
       >
         <RainbowGradientSvg id={rainbowGradientId} />
 
-        <MappingTableCellHighlight
-          layout={layout}
-          cardIds={selectedCardId ? [selectedCardId] : []}
-          className="absolute inset-0 text-stone-200"
-        />
-
-        {selectedGroupIds.map((groupId) => {
-          const group = mapping.groups?.[groupId]
-          if (!group) return null
-
-          const cardIdsInGroup = cardIdsInEachGroup[groupId]
-          if (!cardIdsInGroup || cardIdsInGroup.length === 0) return null
-
-          return (
-            <MappingTableGroupHighlight
-              key={groupId}
-              layout={layout}
-              cardIds={cardIdsInGroup}
-              color={translateColor(group.color)}
-              className="absolute inset-0 mix-blend-multiply"
-            />
-          )
-        })}
-
         <MappingTableGrid layout={layout}>
           {layout.cardPositions.flat().map((cardId) =>
             cardId === null ? (
@@ -212,11 +188,35 @@ export const MappingTable: FC<{
           )}
         </MappingTableGrid>
 
+        <MappingTableCellHighlight
+          layout={layout}
+          cardIds={selectedCardId ? [selectedCardId] : []}
+          className="absolute inset-0 text-[#ddd] mix-blend-multiply pointer-events-none"
+        />
+
         <img
           {...layout.bgImage}
           alt={`${mapping.layout} layout background`}
           className="pointer-events-none relative"
         />
+
+        {selectedGroupIds.map((groupId) => {
+          const group = mapping.groups?.[groupId]
+          if (!group) return null
+
+          const cardIdsInGroup = cardIdsInEachGroup[groupId]
+          if (!cardIdsInGroup || cardIdsInGroup.length === 0) return null
+
+          return (
+            <MappingTableGroupHighlight
+              key={groupId}
+              layout={layout}
+              cardIds={cardIdsInGroup}
+              color={translateColor(group.color)}
+              className="absolute inset-0 pointer-events-none"
+            />
+          )
+        })}
       </div>
 
       {selectedCardId ? (
@@ -282,15 +282,56 @@ const MappingTableGroupHighlight: FC<{
   color?: string
   className?: string
 }> = ({ layout, cardIds, color = 'currentColor', className }) => {
+  const isWhite =
+    color === 'white' ||
+    color === '#fff' ||
+    color === '#fefefe' ||
+    color === '#ffffff'
+
   const id = useId()
   const maskId = `clip-path-${id}`
   const gooFilterId = `goo-filter-${id}`
+  const borderFilterId = `border-filter-${id}`
+
   return (
     <svg
       viewBox={`0 0 ${MAPPING_TABLE_GRID_WIDTH} ${MAPPING_TABLE_GRID_HEIGHT}`}
-      className={className}
+      className={cn(
+        className,
+        isWhite ? 'mix-blend-normal' : 'mix-blend-multiply'
+      )}
     >
       <defs>
+        <filter
+          id={borderFilterId}
+          x="-10"
+          y="-10"
+          width={MAPPING_TABLE_GRID_WIDTH + 20}
+          height={MAPPING_TABLE_GRID_HEIGHT + 20}
+          color-interpolation-filters="sRGB"
+        >
+          <feMorphology
+            in="SourceAlpha"
+            operator="dilate"
+            radius="4"
+            result="thickened"
+          />
+          <feComposite
+            in="thickened"
+            in2="SourceAlpha"
+            operator="out"
+            result="outline"
+          />
+          <feFlood flood-color="#44403c" result="black" />
+          <feComposite in="black" in2="outline" operator="in" result="border" />
+          <feComposite
+            in="SourceGraphic"
+            in2="border"
+            operator="over"
+            result="final"
+          />
+        </filter>
+
         <filter id={gooFilterId}>
           <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
           <feColorMatrix
@@ -340,34 +381,39 @@ const MappingTableGroupHighlight: FC<{
         </mask>
       </defs>
 
-      <g filter={`url(#${gooFilterId})`}>
-        <g mask={`url(#${maskId})`}>
-          {layout.cardPositions.map((row, iRow) => {
-            return row.map((cardId, iCol) => {
-              const isMatch = cardId !== null && cardIds.includes(cardId)
-              if (!isMatch) return null
-              return (
-                <rect
-                  key={cardId}
-                  x={
-                    MAPPING_TABLE_GRID_LEFT_MARGIN +
-                    MAPPING_TABLE_GRID_CELL_SIZE * iCol
-                  }
-                  y={
-                    MAPPING_TABLE_GRID_TOP_MARGIN +
-                    MAPPING_TABLE_GRID_CELL_SIZE * iRow
-                  }
-                  width={MAPPING_TABLE_GRID_CELL_SIZE}
-                  height={MAPPING_TABLE_GRID_CELL_SIZE}
-                  fill={color}
-                  stroke={color}
-                  strokeWidth={30}
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                />
-              )
-            })
-          })}
+      <g
+        filter={isWhite ? `url(#${borderFilterId})` : undefined}
+        opacity={isWhite ? 0.8 : 1}
+      >
+        <g filter={`url(#${gooFilterId})`}>
+          <g mask={`url(#${maskId})`}>
+            {layout.cardPositions.map((row, iRow) => {
+              return row.map((cardId, iCol) => {
+                const isMatch = cardId !== null && cardIds.includes(cardId)
+                if (!isMatch) return null
+                return (
+                  <rect
+                    key={cardId}
+                    x={
+                      MAPPING_TABLE_GRID_LEFT_MARGIN +
+                      MAPPING_TABLE_GRID_CELL_SIZE * iCol
+                    }
+                    y={
+                      MAPPING_TABLE_GRID_TOP_MARGIN +
+                      MAPPING_TABLE_GRID_CELL_SIZE * iRow
+                    }
+                    width={MAPPING_TABLE_GRID_CELL_SIZE}
+                    height={MAPPING_TABLE_GRID_CELL_SIZE}
+                    fill={color}
+                    stroke={color}
+                    strokeWidth={30}
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  />
+                )
+              })
+            })}
+          </g>
         </g>
       </g>
     </svg>
