@@ -354,8 +354,8 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
       </Navbar>
 
       <div className="flex-1 min-h-0 overflow-hidden">
-        <Split mode="horizontal" className="h-full">
-          <div className="h-full overflow-hidden" style={{ width: '67%' }}>
+        <Split mode="horizontal" className="h-full w-full">
+          <div className="h-full w-2/3 overflow-hidden">
             <MonacoEditor
               height="100%"
               defaultLanguage="json"
@@ -371,17 +371,14 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               }}
             />
           </div>
-          <div className="h-full overflow-hidden" style={{ width: '33%' }}>
-            <Split mode="vertical" className="h-full">
-              <div style={{ height: '67%' }} className="overflow-auto">
+          <div className="h-full w-1/3 overflow-hidden">
+            <Split mode="vertical" className="h-full w-full">
+              <div className="h-2/3 w-full overflow-auto">
                 <div className="p-4">
                   <MappingTableVariants mapping={parsedData} />
                 </div>
               </div>
-              <div
-                style={{ height: '33%' }}
-                className="overflow-auto bg-default-50"
-              >
+              <div className="h-1/3 w-full overflow-auto bg-default-50">
                 <div className="p-4">
                   {error ? (
                     <div className="flex flex-col gap-2">
