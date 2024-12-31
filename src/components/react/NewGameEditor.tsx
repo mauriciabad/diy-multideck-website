@@ -1,30 +1,34 @@
-import { useMemo, type FC } from 'react'
 import Editor from '@monaco-editor/react'
-import Split from '@uiw/react-split'
-import { useState } from 'react'
-import { useLocalStorage } from 'usehooks-ts'
 import {
   Button,
   Modal,
-  ModalContent,
-  ModalHeader,
   ModalBody,
+  ModalContent,
   ModalFooter,
-  useDisclosure,
+  ModalHeader,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
   Select,
   SelectItem,
+  useDisclosure,
 } from '@nextui-org/react'
-import { MappingTableVariants } from './MappingTableVariants'
+import {
+  IconBook,
+  IconCode,
+  IconDownload,
+  IconTrash,
+} from '@tabler/icons-react'
+import Split from '@uiw/react-split'
+import { useCallback, useMemo, useState, type FC } from 'react'
+import Markdown from 'react-markdown'
+import { useLocalStorage } from 'usehooks-ts'
 import {
   gameMappingsSchema,
   type GameMapping,
 } from '../../lib/schemas/gameMappingsSchema'
-import { IconTrash, IconBook, IconCode } from '@tabler/icons-react'
-import Markdown from 'react-markdown'
+import { MappingTableVariants } from './MappingTableVariants'
 
 const helpContent = `
 ## Game Mapping Editor Help
@@ -130,6 +134,24 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
     onExamplesClose()
   }
 
+  const handleDownload = useCallback(() => {
+    const timestamp = new Date()
+      .toISOString()
+      .replace('T', ' ')
+      .replace(/[:]/g, '-')
+      .split('.')[0]
+
+    const blob = new Blob([jsonContent], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `game-mapping-${timestamp}.json`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }, [jsonContent])
+
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
@@ -157,6 +179,15 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
               className="mr-2"
             >
               Documentation
+            </Button>
+            <Button
+              variant="solid"
+              size="sm"
+              onPress={handleDownload}
+              startContent={<IconDownload className="size-4" />}
+              className="mr-2"
+            >
+              Download
             </Button>
             <Button
               color="danger"
