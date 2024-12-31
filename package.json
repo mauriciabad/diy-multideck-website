@@ -21,6 +21,7 @@
     "@tabler/icons-react": "^3.26.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@uiw/react-split": "^5.9.3",
     "astro": "3.6.4",
     "astro-icon": "^1.1.5",
@@ -28,6 +29,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.6.1",
     "split.js": "^1.6.5",
     "typescript": "5.3.2",
     "usehooks-ts": "^3.1.0"
