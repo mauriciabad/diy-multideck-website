@@ -33,8 +33,8 @@ import {
 } from '../../lib/schemas/gameMappingsSchema'
 import { MappingTableVariants } from './MappingTableVariants'
 
-const helpContent = `
-## Game Mapping Editor Help
+const documentationContent = `
+## Game Mapping Editor Documentation
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -78,9 +78,9 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   const [parsedData, setParsedData] = useState<GameMapping>(defaultJson)
   const [selectedExample, setSelectedExample] = useState<string>('')
   const {
-    isOpen: isHelpOpen,
-    onOpen: onHelpOpen,
-    onClose: onHelpClose,
+    isOpen: isDocumentationOpen,
+    onOpen: onDocumentationOpen,
+    onClose: onDocumentationClose,
   } = useDisclosure()
   const {
     isOpen: isExamplesOpen,
@@ -174,7 +174,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
             <Button
               variant="solid"
               size="sm"
-              onPress={onHelpOpen}
+              onPress={onDocumentationOpen}
               startContent={<IconBook className="size-4" />}
               className="mr-2"
             >
@@ -259,18 +259,22 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
         </Split>
       </div>
 
-      <Modal size="2xl" isOpen={isHelpOpen} onClose={onHelpClose}>
+      <Modal
+        size="2xl"
+        isOpen={isDocumentationOpen}
+        onClose={onDocumentationClose}
+      >
         <ModalContent>
           <ModalHeader className="border-b border-divider">
             Documentation
           </ModalHeader>
           <ModalBody>
             <div className="prose max-w-none">
-              <Markdown>{helpContent}</Markdown>
+              <Markdown>{documentationContent}</Markdown>
             </div>
           </ModalBody>
           <ModalFooter className="border-t border-divider">
-            <Button color="secondary" onPress={onHelpClose}>
+            <Button color="secondary" onPress={onDocumentationClose}>
               Got it
             </Button>
           </ModalFooter>
