@@ -23,7 +23,7 @@ import {
   IconCode,
   IconDownload,
 } from '@tabler/icons-react'
-import Split from '@uiw/react-split'
+import { Resplit } from 'react-resplit'
 import {
   useCallback,
   useEffect,
@@ -353,70 +353,75 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
         </NavbarContent>
       </Navbar>
 
-      <div className="flex-1 min-h-0 overflow-hidden">
-        <Split mode="horizontal" className="h-full w-full">
-          <div className="h-full w-2/3 overflow-hidden">
-            <MonacoEditor
-              height="100%"
-              defaultLanguage="json"
-              value={jsonContent}
-              onChange={handleEditorChange}
-              theme="vs-dark"
-              options={{
-                minimap: { enabled: false },
-                fontSize: 14,
-                lineNumbers: 'on',
-                scrollBeyondLastLine: false,
-                automaticLayout: true,
-              }}
-            />
-          </div>
-          <div className="h-full w-1/3 overflow-hidden">
-            <Split mode="vertical" className="h-full w-full">
-              <div className="h-2/3 w-full overflow-auto">
-                <div className="p-4">
-                  <MappingTableVariants mapping={parsedData} />
+      <Resplit.Root direction="horizontal" className="flex-1 min-h-0">
+        <Resplit.Pane order={0} initialSize="0.67fr" className="overflow-auto">
+          <MonacoEditor
+            defaultLanguage="json"
+            value={jsonContent}
+            onChange={handleEditorChange}
+            theme="vs-dark"
+            options={{
+              minimap: { enabled: false },
+              fontSize: 14,
+              lineNumbers: 'on',
+              scrollBeyondLastLine: false,
+              automaticLayout: true,
+            }}
+          />
+        </Resplit.Pane>
+        <Resplit.Splitter order={1} size="4px" className="bg-divider" />
+        <Resplit.Pane
+          order={2}
+          initialSize="0.33fr"
+          className="flex-1 min-h-0 "
+        >
+          <Resplit.Root direction="vertical" className="flex-1 h-full min-h-0">
+            <Resplit.Pane
+              order={0}
+              initialSize="0.67fr"
+              className="p-4 overflow-y-auto"
+            >
+              <MappingTableVariants mapping={parsedData} />
+            </Resplit.Pane>
+            <Resplit.Splitter order={1} size="4px" className="bg-divider" />
+            <Resplit.Pane
+              order={2}
+              initialSize="0.33fr"
+              className="bg-default-50 p-4 overflow-auto"
+            >
+              {error ? (
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg text-danger">⚠️</span>
+                    <span className="font-medium text-danger">
+                      Validation Error
+                    </span>
+                    <Chip variant="flat" color="danger" size="sm">
+                      JSON
+                    </Chip>
+                  </div>
+                  <Card className="border-danger">
+                    <CardBody className="text-sm">
+                      <pre className="whitespace-pre-wrap font-mono text-danger">
+                        {error}
+                      </pre>
+                    </CardBody>
+                  </Card>
                 </div>
-              </div>
-              <div className="h-1/3 w-full overflow-auto bg-default-50">
-                <div className="p-4">
-                  {error ? (
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg text-danger">⚠️</span>
-                        <span className="font-medium text-danger">
-                          Validation Error
-                        </span>
-                        <Chip variant="flat" color="danger" size="sm">
-                          JSON
-                        </Chip>
-                      </div>
-                      <Card className="border-danger">
-                        <CardBody className="text-sm">
-                          <pre className="whitespace-pre-wrap font-mono text-danger">
-                            {error}
-                          </pre>
-                        </CardBody>
-                      </Card>
+              ) : (
+                <Card className="border-success bg-success-50/50">
+                  <CardBody>
+                    <div className="flex items-center gap-2 text-success">
+                      <span className="text-lg">✓</span>
+                      <span className="text-sm font-medium">JSON is valid</span>
                     </div>
-                  ) : (
-                    <Card className="border-success bg-success-50/50">
-                      <CardBody>
-                        <div className="flex items-center gap-2 text-success">
-                          <span className="text-lg">✓</span>
-                          <span className="text-sm font-medium">
-                            JSON is valid
-                          </span>
-                        </div>
-                      </CardBody>
-                    </Card>
-                  )}
-                </div>
-              </div>
-            </Split>
-          </div>
-        </Split>
-      </div>
+                  </CardBody>
+                </Card>
+              )}
+            </Resplit.Pane>
+          </Resplit.Root>
+        </Resplit.Pane>
+      </Resplit.Root>
 
       <Modal
         size="2xl"
@@ -515,38 +520,41 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
                 </Button>
               </div>
             </div>
-            <div className="flex-1 min-h-0">
-              {selectedExampleContent && (
-                <Split mode="horizontal" className="h-full">
-                  <div className="h-full w-2/3">
-                    <MonacoEditor
-                      height="100%"
-                      defaultLanguage="json"
-                      value={selectedExampleContent}
-                      theme="vs-dark"
-                      options={{
-                        readOnly: true,
-                        minimap: { enabled: false },
-                        fontSize: 14,
-                        lineNumbers: 'on',
-                        scrollBeyondLastLine: false,
-                        automaticLayout: true,
-                      }}
-                    />
-                  </div>
-                  <div className="h-full w-1/3 overflow-y-auto">
-                    <div className="p-4">
-                      <MappingTableVariants
-                        mapping={
-                          examples.find((e) => e.name === selectedExample)
-                            ?.content ?? defaultJson
-                        }
-                      />
-                    </div>
-                  </div>
-                </Split>
-              )}
-            </div>
+
+            <Resplit.Root direction="horizontal" className="flex-1 min-h-0">
+              <Resplit.Pane
+                order={0}
+                initialSize="0.67fr"
+                className="overflow-auto"
+              >
+                <MonacoEditor
+                  defaultLanguage="json"
+                  value={selectedExampleContent}
+                  theme="vs-dark"
+                  options={{
+                    readOnly: true,
+                    minimap: { enabled: false },
+                    fontSize: 14,
+                    lineNumbers: 'on',
+                    scrollBeyondLastLine: false,
+                    automaticLayout: true,
+                  }}
+                />
+              </Resplit.Pane>
+              <Resplit.Splitter order={1} size="4px" className="bg-divider" />
+              <Resplit.Pane
+                order={2}
+                initialSize="0.33fr"
+                className="p-4 overflow-auto"
+              >
+                <MappingTableVariants
+                  mapping={
+                    examples.find((e) => e.name === selectedExample)?.content ??
+                    defaultJson
+                  }
+                />
+              </Resplit.Pane>
+            </Resplit.Root>
           </ModalBody>
         </ModalContent>
       </Modal>
