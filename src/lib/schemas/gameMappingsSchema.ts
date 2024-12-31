@@ -179,19 +179,25 @@ const variantSchema = z
         : []
       const groupIds = variant.groups ? Object.keys(variant.groups) : []
 
+      const errors: string[] = []
+
       for (const cell of variant.cells) {
         if (
           cell.templateCellId &&
           !templateCellIds.includes(cell.templateCellId)
         ) {
-          return false
+          errors.push(
+            `Cell template "${cell.templateCellId}" not found in templateCells`
+          )
         }
 
         if (
           cell.icon?.templateIconId &&
           !templateIconIds.includes(cell.icon.templateIconId)
         ) {
-          return false
+          errors.push(
+            `Icon template "${cell.icon.templateIconId}" not found in templateIcons`
+          )
         }
 
         if (cell.drawings) {
@@ -200,7 +206,9 @@ const variantSchema = z
               drawing.templateDrawingId &&
               !templateDrawingIds.includes(drawing.templateDrawingId)
             ) {
-              return false
+              errors.push(
+                `Drawing template "${drawing.templateDrawingId}" not found in templateDrawings`
+              )
             }
           }
         }
@@ -208,10 +216,14 @@ const variantSchema = z
         if (cell.groups) {
           for (const groupId of cell.groups) {
             if (!groupIds.includes(groupId)) {
-              return false
+              errors.push(`Group "${groupId}" not found in groups`)
             }
           }
         }
+      }
+
+      if (errors.length > 0) {
+        throw new Error(errors.join('\n'))
       }
 
       return true
