@@ -71,6 +71,7 @@ export const Cell: FC<{
                     mask={`url(#${maskId})`}
                     style={{
                       transform: iconTransformToCss(cell.icon.transform),
+                      transformOrigin: 'center',
                     }}
                   />
                   {cell.icon.stroke && (
@@ -85,6 +86,7 @@ export const Cell: FC<{
                           ? (cell.icon.stroke.width / 190) * 512
                           : undefined,
                         transform: iconTransformToCss(cell.icon.transform),
+                        transformOrigin: 'center',
                       }}
                     />
                   )}
@@ -102,6 +104,7 @@ export const Cell: FC<{
                   style={{
                     color: translateColor(cell.icon.fill),
                     transform: iconTransformToCss(cell.icon.transform),
+                    transformOrigin: 'center',
                   }}
                 />
               )}
@@ -112,6 +115,7 @@ export const Cell: FC<{
               className="absolute select-none font-brand inset-0"
               style={{
                 transform: iconTransformToCss(cell.text.transform),
+                transformOrigin: 'center',
               }}
               viewBox="0 0 190 190"
             >
