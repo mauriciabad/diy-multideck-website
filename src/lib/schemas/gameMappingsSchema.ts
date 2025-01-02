@@ -3,7 +3,7 @@ import merge from 'lodash/merge'
 import { COLOR_MAPPINGS } from '../utils/mappingUtils'
 
 const colorRegex =
-  /^(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*(?:0|1|0?\.\d+))?\s*\))$/
+  /^(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{8}|#[0-9A-Fa-f]{4}|rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(?:,\s*(?:0|1|0?\.\d+))?\s*\))$/
 
 const namedColors = Object.keys(
   COLOR_MAPPINGS
