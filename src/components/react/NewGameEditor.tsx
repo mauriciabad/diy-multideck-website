@@ -44,6 +44,7 @@ import {
 } from '../../lib/schemas/gameMappingsSchema'
 import { MappingTableVariants } from './MappingTableVariants'
 import { gameMappingsJsonSchema } from '../../lib/schemas/gameMappingsJsonSchema'
+import { COLOR_MAPPINGS } from '../../lib/utils/mappingUtils'
 
 const documentationContent = `# Game Mapping Editor Documentation
 
@@ -369,6 +370,128 @@ ${jsonContent}`
             schema: gameMappingsJsonSchema,
           },
         ],
+      })
+
+      // Register color provider for JSON
+      monaco.languages.registerColorProvider('json', {
+        provideColorPresentations: (_model, colorInfo) => {
+          const color = colorInfo.color
+          const red256 = Math.round(color.red * 255)
+          const green256 = Math.round(color.green * 255)
+          const blue256 = Math.round(color.blue * 255)
+          const alpha = color.alpha
+
+          const rgbLabel =
+            alpha === 1
+              ? `rgb(${red256}, ${green256}, ${blue256})`
+              : `rgba(${red256}, ${green256}, ${blue256}, ${alpha})`
+
+          const hexLabel = `#${red256.toString(16).padStart(2, '0')}${green256
+            .toString(16)
+            .padStart(2, '0')}${blue256.toString(16).padStart(2, '0')}`
+
+          // Find if this color matches any of our named colors
+          const namedColor = Object.entries(COLOR_MAPPINGS).find(
+            ([, hex]) => hex.toLowerCase() === hexLabel.toLowerCase()
+          )?.[0]
+
+          return [
+            ...(namedColor ? [{ label: namedColor }] : []),
+            { label: hexLabel },
+            { label: rgbLabel },
+          ]
+        },
+
+        provideDocumentColors: (model) => {
+          const text = model.getValue()
+          const colorRegex = /"(?:fill|bgFill|color|stroke)"\s*:\s*"([^"]+)"/g
+          const colors: { range: any; color: any }[] = []
+
+          let match
+          while ((match = colorRegex.exec(text)) !== null) {
+            const colorValue = match[1]
+            if (!colorValue) continue
+
+            const startIndex = match.index + match[0].indexOf(colorValue)
+            const startPos = model.getPositionAt(startIndex)
+            const endPos = model.getPositionAt(startIndex + colorValue.length)
+
+            // Handle named colors from COLOR_MAPPINGS
+            if (colorValue in COLOR_MAPPINGS) {
+              const hex =
+                COLOR_MAPPINGS[colorValue as keyof typeof COLOR_MAPPINGS]
+              const r = parseInt(hex.substring(1, 3), 16)
+              const g = parseInt(hex.substring(3, 5), 16)
+              const b = parseInt(hex.substring(5, 7), 16)
+              colors.push({
+                range: {
+                  startLineNumber: startPos.lineNumber,
+                  startColumn: startPos.column,
+                  endLineNumber: endPos.lineNumber,
+                  endColumn: endPos.column,
+                },
+                color: {
+                  red: r / 255,
+                  green: g / 255,
+                  blue: b / 255,
+                  alpha: 1,
+                },
+              })
+              continue
+            }
+
+            // Handle hex colors
+            if (colorValue.startsWith('#')) {
+              const hex = colorValue.substring(1)
+              const r = parseInt(hex.substring(0, 2), 16)
+              const g = parseInt(hex.substring(2, 4), 16)
+              const b = parseInt(hex.substring(4, 6), 16)
+              if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+                colors.push({
+                  range: {
+                    startLineNumber: startPos.lineNumber,
+                    startColumn: startPos.column,
+                    endLineNumber: endPos.lineNumber,
+                    endColumn: endPos.column,
+                  },
+                  color: {
+                    red: r / 255,
+                    green: g / 255,
+                    blue: b / 255,
+                    alpha: 1,
+                  },
+                })
+              }
+              continue
+            }
+
+            // Handle rgb/rgba colors
+            const rgbMatch = colorValue.match(
+              /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/
+            )
+            if (rgbMatch) {
+              const [, r, g, b, a = '1'] = rgbMatch
+              if (r && g && b) {
+                colors.push({
+                  range: {
+                    startLineNumber: startPos.lineNumber,
+                    startColumn: startPos.column,
+                    endLineNumber: endPos.lineNumber,
+                    endColumn: endPos.column,
+                  },
+                  color: {
+                    red: parseInt(r) / 255,
+                    green: parseInt(g) / 255,
+                    blue: parseInt(b) / 255,
+                    alpha: parseFloat(a),
+                  },
+                })
+              }
+            }
+          }
+
+          return colors
+        },
       })
 
       // Add format on save
