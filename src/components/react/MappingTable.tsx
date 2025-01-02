@@ -174,7 +174,7 @@ export const MappingTable: FC<{
     <div className="flex flex-col gap-4 items-center">
       <div
         className={cn(
-          'not-prose bg-white relative rounded-lg sm:rounded-xl',
+          'not-prose bg-white text-black relative rounded-lg sm:rounded-xl',
           className
         )}
         style={{
