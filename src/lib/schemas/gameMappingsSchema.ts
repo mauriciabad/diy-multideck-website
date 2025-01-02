@@ -181,6 +181,14 @@ const variantSchema = z
 
       const errors: string[] = []
 
+      const cardIds = new Set<number>()
+      for (const cell of variant.cells) {
+        if (cardIds.has(cell.cardId)) {
+          errors.push(`Duplicate cardId found: ${cell.cardId}`)
+        }
+        cardIds.add(cell.cardId)
+      }
+
       for (const cell of variant.cells) {
         if (
           cell.templateCellId &&
