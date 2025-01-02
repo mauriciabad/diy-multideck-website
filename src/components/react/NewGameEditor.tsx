@@ -164,6 +164,19 @@ Controls positioning and appearance of elements.
 }
 \`\`\`
 
+## Card Layouts and IDs
+
+The card id is the value of the number suit. The following layouts show how these IDs map to different features of the cards:
+
+### Basic Layout
+![Basic Layout](/images/home/layouts/preview-mini-basic.png)
+
+### 3D Layout
+![3D Layout](/images/home/layouts/preview-mini-3d.png)
+
+### Number Layout
+![Number Layout](/images/home/layouts/preview-mini-number.png)
+
 ## Templates
 When using \`templateCellId\`, \`templateIconId\`, or \`templateDrawingId\`, the object will merge with the referenced template. Properties you specify will override the template's values, while unspecified properties will use the template's defaults. This is useful for maintaining consistency across similar elements.
 
