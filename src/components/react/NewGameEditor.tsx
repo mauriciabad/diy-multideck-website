@@ -16,6 +16,7 @@ import {
   NavbarItem,
   Select,
   SelectItem,
+  Switch,
   useDisclosure,
 } from '@nextui-org/react'
 import {
@@ -25,7 +26,6 @@ import {
   IconDownload,
   IconSend,
 } from '@tabler/icons-react'
-import { Resplit } from 'react-resplit'
 import {
   useCallback,
   useEffect,
@@ -35,16 +35,17 @@ import {
   type FC,
 } from 'react'
 import Markdown from 'react-markdown'
+import { Resplit } from 'react-resplit'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { useLocalStorage } from 'usehooks-ts'
+import YAML from 'yaml'
 import {
   gameMappingsSchema,
   type GameMapping,
 } from '../../lib/schemas/gameMappingsSchema'
-import { MappingTableVariants } from './MappingTableVariants'
-import { gameMappingsJsonSchema } from '../../lib/schemas/gameMappingsJsonSchema'
 import { COLOR_MAPPINGS } from '../../lib/utils/mappingUtils'
+import { MappingTableVariants } from './MappingTableVariants'
 
 const documentationContent = `# Game Mapping Editor Documentation
 
@@ -240,9 +241,15 @@ interface Props {
 }
 
 export const NewGameEditor: FC<Props> = ({ examples }) => {
-  const [jsonContent, setJsonContent] = useLocalStorage(
+  const [isYamlMode, setIsYamlMode] = useLocalStorage(
+    'game-mapping-editor-mode',
+    false
+  )
+  const [editorText, setEditorText] = useLocalStorage(
     'game-mapping-editor',
-    JSON.stringify(defaultJson, null, 2)
+    isYamlMode
+      ? YAML.stringify(defaultJson)
+      : JSON.stringify(defaultJson, null, 2)
   )
   const [error, setError] = useState<string>('')
   const [parsedData, setParsedData] = useState<GameMapping>(defaultJson)
@@ -267,17 +274,17 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   const validateAndUpdateState = useCallback(
     (value: string | undefined) => {
       if (!value) {
-        setJsonContent('')
-        setError('JSON cannot be empty')
+        setEditorText('')
+        setError(`${isYamlMode ? 'YAML' : 'JSON'} cannot be empty`)
         setParsedData(defaultJson)
         return
       }
 
       let parsed
       try {
-        parsed = JSON.parse(value)
+        parsed = isYamlMode ? YAML.parse(value) : JSON.parse(value)
       } catch (e) {
-        setError('Invalid JSON syntax')
+        setError(`Invalid ${isYamlMode ? 'YAML' : 'JSON'} syntax`)
         return
       }
 
@@ -286,37 +293,51 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
         setError('')
         setParsedData(validated)
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'Invalid JSON schema')
+        setError(
+          e instanceof Error
+            ? e.message
+            : `Invalid ${isYamlMode ? 'YAML' : 'JSON'} schema`
+        )
         setParsedData(parsed)
       }
     },
-    [setJsonContent]
+    [setEditorText, isYamlMode]
   )
 
   useEffect(() => {
-    validateAndUpdateState(jsonContent)
-  }, [validateAndUpdateState, jsonContent])
+    validateAndUpdateState(editorText)
+  }, [validateAndUpdateState, editorText])
 
   const handleEditorChange = (value: string | undefined) => {
-    setJsonContent(value ?? '')
+    setEditorText(value ?? '')
     validateAndUpdateState(value)
   }
 
   const selectedExampleContent = useMemo(() => {
     const example = examples.find((e) => e.name === selectedExample)
-    return example ? JSON.stringify(example.content, null, 2) : ''
-  }, [selectedExample, examples])
+    return example
+      ? isYamlMode
+        ? YAML.stringify(example.content)
+        : JSON.stringify(example.content, null, 2)
+      : ''
+  }, [selectedExample, examples, isYamlMode])
 
   const loadExample = () => {
     if (!selectedExampleContent) return
-    setJsonContent(selectedExampleContent)
+    setEditorText(selectedExampleContent)
     try {
-      const parsed = JSON.parse(selectedExampleContent)
+      const parsed = isYamlMode
+        ? YAML.parse(selectedExampleContent)
+        : JSON.parse(selectedExampleContent)
       const validated = gameMappingsSchema.parse(parsed)
       setParsedData(validated)
       setError('')
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Invalid JSON')
+      setError(
+        e instanceof Error
+          ? e.message
+          : `Invalid ${isYamlMode ? 'YAML' : 'JSON'} syntax`
+      )
     }
     onExamplesClose()
   }
@@ -327,17 +348,19 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   }, [onDownloadOpen])
 
   const handleDownloadConfirm = useCallback(() => {
-    const blob = new Blob([jsonContent], { type: 'application/json' })
+    const blob = new Blob([editorText], {
+      type: isYamlMode ? 'text/yaml' : 'application/json',
+    })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `${downloadFilename}.json`
+    a.download = `${downloadFilename}.${isYamlMode ? 'yaml' : 'json'}`
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
     onDownloadClose()
-  }, [jsonContent, downloadFilename, onDownloadClose])
+  }, [editorText, downloadFilename, isYamlMode, onDownloadClose])
 
   const handleSubmitSuggestion = useCallback(() => {
     const timestamp = new Date().toISOString().replace('T', ' ').split('.')[0]
@@ -349,104 +372,82 @@ BoardGameGeek Link:
 Comments (optional): 
 Mapped by (optional): 
 
-Game Mapping JSON:
-${jsonContent}`
+Game Mapping ${isYamlMode ? 'YAML' : 'JSON'}:
+${editorText}`
 
     const subject = encodeURIComponent(`Game Mapping Suggestion | ${timestamp}`)
     const mailtoUrl = `mailto:diymultideck@mauri.app?subject=${subject}&body=${encodeURIComponent(
       emailTemplate
     )}`
     window.location.href = mailtoUrl
-  }, [jsonContent])
+  }, [editorText, isYamlMode])
 
   const handleEditorMount = useCallback<OnMount>(
     (editor, monaco) => {
-      monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-        validate: true,
-        schemas: [
-          {
-            uri: 'schema:game-mappings',
-            fileMatch: ['*'],
-            schema: gameMappingsJsonSchema,
+      // Register color provider for both YAML and JSON
+      const registerColorProvider = (language: 'yaml' | 'json') => {
+        monaco.languages.registerColorProvider(language, {
+          provideColorPresentations: (_model, colorInfo) => {
+            const color = colorInfo.color
+            const red256 = Math.round(color.red * 255)
+            const green256 = Math.round(color.green * 255)
+            const blue256 = Math.round(color.blue * 255)
+            const alpha = color.alpha
+
+            const rgbLabel =
+              alpha === 1
+                ? `rgb(${red256}, ${green256}, ${blue256})`
+                : `rgba(${red256}, ${green256}, ${blue256}, ${alpha})`
+
+            const hexLabel =
+              alpha === 1
+                ? `#${red256.toString(16).padStart(2, '0')}${green256
+                    .toString(16)
+                    .padStart(2, '0')}${blue256.toString(16).padStart(2, '0')}`
+                : `#${red256.toString(16).padStart(2, '0')}${green256
+                    .toString(16)
+                    .padStart(2, '0')}${blue256
+                    .toString(16)
+                    .padStart(2, '0')}${Math.round(alpha * 255)
+                    .toString(16)
+                    .padStart(2, '0')}`
+
+            // Find if this color matches any of our named colors
+            const namedColor = Object.entries(COLOR_MAPPINGS).find(
+              ([, hex]) => hex.toLowerCase() === hexLabel.toLowerCase()
+            )?.[0]
+
+            return [
+              ...(namedColor ? [{ label: namedColor }] : []),
+              { label: hexLabel },
+              { label: rgbLabel },
+            ]
           },
-        ],
-      })
 
-      // Register color provider for JSON
-      monaco.languages.registerColorProvider('json', {
-        provideColorPresentations: (_model, colorInfo) => {
-          const color = colorInfo.color
-          const red256 = Math.round(color.red * 255)
-          const green256 = Math.round(color.green * 255)
-          const blue256 = Math.round(color.blue * 255)
-          const alpha = color.alpha
+          provideDocumentColors: (model) => {
+            const text = model.getValue()
+            const colorRegex =
+              language === 'yaml'
+                ? /(?:fill|bgFill|color|stroke):\s*['"]?([^\n\r,'"]+)/g
+                : /"(?:fill|bgFill|color|stroke)"\s*:\s*"([^"]+)"/g
+            const colors: { range: any; color: any }[] = []
 
-          const rgbLabel =
-            alpha === 1
-              ? `rgb(${red256}, ${green256}, ${blue256})`
-              : `rgba(${red256}, ${green256}, ${blue256}, ${alpha})`
+            let match
+            while ((match = colorRegex.exec(text)) !== null) {
+              const colorValue = match?.[1]?.trim()
+              if (!colorValue) continue
 
-          const hexLabel = `#${red256.toString(16).padStart(2, '0')}${green256
-            .toString(16)
-            .padStart(2, '0')}${blue256.toString(16).padStart(2, '0')}`
+              const startIndex = match.index + match[0].indexOf(colorValue)
+              const startPos = model.getPositionAt(startIndex)
+              const endPos = model.getPositionAt(startIndex + colorValue.length)
 
-          // Find if this color matches any of our named colors
-          const namedColor = Object.entries(COLOR_MAPPINGS).find(
-            ([, hex]) => hex.toLowerCase() === hexLabel.toLowerCase()
-          )?.[0]
-
-          return [
-            ...(namedColor ? [{ label: namedColor }] : []),
-            { label: hexLabel },
-            { label: rgbLabel },
-          ]
-        },
-
-        provideDocumentColors: (model) => {
-          const text = model.getValue()
-          const colorRegex = /"(?:fill|bgFill|color|stroke)"\s*:\s*"([^"]+)"/g
-          const colors: { range: any; color: any }[] = []
-
-          let match
-          while ((match = colorRegex.exec(text)) !== null) {
-            const colorValue = match[1]
-            if (!colorValue) continue
-
-            const startIndex = match.index + match[0].indexOf(colorValue)
-            const startPos = model.getPositionAt(startIndex)
-            const endPos = model.getPositionAt(startIndex + colorValue.length)
-
-            // Handle named colors from COLOR_MAPPINGS
-            if (colorValue in COLOR_MAPPINGS) {
-              const hex =
-                COLOR_MAPPINGS[colorValue as keyof typeof COLOR_MAPPINGS]
-              const r = parseInt(hex.substring(1, 3), 16)
-              const g = parseInt(hex.substring(3, 5), 16)
-              const b = parseInt(hex.substring(5, 7), 16)
-              colors.push({
-                range: {
-                  startLineNumber: startPos.lineNumber,
-                  startColumn: startPos.column,
-                  endLineNumber: endPos.lineNumber,
-                  endColumn: endPos.column,
-                },
-                color: {
-                  red: r / 255,
-                  green: g / 255,
-                  blue: b / 255,
-                  alpha: 1,
-                },
-              })
-              continue
-            }
-
-            // Handle hex colors
-            if (colorValue.startsWith('#')) {
-              const hex = colorValue.substring(1)
-              const r = parseInt(hex.substring(0, 2), 16)
-              const g = parseInt(hex.substring(2, 4), 16)
-              const b = parseInt(hex.substring(4, 6), 16)
-              if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+              // Handle named colors from COLOR_MAPPINGS
+              if (colorValue in COLOR_MAPPINGS) {
+                const hex =
+                  COLOR_MAPPINGS[colorValue as keyof typeof COLOR_MAPPINGS]
+                const r = parseInt(hex.substring(1, 3), 16)
+                const g = parseInt(hex.substring(3, 5), 16)
+                const b = parseInt(hex.substring(5, 7), 16)
                 colors.push({
                   range: {
                     startLineNumber: startPos.lineNumber,
@@ -461,38 +462,88 @@ ${jsonContent}`
                     alpha: 1,
                   },
                 })
+                continue
               }
-              continue
+
+              // Handle hex colors
+              if (colorValue.startsWith('#')) {
+                const hex = colorValue.substring(1)
+                let r: number,
+                  g: number,
+                  b: number,
+                  a = 1
+
+                if (hex.length === 3 || hex.length === 4) {
+                  // Convert 3/4 char hex to 6/8 char
+                  r = parseInt(hex[0]! + hex[0]!, 16)
+                  g = parseInt(hex[1]! + hex[1]!, 16)
+                  b = parseInt(hex[2]! + hex[2]!, 16)
+                  if (hex.length === 4) {
+                    a = parseInt(hex[3]! + hex[3]!, 16) / 255
+                  }
+                } else if (hex.length === 6 || hex.length === 8) {
+                  r = parseInt(hex.substring(0, 2), 16)
+                  g = parseInt(hex.substring(2, 4), 16)
+                  b = parseInt(hex.substring(4, 6), 16)
+                  if (hex.length === 8) {
+                    a = parseInt(hex.substring(6, 8), 16) / 255
+                  }
+                } else {
+                  continue // Invalid hex length
+                }
+
+                if (!isNaN(r) && !isNaN(g) && !isNaN(b) && !isNaN(a)) {
+                  colors.push({
+                    range: {
+                      startLineNumber: startPos.lineNumber,
+                      startColumn: startPos.column,
+                      endLineNumber: endPos.lineNumber,
+                      endColumn: endPos.column,
+                    },
+                    color: {
+                      red: r / 255,
+                      green: g / 255,
+                      blue: b / 255,
+                      alpha: a,
+                    },
+                  })
+                }
+                continue
+              }
+
+              // Handle rgb/rgba colors
+              const rgbMatch = colorValue.match(
+                /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/
+              )
+
+              if (rgbMatch && rgbMatch.length >= 4) {
+                const [, r, g, b, a = '1'] = rgbMatch
+                if (r && g && b) {
+                  colors.push({
+                    range: {
+                      startLineNumber: startPos.lineNumber,
+                      startColumn: startPos.column,
+                      endLineNumber: endPos.lineNumber,
+                      endColumn: endPos.column,
+                    },
+                    color: {
+                      red: parseInt(r) / 255,
+                      green: parseInt(g) / 255,
+                      blue: parseInt(b) / 255,
+                      alpha: parseFloat(a),
+                    },
+                  })
+                }
+              }
             }
 
-            // Handle rgb/rgba colors
-            const rgbMatch = colorValue.match(
-              /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/
-            )
-            if (rgbMatch) {
-              const [, r, g, b, a = '1'] = rgbMatch
-              if (r && g && b) {
-                colors.push({
-                  range: {
-                    startLineNumber: startPos.lineNumber,
-                    startColumn: startPos.column,
-                    endLineNumber: endPos.lineNumber,
-                    endColumn: endPos.column,
-                  },
-                  color: {
-                    red: parseInt(r) / 255,
-                    green: parseInt(g) / 255,
-                    blue: parseInt(b) / 255,
-                    alpha: parseFloat(a),
-                  },
-                })
-              }
-            }
-          }
+            return colors
+          },
+        })
+      }
 
-          return colors
-        },
-      })
+      registerColorProvider('yaml')
+      registerColorProvider('json')
 
       // Add format on save
       editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
@@ -511,6 +562,27 @@ ${jsonContent}`
     [handleEditorChange]
   )
 
+  const handleFormatToggle = useCallback(
+    (isSelected: boolean) => {
+      setIsYamlMode(isSelected)
+      try {
+        // Parse current content to object
+        const parsed = isYamlMode
+          ? YAML.parse(editorText)
+          : JSON.parse(editorText)
+        // Convert to new format
+        const newContent = isSelected
+          ? YAML.stringify(parsed)
+          : JSON.stringify(parsed, null, 2)
+        setEditorText(newContent)
+      } catch (e) {
+        // If conversion fails, keep the content as is
+        console.error('Failed to convert format:', e)
+      }
+    },
+    [isYamlMode, editorText, setEditorText, setIsYamlMode]
+  )
+
   return (
     <div className="flex h-screen w-full flex-col bg-background">
       <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
@@ -519,35 +591,58 @@ ${jsonContent}`
             Game Mapping Editor
           </p>
         </NavbarBrand>
-        <NavbarContent justify="end">
+        <NavbarContent justify="end" className="gap-2">
+          <NavbarItem className="flex items-center gap-2">
+            <span
+              className="text-xs text-foreground/75 font-mono cursor-pointer"
+              onClick={() => handleFormatToggle(false)}
+            >
+              JSON
+            </span>
+            <Switch
+              isSelected={isYamlMode}
+              size="sm"
+              color="secondary"
+              onValueChange={handleFormatToggle}
+            />
+            <span
+              className="text-xs text-foreground/75 font-mono cursor-pointer"
+              onClick={() => handleFormatToggle(true)}
+            >
+              YAML
+            </span>
+          </NavbarItem>
           <NavbarItem>
             <Button
               variant="solid"
               size="sm"
               onPress={onExamplesOpen}
               startContent={<IconCode className="size-4" />}
-              className="mr-2"
             >
               Examples
             </Button>
+          </NavbarItem>
+          <NavbarItem>
             <Button
               variant="solid"
               size="sm"
               onPress={onDocumentationOpen}
               startContent={<IconBook className="size-4" />}
-              className="mr-2"
             >
               Documentation
             </Button>
+          </NavbarItem>
+          <NavbarItem>
             <Button
               variant="solid"
               size="sm"
               onPress={handleDownload}
               startContent={<IconDownload className="size-4" />}
-              className="mr-2"
             >
               Download
             </Button>
+          </NavbarItem>
+          <NavbarItem>
             <Button
               variant="solid"
               size="sm"
@@ -564,8 +659,8 @@ ${jsonContent}`
       <Resplit.Root direction="horizontal" className="flex-1 min-h-0">
         <Resplit.Pane order={0} initialSize="0.67fr" className="overflow-auto">
           <MonacoEditor
-            defaultLanguage="json"
-            value={jsonContent}
+            language={isYamlMode ? 'yaml' : 'json'}
+            value={editorText}
             onChange={handleEditorChange}
             theme="vs-dark"
             onMount={handleEditorMount}
@@ -613,7 +708,7 @@ ${jsonContent}`
                       Validation Error
                     </span>
                     <Chip variant="flat" color="danger" size="sm">
-                      JSON
+                      {isYamlMode ? 'YAML' : 'JSON'}
                     </Chip>
                   </div>
                   <Card className="border-danger">
@@ -629,7 +724,9 @@ ${jsonContent}`
                   <CardBody>
                     <div className="flex items-center gap-2 text-success">
                       <span className="text-lg">✓</span>
-                      <span className="text-sm font-medium">JSON is valid</span>
+                      <span className="text-sm font-medium">
+                        {isYamlMode ? 'YAML' : 'JSON'} is valid
+                      </span>
                     </div>
                   </CardBody>
                 </Card>
@@ -744,7 +841,7 @@ ${jsonContent}`
                 className="overflow-auto"
               >
                 <MonacoEditor
-                  defaultLanguage="json"
+                  language={isYamlMode ? 'yaml' : 'json'}
                   value={selectedExampleContent}
                   theme="vs-dark"
                   options={{
@@ -796,7 +893,9 @@ ${jsonContent}`
               placeholder="game-mapping"
               endContent={
                 <div className="pointer-events-none flex items-center">
-                  <span className="text-default-400 text-small">.json</span>
+                  <span className="text-default-400 text-sm">
+                    .{isYamlMode ? 'yaml' : 'json'}
+                  </span>
                 </div>
               }
             />

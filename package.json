@@ -32,7 +32,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "split.js": "^1.6.5",
     "typescript": "5.3.2",
-    "usehooks-ts": "^3.1.0"
+    "usehooks-ts": "^3.1.0",
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
     "@iconify-json/game-icons": "^1.2.1",
