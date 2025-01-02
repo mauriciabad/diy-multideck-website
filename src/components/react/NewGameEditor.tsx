@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   Chip,
+  Input,
   Modal,
   ModalBody,
   ModalContent,
@@ -245,6 +246,7 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   const [error, setError] = useState<string>('')
   const [parsedData, setParsedData] = useState<GameMapping>(defaultJson)
   const [selectedExample, setSelectedExample] = useState<string>('')
+  const [downloadFilename, setDownloadFilename] = useState<string>('')
   const {
     isOpen: isDocumentationOpen,
     onOpen: onDocumentationOpen,
@@ -254,6 +256,11 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
     isOpen: isExamplesOpen,
     onOpen: onExamplesOpen,
     onClose: onExamplesClose,
+  } = useDisclosure()
+  const {
+    isOpen: isDownloadOpen,
+    onOpen: onDownloadOpen,
+    onClose: onDownloadClose,
   } = useDisclosure()
 
   const validateAndUpdateState = useCallback(
@@ -313,22 +320,22 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
   }
 
   const handleDownload = useCallback(() => {
-    const timestamp = new Date()
-      .toISOString()
-      .replace('T', ' ')
-      .replace(/[:]/g, '-')
-      .split('.')[0]
+    setDownloadFilename('')
+    onDownloadOpen()
+  }, [onDownloadOpen])
 
+  const handleDownloadConfirm = useCallback(() => {
     const blob = new Blob([jsonContent], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `game-mapping-${timestamp}.json`
+    a.download = `${downloadFilename}.json`
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
-  }, [jsonContent])
+    onDownloadClose()
+  }, [jsonContent, downloadFilename, onDownloadClose])
 
   const handleSubmitSuggestion = useCallback(() => {
     const timestamp = new Date().toISOString().replace('T', ' ').split('.')[0]
@@ -622,6 +629,47 @@ ${jsonContent}`
               </Resplit.Pane>
             </Resplit.Root>
           </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      <Modal
+        size="sm"
+        isOpen={isDownloadOpen}
+        onClose={onDownloadClose}
+        placement="center"
+      >
+        <ModalContent>
+          <ModalHeader className="border-b border-divider">
+            Download game mapping
+          </ModalHeader>
+          <ModalBody>
+            <Input
+              label="File name"
+              value={downloadFilename}
+              isRequired
+              onChange={(e) => setDownloadFilename(e.target.value)}
+              variant="bordered"
+              labelPlacement="outside"
+              placeholder="game-mapping"
+              endContent={
+                <div className="pointer-events-none flex items-center">
+                  <span className="text-default-400 text-small">.json</span>
+                </div>
+              }
+            />
+          </ModalBody>
+          <ModalFooter className="border-t border-divider">
+            <Button variant="light" onPress={onDownloadClose}>
+              Cancel
+            </Button>
+            <Button
+              color="secondary"
+              isDisabled={!downloadFilename}
+              onPress={handleDownloadConfirm}
+            >
+              Download
+            </Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </div>
