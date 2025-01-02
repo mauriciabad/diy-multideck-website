@@ -128,7 +128,30 @@ const { game, mapping, slug } = Astro.props
       </ul>
     </div>
   </div>
-  <div class="custom-grid__rules">
+  <div class="custom-grid__rules space-y-4">
+    {
+      game.bgg && (
+        <a
+          href={game.bgg}
+          class="unset block py-2 px-4 mx-auto max-w-xs border-none w-full leading-none shadow-lg hover:text-white shadow-[#bdb4f6] dark:shadow-[#33304e] bg-[#3f3a60] bg-none rounded-lg text-white font-bold uppercase tracking-wider"
+        >
+          <svg fill="none" viewBox="0 0 94 38" class="h-6">
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M55.968 20.845c0-.131-.08-.289-.265-.289h-4.126v3.914h4.126c.185 0 .265-.132.265-.263v-3.362Zm0-6.934c0-.131-.08-.289-.265-.289h-4.126V17.3h4.126c.185 0 .265-.131.265-.289v-3.099ZM47 27.831V10.103h11.005c1.455 0 2.38.92 2.38 2.232v3.94c0 1.208-.793 2.364-2.433 2.758 1.64.394 2.566 1.497 2.566 2.679v3.86c0 1.393-.926 2.26-2.381 2.26H47Zm25.08-10.878h5.007v8.85c0 1.156-.899 2.023-2.037 2.023h-8.94c-1.138 0-2.064-.867-2.064-2.022v-13.71c0-1.077.926-1.996 2.063-1.996h10.978v3.808h-8.2c-.133 0-.265.131-.265.29v9.507c0 .157.132.262.264.262h3.704c.185 0 .291-.105.291-.262v-2.994h-2.407l1.606-3.756Zm16.57 0h5.007v8.85c0 1.156-.9 2.023-2.037 2.023H82.68c-1.138 0-2.064-.867-2.064-2.022v-13.71c0-1.077.926-1.996 2.064-1.996h10.978v3.808h-8.2c-.133 0-.265.131-.265.29v9.507c0 .157.132.262.264.262h3.704c.185 0 .29-.105.29-.262v-2.994h-2.407l1.606-3.756Z"
+              clip-rule="evenodd"
+            />
+            <path
+              fill="#FF5100"
+              fill-rule="evenodd"
+              d="m24.87 7.01-3.763 1.025L24.792 0 .9 8.794l1.306 10.533L0 21.454 6.577 37.93l13.981-5.151 4.86-11.409-2.087-2.012L24.87 7.01Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      )
+    }
     {
       game.rules && (
         <a
@@ -143,35 +166,35 @@ const { game, mapping, slug } = Astro.props
       )
     }
   </div>
-</div>
 
-<style lang="scss" scoped>
-  .custom-grid {
-    $img-height-mobile: 18rem;
-    $img-width-desktop: 12rem;
+  <style lang="scss" scoped>
+    .custom-grid {
+      $img-height-mobile: 18rem;
+      $img-width-desktop: 12rem;
 
-    display: grid;
-    grid-template: auto auto auto auto / auto;
-    grid-template-areas: 'img' 'text' 'text' 'rules';
+      display: grid;
+      grid-template: auto auto auto auto / auto;
+      grid-template-areas: 'img' 'text' 'text' 'rules';
 
-    @screen sm {
-      grid-template: auto 1fr / #{$img-width-desktop} auto;
-      grid-template-areas: 'img text' 'rules text';
-    }
-    &__img {
-      grid-area: img;
-      width: auto;
-      max-height: $img-height-mobile;
       @screen sm {
-        width: $img-width-desktop;
-        max-height: unset;
+        grid-template: auto 1fr / #{$img-width-desktop} auto;
+        grid-template-areas: 'img text' 'rules text';
+      }
+      &__img {
+        grid-area: img;
+        width: auto;
+        max-height: $img-height-mobile;
+        @screen sm {
+          width: $img-width-desktop;
+          max-height: unset;
+        }
+      }
+      &__text {
+        grid-area: text;
+      }
+      &__rules {
+        grid-area: rules;
       }
     }
-    &__text {
-      grid-area: text;
-    }
-    &__rules {
-      grid-area: rules;
-    }
-  }
-</style>
+  </style>
+</div>
