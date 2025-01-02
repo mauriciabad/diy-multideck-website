@@ -1,5 +1,6 @@
 import { Card, CardBody } from '@nextui-org/react'
 import { useMemo, type FC } from 'react'
+import Markdown from 'react-markdown'
 import { cn } from '../../lib/cn'
 import {
   getFullCell,
@@ -17,7 +18,7 @@ export const CellDetailsPanel: FC<{
 
   if (!cell) {
     return (
-      <Card className={cn('w-full', className)}>
+      <Card className={cn('w-full light', className)}>
         <CardBody>
           <p className="text-default-800 text-center text-lg font-bold mb-2">
             Unused card
@@ -32,7 +33,7 @@ export const CellDetailsPanel: FC<{
   }
 
   return (
-    <Card className={cn('w-full', className)}>
+    <Card className={cn('w-full light', className)}>
       <CardBody className="block">
         <div className="flex items-center justify-between">
           <div>
@@ -93,10 +94,12 @@ export const CellDetailsPanel: FC<{
                   <div className="w-16" />
                 )}
                 <div>
-                  <p className="font-semibold text-pretty">{drawing.name}</p>
-                  <p className="text-default-500 leading-tight text-pretty">
-                    {drawing.notes}
+                  <p className="font-semibold text-pretty leading-tight">
+                    {drawing.name}
                   </p>
+                  <Markdown className="prose-sm prose-p:my-1 prose-ul:my-1 prose-ul:pl-1 prose-li:pl-1 prose-ul:list-disc prose-ul:list-inside text-default-500 leading-tight text-pretty">
+                    {drawing.notes}
+                  </Markdown>
                 </div>
               </div>
             ))}
