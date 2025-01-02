@@ -221,6 +221,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".mdoc"] };
+"alex-colt-cadete-espacial.mdoc": {
+	id: "alex-colt-cadete-espacial.mdoc";
+  slug: "alex-colt-cadete-espacial";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".mdoc"] };
 "arboretum.mdoc": {
 	id: "arboretum.mdoc";
   slug: "arboretum";
@@ -537,6 +544,11 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"gameMappings": {
+"alex-colt-cadete-espacial": {
+	id: "alex-colt-cadete-espacial";
+  collection: "gameMappings";
+  data: InferEntrySchema<"gameMappings">
+};
 "spicy": {
 	id: "spicy";
   collection: "gameMappings";

@@ -1,0 +1,326 @@
+{
+  "variants": [
+    {
+      "name": "Main",
+      "slug": "main",
+      "layout": "3d",
+      "groups": {
+        "red-resource": {
+          "name": "Red resources",
+          "notes": "\"Staf and flip-flops of Bardurian\" on the original game.",
+          "color": "red",
+          "icon": {
+            "fill": "red"
+          }
+        },
+        "blue-resource": {
+          "name": "Blue resources",
+          "notes": "\"Spaceship\" on the original game.",
+          "color": "blue",
+          "icon": {
+            "fill": "blue"
+          }
+        },
+        "yellow-resource": {
+          "name": "Yellow resources",
+          "notes": "\"Holosphere\" on the original game.",
+          "color": "yellow",
+          "icon": {
+            "fill": "yellow"
+          }
+        },
+        "resources": {
+          "name": "Resources",
+          "color": "#e8e8e8",
+          "icon": {
+            "fill": "#fff"
+          }
+        },
+        "mission": {
+          "name": "Mission boards",
+          "color": "brown",
+          "icon": {
+            "fill": "brown"
+          }
+        },
+        "blocking": {
+          "name": "Blocking cards",
+          "color": "black",
+          "icon": {
+            "fill": "black"
+          }
+        },
+        "character": {
+          "name": "Characters",
+          "color": "#909090"
+        }
+      },
+      "templateIcons": {},
+      "templateCells": {
+        "red-resource": {
+          "name": "Red resource",
+          "icon": {
+            "srcIconId": "game-icons:emerald",
+            "fill": "red"
+          },
+          "groups": ["red-resource", "resources"]
+        },
+        "blue-resource": {
+          "name": "Blue resource",
+          "icon": {
+            "srcIconId": "game-icons:emerald",
+            "fill": "blue"
+          },
+          "groups": ["blue-resource", "resources"]
+        },
+        "yellow-resource": {
+          "name": "Yellow resource",
+          "icon": {
+            "srcIconId": "game-icons:emerald",
+            "fill": "yellow"
+          },
+          "groups": ["yellow-resource", "resources"]
+        },
+        "mission": {
+          "name": "Mission board",
+          "notes": "Board on the original game.",
+          "icon": {
+            "srcIconId": "game-icons:treasure-map",
+            "fill": "brown"
+          },
+          "groups": ["mission"],
+          "drawings": [
+            {
+              "area": {
+                "letter": "D",
+                "number": 4
+              },
+              "name": "Resources needed"
+            }
+          ]
+        },
+        "blocking": {
+          "name": "Blocking card",
+          "icon": {
+            "srcIconId": "game-icons:cancel",
+            "fill": "black"
+          },
+          "groups": ["blocking"]
+        },
+        "character-good": {
+          "name": "Good team card",
+          "icon": {
+            "srcIconId": "game-icons:character",
+            "fill": "#80b3b5"
+          },
+          "groups": ["character"]
+        },
+        "character-evil": {
+          "name": "Evil team card",
+          "icon": {
+            "srcIconId": "game-icons:imp-laugh",
+            "fill": "#945868"
+          },
+          "groups": ["character"]
+        }
+      },
+      "templateDrawings": {},
+      "cells": [
+        { "cardId": 0, "templateCellId": "red-resource" },
+        { "cardId": 1, "templateCellId": "red-resource" },
+        { "cardId": 2, "templateCellId": "red-resource" },
+        { "cardId": 3, "templateCellId": "red-resource" },
+        { "cardId": 4, "templateCellId": "red-resource" },
+        { "cardId": 5, "templateCellId": "red-resource" },
+        { "cardId": 6, "templateCellId": "red-resource" },
+        { "cardId": 7, "templateCellId": "red-resource" },
+        { "cardId": 8, "templateCellId": "red-resource" },
+        { "cardId": 9, "templateCellId": "red-resource" },
+        { "cardId": 40, "templateCellId": "red-resource" },
+        { "cardId": 41, "templateCellId": "red-resource" },
+        { "cardId": 42, "templateCellId": "red-resource" },
+        { "cardId": 43, "templateCellId": "red-resource" },
+        { "cardId": 44, "templateCellId": "red-resource" },
+        { "cardId": 45, "templateCellId": "red-resource" },
+        { "cardId": 46, "templateCellId": "red-resource" },
+        { "cardId": 47, "templateCellId": "red-resource" },
+
+        { "cardId": 10, "templateCellId": "blue-resource" },
+        { "cardId": 11, "templateCellId": "blue-resource" },
+        { "cardId": 12, "templateCellId": "blue-resource" },
+        { "cardId": 13, "templateCellId": "blue-resource" },
+        { "cardId": 14, "templateCellId": "blue-resource" },
+        { "cardId": 15, "templateCellId": "blue-resource" },
+        { "cardId": 16, "templateCellId": "blue-resource" },
+        { "cardId": 17, "templateCellId": "blue-resource" },
+        { "cardId": 18, "templateCellId": "blue-resource" },
+        { "cardId": 19, "templateCellId": "blue-resource" },
+
+        { "cardId": 20, "templateCellId": "yellow-resource" },
+        { "cardId": 21, "templateCellId": "yellow-resource" },
+        { "cardId": 22, "templateCellId": "yellow-resource" },
+        { "cardId": 23, "templateCellId": "yellow-resource" },
+        { "cardId": 24, "templateCellId": "yellow-resource" },
+        { "cardId": 25, "templateCellId": "yellow-resource" },
+        { "cardId": 26, "templateCellId": "yellow-resource" },
+        { "cardId": 27, "templateCellId": "yellow-resource" },
+        { "cardId": 28, "templateCellId": "yellow-resource" },
+        { "cardId": 29, "templateCellId": "yellow-resource" },
+        { "cardId": 60, "templateCellId": "yellow-resource" },
+        { "cardId": 61, "templateCellId": "yellow-resource" },
+
+        { "cardId": 150, "templateCellId": "character-good" },
+        { "cardId": 151, "templateCellId": "character-good" },
+        { "cardId": 152, "templateCellId": "character-good" },
+        { "cardId": 153, "templateCellId": "character-good" },
+        { "cardId": 154, "templateCellId": "character-good" },
+        { "cardId": 155, "templateCellId": "character-good" },
+        { "cardId": 156, "templateCellId": "character-good" },
+        { "cardId": 157, "templateCellId": "character-good" },
+        {
+          "cardId": 158,
+          "templateCellId": "character-good",
+          "icon": { "fill": "#d9ebec" }
+        },
+        {
+          "cardId": 159,
+          "templateCellId": "character-good",
+          "icon": { "fill": "#d9ebec" }
+        },
+
+        { "cardId": 120, "templateCellId": "character-evil" },
+        { "cardId": 121, "templateCellId": "character-evil" },
+        { "cardId": 122, "templateCellId": "character-evil" },
+        {
+          "cardId": 123,
+          "templateCellId": "character-evil",
+          "icon": { "fill": "#e1ced3" }
+        },
+        {
+          "cardId": 124,
+          "templateCellId": "character-evil",
+          "icon": { "fill": "#e1ced3" }
+        },
+        {
+          "cardId": 125,
+          "templateCellId": "character-evil",
+          "icon": { "fill": "#e1ced3" }
+        },
+
+        {
+          "cardId": 30,
+          "templateCellId": "mission",
+          "name": "Mission 1",
+          "text": { "content": "1" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🔴🔵\n- Players: 4-5-6-8"
+            }
+          ]
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "mission",
+          "name": "Mission 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🟡🟡\n- Players: 4-5-7-9"
+            }
+          ]
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "mission",
+          "name": "Mission 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🟡🔵\n- Players: 7-8-9"
+            }
+          ]
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "mission",
+          "name": "Mission 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🟡🟡\n- Players: 7-8-9"
+            }
+          ]
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "mission",
+          "name": "Mission 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🟡🔵\n- Players: 4-5-6"
+            }
+          ]
+        },
+        {
+          "cardId": 35,
+          "templateCellId": "mission",
+          "name": "Mission 6",
+          "text": { "content": "6" },
+          "drawings": [
+            { "notes": "Draw with color:\n- Resources: 🔴🔴🟡\n- Players: 7-9" }
+          ]
+        },
+        {
+          "cardId": 36,
+          "templateCellId": "mission",
+          "name": "Mission 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🔴🔴🟡🔵\n- Players: 10"
+            }
+          ]
+        },
+        {
+          "cardId": 37,
+          "templateCellId": "mission",
+          "name": "Mission 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🔴🟡\n- Players: 7-9-10"
+            }
+          ]
+        },
+        {
+          "cardId": 38,
+          "templateCellId": "mission",
+          "name": "Mission 9",
+          "text": { "content": "9" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🟡🟡🔵🔵\n- Players: 10"
+            }
+          ]
+        },
+        {
+          "cardId": 39,
+          "templateCellId": "mission",
+          "name": "Mission 10",
+          "text": { "content": "10" },
+          "drawings": [
+            {
+              "notes": "Draw with color:\n- Resources: 🔴🔴🟡\n- Players: 6-8-10"
+            }
+          ]
+        },
+
+        { "cardId": 126, "templateCellId": "blocking" },
+        { "cardId": 127, "templateCellId": "blocking" },
+        { "cardId": 128, "templateCellId": "blocking" },
+        { "cardId": 129, "templateCellId": "blocking" }
+      ]
+    }
+  ]
+}
