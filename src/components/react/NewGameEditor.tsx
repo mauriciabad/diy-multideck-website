@@ -225,10 +225,64 @@ Check the Examples panel to see complete mapping configurations.`
 const defaultJson: GameMapping = {
   variants: [
     {
-      name: 'Basic',
-      slug: 'basic',
+      name: 'Main',
+      slug: 'main',
       layout: 'basic',
-      cells: [],
+      groups: {
+        'red-resource': {
+          name: 'Red resources',
+          notes: '"Ruby" on the original game.',
+          color: 'red',
+          icon: {
+            fill: 'red',
+          },
+        },
+        resources: {
+          name: 'Resources',
+          color: '#e8e8e8',
+          icon: {
+            fill: '#fff',
+          },
+        },
+      },
+      templateIcons: {},
+      templateCells: {
+        'red-resource': {
+          name: 'Red resource',
+          icon: {
+            srcIconId: 'game-icons:dodo',
+            fill: 'red',
+            transform: {
+              scale: 0.9,
+            },
+          },
+          groups: ['red-resource', 'resources'],
+        },
+      },
+      templateDrawings: {},
+      cells: [
+        {
+          cardId: 0,
+          templateCellId: 'red-resource',
+        },
+        {
+          cardId: 1,
+          templateCellId: 'red-resource',
+          icon: {
+            fill: '#0b8e9d',
+          },
+          drawings: [
+            {
+              area: {
+                letter: 'D',
+                number: 4,
+              },
+              name: 'Resources needed',
+              notes: 'Descrive the drawing',
+            },
+          ],
+        },
+      ],
     },
   ],
 }
