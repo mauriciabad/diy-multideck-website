@@ -1,10 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
+import { uniqBy } from 'lodash'
 import PageMeta from '../components/PageMeta.astro'
 import Title from '../components/Title.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 
-const games = await getCollection('games', (p) => p.data.post.draft !== true)
+const jsonGames = await getCollection('games-json')
+const mdGames = await getCollection('games-md')
+const games = uniqBy([...jsonGames, ...mdGames], 'slug')
 ---
 
 <PageLayout>
@@ -36,7 +39,8 @@ const games = await getCollection('games', (p) => p.data.post.draft !== true)
       </p>
       <p class="mb-4">
         🚚 Barcelona 0€, Spain 3€, Europe 7€, anywhere else 11€. <span
-          class="italic">It goes by weight, so 2 decks cost the double.</span>
+          class="italic">It goes by weight, so 2 decks cost the double.</span
+        >
       </p>
 
       <h2 class="font-bold mt-4">What's included</h2>
