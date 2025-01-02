@@ -282,10 +282,11 @@ export const NewGameEditor: FC<Props> = ({ examples }) => {
 
       try {
         const validated = gameMappingsSchema.parse(parsed)
-        setParsedData(validated)
         setError('')
+        setParsedData(validated)
       } catch (e) {
         setError(e instanceof Error ? e.message : 'Invalid JSON schema')
+        setParsedData(parsed)
       }
     },
     [setJsonContent]
