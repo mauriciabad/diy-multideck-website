@@ -138,7 +138,7 @@ export const MappingTable: FC<{
   className?: string
 }> = ({ mapping, className }) => {
   const [selectedCardId, setSelectedCardId] = useState<number | null>(null)
-  const layout = LAYOUT_CONFIGS[mapping.layout]
+  const layout = LAYOUT_CONFIGS[mapping.layout] ?? LAYOUT_CONFIGS.basic
 
   const id = useId()
   const rainbowGradientId = `rainbow-gradient-${id}`
