@@ -34,6 +34,10 @@ import {
   type ComponentPropsWithoutRef,
   type FC,
 } from 'react'
+import {
+  ErrorBoundary,
+  type ErrorBoundaryPropsWithRender,
+} from 'react-error-boundary'
 import Markdown from 'react-markdown'
 import { Resplit } from 'react-resplit'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -293,6 +297,23 @@ interface Props {
     content: GameMapping
   }>
 }
+
+const MappingTableErrorFallback: ErrorBoundaryPropsWithRender['fallbackRender'] =
+  ({ error }) => {
+    return (
+      <div className="flex flex-col items-center justify-center h-full gap-3">
+        <div className="text-center text-balance">
+          <h4 className="text-xl font-bold uppercase font-heading">Error</h4>
+          <p className="text-sm text-foreground/75">
+            Can't render the mapping table
+          </p>
+        </div>
+        <pre className="text-xs text-red-400 whitespace-normal">
+          {error.message}
+        </pre>
+      </div>
+    )
+  }
 
 export const NewGameEditor: FC<Props> = ({ examples }) => {
   const [isYamlMode, setIsYamlMode] = useLocalStorage(
@@ -746,7 +767,12 @@ ${editorText}`
               initialSize="0.8fr"
               className="p-4 overflow-y-auto"
             >
-              <MappingTableVariants mapping={parsedData} />
+              <ErrorBoundary
+                fallbackRender={MappingTableErrorFallback}
+                resetKeys={[parsedData]}
+              >
+                <MappingTableVariants mapping={parsedData} />
+              </ErrorBoundary>
             </Resplit.Pane>
             <Resplit.Splitter order={1} size="4px" className="bg-divider" />
             <Resplit.Pane
