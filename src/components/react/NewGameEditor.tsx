@@ -358,18 +358,35 @@ ${jsonContent}`
     window.location.href = mailtoUrl
   }, [jsonContent])
 
-  const handleEditorMount = useCallback<OnMount>((_editor, monaco) => {
-    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-      validate: true,
-      schemas: [
-        {
-          uri: 'schema:game-mappings',
-          fileMatch: ['*'],
-          schema: gameMappingsJsonSchema,
-        },
-      ],
-    })
-  }, [])
+  const handleEditorMount = useCallback<OnMount>(
+    (editor, monaco) => {
+      monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+        validate: true,
+        schemas: [
+          {
+            uri: 'schema:game-mappings',
+            fileMatch: ['*'],
+            schema: gameMappingsJsonSchema,
+          },
+        ],
+      })
+
+      // Add format on save
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
+        editor.getAction('editor.action.formatDocument')?.run()
+        handleEditorChange(editor.getValue())
+      })
+
+      // Add format shortcut (Shift + Alt + F)
+      editor.addCommand(
+        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyF,
+        () => {
+          editor.getAction('editor.action.formatDocument')?.run()
+        }
+      )
+    },
+    [handleEditorChange]
+  )
 
   return (
     <div className="flex h-screen w-full flex-col bg-background">
@@ -435,6 +452,8 @@ ${jsonContent}`
               lineNumbers: 'on',
               scrollBeyondLastLine: false,
               automaticLayout: true,
+              formatOnPaste: true,
+              formatOnType: true,
             }}
             loading={
               <div className="flex-1 h-full bg-[#1e1e1e] flex items-center justify-center relative text-white">
