@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content'
+import { uniqBy } from 'lodash'
 import GameMappingDetails from '../../components/GameMappingDetails.astro'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import Prose from '../../components/Prose.astro'
@@ -7,12 +8,15 @@ import { MappingTableVariants } from '../../components/react/MappingTableVariant
 import ContentLayout from '../../layouts/ContentLayout.astro'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('games')
+  const jsonGames = await getCollection('games-json')
+  const mdGames = await getCollection('games-md')
+  const posts = uniqBy([...jsonGames, ...mdGames], 'slug')
 
   return posts
     .filter((p) => p.data.post.draft !== true)
     .map((p) => {
-      return { params: { slug: p.slug } }
+      const slug = 'slug' in p ? p.slug : p.id
+      return { params: { slug } }
     })
 }
 
@@ -21,12 +25,25 @@ if (typeof slug !== 'string') {
   throw Error(`slug should be string. Received: ${slug}`)
 }
 
-const entry = await getEntry('games', slug)
+const mdEntry = await getEntry('games-md', slug)
+const jsonEntry = await getEntry('games-json', slug)
+
+if (!mdEntry && !jsonEntry) {
+  throw Error(`No entry found for slug: ${slug}`)
+}
+
+const entry = jsonEntry ?? mdEntry
+if (!entry) {
+  throw Error(`No entry found for slug: ${slug}`)
+}
+
 const { game, post, mapping } = entry.data
+const resolvedMappings =
+  'variants' in entry.data
+    ? entry.data
+    : (await getEntry('gameMappings', slug))?.data
 
-const resolvedMappings = await getEntry('gameMappings', slug)
-
-const { Content } = await entry.render()
+const Content = 'render' in entry ? (await entry.render()).Content : undefined
 ---
 
 <ContentLayout
@@ -47,14 +64,18 @@ const { Content } = await entry.render()
     resolvedMappings && (
       <MappingTableVariants
         client:load
-        mapping={resolvedMappings.data}
+        mapping={resolvedMappings}
         classNames={{
           container: 'mt-8',
         }}
       />
     )
   }
-  <Prose>
-    <Content />
-  </Prose>
+  {
+    Content && (
+      <Prose>
+        <Content />
+      </Prose>
+    )
+  }
 </ContentLayout>
