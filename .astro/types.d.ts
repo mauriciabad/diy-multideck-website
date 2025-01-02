@@ -213,307 +213,300 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
-"games": {
+"games-md": {
 "6-nimmt.mdoc": {
 	id: "6-nimmt.mdoc";
   slug: "6-nimmt";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".mdoc"] };
-"alex-colt-cadete-espacial.mdoc": {
-	id: "alex-colt-cadete-espacial.mdoc";
-  slug: "alex-colt-cadete-espacial";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "arboretum.mdoc": {
 	id: "arboretum.mdoc";
   slug: "arboretum";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "cheating-moth.mdoc": {
 	id: "cheating-moth.mdoc";
   slug: "cheating-moth";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "claim.mdoc": {
 	id: "claim.mdoc";
   slug: "claim";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "cockroach-poker-royal.mdoc": {
 	id: "cockroach-poker-royal.mdoc";
   slug: "cockroach-poker-royal";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "deluxe-pit.mdoc": {
 	id: "deluxe-pit.mdoc";
   slug: "deluxe-pit";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "for-sale.mdoc": {
 	id: "for-sale.mdoc";
   slug: "for-sale";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "haggis.mdoc": {
 	id: "haggis.mdoc";
   slug: "haggis";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "hanabi.mdoc": {
 	id: "hanabi.mdoc";
   slug: "hanabi";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "hanamikoji.mdoc": {
 	id: "hanamikoji.mdoc";
   slug: "hanamikoji";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "heat.mdoc": {
 	id: "heat.mdoc";
   slug: "heat";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "in-vino-morte.mdoc": {
 	id: "in-vino-morte.mdoc";
   slug: "in-vino-morte";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "jekyll-vs-hyde.mdoc": {
 	id: "jekyll-vs-hyde.mdoc";
   slug: "jekyll-vs-hyde";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "llama.mdoc": {
 	id: "llama.mdoc";
   slug: "llama";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "love-letter-premium.mdoc": {
 	id: "love-letter-premium.mdoc";
   slug: "love-letter-premium";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "mafia-de-cuba.mdoc": {
 	id: "mafia-de-cuba.mdoc";
   slug: "mafia-de-cuba";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "no-mercy.mdoc": {
 	id: "no-mercy.mdoc";
   slug: "no-mercy";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "no-thanks.mdoc": {
 	id: "no-thanks.mdoc";
   slug: "no-thanks";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "regicide.mdoc": {
 	id: "regicide.mdoc";
   slug: "regicide";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "schotten-totten.mdoc": {
 	id: "schotten-totten.mdoc";
   slug: "schotten-totten";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "secret-hitler.mdoc": {
 	id: "secret-hitler.mdoc";
   slug: "secret-hitler";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "skull.mdoc": {
 	id: "skull.mdoc";
   slug: "skull";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "spanish-deck.mdoc": {
 	id: "spanish-deck.mdoc";
   slug: "spanish-deck";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "spicy.mdoc": {
 	id: "spicy.mdoc";
   slug: "spicy";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "standard-deck.mdoc": {
 	id: "standard-deck.mdoc";
   slug: "standard-deck";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "startups.mdoc": {
 	id: "startups.mdoc";
   slug: "startups";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "taco-cat-goat-cheese-pizza.mdoc": {
 	id: "taco-cat-goat-cheese-pizza.mdoc";
   slug: "taco-cat-goat-cheese-pizza";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "ten.mdoc": {
 	id: "ten.mdoc";
   slug: "ten";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "the-crew-1.mdoc": {
 	id: "the-crew-1.mdoc";
   slug: "the-crew-1";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "the-crew-2.mdoc": {
 	id: "the-crew-2.mdoc";
   slug: "the-crew-2";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "the-game.mdoc": {
 	id: "the-game.mdoc";
   slug: "the-game";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "the-mind.mdoc": {
 	id: "the-mind.mdoc";
   slug: "the-mind";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "the-resistance-avalon.mdoc": {
 	id: "the-resistance-avalon.mdoc";
   slug: "the-resistance-avalon";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "throw-throw-burrito.mdoc": {
 	id: "throw-throw-burrito.mdoc";
   slug: "throw-throw-burrito";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "tichu.mdoc": {
 	id: "tichu.mdoc";
   slug: "tichu";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "two-rooms-and-bomb.mdoc": {
 	id: "two-rooms-and-bomb.mdoc";
   slug: "two-rooms-and-bomb";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "uno.mdoc": {
 	id: "uno.mdoc";
   slug: "uno";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "virus.mdoc": {
 	id: "virus.mdoc";
   slug: "virus";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "what-the-heck.mdoc": {
 	id: "what-the-heck.mdoc";
   slug: "what-the-heck";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "win-lose-or-banana.mdoc": {
 	id: "win-lose-or-banana.mdoc";
   slug: "win-lose-or-banana";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "yokai-pagoda.mdoc": {
 	id: "yokai-pagoda.mdoc";
   slug: "yokai-pagoda";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 "you-ve-got-crabs.mdoc": {
 	id: "you-ve-got-crabs.mdoc";
   slug: "you-ve-got-crabs";
   body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
+  collection: "games-md";
+  data: InferEntrySchema<"games-md">
 } & { render(): Render[".mdoc"] };
 };
 "pages": {
@@ -553,6 +546,13 @@ declare module 'astro:content' {
 	id: "spicy";
   collection: "gameMappings";
   data: InferEntrySchema<"gameMappings">
+};
+};
+"games-json": {
+"alex-colt-cadete-espacial": {
+	id: "alex-colt-cadete-espacial";
+  collection: "games-json";
+  data: InferEntrySchema<"games-json">
 };
 };
 

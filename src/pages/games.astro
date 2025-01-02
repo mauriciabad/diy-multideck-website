@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
+import uniqBy from 'lodash/uniqBy'
 import PageMeta from '../components/PageMeta.astro'
 import Title from '../components/Title.astro'
 import { SITE_TITLE } from '../config'
@@ -8,7 +9,9 @@ import { cn } from '../lib/cn'
 import type { GameInfo } from '../lib/schemas/game'
 import { getCompatibility } from '../utils/compatibility'
 
-const games = await getCollection('games')
+const jsonGames = await getCollection('games-json')
+const mdGames = await getCollection('games-md')
+const games = uniqBy([...jsonGames, ...mdGames], 'slug')
 
 const gameRelevance = ({ game, mapping }: GameInfo): number => {
   return (
@@ -65,149 +68,154 @@ const sortedGames = games
 
   <ul class="unset space-y-4">
     {
-      sortedGames.map(({ data: { game, mapping, post }, slug }) => (
-        <li
-          data-searchable={`${game.title}---${
-            post.keywords?.join('---') ?? ''
-          }`}
-          class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
-        >
-          <a href={`/games/${slug}`} class="unset">
-            <article class="p-3 sm:p-4 relative">
-              <h1
-                class={cn('block leading-5', {
-                  'pr-24': game.recommended,
-                })}
-                transition:name={`game-title-${slug}`}
-              >
-                {game.title}
-              </h1>
-              <p
-                class={cn('text-sm sm:text-base font-normal mt-1 mb-2', {
-                  'pr-14': game.recommended,
-                })}
-              >
-                {game.description}
-              </p>
+      sortedGames.map((gameEntry) => {
+        const slug = 'slug' in gameEntry ? gameEntry.slug : gameEntry.id
+        const { game, mapping, post } = gameEntry.data
 
-              <div class="flex items-center gap-3 sm:gap-4">
-                <img
-                  class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
-                  src={game.image}
-                  transition:name={`game-image-${slug}`}
-                />
-                <div class="leading-normal grow">
-                  <div class="font-normal text-base text-stone-700 dark:text-stone-200 leading-inherit">
-                    <div class="grid grid-cols-3 gap-2">
-                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        {game.players && (
-                          <>
-                            <i class="ti ti-users" />
-                            <span>
-                              <span class="font-[450]">{game.players}</span>
-                              <span class="text-sm text-stone-600 dark:text-stone-300">
-                                player{game.players === '1' ? '' : 's'}
-                              </span>
-                            </span>
-                          </>
-                        )}
-                      </div>
-                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        {game.time && (
-                          <>
-                            <i class="ti ti-clock" />
-                            <span>
-                              <span class="font-[450]">{game.time}</span>
-                              <span class="text-sm text-stone-600 dark:text-stone-300">
-                                min
-                              </span>
-                            </span>
-                          </>
-                        )}
-                      </div>
-                      <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        {game.complexity && (
-                          <>
-                            <i class="ti ti-brain" />
-                            <span class="font-[450]">
-                              <span class="inline-flex items-baseline">
-                                <span>{game.complexity}</span>
-                                <span class="text-sm text-stone-400 dark:text-stone-400">
-                                  /5
+        return (
+          <li
+            data-searchable={`${game.title}---${
+              post.keywords?.join('---') ?? ''
+            }`}
+            class="text-xl font-bold rounded-lg p-0 border bg-white dark:bg-[#0d1115] border-stone-200 dark:border-[#192129] shadow-lg dark:shadow-none"
+          >
+            <a href={`/games/${slug}`} class="unset">
+              <article class="p-3 sm:p-4 relative">
+                <h1
+                  class={cn('block leading-5', {
+                    'pr-24': game.recommended,
+                  })}
+                  transition:name={`game-title-${slug}`}
+                >
+                  {game.title}
+                </h1>
+                <p
+                  class={cn('text-sm sm:text-base font-normal mt-1 mb-2', {
+                    'pr-14': game.recommended,
+                  })}
+                >
+                  {game.description}
+                </p>
+
+                <div class="flex items-center gap-3 sm:gap-4">
+                  <img
+                    class="grow-0 m-0 max-h-[12rem] max-w-[6rem] rounded shadow border border-stone-200 dark:border-[#192129]"
+                    src={game.image}
+                    transition:name={`game-image-${slug}`}
+                  />
+                  <div class="leading-normal grow">
+                    <div class="font-normal text-base text-stone-700 dark:text-stone-200 leading-inherit">
+                      <div class="grid grid-cols-3 gap-2">
+                        <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          {game.players && (
+                            <>
+                              <i class="ti ti-users" />
+                              <span>
+                                <span class="font-[450]">{game.players}</span>
+                                <span class="text-sm text-stone-600 dark:text-stone-300">
+                                  player{game.players === '1' ? '' : 's'}
                                 </span>
                               </span>
-                              <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">
-                                Complexity
+                            </>
+                          )}
+                        </div>
+                        <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          {game.time && (
+                            <>
+                              <i class="ti ti-clock" />
+                              <span>
+                                <span class="font-[450]">{game.time}</span>
+                                <span class="text-sm text-stone-600 dark:text-stone-300">
+                                  min
+                                </span>
                               </span>
+                            </>
+                          )}
+                        </div>
+                        <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          {game.complexity && (
+                            <>
+                              <i class="ti ti-brain" />
+                              <span class="font-[450]">
+                                <span class="inline-flex items-baseline">
+                                  <span>{game.complexity}</span>
+                                  <span class="text-sm text-stone-400 dark:text-stone-400">
+                                    /5
+                                  </span>
+                                </span>
+                                <span class="hidden @[80px]:inline-block text-sm text-stone-600 dark:text-stone-300">
+                                  Complexity
+                                </span>
+                              </span>
+                            </>
+                          )}
+                        </div>
+                        <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          <i class="ti ti-discount-check" />
+                          <span class="">
+                            <span class="font-[450]">
+                              {getCompatibility(mapping.compatibility)}
                             </span>
-                          </>
-                        )}
-                      </div>
-                      <div class="@container flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        <i class="ti ti-discount-check" />
-                        <span class="">
-                          <span class="font-[450]">
-                            {getCompatibility(mapping.compatibility)}
+                            <span class="hidden @[90px]:inline-block text-sm text-stone-600 dark:text-stone-300">
+                              compatibility
+                            </span>
                           </span>
-                          <span class="hidden @[90px]:inline-block text-sm text-stone-600 dark:text-stone-300">
-                            compatibility
+                        </div>
+                        <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          <i class="ti ti-cards" />
+                          <span>
+                            <span class="font-[450]">
+                              {mapping.requiredCardsCount}
+                            </span>
+                            <span class="text-sm text-stone-600 dark:text-stone-300">
+                              cards
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        <i class="ti ti-cards" />
-                        <span>
-                          <span class="font-[450]">
-                            {mapping.requiredCardsCount}
+                        </div>
+                        <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
+                          <i class="ti ti-brush" />
+                          <span>
+                            <span class="font-[450]">
+                              {mapping.requiredDrawingsCount}
+                            </span>
+                            <span class="text-sm text-stone-600 dark:text-stone-300">
+                              {`drawing${
+                                mapping.requiredDrawingsCount === 1 ? '' : 's'
+                              }`}
+                            </span>
                           </span>
-                          <span class="text-sm text-stone-600 dark:text-stone-300">
-                            cards
-                          </span>
-                        </span>
-                      </div>
-                      <div class="flex flex-wrap sm:flex-nowrap sm:justify-start flex-col sm:flex-row gap-1 leading-3 text-center justify-center sm:text-left items-center">
-                        <i class="ti ti-brush" />
-                        <span>
-                          <span class="font-[450]">
-                            {mapping.requiredDrawingsCount}
-                          </span>
-                          <span class="text-sm text-stone-600 dark:text-stone-300">
-                            {`drawing${
-                              mapping.requiredDrawingsCount === 1 ? '' : 's'
-                            }`}
-                          </span>
-                        </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="hidden sm:flex gap-1 flex-wrap text-sm mt-3">
-                    {game.mechanics?.map((mechanic) => (
-                      <span class="px-2 py-1 leading-3 rounded-md bg-stone-100 dark:bg-stone-900">
-                        {mechanic}
-                      </span>
-                    ))}
+                    <div class="hidden sm:flex gap-1 flex-wrap text-sm mt-3">
+                      {game.mechanics?.map((mechanic) => (
+                        <span class="px-2 py-1 leading-3 rounded-md bg-stone-100 dark:bg-stone-900">
+                          {mechanic}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-              {game.recommended && (
-                <div class="absolute inset-0 overflow-hidden rounded-lg pr-12 pt-12 pointer-events-none">
-                  <p
-                    class={cn(
-                      'w-60 py-2 ml-auto translate-x-1/2 -translate-y-1/2 leading-none rotate-45',
-                      'border-y text-center text-xs',
-                      'bg-yellow-200 border-yellow-300 text-yellow-950',
-                      'dark:bg-yellow-950 dark:border-yellow-900 dark:text-yellow-50'
-                    )}
-                  >
-                    Recommended
-                  </p>
-                </div>
-              )}
-            </article>
-          </a>
-        </li>
-      ))
+                {game.recommended && (
+                  <div class="absolute inset-0 overflow-hidden rounded-lg pr-12 pt-12 pointer-events-none">
+                    <p
+                      class={cn(
+                        'w-60 py-2 ml-auto translate-x-1/2 -translate-y-1/2 leading-none rotate-45',
+                        'border-y text-center text-xs',
+                        'bg-yellow-200 border-yellow-300 text-yellow-950',
+                        'dark:bg-yellow-950 dark:border-yellow-900 dark:text-yellow-50'
+                      )}
+                    >
+                      Recommended
+                    </p>
+                  </div>
+                )}
+              </article>
+            </a>
+          </li>
+        )
+      })
     }
   </ul>
   <div
