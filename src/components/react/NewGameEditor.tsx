@@ -17,9 +17,11 @@ import {
   Select,
   SelectItem,
   Switch,
+  Tooltip,
   useDisclosure,
 } from '@nextui-org/react'
 import {
+  IconHome,
   IconBook,
   IconChevronsRight,
   IconCode,
@@ -44,6 +46,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { useLocalStorage } from 'usehooks-ts'
 import YAML from 'yaml'
+import { cn } from '../../lib/cn'
 import {
   gameMappingsSchema,
   type GameMapping,
@@ -291,13 +294,6 @@ const defaultJson: GameMapping = {
   ],
 }
 
-interface Props {
-  examples: Array<{
-    name: string
-    content: GameMapping
-  }>
-}
-
 const MappingTableErrorFallback: ErrorBoundaryPropsWithRender['fallbackRender'] =
   ({ error }) => {
     return (
@@ -315,7 +311,13 @@ const MappingTableErrorFallback: ErrorBoundaryPropsWithRender['fallbackRender'] 
     )
   }
 
-export const NewGameEditor: FC<Props> = ({ examples }) => {
+export const NewGameEditor: FC<{
+  examples: Array<{
+    name: string
+    content: GameMapping
+  }>
+  className?: string
+}> = ({ examples, className }) => {
   const [isYamlMode, setIsYamlMode] = useLocalStorage(
     'game-mapping-editor-mode',
     false
@@ -659,8 +661,30 @@ ${editorText}`
   )
 
   return (
-    <div className="flex h-screen w-full flex-col bg-background">
-      <Navbar className="bg-default-100 dark text-foreground" maxWidth="full">
+    <div
+      className={cn('flex h-screen w-full flex-col bg-background', className)}
+    >
+      <Navbar
+        className="bg-default-100 dark text-foreground"
+        maxWidth="full"
+        classNames={{
+          wrapper: 'px-4',
+        }}
+      >
+        <NavbarItem>
+          <Tooltip content="Back to home" placement="right" color="foreground">
+            <Button
+              as="a"
+              variant="flat"
+              size="sm"
+              href="/"
+              isIconOnly
+              aria-label="Back to home"
+            >
+              <IconHome className="size-4" />
+            </Button>
+          </Tooltip>
+        </NavbarItem>
         <NavbarBrand className="flex-1 min-w-0">
           <p className="font-bold text-inherit tracking-wide font-heading">
             Game Mapping Editor

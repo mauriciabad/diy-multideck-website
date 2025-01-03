@@ -43,6 +43,7 @@ const { classes: classNames, tocHeadings } = Astro.props
   <body
     class={cn(
       'min-h-screen max-w-3xl mx-auto px-3 sm:px-8 box-content',
+      'style-a',
       'grid grid-areas-[header,main,footer] grid-rows-[auto_minmax(0,1fr)_5rem] grid-cols-1 gap-4 pt-4',
       tocHeadings &&
         "lg:pr-8 lg:pl-[calc(theme('spacing.8')+theme('spacing.64'))]"

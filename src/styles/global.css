@@ -92,7 +92,7 @@
         if you want an anchor tag to not have this style, 
         just add a class `unset` to it. 
     */
-  a:not(.unset) {
+  .style-a a:not(.unset) {
     text-decoration: none;
     background-repeat: no-repeat;
     background-size: 100% 1.5px;
@@ -104,7 +104,7 @@
     );
   }
 
-  a:not(.unset):hover {
+  .style-a a:not(.unset):hover {
     color: theme('colors.text.link');
   }
 
