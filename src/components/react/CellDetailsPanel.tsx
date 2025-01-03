@@ -35,19 +35,19 @@ export const CellDetailsPanel: FC<{
   return (
     <Card className={cn('w-full light', className)}>
       <CardBody className="block">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold leading-none sm:leading-none text-pretty">
               {cell.name}
             </h2>
-            <p className="text-sm sm:text-base text-default-500 text-pretty">
+            <Markdown className="prose-sm text-sm sm:text-base leading-snug sm:leading-snug text-default-500 text-pretty">
               {cell.notes}
-            </p>
+            </Markdown>
           </div>
           <Cell
             cardId={cell.cardId}
             mapping={mapping}
-            className="size-14 shrink-0"
+            className="size-14 shrink-0 self-start"
           />
         </div>
 
