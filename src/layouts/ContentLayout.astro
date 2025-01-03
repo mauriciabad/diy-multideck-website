@@ -1,5 +1,4 @@
 ---
-import Comments from '../components/Comments.astro'
 import type { Props as TitleProps } from '../components/Title.astro'
 import Title from '../components/Title.astro'
 import PageLayout from './PageLayout.astro'
@@ -23,6 +22,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-us', {
   <Title text={title} subtitle={subtitle} />
   <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
   <slot />
-  <h2 class="mt-6 mb-2 text-3xl font-bold" id="#comments">Comments</h2>
-  <Comments />
+  <!-- TODO: Fix comments -->
+  <!-- <h2 class="mt-6 mb-2 text-3xl font-bold" id="#comments">Comments</h2>
+  <Comments /> -->
 </PageLayout>
