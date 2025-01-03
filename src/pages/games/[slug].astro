@@ -1,23 +1,17 @@
 ---
-import { getCollection, getEntry } from 'astro:content'
-import uniqBy from 'lodash/uniqBy'
+import { getEntry } from 'astro:content'
 import GameMappingDetails from '../../components/GameMappingDetails.astro'
 import GamePostMeta from '../../components/GamePostMeta.astro'
 import Prose from '../../components/Prose.astro'
 import { MappingTableVariants } from '../../components/react/MappingTableVariants'
 import ContentLayout from '../../layouts/ContentLayout.astro'
-
+import { getGamesCollections } from '../../utils/getGames'
 export async function getStaticPaths() {
-  const jsonGames = await getCollection('games-json')
-  const mdGames = await getCollection('games-md')
-  const posts = uniqBy([...jsonGames, ...mdGames], 'slug')
+  const games = await getGamesCollections()
 
-  return posts
+  return games
     .filter((p) => p.data.post.draft !== true)
-    .map((p) => {
-      const slug = 'slug' in p ? p.slug : p.id
-      return { params: { slug } }
-    })
+    .map((p) => ({ params: { slug: p.slug } }))
 }
 
 const { slug } = Astro.params

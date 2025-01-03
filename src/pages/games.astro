@@ -1,6 +1,4 @@
 ---
-import { getCollection } from 'astro:content'
-import uniqBy from 'lodash/uniqBy'
 import PageMeta from '../components/PageMeta.astro'
 import Title from '../components/Title.astro'
 import { SITE_TITLE } from '../config'
@@ -8,13 +6,9 @@ import PageLayout from '../layouts/PageLayout.astro'
 import { cn } from '../lib/cn'
 import type { GameInfo } from '../lib/schemas/game'
 import { getCompatibility } from '../utils/compatibility'
+import { getGamesCollections } from '../utils/getGames'
 
-const jsonGames = (await getCollection('games-json')).map((g) => ({
-  slug: g.id,
-  ...g,
-}))
-const mdGames = await getCollection('games-md')
-const games = uniqBy([...jsonGames, ...mdGames], 'slug')
+const games = await getGamesCollections()
 
 const gameRelevance = ({ game, mapping }: GameInfo): number => {
   return (
