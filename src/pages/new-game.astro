@@ -1,16 +1,35 @@
 ---
-import FullscreenLayout from '../layouts/FullscreenLayout.astro'
 import { NewGameEditor } from '../components/react/NewGameEditor'
+import FullscreenLayout from '../layouts/FullscreenLayout.astro'
 import type { GameMapping } from '../lib/schemas/gameMappingsSchema'
+import type { GamesJson } from '../lib/schemas/gamesJson'
 
 const gameMappings = await import.meta.glob(
   '/src/content/gameMappings/*.json',
   { eager: true }
 )
-const examples = Object.entries(gameMappings).map(([path, content]) => ({
-  name: path.split('/').pop()?.replace('.json', '') ?? '',
-  content: (content as { default: GameMapping }).default,
-}))
+const gamesJson = await import.meta.glob('/src/content/games-json/*.json', {
+  eager: true,
+})
+const games = [...Object.entries(gamesJson), ...Object.entries(gameMappings)]
+
+const examples = games
+  .map(([path, content]) => {
+    const game = (content as { default: GameMapping | GamesJson }).default
+    return {
+      name:
+        ('game' in game ? game?.game.title : undefined) ||
+        path.split('/').pop()?.replace('.json', '') ||
+        '',
+      content: game,
+    }
+  })
+  .map((obj) => ({
+    ...obj,
+    content: {
+      variants: obj.content.variants,
+    },
+  }))
 ---
 
 <FullscreenLayout title="New Game Mapping">
