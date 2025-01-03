@@ -554,6 +554,11 @@ declare module 'astro:content' {
   collection: "games-json";
   data: InferEntrySchema<"games-json">
 };
+"rebel-princess-deluxe-edition": {
+	id: "rebel-princess-deluxe-edition";
+  collection: "games-json";
+  data: InferEntrySchema<"games-json">
+};
 };
 
 	};

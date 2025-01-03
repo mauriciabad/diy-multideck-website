@@ -1,0 +1,982 @@
+{
+  "post": {
+    "date": "2025-01-03T00:00:00.000Z",
+    "ogImagePath": "https://cf.geekdo-images.com/-DehugU8es22rqjlVIb1IA__itemrep/img/noQkQnOljdYZTYDOXDyrP0nNO9g=/fit-in/246x300/filters:strip_icc()/pic8139863.png"
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/418556/rebel-princess-deluxe-edition",
+    "rules": "https://s3.amazonaws.com/geekdo-files.com/bgg388307?response-content-disposition=inline%3B%20filename%3D%22RPDX_Online_Rules_Preview_%281%29.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYFNCT7FKCE4O6TA%2F20250103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250103T011723Z&X-Amz-SignedHeaders=host&X-Amz-Expires=120&X-Amz-Signature=958169959864993b5c7faf5c0aa7d8a6b4f299f023aa1adf34084adf3202a433",
+    "image": "https://cf.geekdo-images.com/-DehugU8es22rqjlVIb1IA__itemrep/img/noQkQnOljdYZTYDOXDyrP0nNO9g=/fit-in/246x300/filters:strip_icc()/pic8139863.png",
+    "title": "Rebel Princess Deluxe Edition",
+    "description": "Avoid marriage proposals and become the only single princess at the end of the party!",
+    "rating": 7.8,
+    "players": "3-6",
+    "complexity": 1.83,
+    "time": "30-45",
+    "mechanics": ["Events", "Trick-taking", "Variable Player Powers"],
+    "recommended": true
+  },
+  "mapping": {
+    "requiredCardsCount": 87,
+    "requiredDrawingsCount": 40,
+    "deckVersion": "v2",
+    "compatibility": 4
+  },
+  "variants": [
+    {
+      "name": "Main",
+      "slug": "main",
+      "layout": "basic",
+      "groups": {
+        "queen-cards": {
+          "name": "Queen cards",
+          "color": "red"
+        },
+        "prince-cards": {
+          "name": "Prince cards",
+          "color": "blue"
+        },
+        "fairy-cards": {
+          "name": "Fairy cards",
+          "color": "yellow"
+        },
+        "pet-cards": {
+          "name": "Pet cards",
+          "color": "green"
+        },
+        "suited-cards": {
+          "name": "Suited cards",
+          "color": "#e8e8e8"
+        },
+        "princess-cards": {
+          "name": "Princess cards",
+          "color": "pink"
+        },
+        "round-cards": {
+          "name": "Round cards",
+          "color": "black"
+        }
+      },
+      "templateCells": {
+        "queen-cards": {
+          "name": "Queen card",
+          "icon": {
+            "srcIconId": "game-icons:chess-queen",
+            "fill": "red",
+            "transform": {
+              "scale": 0.9,
+              "translateY": -0.07
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "#ffffff",
+            "weight": "bold",
+            "size": 80,
+            "stroke": {
+              "color": "#000",
+              "width": 10
+            },
+            "transform": {
+              "translateY": 0.1
+            }
+          },
+          "groups": ["queen-cards", "suited-cards"]
+        },
+        "prince-cards": {
+          "name": "Prince card",
+          "icon": {
+            "srcIconId": "game-icons:broadsword",
+            "fill": "blue",
+            "transform": {
+              "scale": 0.9,
+              "rotate": -90
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "#ffffff",
+            "weight": "bold",
+            "size": 80,
+            "stroke": {
+              "color": "#000",
+              "width": 10
+            }
+          },
+          "groups": ["prince-cards", "suited-cards"]
+        },
+        "fairy-cards": {
+          "name": "Fairy card",
+          "icon": {
+            "srcIconId": "game-icons:fairy-wand",
+            "fill": "yellow",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "#ffffff",
+            "weight": "bold",
+            "size": 80,
+            "stroke": {
+              "color": "#000",
+              "width": 10
+            },
+            "transform": {
+              "translateY": 0.05
+            }
+          },
+          "groups": ["fairy-cards", "suited-cards"]
+        },
+        "pet-cards": {
+          "name": "Pet card",
+          "icon": {
+            "srcIconId": "game-icons:flat-paw-print",
+            "fill": "green",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "#ffffff",
+            "weight": "bold",
+            "size": 80,
+            "stroke": {
+              "color": "#000",
+              "width": 10
+            },
+            "transform": {
+              "translateY": 0.25
+            }
+          },
+          "groups": ["pet-cards", "suited-cards"]
+        },
+        "princess-cards": {
+          "name": "Princess card",
+          "notes": "The rank matches the princess's position in the rulebook (e.g.: Princess 3 is listed 3rd).",
+          "icon": {
+            "srcIconId": "game-icons:tiara",
+            "fill": "pink",
+            "transform": {
+              "scale": 0.9,
+              "translateY": -0.05
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "pink",
+            "stroke": {
+              "color": "#ffffff",
+              "width": 20
+            },
+            "transform": {
+              "translateY": 0.3
+            }
+          },
+          "drawings": [
+            {
+              "name": "Princess name (optional)",
+              "notes": "Write the name of the princess.",
+              "area": {
+                "letter": "D",
+                "number": 3
+              }
+            }
+          ],
+          "groups": ["princess-cards"]
+        },
+        "round-cards": {
+          "name": "Round card",
+          "icon": {
+            "srcIconId": "game-icons:cog",
+            "fill": "black",
+            "transform": {
+              "scale": 0.9,
+              "translateY": -0.05
+            }
+          },
+          "text": {
+            "content": "N",
+            "fill": "black",
+            "size": 70,
+            "stroke": {
+              "color": "#ffffff",
+              "width": 20
+            },
+            "transform": {
+              "translateY": -0.033
+            }
+          },
+          "drawings": [
+            {
+              "name": "Option A: Letter + name + exchanges",
+              "notes": "Write the round letter, name, and card exchanges.",
+              "area": {
+                "letter": "D",
+                "number": 2
+              }
+            },
+            {
+              "name": "Option B: Letter + exchanges",
+              "notes": "Write the letter, and card exchanges. You may need 2 slots.",
+              "area": {
+                "letter": "C",
+                "number": 4
+              }
+            },
+            {
+              "name": "Option C: Letter",
+              "notes": "Just write the letter. On your phone/sheet/notes write the card exchanges.",
+              "area": {
+                "letter": "C",
+                "number": 4
+              }
+            }
+          ],
+          "groups": ["round-cards"]
+        }
+      },
+      "cells": [
+        {
+          "cardId": 1,
+          "templateCellId": "queen-cards",
+          "name": "Queen 1",
+          "text": {
+            "content": "1"
+          }
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "queen-cards",
+          "name": "Queen 2",
+          "text": {
+            "content": "2"
+          }
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "queen-cards",
+          "name": "Queen 3",
+          "text": {
+            "content": "3"
+          }
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "queen-cards",
+          "name": "Queen 4",
+          "text": {
+            "content": "4"
+          }
+        },
+        {
+          "cardId": 5,
+          "templateCellId": "queen-cards",
+          "name": "Queen 5",
+          "text": {
+            "content": "5"
+          }
+        },
+        {
+          "cardId": 6,
+          "templateCellId": "queen-cards",
+          "name": "Queen 6",
+          "text": {
+            "content": "6"
+          }
+        },
+        {
+          "cardId": 7,
+          "templateCellId": "queen-cards",
+          "name": "Queen 7",
+          "text": {
+            "content": "7"
+          }
+        },
+        {
+          "cardId": 8,
+          "templateCellId": "queen-cards",
+          "name": "Queen 8",
+          "text": {
+            "content": "8"
+          }
+        },
+        {
+          "cardId": 9,
+          "templateCellId": "queen-cards",
+          "name": "Queen 9",
+          "text": {
+            "content": "9"
+          }
+        },
+        {
+          "cardId": 121,
+          "templateCellId": "queen-cards",
+          "name": "Queen 10",
+          "text": {
+            "content": "10"
+          }
+        },
+        {
+          "cardId": 122,
+          "templateCellId": "queen-cards",
+          "name": "Queen 11",
+          "text": {
+            "content": "11"
+          }
+        },
+        {
+          "cardId": 123,
+          "templateCellId": "queen-cards",
+          "name": "Queen 12",
+          "text": {
+            "content": "12"
+          }
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "prince-cards",
+          "name": "Prince 1",
+          "text": {
+            "content": "1"
+          }
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "prince-cards",
+          "name": "Prince 2",
+          "text": {
+            "content": "2"
+          }
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "prince-cards",
+          "name": "Prince 3",
+          "text": {
+            "content": "3"
+          }
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "prince-cards",
+          "name": "Prince 4",
+          "text": {
+            "content": "4"
+          }
+        },
+        {
+          "cardId": 15,
+          "templateCellId": "prince-cards",
+          "name": "Prince 5",
+          "text": {
+            "content": "5"
+          }
+        },
+        {
+          "cardId": 16,
+          "templateCellId": "prince-cards",
+          "name": "Prince 6",
+          "text": {
+            "content": "6"
+          }
+        },
+        {
+          "cardId": 17,
+          "templateCellId": "prince-cards",
+          "name": "Prince 7",
+          "text": {
+            "content": "7"
+          }
+        },
+        {
+          "cardId": 18,
+          "templateCellId": "prince-cards",
+          "name": "Prince 8",
+          "text": {
+            "content": "8"
+          }
+        },
+        {
+          "cardId": 19,
+          "templateCellId": "prince-cards",
+          "name": "Prince 9",
+          "text": {
+            "content": "9"
+          }
+        },
+        {
+          "cardId": 131,
+          "templateCellId": "prince-cards",
+          "name": "Prince 10",
+          "text": {
+            "content": "10"
+          }
+        },
+        {
+          "cardId": 132,
+          "templateCellId": "prince-cards",
+          "name": "Prince 11",
+          "text": {
+            "content": "11"
+          }
+        },
+        {
+          "cardId": 133,
+          "templateCellId": "prince-cards",
+          "name": "Prince 12",
+          "text": {
+            "content": "12"
+          }
+        },
+        {
+          "cardId": 21,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 1",
+          "text": {
+            "content": "1"
+          }
+        },
+        {
+          "cardId": 22,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 2",
+          "text": {
+            "content": "2"
+          }
+        },
+        {
+          "cardId": 23,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 3",
+          "text": {
+            "content": "3"
+          }
+        },
+        {
+          "cardId": 24,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 4",
+          "text": {
+            "content": "4"
+          }
+        },
+        {
+          "cardId": 25,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 5",
+          "text": {
+            "content": "5"
+          }
+        },
+        {
+          "cardId": 26,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 6",
+          "text": {
+            "content": "6"
+          }
+        },
+        {
+          "cardId": 27,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 7",
+          "text": {
+            "content": "7"
+          }
+        },
+        {
+          "cardId": 28,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 8",
+          "text": {
+            "content": "8"
+          }
+        },
+        {
+          "cardId": 29,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 9",
+          "text": {
+            "content": "9"
+          }
+        },
+        {
+          "cardId": 141,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 10",
+          "text": {
+            "content": "10"
+          }
+        },
+        {
+          "cardId": 142,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 11",
+          "text": {
+            "content": "11"
+          }
+        },
+        {
+          "cardId": 143,
+          "templateCellId": "fairy-cards",
+          "name": "Fairy 12",
+          "text": {
+            "content": "12"
+          }
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "pet-cards",
+          "name": "Pet 1",
+          "text": {
+            "content": "1"
+          }
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "pet-cards",
+          "name": "Pet 2",
+          "text": {
+            "content": "2"
+          }
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "pet-cards",
+          "name": "Pet 3",
+          "text": {
+            "content": "3"
+          }
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "pet-cards",
+          "name": "Pet 4",
+          "text": {
+            "content": "4"
+          }
+        },
+        {
+          "cardId": 35,
+          "templateCellId": "pet-cards",
+          "name": "Pet 5",
+          "text": {
+            "content": "5"
+          }
+        },
+        {
+          "cardId": 36,
+          "templateCellId": "pet-cards",
+          "name": "Pet 6",
+          "text": {
+            "content": "6"
+          }
+        },
+        {
+          "cardId": 37,
+          "templateCellId": "pet-cards",
+          "name": "Pet 7",
+          "text": {
+            "content": "7"
+          }
+        },
+        {
+          "cardId": 38,
+          "templateCellId": "pet-cards",
+          "name": "The Frog (Pet 8)",
+          "text": {
+            "content": "8"
+          },
+          "icon": {
+            "srcIconId": "game-icons:frog-prince",
+            "fill": "#83ab00"
+          },
+          "drawings": [
+            {
+              "area": {
+                "letter": "C",
+                "number": 1
+              },
+              "name": "Frog counts as 5 princes (optional)",
+              "notes": "Draw a 5 and a sword. Indicating that the frog counts as 5 princes."
+            }
+          ]
+        },
+        {
+          "cardId": 39,
+          "templateCellId": "pet-cards",
+          "name": "Pet 9",
+          "text": {
+            "content": "9"
+          }
+        },
+        {
+          "cardId": 151,
+          "templateCellId": "pet-cards",
+          "name": "Pet 10",
+          "text": {
+            "content": "10"
+          }
+        },
+        {
+          "cardId": 152,
+          "templateCellId": "pet-cards",
+          "name": "Pet 11",
+          "text": {
+            "content": "11"
+          }
+        },
+        {
+          "cardId": 153,
+          "templateCellId": "pet-cards",
+          "name": "Pet 12",
+          "text": {
+            "content": "12"
+          }
+        },
+        {
+          "cardId": 61,
+          "templateCellId": "princess-cards",
+          "name": "Princess 1: Alice",
+          "text": {
+            "content": "1"
+          }
+        },
+        {
+          "cardId": 62,
+          "templateCellId": "princess-cards",
+          "name": "Princess 2: Cinderella",
+          "text": {
+            "content": "2"
+          }
+        },
+        {
+          "cardId": 63,
+          "templateCellId": "princess-cards",
+          "name": "Princess 3: The Ice Princess",
+          "text": {
+            "content": "3"
+          }
+        },
+        {
+          "cardId": 64,
+          "templateCellId": "princess-cards",
+          "name": "Princess 4: The Little Mermaid",
+          "text": {
+            "content": "4"
+          }
+        },
+        {
+          "cardId": 65,
+          "templateCellId": "princess-cards",
+          "name": "Princess 5: Mulan",
+          "text": {
+            "content": "5"
+          }
+        },
+        {
+          "cardId": 66,
+          "templateCellId": "princess-cards",
+          "name": "Princess 6: The Pea Princess",
+          "text": {
+            "content": "6"
+          }
+        },
+        {
+          "cardId": 67,
+          "templateCellId": "princess-cards",
+          "name": "Princess 7: Pocahontas",
+          "text": {
+            "content": "7"
+          }
+        },
+        {
+          "cardId": 68,
+          "templateCellId": "princess-cards",
+          "name": "Princess 8: Rapunzel",
+          "text": {
+            "content": "8"
+          }
+        },
+        {
+          "cardId": 69,
+          "templateCellId": "princess-cards",
+          "name": "Princess 9: Scheherazade",
+          "text": {
+            "content": "9"
+          }
+        },
+        {
+          "cardId": 60,
+          "templateCellId": "princess-cards",
+          "name": "Princess 10: Sleeping Beauty",
+          "text": {
+            "content": "10"
+          }
+        },
+        {
+          "cardId": 146,
+          "templateCellId": "princess-cards",
+          "name": "Princess 11: Snow White",
+          "text": {
+            "content": "11"
+          }
+        },
+        {
+          "cardId": 147,
+          "templateCellId": "princess-cards",
+          "name": "Princess 12: Thumbelina",
+          "text": {
+            "content": "12"
+          }
+        },
+        {
+          "cardId": 148,
+          "templateCellId": "princess-cards",
+          "name": "Princess 13: Carmesina",
+          "notes": "Promo tile, only on some copies. Use the power of any princess in the game that has not been activated yet in this round.",
+          "text": {
+            "content": "13"
+          }
+        },
+        {
+          "cardId": 40,
+          "templateCellId": "round-cards",
+          "name": "Round A: Once Upon a Time...",
+          "notes": "Card exchanges: 3→",
+          "text": {
+            "content": "a"
+          }
+        },
+        {
+          "cardId": 41,
+          "templateCellId": "round-cards",
+          "name": "Round B: Late to the Ball",
+          "notes": "Card exchanges: 1→",
+          "text": {
+            "content": "b"
+          }
+        },
+        {
+          "cardId": 42,
+          "templateCellId": "round-cards",
+          "name": "Round C: Magic Beans",
+          "notes": "Card exchanges: ←3",
+          "text": {
+            "content": "c"
+          }
+        },
+        {
+          "cardId": 43,
+          "templateCellId": "round-cards",
+          "name": "Round D: Three Times a Lady",
+          "notes": "Card exchanges: 3→",
+          "text": {
+            "content": "d"
+          }
+        },
+        {
+          "cardId": 44,
+          "templateCellId": "round-cards",
+          "name": "Round E: Arranged Marriage",
+          "notes": "Card exchanges: ←1→",
+          "text": {
+            "content": "e"
+          }
+        },
+        {
+          "cardId": 45,
+          "templateCellId": "round-cards",
+          "name": "Round F: Royal Decree",
+          "notes": "Card exchanges: 3→",
+          "text": {
+            "content": "f"
+          }
+        },
+        {
+          "cardId": 46,
+          "templateCellId": "round-cards",
+          "name": "Round G: Always the Bridesmaid",
+          "notes": "Card exchanges: 1→",
+          "text": {
+            "content": "g"
+          }
+        },
+        {
+          "cardId": 47,
+          "templateCellId": "round-cards",
+          "name": "Round H: Crystal Clear",
+          "notes": "Card exchanges: 2→",
+          "text": {
+            "content": "h"
+          }
+        },
+        {
+          "cardId": 48,
+          "templateCellId": "round-cards",
+          "name": "Round I: Masquerade Ball",
+          "notes": "Card exchanges: ←1",
+          "text": {
+            "content": "i"
+          }
+        },
+        {
+          "cardId": 49,
+          "templateCellId": "round-cards",
+          "name": "Round J: Pets' Revenge",
+          "notes": "Card exchanges: ←1→",
+          "text": {
+            "content": "j"
+          }
+        },
+        {
+          "cardId": 126,
+          "templateCellId": "round-cards",
+          "name": "Round K: Musical Chairs",
+          "notes": "Card exchanges: 1→",
+          "text": {
+            "content": "k"
+          }
+        },
+        {
+          "cardId": 127,
+          "templateCellId": "round-cards",
+          "name": "Round L: Sisterhood",
+          "notes": "Card exchanges: 2→",
+          "text": {
+            "content": "l"
+          }
+        },
+        {
+          "cardId": 128,
+          "templateCellId": "round-cards",
+          "name": "Round M: After-party",
+          "notes": "Card exchanges: ←1",
+          "text": {
+            "content": "m"
+          }
+        },
+        {
+          "cardId": 50,
+          "templateCellId": "round-cards",
+          "name": "Round N: Late for a Very Important Date",
+          "notes": "Card exchanges: ←3",
+          "text": {
+            "content": "n"
+          }
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "round-cards",
+          "name": "Round O: Wedding Gift",
+          "notes": "Card exchanges: ←1→",
+          "text": {
+            "content": "o"
+          }
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "round-cards",
+          "name": "Round P: Haggle with the Hag",
+          "notes": "Card exchanges: 2→",
+          "text": {
+            "content": "p"
+          }
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "round-cards",
+          "name": "Round Q: Blind Man's Bluff",
+          "notes": "Card exchanges: ←3",
+          "text": {
+            "content": "q"
+          }
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "round-cards",
+          "name": "Round R: Poisoned Apple",
+          "notes": "Card exchanges: ←2",
+          "text": {
+            "content": "r"
+          }
+        },
+        {
+          "cardId": 55,
+          "templateCellId": "round-cards",
+          "name": "Round S: Odds and Evens",
+          "notes": "Card exchanges: ←3",
+          "text": {
+            "content": "s"
+          }
+        },
+        {
+          "cardId": 56,
+          "templateCellId": "round-cards",
+          "name": "Round T: Single Fairy",
+          "notes": "Card exchanges: ←1",
+          "text": {
+            "content": "t"
+          }
+        },
+        {
+          "cardId": 57,
+          "templateCellId": "round-cards",
+          "name": "Round U: The Prince Always Rings Twice",
+          "notes": "Card exchanges: ←1→",
+          "text": {
+            "content": "u"
+          }
+        },
+        {
+          "cardId": 58,
+          "templateCellId": "round-cards",
+          "name": "Round V: Midnight Makeover",
+          "notes": "Card exchanges: 1→",
+          "text": {
+            "content": "v"
+          }
+        },
+        {
+          "cardId": 59,
+          "templateCellId": "round-cards",
+          "name": "Round W: Pass the Bouquet!",
+          "notes": "Card exchanges: ←1",
+          "text": {
+            "content": "w"
+          }
+        },
+        {
+          "cardId": 136,
+          "templateCellId": "round-cards",
+          "name": "Round X: Upside Down",
+          "notes": "Card exchanges: ←2",
+          "text": {
+            "content": "x"
+          }
+        },
+        {
+          "cardId": 137,
+          "templateCellId": "round-cards",
+          "name": "Round Y: Bathroom Break",
+          "notes": "Card exchanges: ←2",
+          "text": {
+            "content": "y"
+          }
+        },
+        {
+          "cardId": 138,
+          "templateCellId": "round-cards",
+          "name": "Round Z: Dancing Queens",
+          "notes": "Card exchanges: 2→",
+          "text": {
+            "content": "z"
+          }
+        }
+      ]
+    }
+  ]
+}
