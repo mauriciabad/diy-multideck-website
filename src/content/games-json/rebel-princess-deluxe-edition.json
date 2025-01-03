@@ -5,7 +5,7 @@
   },
   "game": {
     "bgg": "https://boardgamegeek.com/boardgame/418556/rebel-princess-deluxe-edition",
-    "rules": "https://s3.amazonaws.com/geekdo-files.com/bgg388307?response-content-disposition=inline%3B%20filename%3D%22RPDX_Online_Rules_Preview_%281%29.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYFNCT7FKCE4O6TA%2F20250103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250103T011723Z&X-Amz-SignedHeaders=host&X-Amz-Expires=120&X-Amz-Signature=958169959864993b5c7faf5c0aa7d8a6b4f299f023aa1adf34084adf3202a433",
+    "rules": "https://gamers-hq.de/media/pdf/88/78/46/RPDX_Online_Rules_Preview.pdf",
     "image": "https://cf.geekdo-images.com/-DehugU8es22rqjlVIb1IA__itemrep/img/noQkQnOljdYZTYDOXDyrP0nNO9g=/fit-in/246x300/filters:strip_icc()/pic8139863.png",
     "title": "Rebel Princess Deluxe Edition",
     "description": "Avoid marriage proposals and become the only single princess at the end of the party!",
