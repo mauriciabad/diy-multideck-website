@@ -136,7 +136,7 @@
         "blocking": {
           "name": "Blocking card",
           "icon": {
-            "srcIconId": "game-icons:cancel",
+            "srcIconId": "fa6-solid:ban",
             "fill": "black",
             "transform": {
               "scale": 0.8

@@ -132,7 +132,10 @@ Configures the icon display on a card.
 }
 \`\`\`
 
-Icons are sourced from [game-icons.net](https://game-icons.net/). Visit their website to browse and find the right icon identifier for your cards.
+Icons are sourced from [game-icons.net](https://game-icons.net/) (\`game-icons:icon-name\`) and [Font Awesome](https://fontawesome.com/search?m=free&o=r) (\`fa6-solid:icon-name\` or \`fa6-regular:icon-name\`), using [Iconify](https://icon-sets.iconify.design/). 
+
+Visit their websites to browse icons. 
+
 
 ### Drawing Object
 Represents a drawing or annotation on a card.
