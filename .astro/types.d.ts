@@ -537,11 +537,6 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"gameMappings": {
-"alex-colt-cadete-espacial": {
-	id: "alex-colt-cadete-espacial";
-  collection: "gameMappings";
-  data: InferEntrySchema<"gameMappings">
-};
 "spicy": {
 	id: "spicy";
   collection: "gameMappings";

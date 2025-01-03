@@ -9,7 +9,10 @@ import { cn } from '../lib/cn'
 import type { GameInfo } from '../lib/schemas/game'
 import { getCompatibility } from '../utils/compatibility'
 
-const jsonGames = await getCollection('games-json')
+const jsonGames = (await getCollection('games-json')).map((g) => ({
+  slug: g.id,
+  ...g,
+}))
 const mdGames = await getCollection('games-md')
 const games = uniqBy([...jsonGames, ...mdGames], 'slug')
 
@@ -69,8 +72,10 @@ const sortedGames = games
   <ul class="unset space-y-4">
     {
       sortedGames.map((gameEntry) => {
-        const slug = 'slug' in gameEntry ? gameEntry.slug : gameEntry.id
-        const { game, mapping, post } = gameEntry.data
+        const {
+          slug,
+          data: { game, mapping, post },
+        } = gameEntry
 
         return (
           <li
