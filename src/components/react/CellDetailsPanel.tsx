@@ -44,7 +44,11 @@ export const CellDetailsPanel: FC<{
               {cell.notes}
             </p>
           </div>
-          <Cell cardId={cell.cardId} mapping={mapping} className="size-14" />
+          <Cell
+            cardId={cell.cardId}
+            mapping={mapping}
+            className="size-14 shrink-0"
+          />
         </div>
 
         {cell.groups && cell.groups.length > 0 && (
