@@ -235,7 +235,7 @@ export const MappingTable: FC<{
       {selectedCardId ? (
         <CellDetailsPanel cardId={selectedCardId} mapping={mapping} />
       ) : (
-        <Card className="w-full">
+        <Card className="w-full mb-48">
           <CardBody>
             <p className="text-default-500 text-center text-sm">
               <span className="hidden sm:inline">Click</span>
