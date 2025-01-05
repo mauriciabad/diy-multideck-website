@@ -153,17 +153,28 @@ const { game, mapping, slug } = Astro.props
       )
     }
     {
-      game.rules && (
-        <a
-          href={game.rules}
-          class="unset block p-3 px-4 mx-auto max-w-xs border-none w-full leading-none shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 bg-none rounded-lg text-white font-bold uppercase tracking-wider"
-        >
-          <>
+      game.rules &&
+        (typeof game.rules === 'string' ? (
+          <a
+            href={game.rules}
+            class="unset block p-3 px-4 mx-auto max-w-xs border-none w-full leading-none shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 bg-none rounded-lg text-white font-bold tracking-wider"
+          >
             <i class="ti ti-file-text mr-2" />
-            <span>Rules</span>
-          </>
-        </a>
-      )
+            <span class="uppercase">Rules</span>
+          </a>
+        ) : (
+          game.rules?.map((rule) => (
+            <a
+              href={rule.url}
+              class="unset block p-3 px-4 mx-auto max-w-xs border-none w-full leading-none shadow-lg hover:text-white shadow-blue-300 dark:shadow-blue-900 bg-blue-500 bg-none rounded-lg text-white font-bold tracking-wider"
+            >
+              <i class="ti ti-file-text mr-2" />
+              <span>
+                <span class="uppercase">Rules</span> ({rule.name})
+              </span>
+            </a>
+          ))
+        ))
     }
   </div>
 

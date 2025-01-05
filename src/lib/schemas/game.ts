@@ -4,7 +4,10 @@ import { dateSchema } from './date'
 export const gameSchema = z.object({
   game: z.object({
     bgg: z.string().url(),
-    rules: z.string().url().optional(),
+    rules: z.union([
+      z.string().url().optional(),
+      z.array(z.object({ url: z.string().url(), name: z.string() })),
+    ]),
     image: z.union([
       z.string().url(),
       z
