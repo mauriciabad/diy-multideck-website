@@ -21,11 +21,9 @@ export const MappingTableVariants: FC<{
       if (
         prev === 'all' ||
         (prev.size >= 1 &&
-          prev
-            .values()
-            .every((prevVariantSlug) =>
-              mapping.variants.some((v) => v.slug === prevVariantSlug)
-            ))
+          Array.from(prev).every((prevVariantSlug) =>
+            mapping.variants.some((v) => v.slug === prevVariantSlug)
+          ))
       ) {
         return prev
       }
