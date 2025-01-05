@@ -18,7 +18,7 @@ export const CellDetailsPanel: FC<{
 
   if (!cell) {
     return (
-      <Card className={cn('w-full light mb-32', className)}>
+      <Card className={cn('w-full light', className)}>
         <CardBody>
           <p className="text-default-800 text-center text-lg font-bold mb-2">
             Unused card
