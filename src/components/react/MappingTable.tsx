@@ -249,7 +249,9 @@ export const MappingTable: FC<{
           <h2 className="text-center text-2xl leading-none font-bold mb-2">
             Notes
           </h2>
-          <Markdown className="prose">{mapping.notes}</Markdown>
+          <Markdown className="prose prose-code:whitespace-pre-wrap">
+            {mapping.notes}
+          </Markdown>
         </div>
       )}
     </div>
