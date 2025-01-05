@@ -1,0 +1,429 @@
+{
+  "post": {
+    "date": "2025-01-05T00:00:00.000Z",
+    "ogImagePath": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__itemrep/img/QRw3T5XGsrRs-QKCSpzwE7nFqOg=/fit-in/246x300/filters:strip_icc()/pic2016054.jpg"
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/148931/coup-reformation",
+    "rules": [
+      {
+        "url": "https://www.qugs.org/rules/r131357.pdf",
+        "name": "Coup"
+      },
+      {
+        "url": "https://www.spelhuis.be/Files/7/112000/112353/Attachments/Product/aD1jf4U81u46a97ia1719S97Nm9925v8.pdf",
+        "name": "Coup: Reformation"
+      }
+    ],
+    "image": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__itemrep/img/QRw3T5XGsrRs-QKCSpzwE7nFqOg=/fit-in/246x300/filters:strip_icc()/pic2016054.jpg",
+    "title": "Coup: Reformation ",
+    "description": "Bluff (and call bluffs!) to victory in this card game with no third chances.",
+    "rating": 7.2,
+    "players": "2-10",
+    "complexity": 1.59,
+    "time": "15",
+    "mechanics": [
+      "Bluffing",
+      "Deduction",
+      "Hand Management",
+      "Player Elimination",
+      "Take That",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ]
+  },
+  "mapping": {
+    "requiredCardsCount": 30,
+    "requiredDrawingsCount": 0,
+    "deckVersion": "v2",
+    "compatibility": 5
+  },
+  "variants": [
+    {
+      "name": "With ambassador",
+      "slug": "with-ambassador",
+      "notes": "You need 42 tokens (coins).\n\nIf you want, you can draw the character names on the cards.\n\nYou can write down this notes on your phone, and send it to the players:\n```md\n# Coup: Reformation | Player's mat\n\n## Roles\n🔥 Contessa: Block assassination. (Blocked by: challenge) \n💧 Captain: Steal 2 coins from another player. (Blocked by Captain, Ambassador, Inquisitor)\n🍆 Duke: Take 3 coins. (Blocked by: challenge)\n🕷️ Assassin: Pay 3 coins and choose a player to lose influence. (Blocked by Contessa)\n☘️ Ambassador: May exchange 2 cards from Court Deck. (Blocked by: challenge)\n☘️ Inquisitor: (Blocked by: challenge)\n  - May exchange 1 card from Court Deck. \n  - Examine another player’s card. May force them to exchange.  \n\n## Actions\n- Income: Take 1 coin. (No block)\n- Foreign Aid: Take 2 coins. (Blocked by Duke)\n- Coup: Pay 7 coins. Choose player to lose influence. Must Coup if you have 10+ coins. (No block)\n- Convert: (No block)\n  - Change your allegiance: Pay 1 coin.  \n  - Change another player's allegiance: Pay 2 coins.\n- Embezzle: Take all coins from Treasury and claim not to be Duke. (Blocked by: challenge)\n```",
+      "layout": "basic",
+      "groups": {
+        "contessa-cards": {
+          "name": "Contessa cards",
+          "color": "red"
+        },
+        "duke-cards": {
+          "name": "Duke cards",
+          "color": "purple"
+        },
+        "assassin-cards": {
+          "name": "Assassin cards",
+          "color": "black"
+        },
+        "captain-cards": {
+          "name": "Captain cards",
+          "color": "black"
+        },
+        "ambassador-cards": {
+          "name": "Ambassador cards",
+          "color": "green"
+        },
+        "inquisitor-cards": {
+          "name": "Inquisitor cards",
+          "color": "green"
+        }
+      },
+      "templateIcons": {},
+      "templateCells": {
+        "contessa-character": {
+          "name": "Contessa",
+          "icon": {
+            "srcIconId": "game-icons:cut-diamond",
+            "fill": "red",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["contessa-cards"]
+        },
+        "duke-character": {
+          "name": "Duke",
+          "icon": {
+            "srcIconId": "game-icons:staryu",
+            "fill": "purple",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["duke-cards"]
+        },
+        "assassin-character": {
+          "name": "Assassin",
+          "icon": {
+            "srcIconId": "game-icons:piece-skull",
+            "fill": "black",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["assassin-cards"]
+        },
+        "captain-character": {
+          "name": "Captain",
+          "icon": {
+            "srcIconId": "game-icons:anchor",
+            "fill": "blue",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["captain-cards"]
+        },
+        "ambassador-character": {
+          "name": "Ambassador",
+          "icon": {
+            "srcIconId": "game-icons:tension-snowflake",
+            "fill": "green",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["ambassador-cards"]
+        }
+      },
+      "templateDrawings": {},
+      "cells": [
+        {
+          "cardId": 0,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 1,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 10,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 30,
+          "templateCellId": "ambassador-character"
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "ambassador-character"
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "ambassador-character"
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "ambassador-character"
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "ambassador-character"
+        },
+        {
+          "cardId": 50,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 70,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 71,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 72,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 73,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 74,
+          "templateCellId": "assassin-character"
+        }
+      ]
+    },
+    {
+      "name": "With inquisitor",
+      "slug": "with-inquisitor",
+      "notes": "You need 42 tokens (coins).\n\nIf you want, you can draw the character names on the cards.\n\nYou can write down this notes on your phone, and send it to the players:\n```md\n# Coup: Reformation | Player's mat\n\n## Roles\n🔥 Contessa: Block assassination. (Blocked by: challenge) \n💧 Captain: Steal 2 coins from another player. (Blocked by Captain, Ambassador, Inquisitor)\n🍆 Duke: Take 3 coins. (Blocked by: challenge)\n🕷️ Assassin: Pay 3 coins and choose a player to lose influence. (Blocked by Contessa)\n☘️ Ambassador: May exchange 2 cards from Court Deck. (Blocked by: challenge)\n☘️ Inquisitor: (Blocked by: challenge)\n  - May exchange 1 card from Court Deck. \n  - Examine another player’s card. May force them to exchange.  \n\n## Actions\n- Income: Take 1 coin. (No block)\n- Foreign Aid: Take 2 coins. (Blocked by Duke)\n- Coup: Pay 7 coins. Choose player to lose influence. Must Coup if you have 10+ coins. (No block)\n- Convert: (No block)\n  - Change your allegiance: Pay 1 coin.  \n  - Change another player's allegiance: Pay 2 coins.\n- Embezzle: Take all coins from Treasury and claim not to be Duke. (Blocked by: challenge)\n```",
+      "layout": "basic",
+      "groups": {
+        "contessa-cards": {
+          "name": "Contessa cards",
+          "color": "red"
+        },
+        "duke-cards": {
+          "name": "Duke cards",
+          "color": "purple"
+        },
+        "assassin-cards": {
+          "name": "Assassin cards",
+          "color": "black"
+        },
+        "captain-cards": {
+          "name": "Captain cards",
+          "color": "black"
+        },
+        "ambassador-cards": {
+          "name": "Ambassador cards",
+          "color": "green"
+        },
+        "inquisitor-cards": {
+          "name": "Inquisitor cards",
+          "color": "green"
+        }
+      },
+      "templateIcons": {},
+      "templateCells": {
+        "contessa-character": {
+          "name": "Contessa",
+          "icon": {
+            "srcIconId": "game-icons:cut-diamond",
+            "fill": "red",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["contessa-cards"]
+        },
+        "duke-character": {
+          "name": "Duke",
+          "icon": {
+            "srcIconId": "game-icons:staryu",
+            "fill": "purple",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["duke-cards"]
+        },
+        "assassin-character": {
+          "name": "Assassin",
+          "icon": {
+            "srcIconId": "game-icons:piece-skull",
+            "fill": "black",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["assassin-cards"]
+        },
+        "captain-character": {
+          "name": "Captain",
+          "icon": {
+            "srcIconId": "game-icons:anchor",
+            "fill": "blue",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["captain-cards"]
+        },
+        "inquisitor-character": {
+          "name": "Inquisitor",
+          "icon": {
+            "srcIconId": "game-icons:triangle-target",
+            "fill": "green",
+            "transform": {
+              "scale": 0.9
+            }
+          },
+          "groups": ["inquisitor-cards"]
+        }
+      },
+      "templateDrawings": {},
+      "cells": [
+        {
+          "cardId": 0,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 1,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "contessa-character"
+        },
+        {
+          "cardId": 10,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "captain-character"
+        },
+        {
+          "cardId": 30,
+          "templateCellId": "inquisitor-character"
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "inquisitor-character"
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "inquisitor-character"
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "inquisitor-character"
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "inquisitor-character"
+        },
+        {
+          "cardId": 50,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "duke-character"
+        },
+        {
+          "cardId": 70,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 71,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 72,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 73,
+          "templateCellId": "assassin-character"
+        },
+        {
+          "cardId": 74,
+          "templateCellId": "assassin-character"
+        }
+      ]
+    }
+  ]
+}
