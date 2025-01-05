@@ -1,5 +1,5 @@
 import { Select, SelectItem, type Selection } from '@nextui-org/react'
-import { type FC, useMemo, useState } from 'react'
+import { type FC, useEffect, useMemo, useState } from 'react'
 import Markdown from 'react-markdown'
 import { cn } from '../../lib/cn'
 import { type GameMapping } from '../../lib/schemas/gameMappingsSchema'
@@ -15,6 +15,23 @@ export const MappingTableVariants: FC<{
   const [selectedVariant, setSelectedVariant] = useState<Selection>(
     new Set(mapping.variants[0] ? [mapping.variants[0].slug] : [])
   )
+
+  useEffect(() => {
+    setSelectedVariant((prev) => {
+      if (
+        prev === 'all' ||
+        (prev.size >= 1 &&
+          prev
+            .values()
+            .every((prevVariantSlug) =>
+              mapping.variants.some((v) => v.slug === prevVariantSlug)
+            ))
+      ) {
+        return prev
+      }
+      return new Set(mapping.variants[0] ? [mapping.variants[0].slug] : [])
+    })
+  }, [mapping])
 
   const currentVariant = useMemo(() => {
     if (mapping.variants.length === 0) {
@@ -48,6 +65,7 @@ export const MappingTableVariants: FC<{
             variant="bordered"
             labelPlacement="outside"
             aria-label="Select mapping variant"
+            disallowEmptySelection
           >
             {mapping.variants.map((variant) => (
               <SelectItem key={variant.slug} value={variant.slug}>

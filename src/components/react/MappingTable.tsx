@@ -329,7 +329,7 @@ const MappingTableGroupHighlight: FC<{
           y="-10"
           width={layout.gridWidth + 20}
           height={layout.gridHeight + 20}
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feMorphology
             in="SourceAlpha"
@@ -343,7 +343,7 @@ const MappingTableGroupHighlight: FC<{
             operator="out"
             result="outline"
           />
-          <feFlood flood-color="#333" result="black" />
+          <feFlood floodColor="#333" result="black" />
           <feComposite in="black" in2="outline" operator="in" result="border" />
           <feComposite
             in="SourceGraphic"
