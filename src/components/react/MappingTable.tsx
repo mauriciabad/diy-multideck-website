@@ -203,7 +203,7 @@ export const MappingTable: FC<{
 
         <MappingTableCellHighlight
           layout={layout}
-          cardIds={selectedCardId ? [selectedCardId] : []}
+          cardIds={selectedCardId !== null ? [selectedCardId] : []}
           className="absolute inset-0 text-[#ddd] mix-blend-multiply pointer-events-none"
         />
 
@@ -232,7 +232,7 @@ export const MappingTable: FC<{
         })}
       </div>
 
-      {selectedCardId ? (
+      {selectedCardId !== null ? (
         <CellDetailsPanel cardId={selectedCardId} mapping={mapping} />
       ) : (
         <Card className="w-full">
