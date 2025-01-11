@@ -1,7 +1,7 @@
 import { z } from 'astro:content'
 import { dateSchema } from './date'
 
-export const blogSchema = z.object({
+export const blogSchema = z.strictObject({
   featured: z.boolean().default(false),
   draft: z.boolean().default(false),
   title: z.string({

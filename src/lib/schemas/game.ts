@@ -1,12 +1,12 @@
 import { z } from 'astro:content'
 import { dateSchema } from './date'
 
-export const gameSchema = z.object({
-  game: z.object({
+export const gameSchema = z.strictObject({
+  game: z.strictObject({
     bgg: z.string().url(),
     rules: z.union([
       z.string().url().optional(),
-      z.array(z.object({ url: z.string().url(), name: z.string() })),
+      z.array(z.strictObject({ url: z.string().url(), name: z.string() })),
     ]),
     image: z.union([
       z.string().url(),
@@ -33,13 +33,13 @@ export const gameSchema = z.object({
     scoreAdjustment: z.number().min(-10).max(10).default(0),
     recommended: z.boolean().default(false),
   }),
-  post: z.object({
+  post: z.strictObject({
     date: dateSchema,
     ogImagePath: z.string(),
     draft: z.boolean().default(false),
     keywords: z.optional(z.array(z.string())),
   }),
-  mapping: z.object({
+  mapping: z.strictObject({
     compatibility: z.number().min(0).max(5).step(1),
     requiredCardsCount: z.number().min(0).step(1).max(162),
     requiredDrawingsCount: z

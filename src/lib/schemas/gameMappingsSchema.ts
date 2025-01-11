@@ -21,19 +21,19 @@ const baseColorSchema = z.string().refine(
 const colorWithRainbowSchema = z.union([baseColorSchema, z.literal('rainbow')])
 const colorSchema = baseColorSchema
 
-const strokeSchema = z.object({
+const strokeSchema = z.strictObject({
   width: z.number().min(0).optional(),
   color: colorSchema.optional(),
 })
 
-const transformSchema = z.object({
+const transformSchema = z.strictObject({
   scale: z.number().min(0).optional(),
   translateX: z.number().optional(),
   translateY: z.number().optional(),
   rotate: z.number().optional(),
 })
 
-const iconBaseSchema = z.object({
+const iconBaseSchema = z.strictObject({
   src: z.string().min(1),
   fill: colorWithRainbowSchema.optional(),
   bgFill: colorSchema.optional(),
@@ -49,19 +49,19 @@ const iconTemplateSchema = iconBaseSchema.extend({
   templateIconId: z.undefined().optional(),
 })
 
-const drawingBaseSchema = z.object({
+const drawingBaseSchema = z.strictObject({
   area: z.discriminatedUnion('letter', [
-    z.object({
+    z.strictObject({
       letter: z.literal('A'),
       number: z.union([z.literal(1), z.literal(2)]).optional(),
     }),
-    z.object({
+    z.strictObject({
       letter: z.literal('B'),
       number: z
         .union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)])
         .optional(),
     }),
-    z.object({
+    z.strictObject({
       letter: z.literal('C'),
       number: z.union([
         z.literal(1),
@@ -72,13 +72,13 @@ const drawingBaseSchema = z.object({
         z.literal(6),
       ]),
     }),
-    z.object({
+    z.strictObject({
       letter: z.literal('D'),
       number: z
         .union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)])
         .optional(),
     }),
-    z.object({
+    z.strictObject({
       letter: z.literal('E'),
       number: z.literal(1).optional(),
     }),
@@ -95,7 +95,7 @@ const drawingTemplateSchema = drawingBaseSchema.extend({
   templateDrawingId: z.undefined().optional(),
 })
 
-const textConfigSchema = z.object({
+const textConfigSchema = z.strictObject({
   content: z.string().min(1),
   size: z.number().min(0).optional(),
   fill: colorSchema.optional(),
@@ -106,7 +106,7 @@ const textConfigSchema = z.object({
     .optional(),
 })
 
-const cellBaseSchema = z.object({
+const cellBaseSchema = z.strictObject({
   name: z.string().min(1),
   notes: z.string().optional(),
   bgFill: colorSchema.optional(),
@@ -125,7 +125,7 @@ const cellSchema = cellBaseSchema.partial().extend({
   cardId: z.number().int().min(0),
 })
 
-const groupSchema = z.object({
+const groupSchema = z.strictObject({
   name: z.string().min(1),
   notes: z.string().optional(),
   color: colorSchema,
@@ -133,7 +133,7 @@ const groupSchema = z.object({
 })
 
 const variantSchema = z
-  .object({
+  .strictObject({
     name: z.string().min(1),
     slug: z
       .string()
@@ -226,7 +226,7 @@ const variantSchema = z
     }
   )
 
-export const gameMappingsSchema = z.object({
+export const gameMappingsSchema = z.strictObject({
   variants: z.array(variantSchema).min(1),
 })
 
