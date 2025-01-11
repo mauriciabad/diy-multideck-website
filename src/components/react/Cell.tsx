@@ -30,6 +30,26 @@ export const Cell: FC<{
   const maskId = `mask-${id}`
   const rainbowGradientId = rainbowGradientIdProp ?? `rainbow-gradient-${id}`
 
+  const textConfig = useMemo(() => {
+    if (!cell?.text) return null
+
+    const original =
+      typeof cell.text === 'string' ? { content: cell.text } : cell.text
+
+    return {
+      ...original,
+      size: original.size ?? 100,
+      weight: original.weight ?? 'bold',
+      fill: translateColor(original.fill) ?? '#fff',
+      stroke: {
+        ...original.stroke,
+        color: translateColor(original.stroke?.color) ?? '#000',
+        width: original.stroke?.width ?? 20,
+      },
+      transform: iconTransformToCss(original.transform),
+    }
+  }, [cell?.text])
+
   return (
     <div
       key={cardId}
@@ -110,11 +130,11 @@ export const Cell: FC<{
               )}
             </>
           )}
-          {cell.text && (
+          {textConfig && (
             <svg
               className="absolute select-none font-brand inset-0"
               style={{
-                transform: iconTransformToCss(cell.text.transform),
+                transform: textConfig.transform,
                 transformOrigin: 'center',
               }}
               viewBox="0 0 190 190"
@@ -122,30 +142,26 @@ export const Cell: FC<{
               <g
                 xmlns="http://www.w3.org/2000/svg"
                 fontFamily="Manrope, Inter var, Inter var experimental, Inter, Arial, Helvetica, sans-serif"
-                fontSize={cell.text.size ?? 100}
+                fontSize={textConfig.size}
                 fontStyle="normal"
-                fontWeight={cell.text.weight ?? 700}
+                fontWeight={textConfig.weight}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                textDecoration={translateColor(cell.text.fill) ?? '#fff'}
+                textDecoration={textConfig.fill}
               >
                 <g>
                   <text
-                    stroke={translateColor(cell.text.stroke?.color) ?? '#000'}
-                    strokeWidth={cell.text.stroke?.width ?? 20}
+                    stroke={textConfig.stroke.color}
+                    strokeWidth={textConfig.stroke.width}
                     strokeLinejoin="round"
                     strokeLinecap="round"
                     x="50%"
                     y="50%"
                   >
-                    {cell.text.content}
+                    {textConfig.content}
                   </text>
-                  <text
-                    fill={translateColor(cell.text.fill) ?? '#fff'}
-                    x="50%"
-                    y="50%"
-                  >
-                    {cell.text.content}
+                  <text fill={textConfig.fill} x="50%" y="50%">
+                    {textConfig.content}
                   </text>
                 </g>
               </g>

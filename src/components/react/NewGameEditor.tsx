@@ -98,11 +98,7 @@ Represents a single card in the game.
   bgFill?: string      // Background color (color)
   templateCellId?: string  // Use properties from a cell template
   icon?: Icon          // Card's icon configuration
-  emoji?: {            // Optional emoji display
-    content: string
-    transform?: Transform
-  }
-  text?: {             // Optional text display
+  text?: string | {    // Optional text display (string for content only, or object for full config)
     content: string
     size?: number
     fill?: string      // Text color (color)
@@ -161,7 +157,6 @@ Defines a group of related cards.
   notes?: string      // Optional notes about the group
   color: string       // Group highlight color (color)
   icon?: Icon         // Optional group icon
-  emoji?: string      // Optional group emoji
 }
 \`\`\`
 

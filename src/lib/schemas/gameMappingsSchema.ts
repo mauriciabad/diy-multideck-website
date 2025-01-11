@@ -95,37 +95,23 @@ const drawingTemplateSchema = drawingBaseSchema.extend({
   templateDrawingId: z.undefined().optional(),
 })
 
+const textConfigSchema = z.object({
+  content: z.string().min(1),
+  size: z.number().min(0).optional(),
+  fill: colorSchema.optional(),
+  stroke: strokeSchema.optional(),
+  transform: transformSchema.optional(),
+  weight: z
+    .enum(['thin', 'light', 'normal', 'medium', 'semi-bold', 'bold', 'black'])
+    .optional(),
+})
+
 const cellBaseSchema = z.object({
   name: z.string().min(1),
   notes: z.string().optional(),
   bgFill: colorSchema.optional(),
   icon: iconSchema.optional(),
-  emoji: z
-    .object({
-      content: z.string().min(1),
-      transform: transformSchema.optional(),
-    })
-    .optional(),
-  text: z
-    .object({
-      content: z.string().min(1),
-      size: z.number().min(0).optional(),
-      fill: colorSchema.optional(),
-      stroke: strokeSchema.optional(),
-      transform: transformSchema.optional(),
-      weight: z
-        .enum([
-          'thin',
-          'light',
-          'normal',
-          'medium',
-          'semi-bold',
-          'bold',
-          'black',
-        ])
-        .optional(),
-    })
-    .optional(),
+  text: z.union([textConfigSchema.shape.content, textConfigSchema]).optional(),
   drawings: z.array(drawingSchema).optional(),
   groups: z.array(z.string().min(1)).optional(),
 })
@@ -144,7 +130,6 @@ const groupSchema = z.object({
   notes: z.string().optional(),
   color: colorSchema,
   icon: iconSchema.optional(),
-  emoji: z.string().min(1).optional(),
 })
 
 const variantSchema = z
