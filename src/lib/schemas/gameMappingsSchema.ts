@@ -276,7 +276,10 @@ export function fillCellFromTemplate(
 ) {
   if (!cell) return undefined
   if (cell.templateCellId) {
-    return merge({}, templateCells?.[cell.templateCellId], cell)
+    return merge({}, templateCells?.[cell.templateCellId], {
+      ...cell,
+      text: typeof cell.text === 'string' ? { content: cell.text } : cell.text,
+    })
   }
   return cell
 }
