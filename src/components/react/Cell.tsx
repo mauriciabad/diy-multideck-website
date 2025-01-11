@@ -62,7 +62,7 @@ export const Cell: FC<{
     >
       {!!cell && (
         <>
-          {cell.icon?.srcIconId && (
+          {cell.icon?.src && (
             <>
               {cell.icon?.fill === 'rainbow' ? (
                 <svg className="absolute inset-0" viewBox="0 0 512 512">
@@ -70,7 +70,7 @@ export const Cell: FC<{
                     <mask id={maskId}>
                       <rect x="0" y="0" width="512" height="512" fill="black" />
                       <Icon
-                        icon={cell.icon.srcIconId}
+                        icon={cell.icon.src}
                         width="512"
                         height="512"
                         style={{
@@ -96,7 +96,7 @@ export const Cell: FC<{
                   />
                   {cell.icon.stroke && (
                     <Icon
-                      icon={cell.icon.srcIconId}
+                      icon={cell.icon.src}
                       width="512"
                       height="512"
                       style={{
@@ -113,7 +113,7 @@ export const Cell: FC<{
                 </svg>
               ) : (
                 <Icon
-                  icon={cell.icon.srcIconId}
+                  icon={cell.icon.src}
                   className="size-full"
                   stroke={translateColor(cell.icon.stroke?.color)}
                   strokeWidth={

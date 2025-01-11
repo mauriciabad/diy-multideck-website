@@ -1198,11 +1198,11 @@
       },
       "templateIcons": {
         "spice": {
-          "srcIconId": "game-icons:powder",
+          "src": "game-icons:powder",
           "alt": "Spice"
         },
         "spice-it-up": {
-          "srcIconId": "game-icons:cog",
+          "src": "game-icons:cog",
           "alt": "Spice it up!"
         }
       },

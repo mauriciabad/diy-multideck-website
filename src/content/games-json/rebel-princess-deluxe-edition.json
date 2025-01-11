@@ -61,7 +61,7 @@
         "queen-cards": {
           "name": "Queen card",
           "icon": {
-            "srcIconId": "game-icons:chess-queen",
+            "src": "game-icons:chess-queen",
             "fill": "red",
             "transform": {
               "scale": 0.9,
@@ -86,7 +86,7 @@
         "prince-cards": {
           "name": "Prince card",
           "icon": {
-            "srcIconId": "game-icons:broadsword",
+            "src": "game-icons:broadsword",
             "fill": "blue",
             "transform": {
               "scale": 0.9,
@@ -108,7 +108,7 @@
         "fairy-cards": {
           "name": "Fairy card",
           "icon": {
-            "srcIconId": "game-icons:fairy-wand",
+            "src": "game-icons:fairy-wand",
             "fill": "yellow",
             "transform": {
               "scale": 0.9
@@ -132,7 +132,7 @@
         "pet-cards": {
           "name": "Pet card",
           "icon": {
-            "srcIconId": "game-icons:flat-paw-print",
+            "src": "game-icons:flat-paw-print",
             "fill": "green",
             "transform": {
               "scale": 0.9
@@ -157,7 +157,7 @@
           "name": "Princess card",
           "notes": "The rank matches the princess's position in the rulebook (e.g.: Princess 3 is listed 3rd).",
           "icon": {
-            "srcIconId": "game-icons:tiara",
+            "src": "game-icons:tiara",
             "fill": "pink",
             "transform": {
               "scale": 0.9,
@@ -190,7 +190,7 @@
         "round-cards": {
           "name": "Round card",
           "icon": {
-            "srcIconId": "game-icons:cog",
+            "src": "game-icons:cog",
             "fill": "black",
             "transform": {
               "scale": 0.9,
@@ -591,7 +591,7 @@
             "content": "8"
           },
           "icon": {
-            "srcIconId": "game-icons:frog-prince",
+            "src": "game-icons:frog-prince",
             "fill": "#83ab00"
           },
           "drawings": [

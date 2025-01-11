@@ -34,7 +34,7 @@ const transformSchema = z.object({
 })
 
 const iconBaseSchema = z.object({
-  srcIconId: z.string().min(1),
+  src: z.string().min(1),
   fill: colorWithRainbowSchema.optional(),
   bgFill: colorSchema.optional(),
   stroke: strokeSchema.optional(),

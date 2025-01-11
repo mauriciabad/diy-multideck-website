@@ -116,7 +116,7 @@ Configures the icon display on a card.
 
 \`\`\`typescript
 {
-  srcIconId: string     // Icon identifier from the icon library
+  src: string     // Icon identifier from the icon library
   templateIconId?: string  // Use properties from an icon template
   fill?: string        // Icon fill color (color, supports rainbow)
   bgFill?: string      // Icon background color (color)
@@ -255,7 +255,7 @@ const defaultJson: GameMapping = {
         'red-resource': {
           name: 'Red resource',
           icon: {
-            srcIconId: 'game-icons:dodo',
+            src: 'game-icons:dodo',
             fill: 'red',
             transform: {
               scale: 0.9,

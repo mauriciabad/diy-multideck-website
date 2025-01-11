@@ -75,7 +75,7 @@
         "contessa-character": {
           "name": "Contessa",
           "icon": {
-            "srcIconId": "game-icons:cut-diamond",
+            "src": "game-icons:cut-diamond",
             "fill": "red",
             "transform": {
               "scale": 0.9
@@ -86,7 +86,7 @@
         "duke-character": {
           "name": "Duke",
           "icon": {
-            "srcIconId": "game-icons:staryu",
+            "src": "game-icons:staryu",
             "fill": "purple",
             "transform": {
               "scale": 0.9
@@ -97,7 +97,7 @@
         "assassin-character": {
           "name": "Assassin",
           "icon": {
-            "srcIconId": "game-icons:piece-skull",
+            "src": "game-icons:piece-skull",
             "fill": "black",
             "transform": {
               "scale": 0.9
@@ -108,7 +108,7 @@
         "captain-character": {
           "name": "Captain",
           "icon": {
-            "srcIconId": "game-icons:anchor",
+            "src": "game-icons:anchor",
             "fill": "blue",
             "transform": {
               "scale": 0.9
@@ -119,7 +119,7 @@
         "ambassador-character": {
           "name": "Ambassador",
           "icon": {
-            "srcIconId": "game-icons:tension-snowflake",
+            "src": "game-icons:tension-snowflake",
             "fill": "green",
             "transform": {
               "scale": 0.9
@@ -268,7 +268,7 @@
         "contessa-character": {
           "name": "Contessa",
           "icon": {
-            "srcIconId": "game-icons:cut-diamond",
+            "src": "game-icons:cut-diamond",
             "fill": "red",
             "transform": {
               "scale": 0.9
@@ -279,7 +279,7 @@
         "duke-character": {
           "name": "Duke",
           "icon": {
-            "srcIconId": "game-icons:staryu",
+            "src": "game-icons:staryu",
             "fill": "purple",
             "transform": {
               "scale": 0.9
@@ -290,7 +290,7 @@
         "assassin-character": {
           "name": "Assassin",
           "icon": {
-            "srcIconId": "game-icons:piece-skull",
+            "src": "game-icons:piece-skull",
             "fill": "black",
             "transform": {
               "scale": 0.9
@@ -301,7 +301,7 @@
         "captain-character": {
           "name": "Captain",
           "icon": {
-            "srcIconId": "game-icons:anchor",
+            "src": "game-icons:anchor",
             "fill": "blue",
             "transform": {
               "scale": 0.9
@@ -312,7 +312,7 @@
         "inquisitor-character": {
           "name": "Inquisitor",
           "icon": {
-            "srcIconId": "game-icons:triangle-target",
+            "src": "game-icons:triangle-target",
             "fill": "green",
             "transform": {
               "scale": 0.9

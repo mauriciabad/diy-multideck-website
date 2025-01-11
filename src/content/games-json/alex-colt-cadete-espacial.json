@@ -82,7 +82,7 @@
         "red-resource": {
           "name": "Red resource",
           "icon": {
-            "srcIconId": "game-icons:emerald",
+            "src": "game-icons:emerald",
             "fill": "red",
             "transform": {
               "scale": 0.9
@@ -93,7 +93,7 @@
         "blue-resource": {
           "name": "Blue resource",
           "icon": {
-            "srcIconId": "game-icons:emerald",
+            "src": "game-icons:emerald",
             "fill": "blue",
             "transform": {
               "scale": 0.9
@@ -104,7 +104,7 @@
         "yellow-resource": {
           "name": "Yellow resource",
           "icon": {
-            "srcIconId": "game-icons:emerald",
+            "src": "game-icons:emerald",
             "fill": "yellow",
             "transform": {
               "scale": 0.9
@@ -116,7 +116,7 @@
           "name": "Mission board",
           "notes": "Board on the original game.",
           "icon": {
-            "srcIconId": "game-icons:treasure-map",
+            "src": "game-icons:treasure-map",
             "fill": "brown",
             "transform": {
               "scale": 0.9
@@ -136,7 +136,7 @@
         "blocking": {
           "name": "Blocking card",
           "icon": {
-            "srcIconId": "fa6-solid:ban",
+            "src": "fa6-solid:ban",
             "fill": "black",
             "transform": {
               "scale": 0.8
@@ -147,7 +147,7 @@
         "character-good": {
           "name": "Good team card",
           "icon": {
-            "srcIconId": "game-icons:character",
+            "src": "game-icons:character",
             "fill": "#80b3b5",
             "transform": {
               "scale": 0.9
@@ -158,7 +158,7 @@
         "character-evil": {
           "name": "Evil team card",
           "icon": {
-            "srcIconId": "game-icons:imp-laugh",
+            "src": "game-icons:imp-laugh",
             "fill": "#945868",
             "transform": {
               "scale": 0.9
