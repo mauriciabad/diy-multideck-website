@@ -1198,12 +1198,10 @@
       },
       "templateIcons": {
         "spice": {
-          "src": "game-icons:powder",
-          "alt": "Spice"
+          "src": "game-icons:powder"
         },
         "spice-it-up": {
-          "src": "game-icons:cog",
-          "alt": "Spice it up!"
+          "src": "game-icons:cog"
         }
       },
       "templateCells": {
@@ -1217,7 +1215,6 @@
           "notes": "Use 0-9 instead of 1-10.",
           "icon": {
             "templateIconId": "spice",
-            "alt": "Spice",
             "transform": {
               "scale": 0.95
             }
