@@ -21,11 +21,11 @@ import {
   useDisclosure,
 } from '@nextui-org/react'
 import {
-  IconHome,
   IconBook,
   IconChevronsRight,
   IconCode,
   IconDownload,
+  IconHome,
   IconSend,
 } from '@tabler/icons-react'
 import {
@@ -52,6 +52,7 @@ import {
   type GameMapping,
 } from '../../lib/schemas/gameMappingsSchema'
 import { COLOR_MAPPINGS } from '../../lib/utils/mappingUtils'
+import { MonacoMultiCursorCasePreserve } from '../../lib/utils/monacoMultiCursorCasePreserve'
 import { MappingTableVariants } from './MappingTableVariants'
 
 const documentationContent = `# Game Mapping Editor Documentation
@@ -459,6 +460,9 @@ ${editorText}`
 
   const handleEditorMount = useCallback<OnMount>(
     (editor, monaco) => {
+      // Initialize multi-cursor case preserve
+      const multiCursorCasePreserve = new MonacoMultiCursorCasePreserve(editor)
+
       // Register color provider for both YAML and JSON
       const registerColorProvider = (language: 'yaml' | 'json') => {
         monaco.languages.registerColorProvider(language, {
@@ -633,6 +637,10 @@ ${editorText}`
           editor.getAction('editor.action.formatDocument')?.run()
         }
       )
+
+      return () => {
+        multiCursorCasePreserve.dispose()
+      }
     },
     [handleEditorChange]
   )
