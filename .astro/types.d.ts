@@ -559,6 +559,11 @@ declare module 'astro:content' {
   collection: "games-json";
   data: InferEntrySchema<"games-json">
 };
+"skull-king": {
+	id: "skull-king";
+  collection: "games-json";
+  data: InferEntrySchema<"games-json">
+};
 };
 
 	};

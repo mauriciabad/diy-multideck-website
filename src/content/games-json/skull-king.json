@@ -1,0 +1,628 @@
+{
+  "post": {
+    "date": "2025-01-12T00:00:00.000Z",
+    "ogImagePath": "https://cf.geekdo-images.com/jiL3MIGH_w3g6El3OHVVig__original/img/JlMGgWGzFWmqz4s5DMLpPuHMUzg=/0x0/filters:format(png)/pic6137456.png"
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/150145/skull-king",
+    "rules": "https://fgbradleys.com/wp-content/uploads/Skull-King-Rulebook.pdf",
+    "image": "https://cf.geekdo-images.com/jiL3MIGH_w3g6El3OHVVig__itemrep/img/tC74qzJUxzrgPZ54MBctKmx8pbg=/fit-in/246x300/filters:strip_icc()/pic6137456.png",
+    "title": "Skull King",
+    "description": "Trick-taking on the high seas. Meet your bid to please the Skull King.",
+    "rating": 7.5,
+    "players": "2-8",
+    "complexity": 1.72,
+    "time": "30",
+    "mechanics": [
+      "Trick-taking",
+      "Predictive Bid",
+      "Hand Management",
+      "Rock-Paper-Scissors"
+    ],
+    "recommended": true
+  },
+  "mapping": {
+    "requiredCardsCount": 74,
+    "requiredDrawingsCount": 0,
+    "deckVersion": "v2",
+    "compatibility": 5
+  },
+  "variants": [
+    {
+      "name": "Main",
+      "slug": "main",
+      "layout": "basic",
+      "notes": "**💡Tip**: To prepare the game faster, for the Mermaids, Loot, Kraken, White Whale, and Tigress, just pick any cards of their respecrive suits, the rank doesn't matter.\n\nYou can write down this notes on your phone, and send it to the players:\n```md      \n## Cards\n⭐️☘️🍆: Normal suits\n🕷️: Trump suit\n🔥: Pirates\n🔥0: Skull king\n💧: Escape\n🌈: Escape or Pirate\n🌸: Mermaids\n💎: Loot\n💩: Kraken\n💭: White Whale\n\n## Pirates\n🔥0: Beats all suits and Pirates.\n🔥1: Choose any player, including yourself, to lead the next trick.\n🔥2: Add 2 cards to your hand from the deck and then discard 2 cards.\n🔥3: Bet 0, 10, or 20 points. Earn the points if you bid correct, lose them if you fail!\n🔥4: Privately look through any cards not dealt that round to see which are not in play.\n🔥5: You may choose to change your bid by plus or minus 1, or to leave it the same.\n```",
+      "groups": {
+        "purple-cards": {
+          "name": "Purple cards",
+          "color": "purple"
+        },
+        "yellow-cards": {
+          "name": "Yellow cards",
+          "color": "yellow"
+        },
+        "green-cards": {
+          "name": "Green cards",
+          "color": "green"
+        },
+        "black-cards": {
+          "name": "Jolly Roger (black) cards",
+          "color": "black"
+        },
+        "suited-cards": {
+          "name": "Suited cards",
+          "color": "#e8e8e8"
+        },
+        "pirate-cards": {
+          "name": "Pirate cards",
+          "color": "red"
+        },
+        "escape-cards": {
+          "name": "Escape cards",
+          "color": "blue"
+        },
+        "loot-cards": {
+          "name": "Loot cards",
+          "color": "cyan"
+        },
+        "mermaid-cards": {
+          "name": "Mermaid cards",
+          "color": "pink"
+        },
+        "kraken-cards": {
+          "name": "Kraken cards",
+          "color": "brown"
+        },
+        "white-whale-cards": {
+          "name": "White Whale cards",
+          "color": "white"
+        }
+      },
+      "templateCells": {
+        "suited-cards": {
+          "name": "Suited card",
+          "icon": {
+            "src": "game-icons:pirate-flag",
+            "fill": "red"
+          },
+          "text": "N",
+          "groups": ["suited-cards"]
+        },
+        "purple-cards": {
+          "name": "Purple card",
+          "icon": {
+            "src": "game-icons:treasure-map",
+            "fill": "purple"
+          },
+          "text": "N",
+          "groups": ["purple-cards", "suited-cards"]
+        },
+        "yellow-cards": {
+          "name": "Yellow card",
+          "icon": {
+            "src": "game-icons:open-treasure-chest",
+            "fill": "yellow"
+          },
+          "text": "N",
+          "groups": ["yellow-cards", "suited-cards"]
+        },
+        "green-cards": {
+          "name": "Green card",
+          "icon": {
+            "src": "game-icons:dove",
+            "fill": "green"
+          },
+          "text": "N",
+          "groups": ["green-cards", "suited-cards"]
+        },
+        "black-cards": {
+          "name": "Black card",
+          "icon": {
+            "src": "game-icons:pirate-flag",
+            "fill": "black"
+          },
+          "text": "N",
+          "groups": ["black-cards", "suited-cards"]
+        },
+        "escape-cards": {
+          "name": "Escape card",
+          "icon": {
+            "src": "game-icons:flying-flag",
+            "fill": "blue"
+          },
+          "groups": ["escape-cards"]
+        },
+        "pirate-cards": {
+          "name": "Pirate card",
+          "icon": {
+            "src": "game-icons:bowie-knife",
+            "fill": "red"
+          },
+          "text": {
+            "content": "X",
+            "fill": "red",
+            "stroke": {
+              "color": "#fff",
+              "width": 25
+            }
+          },
+          "groups": ["pirate-cards"]
+        },
+        "mermaid-cards": {
+          "name": "Mermaid card",
+          "notes": "Can be any 🌸 card.",
+          "icon": {
+            "src": "game-icons:mermaid",
+            "fill": "pink"
+          },
+          "groups": ["mermaid-cards"]
+        },
+        "loot-cards": {
+          "name": "Loot card",
+          "notes": "Can be any 💎 card.",
+          "icon": {
+            "src": "game-icons:rupee",
+            "fill": "cyan"
+          },
+          "groups": ["loot-cards"]
+        },
+        "kraken-cards": {
+          "name": "Kraken card",
+          "notes": "Can be any 💩 card.",
+          "icon": {
+            "src": "game-icons:curled-tentacle",
+            "fill": "brown"
+          },
+          "groups": ["kraken-cards"]
+        },
+        "white-whale-cards": {
+          "name": "White Whale card",
+          "notes": "Can be any 💭 card.",
+          "icon": {
+            "src": "game-icons:sperm-whale",
+            "fill": "white",
+            "stroke": {
+              "color": "#000",
+              "width": 5
+            }
+          },
+          "groups": ["white-whale-cards"]
+        }
+      },
+      "cells": [
+        {
+          "cardId": 51,
+          "templateCellId": "purple-cards",
+          "name": "Purple 1",
+          "text": "1"
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "purple-cards",
+          "name": "Purple 2",
+          "text": "2"
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "purple-cards",
+          "name": "Purple 3",
+          "text": "3"
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "purple-cards",
+          "name": "Purple 4",
+          "text": "4"
+        },
+        {
+          "cardId": 55,
+          "templateCellId": "purple-cards",
+          "name": "Purple 5",
+          "text": "5"
+        },
+        {
+          "cardId": 56,
+          "templateCellId": "purple-cards",
+          "name": "Purple 6",
+          "text": "6"
+        },
+        {
+          "cardId": 57,
+          "templateCellId": "purple-cards",
+          "name": "Purple 7",
+          "text": "7"
+        },
+        {
+          "cardId": 58,
+          "templateCellId": "purple-cards",
+          "name": "Purple 8",
+          "text": "8"
+        },
+        {
+          "cardId": 59,
+          "templateCellId": "purple-cards",
+          "name": "Purple 9",
+          "text": "9"
+        },
+        {
+          "cardId": 135,
+          "templateCellId": "purple-cards",
+          "name": "Purple 10",
+          "text": "10"
+        },
+        {
+          "cardId": 136,
+          "templateCellId": "purple-cards",
+          "name": "Purple 11",
+          "text": "11"
+        },
+        {
+          "cardId": 137,
+          "templateCellId": "purple-cards",
+          "name": "Purple 12",
+          "text": "12"
+        },
+        {
+          "cardId": 138,
+          "templateCellId": "purple-cards",
+          "name": "Purple 13",
+          "text": "13"
+        },
+        {
+          "cardId": 139,
+          "templateCellId": "purple-cards",
+          "name": "Purple 14",
+          "text": "14"
+        },
+        {
+          "cardId": 21,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 1",
+          "text": "1"
+        },
+        {
+          "cardId": 22,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 2",
+          "text": "2"
+        },
+        {
+          "cardId": 23,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 3",
+          "text": "3"
+        },
+        {
+          "cardId": 24,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 4",
+          "text": "4"
+        },
+        {
+          "cardId": 25,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 5",
+          "text": "5"
+        },
+        {
+          "cardId": 26,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 6",
+          "text": "6"
+        },
+        {
+          "cardId": 27,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 7",
+          "text": "7"
+        },
+        {
+          "cardId": 28,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 8",
+          "text": "8"
+        },
+        {
+          "cardId": 29,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 9",
+          "text": "9"
+        },
+        {
+          "cardId": 140,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 10",
+          "text": "10"
+        },
+        {
+          "cardId": 141,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 11",
+          "text": "11"
+        },
+        {
+          "cardId": 142,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 12",
+          "text": "12"
+        },
+        {
+          "cardId": 143,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 13",
+          "text": "13"
+        },
+        {
+          "cardId": 144,
+          "templateCellId": "yellow-cards",
+          "name": "Yellow 14",
+          "text": "14"
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "green-cards",
+          "name": "Green 1",
+          "text": "1"
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "green-cards",
+          "name": "Green 2",
+          "text": "2"
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "green-cards",
+          "name": "Green 3",
+          "text": "3"
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "green-cards",
+          "name": "Green 4",
+          "text": "4"
+        },
+        {
+          "cardId": 35,
+          "templateCellId": "green-cards",
+          "name": "Green 5",
+          "text": "5"
+        },
+        {
+          "cardId": 36,
+          "templateCellId": "green-cards",
+          "name": "Green 6",
+          "text": "6"
+        },
+        {
+          "cardId": 37,
+          "templateCellId": "green-cards",
+          "name": "Green 7",
+          "text": "7"
+        },
+        {
+          "cardId": 38,
+          "templateCellId": "green-cards",
+          "name": "Green 8",
+          "text": "8"
+        },
+        {
+          "cardId": 39,
+          "templateCellId": "green-cards",
+          "name": "Green 9",
+          "text": "9"
+        },
+        {
+          "cardId": 150,
+          "templateCellId": "green-cards",
+          "name": "Green 10",
+          "text": "10"
+        },
+        {
+          "cardId": 151,
+          "templateCellId": "green-cards",
+          "name": "Green 11",
+          "text": "11"
+        },
+        {
+          "cardId": 152,
+          "templateCellId": "green-cards",
+          "name": "Green 12",
+          "text": "12"
+        },
+        {
+          "cardId": 153,
+          "templateCellId": "green-cards",
+          "name": "Green 13",
+          "text": "13"
+        },
+        {
+          "cardId": 154,
+          "templateCellId": "green-cards",
+          "name": "Green 14",
+          "text": "14"
+        },
+        {
+          "cardId": 71,
+          "templateCellId": "black-cards",
+          "name": "Black 1",
+          "text": "1"
+        },
+        {
+          "cardId": 72,
+          "templateCellId": "black-cards",
+          "name": "Black 2",
+          "text": "2"
+        },
+        {
+          "cardId": 73,
+          "templateCellId": "black-cards",
+          "name": "Black 3",
+          "text": "3"
+        },
+        {
+          "cardId": 74,
+          "templateCellId": "black-cards",
+          "name": "Black 4",
+          "text": "4"
+        },
+        {
+          "cardId": 75,
+          "templateCellId": "black-cards",
+          "name": "Black 5",
+          "text": "5"
+        },
+        {
+          "cardId": 76,
+          "templateCellId": "black-cards",
+          "name": "Black 6",
+          "text": "6"
+        },
+        {
+          "cardId": 77,
+          "templateCellId": "black-cards",
+          "name": "Black 7",
+          "text": "7"
+        },
+        {
+          "cardId": 78,
+          "templateCellId": "black-cards",
+          "name": "Black 8",
+          "text": "8"
+        },
+        {
+          "cardId": 79,
+          "templateCellId": "black-cards",
+          "name": "Black 9",
+          "text": "9"
+        },
+        {
+          "cardId": 155,
+          "templateCellId": "black-cards",
+          "name": "Black 10",
+          "text": "10"
+        },
+        {
+          "cardId": 156,
+          "templateCellId": "black-cards",
+          "name": "Black 11",
+          "text": "11"
+        },
+        {
+          "cardId": 157,
+          "templateCellId": "black-cards",
+          "name": "Black 12",
+          "text": "12"
+        },
+        {
+          "cardId": 158,
+          "templateCellId": "black-cards",
+          "name": "Black 13",
+          "text": "13"
+        },
+        {
+          "cardId": 159,
+          "templateCellId": "black-cards",
+          "name": "Black 14",
+          "text": "14"
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "escape-cards"
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "escape-cards"
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "escape-cards"
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "escape-cards"
+        },
+        {
+          "cardId": 15,
+          "templateCellId": "escape-cards"
+        },
+        {
+          "cardId": 1,
+          "templateCellId": "pirate-cards",
+          "name": "Pirate 1: Rosie de Laney",
+          "text": "1"
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "pirate-cards",
+          "name": "Pirate 2: Bahij the Bandit",
+          "text": "2"
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "pirate-cards",
+          "name": "Pirate 3: Rascal of Roatan",
+          "text": "3"
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "pirate-cards",
+          "name": "Pirate 4: Juanita Jade",
+          "text": "4"
+        },
+        {
+          "cardId": 5,
+          "templateCellId": "pirate-cards",
+          "name": "Pirate 5: Harry the Giant",
+          "text": "5"
+        },
+        {
+          "cardId": 81,
+          "templateCellId": "mermaid-cards"
+        },
+        {
+          "cardId": 82,
+          "templateCellId": "mermaid-cards"
+        },
+        {
+          "cardId": 91,
+          "templateCellId": "loot-cards"
+        },
+        {
+          "cardId": 92,
+          "templateCellId": "loot-cards"
+        },
+        {
+          "cardId": 101,
+          "templateCellId": "kraken-cards"
+        },
+        {
+          "cardId": 61,
+          "templateCellId": "white-whale-cards"
+        },
+        {
+          "cardId": 0,
+          "name": "Skull King",
+          "icon": {
+            "src": "game-icons:pirate-hat",
+            "fill": "black"
+          }
+        },
+        {
+          "cardId": 111,
+          "name": "Tigress",
+          "notes": "Can be any 🌈 card.",
+          "icon": {
+            "src": "game-icons:rally-the-troops",
+            "fill": "rainbow",
+            "stroke": {
+              "color": "black",
+              "width": 2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
