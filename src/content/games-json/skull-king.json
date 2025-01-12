@@ -5,7 +5,16 @@
   },
   "game": {
     "bgg": "https://boardgamegeek.com/boardgame/150145/skull-king",
-    "rules": "https://fgbradleys.com/wp-content/uploads/Skull-King-Rulebook.pdf",
+    "rules": [
+      {
+        "url": "https://fgbradleys.com/wp-content/uploads/Skull-King-Rulebook.pdf",
+        "name": "PDF"
+      },
+      {
+        "url": "https://youtu.be/GKCeKMEI1ts",
+        "name": "Video"
+      }
+    ],
     "image": "https://cf.geekdo-images.com/jiL3MIGH_w3g6El3OHVVig__itemrep/img/tC74qzJUxzrgPZ54MBctKmx8pbg=/fit-in/246x300/filters:strip_icc()/pic6137456.png",
     "title": "Skull King",
     "description": "Trick-taking on the high seas. Meet your bid to please the Skull King.",
