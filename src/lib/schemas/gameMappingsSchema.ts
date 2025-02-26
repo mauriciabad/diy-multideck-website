@@ -1,4 +1,4 @@
-import { z } from 'astro:content'
+import { z } from 'astro/zod'
 import merge from 'lodash/merge'
 import { COLOR_MAPPINGS } from '../utils/mappingUtils'
 
