@@ -143,13 +143,13 @@ export class MonacoMultiCursorCasePreserve {
 
     const Monaco = this.monaco
     return args.selections.reduce((selectionsData, selection, index) => {
-      const text = args.textModel.getValueInRange(selection)
-      selectionsData[index] = selectionsData[index] || {}
-      selectionsData[index].text = text
-      selectionsData[index].start = new Monaco.Position(
+      const newSelectionData = selectionsData[index] || {}
+      newSelectionData.text = args.textModel.getValueInRange(selection)
+      newSelectionData.start = new Monaco.Position(
         selection.startLineNumber,
         selection.startColumn
       )
+      selectionsData[index] = newSelectionData
       return selectionsData
     }, state.selectionsData)
   }
@@ -184,8 +184,8 @@ export class MonacoMultiCursorCasePreserve {
     let len = 1
     let line = -1
     return args.selections.reduce((selectionsData, selection, index) => {
-      selectionsData[index] = selectionsData[index] || {}
-      const start = selectionsData[index].start
+      const selectionData = selectionsData[index] || {}
+      const start = selectionData.start
       if (!start) return selectionsData
 
       if (start.lineNumber === line) {
@@ -196,13 +196,13 @@ export class MonacoMultiCursorCasePreserve {
       }
       line = start.lineNumber
 
-      selectionsData[index].range = new Monaco.Range(
+      selectionData.range = new Monaco.Range(
         start.lineNumber,
-        start.column +
-          count * (len - (selectionsData[index].text?.length || 0)),
+        start.column + count * (len - (selectionData.text?.length || 0)),
         selection.endLineNumber,
         selection.endColumn
       )
+      selectionsData[index] = selectionData
       return selectionsData
     }, state.selectionsData)
   }
