@@ -1,9 +1,0 @@
-[[redirects]]
-from = "http://diymultideck.com/*"
-to = "https://diymultideck.mauri.app/:splat"
-status = 301
-
-[[redirects]]
-from = "https://diymultideck.com/*"
-to = "https://diymultideck.mauri.app/:splat"
-status = 301
