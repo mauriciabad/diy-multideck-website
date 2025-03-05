@@ -1,0 +1,317 @@
+{
+  "post": {
+    "date": "2025-03-05T00:00:00.000Z",
+    "ogImagePath": "https://cf.geekdo-images.com/cf0xxkevbwTGF3VUZymKjg__itemrep/img/SBOXfC-WOg_Iko_2lHw3VMymsow=/fit-in/246x300/filters:strip_icc()/pic6398727.png"
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/291453/scout",
+    "rules": "https://www.hras.cz/user/related_files/new_edition_scout_rules_eng.pdf",
+    "image": "https://cf.geekdo-images.com/cf0xxkevbwTGF3VUZymKjg__itemrep/img/SBOXfC-WOg_Iko_2lHw3VMymsow=/fit-in/246x300/filters:strip_icc()/pic6398727.png",
+    "title": "Scout",
+    "description": "Poach your opponents' artists and outdo each other's circus shows.",
+    "rating": 7.8,
+    "players": "2-5",
+    "complexity": 1.36,
+    "time": "20",
+    "mechanics": ["Hand Management", "Score-and-Reset Game", "Ladder Climbing"],
+    "recommended": false
+  },
+  "mapping": {
+    "requiredCardsCount": 45,
+    "requiredDrawingsCount": 0,
+    "deckVersion": "v2",
+    "compatibility": 4
+  },
+  "variants": [
+    {
+      "name": "3D suit's rank and Number suit's black part",
+      "slug": "main",
+      "notes": "Use the 3D suit's rank and Number suit's black part. \n\nFor example: the card that has the Number suit `21` and the 3D suit `1💛`, maps to a card with `2` in one corner, and a `1` on the other.\n\nUse counters for the punctuation, and tokens for the other components.",
+      "layout": "number",
+      "templateCells": {
+        "card": {
+          "text": {
+            "size": 75,
+            "fill": "#000",
+            "content": "n\\n",
+            "stroke": {
+              "width": 0
+            }
+          }
+        }
+      },
+      "cells": [
+        {
+          "cardId": 101,
+          "templateCellId": "card",
+          "name": "10 and 1",
+          "text": "10\\1"
+        },
+        {
+          "cardId": 102,
+          "templateCellId": "card",
+          "name": "10 and 2",
+          "text": "10\\2"
+        },
+        {
+          "cardId": 103,
+          "templateCellId": "card",
+          "name": "10 and 3",
+          "text": "10\\3"
+        },
+        {
+          "cardId": 104,
+          "templateCellId": "card",
+          "name": "10 and 4",
+          "text": "10\\4"
+        },
+        {
+          "cardId": 105,
+          "templateCellId": "card",
+          "name": "10 and 5",
+          "text": "10\\5"
+        },
+        {
+          "cardId": 106,
+          "templateCellId": "card",
+          "name": "10 and 6",
+          "text": "10\\6"
+        },
+        {
+          "cardId": 107,
+          "templateCellId": "card",
+          "name": "10 and 7",
+          "text": "10\\7"
+        },
+        {
+          "cardId": 108,
+          "templateCellId": "card",
+          "name": "10 and 8",
+          "text": "10\\8"
+        },
+        {
+          "cardId": 109,
+          "templateCellId": "card",
+          "name": "10 and 9",
+          "text": "10\\9"
+        },
+        {
+          "cardId": 91,
+          "templateCellId": "card",
+          "name": "9 and 1",
+          "text": "9\\1"
+        },
+        {
+          "cardId": 92,
+          "templateCellId": "card",
+          "name": "9 and 2",
+          "text": "9\\2"
+        },
+        {
+          "cardId": 93,
+          "templateCellId": "card",
+          "name": "9 and 3",
+          "text": "9\\3"
+        },
+        {
+          "cardId": 94,
+          "templateCellId": "card",
+          "name": "9 and 4",
+          "text": "9\\4"
+        },
+        {
+          "cardId": 95,
+          "templateCellId": "card",
+          "name": "9 and 5",
+          "text": "9\\5"
+        },
+        {
+          "cardId": 96,
+          "templateCellId": "card",
+          "name": "9 and 6",
+          "text": "9\\6"
+        },
+        {
+          "cardId": 97,
+          "templateCellId": "card",
+          "name": "9 and 7",
+          "text": "9\\7"
+        },
+        {
+          "cardId": 98,
+          "templateCellId": "card",
+          "name": "9 and 8",
+          "text": "9\\8"
+        },
+        {
+          "cardId": 87,
+          "templateCellId": "card",
+          "name": "8 and 7",
+          "text": "8\\7"
+        },
+        {
+          "cardId": 86,
+          "templateCellId": "card",
+          "name": "8 and 6",
+          "text": "8\\6"
+        },
+        {
+          "cardId": 85,
+          "templateCellId": "card",
+          "name": "8 and 5",
+          "text": "8\\5"
+        },
+        {
+          "cardId": 84,
+          "templateCellId": "card",
+          "name": "8 and 4",
+          "text": "8\\4"
+        },
+        {
+          "cardId": 83,
+          "templateCellId": "card",
+          "name": "8 and 3",
+          "text": "8\\3"
+        },
+        {
+          "cardId": 82,
+          "templateCellId": "card",
+          "name": "8 and 2",
+          "text": "8\\2"
+        },
+        {
+          "cardId": 81,
+          "templateCellId": "card",
+          "name": "8 and 1",
+          "text": "8\\1"
+        },
+        {
+          "cardId": 76,
+          "templateCellId": "card",
+          "name": "7 and 6",
+          "text": "7\\6"
+        },
+        {
+          "cardId": 75,
+          "templateCellId": "card",
+          "name": "7 and 5",
+          "text": "7\\5"
+        },
+        {
+          "cardId": 74,
+          "templateCellId": "card",
+          "name": "7 and 4",
+          "text": "7\\4"
+        },
+        {
+          "cardId": 73,
+          "templateCellId": "card",
+          "name": "7 and 3",
+          "text": "7\\3"
+        },
+        {
+          "cardId": 72,
+          "templateCellId": "card",
+          "name": "7 and 2",
+          "text": "7\\2"
+        },
+        {
+          "cardId": 71,
+          "templateCellId": "card",
+          "name": "7 and 1",
+          "text": "7\\1"
+        },
+        {
+          "cardId": 65,
+          "templateCellId": "card",
+          "name": "6 and 5",
+          "text": "6\\5"
+        },
+        {
+          "cardId": 64,
+          "templateCellId": "card",
+          "name": "6 and 4",
+          "text": "6\\4"
+        },
+        {
+          "cardId": 63,
+          "templateCellId": "card",
+          "name": "6 and 3",
+          "text": "6\\3"
+        },
+        {
+          "cardId": 62,
+          "templateCellId": "card",
+          "name": "6 and 2",
+          "text": "6\\2"
+        },
+        {
+          "cardId": 61,
+          "templateCellId": "card",
+          "name": "6 and 1",
+          "text": "6\\1"
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "card",
+          "name": "5 and 4",
+          "text": "5\\4"
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "card",
+          "name": "5 and 3",
+          "text": "5\\3"
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "card",
+          "name": "5 and 2",
+          "text": "5\\2"
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "card",
+          "name": "5 and 1",
+          "text": "5\\1"
+        },
+        {
+          "cardId": 43,
+          "templateCellId": "card",
+          "name": "4 and 3",
+          "text": "4\\3"
+        },
+        {
+          "cardId": 42,
+          "templateCellId": "card",
+          "name": "4 and 2",
+          "text": "4\\2"
+        },
+        {
+          "cardId": 41,
+          "templateCellId": "card",
+          "name": "4 and 1",
+          "text": "4\\1"
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "card",
+          "name": "3 and 2",
+          "text": "3\\2"
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "card",
+          "name": "3 and 1",
+          "text": "3\\1"
+        },
+        {
+          "cardId": 21,
+          "templateCellId": "card",
+          "name": "2 and 1",
+          "text": "2\\1"
+        }
+      ]
+    }
+  ]
+}
