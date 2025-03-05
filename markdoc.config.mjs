@@ -37,6 +37,47 @@ export default defineMarkdocConfig({
         },
       },
     },
+    imgSideBySide: {
+      render: component('./src/components/markdown/ImgSideBySide.astro'),
+      selfClosing: true,
+      attributes: {
+        src1: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        src2: {
+          type: String,
+          required: true,
+          errorLevel: 'error',
+        },
+        width1: {
+          type: [Number, String],
+          required: false,
+          errorLevel: 'error',
+        },
+        width2: {
+          type: [Number, String],
+          required: false,
+          errorLevel: 'error',
+        },
+        alt1: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+        alt2: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+        imgClass: {
+          type: String,
+          required: false,
+          errorLevel: 'error',
+        },
+      },
+    },
     imgLightDark: {
       render: component('./src/components/markdown/ImgLightDark.astro'),
       selfClosing: true,
@@ -289,12 +330,22 @@ export default defineMarkdocConfig({
       ),
       selfClosing: true,
     },
+    cardDistributionTableV2: {
+      render: component(
+        './src/components/markdown/CardDistributionTableV2.astro'
+      ),
+      selfClosing: true,
+    },
     suitsTable: {
       render: component('./src/components/markdown/SuitsTable.astro'),
       selfClosing: true,
     },
     suitsTableV1: {
       render: component('./src/components/markdown/SuitsTableV1.astro'),
+      selfClosing: true,
+    },
+    suitsTableV2: {
+      render: component('./src/components/markdown/SuitsTableV2.astro'),
       selfClosing: true,
     },
     suits3DTable: {
