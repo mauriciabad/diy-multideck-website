@@ -3,7 +3,7 @@ const compatibilities = {
   1: 'Bad',
   2: 'Decent',
   3: 'Great',
-  4: 'Exellent',
+  4: 'Excellent',
   5: 'Perfect',
 } as const
 
