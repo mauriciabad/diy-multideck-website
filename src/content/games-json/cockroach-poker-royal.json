@@ -1,0 +1,470 @@
+{
+  "post": {
+    "date": "2023-03-02T00:00:00.000Z",
+    "ogImagePath": "/images/mappings/cockroach-poker-royal.png",
+    "keywords": ["Cockroach Poker", "The cheater", "The liar"]
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/129736/cockroach-poker-royal",
+    "rules": "https://boardgamegeek.com/filepage/164853/kakerlakenpoker-royal-english-rules",
+    "image": "https://cf.geekdo-images.com/loNpxkO1sWM_Xs4Pk2AMgA__itemrep/img/WwEO-rs9KKkrpNeNrPiZeDwHQdg=/fit-in/246x300/filters:strip_icc()/pic4129570.jpg",
+    "title": "Cockroach Poker Royal",
+    "description": "Bluff your way to victory using creepy, crawly creatures!",
+    "rating": 7.1,
+    "players": "2-6",
+    "complexity": 1.1,
+    "time": "15-20",
+    "mechanics": ["Hand Management", "Set Collection", "Single Loser Game"],
+    "scoreAdjustment": 1,
+    "recommended": true
+  },
+  "mapping": {
+    "requiredCardsCount": 65,
+    "requiredDrawingsCount": 0,
+    "deckVersion": "v2",
+    "compatibility": 5
+  },
+  "variants": [
+    {
+      "name": "Main",
+      "slug": "main",
+      "layout": "basic",
+      "notes": "You can use any suits you want, they don't need to be the ones on this guide.",
+      "groups": {
+        "red-cards": {
+          "name": "Cockroach",
+          "color": "red"
+        },
+        "blue-cards": {
+          "name": "Scorpions",
+          "color": "blue"
+        },
+        "yellow-cards": {
+          "name": "Stink bugs",
+          "color": "yellow"
+        },
+        "green-cards": {
+          "name": "Toads",
+          "color": "green"
+        },
+        "purple-cards": {
+          "name": "Bats",
+          "color": "purple"
+        },
+        "white-cards": {
+          "name": "Rats",
+          "color": "white"
+        },
+        "black-cards": {
+          "name": "Flies",
+          "color": "black"
+        },
+        "zero-cards": {
+          "name": "Royal cards",
+          "color": "#AAA"
+        },
+        "special-cards": {
+          "name": "Special cards",
+          "color": "#000"
+        }
+      },
+      "templateCells": {
+        "zero-cards": {
+          "name": "Royal card (Zero)",
+          "notes": "Call them: Zeros or their respective suit",
+          "text": {
+            "content": "0"
+          },
+          "groups": ["zero-cards"]
+        },
+        "red-cards": {
+          "name": "Cockroach (Red)",
+          "notes": "Call them: Red cards or 🔥",
+          "icon": {
+            "src": "game-icons:long-antennae-bug",
+            "fill": "red"
+          },
+          "groups": ["red-cards"]
+        },
+        "blue-cards": {
+          "name": "Scorpions (Blue)",
+          "notes": "Call them: Blue cards or 💧",
+          "icon": {
+            "src": "game-icons:scorpion",
+            "fill": "blue"
+          },
+          "groups": ["blue-cards"]
+        },
+        "yellow-cards": {
+          "name": "Stink bug (Yellow)",
+          "notes": "Call them: Yellow cards or ⭐️",
+          "icon": {
+            "src": "game-icons:spotted-bug",
+            "fill": "yellow"
+          },
+          "groups": ["yellow-cards"]
+        },
+        "green-cards": {
+          "name": "Toad (Green)",
+          "notes": "Call them: Green cards or ☘️",
+          "icon": {
+            "src": "game-icons:frog",
+            "fill": "green"
+          },
+          "groups": ["green-cards"]
+        },
+        "purple-cards": {
+          "name": "Bat (Purple)",
+          "notes": "Call them: Purple cards or 🍆",
+          "icon": {
+            "src": "game-icons:bat",
+            "fill": "purple"
+          },
+          "groups": ["purple-cards"]
+        },
+        "white-cards": {
+          "name": "Rat (White)",
+          "notes": "Call them: White cards or 💭",
+          "icon": {
+            "src": "game-icons:rat",
+            "fill": "brown"
+          },
+          "groups": ["white-cards"]
+        },
+        "black-cards": {
+          "name": "Fly (Black)",
+          "notes": "Call them: Black cards or 🕷️",
+          "icon": {
+            "src": "game-icons:fly",
+            "fill": "black"
+          },
+          "groups": ["black-cards"]
+        },
+        "special-cards": {
+          "icon": {
+            "src": "fa6-solid:xmark",
+            "fill": "#000",
+            "transform": {
+              "scale": 0.8
+            }
+          },
+          "groups": ["special-cards"]
+        }
+      },
+      "cells": [
+        {
+          "cardId": 1,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 5,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 6,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 7,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 8,
+          "templateCellId": "red-cards"
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 15,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 16,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 17,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 18,
+          "templateCellId": "blue-cards"
+        },
+        {
+          "cardId": 21,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 22,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 23,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 24,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 25,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 26,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 27,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 28,
+          "templateCellId": "yellow-cards"
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 35,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 36,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 37,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 38,
+          "templateCellId": "green-cards"
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 55,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 56,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 57,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 58,
+          "templateCellId": "purple-cards"
+        },
+        {
+          "cardId": 61,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 62,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 63,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 64,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 65,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 66,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 67,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 68,
+          "templateCellId": "white-cards"
+        },
+        {
+          "cardId": 71,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 72,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 73,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 74,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 75,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 76,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 77,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 78,
+          "templateCellId": "black-cards"
+        },
+        {
+          "cardId": 0,
+          "templateCellId": "zero-cards",
+          "name": "Royal Cockroach (Zero or Red)",
+          "icon": {
+            "src": "game-icons:long-antennae-bug",
+            "fill": "red"
+          },
+          "groups": ["red-cards", "zero-cards"]
+        },
+        {
+          "cardId": 10,
+          "templateCellId": "zero-cards",
+          "name": "Royal Scorpion (Zero or Blue)",
+          "icon": {
+            "src": "game-icons:scorpion",
+            "fill": "blue"
+          },
+          "groups": ["blue-cards", "zero-cards"]
+        },
+        {
+          "cardId": 20,
+          "templateCellId": "zero-cards",
+          "name": "Royal Stink bug (Zero or Yellow)",
+          "icon": {
+            "src": "game-icons:spotted-bug",
+            "fill": "yellow"
+          },
+          "groups": ["yellow-cards", "zero-cards"]
+        },
+        {
+          "cardId": 30,
+          "templateCellId": "zero-cards",
+          "name": "Royal Toad (Zero or Green)",
+          "icon": {
+            "src": "game-icons:frog",
+            "fill": "green"
+          },
+          "groups": ["green-cards", "zero-cards"]
+        },
+        {
+          "cardId": 50,
+          "templateCellId": "zero-cards",
+          "name": "Royal Bat (Zero or Purple)",
+          "icon": {
+            "src": "game-icons:bat",
+            "fill": "purple"
+          },
+          "groups": ["purple-cards", "zero-cards"]
+        },
+        {
+          "cardId": 60,
+          "templateCellId": "zero-cards",
+          "name": "Royal Rat (Zero or White)",
+          "icon": {
+            "src": "game-icons:rat",
+            "fill": "brown"
+          },
+          "groups": ["white-cards", "zero-cards"]
+        },
+        {
+          "cardId": 70,
+          "templateCellId": "zero-cards",
+          "name": "Royal Fly (Zero or Black)",
+          "icon": {
+            "src": "game-icons:fly",
+            "fill": "black"
+          },
+          "groups": ["black-cards", "zero-cards"]
+        },
+        {
+          "cardId": 98,
+          "templateCellId": "special-cards",
+          "name": "Always right",
+          "notes": "It can be any 💎",
+          "icon": {
+            "src": "fa6-solid:check"
+          }
+        },
+        {
+          "cardId": 108,
+          "templateCellId": "special-cards",
+          "name": "Always wrong",
+          "notes": "It can be any 💩",
+          "icon": {
+            "src": "fa6-solid:xmark"
+          }
+        }
+      ]
+    }
+  ]
+}
