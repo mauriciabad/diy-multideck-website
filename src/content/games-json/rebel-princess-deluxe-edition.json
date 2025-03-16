@@ -20,7 +20,8 @@
     "requiredCardsCount": 87,
     "requiredDrawingsCount": 40,
     "deckVersion": "v2",
-    "compatibility": 4
+    "compatibility": 4,
+    "createdBy": "Maurici Abad"
   },
   "variants": [
     {

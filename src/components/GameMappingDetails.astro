@@ -125,6 +125,32 @@ const { game, mapping, slug } = Astro.props
             </li>
           )
         }
+
+        {
+          mapping.createdBy && mapping.createdBy.length > 0 && (
+            <li class="p-0 m-0">
+              <i class="ti ti-user-edit" />
+              <span class="text-stone-700 dark:text-[#8da1b6]">Mapped by:</span>
+              {Array.isArray(mapping.createdBy)
+                ? mapping.createdBy.join(', ')
+                : mapping.createdBy}
+            </li>
+          )
+        }
+
+        {
+          mapping.reviewedBy && mapping.reviewedBy.length > 0 && (
+            <li class="p-0 m-0">
+              <i class="ti ti-user-check" />
+              <span class="text-stone-700 dark:text-[#8da1b6]">
+                Mapping reviewed by:
+              </span>
+              {Array.isArray(mapping.reviewedBy)
+                ? mapping.reviewedBy.join(', ')
+                : mapping.reviewedBy}
+            </li>
+          )
+        }
       </ul>
     </div>
   </div>

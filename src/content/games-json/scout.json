@@ -20,7 +20,9 @@
     "requiredCardsCount": 45,
     "requiredDrawingsCount": 0,
     "deckVersion": "v2",
-    "compatibility": 4
+    "compatibility": 4,
+    "createdBy": "Tigereye",
+    "reviewedBy": "Maurici Abad"
   },
   "variants": [
     {

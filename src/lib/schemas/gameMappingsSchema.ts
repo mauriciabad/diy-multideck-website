@@ -1,5 +1,5 @@
 import { z } from 'astro/zod'
-import merge from 'lodash/merge'
+import { merge } from 'lodash-es'
 import { COLOR_MAPPINGS } from '../utils/mappingUtils'
 
 const colorRegex =

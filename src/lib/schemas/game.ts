@@ -48,6 +48,8 @@ export const gameSchema = z.strictObject({
       .step(1)
       .max(162 * 16),
     deckVersion: z.enum(['v0.4b', 'v1', 'v2']),
+    createdBy: z.array(z.string()).or(z.string()).optional(),
+    reviewedBy: z.array(z.string()).or(z.string()).optional(),
   }),
 })
 

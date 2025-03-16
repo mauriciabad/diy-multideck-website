@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content'
-import uniqBy from 'lodash/uniqBy'
+import { uniqBy } from 'lodash-es'
 
 export async function getGamesCollections() {
   const jsonGames = (await getCollection('games-json')).map((g) => ({

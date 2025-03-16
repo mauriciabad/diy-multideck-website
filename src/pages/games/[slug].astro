@@ -6,6 +6,7 @@ import Prose from '../../components/Prose.astro'
 import { MappingTableVariants } from '../../components/react/MappingTableVariants'
 import ContentLayout from '../../layouts/ContentLayout.astro'
 import { getGamesCollections } from '../../utils/getGames'
+
 export async function getStaticPaths() {
   const games = await getGamesCollections()
 
