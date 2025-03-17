@@ -2,12 +2,12 @@
 post:
   date: 2024-12-22
   ogImagePath: '/images/ogimage.png'
-  title: 'Manual'
+  title: 'Manual v2'
 ---
 
 ## Introduction
 
-The DIY multideck is a deck of 160 playing cards (3 standard decks) that allows you to play hundreds of existing games, not only classic card games but also modern games that use components like boards or coins. The DIY multideck is **ideal for traveling**, **prototyping new games**, and **trying games before buying**. The cards are waterproof and very resistant, ready to join you on your next trip!
+The DIY multideck is a deck of 162 playing cards (3 standard decks) that allows you to play hundreds of existing games, not only classic card games but also modern games that use components like boards or coins. The DIY multideck is **ideal for traveling**, **prototyping new games**, and **trying games before buying**. The cards are waterproof and very resistant, ready to join you on your next trip!
 
 This is how it works: when you play a game, you pick a subset of cards and focus on a specific corner. Sometimes, you may draw on the cards to play games that use words, icons, or boards. On the [official website](/), you'll find instructions to play many games. Here are some example games for every game system supported:
 
@@ -27,7 +27,7 @@ This is how it works: when you play a game, you pick a subset of cards and focus
 - **Game systems**:
   - [**Basic suit**](#basic-suit): 8 suits of 15 ranks + 4 suits of 10 ranks
     - [12 suits of 10 ranks](#12-suits-of-10-ranks).
-      - Plus 5 ranks in 8 of the suits.
+      - Plus 5 letter ranks in 8 of the suits.
     - [8 suits of 15 ranks](#8-suits-of-15-ranks).
       - Plus 4 suits of 10 ranks.
     - [10-level pyramidal deck with the same ranks](#10-level-pyramidal-deck-with-the-same-ranks).
@@ -46,9 +46,9 @@ This is how it works: when you play a game, you pick a subset of cards and focus
   - **Custom deck**: by [drawing](#drawing).
 - [**Counters**](#counters) using the cards' back face.
 - [**Draw in the cards**](#drawing) to add words, numbers, icons, tiles, boards, or any other info.
-- [**Extra cards**](#extra-cards): 5 additional cards.
-  - [4 notes](#notes-cards): To note down game boards, hints, rules, or make a custom suit.
-  - [1 cover/help](#cover--help-card): With a QR code pointing to the website, and a quick help diagram.
+- [**Extra cards**](#extra-cards): 2 additional cards (4 faces).
+  - [3 notes](#notes-cards): To note down game boards, hints, or rules.
+  - [1 cover](#cover-card): With a QR code pointing to the website.
 - **Usability**:
   - Color-blind friendly.
   - All suits are emojis: {% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}
@@ -85,7 +85,7 @@ On the top-left and bottom-right corner, you can find a number (rank) overlappin
 
 It is the most used game system of the deck, and thus, the easiest to use. When mapping new games, always give priority to it.
 
-It contains 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...14), named _15-ranked suits_, and 4 suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
+It contains 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...9 + XJQKA), named _15-ranked suits_, and 4 suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
 
 ### Suits
 
@@ -103,17 +103,17 @@ All suits are emojis, so you can easily write cheat sheets on your phone and sen
 
 ### Ranks
 
-- 0...9: _1 digit ranks_ (0123456789).
+- 0...9: _Numeric ranks_ (0123456789).
   - 0 can be used as a Joker or wildcards.
   - 0 can be used as 10 in some games.
   - 1 can be used as an Ace.
-- 10...14: _2 digit ranks_ (10, 11, 12, 13, 14).
-  - Can be used as 10, Jack, Queen, King, Ace.
-  - Can be used as 0, 1, 2, 3, 4.
+- XJQKA: _Letter ranks_.
+  - They are: 10, Jack, Queen, King, Ace.
+  - Can be used as 10, 11, 12, 13, 14.
 
-The other corners' numbers always end with this suit's number. Except when the rank is 10...14, then the corners end with 01234 or 56789, respectively. For example, when the rank is 14, the other corners end in 4 or 9.
+The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
 
-When the rank has 2 digits (10...14), the [3D suit](#3d-suit) is {% colorSuit color="textured-black" /%} black or {% colorSuit color="textured-white" /%} white.
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is {% colorSuit color="textured-black" /%} black or {% colorSuit color="textured-white" /%} white.
 
 ### Distributions
 
@@ -123,9 +123,9 @@ When the rank has 2 digits (10...14), the [3D suit](#3d-suit) is {% colorSuit co
 
 One combination is 12 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) of 10 ranks (0...9).
 
-There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 ranks (10...14) of the 15-ranked suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}).
+There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 _letter ranks_ (XJQKA) of the 15-ranked suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}).
 
-To get it, pick all the cards, and remove the ranks greater than 9.
+To get it, pick all the cards, and remove the _letter ranks_ (XJQKA).
 
 Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}). Only use this if you need 9 or 10 suits of 11 or 12 ranks.
 
@@ -133,13 +133,13 @@ Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suit id=
 
 {% imgLightDark light="/images/home/distributions/8-suits-x-15-ranks-light.svg" dark="/images/home/distributions/8-suits-x-15-ranks-dark.svg" width=360 alt="8 suits of 15 ranks distribution diagram" /%}
 
-Another combination is 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...14).
+Another combination is 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...9 + XJQKA).
 
 There will be some unused cards, that may be optionally used to add extra suits. The remaining cards are: all the ranks (0...9) of the 10-ranked suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}).
 
 To get it, pick all the cards, and remove the 10-ranked suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}).
 
-Switch the suits for the ranks to have 15 suits (0...14) of 8 ranks ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}). Only use this if you need 13 to 15 suits of 8 or fewer ranks.
+Switch the suits for the ranks to have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}). Only use this if you need 13 to 15 suits of 8 or fewer ranks.
 
 #### 10-Level Pyramidal Deck with the Same Ranks
 
@@ -188,7 +188,7 @@ The {% suit id="A24" /%} suit can be used as a {% suit id="A24-alt" /%} Black sq
 
 {% suits3DTable /%}
 
-When the _3D suit_ is {% colorSuit color="black" noAlt=true /%} black or {% colorSuit color="white" noAlt=true /%} white, the rank of the [Basic suit](#basic-suit) has 2 digits (10...14). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit color="red" noAlt=true /%}{% colorSuit color="blue" noAlt=true /%}{% colorSuit color="green" noAlt=true /%}{% colorSuitV1 color="yellow" noAlt=true /%}), the rank of the [Basic suit](#basic-suit) has 1 digit (0...9).
+When the _3D suit_ is {% colorSuit color="black" noAlt=true /%} black or {% colorSuit color="white" noAlt=true /%} white, the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit color="red" noAlt=true /%}{% colorSuit color="blue" noAlt=true /%}{% colorSuit color="green" noAlt=true /%}{% colorSuitV1 color="yellow" noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
 
 ### Distributions
 
@@ -235,7 +235,7 @@ The number has two colors:
 
 - The **black part** indicates the **suit id** of the [basic suit](#basic-suit) of the card. When the _number suit_ is greater than 120, it no longer indicates the suit id.
   - For example, the card 117 has the suit {% suit id="11" /%}, and is the suit id 11 because the black part of the number is 11.
-- The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank has 2 digits (10...14)).
+- The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
 
 ### Distributions
 
@@ -408,36 +408,27 @@ When printing cards on an A3-sized paper, there's room for 18 cards per page. Th
 
 You can use the extra cards in games that need a card with a different background and no information on the front (you can also flip a normal card, but it can be confusing). For example, in [The Crew](/games/the-crew-1), the "reminder cards".
 
-### Cover + help card
+### Cover card
 
-Only 1 copy. Where each side is:
+{% cardImgWithText src="/images/home-v2/cards/cover.svg" %}
 
-{% cardImgWithText src="/images/home/cards/cover.svg" %}
+Only 1 copy.
 
 Contains:
 
 - Name of the deck.
 - Preview of all basic suits.
-- Link to this website.
 - QR code pointing to the website.
-
-{% /cardImgWithText %}
-
-{% cardImgWithText src="/images/home/cards/help.svg" %}
-
-Contains:
-
-- Quick guide about the suit's distributions.
 
 {% /cardImgWithText %}
 
 ### Notes cards
 
-{% cardImgWithText src="/images/home/cards/notes.svg" %}
+{% cardImgWithText src="/images/home-v2/cards/notes.svg" %}
 
-4 copies.
+3 copies (in 2 cards).
 
-Use them to keep any useful information, or to draw custom ranks.
+Use them to keep any useful information.
 
 Some use cases are:
 
@@ -446,8 +437,6 @@ Some use cases are:
 - Game setup (what cards, how many per player...).
 - Definition/Diagram of a specific rule or mechanic.
 - List of games in the deck.
-
-The back side is the same as the other playing cards.
 
 {% /cardImgWithText %}
 
@@ -458,7 +447,7 @@ The back side is the same as the other playing cards.
 Recommended items for transporting the deck:
 
 - The deck of cards itself.
-- A storage bag. Reccommended: a 16x12 cm nylon/polyester drawstring bag or a DIN B7 plastic stationery zipper bag.
+- A storage bag. Ideally a DIN B7 plastic stationery zipper bag.
 - A pen and eraser. Tip: sharpen both sides of the pencil.
 - 50 tokens. Ideally 10 of each color ({% colorSuit color="textured-red" /%}{% colorSuit color="textured-blue" /%}{% colorSuit color="textured-yellow" /%}{% colorSuit color="textured-green" /%}{% colorSuit color="textured-black" /%}).
 
@@ -470,7 +459,7 @@ The following items may be handy sometimes, but they are not worth carrying all 
 
 This is how the travel kit looks when packed:
 
-{% imgSideBySide src1="/images/shop/travel-kit-packed.png" src2="/images/shop/travel-kit-packed-2.png" alt1="travel kit packed 1" alt2="travel kit packed 2" width1="75%" width2="45%" /%}
+{% img src="/images/shop/travel-kit-packed.png" width="50%" alt="travel kit packed" /%}
 
 {% callout type="idea" %}
 If you foresee that you won't have internet access, you can download some game mappings and rules in advance. Each game page has an image with the card mapping, simply download it.
@@ -630,7 +619,7 @@ The card backs use a lot of ink to increase the opacity of the card.
 
 Not all suits have the same amount of ranks. I decided to cut on some cards and make an overall uneven distribution because it's rare to find games that use high ranks (+10) and many suits (+8) at the same time. There are very few of those games because the amount of cards would grow to more than 150 and it feels too many cards to handle for the player. Moreover, games with many cards usually have several kinds of cards with low ranks, so you need more suits without mattering much the amount of ranks.
 
-All the numbers on the card corners match (on the units) except for the 10...14 ranks of half of the [Basic suits](#basic-suit). It used to match always on [previous versions](#version-2), but using 10...14 is more convinient than letters (XJQKA).
+All the numbers on the card corners match (on the units), if the rank is not a letter (XJQKA).
 
 ### Credits
 
@@ -767,36 +756,19 @@ These are a simplified version of the cards, useful for understanding what other
 
 This are the values of each feature on all cards.
 
-{% cardDistributionTable /%}
+{% cardDistributionTableV2 /%}
 
 ### Versions
 
 During development the releases are discussed on [this BGG thread](https://boardgamegeek.com/thread/3128477/diy-multideck-deck-cards-play-many-games).
 
-#### Version 3 (latest)
-
-Released in March 2025.
-
-This manual is about this version of the deck.
-
-This is the latest version of the DIY Multideck.
-
-##### Changes from previous version
-
-- Change _letter suits_ (XJQKA) to numbers (10, 11, 12, 13, and 14).
-- Swap 🤍 with 🔲. So 🤍 goes with 💭 and ⭐️, and 🔲 goes with 🕷️ and ☘️.
-- Change font in cover to Manrope.
-- Added 3 more extra cards (now there are 165 cards).
-  - Extra cards contain: Help / Cover + 4x Notes / Back
-  - Added a new help card design.
-  - Updated the notes card, now it has room for a custom suit drawing. And its back is the same as the other playing cards.
-- Card now are 66x88mm instead of 2.5x3.5in.
+Check out the latest version's [manual](/manual).
 
 #### Version 2
 
 Released in October 2024.
 
-**Read the [v2 manual here](/manual-v2).**
+This manual is about this version of the deck.
 
 This release focused on simplifying the cards and refining the visual design.
 
