@@ -1,0 +1,791 @@
+{
+  "post": {
+    "date": "2026-02-04T00:00:00.000Z",
+    "ogImagePath": "https://cf.geekdo-images.com/ETarjA8Rq3qyiS-dQr8Sew__itemrep@2x/img/CE7fFGR4d98KCMuP0KI8okp2Nxk=/fit-in/492x600/filters:strip_icc()/pic339123.jpg",
+    "keywords": [
+      "Mü and More",
+      "Mu",
+      "The Last Panther",
+      "Wimmüln",
+      "Rummü",
+      "Safarü",
+      "Calcory"
+    ]
+  },
+  "game": {
+    "bgg": "https://boardgamegeek.com/boardgame/152/mu-and-more",
+    "rules": [
+      {
+        "url": "https://games-for-you.oozmi-cdn.com/products/6475bf25-e26d-4338-9b08-1b575bad1247/pdfs/mu-more-rules-pravila-na-engleskom.pdf",
+        "name": "PDF"
+      },
+      {
+        "url": "https://youtu.be/lWoUt-8zav8",
+        "name": "Video"
+      },
+      {
+        "url": "https://www.heidelbaer.de/Mue_Regel-EN-Pur-plus-Overview.pdf",
+        "name": "Classic"
+      }
+    ],
+    "image": "https://cf.geekdo-images.com/bt7MoX2dNzh3nR4GQ2JyJw__itemrep@2x/img/1V18HpYOyDdEaeAyNmveae5baoo=/fit-in/492x600/filters:strip_icc()/pic8446480.jpg",
+    "title": "Mü & more: Revised Edition",
+    "description": "Will you help the Crown claim tricks, or join the Shield to prevent this?",
+    "rating": 7.6,
+    "players": "2-6",
+    "complexity": 2.0,
+    "time": "20-60",
+    "mechanics": ["Bids As Wagers", "Team-Based Game", "Trick-taking"],
+    "recommended": false
+  },
+  "mapping": {
+    "requiredCardsCount": 60,
+    "requiredDrawingsCount": 45,
+    "deckVersion": "v2",
+    "compatibility": 3,
+    "createdBy": "Maurici Abad"
+  },
+  "variants": [
+    {
+      "name": "Mü & more: Revised Edition",
+      "slug": "mu-and-more-revised-edition",
+      "layout": "basic",
+      "notes": "1=2 (1s in original game)\\\n 8=9 (7s in original game)\n\nScoring: [Online tool](https://mue-form.pages.dev/MUE_start) - [Print sheet](https://www.heidelbaer.de/score-sheet_letter_ENG_v6.pdf)\n\n[Official website](https://www.heidelbaer.de/en/more-of-mu)",
+      "groups": {
+        "red-cards": { "name": "Red Suit", "color": "red" },
+        "blue-cards": { "name": "Blue Suit", "color": "blue" },
+        "yellow-cards": { "name": "Yellow Suit", "color": "yellow" },
+        "green-cards": { "name": "Green Suit", "color": "green" },
+        "purple-cards": { "name": "Purple Suit", "color": "purple" }
+      },
+      "templateCells": {
+        "red": {
+          "name": "Red Card",
+          "icon": {
+            "src": "game-icons:plain-circle",
+            "fill": "red",
+            "transform": { "scale": 0.8 }
+          },
+          "groups": ["red-cards"]
+        },
+        "blue": {
+          "name": "Blue Card",
+          "icon": {
+            "src": "game-icons:plain-circle",
+            "fill": "blue",
+            "transform": { "scale": 0.8 }
+          },
+          "groups": ["blue-cards"]
+        },
+        "yellow": {
+          "name": "Yellow Card",
+          "icon": {
+            "src": "game-icons:plain-circle",
+            "fill": "yellow",
+            "transform": { "scale": 0.8 }
+          },
+          "groups": ["yellow-cards"]
+        },
+        "green": {
+          "name": "Green Card",
+          "icon": {
+            "src": "game-icons:plain-circle",
+            "fill": "green",
+            "transform": { "scale": 0.8 }
+          },
+          "groups": ["green-cards"]
+        },
+        "purple": {
+          "name": "Purple Card",
+          "icon": {
+            "src": "game-icons:plain-circle",
+            "fill": "purple",
+            "transform": { "scale": 0.8 }
+          },
+          "groups": ["purple-cards"]
+        }
+      },
+      "cells": [
+        {
+          "cardId": 0,
+          "templateCellId": "red",
+          "name": "Red 0",
+          "text": { "content": "0" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 1,
+          "templateCellId": "red",
+          "name": "Red 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 2,
+          "templateCellId": "red",
+          "name": "Red 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 3,
+          "templateCellId": "red",
+          "name": "Red 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 4,
+          "templateCellId": "red",
+          "name": "Red 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 5,
+          "templateCellId": "red",
+          "name": "Red 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 6,
+          "templateCellId": "red",
+          "name": "Red 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 7,
+          "templateCellId": "red",
+          "name": "Red 6",
+          "text": { "content": "6" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 8,
+          "templateCellId": "red",
+          "name": "Red 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 9,
+          "templateCellId": "red",
+          "name": "Red 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 120,
+          "templateCellId": "red",
+          "name": "Red 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 121,
+          "templateCellId": "red",
+          "name": "Red 9",
+          "text": { "content": "9" }
+        },
+
+        {
+          "cardId": 10,
+          "templateCellId": "blue",
+          "name": "Blue 0",
+          "text": { "content": "0" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 11,
+          "templateCellId": "blue",
+          "name": "Blue 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 12,
+          "templateCellId": "blue",
+          "name": "Blue 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 13,
+          "templateCellId": "blue",
+          "name": "Blue 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 14,
+          "templateCellId": "blue",
+          "name": "Blue 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 15,
+          "templateCellId": "blue",
+          "name": "Blue 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 16,
+          "templateCellId": "blue",
+          "name": "Blue 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 17,
+          "templateCellId": "blue",
+          "name": "Blue 6",
+          "text": { "content": "6" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 18,
+          "templateCellId": "blue",
+          "name": "Blue 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 19,
+          "templateCellId": "blue",
+          "name": "Blue 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 130,
+          "templateCellId": "blue",
+          "name": "Blue 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 131,
+          "templateCellId": "blue",
+          "name": "Blue 9",
+          "text": { "content": "9" }
+        },
+
+        {
+          "cardId": 20,
+          "templateCellId": "yellow",
+          "name": "Yellow 0",
+          "text": { "content": "0" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 21,
+          "templateCellId": "yellow",
+          "name": "Yellow 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 22,
+          "templateCellId": "yellow",
+          "name": "Yellow 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 23,
+          "templateCellId": "yellow",
+          "name": "Yellow 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 24,
+          "templateCellId": "yellow",
+          "name": "Yellow 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 25,
+          "templateCellId": "yellow",
+          "name": "Yellow 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 26,
+          "templateCellId": "yellow",
+          "name": "Yellow 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 27,
+          "templateCellId": "yellow",
+          "name": "Yellow 6",
+          "text": { "content": "6" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 28,
+          "templateCellId": "yellow",
+          "name": "Yellow 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 29,
+          "templateCellId": "yellow",
+          "name": "Yellow 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 140,
+          "templateCellId": "yellow",
+          "name": "Yellow 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 141,
+          "templateCellId": "yellow",
+          "name": "Yellow 9",
+          "text": { "content": "9" }
+        },
+
+        {
+          "cardId": 30,
+          "templateCellId": "green",
+          "name": "Green 0",
+          "text": { "content": "0" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 31,
+          "templateCellId": "green",
+          "name": "Green 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 32,
+          "templateCellId": "green",
+          "name": "Green 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 33,
+          "templateCellId": "green",
+          "name": "Green 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 34,
+          "templateCellId": "green",
+          "name": "Green 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 35,
+          "templateCellId": "green",
+          "name": "Green 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 36,
+          "templateCellId": "green",
+          "name": "Green 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 37,
+          "templateCellId": "green",
+          "name": "Green 6",
+          "text": { "content": "6" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 38,
+          "templateCellId": "green",
+          "name": "Green 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 39,
+          "templateCellId": "green",
+          "name": "Green 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 150,
+          "templateCellId": "green",
+          "name": "Green 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 151,
+          "templateCellId": "green",
+          "name": "Green 9",
+          "text": { "content": "9" }
+        },
+
+        {
+          "cardId": 50,
+          "templateCellId": "purple",
+          "name": "Purple 0",
+          "text": { "content": "0" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 51,
+          "templateCellId": "purple",
+          "name": "Purple 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 52,
+          "templateCellId": "purple",
+          "name": "Purple 1",
+          "text": { "content": "1" }
+        },
+        {
+          "cardId": 53,
+          "templateCellId": "purple",
+          "name": "Purple 2",
+          "text": { "content": "2" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 54,
+          "templateCellId": "purple",
+          "name": "Purple 3",
+          "text": { "content": "3" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 55,
+          "templateCellId": "purple",
+          "name": "Purple 4",
+          "text": { "content": "4" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 56,
+          "templateCellId": "purple",
+          "name": "Purple 5",
+          "text": { "content": "5" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 57,
+          "templateCellId": "purple",
+          "name": "Purple 6",
+          "text": { "content": "6" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 58,
+          "templateCellId": "purple",
+          "name": "Purple 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 59,
+          "templateCellId": "purple",
+          "name": "Purple 7",
+          "text": { "content": "7" },
+          "drawings": [
+            {
+              "name": "2 Points",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★★"
+            }
+          ]
+        },
+        {
+          "cardId": 135,
+          "templateCellId": "purple",
+          "name": "Purple 8",
+          "text": { "content": "8" },
+          "drawings": [
+            {
+              "name": "1 Point",
+              "area": { "letter": "C", "number": 2 },
+              "notes": "★"
+            }
+          ]
+        },
+        {
+          "cardId": 136,
+          "templateCellId": "purple",
+          "name": "Purple 9",
+          "text": { "content": "9" }
+        }
+      ]
+    }
+  ]
+}
