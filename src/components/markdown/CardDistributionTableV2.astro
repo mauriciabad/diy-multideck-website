@@ -1,0 +1,261 @@
+---
+import Suit from './Suit.astro'
+import { isSuitShape, isSuitColor, isSuitEmoji } from './suits'
+import GenericTable from '../GenericTable.astro'
+import { cn } from '../../lib/cn'
+import ShapeSuit from './ShapeSuit.astro'
+import ColorSuit from './ColorSuit.astro'
+import { insertBetween } from '../../lib/arrays'
+
+// prettier-ignore
+const rows = [
+  ['🔥', '0', '❤️', '0', 'heart', 'textured-red', '00'],
+  ['🔥', '1', '❤️', '1', 'heart', 'textured-red', '01'],
+  ['🔥', '2', '❤️', '2', 'heart', 'textured-red', '02'],
+  ['🔥', '3', '❤️', '3', 'heart', 'textured-red', '03'],
+  ['🔥', '4', '❤️', '4', 'heart', 'textured-red', '04'],
+  ['🔥', '5', '❤️', '5', 'heart', 'textured-red', '05'],
+  ['🔥', '6', '❤️', '6', 'heart', 'textured-red', '06'],
+  ['🔥', '7', '❤️', '7', 'heart', 'textured-red', '07'],
+  ['🔥', '8', '❤️', '8', 'heart', 'textured-red', '08'],
+  ['🔥', '9', '❤️', '9', 'heart', 'textured-red', '09'],
+  ['💧', '0', '💙', '0', 'heart', 'textured-blue', '10'],
+  ['💧', '1', '💙', '1', 'heart', 'textured-blue', '11'],
+  ['💧', '2', '💙', '2', 'heart', 'textured-blue', '12'],
+  ['💧', '3', '💙', '3', 'heart', 'textured-blue', '13'],
+  ['💧', '4', '💙', '4', 'heart', 'textured-blue', '14'],
+  ['💧', '5', '💙', '5', 'heart', 'textured-blue', '15'],
+  ['💧', '6', '💙', '6', 'heart', 'textured-blue', '16'],
+  ['💧', '7', '💙', '7', 'heart', 'textured-blue', '17'],
+  ['💧', '8', '💙', '8', 'heart', 'textured-blue', '18'],
+  ['💧', '9', '💙', '9', 'heart', 'textured-blue', '19'],
+  ['⭐', '0', '💛', '0', 'heart', 'textured-yellow', '20'],
+  ['⭐', '1', '💛', '1', 'heart', 'textured-yellow', '21'],
+  ['⭐', '2', '💛', '2', 'heart', 'textured-yellow', '22'],
+  ['⭐', '3', '💛', '3', 'heart', 'textured-yellow', '23'],
+  ['⭐', '4', '💛', '4', 'heart', 'textured-yellow', '24'],
+  ['⭐', '5', '💛', '5', 'heart', 'textured-yellow', '25'],
+  ['⭐', '6', '💛', '6', 'heart', 'textured-yellow', '26'],
+  ['⭐', '7', '💛', '7', 'heart', 'textured-yellow', '27'],
+  ['⭐', '8', '💛', '8', 'heart', 'textured-yellow', '28'],
+  ['⭐', '9', '💛', '9', 'heart', 'textured-yellow', '29'],
+  ['☘️', '0', '💚', '0', 'heart', 'textured-green', '30'],
+  ['☘️', '1', '💚', '1', 'heart', 'textured-green', '31'],
+  ['☘️', '2', '💚', '2', 'heart', 'textured-green', '32'],
+  ['☘️', '3', '💚', '3', 'heart', 'textured-green', '33'],
+  ['☘️', '4', '💚', '4', 'heart', 'textured-green', '34'],
+  ['☘️', '5', '💚', '5', 'heart', 'textured-green', '35'],
+  ['☘️', '6', '💚', '6', 'heart', 'textured-green', '36'],
+  ['☘️', '7', '💚', '7', 'heart', 'textured-green', '37'],
+  ['☘️', '8', '💚', '8', 'heart', 'textured-green', '38'],
+  ['☘️', '9', '💚', '9', 'heart', 'textured-green', '39'],
+  ['🍊', '0', '🔴', '0', 'circle', 'textured-red', '40'],
+  ['🍊', '1', '🔴', '1', 'circle', 'textured-red', '41'],
+  ['🍊', '2', '🔴', '2', 'circle', 'textured-red', '42'],
+  ['🍊', '3', '🔴', '3', 'circle', 'textured-red', '43'],
+  ['🍊', '4', '🔴', '4', 'circle', 'textured-red', '44'],
+  ['🍊', '5', '🔴', '5', 'circle', 'textured-red', '45'],
+  ['🍊', '6', '🔴', '6', 'circle', 'textured-red', '46'],
+  ['🍊', '7', '🔴', '7', 'circle', 'textured-red', '47'],
+  ['🍊', '8', '🔴', '8', 'circle', 'textured-red', '48'],
+  ['🍊', '9', '🔴', '9', 'circle', 'textured-red', '49'],
+  ['🍆', '0', '🔵', '0', 'circle', 'textured-blue', '50'],
+  ['🍆', '1', '🔵', '1', 'circle', 'textured-blue', '51'],
+  ['🍆', '2', '🔵', '2', 'circle', 'textured-blue', '52'],
+  ['🍆', '3', '🔵', '3', 'circle', 'textured-blue', '53'],
+  ['🍆', '4', '🔵', '4', 'circle', 'textured-blue', '54'],
+  ['🍆', '5', '🔵', '5', 'circle', 'textured-blue', '55'],
+  ['🍆', '6', '🔵', '6', 'circle', 'textured-blue', '56'],
+  ['🍆', '7', '🔵', '7', 'circle', 'textured-blue', '57'],
+  ['🍆', '8', '🔵', '8', 'circle', 'textured-blue', '58'],
+  ['🍆', '9', '🔵', '9', 'circle', 'textured-blue', '59'],
+  ['💭', '0', '🟡', '0', 'circle', 'textured-yellow', '60'],
+  ['💭', '1', '🟡', '1', 'circle', 'textured-yellow', '61'],
+  ['💭', '2', '🟡', '2', 'circle', 'textured-yellow', '62'],
+  ['💭', '3', '🟡', '3', 'circle', 'textured-yellow', '63'],
+  ['💭', '4', '🟡', '4', 'circle', 'textured-yellow', '64'],
+  ['💭', '5', '🟡', '5', 'circle', 'textured-yellow', '65'],
+  ['💭', '6', '🟡', '6', 'circle', 'textured-yellow', '66'],
+  ['💭', '7', '🟡', '7', 'circle', 'textured-yellow', '67'],
+  ['💭', '8', '🟡', '8', 'circle', 'textured-yellow', '68'],
+  ['💭', '9', '🟡', '9', 'circle', 'textured-yellow', '69'],
+  ['🕷️', '0', '🟢', '0', 'circle', 'textured-green', '70'],
+  ['🕷️', '1', '🟢', '1', 'circle', 'textured-green', '71'],
+  ['🕷️', '2', '🟢', '2', 'circle', 'textured-green', '72'],
+  ['🕷️', '3', '🟢', '3', 'circle', 'textured-green', '73'],
+  ['🕷️', '4', '🟢', '4', 'circle', 'textured-green', '74'],
+  ['🕷️', '5', '🟢', '5', 'circle', 'textured-green', '75'],
+  ['🕷️', '6', '🟢', '6', 'circle', 'textured-green', '76'],
+  ['🕷️', '7', '🟢', '7', 'circle', 'textured-green', '77'],
+  ['🕷️', '8', '🟢', '8', 'circle', 'textured-green', '78'],
+  ['🕷️', '9', '🟢', '9', 'circle', 'textured-green', '79'],
+  ['🌸', '0', '🟥', '0', 'square', 'textured-red', '80'],
+  ['🌸', '1', '🟥', '1', 'square', 'textured-red', '81'],
+  ['🌸', '2', '🟥', '2', 'square', 'textured-red', '82'],
+  ['🌸', '3', '🟥', '3', 'square', 'textured-red', '83'],
+  ['🌸', '4', '🟥', '4', 'square', 'textured-red', '84'],
+  ['🌸', '5', '🟥', '5', 'square', 'textured-red', '85'],
+  ['🌸', '6', '🟥', '6', 'square', 'textured-red', '86'],
+  ['🌸', '7', '🟥', '7', 'square', 'textured-red', '87'],
+  ['🌸', '8', '🟥', '8', 'square', 'textured-red', '88'],
+  ['🌸', '9', '🟥', '9', 'square', 'textured-red', '89'],
+  ['💎', '0', '🟦', '0', 'square', 'textured-blue', '90'],
+  ['💎', '1', '🟦', '1', 'square', 'textured-blue', '91'],
+  ['💎', '2', '🟦', '2', 'square', 'textured-blue', '92'],
+  ['💎', '3', '🟦', '3', 'square', 'textured-blue', '93'],
+  ['💎', '4', '🟦', '4', 'square', 'textured-blue', '94'],
+  ['💎', '5', '🟦', '5', 'square', 'textured-blue', '95'],
+  ['💎', '6', '🟦', '6', 'square', 'textured-blue', '96'],
+  ['💎', '7', '🟦', '7', 'square', 'textured-blue', '97'],
+  ['💎', '8', '🟦', '8', 'square', 'textured-blue', '98'],
+  ['💎', '9', '🟦', '9', 'square', 'textured-blue', '99'],
+  ['💩', '0', '🟨', '0', 'square', 'textured-yellow', '100'],
+  ['💩', '1', '🟨', '1', 'square', 'textured-yellow', '101'],
+  ['💩', '2', '🟨', '2', 'square', 'textured-yellow', '102'],
+  ['💩', '3', '🟨', '3', 'square', 'textured-yellow', '103'],
+  ['💩', '4', '🟨', '4', 'square', 'textured-yellow', '104'],
+  ['💩', '5', '🟨', '5', 'square', 'textured-yellow', '105'],
+  ['💩', '6', '🟨', '6', 'square', 'textured-yellow', '106'],
+  ['💩', '7', '🟨', '7', 'square', 'textured-yellow', '107'],
+  ['💩', '8', '🟨', '8', 'square', 'textured-yellow', '108'],
+  ['💩', '9', '🟨', '9', 'square', 'textured-yellow', '109'],
+  ['🌈', '0', '🟩', '0', 'square', 'textured-green', '110'],
+  ['🌈', '1', '🟩', '1', 'square', 'textured-green', '111'],
+  ['🌈', '2', '🟩', '2', 'square', 'textured-green', '112'],
+  ['🌈', '3', '🟩', '3', 'square', 'textured-green', '113'],
+  ['🌈', '4', '🟩', '4', 'square', 'textured-green', '114'],
+  ['🌈', '5', '🟩', '5', 'square', 'textured-green', '115'],
+  ['🌈', '6', '🟩', '6', 'square', 'textured-green', '116'],
+  ['🌈', '7', '🟩', '7', 'square', 'textured-green', '117'],
+  ['🌈', '8', '🟩', '8', 'square', 'textured-green', '118'],
+  ['🌈', '9', '🟩', '9', 'square', 'textured-green', '119'],
+  ['🔥', 'X', '🖤', '0', 'heart', 'textured-black', '120'],
+  ['🔥', 'J', '🖤', '1', 'heart', 'textured-black', '121'],
+  ['🔥', 'Q', '🖤', '2', 'heart', 'textured-black', '122'],
+  ['🔥', 'K', '🖤', '3', 'heart', 'textured-black', '123'],
+  ['🔥', 'A', '🖤', '4', 'heart', 'textured-black', '124'],
+  ['🍊', 'X', '🖤', '5', 'heart', 'textured-black', '125'],
+  ['🍊', 'J', '🖤', '6', 'heart', 'textured-black', '126'],
+  ['🍊', 'Q', '🖤', '7', 'heart', 'textured-black', '127'],
+  ['🍊', 'K', '🖤', '8', 'heart', 'textured-black', '128'],
+  ['🍊', 'A', '🖤', '9', 'heart', 'textured-black', '129'],
+  ['💧', 'X', '⚫️', '0', 'circle', 'textured-black', '130'],
+  ['💧', 'J', '⚫️', '1', 'circle', 'textured-black', '131'],
+  ['💧', 'Q', '⚫️', '2', 'circle', 'textured-black', '132'],
+  ['💧', 'K', '⚫️', '3', 'circle', 'textured-black', '133'],
+  ['💧', 'A', '⚫️', '4', 'circle', 'textured-black', '134'],
+  ['🍆', 'X', '⚫️', '5', 'circle', 'textured-black', '135'],
+  ['🍆', 'J', '⚫️', '6', 'circle', 'textured-black', '136'],
+  ['🍆', 'Q', '⚫️', '7', 'circle', 'textured-black', '137'],
+  ['🍆', 'K', '⚫️', '8', 'circle', 'textured-black', '138'],
+  ['🍆', 'A', '⚫️', '9', 'circle', 'textured-black', '139'],
+  ['⭐', 'X', '🔲', '0', 'circle/square', 'textured-white/textured-black', '140'],
+  ['⭐', 'J', '🔲', '1', 'circle/square', 'textured-white/textured-black', '141'],
+  ['⭐', 'Q', '🔲', '2', 'circle/square', 'textured-white/textured-black', '142'],
+  ['⭐', 'K', '🔲', '3', 'circle/square', 'textured-white/textured-black', '143'],
+  ['⭐', 'A', '🔲', '4', 'circle/square', 'textured-white/textured-black', '144'],
+  ['💭', 'X', '🔲', '5', 'circle/square', 'textured-white/textured-black', '145'],
+  ['💭', 'J', '🔲', '6', 'circle/square', 'textured-white/textured-black', '146'],
+  ['💭', 'Q', '🔲', '7', 'circle/square', 'textured-white/textured-black', '147'],
+  ['💭', 'K', '🔲', '8', 'circle/square', 'textured-white/textured-black', '148'],
+  ['💭', 'A', '🔲', '9', 'circle/square', 'textured-white/textured-black', '149'],
+  ['☘️', 'X', '🤍', '0', 'heart', 'textured-white', '150'],
+  ['☘️', 'J', '🤍', '1', 'heart', 'textured-white', '151'],
+  ['☘️', 'Q', '🤍', '2', 'heart', 'textured-white', '152'],
+  ['☘️', 'K', '🤍', '3', 'heart', 'textured-white', '153'],
+  ['☘️', 'A', '🤍', '4', 'heart', 'textured-white', '154'],
+  ['🕷️', 'X', '🤍', '5', 'heart', 'textured-white', '155'],
+  ['🕷️', 'J', '🤍', '6', 'heart', 'textured-white', '156'],
+  ['🕷️', 'Q', '🤍', '7', 'heart', 'textured-white', '157'],
+  ['🕷️', 'K', '🤍', '8', 'heart', 'textured-white', '158'],
+  ['🕷️', 'A', '🤍', '9', 'heart', 'textured-white', '159'],
+  ['-', '-', '-', '-', '-', '-', 'notes'],
+  ['-', '-', '-', '-', '-', '-', 'cover'],
+] as const satisfies string[][]
+---
+
+<GenericTable>
+  <Fragment slot="thead">
+    <tr class="[&_th]:font-semibold">
+      <th colspan="2">Ba<wbr />sic</th>
+      <th colspan="4" class="border-l">3D</th>
+      <th colspan="1" class="border-l">Num<wbr />ber</th>
+    </tr>
+    <tr>
+      <th>Suit</th>
+      <th>Rank</th>
+      <th class="border-l">Suit</th>
+      <th>Rank</th>
+      <th>Shape</th>
+      <th>Color</th>
+      <th class="border-l">Num<wbr />ber</th>
+    </tr>
+  </Fragment>
+
+  <Fragment slot="tbody">
+    {
+      rows.map((row, rowN) => (
+        <tr
+          class={cn({
+            'bg-black/5 dark:bg-white/5': rowN % 2 === 0,
+          })}
+        >
+          <td>{isSuitEmoji(row[0]) ? <Suit emoji={row[0]} /> : row[0]}</td>
+
+          <td>{row[1]}</td>
+
+          <td class="border-l">
+            {isSuitEmoji(row[2]) ? <Suit emoji={row[2]} /> : row[2]}
+          </td>
+
+          <td>{row[3]}</td>
+
+          <td>
+            {row[4].includes('/') ? (
+              insertBetween(
+                row[4]
+                  .split('/')
+                  .map((suit) =>
+                    isSuitShape(suit) ? <ShapeSuit id={suit} /> : suit
+                  ),
+                '/'
+              )
+            ) : isSuitShape(row[4]) ? (
+              <ShapeSuit id={row[4]} />
+            ) : (
+              row[4]
+            )}
+          </td>
+
+          <td>
+            {row[5].includes('/') ? (
+              insertBetween(
+                row[5]
+                  .split('/')
+                  .map((suit) =>
+                    isSuitColor(suit) ? <ColorSuit color={suit} /> : suit
+                  ),
+                '/'
+              )
+            ) : isSuitColor(row[5]) ? (
+              <ColorSuit color={row[5]} />
+            ) : (
+              row[5]
+            )}
+          </td>
+
+          <td class="border-l">
+            {isFinite(parseInt(row[6], 10)) ? (
+              <span class="flex justify-center">
+                <span>{row[6].slice(0, -1)}</span>
+                <span class="font-semibold">{row[6].at(-1)}</span>
+              </span>
+            ) : (
+              row[6]
+            )}
+          </td>
+        </tr>
+      ))
+    }
+  </Fragment>
+</GenericTable>

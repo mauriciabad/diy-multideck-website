@@ -1,0 +1,852 @@
+---
+post:
+  date: 2024-12-22
+  ogImagePath: '/images/ogimage.png'
+  title: 'Manual v2'
+---
+
+## Introduction
+
+The DIY multideck is a deck of 162 playing cards (3 standard decks) that allows you to play hundreds of existing games, not only classic card games but also modern games that use components like boards or coins. The DIY multideck is **ideal for traveling**, **prototyping new games**, and **trying games before buying**. The cards are waterproof and very resistant, ready to join you on your next trip!
+
+This is how it works: when you play a game, you pick a subset of cards and focus on a specific corner. Sometimes, you may draw on the cards to play games that use words, icons, or boards. On the [official website](/), you'll find instructions to play many games. Here are some example games for every game system supported:
+
+- Basic suit: [Schotten Totten](/games/schotten-totten), [The Crew](/games/the-crew-1), [Cockroach Poker](/games/cockroach-poker-royal), [L.L.A.M.A.](/games/llama), [Claim](/games/claim)...
+- 3D suit: [UNO](/games/uno), [Spicy](/games/spicy), [Raj](/games/what-the-heck), [TEN](/games/ten)...
+- Number suit: [The Mind](/games/the-mind), [6 Nimmt!](/games/6-nimmt), [No Thanks!](/games/no-thanks)...
+- Drawing deck: [Secret Hitler](/games/secret-hitler), [Hanamikoji](/games/hanamikoji), [Virus!](/games/virus)...
+
+![Preview of some cards of The DIY Multideck](/images/home/spread-cards.png)
+
+{% buyBanner size="small" class="-mb-4 xs:-mt-8 sm:-mt-10 -mt-4" /%}
+
+### Feature summary
+
+{% featureSummary %}
+
+- **Game systems**:
+  - [**Basic suit**](#basic-suit): 8 suits of 15 ranks + 4 suits of 10 ranks
+    - [12 suits of 10 ranks](#12-suits-of-10-ranks).
+      - Plus 5 letter ranks in 8 of the suits.
+    - [8 suits of 15 ranks](#8-suits-of-15-ranks).
+      - Plus 4 suits of 10 ranks.
+    - [10-level pyramidal deck with the same ranks](#10-level-pyramidal-deck-with-the-same-ranks).
+    - [12-level pyramidal deck with different ranks](#12-level-pyramidal-deck-with-different-ranks).
+  - [**3D suit**](#3d-suit): Almost 6 colors × 3 shapes × 10 ranks.
+    - [5 suits of 3 times 10 ranks](#5-colors--3-shapes--10-ranks), or 5 suits of 30 ranks.
+      - Plus 1 extra suit of 10 ranks.
+    - [6 suits of 2 times 10 ranks](#6-colors--2-shapes--10-ranks), or 6 suits of 20 ranks.
+      - Plus 1 more time, 4 of the suits.
+  - [**Number suit**](#number-suit): numbers from 0 to 159
+    - [Numbers from 0 to 159](#numbers-from-0-to-159).
+    - [Numbers from 0 to 59, 2 times](#numbers-from-0-to-59-2-times).
+      - Plus 1 time numbers from 60 to 99.
+    - [Numbers from -59 to 100](#numbers-from--59-to-100).
+    - [15 ordered suits of 10 ranks](#15-ordered-suits-of-10-ranks-or-vice-versa).
+  - **Custom deck**: by [drawing](#drawing).
+- [**Counters**](#counters) using the cards' back face.
+- [**Draw in the cards**](#drawing) to add words, numbers, icons, tiles, boards, or any other info.
+- [**Extra cards**](#extra-cards): 2 additional cards (4 faces).
+  - [3 notes](#notes-cards): To note down game boards, hints, or rules.
+  - [1 cover](#cover-card): With a QR code pointing to the website.
+- **Usability**:
+  - Color-blind friendly.
+  - All suits are emojis: {% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}
+  - Standard poker card size (2.5 × 3.5 inches).
+  - Waterproof & resistant material.
+  - Many small design details that make the cards easier to use.
+{% /featureSummary %}
+
+### Card Anatomy
+
+The normal cards have the following features:
+
+1. [Basic Suit](#basic-suit)
+2. [3D Suit](#3d-suit)
+3. [Number Suit](#number-suit)
+4. [Drawing Areas](#drawing)
+5. [Counter](#counters) (on the back face)
+
+The following diagram shows where each feature is located with a graphic explanation:
+
+{% imgLightDark light="/images/home/guides/card-anatomy-light.svg" dark="/images/home/guides/card-anatomy-dark.svg" alt="Card anatomy" /%}
+
+Besides the normal cards, there are 2 [extra cards](#extra-cards) with different designs.
+
+These are some example cards: one of each basic suit, the 2 extra cards, and 1 card back.
+
+![example-cards](/images/home/card-preview-all-suits-and-extras.png)
+
+## Basic Suit
+
+{% imgLightDark light="/images/home/guides/basic-suit-light.svg" dark="/images/home/guides/basic-suit-dark.svg" width="23.5rem" alt="Basic suit guide" /%}
+
+On the top-left and bottom-right corner, you can find a number (rank) overlapping an emoji (suit); it is the "Basic suit".
+
+It is the most used game system of the deck, and thus, the easiest to use. When mapping new games, always give priority to it.
+
+It contains 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...9 + XJQKA), named _15-ranked suits_, and 4 suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) of 10 ranks (0...9), named _10-ranked suits_. They can be combined into several distributions.
+
+### Suits
+
+The suits can be classified into 2 categories by the number of ranks they contain. So there are the "15-ranked suits" ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}), and "10-ranked suits" ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}).
+
+{% suitsTable /%}
+
+Each suit has an assigned number from 0 to 11, called "_Suit ID_", it can be found on the _black part_ of the [Number suit](#number-suit).
+
+Notice that the _15-ranked suits_ ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}), and _10-ranked suits_ ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) can be differentiated by the suit ID. The first 8 suits (IDs 0 to 7) are _15-ranked_, and the remaining 4 suits (IDs 8 to 11) are _10-ranked_.
+
+{% callout type="idea" %}
+All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players. Example: [Skull King](/games/skull-king).
+{% /callout %}
+
+### Ranks
+
+- 0...9: _Numeric ranks_ (0123456789).
+  - 0 can be used as a Joker or wildcards.
+  - 0 can be used as 10 in some games.
+  - 1 can be used as an Ace.
+- XJQKA: _Letter ranks_.
+  - They are: 10, Jack, Queen, King, Ace.
+  - Can be used as 10, 11, 12, 13, 14.
+
+The other corners' numbers always end with this suit's number. Except when the rank is XJQKA, then the corners end with 01234 or 56789, respectively. For example, when the rank is A, the other corners end in 4 or 9.
+
+When the rank is a letter (XJQKA), the [3D suit](#3d-suit) is {% colorSuit color="textured-black" /%} black or {% colorSuit color="textured-white" /%} white.
+
+### Distributions
+
+#### 12 suits of 10 ranks
+
+{% imgLightDark light="/images/home/distributions/12-suits-x-10-ranks-light.svg" dark="/images/home/distributions/12-suits-x-10-ranks-dark.svg" width=360 alt="12 suits of 10 ranks distribution diagram" /%}
+
+One combination is 12 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) of 10 ranks (0...9).
+
+There will be some unused cards, that may be optionally used to add extra ranks to some suits. The remaining cards are: the 5 _letter ranks_ (XJQKA) of the 15-ranked suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}).
+
+To get it, pick all the cards, and remove the _letter ranks_ (XJQKA).
+
+Switch the suits for the ranks to have 10 suits (0...9) of 12 ranks ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}). Only use this if you need 9 or 10 suits of 11 or 12 ranks.
+
+#### 8 suits of 15 ranks
+
+{% imgLightDark light="/images/home/distributions/8-suits-x-15-ranks-light.svg" dark="/images/home/distributions/8-suits-x-15-ranks-dark.svg" width=360 alt="8 suits of 15 ranks distribution diagram" /%}
+
+Another combination is 8 suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}) of 15 ranks (0...9 + XJQKA).
+
+There will be some unused cards, that may be optionally used to add extra suits. The remaining cards are: all the ranks (0...9) of the 10-ranked suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}).
+
+To get it, pick all the cards, and remove the 10-ranked suits ({% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}).
+
+Switch the suits for the ranks to have 15 suits (0...9 + XJQKA) of 8 ranks ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}). Only use this if you need 13 to 15 suits of 8 or fewer ranks.
+
+#### 10-Level Pyramidal Deck with the Same Ranks
+
+{% imgLightDark light="/images/home/distributions/pyramidal-same-ranks-light.svg" dark="/images/home/distributions/pyramidal-same-ranks-dark.svg" width=360 alt="10-level pyramidal deck with the same ranks distribution diagram" /%}
+
+You can also create a pyramidal deck of 10 levels, where each suit has the same rank. To do this, pick one 1, two 2s, three 3s... Up to ten 0s (0 would count as 10), regardless of the suit you choose.
+
+<!-- TODO: Add Chosŏn to the game list -->
+<!-- An example game that uses it is [Chosŏn](/games/chosn). -->
+
+#### 12-Level Pyramidal Deck with Different Ranks
+
+{% imgLightDark light="/images/home/distributions/pyramidal-different-ranks-light.svg" dark="/images/home/distributions/pyramidal-different-ranks-dark.svg" width=360 alt="12-level pyramidal deck with different ranks distribution diagram" /%}
+
+You can also create a pyramidal deck of 12 levels, where each suit has different ranks. To do this, for every suit, pick a different number of cards: 1, 2, 3, ..., 10, 11, 12. Make sure that the suits that are repeated 12 and 11 times are the 15-ranked suits ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}). Each level uses a different suit, and there's no rank indicating how many cards that level has.
+
+An example game that uses it is [Startups](/games/startups).
+
+### Game-mapping sheet
+
+Learn more in the [Mapping new games](#mapping-new-games) section.
+
+{% imgLightDark light="/images/home/layouts/table-basic-light.svg" dark="/images/home/layouts/table-basic-dark.svg" width="33.3rem" alt="table basic" /%}
+
+See the relationship between other suits in [Mini versions by layout](#basic-layout) and [Cards spreadsheet](#cards-spreadsheet).
+
+## 3D Suit
+
+{% imgLightDark light="/images/home/guides/3d-suit-light.svg" dark="/images/home/guides/3d-suit-dark.svg" width="23.5rem" alt="3D suit guide" /%}
+
+On the top-right or bottom-left corner, you can find a number overlapping simple shape with a textured background; it is the "3D suit".
+
+Each suit has 3 components, this is why it's called _3D_:
+
+- Color: {% colorSuit color="textured-red" /%}{% colorSuit color="textured-blue" /%}{% colorSuit color="textured-yellow" /%}{% colorSuit color="textured-green" /%}{% colorSuit color="textured-black" /%}{% colorSuit color="textured-white" /%}
+- Shape: {% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}
+- Rank: 0...9
+
+Most of the times, the shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) are ignored and used as repetitions of the color instead. This is useful for games like [UNO](/games/uno), where each color has the ranks repeated.
+
+Alternatively, the shapes ({% shapeSuit id="heart" /%}{% shapeSuit id="circle" /%}{% shapeSuit id="square" /%}) can be used as tens digits. So hearts are valued 0...9, circles 10...19, and squares 20...29 ({% shapeSuit id="heart" /%} < {% shapeSuit id="circle" /%} < {% shapeSuit id="square" /%}). This is used in games that require 16 to 30 ranks per color, like [For Sale](/games/for-sale) or [What the Heck?](/games/what-the-heck). If you need 15 or less ranks per color, use the [Basic suit](#basic-suit) instead.
+
+{% callout type="idea" %}
+The {% suit id="A24" /%} suit can be used as a {% suit id="A24-alt" /%} Black square or {% suit id="A15" /%} White circle, to get different distributions.
+{% /callout %}
+
+{% suits3DTable /%}
+
+When the _3D suit_ is {% colorSuit color="black" noAlt=true /%} black or {% colorSuit color="white" noAlt=true /%} white, the rank of the [Basic suit](#basic-suit) is a letter (XJQKA). Otherwise, when the suit is red, blue, green, or yellow ({% colorSuit color="red" noAlt=true /%}{% colorSuit color="blue" noAlt=true /%}{% colorSuit color="green" noAlt=true /%}{% colorSuitV1 color="yellow" noAlt=true /%}), the rank of the [Basic suit](#basic-suit) is a number (0...9).
+
+### Distributions
+
+#### 6 colors × 2 shapes × 10 ranks
+
+{% imgLightDark light="/images/home/distributions/2-shapes-x-6-colors-x-10-ranks-light.svg" dark="/images/home/distributions/2-shapes-x-6-colors-x-10-ranks-dark.svg" width=300 alt="2 shapes x 6 colors x 10 ranks distribution diagram" /%}
+
+Use {% suit id="A24" /%} as {% suit id="A15" /%} White circle, to get 6 colors × 2 shapes × 10 ranks (or 6 colors × 20 ranks).
+
+There will be some unused cards, that may be optionally used to add 1 extra shape to 4 colors. The remaining cards are: red, blue, green and yellow squares ({% suit id="A20" /%}{% suit id="A21" /%}{% suit id="A22" /%}{% suit id="A23" /%}) with ranks 0...9.
+
+An example game that uses it is [Stick 'Em](/games/stick-em).
+
+#### 5 colors × 3 shapes × 10 ranks
+
+{% imgLightDark light="/images/home/distributions/3-shapes-x-5-colors-x-10-ranks-light.svg" dark="/images/home/distributions/3-shapes-x-5-colors-x-10-ranks-dark.svg" width=300 alt="3 shapes x 5 colors x 10 ranks distribution diagram" /%}
+
+Use {% suit id="A24" /%} as {% suit id="A24-alt" /%} Black square, to get 5 colors × 3 shapes × 10 ranks (or 5 colors × 30 ranks).
+
+There will be some unused cards, that may be optionally used to add 1 extra color to 1 shapes. The remaining cards are: {% suit id="A05" /%} white hearts with ranks 0...9.
+
+An example game that uses it is [Spicy](/games/spicy).
+
+### Game-mapping sheet
+
+Learn more in the [Mapping new games](#mapping-new-games) section.
+
+{% imgLightDark light="/images/home/layouts/table-3d-light.svg" dark="/images/home/layouts/table-3d-dark.svg" width="23.5rem" alt="table 3d" /%}
+<!-- {% imgLightDark light="/images/home/layouts/table-3d-alt-light.svg" dark="/images/home/layouts/table-3d-alt-dark.svg" width="23.5rem" alt="table 3d" /%} -->
+
+See the relationship between other suits in [Mini versions by layout](#3d-layout) and [Cards spreadsheet](#cards-spreadsheet).
+
+## Number suit
+
+{% imgLightDark light="/images/home/guides/number-suit-light.svg" dark="/images/home/guides/number-suit-dark.svg" width="7.2rem" alt="Number suit guide" /%}
+
+On the top-right or bottom-left corner, you can find a number without a suit behind; it is the "Number suit".
+
+It contains numbers **from 0 to 159**.
+
+Because **each card has a different number**, it is used to reference the cards (card id).
+
+The number has two colors:
+
+- The **black part** indicates the **suit id** of the [basic suit](#basic-suit) of the card. When the _number suit_ is greater than 120, it no longer indicates the suit id.
+  - For example, the card 117 has the suit {% suit id="11" /%}, and is the suit id 11 because the black part of the number is 11.
+- The **colored part** **matches the color** of the basic suit of that card. It also **matches the rank** of the _basic suit_, and the _3D suit_ (except when the rank is a letter (XJQKA)).
+
+### Distributions
+
+#### Numbers from 0 to 159
+
+Just use the _Number suit_ as is.
+
+It is used in games that need many unsuited ranks. Games that use it are [The mind](/games/the-mind) and [No thanks!](/games/no-thanks).
+
+#### Numbers from 0 to 59, 2 times
+
+You can also have 2 times numbers from 0 to 59, plus 1 time numbers from 60 to 99, by ignoring the hundreds digit. So, for example, 120 would become 20, and 20 would stay as 20.
+
+#### Numbers from -59 to 100
+
+Similarly, you can also have negative numbers if you treat numbers greater than 100 as negative (or positive), to make a distribution of -59...100 (or -100...59).
+
+#### 15 ordered suits of 10 ranks (or vice versa)
+
+You can also make a distribution of 15 ordered suits of 10 ranks (or vice versa) by making the _black part_ the suit, and the _colored part_ the rank.
+
+But it is quite unintuitive to use, so only use this combination if you need ordered suits, or 13 to 15 suits of 9...10 ranks; otherwise, it's better to use the ["switched" basic suit](#basic-suit).
+
+An example game that uses it is [Scout](/games/scout).
+
+### Game-mapping sheet
+
+Learn more in the [Mapping new games](#mapping-new-games) section.
+
+{% imgLightDark light="/images/home/layouts/table-number-light.svg" dark="/images/home/layouts/table-number-dark.svg" width="23.5rem" alt="table number" /%}
+
+See the relationship between other suits in [Mini versions by layout](#number-layout) and [Cards spreadsheet](#cards-spreadsheet).
+
+## Drawing
+
+The cards are designed to be drawn on with a pencil, and they have a grid marking out the "[drawing areas](#drawing-areas)".
+
+### Why drawing?
+
+Even though it may seem that by drawing you'll destroy your cards, make them ugly, or waste them, the truth is the opposite: **if you don't draw on them, you're wasting the cards**, because they are meant for that. The DIY Multideck provides a solid base to play many games and, additionally, draw in the cards to support more games. Drawing on the cards also makes games easier to play because the drawings can resemble the original game card's.
+
+Rather than filling the cards with predetermined games, I want to encourage you to personalize them by adding the games you enjoy playing. This is why it's called "The DIY Multideck".
+
+### Drawing tips
+
+{% callout type="info" %}
+**Use a pencil** to draw so you can erase or tweak the drawing if needed. Pens, markers, and other things also work, but I don't recommend using them because making changes is very common.
+{% /callout %}
+
+Anyways, although you can erase the drawings, I generally don't recommend doing it. If you keep the drawings, you won't have to spend time again to prepare that game. It is generally not annoying to play with drawings from other games.
+
+When adding new drawings:
+
+- Consider duplicating the drawing on the opposite side slots to make the card playable in any rotation.
+- Place them strategically to leave the most usable spots for your favorite games.
+- Try to come up with generic drawings that may be used in other games, so you save up space.
+
+In some cases generic drawings can be counter-productive, so be mindful. For example, consider two unrelated games (A and B) using a similar drawing. On game A, there's a card with a drawing. That same card is also used in game B. But game B is not supposed to have a drawing on that card. So a player can mistakenly think that that card in game B is something special when it is not.
+
+### Drawing areas
+
+{% drawingImg /%}
+
+Each card has 14 drawing slots, grouped in 5 drawing areas.
+
+#### {% drawingAreaIcon id="A" /%} Drawing area A
+
+2 rectangular slots on the top and bottom edges.
+
+- The card needs to be held in hand and contain a big drawing or word.
+- The card needs to be stacked on the table while keeping the top or bottom part visible.
+
+#### {% drawingAreaIcon id="B" /%} Drawing area B
+
+4 square slots just below every suit.
+
+- The card needs to be held in hand.
+- The drawing is related to the suit.
+
+#### {% drawingAreaIcon id="C" /%} Drawing area C
+
+6 square slots between the _Drawing areas B_, in groups of 3 columns.
+
+- The card needs a hint, like punctuation.
+- The card's hint doesn't need to be visible while holding it on hand; otherwise, use the area A.
+
+#### {% drawingAreaIcon id="D" /%} Drawing area D
+
+4 rectangular slots in the center, forming a 2x2 grid.
+
+- The card needs to be placed on the table.
+- The card can be held in hand, but it's the only one.
+- The card needs to contain a big drawing or word.
+- The card is not used actively during the gameplay, like hints or boards, and your notes cards are full.
+
+#### {% drawingAreaIcon id="E" /%} Drawing area E
+
+1 circular slot in the center, overlapping the _Drawing areas D_.
+
+- You want to represent a tile, chip, token, or similar.
+- The card needs to be placed on the table.
+
+## Counters
+
+The back of each card has a number grid with a triangle used to represent numbers.
+
+### Bingo method
+
+{% imgLightDark light="/images/home/counter/bingo-light.svg" dark="/images/home/counter/bingo-dark.svg" width="18.5rem" alt="Bingo counter guide" /%}
+
+{% callout type="warning" %}
+Chips or similar objects required. Otherwise, use the [Pointing method](#pointing-method).
+{% /callout %}
+
+Simply place chips on top of the desired number on the card's back.
+
+To count higher than 9, place multiple cards side by side. The result is the sequence of numbers from each card, from left to right.
+
+The [travel kit](#travel-kit) comes with 50 tokens, to use in this case.
+
+### Pointing method
+
+{% imgLightDark light="/images/home/counter/pointing-light.svg" dark="/images/home/counter/pointing-dark.svg" width="16rem" alt="Pointing counter guide" /%}
+
+To create a counter, stack two cards face down. Align the arrow (triangle) of the top card to point at a number on the card beneath it; the pointed number is the result.
+
+To count higher than 9, add more cards on top of the stack. The result is the sequence of pointed numbers from each card, where the card closest to the table represents the most significant digit, and the top card the least significant.
+
+The example is counting 37 because the lowest card has the 3 pointed, and the next card has the 7 pointed. Notice that the top-most card is just for pointing; it doesn't represent a digit.
+
+It requires one card per digit, plus one extra. For example, counting from 0 to 9 requires 2 cards, 0 to 99 requires 3 cards, and so on.
+
+Watch out not to move the cards by mistake or you'll lose the count!
+
+- It works well as point tracking boards, like the one in the game [Jekyll vs Hyde](/games/jekyll-vs-hyde).
+- Suitable for small and large amounts.
+
+{% callout type="idea" %}
+**Optional**: You can add a title to the counter by writing it in the area A of a card and putting it below.
+
+Don't overuse this technique. For example, if every player _only_ has to count coins, don't put titles on the counters; it's assumed they are coins.
+{% /callout %}
+
+### 1-to-1 method
+
+{% imgLightDark light="/images/home/counter/1-to-1-light.svg" dark="/images/home/counter/1-to-1-dark.svg" width="35.4rem" alt="1-to-1 counter guide" /%}
+
+Use the remaining cards, each card is worth 1.
+
+{% callout type="idea" %}
+You don't have to use cards for this method, you can use any other small objects. Like chips, tokens, coins, stones, beans, etc. Each one can even be worth a different amount.
+
+The [travel kit](#travel-kit) comes with 50 tokens, to use in this case.
+{% /callout %}
+
+- Cards can be held in the hand or placed on the table.
+- Convenient when coins are exchanged frequently by the players.
+- Use when the counter needs to be "private" (only known by the own player).
+- Not suitable for large amounts.
+
+{% callout type="idea" %}
+If you need to count higher numbers than available cards, make the upright cards worth 1 and the upside-down cards worth 5.
+
+This variant is unintuitive, so only use it if you need to count higher numbers and the counter needs to be "private".
+{% /callout %}
+
+## Extra cards
+
+When printing cards on an A3-sized paper, there's room for 18 cards per page. This deck uses 160 cards, leaving 2 blank spaces. These 2 spaces are used in the form of "Extra Cards," which don't have any suit or rank.
+
+You can use the extra cards in games that need a card with a different background and no information on the front (you can also flip a normal card, but it can be confusing). For example, in [The Crew](/games/the-crew-1), the "reminder cards".
+
+### Cover card
+
+{% cardImgWithText src="/images/home-v2/cards/cover.svg" %}
+
+Only 1 copy.
+
+Contains:
+
+- Name of the deck.
+- Preview of all basic suits.
+- QR code pointing to the website.
+
+{% /cardImgWithText %}
+
+### Notes cards
+
+{% cardImgWithText src="/images/home-v2/cards/notes.svg" %}
+
+3 copies (in 2 cards).
+
+Use them to keep any useful information.
+
+Some use cases are:
+
+- Player aid.
+- Simplified game board.
+- Game setup (what cards, how many per player...).
+- Definition/Diagram of a specific rule or mechanic.
+- List of games in the deck.
+
+{% /cardImgWithText %}
+
+## Travel kit
+
+{% imgLightDark light="/images/home/travel-kit-light.svg" dark="/images/home/travel-kit-dark.svg" alt="Travel kit components" /%}
+
+Recommended items for transporting the deck:
+
+- The deck of cards itself.
+- A storage bag. Ideally a DIN B7 plastic stationery zipper bag.
+- A pen and eraser. Tip: sharpen both sides of the pencil.
+- 50 tokens. Ideally 10 of each color ({% colorSuit color="textured-red" /%}{% colorSuit color="textured-blue" /%}{% colorSuit color="textured-yellow" /%}{% colorSuit color="textured-green" /%}{% colorSuit color="textured-black" /%}).
+
+The following items may be handy sometimes, but they are not worth carrying all the time:
+
+- A sharpener.
+- Some folded sheets of paper.
+- A set of DnD dice.
+
+This is how the travel kit looks when packed:
+
+{% img src="/images/shop/travel-kit-packed.png" width="50%" alt="travel kit packed" /%}
+
+{% callout type="idea" %}
+If you foresee that you won't have internet access, you can download some game mappings and rules in advance. Each game page has an image with the card mapping, simply download it.
+{% /callout %}
+
+## Other
+
+### Mapping new games
+
+<!-- TODO: Update for v2 -->
+
+You may want to play a game that is not on [the official supported games list](/games), so here you have some tips about how to do it.
+
+#### Step 1: Finding the game's components
+
+The first thing you have to figure out is the **components used** on the game, how they are used, and which can be eliminated. To do so I recommend:
+
+- Find the **official rulebook**, usually there's a section with the game's components.
+  - To find it, google the game's name plus "rulebook" or "rules".
+  - You can also go to the game's Board Game Geek entry _Files_ section, usually you find the rules in a PDF.
+  - If none of that works, try looking for the rulebook in other languages like German, Spanish, or French.
+- Find **unofficial rulebooks** or other resources explaining the game, there are **websites** dedicated to this.
+- Search for **images** of the game.
+  - For example on Google Images, Board Game Geek, or eCommerces selling the game.
+- Watch **unboxings or how to play videos** of the game.
+- Try to find a **print and play** version of the game.
+- Find a fanmade **re-theme** of the game.
+  - Usually they are on the game's Board Game Geek entry _Files_ section.
+
+#### Step 2: Map the game
+
+Next, you have to map every component of the game to a feature of The DIY Multideck.
+
+{% callout type="idea" %}
+My recommendation is that you go to the [Feature summary](#feature-summary) to find out what's the best game system to use.
+{% /callout %}
+
+You can also quickly spot the main game system ([Basic](#basic-suit), [3D](#3d-suit), or [Number](#number-suit)) by answering the following questions in order: (There are edge cases not covered)
+
+1. Does it use coins, chips, tokens, progress boards, or similar things? → [Counter](#counters).
+1. Does it need 1 or 2 cards with a different back face? → [Extra cards](#extra-cards)
+1. Does it need icons, words, or extra info on the card (a.k.a. drawings)? → [Drawing](#drawing).
+1. Does it have 8 or fewer suits of 15 or fewer ranks? → [Basic](#basic-suit).
+1. Does it have 12 or fewer suits of 10 or fewer ranks? → [Basic](#basic-suit).
+1. Does it just have numbers, and are they larger than 30?
+    1. Are there numbers larger than 160? → _Not compatible_.
+    1. Are there numbers repeated 2 or more times that are larger than 59? → _Not compatible_.
+    1. Else → [Number suit](#number-suit).
+1. Does each rank get repeated?
+    1. Is it repeated 4 or more times? → _Not compatible_.
+    1. Does it have 7 or more suits? → _Not compatible_.
+    1. Else → [3D suit](#3d-suit).
+1. Does it have 16 or more different ranks?.
+    1. With 6 or more suits? → _Not compatible_.
+    1. Else → [3D suit](#3d-suit).
+1. Does it use a 3D deck of 5x3x10 or less? → [3D suit](#3d-suit).
+1. Does it use a 3D deck of 6x2x10 or less? → [3D suit](#3d-suit).
+1. Does it have more than 8 suits of more than 10 ranks each?
+    1. Does it have more than 16 suits of more than 11 ranks (or vice versa)? → _Not compatible_
+    1. Else → [Number suit](#number-suit).
+1. Else → Probably "_Not compatible_" or "_Low usability_". Read the [deck's manual](/manual) deeper to find the right game system if it exists.
+
+Now you just select the cards the game will need; it will probably be a subset of the game system chosen.
+
+If the game has multiple components, you'll have to put more effort into trying to find a combination of cards that meets all the requirements. To do so, I recommend you pick the main game system used and use the respective layout as a visual aid to decide what cards to use for each component. See the [Mini versions by layout](#mini-versions-by-layout), or in a table format: [Basic](#game-mapping-sheet), [3D](#game-mapping-sheet-1), [Number](#game-mapping-sheet-2).
+
+If the game needs drawings, read the [Drawing](#drawing) section.
+
+{% callout type="idea" %}
+Because all the suits are emojis, you can easily write cheat sheets on your phone.
+{% /callout %}
+
+Consider adding meaning to the emojis ({% suit id="0" /%}{% suit id="1" /%}{% suit id="2" /%}{% suit id="3" /%}{% suit id="4" /%}{% suit id="5" /%}{% suit id="6" /%}{% suit id="7" /%}{% suit id="8" /%}{% suit id="9" /%}{% suit id="10" /%}{% suit id="11" /%}) or colors ({% colorSuit color="textured-red" /%}{% colorSuit color="textured-blue" /%}{% colorSuit color="textured-yellow" /%}{% colorSuit color="textured-green" /%}{% colorSuit color="textured-black" /%}{% colorSuit color="textured-white" /%}) if possible, to help players remember which card is which.
+
+- For example: In [Mafia de Cuba](/games/mafia-de-cuba), the {% suit id="2" /%} represents the diamonds "because stars and diamonds shine". This reason is totaly random, but it actually helps to remember the cards. Notice that using {% suit id="9" /%} would be ideal for the game, but 15 ranks are needed, and {% suit id="9" /%} is a [10-ranked suit](#basic-suit)... So {% suit id="2" /%} is the next best option emoji-wise.
+- Another example: In [Claim](/games/claim), the suits' colors try to match the ones from the original game.
+
+#### Step 3: Document the mapping
+
+Document the mapping to remember it and share it with other players. I reccomend thes 2 ways:
+
+##### Using a table
+
+If the game doesn't require many drawings, document the mapping in a table, like the game-mapping sheet: [Basic](#game-mapping-sheet), [3D](#game-mapping-sheet-1), [Number](#game-mapping-sheet-2). Also add any extra information you think is relevant.
+
+{% callout type="idea" %}
+The game-mapping sheets are ideal for sharing the mapping with other players. You can even print them and carry them with the deck.
+{% /callout %}
+
+Here you have some templates to create the **game-mapping sheet**:
+
+{% bigButtonWrapper %}{% bigButton link="https://www.figma.com/design/jsQAjSXs5GcbW6E5K0Uqmr/Game-mapping-sheets-%7C-The-DIY-Multideck-v2?node-id=0-1&t=tGUwpOnkoht1hF4D-1" text="Figma (Recommended)" icon="ti-brand-figma" /%}{% bigButton link="/downloads/mapping-sheets.zip" text="SVG" download="diy multideck game-mapping sheets.zip" icon="ti-file-type-svg" /%}{% bigButton link="https://docs.google.com/spreadsheets/d/1cd75RnVTZiWj9-gTsOglsHnYO3oIW0z2K7XceGD0b7Q" text="Google sheets" icon="ti-file-spreadsheet" /%}<!-- markdownlint-disable MD034 -->{% /bigButtonWrapper %}
+
+{% callout type="idea" %}
+You can use the [Game Mapping Editor](/new-game) to create and test your mappings. It provides a live preview and validates your JSON schema.
+{% /callout %}
+
+##### Using actual cards
+
+Do the drawings in your deck and arrange the cards to display how they are used in the game, and take a photo.
+
+If possible, instead of taking a photo, do the image digitally, so it looks nicer and is easier to understand.
+
+{% bigButtonWrapper %}
+{% bigButton link="https://www.figma.com/design/6NVBPLUIVA0hLhUzDyIGKK/DIY-Multideck---Game-mappings?node-id=253-3827&t=6ypTmDVxp3ZEsygo-1" text="Game mappings (Figma)" icon="ti-brand-figma" /%}<!-- markdownlint-disable MD034 -->
+{% /bigButtonWrapper %}
+
+#### Step 4: Submit the mapping
+
+Finally, send the mapping to [diymultideck@mauri.app](mailto:diymultideck@mauri.app) so I can add it to the website and make it easily accessible to you and other people.
+
+<!-- TODO: add section about "How to select cards for a game quickly" -->
+
+<!-- TODO: add section about "How to read a mapping" -->
+
+### Printing
+
+The cards are designed to be printed at home or a basic copy shop.
+
+The material used is polyester 300 grams, almost all copy shops have it (at least in Spain), and it offers great resistance and is waterproof. The only downsides are that it is not environmentally friendly and that it is not fully opaque.
+
+When printing, it is very important to align well the paper in the printer. So both sides of the cards are aligned.
+
+To cut the cards, go to a copy shop that has an industrial cutter, so all cards end up the same exact size. Remind them that this is very important, or then shuffling the cards will be harder.
+
+When cutting the cards, always do it looking at the back side of the card. This is to ensure all the backs look the same (to avoid cheating), and have the defects only on the front side.
+
+Rounding the corners of the cards can be done in the copy shop, but it's usually pretty expensive. My recommendation is to use a round corner punch at home.
+
+For now, the PDF document to print the cards is not public, but if I see a lot of interest, I may reconsider it and license them with a Creative Commons license.
+
+### Legal note
+
+_Is all of this legal?_ Yes, it is. Selling/buying or printing the DIY Multideck is legal, even if the purpose is to play other games. Also, this website, with explanations of how to play other games, and all its contents, is legal.
+
+Board games are generally not protected intellectual property. What is usually protected with copyright are the assets they use, like cards, tokens, boards, or rulebooks. Some game mechanics may be patented, but it's very rare.
+
+Explaining how to play a board game is legal, as long as you don't use copyrighted material without permission to do so.
+
+Regardless of all that, the original games will always be better than any adaptation done with the DIY Multideck, simply because the original games are made to play a single game. But meanwhile you don't own the game, you can at least play an inferior version of it.
+
+### Design choices
+
+The ranks are inside the suits to save up space. The downside is that it requires players to spread more the cards in hand to see the rank, but it's not uncomfortable.
+
+All suits are emojis, so you can easily write cheat sheets on your phone and send them to the other players. Example: [Skull King](/games/skull-king).
+
+The colors of the suits can be grouped by similar hue in pairs but also trios. As a consequence, the [Basic suit](#basic-suit) and [3D suit](#3d-suit) corners have similar colors. For example, the suit {% suit id="4" /%}, which is orange ({% colorSuit color="orange" /%}), has red ({% colorSuit color="textured-red" /%}) 3D suits.
+
+The slogan "Draw your cards" is there to encourage people to draw and lose the fear of drawing in cards. It's fine! If you run out of space, you'll have amortized the cards very well, don't worry. See the [Drawing](#drawing) section for more information.
+
+The first 10 numbers of the [Number suit](#number-suit) corner start with 0 to maintain the visual pattern of color in the number (left side black, right side colored).
+
+The shapes in the [3D suit](#3d-suit) are ordered by their area, from smallest to largest. Specifically, the order is {% shapeSuit id="heart" /%} < {% shapeSuit id="circle" /%} < {% shapeSuit id="square" /%}.
+
+The card backs use a lot of ink to increase the opacity of the card.
+
+Not all suits have the same amount of ranks. I decided to cut on some cards and make an overall uneven distribution because it's rare to find games that use high ranks (+10) and many suits (+8) at the same time. There are very few of those games because the amount of cards would grow to more than 150 and it feels too many cards to handle for the player. Moreover, games with many cards usually have several kinds of cards with low ranks, so you need more suits without mattering much the amount of ranks.
+
+All the numbers on the card corners match (on the units), if the rank is not a letter (XJQKA).
+
+### Credits
+
+The DIY multideck has been created in 2024 by [Maurici Abad](https://mauri.app), a software engineer and backpacker from Spain. It also incorporates ideas and feedback from the community discussed on [this BGG thread](https://boardgamegeek.com/thread/3128477/diy-multideck-deck-cards-play-many-games).
+
+The deck was heavily inspired by [The Everdeck](https://thewrongtools.wordpress.com/2019/10/10/the-everdeck/). Read more on the [inspiration section](#inspiration).
+
+### Inspiration
+
+I got inspired by The Everdeck and Rainbow deck mainly. But I found interesting ideas on other multidecks.
+
+#### Other multidecks
+
+{% columns %}
+
+- [The Everdeck](https://thewrongtools.wordpress.com/2019/10/10/the-everdeck/) ([BGG](https://boardgamegeek.com/boardgame/291951/everdeck))
+- [The Flexicat](https://thewrongtools.wordpress.com/2019/01/10/the-flexicat-a-card-game-system-for-new-games-or-to-emulate-way-too-many-existing-ones/)
+- [Rainbow deck](https://boardgamegeek.com/boardgame/59655/rainbow-deck) ([BGG](https://boardgamegeek.com/boardgame/59655/rainbow-deck))
+- [Singularity Deck](https://www.singularity.games/singularity-deck) ([BGG](https://boardgamegeek.com/boardgame/251957/singularity-deck))
+- [Banjo Deck](https://banjodeck.com/)
+- [Multi Playing Cards](https://multiplayingcards.com) ([BGG](https://boardgamegeek.com/boardgame/301125/multi-playing-cards))
+- [The Swiss Army Deck](https://boardgamegeek.com/geeklist/187686/swiss-army-deck)
+- [Emergency Games Kit](https://kevan.org/games/emergency)
+- [The Skeleton Deck](https://kevan.org/games/skeleton)
+- [The Deck of Many Dice](https://snepshark.itch.io/deck-of-many-dice)
+- [Dicecards](https://boardgamegeek.com/boardgame/137307/dicecards) ([BGG](https://boardgamegeek.com/boardgame/137307/dicecards))
+- [Glyph deck](https://boardgamegeek.com/boardgame/153898/glyph) ([BGG](https://boardgamegeek.com/boardgame/153898/glyph))
+- [The Decktet](https://www.decktet.com/) ([BGG](https://boardgamegeek.com/boardgame/37301/decktet))
+- [The Mystique Deck](https://nestorgames.com/mystique.html) ([BGG](https://boardgamegeek.com/boardgame/141291/mystique-deck))
+- [Quarq](https://boardgamegeek.com/boardgame/144081/quarq) ([BGG](https://boardgamegeek.com/boardgame/144081/quarq))
+- [The Deck of Many Games](https://www.kickstarter.com/projects/zgh/the-deck-of-many-games-a-game-design-tool)
+- [The heckadeck](https://boardgamegeek.com/boardgame/296334/heckadeck) ([BGG](https://boardgamegeek.com/boardgame/296334/heckadeck))
+- [The Badger Deck](https://boardgamegeek.com/boardgame/160950/badger-deck) ([BGG](https://boardgamegeek.com/boardgame/160950/badger-deck))
+- [ZSA cards](https://zsa.fun) ([BGG](https://boardgamegeek.com/boardgame/403313/zsa-cards))
+- [The micaya deck](https://micaya.selfthinker.org/) [BGG](https://boardgamegeek.com/thread/2185818/my-own-set-extended-playing-cards-micaya-deck)
+- [The Modern Games Deck](https://idamayer.com/moderngamesdeck/)
+- [Piecepack](https://piecepack.net/piecepack)
+{% /columns %}
+
+#### Interesting articles or threads
+
+- [The Ultimate Deck of Cards](https://thewrongtools.wordpress.com/2017/10/08/the-ultimate-deck-of-cards/). The Everdeck creator explaining the state of the art for multidecks when he created it.
+- [Existing Alternate Card Game Systems](https://thewrongtools.wordpress.com/2017/10/14/existing-alternate-card-game-systems/). Part 2 of "The Ultimate Deck of Cards".
+- [A History of the Many Attempts to Design the Ultimate Deck of Playing Cards](https://boardgamegeek.com/thread/2152196/history-many-attempts-design-ultimate-deck-playing) ([Original post on reddit](https://www.reddit.com/r/boardgames/comments/aoupwv/a_brief_history_of_reinventing_the_playing_card/)). The Singularity deck creator explaining the state of the art for multidecks when he created it.
+- [General form for defining a deck of cards](https://boardgamegeek.com/thread/1470707/article/21595979#21595979). BGG thread talking about deck notation.
+- [Minimal Travel Table Top Game Collection 3: Project 108](https://hamatti.org/posts/minimal-travel-table-top-game-collection-3-project-108/). Article about joining multiple games in one single deck.
+- [Minimal Travel Table Top Game Collection](https://hamatti.org/posts/minimal-travel-tabletop-game-collection/). When Project 108 was in early development.
+- [Ranks and Suits - The Anatomy of Decks of Cards](https://boardgamegeek.com/geeklist/165733/ranks-and-suits-anatomy-decks-cards). BBG geeklist of games and their card distribution, with interesting comments.
+- [Rainbow Deck - a cardgame system](https://boardgamegeek.com/thread/453565/rainbow-deck-cardgame-system). BGG thread where the Rainbow deck was created.
+- [I Created My Own Minimalist Deck of 54 Playing Cards for All My Favorite Games (Coup, Love Letter, Schotten Totten, Ultimate Werewolf, 2p Arboretum, etc)](https://medium.com/@banjoanton/i-created-my-own-minimalist-deck-of-54-playing-cards-for-all-my-favorite-games-coup-love-letter-4d69f17ae8b9). Banjo Deck creation article.
+- [UPDATE: I Created My Own Minimalistic Deck and Now It’s Available to Print or Buy](https://medium.com/@banjoanton/update-i-created-my-own-minimalistic-deck-and-now-its-available-to-print-or-buy-741d8362b30a). Banjo Deck release article.
+- [The Micaya Deck, my own set of (extended) playing cards](https://blog.selfthinker.org/2019/04/12/the-micaya-deck-my-own-set-of-extended-playing-cards/).
+- [Playing Card Game Systems](https://boardgamegeek.com/geeklist/252876/playing-card-game-systems). Geeklist by the Singularity deck creator, listing interesting card game systems.
+- [ZSA Cards: Behind The Scenes](https://blog.zsa.io/zsa-cards/). Creative process of the ZSA Cards.
+- [I made a custom deck of 108 cards to play tons of different games!](https://www.reddit.com/r/boardgames/comments/in29fx/i_made_a_custom_deck_of_108_cards_to_play_tons_of/). Interesting comments.
+- [minimal:deck another card game system](https://boardgamegeek.com/thread/1459848/minimaldeck-another-card-game-system)
+
+#### Lists of possible compatible games
+
+{% columns %}
+
+- [List of games collections](https://boardgamegeek.com/geeklist/47169/many-games-price-one-collective-geeklist)
+- [Modified standard deck games](https://boardgamegeek.com/geeklist/14369/master-list-games-playable-modified-or-unmodified)
+- [The Heckadeck games](https://boardgamegeek.com/geeklist/307921/games-can-be-played-heckadeck)
+- [The Everdeck games](https://boardgamegeek.com/geeklist/230703/games-playable-everdeck)
+- [The Badger Deck games](https://boardgamegeek.com/geeklist/174857/games-you-can-play-badger-deck)
+- [The Swiss Army Deck games](https://boardgamegeek.com/geeklist/187686/swiss-army-deck)
+- [Deck of Stitch 'em games](https://boardgamegeek.com/geeklist/20503/many-games-price-one-definitive-games-can-be-playe)
+- [Glyph's deck games](https://boardgamegeek.com/geeklist/169175/games-playable-glyph-card-system)
+- [Games with only suits](https://boardgamegeek.com/geeklist/269717/card-games-only-colourssuits-no-numberstext)
+- [Rage's deck games](https://boardgamegeek.com/geeklist/1907/games-playable-rage-deck-not-ccg-please-add)
+- [Everdeck library](https://everdeck-library.vercel.app/)
+{% /columns %}
+
+#### Others
+
+Some months after the DIY Multideck was released, accompanied by this website, the [Everdeck library](https://everdeck-library.vercel.app/) was created. It lists games compatible with The Everdeck in a similar fashion as this website does. If you find this website useful, you'll probably also like the [Everdeck library](https://everdeck-library.vercel.app/). It is a great resource, check it out!
+
+## Appendix
+
+### Downloads
+
+#### Assets from manual
+
+Download the assets used in the DIY Multideck and manual. It contains:
+
+- Card elements: Suits, colors, shapes, and drawing areas icons.
+- Guides: Card anatomy, counters, drawing areas, travel kit.
+- Layouts preview: 3D, basic, number.
+- Mapping sheets: 3D, basic, number.
+- Card previews: All cards, some cards, spread cards.
+
+{% bigButtonWrapper %}
+{% bigButton link="/downloads/assets-v2.zip" text="Download assets" download="diy multideck assets.zip" icon="ti-download" /%}
+{% /bigButtonWrapper %}
+
+#### Game-mappings
+
+Read more in the [Mapping new games](#mapping-new-games) section.
+
+Sheets/Table/Grid:
+
+{% bigButtonWrapper %}{% bigButton link="https://www.figma.com/design/jsQAjSXs5GcbW6E5K0Uqmr/Game-mapping-sheets-%7C-The-DIY-Multideck-v2?node-id=0-1&t=tGUwpOnkoht1hF4D-1" text="Figma (Recommended)" icon="ti-brand-figma" /%}{% bigButton link="/downloads/mapping-sheets.zip" text="SVG" download="diy multideck game-mapping sheets.zip" icon="ti-file-type-svg" /%}{% bigButton link="https://docs.google.com/spreadsheets/d/1cd75RnVTZiWj9-gTsOglsHnYO3oIW0z2K7XceGD0b7Q" text="Google sheets" icon="ti-file-spreadsheet" /%}<!-- markdownlint-disable MD034 -->{% /bigButtonWrapper %}
+
+Actual cards:
+
+{% bigButtonWrapper %}
+{% bigButton link="https://www.figma.com/design/6NVBPLUIVA0hLhUzDyIGKK/DIY-Multideck---Game-mappings?node-id=253-3827&t=6ypTmDVxp3ZEsygo-1" text="Figma" icon="ti-brand-figma" /%}<!-- markdownlint-disable MD034 -->
+{% /bigButtonWrapper %}
+
+### All cards preview
+
+This is how all the actual cards look like.
+
+![all cards preview](/images/home/preview.png)
+
+#### Mini versions by layout
+
+These are a simplified version of the cards, useful for understanding what other features are shared per card.
+
+##### [Basic layout](#basic-suit)
+
+{% img src="/images/home/layouts/preview-mini-basic.png" width="100%" alt="preview-mini-basic" /%}
+
+##### [3D layout](#3d-suit)
+
+{% img src="/images/home/layouts/preview-mini-3d.png" width="67%" alt="preview-mini-3d" /%}
+
+##### [Number layout](#number-suit)
+
+{% img src="/images/home/layouts/preview-mini-number.png" width="67%" alt="preview-mini-number" /%}
+
+### Cards spreadsheet
+
+This are the values of each feature on all cards.
+
+{% cardDistributionTableV2 /%}
+
+### Versions
+
+During development the releases are discussed on [this BGG thread](https://boardgamegeek.com/thread/3128477/diy-multideck-deck-cards-play-many-games).
+
+Check out the latest version's [manual](/manual).
+
+#### Version 2
+
+Released in October 2024.
+
+This manual is about this version of the deck.
+
+This release focused on simplifying the cards and refining the visual design.
+
+The main change is the addition of the 3D suit {% suit id="A24" /%} to allow a `6x2x10` distribution that unlocks many games like [Stitch 'em](https://boardgamegeek.com/boardgame/354/stick-em).
+
+Another big change is the new card back design, which is simpler to use and aesthetically better.
+
+Another relevant change is the removal of the "Pyramidal Rank", "Coin Flip" and "3D suit small numbers" because they were rarely used and caused clutter.
+
+##### Changes from previous version
+
+- Replaced {% suitV1 id="135" /%} with {% suit id="A24" /%} (black square {% suit id="A24-alt" /%} or white circle {% suit id="A15" /%}) and also replaced {% suitV1 id="145" /%} with {% suit id="A05" /%}.
+  - Chose {% suit id="A24-alt" /%} or {% suit id="A15" /%} to make a distribution of `5x3x10 + 1x1x10` or `4x3x10 + 2x2x10` (intersection is `6x2x10`) respectively.
+  - Now the game [Stitch 'em](https://boardgamegeek.com/boardgame/354/stick-em) is supported, and use it as an example for this feature (`6x2x10` distribution).
+- Changed suits: {% suitV1 id="3" /%} → {% suit id="3" /%} and {% suitV1 id="11" /%} → {% suit id="11" /%} (gray {% colorSuitV1 color="gray" noAlt=true /%} → rainbow {% colorSuit color="rainbow" noAlt=true /%}).
+- Adjusted suits colors, most notable are green and yellow.
+- Added textures to 3D suit, for colorblind players. ({% suitV1 id="131" /%}{% suitV1 id="132" /%}{% suitV1 id="133" /%}{% suitV1 id="134" /%}{% suitV1 id="135" /%} → {% suit id="A20" /%}{% suit id="A21" /%}{% suit id="A22" /%}{% suit id="A23" /%}{% suit id="A24-alt" /%} )
+- Changed font to "[Manrope](https://fonts.google.com/specimen/Manrope)".
+- Update the card back's design.
+  - Card back is now orientated vertically
+  - Removed the 10 in the card back.
+  - Removed "Stacking method" counter
+  - Optimized "Chained pointing method" counter, by removing the corner arrows and adding just one at the top center.
+- Removed deck's version from the cards.
+- Removed "Coin flip" because there are other alternatives and card will look cleaner without it.
+- Removed "Pyramidal Rank" because it was rarely used and caused clutter.
+- Removed 3D suit small numbers.
+- Cover card face is now on the back face, so it gets better aligned when cut.
+- The extra cards are at the end.
+- Minor fix in cover, U was not bold.
+- Swap 3D suit with Number suit positions (same as rotating the front face 180º).
+
+#### Version 1
+
+Released in January 2024.
+
+**Read the [v1 manual here](/manual-v1).**
+
+First release of the deck!
+
+This release focused on improving the playability of the cards. The main change is that there are 40 new playable cards, so the total count is now 160 cards (+2 extra to fill the paper), and the suits re-design to emojis. I removed features what weren't used by games or were difficult to use, and made more playable the main ones used.
+
+##### Changes from previous version
+
+- Removed paths
+- Removed dice rolls
+- Removed letters
+- Removed card backs upside down
+- Removed guide cards because there were not many extra cards left.
+- Added 40 playable cards:
+  - All cards can be rotated, and the main suit doesn't change.
+  - Removed black border on some suits.
+  - 3D suit has one more color, and one more shape for the rainbow color.
+- Re-styled coin flip, now it's larger
+- Added 3rd coin flip value (?) in 25% of the cards.
+- Re-styled suits and colors to avoid confusions. Removed poker suits.
+- Added suits now have an emoji representation, to create mapping lists on the phone.
+- Re-styled pyramidal deck points
+- Removed pyramidal deck diamonds, now they are all the same.
+- Removed "counting holes" in pyramidal deck.
+- Removed counter up to 17 in the card back, now from 0 to 10.
+- Re-styled card back
+- Re-styled notes extra card, now it's almost blank.
+- Added 3D deck, bottom-left corner. Now it has 3 numbers displaying the possible values for each dimension (shape, rank and color; respectively)
+- Improvements on the card generation process:
+  - Added cut hints in the printable pdf
+  - Arrange cards in different orders and export previews
+  - Easily switch between A3 or A4 paper.
+  - Fix loading spreadsheet and better error management
+  - Interleave front and backs
+  - Filter out cards
+
+#### Version 0
+
+Created in May 2023, not released, but used for playtesting.
+
+{% img src="/images/home-v1/other-versions/v0-card-example.png" width="33%" alt="v0 card example" /%}
+
+This are images of even older versions of the design that were discarded.
+
+![Discarded designs](/images/home-v1/other-versions/discarded-designs.jpg)

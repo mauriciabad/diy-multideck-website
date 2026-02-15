@@ -1,0 +1,58 @@
+---
+import { cn } from '../../lib/cn'
+
+interface Props {
+  src1: string
+  src2: string
+  width1?: number | string
+  width2?: number | string
+  alt1?: string
+  alt2?: string
+  class?: string
+  imgClass?: string
+}
+
+const {
+  src1,
+  src2,
+  width1,
+  width2,
+
+  alt1,
+  alt2,
+  class: className,
+  imgClass,
+} = Astro.props
+---
+
+<p
+  class={cn(
+    'grid grid-cols-1 items-center justify-center content-center justify-items-center gap-4 sm:grid-cols-2',
+    className
+  )}
+>
+  <img
+    src={src1}
+    style={{
+      maxWidth:
+        width1 === undefined || typeof width1 === 'string'
+          ? width1
+          : `${width1}px`,
+    }}
+    alt={alt1}
+    class={cn('not-prose block w-full', imgClass)}
+    loading="lazy"
+  />
+  <img
+    src={src2}
+    style={{
+      maxWidth:
+        width2 === undefined || typeof width2 === 'string'
+          ? width2
+          : `${width2}px`,
+    }}
+    alt={alt2}
+    class={cn('not-prose block w-full', imgClass)}
+    loading="lazy"
+  />
+</p>
